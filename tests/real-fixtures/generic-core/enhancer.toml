@@ -1,0 +1,7 @@
+schema_version = 1
+project = "generic-reduced-core"
+[sources]
+directories = ["source"]
+[generic_instances]
+qualification = "qualification.json"
+sha256 = "34269be95420c5d70a627b248097de4b302e2736e444bf5ba8f367baf74421ef"

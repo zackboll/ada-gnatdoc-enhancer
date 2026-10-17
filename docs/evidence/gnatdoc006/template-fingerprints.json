@@ -1,0 +1,34 @@
+{
+  "opencv.core.fixed_matrices": {
+    "members": {
+      "Column_Index": {
+        "declaration": "subtype Column_Index is Natural range 0 .. Column_Count - 1;",
+        "normalized_declaration_sha256": "033489fd58a7ff83534e03f5552e6dc4750765cefa8653c4da858630f287d68c"
+      },
+      "Matrix": {
+        "declaration": "type Matrix is array (Row_Index, Column_Index) of Element_Type;",
+        "normalized_declaration_sha256": "57fcd710c961b67cfba9f8dc8a62539a0cb2f4113e1ef9eaa0ea7bab44c5f7bb"
+      },
+      "Row_Index": {
+        "declaration": "subtype Row_Index is Natural range 0 .. Row_Count - 1;",
+        "normalized_declaration_sha256": "d5fa50254a21d8e21c74e6ab8f83682419f008aa053e18ab9403f9ec16773f4a"
+      }
+    },
+    "normalized_declaration_sha256": "4d913913f0f504d012257445af6df0f63403fe05e3a4d5e2c2a261f71347dff0",
+    "source_sha256": "126004d33926e9fe9ce25b939185c8266759f1f70e7f2a1ed3cbd0010ade929c"
+  },
+  "opencv.core.vectors": {
+    "members": {
+      "Component_Index": {
+        "declaration": "subtype Component_Index is Natural range 0 .. Length - 1;",
+        "normalized_declaration_sha256": "9607f47e65ebf351254acdbeaf715b984bdb641fc01378077283084537b5c509"
+      },
+      "Vector": {
+        "declaration": "type Vector is array (Component_Index) of Element_Type;",
+        "normalized_declaration_sha256": "a3028ca040dbf50f84ae47542d088c43bea814e751eebe219209060995111442"
+      }
+    },
+    "normalized_declaration_sha256": "312cf4eaf527202d20207fff3f4757e1884a5fa0e3442b9552110f21ec703fc0",
+    "source_sha256": "e073bc727bcafe9d20de4f5e84b67bb137f75ecebe577828324cf8f817858c75"
+  }
+}

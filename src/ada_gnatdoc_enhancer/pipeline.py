@@ -49,10 +49,13 @@ def expected_output(config:Config,site:Path):
     from .adapters.mel import verify_renderer_exceptions
     exceptions=verify_renderer_exceptions(config,source,native)
     types=verified_types(native,source) if config.type_links else {}
+    from .generic_instances import summaries
+    instance_sections,instance_counts=summaries(config,source,native)
     values={}
     totals={'linked_types':0,'declaration_snippets':0,'public_packages':len(native.pages),
             'linked_local_types':0,'linked_external_types':0,
             'unrendered_renderer_exceptions':exceptions}
+    totals.update(instance_counts)
     for name,page in native.pages.items():
         text,counts=transform_page(page.original,source[name],source,native,types,config)
         for label,val in counts.items():
@@ -62,6 +65,9 @@ def expected_output(config:Config,site:Path):
         external_count=sum(html.unescape(m[1]).startswith('https://') for m in TYPE_LINK.finditer(text))
         totals['linked_external_types']+=external_count
         totals['linked_local_types']+=counts['links']-external_count
+        summary=instance_sections.get('api/'+page.path.name)
+        if summary is not None:
+            text=text.replace('<h2>Description</h2>',summary+'<h2>Description</h2>',1)
         values[page.path.relative_to(site).as_posix()]=themed(text,config.theme).encode()
     index=themed(native.index,config.theme)
     index=enhance_index(native,index,config)

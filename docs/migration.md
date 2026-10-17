@@ -17,3 +17,9 @@
 
 No consumer migrations, source-policy changes, deployment or publication are
 performed by this bootstrap archive.
+
+GNATDOC-006 demonstrates the 25 Core summaries using an explicit trusted
+qualification record, separate from native declarations and dependency anchors.
+Existing configurations remain unchanged; adopting consumers must independently
+review and opt in to that source/native record rather than copying output metadata.
+See `/home/zboll/git/ada-gnatdoc-enhancer/docs/generic-instance-summaries.md`.

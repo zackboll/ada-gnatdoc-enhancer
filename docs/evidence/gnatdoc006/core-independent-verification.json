@@ -1,0 +1,33 @@
+{
+  "executed_again_after_commit": "ca1214ca7691d07f77ab291007f2064e3c17f37d",
+  "native_integrity": {
+    "declarations": 1268,
+    "packages": 195,
+    "pages": 196,
+    "signatures": 1268,
+    "status": "preserved"
+  },
+  "publication": {
+    "declaration_snippets": 1268,
+    "files": 200,
+    "generic_actual_type_links": 25,
+    "generic_conversion_package_links": 1,
+    "generic_member_links": 51,
+    "generic_summary_links": 102,
+    "generic_template_links": 25,
+    "html_pages": 196,
+    "linked_external_types": 0,
+    "linked_local_types": 2459,
+    "linked_types": 2459,
+    "links": 4423,
+    "matrix_summaries": 1,
+    "mode": "verified",
+    "native_instance_member_declarations": 0,
+    "presentation_only_anchors": 25,
+    "public_packages": 195,
+    "qualified_generic_instances": 25,
+    "unrendered_renderer_exceptions": 0,
+    "unsupported_instances": [],
+    "vector_summaries": 24
+  }
+}

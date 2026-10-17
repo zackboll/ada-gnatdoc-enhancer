@@ -1,0 +1,1365 @@
+{
+  "counts": {
+    "private-part": 73,
+    "private-unit": 0,
+    "public": 0,
+    "tool": 0,
+    "unclassified": 0
+  },
+  "mapping_failures": [],
+  "raw_total": 73,
+  "warnings": [
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-c2-common.ads: AMS.MEL.IR.C2.Common.Finalize: procedure Finalize (Request : in out Comms_Owner);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.C2.Common.Finalize",
+      "source": "ada/src/ams-mel-ir-c2-common.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Comms_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-c2-common.ads: AMS.MEL.IR.C2.Common.Finalize: procedure Finalize (Request : in out Comms_Owner);: warning: parameter `Request` is not documented",
+      "scope": "AMS.MEL.IR.C2.Common.Finalize",
+      "source": "ada/src/ams-mel-ir-c2-common.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Comms_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-c2-metadata.ads: AMS.MEL.IR.C2.Metadata.Finalize: procedure Finalize (Stream : in out Metadata_Stream);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.C2.Metadata.Finalize",
+      "source": "ada/src/ams-mel-ir-c2-metadata.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Stream",
+        ":",
+        "in",
+        "out",
+        "Metadata_Stream",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-c2-metadata.ads: AMS.MEL.IR.C2.Metadata.Finalize: procedure Finalize (Stream : in out Metadata_Stream);: warning: parameter `Stream` is not documented",
+      "scope": "AMS.MEL.IR.C2.Metadata.Finalize",
+      "source": "ada/src/ams-mel-ir-c2-metadata.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Stream",
+        ":",
+        "in",
+        "out",
+        "Metadata_Stream",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-c2.ads: AMS.MEL.IR.C2.Finalize: procedure Finalize (Channel : in out Control_Channel);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.C2.Finalize",
+      "source": "ada/src/ams-mel-ir-c2.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Channel",
+        ":",
+        "in",
+        "out",
+        "Control_Channel",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-c2.ads: AMS.MEL.IR.C2.Finalize: procedure Finalize (Channel : in out Control_Channel);: warning: parameter `Channel` is not documented",
+      "scope": "AMS.MEL.IR.C2.Finalize",
+      "source": "ada/src/ams-mel-ir-c2.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Channel",
+        ":",
+        "in",
+        "out",
+        "Control_Channel",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-c2.ads: AMS.MEL.IR.C2.Finalize: procedure Finalize (Request : in out Request_Owner);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.C2.Finalize",
+      "source": "ada/src/ams-mel-ir-c2.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Request_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-c2.ads: AMS.MEL.IR.C2.Finalize: procedure Finalize (Request : in out Request_Owner);: warning: parameter `Request` is not documented",
+      "scope": "AMS.MEL.IR.C2.Finalize",
+      "source": "ada/src/ams-mel-ir-c2.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Request_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-c2.ads: AMS.MEL.IR.C2.Finalize: procedure Finalize (Request : in out Return_Request_Owner);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.C2.Finalize",
+      "source": "ada/src/ams-mel-ir-c2.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Return_Request_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-c2.ads: AMS.MEL.IR.C2.Finalize: procedure Finalize (Request : in out Return_Request_Owner);: warning: parameter `Request` is not documented",
+      "scope": "AMS.MEL.IR.C2.Finalize",
+      "source": "ada/src/ams-mel-ir-c2.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Return_Request_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-channel.ads: AMS.MEL.IR.Channel.Finalize: procedure Finalize (Request : in out Return_Owner);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.Channel.Finalize",
+      "source": "ada/src/ams-mel-ir-channel.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Return_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-channel.ads: AMS.MEL.IR.Channel.Finalize: procedure Finalize (Request : in out Return_Owner);: warning: parameter `Request` is not documented",
+      "scope": "AMS.MEL.IR.Channel.Finalize",
+      "source": "ada/src/ams-mel-ir-channel.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Return_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-channel.ads: AMS.MEL.IR.Channel.Finalize: procedure Finalize (Request : in out Comms_Owner);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.Channel.Finalize",
+      "source": "ada/src/ams-mel-ir-channel.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Comms_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-channel.ads: AMS.MEL.IR.Channel.Finalize: procedure Finalize (Request : in out Comms_Owner);: warning: parameter `Request` is not documented",
+      "scope": "AMS.MEL.IR.Channel.Finalize",
+      "source": "ada/src/ams-mel-ir-channel.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Comms_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-health_status-metadata.ads: AMS.MEL.IR.Health_Status.Metadata.Finalize: procedure Finalize (Stream : in out Metadata_Stream);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.Health_Status.Metadata.Finalize",
+      "source": "ada/src/ams-mel-ir-health_status-metadata.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Stream",
+        ":",
+        "in",
+        "out",
+        "Metadata_Stream",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-health_status-metadata.ads: AMS.MEL.IR.Health_Status.Metadata.Finalize: procedure Finalize (Stream : in out Metadata_Stream);: warning: parameter `Stream` is not documented",
+      "scope": "AMS.MEL.IR.Health_Status.Metadata.Finalize",
+      "source": "ada/src/ams-mel-ir-health_status-metadata.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Stream",
+        ":",
+        "in",
+        "out",
+        "Metadata_Stream",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-health_status.ads: AMS.MEL.IR.Health_Status.Finalize: procedure Finalize (Channel : in out Health_Channel);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.Health_Status.Finalize",
+      "source": "ada/src/ams-mel-ir-health_status.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Channel",
+        ":",
+        "in",
+        "out",
+        "Health_Channel",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-health_status.ads: AMS.MEL.IR.Health_Status.Finalize: procedure Finalize (Channel : in out Health_Channel);: warning: parameter `Channel` is not documented",
+      "scope": "AMS.MEL.IR.Health_Status.Finalize",
+      "source": "ada/src/ams-mel-ir-health_status.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Channel",
+        ":",
+        "in",
+        "out",
+        "Health_Channel",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-image-metadata.ads: AMS.MEL.IR.Image.Metadata.Finalize: procedure Finalize (Stream : in out Metadata_Stream);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.Image.Metadata.Finalize",
+      "source": "ada/src/ams-mel-ir-image-metadata.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Stream",
+        ":",
+        "in",
+        "out",
+        "Metadata_Stream",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-image-metadata.ads: AMS.MEL.IR.Image.Metadata.Finalize: procedure Finalize (Stream : in out Metadata_Stream);: warning: parameter `Stream` is not documented",
+      "scope": "AMS.MEL.IR.Image.Metadata.Finalize",
+      "source": "ada/src/ams-mel-ir-image-metadata.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Stream",
+        ":",
+        "in",
+        "out",
+        "Metadata_Stream",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-image.ads: AMS.MEL.IR.Image.Finalize: procedure Finalize (Frame : in out Frame_Lease_Owner);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.Image.Finalize",
+      "source": "ada/src/ams-mel-ir-image.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Frame",
+        ":",
+        "in",
+        "out",
+        "Frame_Lease_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-image.ads: AMS.MEL.IR.Image.Finalize: procedure Finalize (Frame : in out Frame_Lease_Owner);: warning: parameter `Frame` is not documented",
+      "scope": "AMS.MEL.IR.Image.Finalize",
+      "source": "ada/src/ams-mel-ir-image.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Frame",
+        ":",
+        "in",
+        "out",
+        "Frame_Lease_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-image.ads: AMS.MEL.IR.Image.Finalize: procedure Finalize (Request : in out Navigation_Request_Owner);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.Image.Finalize",
+      "source": "ada/src/ams-mel-ir-image.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Navigation_Request_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-image.ads: AMS.MEL.IR.Image.Finalize: procedure Finalize (Request : in out Navigation_Request_Owner);: warning: parameter `Request` is not documented",
+      "scope": "AMS.MEL.IR.Image.Finalize",
+      "source": "ada/src/ams-mel-ir-image.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Navigation_Request_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-instrumentation-metadata.ads: AMS.MEL.IR.Instrumentation.Metadata.Finalize: procedure Finalize (Stream : in out Metadata_Channel);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.Instrumentation.Metadata.Finalize",
+      "source": "ada/src/ams-mel-ir-instrumentation-metadata.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Stream",
+        ":",
+        "in",
+        "out",
+        "Metadata_Channel",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-instrumentation-metadata.ads: AMS.MEL.IR.Instrumentation.Metadata.Finalize: procedure Finalize (Stream : in out Metadata_Channel);: warning: parameter `Stream` is not documented",
+      "scope": "AMS.MEL.IR.Instrumentation.Metadata.Finalize",
+      "source": "ada/src/ams-mel-ir-instrumentation-metadata.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Stream",
+        ":",
+        "in",
+        "out",
+        "Metadata_Channel",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-instrumentation.ads: AMS.MEL.IR.Instrumentation.Finalize: procedure Finalize (Channel : in out Instrumentation_Channel);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.Instrumentation.Finalize",
+      "source": "ada/src/ams-mel-ir-instrumentation.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Channel",
+        ":",
+        "in",
+        "out",
+        "Instrumentation_Channel",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-instrumentation.ads: AMS.MEL.IR.Instrumentation.Finalize: procedure Finalize (Channel : in out Instrumentation_Channel);: warning: parameter `Channel` is not documented",
+      "scope": "AMS.MEL.IR.Instrumentation.Finalize",
+      "source": "ada/src/ams-mel-ir-instrumentation.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Channel",
+        ":",
+        "in",
+        "out",
+        "Instrumentation_Channel",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-instrumentation.ads: AMS.MEL.IR.Instrumentation.Finalize: procedure Finalize (Request : in out Instrumentation_Request_Owner);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.Instrumentation.Finalize",
+      "source": "ada/src/ams-mel-ir-instrumentation.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Instrumentation_Request_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-instrumentation.ads: AMS.MEL.IR.Instrumentation.Finalize: procedure Finalize (Request : in out Instrumentation_Request_Owner);: warning: parameter `Request` is not documented",
+      "scope": "AMS.MEL.IR.Instrumentation.Finalize",
+      "source": "ada/src/ams-mel-ir-instrumentation.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Instrumentation_Request_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-track-metadata.ads: AMS.MEL.IR.Track.Metadata.Finalize: procedure Finalize (Stream : in out Metadata_Channel);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.Track.Metadata.Finalize",
+      "source": "ada/src/ams-mel-ir-track-metadata.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Stream",
+        ":",
+        "in",
+        "out",
+        "Metadata_Channel",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-track-metadata.ads: AMS.MEL.IR.Track.Metadata.Finalize: procedure Finalize (Stream : in out Metadata_Channel);: warning: parameter `Stream` is not documented",
+      "scope": "AMS.MEL.IR.Track.Metadata.Finalize",
+      "source": "ada/src/ams-mel-ir-track-metadata.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Stream",
+        ":",
+        "in",
+        "out",
+        "Metadata_Channel",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-track-system_data.ads: AMS.MEL.IR.Track.System_Data.Finalize: procedure Finalize (Request : in out Response_Request_Owner);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.Track.System_Data.Finalize",
+      "source": "ada/src/ams-mel-ir-track-system_data.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Response_Request_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-track-system_data.ads: AMS.MEL.IR.Track.System_Data.Finalize: procedure Finalize (Request : in out Response_Request_Owner);: warning: parameter `Request` is not documented",
+      "scope": "AMS.MEL.IR.Track.System_Data.Finalize",
+      "source": "ada/src/ams-mel-ir-track-system_data.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Response_Request_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-track-updates.ads: AMS.MEL.IR.Track.Updates.Finalize: procedure Finalize (Request : in out Update_Request_Owner);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.Track.Updates.Finalize",
+      "source": "ada/src/ams-mel-ir-track-updates.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Update_Request_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-track-updates.ads: AMS.MEL.IR.Track.Updates.Finalize: procedure Finalize (Request : in out Update_Request_Owner);: warning: parameter `Request` is not documented",
+      "scope": "AMS.MEL.IR.Track.Updates.Finalize",
+      "source": "ada/src/ams-mel-ir-track-updates.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Update_Request_Owner",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-track.ads: AMS.MEL.IR.Track.Finalize: procedure Finalize (Channel : in out Track_Channel);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.Track.Finalize",
+      "source": "ada/src/ams-mel-ir-track.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Channel",
+        ":",
+        "in",
+        "out",
+        "Track_Channel",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir-track.ads: AMS.MEL.IR.Track.Finalize: procedure Finalize (Channel : in out Track_Channel);: warning: parameter `Channel` is not documented",
+      "scope": "AMS.MEL.IR.Track.Finalize",
+      "source": "ada/src/ams-mel-ir-track.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Channel",
+        ":",
+        "in",
+        "out",
+        "Track_Channel",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir.ads: AMS.MEL.IR.Finalize: procedure Finalize (Object : in out Image_Stream);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.Finalize",
+      "source": "ada/src/ams-mel-ir.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Image_Stream",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir.ads: AMS.MEL.IR.Finalize: procedure Finalize (Object : in out Image_Stream);: warning: parameter `Object` is not documented",
+      "scope": "AMS.MEL.IR.Finalize",
+      "source": "ada/src/ams-mel-ir.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Image_Stream",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir.ads: AMS.MEL.IR.Finalize: procedure Finalize (Object : in out Channel_View);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.IR.Finalize",
+      "source": "ada/src/ams-mel-ir.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Channel_View",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-ir.ads: AMS.MEL.IR.Finalize: procedure Finalize (Object : in out Channel_View);: warning: parameter `Object` is not documented",
+      "scope": "AMS.MEL.IR.Finalize",
+      "source": "ada/src/ams-mel-ir.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Channel_View",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-admin.ads: AMS.MEL.RF.Admin.Finalize: procedure Finalize (Object : in out Admin_MEL);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.RF.Admin.Finalize",
+      "source": "ada/src/ams-mel-rf-admin.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Admin_MEL",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-admin.ads: AMS.MEL.RF.Admin.Finalize: procedure Finalize (Object : in out Admin_MEL);: warning: parameter `Object` is not documented",
+      "scope": "AMS.MEL.RF.Admin.Finalize",
+      "source": "ada/src/ams-mel-rf-admin.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Admin_MEL",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-c2-interval_status.ads: AMS.MEL.RF.C2.Interval_Status.Finalize: procedure Finalize (Object : in out Stream);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.RF.C2.Interval_Status.Finalize",
+      "source": "ada/src/ams-mel-rf-c2-interval_status.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Stream",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-c2-interval_status.ads: AMS.MEL.RF.C2.Interval_Status.Finalize: procedure Finalize (Object : in out Stream);: warning: parameter `Object` is not documented",
+      "scope": "AMS.MEL.RF.C2.Interval_Status.Finalize",
+      "source": "ada/src/ams-mel-rf-c2-interval_status.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Stream",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-c2-virtual_aperture_notifications.ads: AMS.MEL.RF.C2.Virtual_Aperture_Notifications.Finalize: procedure Finalize (Object : in out Subscription);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.RF.C2.Virtual_Aperture_Notifications.Finalize",
+      "source": "ada/src/ams-mel-rf-c2-virtual_aperture_notifications.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Subscription",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-c2-virtual_aperture_notifications.ads: AMS.MEL.RF.C2.Virtual_Aperture_Notifications.Finalize: procedure Finalize (Object : in out Subscription);: warning: parameter `Object` is not documented",
+      "scope": "AMS.MEL.RF.C2.Virtual_Aperture_Notifications.Finalize",
+      "source": "ada/src/ams-mel-rf-c2-virtual_aperture_notifications.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Subscription",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-c2.ads: AMS.MEL.RF.C2.Finalize: procedure Finalize (Request : in out Job_Request);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.RF.C2.Finalize",
+      "source": "ada/src/ams-mel-rf-c2.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Job_Request",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-c2.ads: AMS.MEL.RF.C2.Finalize: procedure Finalize (Request : in out Job_Request);: warning: parameter `Request` is not documented",
+      "scope": "AMS.MEL.RF.C2.Finalize",
+      "source": "ada/src/ams-mel-rf-c2.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Job_Request",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-c2.ads: AMS.MEL.RF.C2.Finalize: procedure Finalize (Object : in out Job);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.RF.C2.Finalize",
+      "source": "ada/src/ams-mel-rf-c2.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Job",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-c2.ads: AMS.MEL.RF.C2.Finalize: procedure Finalize (Object : in out Job);: warning: parameter `Object` is not documented",
+      "scope": "AMS.MEL.RF.C2.Finalize",
+      "source": "ada/src/ams-mel-rf-c2.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Job",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-c2.ads: AMS.MEL.RF.C2.Finalize: procedure Finalize (Request : in out Virtual_Aperture_Request);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.RF.C2.Finalize",
+      "source": "ada/src/ams-mel-rf-c2.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Virtual_Aperture_Request",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-c2.ads: AMS.MEL.RF.C2.Finalize: procedure Finalize (Request : in out Virtual_Aperture_Request);: warning: parameter `Request` is not documented",
+      "scope": "AMS.MEL.RF.C2.Finalize",
+      "source": "ada/src/ams-mel-rf-c2.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Virtual_Aperture_Request",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-c2.ads: AMS.MEL.RF.C2.Finalize: procedure Finalize (Object : in out Virtual_Aperture);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.RF.C2.Finalize",
+      "source": "ada/src/ams-mel-rf-c2.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Virtual_Aperture",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-c2.ads: AMS.MEL.RF.C2.Finalize: procedure Finalize (Object : in out Virtual_Aperture);: warning: parameter `Object` is not documented",
+      "scope": "AMS.MEL.RF.C2.Finalize",
+      "source": "ada/src/ams-mel-rf-c2.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Virtual_Aperture",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-c2.ads: AMS.MEL.RF.C2.Finalize: procedure Finalize (Object : in out C2_MEL);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.RF.C2.Finalize",
+      "source": "ada/src/ams-mel-rf-c2.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "C2_MEL",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-c2.ads: AMS.MEL.RF.C2.Finalize: procedure Finalize (Object : in out C2_MEL);: warning: parameter `Object` is not documented",
+      "scope": "AMS.MEL.RF.C2.Finalize",
+      "source": "ada/src/ams-mel-rf-c2.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "C2_MEL",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-product_rx.ads: AMS.MEL.RF.Product_Rx.Copy_Stabilization: procedure Copy_Stabilization (Span : AMS.MEL_C_API.RF_Pointing_Span_V1; Target : in out Stabilization_Vectors.Vector);: warning: entity `Copy_Stabilization` is not documented",
+      "scope": "AMS.MEL.RF.Product_Rx.Copy_Stabilization",
+      "source": "ada/src/ams-mel-rf-product_rx.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Copy_Stabilization",
+        "(",
+        "Span",
+        ":",
+        "AMS",
+        ".",
+        "MEL_C_API",
+        ".",
+        "RF_Pointing_Span_V1",
+        ";",
+        "Target",
+        ":",
+        "in",
+        "out",
+        "Stabilization_Vectors",
+        ".",
+        "Vector",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-product_rx.ads: AMS.MEL.RF.Product_Rx.Copy_Stabilization: procedure Copy_Stabilization (Span : AMS.MEL_C_API.RF_Pointing_Span_V1; Target : in out Stabilization_Vectors.Vector);: warning: parameter `Span` is not documented",
+      "scope": "AMS.MEL.RF.Product_Rx.Copy_Stabilization",
+      "source": "ada/src/ams-mel-rf-product_rx.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Copy_Stabilization",
+        "(",
+        "Span",
+        ":",
+        "AMS",
+        ".",
+        "MEL_C_API",
+        ".",
+        "RF_Pointing_Span_V1",
+        ";",
+        "Target",
+        ":",
+        "in",
+        "out",
+        "Stabilization_Vectors",
+        ".",
+        "Vector",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-product_rx.ads: AMS.MEL.RF.Product_Rx.Copy_Stabilization: procedure Copy_Stabilization (Span : AMS.MEL_C_API.RF_Pointing_Span_V1; Target : in out Stabilization_Vectors.Vector);: warning: parameter `Target` is not documented",
+      "scope": "AMS.MEL.RF.Product_Rx.Copy_Stabilization",
+      "source": "ada/src/ams-mel-rf-product_rx.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Copy_Stabilization",
+        "(",
+        "Span",
+        ":",
+        "AMS",
+        ".",
+        "MEL_C_API",
+        ".",
+        "RF_Pointing_Span_V1",
+        ";",
+        "Target",
+        ":",
+        "in",
+        "out",
+        "Stabilization_Vectors",
+        ".",
+        "Vector",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-product_rx.ads: AMS.MEL.RF.Product_Rx.Finalize: procedure Finalize (Request : in out Create_Request);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.RF.Product_Rx.Finalize",
+      "source": "ada/src/ams-mel-rf-product_rx.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Create_Request",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-product_rx.ads: AMS.MEL.RF.Product_Rx.Finalize: procedure Finalize (Request : in out Create_Request);: warning: parameter `Request` is not documented",
+      "scope": "AMS.MEL.RF.Product_Rx.Finalize",
+      "source": "ada/src/ams-mel-rf-product_rx.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Request",
+        ":",
+        "in",
+        "out",
+        "Create_Request",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-product_rx.ads: AMS.MEL.RF.Product_Rx.Finalize: procedure Finalize (Object : in out Endpoint);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.RF.Product_Rx.Finalize",
+      "source": "ada/src/ams-mel-rf-product_rx.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Endpoint",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-product_rx.ads: AMS.MEL.RF.Product_Rx.Finalize: procedure Finalize (Object : in out Endpoint);: warning: parameter `Object` is not documented",
+      "scope": "AMS.MEL.RF.Product_Rx.Finalize",
+      "source": "ada/src/ams-mel-rf-product_rx.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Endpoint",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-product_rx.ads: AMS.MEL.RF.Product_Rx.Finalize: procedure Finalize (Value : in out Event);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.RF.Product_Rx.Finalize",
+      "source": "ada/src/ams-mel-rf-product_rx.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Value",
+        ":",
+        "in",
+        "out",
+        "Event",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf-product_rx.ads: AMS.MEL.RF.Product_Rx.Finalize: procedure Finalize (Value : in out Event);: warning: parameter `Value` is not documented",
+      "scope": "AMS.MEL.RF.Product_Rx.Finalize",
+      "source": "ada/src/ams-mel-rf-product_rx.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Value",
+        ":",
+        "in",
+        "out",
+        "Event",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf.ads: AMS.MEL.RF.Finalize: procedure Finalize (Object : in out Data_MEL);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.RF.Finalize",
+      "source": "ada/src/ams-mel-rf.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Data_MEL",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel-rf.ads: AMS.MEL.RF.Finalize: procedure Finalize (Object : in out Data_MEL);: warning: parameter `Object` is not documented",
+      "scope": "AMS.MEL.RF.Finalize",
+      "source": "ada/src/ams-mel-rf.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Data_MEL",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel.ads: AMS.MEL.Check_Submission: procedure Check_Submission (Code : Interfaces.Integer_32; Diagnostic : String);: warning: parameter `Code` is not documented",
+      "scope": "AMS.MEL.Check_Submission",
+      "source": "ada/src/ams-mel.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Check_Submission",
+        "(",
+        "Code",
+        ":",
+        "Interfaces",
+        ".",
+        "Integer_32",
+        ";",
+        "Diagnostic",
+        ":",
+        "String",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel.ads: AMS.MEL.Check_Submission: procedure Check_Submission (Code : Interfaces.Integer_32; Diagnostic : String);: warning: parameter `Diagnostic` is not documented",
+      "scope": "AMS.MEL.Check_Submission",
+      "source": "ada/src/ams-mel.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Check_Submission",
+        "(",
+        "Code",
+        ":",
+        "Interfaces",
+        ".",
+        "Integer_32",
+        ";",
+        "Diagnostic",
+        ":",
+        "String",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel.ads: AMS.MEL.Finalize: procedure Finalize (Object : in out Session);: warning: entity `Finalize` is not documented",
+      "scope": "AMS.MEL.Finalize",
+      "source": "ada/src/ams-mel.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Session",
+        ")",
+        ";"
+      ]
+    },
+    {
+      "category": "private-part",
+      "identity": "ams-mel.ads: AMS.MEL.Finalize: procedure Finalize (Object : in out Session);: warning: parameter `Object` is not documented",
+      "scope": "AMS.MEL.Finalize",
+      "source": "ada/src/ams-mel.ads",
+      "source_profile_tokens": [
+        "procedure",
+        "Finalize",
+        "(",
+        "Object",
+        ":",
+        "in",
+        "out",
+        "Session",
+        ")",
+        ";"
+      ]
+    }
+  ]
+}

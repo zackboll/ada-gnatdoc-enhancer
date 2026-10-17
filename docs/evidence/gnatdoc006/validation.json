@@ -1,0 +1,28 @@
+{
+  "default_opt_in": false,
+  "disposition": "HOSTED_CI_PENDING",
+  "evidence_head_tested_revision": "ee648ed226c935f49f0e9154ef14c961352d0561",
+  "final_head_record": "PR description/status on exact final head; avoid self-referential commit hash in committed evidence",
+  "full_site_summary_tamper_instances": 25,
+  "full_site_summary_tamper_mutations": 125,
+  "full_site_summary_tamper_result": "all rejected; restored output byte-identical to second copy",
+  "generic_instances": 25,
+  "hosted_ci": "must inspect exact final PR head; no full native sites or Chromium executed in hosted CI",
+  "implementation_revision": "ca1214ca7691d07f77ab291007f2064e3c17f37d",
+  "local_test_result": "306 passed",
+  "matrix_summaries": 1,
+  "native_instance_member_declarations": 0,
+  "remaining_production_adoption_blockers": [
+    "independent review",
+    "consumer opt-in and policy authorization (no migration performed)",
+    "authored guides and portal integration",
+    "version-stable production external hosting",
+    "full accessibility assessment"
+  ],
+  "source_native_profile_mismatches": 0,
+  "source_native_qualification": "four full pinned native sites passed",
+  "starting_revision": "478d0bbff0be1b9141b5ad39f07a71f0386d86e9",
+  "summary_hyperlinks": 102,
+  "upstream_parity": "original reference executed with --check; 25/25 summary semantics and 102 hyperlink destinations pass",
+  "vector_summaries": 24
+}

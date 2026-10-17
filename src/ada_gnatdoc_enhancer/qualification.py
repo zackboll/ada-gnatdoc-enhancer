@@ -70,10 +70,15 @@ class Identities(HTMLParser):
             self.snippets.append(self.code);self.code=None
 
 
-def identities(site):
+def identities(site, authorized_summaries=None):
     result={}
     for path in sorted((site/'api').glob('*.html')):
-        text=path.read_text(encoding='utf-8');page=Identities(text)
+        text=path.read_text(encoding='utf-8')
+        section=(authorized_summaries or {}).get(path.relative_to(site).as_posix())
+        if section is not None:
+            require(text.count(section)==1, 'missing/modified/duplicate authorized generic summary')
+            text=text.replace(section,'',1)
+        page=Identities(text)
         title=re.findall(r'<h1>([^<]+)</h1>',text)
         result[path.relative_to(site).as_posix()]={
             'package':html.unescape(title[0]) if len(title)==1 else None,
@@ -83,8 +88,13 @@ def identities(site):
     return result
 
 
-def preserve_native(before,site):
-    after=identities(site)
+def preserve_native(before,site, *, config=None, pristine=None):
+    authorized={}
+    if config is not None and config.generic_instances:
+        require(pristine is not None, 'generic native preservation requires pristine authority')
+        from .generic_instances import summaries
+        authorized,_=summaries(config,packages(config),snapshot(config,pristine))
+    after=identities(site,authorized)
     require(set(before)==set(after),'native page inventory changed')
     for name,old in before.items():
         new=after[name]
@@ -215,7 +225,7 @@ def run(spec_path:Path, source:Path, pristine:Path, workspace:Path, *, dependenc
             phase='enhance';report['checks']['enhancement']=enhance(config,site)
             phase='verify';report['checks']['publication']=verify(config,site)
             bind_pristine(pristine,site)
-            report['checks']['native_integrity']=preserve_native(native,site)
+            report['checks']['native_integrity']=preserve_native(native,site,config=config,pristine=pristine)
             require((site/'api/gnatdoc.css').read_bytes()==(pristine/'api/gnatdoc.css').read_bytes(),
                     'native stylesheet changed')
             state=hashes(site)

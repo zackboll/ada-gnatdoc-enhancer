@@ -1,0 +1,40 @@
+{
+  "charset_regression": {
+    "detected_by_executed_chromium": true,
+    "fix": "ASCII HTML numeric character reference",
+    "passing_assertion": "3 × 3 array of Float32_Value",
+    "symptom": "raw UTF-8 multiplication sign misdecoded when HTTP response omits charset"
+  },
+  "not_claimed": [
+    "full accessibility certification",
+    "screen-reader audit",
+    "touch-device certification",
+    "production HTTPS hosting"
+  ],
+  "sites": {
+    "core": {
+      "browser": "Chromium 156.0.8078.4",
+      "checks": 394,
+      "generic_checks": 356,
+      "status": "pass"
+    },
+    "geometry": {
+      "browser": "Chromium 156.0.8078.4",
+      "checks": 44,
+      "generic_checks": 0,
+      "status": "pass"
+    },
+    "imgproc": {
+      "browser": "Chromium 156.0.8078.4",
+      "checks": 44,
+      "generic_checks": 0,
+      "status": "pass"
+    },
+    "mel": {
+      "browser": "Chromium 156.0.8078.4",
+      "checks": 38,
+      "generic_checks": 0,
+      "status": "pass"
+    }
+  }
+}

@@ -5,6 +5,13 @@ observed compatibility failures and reproduction commands are documented in
 `/home/zboll/git/ada-gnatdoc-enhancer/docs/real-site-qualification.md`.
 No consumer is currently certified fully adoption-ready.
 
+GNATDOC-006 adds **opt-in source-verified summaries for all 25 pinned Core
+Vector/Matrix instances**, with 102 explanatory links counted separately from
+the preserved 2,459 native local type links. No instance-member declarations or
+anchors are fabricated. See
+`/home/zboll/git/ada-gnatdoc-enhancer/docs/generic-instance-summaries.md`
+for grammar, trusted input configuration, four-site results and proof boundaries.
+
 GNATDOC-004 now passes structural qualification for **all four pinned native API
 sites**, including MEL's source-verified renaming and two record Convention
 omissions. See

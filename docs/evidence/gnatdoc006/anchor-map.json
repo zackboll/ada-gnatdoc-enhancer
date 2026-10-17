@@ -1,0 +1,93 @@
+{
+  "opencv.core.fixed_matrices.column_index": {
+    "anchor": "8e11295a1b08b0713992ab0f64fa0661b468ccbddaa4bf832caa9052e6eb02e1",
+    "native_declaration_sha256": "006fca36d41b4aaf1433e8329028e355759da2d886f584ddd018088cae561174",
+    "page": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html",
+    "source_declaration": "--  Zero-based column index, from 0 through Column_Count - 1.\n   subtype Column_Index is Natural range 0 .. Column_Count - 1;",
+    "source_declaration_sha256": "033489fd58a7ff83534e03f5552e6dc4750765cefa8653c4da858630f287d68c"
+  },
+  "opencv.core.fixed_matrices.matrix": {
+    "anchor": "503c405669f71075210f6305aca5e2a908c7f0d6add86c6cd460dd09a87b42c4",
+    "native_declaration_sha256": "5450693354a7dc42a9795464a0ec88b7ee6ad6aa09df4c662bf16de692e69bb2",
+    "page": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html",
+    "source_declaration": "--  Matrix of Row_Count rows and Column_Count columns. Element (Row,\n   --  Column) is addressed with zero-based indices in the ranges Row_Index\n   --  and Column_Index. Row_Index'Range and Column_Index'Range are the\n   --  array bounds.\n   type Matrix is array (Row_Index, Column_Index) of Element_Type;",
+    "source_declaration_sha256": "57fcd710c961b67cfba9f8dc8a62539a0cb2f4113e1ef9eaa0ea7bab44c5f7bb"
+  },
+  "opencv.core.fixed_matrices.row_index": {
+    "anchor": "d54f66a5afc01fb7daad3316abcbbc9ef3a81a71610b2f3c8fb9dacd9e766434",
+    "native_declaration_sha256": "90c05844072d51ab87466b602f784844a4bcadafce816f5bf3f55c1ec1b80754",
+    "page": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html",
+    "source_declaration": "--  Zero-based row index, from 0 through Row_Count - 1.\n   subtype Row_Index is Natural range 0 .. Row_Count - 1;",
+    "source_declaration_sha256": "d5fa50254a21d8e21c74e6ab8f83682419f008aa053e18ab9403f9ec16773f4a"
+  },
+  "opencv.core.float16_value": {
+    "anchor": "8d7064f2629b206599c570addcbccd218d7be8e2c2bd492af3796a687aebd3e3",
+    "native_declaration_sha256": "e418e5c1f5d11ef4c2b2192d370e3e5c8b2b85fce3bc9c756bb29466accaaea2",
+    "page": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "source_declaration": "--  Exact IEEE-754 binary16 encoding used by OpenCV CV_16F. This is\n   --  the stored 16-bit pattern, not Short_Float, Float, Integer_16, or\n   --  a numeric Unsigned_16 value. Classification inspects the binary16\n   --  fields directly: bit 15 is the sign, bits 14 .. 10 are the\n   --  exponent, and bits 9 .. 0 are the fraction. Is_Negative reports\n   --  the stored sign bit, so it is True for -0, negative finites,\n   --  -Infinity, and negative NaNs. NaN payloads, signed zeros,\n   --  infinities, and subnormals retain their exact bits.\n   --  Float16_From_Bits / Float16_Bits copy that encoding. To_Float16 /\n   --  To_Float32 convert numerically between binary16 and binary32.\n   --  OpenCV.Core.Float16_Access stores and loads the exact encoding.\n   type Float16_Value is private;",
+    "source_declaration_sha256": "012b526f82adeb61cad601b96693ccfc7878f774112e475b3654c1f0ad362ddb"
+  },
+  "opencv.core.vectors.component_index": {
+    "anchor": "dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+    "native_declaration_sha256": "e5468acbd94b3ee66f56df21bd93da3b102d58f48dd393d49eb426c91b1fc2d9",
+    "page": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+    "source_declaration": "--  Zero-based component index, from 0 through Length - 1.\n   subtype Component_Index is Natural range 0 .. Length - 1;",
+    "source_declaration_sha256": "9607f47e65ebf351254acdbeaf715b984bdb641fc01378077283084537b5c509"
+  },
+  "opencv.core.vectors.vector": {
+    "anchor": "9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+    "native_declaration_sha256": "9da631dfe803a3e712cac1e697290954813992171fd39f104e55d798e64d423d",
+    "page": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+    "source_declaration": "--  Vector of Length components, indexed from zero through Length - 1.\n   type Vector is array (Component_Index) of Element_Type;",
+    "source_declaration_sha256": "a3028ca040dbf50f84ae47542d088c43bea814e751eebe219209060995111442"
+  },
+  "opencv.float32_value": {
+    "anchor": "2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+    "native_declaration_sha256": "490fdef86f26d02ac285e4b89728962b086591eee463c5e5bb41cbaeffea9136",
+    "page": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "source_declaration": "--  IEEE binary32 element value (CV_32F).\n   subtype Float32_Value is Interfaces.IEEE_Float_32;",
+    "source_declaration_sha256": "27d7464ee3dc02012c141214f986a89d8bebc176f520fd6b66205bf4fa5e0b0a"
+  },
+  "opencv.float64_value": {
+    "anchor": "0985f6cd46f42219d78cc5076cd83f338a25b4a40d6f5b77e19423d17fb02f49",
+    "native_declaration_sha256": "3e28a424e8bc26ab732387008c125c1aeff2b9d2ae74a4cfe9c4254977adfd73",
+    "page": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "source_declaration": "--  IEEE binary64 element value (CV_64F).\n   subtype Float64_Value is Interfaces.IEEE_Float_64;",
+    "source_declaration_sha256": "4fdf7d9102d3184b86ddc1d201d241a4ce035b0462bace396e6d2f4e06d11aa6"
+  },
+  "opencv.int16_value": {
+    "anchor": "52161e87bab51a30724241b8ab46c6e7a91868a411e1aee02b4e0b45f3ac5163",
+    "native_declaration_sha256": "0b6dcdc2b831b953b9fbcfc68e26a9665f2eb2941551ef352933a465be72f894",
+    "page": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "source_declaration": "--  Signed 16-bit element value (CV_16S).\n   subtype Int16_Value is Interfaces.Integer_16;",
+    "source_declaration_sha256": "1e484be732c008849a4939aa6375a49b68db88bea5ddfd82f0b3b7691cccdd84"
+  },
+  "opencv.int32_value": {
+    "anchor": "27729f704e48101607805cd76dc0097b9fe92332d050a4c0f82253e636ab1ade",
+    "native_declaration_sha256": "75e4b1a3e5470468fd16b5c58fe1ba2d8fa0e7e291accc3c008fada4e73ec2f3",
+    "page": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "source_declaration": "--  Signed 32-bit element value (CV_32S).\n   subtype Int32_Value is Interfaces.Integer_32;",
+    "source_declaration_sha256": "619cb151609b7ad4006d1c0c68e0925ab3ea1d9b8c33f72da4ac4a6927a10037"
+  },
+  "opencv.int8_value": {
+    "anchor": "768bdfae5c88e294121e9d66e2f8de8f80172d9ab126f739b02c5a513a640de7",
+    "native_declaration_sha256": "b54361f87df1b78236844a45582f657a75fdceeca83334b29b2006bc804e4e8c",
+    "page": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "source_declaration": "--  Signed 8-bit element value (CV_8S).\n   subtype Int8_Value is Interfaces.Integer_8;",
+    "source_declaration_sha256": "7d4ac0b5d697a10e75caa05817eccdaffcec0d7b30803113d9f213b3d42612e9"
+  },
+  "opencv.uint16_value": {
+    "anchor": "1c39633bd6d8bd56b0ff54b3634b5c39d32589c465a5e3b77f25e30da12761fc",
+    "native_declaration_sha256": "cb82a72774f8c29c87ecdde2f1f6d56a0edd04f6dd440bfb46cb600acefa2538",
+    "page": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "source_declaration": "--  Unsigned 16-bit element value (CV_16U).\n   subtype UInt16_Value is Interfaces.Unsigned_16;",
+    "source_declaration_sha256": "7407b68db0c5ac9c1dcf31cde8c663729d9be1f738f41d5b1df4ddb865effc38"
+  },
+  "opencv.uint8_value": {
+    "anchor": "126c1f5d92cb06b013208cdd3e16f14713f74cc2cf2b63dc4ec9ab2558a5981e",
+    "native_declaration_sha256": "376bf1cae1497c7fbe5cd9e0eaf06b5f9c7f6095e5d20e00b2c137ab05426d26",
+    "page": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "source_declaration": "--  Shared public value types owned by the root OpenCV package and\n   --  distributed by the opencv_core crate. OpenCV.Core owns Mat and\n   --  matrix-specific abstractions; other module crates reuse these\n   --  values without redeclaring them.\n\n   --  CV_8U, CV_8S, CV_16U, CV_16S, CV_32S, CV_32F, and CV_64F element\n   --  value domains used by typed Mat accessors and shared numeric\n   --  APIs. Float16 remains Core-specific.\n   --\n   --  Unsigned 8-bit element value (CV_8U).\n   subtype UInt8_Value is Interfaces.Unsigned_8;",
+    "source_declaration_sha256": "5ae67aa54bb6b9ad8f3b1b994f158e23d378641600b2bd4bdc1e889b387c2b2e"
+  }
+}

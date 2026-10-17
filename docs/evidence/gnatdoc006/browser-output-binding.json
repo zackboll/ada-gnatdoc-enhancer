@@ -1,0 +1,18 @@
+{
+  "core": {
+    "browser_site_output_byte_identical_to_final_qualified_second_copy": true,
+    "files": 200
+  },
+  "geometry": {
+    "browser_site_output_byte_identical_to_final_qualified_output": true,
+    "files": 7
+  },
+  "imgproc": {
+    "browser_site_output_byte_identical_to_final_qualified_output": true,
+    "files": 6
+  },
+  "mel": {
+    "browser_site_output_byte_identical_to_final_qualified_output": true,
+    "files": 34
+  }
+}
