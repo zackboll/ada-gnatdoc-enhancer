@@ -1,0 +1,22 @@
+{
+  "core-0.4.1-input": {
+    "identical_to_historical_gnatdoc005": true,
+    "revision": "386c5360ac51f2b62e522853d94290aec4ee14a0",
+    "sha256": "c8512e0ff729d9bcc2903a144384288756be8da93fa591facddf6f0461fed2f4"
+  },
+  "core-0.4.1-types": {
+    "identical_to_historical_gnatdoc005": true,
+    "revision": "386c5360ac51f2b62e522853d94290aec4ee14a0",
+    "sha256": "eaf814b7e7b66cc57d856e861420b4c049e0f2cdfb5f2b7d94dc6604f85e06a4"
+  },
+  "core-0.5.0-input": {
+    "identical_to_historical_gnatdoc005": true,
+    "revision": "f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f",
+    "sha256": "4abd944e932116582efee29adb3eec767da762f67436cba5dddd82377fadcbbb"
+  },
+  "core-0.5.0-types": {
+    "identical_to_historical_gnatdoc005": true,
+    "revision": "f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f",
+    "sha256": "70fa9a9e5de8ad038bf0bc4bdf6c76ec8ecbe5f201027d18554275f7d9ed7f7f"
+  }
+}

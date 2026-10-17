@@ -1,0 +1,23 @@
+{
+  "default_opt_in": false,
+  "disposition": "HOSTED_CI_PENDING",
+  "final_head_record": "PR description/status on exact final head; avoid self-referential commit hash in committed evidence",
+  "generic_instances": 25,
+  "hosted_ci": "must inspect exact final PR head; no full native sites or Chromium executed in hosted CI",
+  "implementation_revision": "ca1214ca7691d07f77ab291007f2064e3c17f37d",
+  "local_test_result": "306 passed",
+  "matrix_summaries": 1,
+  "native_instance_member_declarations": 0,
+  "remaining_production_adoption_blockers": [
+    "independent review",
+    "consumer opt-in and policy authorization (no migration performed)",
+    "authored guides and portal integration",
+    "version-stable production external hosting",
+    "full accessibility assessment"
+  ],
+  "source_native_profile_mismatches": 0,
+  "source_native_qualification": "four full pinned native sites passed",
+  "starting_revision": "478d0bbff0be1b9141b5ad39f07a71f0386d86e9",
+  "summary_hyperlinks": 102,
+  "vector_summaries": 24
+}

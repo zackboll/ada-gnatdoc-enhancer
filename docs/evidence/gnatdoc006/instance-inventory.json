@@ -1,0 +1,580 @@
+[
+  {
+    "dimensions": [
+      2
+    ],
+    "element_owner": "opencv.core",
+    "element_type": "Float16_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#8d7064f2629b206599c570addcbccd218d7be8e2c2bd492af3796a687aebd3e3",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html",
+    "native_sha256": "2497965f475befef5f6165ecc3f49cd61865682ea46b75db891b03a3f638ff90",
+    "package": "OpenCV.Core.Float16_Vec2",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-float16_vec2.ads",
+    "source_sha256": "baecbd80d2fca6ef4938361942072ec175d2dc327672b3a0be96d847c683a783",
+    "summary_sha256": "224fd243653904126110c1ecdd335e9f3f3695d9fb4e88d05271eaff7196e1a3",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3
+    ],
+    "element_owner": "opencv.core",
+    "element_type": "Float16_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#8d7064f2629b206599c570addcbccd218d7be8e2c2bd492af3796a687aebd3e3",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/7b926e05c9907ee7865b04d8df79efba40eb39bd03c780ab2f84184b31fd7332.html",
+    "native_sha256": "63e830993fe76d260941baab5db0d6c339ef39fd5d3c6d32d79e83ea8aa5f35c",
+    "package": "OpenCV.Core.Float16_Vec3",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-float16_vec3.ads",
+    "source_sha256": "0f33910a5d31790b62d3d5c5a54b92229fd2852dda3ba9074c3366869e6ae273",
+    "summary_sha256": "7c3f4387613834eea8661c405968a9d80c707638fbb1f77f2cff14b41ac48e3e",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      4
+    ],
+    "element_owner": "opencv.core",
+    "element_type": "Float16_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#8d7064f2629b206599c570addcbccd218d7be8e2c2bd492af3796a687aebd3e3",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/f6750f19a539b254e157bb6293afd5936035ddcedabfdf1d6f327a3ef94a65da.html",
+    "native_sha256": "8997181aef735ec9a8dfaeccfadd2238adae4bb2b92c656cedd2003183975034",
+    "package": "OpenCV.Core.Float16_Vec4",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-float16_vec4.ads",
+    "source_sha256": "f01beb80029235c8f97ccb6fc3e79a191223143f931815d909a636e409ed5cf7",
+    "summary_sha256": "34e134ac0c3b8588e4f4b86793b46fa10cb1ee9e870600d1e199035ef9ddf0a8",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3,
+      3
+    ],
+    "element_owner": "opencv",
+    "element_type": "Float32_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#d54f66a5afc01fb7daad3316abcbbc9ef3a81a71610b2f3c8fb9dacd9e766434",
+      "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#8e11295a1b08b0713992ab0f64fa0661b468ccbddaa4bf832caa9052e6eb02e1",
+      "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#503c405669f71075210f6305aca5e2a908c7f0d6add86c6cd460dd09a87b42c4",
+      "95669bcd36486c970254de205b04dc08bf3208f5642e85fe01aaf0a0610827da.html"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html",
+    "native_sha256": "4f43b3048488ceb4777d9237df13bd87dcaff10ac4c3bbd541af87b5c6c871d5",
+    "package": "OpenCV.Core.Float32_Matx3x3",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-float32_matx3x3.ads",
+    "source_sha256": "842a3a34cec90a773746714aad1475f73fb31ca956e0cbc45b696ece551190f5",
+    "summary_sha256": "3a5448a0e4c94748cd5f39980b9763e0509b68b733e0fd01c4964a99be2dce16",
+    "template": "opencv.core.fixed_matrices"
+  },
+  {
+    "dimensions": [
+      2
+    ],
+    "element_owner": "opencv",
+    "element_type": "Float32_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/4d83fee369e8bd635af43353b4983e985e9bedd27437b6552576c9509c215d81.html",
+    "native_sha256": "384f6bd2f017035f34715602ee8b444e16b35c152e2af881a7d3daa71a3f0a4f",
+    "package": "OpenCV.Core.Float32_Vec2",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-float32_vec2.ads",
+    "source_sha256": "7acae484eb2c15dda9909f7093b068aadea4a8a9c4127e8aae365db48030b81c",
+    "summary_sha256": "f0ba6d3fef198368be8d602fd10c3bcd05195f2658343ff1de925773fccc5d9c",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3
+    ],
+    "element_owner": "opencv",
+    "element_type": "Float32_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/9aaa6908f09187b0449763dcc87f460999db6bdc88b7c34666fae481d98c91a6.html",
+    "native_sha256": "1289dd17a161e3ea76cc7beeb3a13736d9855174e2a5e649f09f1b0fadbc9730",
+    "package": "OpenCV.Core.Float32_Vec3",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-float32_vec3.ads",
+    "source_sha256": "7fcf89bd265f8e3f1d6e8213e029c127659bea38f3950385d81c6f671f7d5f93",
+    "summary_sha256": "6f740d2f7b23a5c7846a070e290dde5ae1c40fb93755c9b95dd84232ae23f323",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      4
+    ],
+    "element_owner": "opencv",
+    "element_type": "Float32_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/31ff495bceb4792ef0089f519ebb479eb3009f2be680e34034a07c3a4c65e578.html",
+    "native_sha256": "b2b2d6793a844c9d2cabc13c2b5dcb307033c9e2f087dd5ce97bb4667ffdf736",
+    "package": "OpenCV.Core.Float32_Vec4",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-float32_vec4.ads",
+    "source_sha256": "ff3fb2a98a347f3ba60783cc6deaca326648d57c4a9b6f3effe79097d3c7257e",
+    "summary_sha256": "207cad3e22a4a6e1c57c82a16d198928bb2e6e429011bf4696a99809b1d0b98a",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      2
+    ],
+    "element_owner": "opencv",
+    "element_type": "Float64_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#0985f6cd46f42219d78cc5076cd83f338a25b4a40d6f5b77e19423d17fb02f49",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/d1b2f5cd1eb1397ab175d6abb28c3d6f429390f2f98f513546532da3810d0607.html",
+    "native_sha256": "b2bf4f70f1a372d65a9a66adec0d8677835f8db5c2c6fdfc70ee48bae57a12ec",
+    "package": "OpenCV.Core.Float64_Vec2",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-float64_vec2.ads",
+    "source_sha256": "ec000d249320b44d6904033de653a34a16046dad682638e653711bc82bd69641",
+    "summary_sha256": "18a6049187f9f414229e95634d7a231691cf39cf3d7c8fcb5580c8c0d76f6c05",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3
+    ],
+    "element_owner": "opencv",
+    "element_type": "Float64_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#0985f6cd46f42219d78cc5076cd83f338a25b4a40d6f5b77e19423d17fb02f49",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/fae0595c101785f242187d2bf1f347bf5f8eb3c4cb1869890af3d9a7af48df89.html",
+    "native_sha256": "5e9932d05a82173aece4882976af4b34688a40118c3272f7103f2820bae33000",
+    "package": "OpenCV.Core.Float64_Vec3",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-float64_vec3.ads",
+    "source_sha256": "2f527f0a3a7d659cac57b2c7ae4dafc368d28ba2209aa553a2448e68a0b69f85",
+    "summary_sha256": "968c73ebf2f62400074e2f00026b2475a24145b8c22d4f7e4668796e644d3145",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      4
+    ],
+    "element_owner": "opencv",
+    "element_type": "Float64_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#0985f6cd46f42219d78cc5076cd83f338a25b4a40d6f5b77e19423d17fb02f49",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/1b4c2fc0017fd1a296da5292227432e136aa2b56e71536acc618f8228e13e323.html",
+    "native_sha256": "bea46474d1cb7de154b08790e69b15a2c7040bd372d3d3c14c4a2705926f3f8d",
+    "package": "OpenCV.Core.Float64_Vec4",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-float64_vec4.ads",
+    "source_sha256": "7a06dbd14764854ebe0f05250e26972d34b96f906d2d3c526535b3f0beee08d6",
+    "summary_sha256": "ff9e4faa6d889f239647a9e3362e729cb105710823906f64d077570179628737",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      2
+    ],
+    "element_owner": "opencv",
+    "element_type": "Int16_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#52161e87bab51a30724241b8ab46c6e7a91868a411e1aee02b4e0b45f3ac5163",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/ac6dd4cd8f2e6efc44eb164453b6e265a4c2d78018db9747ef8d6abd62c7d074.html",
+    "native_sha256": "951dda2fa4bae93622a80229e22414856b87bb8fdc8da9dc2b20c5065c24eb50",
+    "package": "OpenCV.Core.Int16_Vec2",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-int16_vec2.ads",
+    "source_sha256": "b461be18a09bd4448e63a70c03fb3f6a0a275886d6fb42e80d8a84347dcb2b08",
+    "summary_sha256": "28d4ad52c321712abc80ae33f5a7244afdba56cc6f18dc36f2e648206548b528",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3
+    ],
+    "element_owner": "opencv",
+    "element_type": "Int16_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#52161e87bab51a30724241b8ab46c6e7a91868a411e1aee02b4e0b45f3ac5163",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/6e26fcbfdc5ccedc6aa77dd6e34186e484e14c736190d0a0c0d1370e7c67a6cd.html",
+    "native_sha256": "ecee4c0037153b9cfec7173cafed540fdb193f5618530d5b81536096bed2e4a1",
+    "package": "OpenCV.Core.Int16_Vec3",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-int16_vec3.ads",
+    "source_sha256": "ec6a6668bce397d3a4f355ad7c5ab1bd6ec298560e92e942dea27e0bcce9f778",
+    "summary_sha256": "a561d9beb15485bba36f579c6a1e02ca22aa8e92c0f2c1baa8911d9e65fb9ec5",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      4
+    ],
+    "element_owner": "opencv",
+    "element_type": "Int16_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#52161e87bab51a30724241b8ab46c6e7a91868a411e1aee02b4e0b45f3ac5163",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/205d1ab3b0b0f90302d746f4012c916279d24816120de3b3e14cc4926a04901c.html",
+    "native_sha256": "ead3f3eaff4292a937463c393682605085f7c85f675255dd7ff7b6cabc7c1d8c",
+    "package": "OpenCV.Core.Int16_Vec4",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-int16_vec4.ads",
+    "source_sha256": "f41b1fbf2d5a7c2242dd8cfa56ed049a45a79cf026ccb4e854995ae76678498c",
+    "summary_sha256": "15f14bc46ae46767d0d8ef40dd41cebacd746202c5e60840d95ab0f03d0c0201",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      2
+    ],
+    "element_owner": "opencv",
+    "element_type": "Int32_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#27729f704e48101607805cd76dc0097b9fe92332d050a4c0f82253e636ab1ade",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/3484eaafdf8291e8cc1d9281281f72f87c5fd7d6bfd01fbe57c5798608cc0b3d.html",
+    "native_sha256": "095a19ce3afac58682cd5e588595543db467f22507252af5882aa630ae0f3745",
+    "package": "OpenCV.Core.Int32_Vec2",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-int32_vec2.ads",
+    "source_sha256": "b0bc0390d55b29a870495a2ae61ab07e66e9777b8afb8315f89b3dd345e0c74e",
+    "summary_sha256": "4396c88211b6b11f3f637d4fd2573e9727f58b0eb8436a35ae3200d12754a2ed",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3
+    ],
+    "element_owner": "opencv",
+    "element_type": "Int32_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#27729f704e48101607805cd76dc0097b9fe92332d050a4c0f82253e636ab1ade",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/92cd94df8a420b11b7fd15456853222c4572fbd2d04f15863224059ab6d98f4f.html",
+    "native_sha256": "c133e7be61184907f832fd5cd18bc06cddd1dc4043262264845474dc0d8d7e7b",
+    "package": "OpenCV.Core.Int32_Vec3",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-int32_vec3.ads",
+    "source_sha256": "d0c89cfb2d2ee67f41e19702eabb31d0eff735c1cab0853a0ee94a623c13a4c0",
+    "summary_sha256": "44c687458037b1a5164002c55dd4af740040f09332ed0562a3ac7bb7435b3835",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      4
+    ],
+    "element_owner": "opencv",
+    "element_type": "Int32_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#27729f704e48101607805cd76dc0097b9fe92332d050a4c0f82253e636ab1ade",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/d1a4d262635553c2303d440bc0c9b0d5da2013a97fcd6e00610e2d4e2ed80236.html",
+    "native_sha256": "80bbd5c4c1f0041326eae46e04c880d91f6b92fbf80838bb6407d2b266a8f542",
+    "package": "OpenCV.Core.Int32_Vec4",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-int32_vec4.ads",
+    "source_sha256": "3911196dde0b4df318fbd5a5a3ff643d7c58160f995f2d502140db4f17c7b047",
+    "summary_sha256": "07a509276fb87979eed4e29f061f6c83551603fdde0e79855a3110ed80c9e7e0",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      2
+    ],
+    "element_owner": "opencv",
+    "element_type": "Int8_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#768bdfae5c88e294121e9d66e2f8de8f80172d9ab126f739b02c5a513a640de7",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/2bd29cc1e10dce9656c5e3359956f065274072b163724ad00959221ffe8c89da.html",
+    "native_sha256": "fc062b0619369a6dea05a8b51afad4fe4491ea8aa226384dfd50aebe35818416",
+    "package": "OpenCV.Core.Int8_Vec2",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-int8_vec2.ads",
+    "source_sha256": "11255f9ddfcf6a48f6b4d64eb90efd09f86a5859a1e89e3e59d22eee11f241e6",
+    "summary_sha256": "b16803d0c8f13f1f9aa6233d543dd69c8f6a00dd80d962ceb2884fcb7f6b5dc7",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3
+    ],
+    "element_owner": "opencv",
+    "element_type": "Int8_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#768bdfae5c88e294121e9d66e2f8de8f80172d9ab126f739b02c5a513a640de7",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/a66cc7e7eb428e03ec01ea75275267546255a3203ed1895014cdd2b143a44140.html",
+    "native_sha256": "1b13c401468a0f2d71d7b57088886b27f7123136fe191c99945083c1326808a7",
+    "package": "OpenCV.Core.Int8_Vec3",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-int8_vec3.ads",
+    "source_sha256": "7c26d6bd4420f0c452c2dac57eab884d38e128d8e06e0020d5faaf66bb23f5d4",
+    "summary_sha256": "dab784a2c5d78cc4869f74a810516e16cb42283af83b91044774fb3bbd2386ab",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      4
+    ],
+    "element_owner": "opencv",
+    "element_type": "Int8_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#768bdfae5c88e294121e9d66e2f8de8f80172d9ab126f739b02c5a513a640de7",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/d394ade8721161f64f9c874a76f64d32839e4981ef84e7f248420cef53fd5cf6.html",
+    "native_sha256": "e9aaa31d024bf5cff9fe089d5e349addc0feac60be5c90078d1116c0a5d805b5",
+    "package": "OpenCV.Core.Int8_Vec4",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-int8_vec4.ads",
+    "source_sha256": "55d98e454f7f6c3f981237d02683fb6d0492250603a95c053411df559881de6a",
+    "summary_sha256": "9bd8bd613cabf273aa41e27608dd7bd3a553b087e0a3cf7825f6705e99cb93c0",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      2
+    ],
+    "element_owner": "opencv",
+    "element_type": "UInt16_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1c39633bd6d8bd56b0ff54b3634b5c39d32589c465a5e3b77f25e30da12761fc",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/b6e8fd9a264861791a430685f5117efab83ff9358a92b674a9605f65553ef195.html",
+    "native_sha256": "9d3fccff093a4997607878ab8829e6ef59ca265316f5c27197af66e17b347ff3",
+    "package": "OpenCV.Core.UInt16_Vec2",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-uint16_vec2.ads",
+    "source_sha256": "12f9171070651824d2f0617627f862e52d551181769ce616a6baa3c5c0611167",
+    "summary_sha256": "eb48e829c71ee74490f96e1a9a410be0c70742b0f12e442170306d3b6efd41bc",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3
+    ],
+    "element_owner": "opencv",
+    "element_type": "UInt16_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1c39633bd6d8bd56b0ff54b3634b5c39d32589c465a5e3b77f25e30da12761fc",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/76ee27a213ea841ef46ca63704dcea0d6361f8338f40556bbda80fecb2560d1f.html",
+    "native_sha256": "bf62f0c328ecf718792e49063f23f2b5234c3fc13394b4f27c498ca909e91b45",
+    "package": "OpenCV.Core.UInt16_Vec3",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-uint16_vec3.ads",
+    "source_sha256": "301fc7c528ce6faf9ef3c4b1cdd04a5e6df9842b18ada36e3ca64f1e43837bbf",
+    "summary_sha256": "5a30e432a5a8c51aefd6f025061f247fe585adae8483c17979ff46caf7eb0cc3",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      4
+    ],
+    "element_owner": "opencv",
+    "element_type": "UInt16_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1c39633bd6d8bd56b0ff54b3634b5c39d32589c465a5e3b77f25e30da12761fc",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/d07a7be131d8a57fb2dc18e7aad1472801121f4fbcef7605522294e53d54709b.html",
+    "native_sha256": "ba9c6ea4c73839bac7a85bbb980270f23c43d9c8711cfd7fe225882b5acf374f",
+    "package": "OpenCV.Core.UInt16_Vec4",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-uint16_vec4.ads",
+    "source_sha256": "0562f7efd1ee3b1a18379390aabe6a83f2f4ffb0e1df2e0cb6c5d1e04c6644b3",
+    "summary_sha256": "f3ce37213276659ee137a04131d79339efab870eeaf2b10b6463cad937a1738b",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      2
+    ],
+    "element_owner": "opencv",
+    "element_type": "UInt8_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#126c1f5d92cb06b013208cdd3e16f14713f74cc2cf2b63dc4ec9ab2558a5981e",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/e4a53bc2fadb6312c53f37e2e9893de203c9851744fc0cd8deb7a925633364ee.html",
+    "native_sha256": "d70b83e4ea1fea2f0c5ab335da23b484ea168e2c5aa67159f2def00f5723f814",
+    "package": "OpenCV.Core.UInt8_Vec2",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-uint8_vec2.ads",
+    "source_sha256": "413e33aaf2664485aca68c84509e7fde15b5cee54a59265581491e4eff485778",
+    "summary_sha256": "988c28e7f61360844a787a820f60d0e96962297ff69d47f49a70ff042c36af43",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3
+    ],
+    "element_owner": "opencv",
+    "element_type": "UInt8_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#126c1f5d92cb06b013208cdd3e16f14713f74cc2cf2b63dc4ec9ab2558a5981e",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/51805d4ebf800f07b2c5b4f3c69b37bbd0fd19f269a930189bf322400826c140.html",
+    "native_sha256": "f53ebb6ea1ffcf3c90e0437b3fcfca4cc61f35acd38d08ce08645e0a8ddde598",
+    "package": "OpenCV.Core.UInt8_Vec3",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-uint8_vec3.ads",
+    "source_sha256": "b809d9b6597a94ba43608d3629db918157af8a342f2d9685a6a1bf25b241c58c",
+    "summary_sha256": "cc1c26e1fc08ed86f0d571fbf3897a7a95e0b153eeb17b44f891cb6a7c2faf62",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      4
+    ],
+    "element_owner": "opencv",
+    "element_type": "UInt8_Value",
+    "existing_anchors": [],
+    "hyperlinks": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#126c1f5d92cb06b013208cdd3e16f14713f74cc2cf2b63dc4ec9ab2558a5981e",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "native_member_declarations": 0,
+    "native_path": "api/ac97c1fb444a21ec40bac83783c10d55ab74367fe648ad6edb18c7c5b9dbfe89.html",
+    "native_sha256": "12c93faf328e909855223271f86cf85d95017d529645cf963d78a4ad6895a30e",
+    "package": "OpenCV.Core.UInt8_Vec4",
+    "presentation_anchor": "instance-members-summary",
+    "source": "src/opencv-core-uint8_vec4.ads",
+    "source_sha256": "06ef0df4e6159a67179f746728e07b628cc8d05651e4d42740e6ccde52e64553",
+    "summary_sha256": "1b5bfbe7b2e2fde114e28fab120a48cafc7f23bc3b70e38ae8ec6d7933d9001c",
+    "template": "opencv.core.vectors"
+  }
+]

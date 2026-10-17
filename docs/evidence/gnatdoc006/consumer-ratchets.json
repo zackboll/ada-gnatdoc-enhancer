@@ -21,6 +21,7 @@
   "geometry": {
     "coverage_executed": true,
     "coverage_stdout": "Documentation coverage: 452/452 items (100.0%); 0 newly undocumented, 0 newly documented\n  OpenCV.Geometry: 307/307\n  OpenCV.Geometry.Subdiv2D: 145/145\n  component: 60/60\n  function: 76/76\n  literal: 39/39\n  object: 4/4\n  package: 2/2\n  parameter: 145/145\n  procedure: 3/3\n  return: 76/76\n  subtype: 2/2\n  type: 45/45\n",
+    "final_qualified_output_coverage_stdout": "Documentation coverage: 452/452 items (100.0%); 0 newly undocumented, 0 newly documented\n",
     "original_source_spec_sha256": "5a8a2411ae7cb2570c17af4cb1236a9477f055728dd00c94986beffb68dfda08",
     "revision": "fa81e5140cbebf2aa41397a40c08ba194a5f6f73",
     "warning_ratchet": {
@@ -39,6 +40,7 @@
   "imgproc": {
     "coverage_executed": true,
     "coverage_stdout": "Documentation coverage: 1512/1512 items (100.0%); 0 newly undocumented, 0 newly documented\n  component: 82/82\n  function: 114/114\n  literal: 256/256\n  object: 6/6\n  package: 1/1\n  parameter: 745/745\n  procedure: 70/70\n  return: 114/114\n  subtype: 25/25\n  type: 99/99\n",
+    "final_qualified_output_coverage_stdout": "Documentation coverage: 1512/1512 items (100.0%); 0 newly undocumented, 0 newly documented\n",
     "original_source_spec_sha256": "3521e8a0a58c722d9d81328efbc22e3890fd039cda13893c135b715c4e5a1941",
     "revision": "9ce22ae5ab70008e1147475a9e6d7baef82f1df0",
     "warning_ratchet": {
@@ -58,10 +60,13 @@
     "approved_source_integrity_stdout": "{'base': '42648a92eb0cc84b2980d16db6028992c0494ba1', 'protected_files': 1162, 'reviewed_native_tests': 'original'}\n",
     "coverage_executed": true,
     "coverage_stdout": "Coverage 4294/4295 (99.9767%); 1238 source / 1237 native / 1 renderer omission\n",
+    "final_qualified_output_coverage_stdout": "Coverage 4294/4295 (99.9767%); 1238 source / 1237 native / 1 renderer omission\n",
+    "foundation_revision": "42648a92eb0cc84b2980d16db6028992c0494ba1",
     "original_source_spec_sha256": "5bcb4c3212ca1b455477f5cebcf2ed7aa521542fcd5fcbd13149d062e6e7f4f4",
     "policy_changed": false,
     "raw_warnings": 73,
     "revision": "6065129aba5dee89e70b61e05a9e1c9b2c3061c0",
+    "source_integrity_script_sha256": "efff803e901f2f130cef739d054d2387b446f1b5d8f7f297e07e607a26c661a8",
     "uncredited_renderer_omission": "AMS.MEL.IR.Health_Status.Metadata.Status",
     "warning_classification": {
       "private-part": 73,

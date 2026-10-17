@@ -1,0 +1,421 @@
+{
+  "commands": [
+    [
+      "/home/zboll/git/ada-gnatdoc-enhancer/.venv/bin/python",
+      "/tmp/gnatdoc002-acquisition/core/snapshot/scripts/enhance_gnatdoc_instances.py",
+      "/tmp/gnatdoc006/upstream-committed/api",
+      "--sources",
+      "/tmp/gnatdoc002-acquisition/core/snapshot/src"
+    ],
+    [
+      "/home/zboll/git/ada-gnatdoc-enhancer/.venv/bin/python",
+      "/tmp/gnatdoc002-acquisition/core/snapshot/scripts/enhance_gnatdoc_instances.py",
+      "/tmp/gnatdoc006/upstream-committed/api",
+      "--sources",
+      "/tmp/gnatdoc002-acquisition/core/snapshot/src",
+      "--check"
+    ]
+  ],
+  "counts": {
+    "generic_actual_type_links": 25,
+    "generic_conversion_package_links": 1,
+    "generic_member_links": 51,
+    "generic_summary_links": 102,
+    "generic_template_links": 25,
+    "matrix_summaries": 1,
+    "native_instance_member_declarations": 0,
+    "presentation_only_anchors": 25,
+    "qualified_generic_instances": 25,
+    "unsupported_instances": [],
+    "vector_summaries": 24
+  },
+  "executed": true,
+  "instances": [
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Float16_Vec2"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Float16_Vec3"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Float16_Vec4"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        },
+        {
+          "classification": "intentional improvement",
+          "detail": "ASCII numeric character reference prevents charset-less HTTP mojibake"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Float32_Matx3x3"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Float32_Vec2"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Float32_Vec3"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Float32_Vec4"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Float64_Vec2"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Float64_Vec3"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Float64_Vec4"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Int16_Vec2"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Int16_Vec3"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Int16_Vec4"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Int32_Vec2"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Int32_Vec3"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Int32_Vec4"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Int8_Vec2"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Int8_Vec3"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.Int8_Vec4"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.UInt16_Vec2"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.UInt16_Vec3"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.UInt16_Vec4"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.UInt8_Vec2"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.UInt8_Vec3"
+    },
+    {
+      "decoded_summary_content": "identical after individually classified additions",
+      "differences": [
+        {
+          "classification": "intentional improvement",
+          "detail": "qualified instance identity and explicit Ada assignment/Mat ownership distinction"
+        },
+        {
+          "classification": "equivalent presentation",
+          "detail": "shared theme instead of Core theme"
+        }
+      ],
+      "hyperlinks": "identical destinations",
+      "package": "OpenCV.Core.UInt8_Vec4"
+    }
+  ],
+  "revision": "c5545eee815431568495c6c76af83df56cf5c3dd",
+  "scope": "original pinned instance enhancer and --check actually executed; not entire consumer publication pipeline",
+  "script_sha256": "1af0d81faa33e0b4a3c97562fb3eade2236b1e95b2929080274996ef94461305",
+  "stdout": [
+    "Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0\n",
+    "Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0\n"
+  ]
+}
