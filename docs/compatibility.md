@@ -26,3 +26,14 @@ Geometry passes native API structural and Chromium checks, but external Core
 anchors and authored guides remain unqualified. Core/Imgproc/MEL fail closed
 on real source/native profiles. **None is fully adoption-qualified.** Hosted
 CI runs reduced authentic regressions, not four full consumer builds.
+
+## GNATDOC-003 declaration profiles
+
+The current results and proof boundaries are documented in
+`/home/zboll/git/ada-gnatdoc-enhancer/docs/declaration-profile-compatibility.md`.
+Source-verified expression-function profiles and GNATdoc 26.0.0 first-eight/last
+enumeration abbreviations resolve all three GNATDOC-002 blockers. Core and
+Imgproc now pass full native API structural checks; Geometry remains passing.
+MEL's nine abbreviated enums match, but subprogram renaming and record
+`Convention` aspect omissions remain rejected. **PARTIAL_COMPATIBILITY**, not
+production adoption. Historical GNATDOC-002 evidence is unchanged.

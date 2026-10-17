@@ -1,0 +1,243 @@
+{
+  "authentic_reduced": "provenanced expression/enumeration excerpts plus Geometry CLI/unit regressions pass; not full-site substitutes",
+  "baseline_tests": 90,
+  "browser": {
+    "browser": "Chromium 156.0.8078.4",
+    "checks": 34,
+    "consumer": "geometry",
+    "status": "pass"
+  },
+  "consumer_coverage": {
+    "geometry": {
+      "command": [
+        "python3",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/snapshot/scripts/check_doc_coverage.py",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/snapshot/docs/gnatdoc-coverage-baseline.txt",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/pristine",
+        "--root",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/snapshot",
+        "--fail-on-removed"
+      ],
+      "exit": 0,
+      "policy_changed": false,
+      "stderr": "",
+      "stdout": "Documentation coverage: 452/452 items (100.0%); 0 newly undocumented, 0 newly documented\n"
+    },
+    "imgproc": {
+      "command": [
+        "python3",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/snapshot/scripts/check_doc_coverage.py",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/snapshot/docs/gnatdoc-coverage-baseline.txt",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/pristine",
+        "--root",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/snapshot",
+        "--fail-on-removed"
+      ],
+      "exit": 0,
+      "policy_changed": false,
+      "stderr": "",
+      "stdout": "Documentation coverage: 1512/1512 items (100.0%); 0 newly undocumented, 0 newly documented\n"
+    },
+    "mel": {
+      "command": [
+        "python3",
+        "/tmp/gnatdoc002-validated-acquisition/mel/snapshot/scripts/check_doc_coverage.py",
+        "/tmp/gnatdoc002-validated-acquisition/mel/pristine",
+        "--root",
+        "/tmp/gnatdoc002-validated-acquisition/mel/snapshot",
+        "--report",
+        "/tmp/gnatdoc003-tested-mel-coverage.json"
+      ],
+      "exit": 0,
+      "policy_changed": false,
+      "stderr": "",
+      "stdout": "Coverage 4294/4295 (99.9767%); 1238 source / 1237 native / 1 renderer omission\n"
+    }
+  },
+  "consumer_repositories_modified": false,
+  "disposition": "PARTIAL_COMPATIBILITY",
+  "distribution_artifacts": {
+    "ada_gnatdoc_enhancer-0.1.0.dev0-py3-none-any.whl": "7101e1d89844a4c6289c9e01f5ac879ea48fd720bd9ad258868e31e4fd19703f",
+    "ada_gnatdoc_enhancer-0.1.0.dev0.tar.gz": "12019865846a467eac2937e39472fa3f854d3669a7f01fad04b790344b10bb4b"
+  },
+  "full_adoption_qualified": false,
+  "historical_evidence_modified": false,
+  "hosted_ci": "Exact final tested SHA/statuses will be recorded in the open PR; Python 3.11/3.12 unavailable locally",
+  "local_test_logs": {
+    "gnatdoc003-coverage-checks.log": {
+      "sha256": "b0f12391176df8a59f46e4e547411a92a12faaabc625b83f6ff8ecc2dedeb9d5",
+      "summary": "imgproc 0 Documentation coverage: 1512/1512 items (100.0%); 0 newly undocumented, 0 newly documented\n \ngeometry 0 Documentation coverage: 452/452 items (100.0%); 0 newly undocumented, 0 newly documented\n \nmel 0 Coverage 4294/4295 (99.9767%); 1238 source / 1237 native / 1 renderer omission\n \n"
+    },
+    "gnatdoc003-mel-source-integrity.log": {
+      "sha256": "454a01dc11694c5ea2a6355f1be044b64946ec40d81b456e9b8e7584d07c7ecd",
+      "summary": "{'base': '42648a92eb0cc84b2980d16db6028992c0494ba1', 'protected_files': 1162, 'reviewed_native_tests': 'original'}\n"
+    },
+    "gnatdoc003-tested-build.log": {
+      "sha256": "d402f68f7a3194b5e6584b5e66f768c30ffc4a0da25b82e42f3930a7719ff9c6",
+      "summary": " in favor of a SPDX license expression:\n\n        License :: OSI Approved :: Apache Software License\n\n        See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.\n        ********************************************************************************\n\n!!\nWARNING License classifiers are deprecated.\n!!\n\n        ********************************************************************************\n        Please consider removing the following classifiers in favor of a SPDX license expression:\n\n        License :: OSI Approved :: Apache Software License\n\n        See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.\n        ********************************************************************************\n\n!!\nSuccessfully built ada_gnatdoc_enhancer-0.1.0.dev0.tar.gz and ada_gnatdoc_enhancer-0.1.0.dev0-py3-none-any.whl\n"
+    },
+    "gnatdoc003-tested-conformance.log": {
+      "sha256": "ec93567d0f3d1fc3aae39a38c323a9027fb287754f9ae13161b407facf08678e",
+      "summary": " \"profiles\": {\n    \"core\": {\n      \"deterministic\": true,\n      \"fixture\": \"synthetic native GNATdoc 26; NOT complete pinned site\",\n      \"html_pages\": 4,\n      \"idempotent\": true,\n      \"linked_types\": 4,\n      \"packages\": 3\n    },\n    \"geometry\": {\n      \"deterministic\": true,\n      \"fixture\": \"synthetic native GNATdoc 26; NOT complete pinned site\",\n      \"html_pages\": 3,\n      \"idempotent\": true,\n      \"linked_types\": 5,\n      \"packages\": 2\n    },\n    \"imgproc\": {\n      \"deterministic\": true,\n      \"fixture\": \"synthetic native GNATdoc 26; NOT complete pinned site\",\n      \"html_pages\": 2,\n      \"idempotent\": true,\n      \"linked_types\": 6,\n      \"packages\": 1\n    },\n    \"mel\": {\n      \"deterministic\": true,\n      \"fixture\": \"synthetic native GNATdoc 26; NOT complete pinned site\",\n      \"html_pages\": 37,\n      \"idempotent\": true,\n      \"linked_types\": 7,\n      \"packages\": 29\n    }\n  }\n}\n"
+    },
+    "gnatdoc003-tested-full.log": {
+      "sha256": "33b501d2ee08554549d2d210824d2639399385fb76bcb2355eadf49f7afc454b",
+      "summary": "core pass None\nimgproc pass None\ngeometry pass None\nmel fail {'phase': 'inventory', 'reason': 'native declaration profile unmatched or swapped: AMS.MEL.RF.C2.Add_Job_Intervals at 1513; requires unique exact or supported source-verified profile (unsupported/ambiguous projection rejected)'}\n"
+    },
+    "gnatdoc003-tested-sdist-build.log": {
+      "sha256": "bab1b62f352ca71766cd3762c70e5897d99de4928e49cdd6da2ae365b12eee37",
+      "summary": "el for ada-gnatdoc-enhancer (pyproject.toml): started\n  Building wheel for ada-gnatdoc-enhancer (pyproject.toml): finished with status 'done'\n  Created wheel for ada-gnatdoc-enhancer: filename=ada_gnatdoc_enhancer-0.1.0.dev0-py3-none-any.whl size=51309 sha256=96749ccb5e74e44b869d18d91b1c010893a9d465b5f96b8a583dcdd6830a8e8c\n  Stored in directory: /home/zboll/.cache/pip/wheels/d1/00/ca/552e79c45b76ef782e5f1a79b39844457d7d62ad37cf670c0d\nSuccessfully built ada-gnatdoc-enhancer\nProcessing ./gnatdoc003-tested-sdist-wheel/ada_gnatdoc_enhancer-0.1.0.dev0-py3-none-any.whl\nInstalling collected packages: ada-gnatdoc-enhancer\n  Attempting uninstall: ada-gnatdoc-enhancer\n    Found existing installation: ada-gnatdoc-enhancer 0.1.0.dev0\n    Uninstalling ada-gnatdoc-enhancer-0.1.0.dev0:\n      Successfully uninstalled ada-gnatdoc-enhancer-0.1.0.dev0\nSuccessfully installed ada-gnatdoc-enhancer-0.1.0.dev0\n"
+    },
+    "gnatdoc003-tested-sdist-conformance.log": {
+      "sha256": "ec93567d0f3d1fc3aae39a38c323a9027fb287754f9ae13161b407facf08678e",
+      "summary": " \"profiles\": {\n    \"core\": {\n      \"deterministic\": true,\n      \"fixture\": \"synthetic native GNATdoc 26; NOT complete pinned site\",\n      \"html_pages\": 4,\n      \"idempotent\": true,\n      \"linked_types\": 4,\n      \"packages\": 3\n    },\n    \"geometry\": {\n      \"deterministic\": true,\n      \"fixture\": \"synthetic native GNATdoc 26; NOT complete pinned site\",\n      \"html_pages\": 3,\n      \"idempotent\": true,\n      \"linked_types\": 5,\n      \"packages\": 2\n    },\n    \"imgproc\": {\n      \"deterministic\": true,\n      \"fixture\": \"synthetic native GNATdoc 26; NOT complete pinned site\",\n      \"html_pages\": 2,\n      \"idempotent\": true,\n      \"linked_types\": 6,\n      \"packages\": 1\n    },\n    \"mel\": {\n      \"deterministic\": true,\n      \"fixture\": \"synthetic native GNATdoc 26; NOT complete pinned site\",\n      \"html_pages\": 37,\n      \"idempotent\": true,\n      \"linked_types\": 7,\n      \"packages\": 29\n    }\n  }\n}\n"
+    },
+    "gnatdoc003-tested-sdist-tests.log": {
+      "sha256": "132c86586f9bb3cd9114c1e56374080272d340341592259a1ca537bb898bffb9",
+      "summary": "st_duplicate_id_and_external_resources (test_security_extra.SecurityMutations.test_duplicate_id_and_external_resources) ... ok\ntest_existing_but_wrong_target_still_rejected (test_security_extra.SecurityMutations.test_existing_but_wrong_target_still_rejected) ... ok\ntest_mel_exact_renderer_exception_is_source_bound (test_security_extra.SecurityMutations.test_mel_exact_renderer_exception_is_source_bound) ... ok\ntest_mel_stale_exception_not_credited (test_security_extra.SecurityMutations.test_mel_stale_exception_not_credited) ... ok\ntest_missing_package_rejected_before_enhance (test_security_extra.SecurityMutations.test_missing_package_rejected_before_enhance) ... ok\ntest_symlink_presentation_file_rejected (test_security_extra.SecurityMutations.test_symlink_presentation_file_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 134 tests in 9.632s\n\nOK\n"
+    },
+    "gnatdoc003-tested-tests.log": {
+      "sha256": "869d125575118464005208a9fb74433bda2cc80f4749de91d52fb701ced52219",
+      "summary": "st_duplicate_id_and_external_resources (test_security_extra.SecurityMutations.test_duplicate_id_and_external_resources) ... ok\ntest_existing_but_wrong_target_still_rejected (test_security_extra.SecurityMutations.test_existing_but_wrong_target_still_rejected) ... ok\ntest_mel_exact_renderer_exception_is_source_bound (test_security_extra.SecurityMutations.test_mel_exact_renderer_exception_is_source_bound) ... ok\ntest_mel_stale_exception_not_credited (test_security_extra.SecurityMutations.test_mel_stale_exception_not_credited) ... ok\ntest_missing_package_rejected_before_enhance (test_security_extra.SecurityMutations.test_missing_package_rejected_before_enhance) ... ok\ntest_symlink_presentation_file_rejected (test_security_extra.SecurityMutations.test_symlink_presentation_file_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 134 tests in 9.536s\n\nOK\n"
+    },
+    "gnatdoc003-tested-wheel-install.log": {
+      "sha256": "4a2d25dfdc0d908040baf8e591012fe123a360004821e2a0c5bfb1aaf525ab3f",
+      "summary": "Processing /tmp/gnatdoc003-tested-dist/ada_gnatdoc_enhancer-0.1.0.dev0-py3-none-any.whl\nInstalling collected packages: ada-gnatdoc-enhancer\nSuccessfully installed ada-gnatdoc-enhancer-0.1.0.dev0\n"
+    },
+    "gnatdoc003-tested-wheel-installed.log": {
+      "sha256": "f410e381003d203a96b56eaca4e6072db191b7db33e3a95c7654e76413c1983b",
+      "summary": "        \"fixture\": \"synthetic native GNATdoc 26; NOT complete pinned site\",\n        \"html_pages\": 2,\n        \"idempotent\": true,\n        \"linked_types\": 6,\n        \"packages\": 1\n      },\n      \"mel\": {\n        \"deterministic\": true,\n        \"fixture\": \"synthetic native GNATdoc 26; NOT complete pinned site\",\n        \"html_pages\": 37,\n        \"idempotent\": true,\n        \"linked_types\": 7,\n        \"packages\": 29\n      }\n    }\n  },\n  \"enhancement\": \"passed\",\n  \"help\": \"passed\",\n  \"idempotence\": \"passed\",\n  \"installed_module\": \"/tmp/gnatdoc003-tested-wheel-env/lib/python3.13/site-packages/ada_gnatdoc_enhancer/__init__.py\",\n  \"symlink_source_root_rejection\": \"passed\",\n  \"verification\": {\n    \"declaration_snippets\": 10,\n    \"files\": 42,\n    \"html_pages\": 37,\n    \"linked_types\": 7,\n    \"links\": 234,\n    \"mode\": \"verified\",\n    \"public_packages\": 29,\n    \"unrendered_renderer_exceptions\": 1\n  }\n}\n"
+    },
+    "gnatdoc003-tested-wheel-tests.log": {
+      "sha256": "a0cdd43f0d06071fa51dc56f15cb6dd8c27c73505d7bbc1425879cd51ae18c54",
+      "summary": "st_duplicate_id_and_external_resources (test_security_extra.SecurityMutations.test_duplicate_id_and_external_resources) ... ok\ntest_existing_but_wrong_target_still_rejected (test_security_extra.SecurityMutations.test_existing_but_wrong_target_still_rejected) ... ok\ntest_mel_exact_renderer_exception_is_source_bound (test_security_extra.SecurityMutations.test_mel_exact_renderer_exception_is_source_bound) ... ok\ntest_mel_stale_exception_not_credited (test_security_extra.SecurityMutations.test_mel_stale_exception_not_credited) ... ok\ntest_missing_package_rejected_before_enhance (test_security_extra.SecurityMutations.test_missing_package_rejected_before_enhance) ... ok\ntest_symlink_presentation_file_rejected (test_security_extra.SecurityMutations.test_symlink_presentation_file_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 134 tests in 9.689s\n\nOK\n"
+    }
+  },
+  "mel_approved_source_integrity": {
+    "base": "42648a92eb0cc84b2980d16db6028992c0494ba1",
+    "checkout": "isolated acquisition; clean after read-only guard",
+    "exit": 0,
+    "policy_changed": false,
+    "protected_files": 1162,
+    "reviewed_native_tests": "original"
+  },
+  "native_regeneration": false,
+  "new_tests": 44,
+  "original_input_hashes_verified": true,
+  "python": "3.13.5",
+  "sdist_installation": "134 tests pass from extracted sdist using rebuilt wheel; four profiles pass",
+  "starting_sha": "619f1ef3fb37bc2d66ba0a73090943c6b87e8dcd",
+  "starting_tree": "clean",
+  "synthetic_profiles": "4 pass, deterministic and byte-idempotent",
+  "task": "GNATDOC-003",
+  "tested_files_sha256": {
+    ".github/workflows/ci.yml": "aa03ae86a6bc053c939390c8ce0752a3c686e77bc3e0f7e9715304986333f26f",
+    "scripts/acquire_real_sites.py": "150fba6f87ab92ae2071fc222b56211770cfe3f752398add8d43ff6b07e1afe2",
+    "scripts/check_real_browser.py": "cb5f82b6c8cb6adfd09c23e1b31d7bca9cfe7448f261f90c406a3db457c21989",
+    "scripts/make_synthetic_fixtures.py": "7aa6f231bca5ad3083c7a63a7f9a46b2c216a1f37babda16251f6f6c26bb112c",
+    "scripts/qualify_profile_sites.py": "415fb24082f5440c8589b7196acab657ed836d89e33f5a0a0417ef700cf9b6f4",
+    "scripts/record_real_site.py": "3a56c6f3c54fa5d7a67794b4a39c9ac808e332a50f5fa755ff7a080f4300dcd0",
+    "scripts/test_browser.py": "748cf84258a846f0f9930afc582069018c0158e39751a01a4a07fc3769972d6b",
+    "scripts/test_installed.py": "1e5f6476e62ba5855a1b01b56d107c237eb823b9f79a04b891ee2aedebd7586c",
+    "src/ada_gnatdoc_enhancer/__init__.py": "21896c73fca800e37688baf29579a31a9a19f232fdc2845dfd2bc3caa085c17b",
+    "src/ada_gnatdoc_enhancer/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/ada_gnatdoc_enhancer/adapters/__init__.py": "bc7839c1ed01b2d028cbb28537f7ab636ae839e11e9c6fba0c82ae9669a882d3",
+    "src/ada_gnatdoc_enhancer/adapters/mel.py": "4e3d20173d81a03a18d1027814334100f00d9159ba3031d5a94f2f85a3a9bef8",
+    "src/ada_gnatdoc_enhancer/adapters/opencv.py": "7f45fca90c6c8656398a56ff02bf4aacbde19a96dc4f81d553e7d16a87c55410",
+    "src/ada_gnatdoc_enhancer/cli.py": "2236a2c01928a42772ddb3a8b4e16f02fdbec63fb30f396a8ddd3366d6a1789e",
+    "src/ada_gnatdoc_enhancer/config.py": "25f172832da66f4c0a2b563f0eb2cd8cdfb733eb5da89633749dbdf74da4be0b",
+    "src/ada_gnatdoc_enhancer/conformance.py": "ae2f04143abf23dd70f0c56ff82fe500af6111b1a8abbff18cff904778d4507d",
+    "src/ada_gnatdoc_enhancer/coverage.py": "b5e78be5f070f65731bcc16e1338ad034e6feac4420b2ed3ed31c91d737fdecf",
+    "src/ada_gnatdoc_enhancer/errors.py": "6fa7d9eab4bac0a32a114685606f11fd1e8838fc8463c8852766edacf8a480da",
+    "src/ada_gnatdoc_enhancer/guides.py": "1b489eb7b7310eccfecac86406514b33f15c8a1538939ee4c15591ce8d346a10",
+    "src/ada_gnatdoc_enhancer/inventory.py": "5f287bfc1563a8b051e1979e289c933a60b47ff42eac159bc3c3f36c45e85cac",
+    "src/ada_gnatdoc_enhancer/native_html.py": "b955d0117e244d6f01321436237f71e421a898de84d27bd17ab1edde3cced8ff",
+    "src/ada_gnatdoc_enhancer/navigation.py": "eb0ff6420781901297afb898702e55630576c3d89e74b93a7cdc7e99eda34a0b",
+    "src/ada_gnatdoc_enhancer/pipeline.py": "4ffedc5cdc07140edf541219e4cb6c4483e223aa0d268b75372fb95a2455920f",
+    "src/ada_gnatdoc_enhancer/profiles.py": "8c1d10ab2775802de0ff9b7f4afab60ef5252b423b0c05a1c2163a80f61f3e88",
+    "src/ada_gnatdoc_enhancer/qualification.py": "e17d0c1cb794822274ccb33d83e5dada98e472db5246e69e6f0ed9a366744c1c",
+    "src/ada_gnatdoc_enhancer/syntax.py": "b24e250f848818cf5bc9256699ef28e5ee340a3554bdfb30018e425f4ad3da35",
+    "src/ada_gnatdoc_enhancer/theme.py": "ec24fcdd209c976a8d17473544f2ad5ed1b6e92ae4d7a6c85d5500697680d55e",
+    "src/ada_gnatdoc_enhancer/util.py": "c5206e9cb7dd61ed39b6665aa50f15d9786b75bacec161005655cc047adc8695",
+    "src/ada_gnatdoc_enhancer/validation.py": "fae48e4a8523b1b4fdfed4f26a848f6f4d193ae276a6a4df54546852ad36694a",
+    "src/ada_gnatdoc_enhancer/warnings.py": "3e3e2090f541c5872b08594e72af4fedb39301cd66c919cf040d63ba9e6e15fc",
+    "tests/_helper.py": "ab5f747a5b528b0825b90ed3167907ad679cc9c9416a3c4f1ed0ad4e6063c48e",
+    "tests/test_bootstrap_regressions.py": "3ad9438375dff1217f3e093f0bce55ee13805b1f6ca12972f9dc8a46b2530309",
+    "tests/test_cli.py": "2597a7e489a1d2ab96587a0a5209ae9837ac1448131e3940268d93041def23e8",
+    "tests/test_cli_site_paths.py": "018607d8b97e8661cc9a6b786f44706021ea3cdf67f3b36509a0350a782f6034",
+    "tests/test_config_inventory.py": "62e13046ca2926e436aed75592d8af303e7cf171b63bd99dfb448cf400f85fd6",
+    "tests/test_declaration_profiles.py": "939507508d46687a51d4f9fb83892d7c5913048bf583b62c68d73e315d668962",
+    "tests/test_pipeline.py": "8f8c050f557f9e3598b812e805c09ddc82d5d0486ea0598e3c35dfd90099308f",
+    "tests/test_profiles_guides.py": "c6eb981badf8a673c1d611a1682775c3907e560087f60293b7a1b1cb58bee166",
+    "tests/test_real_qualification.py": "a416ef3654ad81f767b9c9081181db65536543fb819cb8667f78d3d9b982471a",
+    "tests/test_security_extra.py": "f8700f33cc863d88fe51eb6a7e5441f4ec618f91b9540e168be184d441a21db7"
+  },
+  "total_tests": 134,
+  "unit_tests": "pass",
+  "warning_ratchets_on_reused_logs": {
+    "core": {
+      "command": [
+        "python3",
+        "/tmp/gnatdoc002-validated-acquisition/core/snapshot/scripts/compare_gnatdoc_warnings.py",
+        "/tmp/gnatdoc002-validated-acquisition/core/snapshot/docs/gnatdoc-warning-baseline.txt",
+        "/tmp/gnatdoc002-validated-acquisition/core/gnatdoc.log",
+        "--sources",
+        "/tmp/gnatdoc002-validated-acquisition/core/snapshot/src"
+      ],
+      "exit": 0,
+      "native_regeneration": false,
+      "reused_native_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "",
+      "stdout": "GNATdoc warning delta: 0 added, 0 removed\n"
+    },
+    "geometry": {
+      "command": [
+        "python3",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/snapshot/scripts/compare_gnatdoc_warnings.py",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/snapshot/docs/gnatdoc-warning-baseline.txt",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/gnatdoc.log",
+        "--sources",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/snapshot/src",
+        "--fail-on-removed"
+      ],
+      "exit": 0,
+      "native_regeneration": false,
+      "reused_native_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "",
+      "stdout": "GNATdoc warning delta: 0 added, 0 removed\n"
+    },
+    "imgproc": {
+      "command": [
+        "python3",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/snapshot/scripts/compare_gnatdoc_warnings.py",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/snapshot/docs/gnatdoc-warning-baseline.txt",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/gnatdoc.log",
+        "--sources",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/snapshot/src",
+        "--fail-on-removed"
+      ],
+      "exit": 0,
+      "native_regeneration": false,
+      "reused_native_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "",
+      "stdout": "GNATdoc warning delta: 0 added, 0 removed\n"
+    },
+    "mel": {
+      "command": [
+        "python3",
+        "/tmp/gnatdoc002-validated-acquisition/mel/snapshot/scripts/compare_gnatdoc_warnings.py",
+        "/tmp/gnatdoc002-validated-acquisition/mel/snapshot/docs/gnatdoc-warning-baseline.txt",
+        "/tmp/gnatdoc002-validated-acquisition/mel/gnatdoc.log",
+        "--sources",
+        "/tmp/gnatdoc002-validated-acquisition/mel/snapshot/ada/src",
+        "--fail-on-removed"
+      ],
+      "exit": 0,
+      "native_regeneration": false,
+      "reused_native_log_sha256": "8edbc91925d34db3e392f717f20e44c6d65c7ec359772e606eb36e1667d0da8e",
+      "stderr": "",
+      "stdout": "GNATdoc warning delta: 0 added, 0 removed\n"
+    }
+  },
+  "wheel_installation": "134 tests pass out of tree; installed CLI/assets and four profiles pass"
+}
