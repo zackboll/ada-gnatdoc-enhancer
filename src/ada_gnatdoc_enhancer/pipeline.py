@@ -20,7 +20,7 @@ from .native_html import NativeSite, snapshot, verified_types
 from .navigation import enhance_index
 from .syntax import transform_page
 from .theme import asset, themed
-from .util import digest, require, sorted_json
+from .util import digest, require, site_root, sorted_json
 from .validation import validate_files
 
 MANIFEST = 'api/presentation.json'
@@ -97,8 +97,7 @@ def _generate(config:Config,site:Path):
 
 
 def enhance(config:Config,site:Path,*,dry_run:bool=False):
-    site=site.resolve()
-    require(site.is_dir() and not site.is_symlink(),'missing/symlink input site')
+    site=site_root(site)
     if (site/MANIFEST).exists():return verify(config,site)
     # Work on a copy first: semantic/security validation errors cannot leave a
     # partially enhanced caller-owned output tree.
@@ -121,11 +120,11 @@ def enhance(config:Config,site:Path,*,dry_run:bool=False):
 
 
 def verify(config:Config,site:Path):
-    site=site.resolve()
-    require(site.is_dir() and not site.is_symlink(),'invalid site root')
+    site=site_root(site)
     path=site/MANIFEST
     require(path.is_file() and not path.is_symlink(),'missing or symlink presentation manifest')
     data=json.loads(path.read_text(encoding='utf-8'))
+    require(isinstance(data,dict),'malformed presentation manifest: expected object')
     require(set(data)=={'schema_version','enhancer_version','gnatdoc_version','project',
                         'original_api_html','native_css_sha256','source_sha256','output_sha256','counts'},
             'unexpected presentation manifest fields')

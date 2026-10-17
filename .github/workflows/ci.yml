@@ -34,10 +34,31 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Build wheel and install from artifact
+      - name: Build wheel and source distribution
         run: |
           python -m pip install build
-          python -m build --wheel
-          python -m venv /tmp/enhancer-wheel-smoke
-          /tmp/enhancer-wheel-smoke/bin/pip install dist/*.whl
-          /tmp/enhancer-wheel-smoke/bin/gnatdoc-enhancer --version
+          python -m build
+      - name: Install wheel in a clean environment
+        run: |
+          python -m venv "$RUNNER_TEMP/enhancer-wheel-smoke"
+          "$RUNNER_TEMP/enhancer-wheel-smoke/bin/python" -m pip install --no-deps dist/*.whl
+      - name: Installed CLI, assets and four-profile conformance outside checkout
+        working-directory: ${{ runner.temp }}
+        run: |
+          unset PYTHONPATH
+          "$RUNNER_TEMP/enhancer-wheel-smoke/bin/gnatdoc-enhancer" --help
+          "$RUNNER_TEMP/enhancer-wheel-smoke/bin/python" "$GITHUB_WORKSPACE/scripts/test_installed.py" --fixtures "$GITHUB_WORKSPACE/tests/fixtures"
+          "$RUNNER_TEMP/enhancer-wheel-smoke/bin/python" -m unittest discover -s "$GITHUB_WORKSPACE/tests" -v
+      - name: Build a wheel from the source distribution
+        run: |
+          "$RUNNER_TEMP/enhancer-wheel-smoke/bin/python" -m pip wheel --no-deps --wheel-dir "$RUNNER_TEMP/sdist-wheel" dist/*.tar.gz
+      - name: Qualify tests and fixtures shipped in the source distribution
+        working-directory: ${{ runner.temp }}
+        run: |
+          mkdir sdist-source
+          tar -xzf "$GITHUB_WORKSPACE"/dist/*.tar.gz -C sdist-source
+          cd sdist-source/ada_gnatdoc_enhancer-*
+          unset PYTHONPATH
+          "$RUNNER_TEMP/enhancer-wheel-smoke/bin/python" -m pip install --force-reinstall --no-deps "$RUNNER_TEMP"/sdist-wheel/*.whl
+          "$RUNNER_TEMP/enhancer-wheel-smoke/bin/python" -m unittest discover -s tests -v
+          "$RUNNER_TEMP/enhancer-wheel-smoke/bin/gnatdoc-enhancer" conformance --fixtures tests/fixtures

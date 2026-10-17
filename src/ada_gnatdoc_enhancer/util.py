@@ -29,6 +29,17 @@ def regular(path: Path) -> Path:
     return path
 
 
+def site_root(path: Path) -> Path:
+    """Reject symlinks before resolution or staging can follow them outside output."""
+    require(all(not p.is_symlink() for p in (path, *path.parents)),
+            f"symlink site path: {path}")
+    require(path.is_dir(), f"missing/invalid site root: {path}")
+    for entry in path.rglob('*'):
+        require(not entry.is_symlink(), f"symlink published: {entry}")
+        require(entry.is_dir() or entry.is_file(), f"unexpected published node: {entry}")
+    return path.resolve()
+
+
 def inside(base: Path, name: str) -> Path:
     """Allow only unencoded, canonical, relative paths within a named root."""
     require(isinstance(name, str) and bool(name), "empty or invalid file path")

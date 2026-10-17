@@ -1,0 +1,8 @@
+include LICENSE CHANGELOG.md CONTRIBUTING.md Makefile
+include .gitattributes .gitignore
+recursive-include docs *.md
+recursive-include examples *.toml
+recursive-include scripts *.py
+recursive-include tests *.py *.toml *.md *.html *.css *.json *.ads
+recursive-include .github/workflows *.yml
+global-exclude __pycache__ *.py[cod]

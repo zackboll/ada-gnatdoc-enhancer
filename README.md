@@ -16,12 +16,20 @@ They exercise distinct source structures; full site acceptance is a later task.
 
 ## Quick start
 
+Requires Python 3.11 or newer; CI qualifies Python 3.11, 3.12 and 3.13 on Linux.
+From a local checkout (no published release is required):
+
 ```sh
 python3 -m venv .venv
 .venv/bin/python -m pip install -e .
 .venv/bin/gnatdoc-enhancer --version
 .venv/bin/gnatdoc-enhancer conformance --fixtures tests/fixtures
 ```
+
+For a non-editable installation, use `python -m pip install .`, or install a
+locally built wheel as described under **Validation and distributions** below.
+The core package has no runtime dependencies. Optional Markdown guides require
+`python -m pip install '.[guides]'`.
 
 Given a consumer repository that has already generated `_site/api/index.html`,
 `_site/api/gnatdoc.css` and GNATdoc's SHA-256-named package pages:
@@ -34,6 +42,23 @@ gnatdoc-enhancer verify --source-root . --config docs/gnatdoc-enhance.toml --sit
 
 `enhance --dry-run` builds and verifies a temporary site without changing the
 consumer. Enhancement of an already qualified site is byte-idempotent.
+
+`--source-root` names the project containing Ada sources and configuration;
+`--config` is relative to that root. `--site` defaults to `_site` under the
+source root (an absolute path is also accepted). It is an **existing output
+directory**, modified in place, not a separate input/output pair: keep a copy
+of pristine GNATdoc output if needed. Native pages must be directly under
+`api/`, even when the site itself is deeply nested. Arbitrarily nested package
+page layouts are not supported. Symlinks in the site path or output tree are
+rejected. Unapproved files fail qualification rather than being deleted.
+
+Try the bundled synthetic input without changing the checked-in fixture:
+
+```sh
+cp -R tests/fixtures/core /tmp/gnatdoc-core-example
+gnatdoc-enhancer enhance --source-root /tmp/gnatdoc-core-example --config project.toml
+gnatdoc-enhancer verify --source-root /tmp/gnatdoc-core-example --config project.toml
+```
 
 The tool **does not compile Ada, execute GNATdoc, fetch dependencies, publish to
 GitHub Pages or modify a Git repository**. Keep each consumer's compiler,
@@ -93,14 +118,49 @@ Published presentation manifests are not adversarial signed attestations; branch
 CI and project-owned configuration still require independent code review.
 The exact-source baselines remain in their owning repositories.
 
-Run unit tests:
+## Validation and distributions
+
+After installing the package, run the same core checks as GitHub Actions:
 
 ```sh
-PYTHONPATH=src python3 -m unittest discover -s tests -v
+python -m unittest discover -s tests -v
+gnatdoc-enhancer conformance --fixtures tests/fixtures
+python -m compileall -q src
+gnatdoc-enhancer --help
+python -m pip install build
+python -m build
 ```
 
+`python -m build` creates a wheel and source distribution in `dist/`. Verify
+wheel execution in a fresh environment, without an editable install:
+
+```sh
+python -m venv /tmp/gnatdoc-wheel-env
+/tmp/gnatdoc-wheel-env/bin/python -m pip install --no-deps dist/*.whl
+env -u PYTHONPATH /tmp/gnatdoc-wheel-env/bin/python scripts/test_installed.py --fixtures tests/fixtures
+```
+
+The smoke check runs the installed CLI from a temporary working directory,
+qualifies all four profiles, checks bundled CSS/JavaScript, enhances and verifies
+the MEL synthetic site twice, and compares output hashes. Fixtures are test
+inputs, not installed wheel resources: always provide `--fixtures` when running
+installed conformance outside a source checkout. The source distribution includes
+the fixtures and test helpers for repeatable source qualification.
+
+Optional Chromium checks (not a cross-browser or accessibility certification):
+
+```sh
+python -m pip install playwright
+python -m playwright install chromium
+python scripts/test_browser.py
+```
+
+Automated browser coverage currently exercises the Core synthetic profile only.
+Other browsers and complete real-site parity remain unqualified.
+
 See [compatibility](docs/compatibility.md), [architecture](docs/architecture.md),
-[migration](docs/migration.md), and [qualification](docs/qualification.md).
+[contributing](CONTRIBUTING.md), [migration](docs/migration.md), and
+[qualification](docs/qualification.md).
 
 ## Roadmap
 
@@ -114,6 +174,5 @@ production-site assertions are included in this bootstrap.
 
 ## Import into GitHub
 
-For the already-created empty destination repository, follow
-[repository import instructions](docs/repository-import.md). The ZIP itself
-performs no pushes or merges.
+See [repository import instructions](docs/repository-import.md) for the original
+archive procedure. Never reinitialize or replace history in an existing repository.
