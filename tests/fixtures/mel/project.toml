@@ -1,0 +1,48 @@
+schema_version = 1
+project = "Mel synthetic conformance"
+renderer_exceptions = ["AMS.MEL.IR.Health_Status.Metadata.Status"]
+[gnatdoc]
+version = "26.0.0"
+[sources]
+directories = ["src"]
+comment_style = "trailing"
+packages = [
+  "AMS",
+  "AMS.MEL",
+  "AMS.MEL.Status",
+  "AMS.MEL.IR",
+  "AMS.MEL.IR.Channel",
+  "AMS.MEL.IR.Image",
+  "AMS.MEL.IR.Image.Metadata",
+  "AMS.MEL.IR.C2",
+  "AMS.MEL.IR.C2.Common",
+  "AMS.MEL.IR.C2.Metadata",
+  "AMS.MEL.IR.Health_Status",
+  "AMS.MEL.IR.Health_Status.Metadata",
+  "AMS.MEL.IR.Instrumentation",
+  "AMS.MEL.IR.Instrumentation.Metadata",
+  "AMS.MEL.IR.Track",
+  "AMS.MEL.IR.Track.Metadata",
+  "AMS.MEL.IR.Track.Updates",
+  "AMS.MEL.IR.Track.System_Data",
+  "AMS.MEL.RF",
+  "AMS.MEL.RF.Product_Rx",
+  "AMS.MEL.RF.Admin",
+  "AMS.MEL.RF.C2",
+  "AMS.MEL.RF.C2.Element_Groups",
+  "AMS.MEL.RF.C2.Data_Pipes",
+  "AMS.MEL.RF.C2.Interval_Status",
+  "AMS.MEL.RF.C2.Virtual_Aperture_Notifications",
+  "AMS.MEL.RF.C2.Virtual_Aperture_Queries",
+  "AMS.MEL.RF.C2.Local_Functions",
+  "AMS.MEL.RF.C2.Transmit_Power",
+]
+[navigation]
+mode = "packages"
+[presentation]
+theme = true
+syntax_highlighting = true
+type_links = true
+[guides]
+mode = "html"
+manifest = "docs/site-map.json"

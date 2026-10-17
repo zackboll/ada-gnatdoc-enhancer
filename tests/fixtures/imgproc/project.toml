@@ -1,0 +1,17 @@
+schema_version = 1
+project = "Imgproc synthetic conformance"
+[gnatdoc]
+version = "26.0.0"
+[sources]
+directories = ["src"]
+comment_style = "leading"
+packages = [
+  "OpenCV.Image_Processing",
+]
+[navigation]
+mode = "operations"
+categories = "docs/api-categories.json"
+[presentation]
+theme = true
+syntax_highlighting = true
+type_links = true

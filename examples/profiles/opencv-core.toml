@@ -1,0 +1,14 @@
+# Example only. Set packages to all discovered Core public library units at adoption.
+schema_version = 1
+project = "OpenCV Core Ada"
+[gnatdoc]
+version = "26.0.0"
+[sources]
+directories = ["src"]
+comment_style = "leading"
+[navigation]
+mode = "packages"
+[presentation]
+theme = true
+syntax_highlighting = true
+type_links = true

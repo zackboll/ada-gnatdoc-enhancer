@@ -1,0 +1,15 @@
+schema_version = 1
+project = "OpenCV Geometry Ada"
+[gnatdoc]
+version = "26.0.0"
+[sources]
+directories = ["src"]
+packages = ["OpenCV.Geometry", "OpenCV.Geometry.Subdiv2D"]
+comment_style = "leading"
+[navigation]
+mode = "operations"
+categories = "docs/api-categories.json"
+[presentation]
+theme = true
+syntax_highlighting = true
+type_links = true

@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ada-gnatdoc-enhancer"
+version = "0.1.0.dev0"
+description = "Offline source-verified GNATdoc 26 HTML enhancement and validation"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"}
+authors = [{name = "Ada GNATdoc Enhancer contributors"}]
+keywords = ["ada", "gnatdoc", "documentation", "html", "static-site"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.optional-dependencies]
+guides = ["markdown-it-py==3.0.0", "mdurl==0.1.2"]
+
+[project.scripts]
+gnatdoc-enhancer = "ada_gnatdoc_enhancer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ada_gnatdoc_enhancer = ["assets/*.css", "assets/*.js"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

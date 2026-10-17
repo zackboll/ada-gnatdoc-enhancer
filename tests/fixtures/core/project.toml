@@ -1,0 +1,18 @@
+schema_version = 1
+project = "Core synthetic conformance"
+[gnatdoc]
+version = "26.0.0"
+[sources]
+directories = ["src"]
+comment_style = "leading"
+packages = [
+  "OpenCV.Core",
+  "OpenCV.Core.Sparse",
+  "OpenCV.Core.Vectors",
+]
+[navigation]
+mode = "packages"
+[presentation]
+theme = true
+syntax_highlighting = true
+type_links = true

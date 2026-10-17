@@ -1,0 +1,18 @@
+schema_version = 1
+project = "Geometry synthetic conformance"
+[gnatdoc]
+version = "26.0.0"
+[sources]
+directories = ["src"]
+comment_style = "leading"
+packages = [
+  "OpenCV.Geometry",
+  "OpenCV.Geometry.Subdiv2D",
+]
+[navigation]
+mode = "operations"
+categories = "docs/api-categories.json"
+[presentation]
+theme = true
+syntax_highlighting = true
+type_links = true

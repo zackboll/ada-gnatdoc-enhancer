@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "id": "thresholding",
+      "title": "Thresholding",
+      "declarations": [
+        "Apply_Threshold",
+        "Threshold_Mode"
+      ]
+    },
+    {
+      "id": "matching",
+      "title": "Template matching",
+      "declarations": [
+        "Match_Template"
+      ]
+    }
+  ]
+}

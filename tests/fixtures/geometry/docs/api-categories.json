@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "packages": [
+    {
+      "package": "OpenCV.Geometry",
+      "categories": [
+        {
+          "id": "geometry",
+          "title": "Transforms and points",
+          "declarations": [
+            "Point_2D",
+            "Transform",
+            "Float32_Point_Array"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "OpenCV.Geometry.Subdiv2D",
+      "categories": [
+        {
+          "id": "subdiv",
+          "title": "Subdivision",
+          "declarations": [
+            "Subdivision",
+            "Locate"
+          ]
+        }
+      ]
+    }
+  ]
+}
