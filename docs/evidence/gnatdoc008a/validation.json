@@ -12,7 +12,7 @@
   "baseline_tests": 352,
   "before_label_errors": 66,
   "browser": "Corrected-overload Chromium: 108/112 pass; 4 pre-existing API-frame overload-history failures. Baseline history-only: 4/4 fail. All exact click/profile/fragment, direct bookmark Back/Forward, JS-disabled, keyboard, search and layout checks pass. Existing Core harness 1442 pass; other full browser runs pending.",
-  "browser_harness_followup": "Existing full harness has 4 Imgproc + 4 Geometry authored keyboard failures: navigation to bare api/index.html races existing package query initialization. Initial runs retained. Narrow harness-only fix awaits exact expected package query, controls visibility and native identity; no assertions removed and production UI unchanged. Corrected runs pending.",
+  "browser_harness_followup": "Initial full harness recorded 4 Imgproc + 4 Geometry authored keyboard failures waiting for bare API URL instead of initialized package query. Initial records retained. Narrow harness fix requires exact observed first native package URL and visible controls. Corrected Geometry 1428/1428 pass; Imgproc running. API-frame history failures are separate and remain.",
   "consumer_negative_tests": 24,
   "consumer_pr_72_modified": false,
   "consumer_pr_head": "f2989da6c6a593f6196d1d989be0b2d126743dc6",
@@ -21,6 +21,25 @@
   "disposition": "PARTIAL_NAVIGATION_COMPATIBILITY",
   "distribution": "Repeated final local, installed wheel, extracted sdist/rebuilt wheel: 372/372 each pass. Four-profile conformance pass.",
   "four_site_structural": "pass",
+  "full_browser_counts": {
+    "core": {
+      "fail": 0,
+      "pass": 1442
+    },
+    "geometry": {
+      "fail": 0,
+      "pass": 1428
+    },
+    "imgproc": {
+      "corrected_harness": "running; focused replacement keyboard assertions 8/8 pass across Imgproc/Geometry",
+      "initial_harness_fail": 4,
+      "initial_pass": 1616
+    },
+    "mel": {
+      "fail": 0,
+      "pass": 1126
+    }
+  },
   "geometry_independent_oracle": "130/130 exact labels, destinations, categories and display order verified by unchanged pinned Geometry entries().",
   "historical_evidence_modified": false,
   "hosted_ci": "Implementation c077b08 push run 39063280586: all Python 3.11/3.12/3.13 and wheel/sdist jobs passed. Final head must be checked separately; pending.",
