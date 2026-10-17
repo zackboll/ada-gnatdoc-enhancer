@@ -1,3 +1,5 @@
+# Preserve attested acquisition terminal output, including progress whitespace.
+docs/evidence/gnatdoc005/dependency-commands.txt -whitespace
 * text=auto
 *.py text eol=lf
 *.toml text eol=lf

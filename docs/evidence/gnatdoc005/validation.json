@@ -1,4 +1,22 @@
 {
+  "candidate_classification": {
+    "geometry": {
+      "ambiguous": 0,
+      "broader_native_spelling_occurrences": 95,
+      "historical_candidates": 95,
+      "linked": 95,
+      "unresolved": 0,
+      "unsupported": 0
+    },
+    "imgproc": {
+      "ambiguous": 0,
+      "broader_native_spelling_occurrences": 553,
+      "historical_candidates": 549,
+      "linked": 549,
+      "unresolved": 0,
+      "unsupported_outside_typed_contexts": 4
+    }
+  },
   "disposition": [
     "READY_FOR_INDEPENDENT_REVIEW",
     "PUBLISHED_URL_PENDING"

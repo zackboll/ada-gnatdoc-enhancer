@@ -98,11 +98,15 @@ byte preservation, source integrity, independent output reconstruction,
 two-copy determinism, byte-idempotence, and anchor/link/asset/source tamper
 rejection. External and local counts are reported separately.
 
-Every observed candidate was audited by native section and offset. In these
-pinned inputs all 549 Imgproc candidates (14 identities) and 95 Geometry
-candidates (seven identities) passed the supported typed-context and visibility
-guards and were linked. Unresolved, unsupported and ambiguous counts are **zero
-for these observed candidates**, not a promise about arbitrary Ada syntax.
+Every observed candidate was audited by native section and offset. The broader
+native spelling scan observes **553 Imgproc occurrences**: **549 eligible and
+linked**, plus **four unsupported occurrences outside typed contexts**. The
+historical GNATDOC-002 inventory contains 549 candidates across 14 identities;
+its count must not be confused with the broader spelling scan. Geometry has
+**95 eligible and linked** occurrences across seven identities and zero
+unsupported occurrences. Unresolved and ambiguous counts are zero for both.
+The four extra Imgproc spellings remain unlinked; this is not a promise about
+arbitrary Ada syntax.
 Each accepted occurrence and its source/native proof is in `*-references.json`.
 These counts came from executed output and an independent candidate audit, not
 by treating the GNATDOC-002 inventory as automatic link credit.
