@@ -12,11 +12,11 @@ from ada_gnatdoc_enhancer.pipeline import enhance,verify
 from ada_gnatdoc_enhancer.navigation import operation_entries
 from ada_gnatdoc_enhancer.warnings import identities,compare
 from ada_gnatdoc_enhancer.coverage import report
-from _helper import Fixture
+from _helper import FIXTURES, Fixture
 
 class Profiles(unittest.TestCase):
     def test_four_synthetic_reference_shapes(self):
-        r=run()
+        r=run(FIXTURES)
         self.assertEqual({k:v['packages'] for k,v in r['profiles'].items()},
                          {'core':3,'imgproc':1,'geometry':2,'mel':29})
         self.assertEqual(r['fully_pinned_consumer_sites'],'not qualified in bootstrap')

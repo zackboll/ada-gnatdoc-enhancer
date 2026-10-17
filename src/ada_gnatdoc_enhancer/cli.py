@@ -40,8 +40,11 @@ def run(args):
     if args.command=='conformance':
         from .conformance import run
         return run(args.fixtures)
-    root=args.source_root.resolve();config=load(root,args.config)
-    site=args.site if args.site.is_absolute() else root/args.site
+    # Keep output-path symlinks visible to the pipeline's pre-resolution check,
+    # independently of the canonical root used for config and source identity.
+    project_path=Path.cwd()/args.source_root
+    root=project_path.resolve();config=load(root,args.config)
+    site=args.site if args.site.is_absolute() else project_path/args.site
     if args.command=='enhance':return enhance(config,site,dry_run=args.dry_run)
     if args.command=='verify':return verify(config,site)
     if args.command=='inventory':
