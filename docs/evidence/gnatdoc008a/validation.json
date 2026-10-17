@@ -11,8 +11,8 @@
   },
   "baseline_tests": 352,
   "before_label_errors": 66,
-  "browser": "Corrected-overload Chromium: 108/112 pass; 4 pre-existing API-frame overload-history failures. Baseline history-only: 4/4 fail. All exact click/profile/fragment, direct bookmark Back/Forward, JS-disabled, keyboard, search and layout checks pass. Existing Core harness 1442 pass; other full browser runs pending.",
-  "browser_harness_followup": "Initial full harness recorded 4 Imgproc + 4 Geometry authored keyboard failures waiting for bare API URL instead of initialized package query. Initial records retained. Narrow harness fix requires exact observed first native package URL and visible controls. Corrected Geometry 1428/1428 pass; Imgproc running. API-frame history failures are separate and remain.",
+  "browser": "Existing full-site Chromium harness: Core 1442/1442, Imgproc 1620/1620, Geometry 1428/1428, MEL 1126/1126 pass. Corrected-overload dedicated harness: 108/112 pass; four pre-existing API-frame history failures, independently reproduced on unchanged baseline.",
+  "browser_harness_followup": "Initial full harness recorded 4 Imgproc + 4 Geometry authored keyboard failures waiting for bare API URL rather than initialized package query. Initial records retained. Narrow harness-only fix requires exact initialized first native-package URL and visible controls; corrected full Imgproc and Geometry runs pass. No production UI or existing assertion removed. API-frame history failures remain separate.",
   "consumer_negative_tests": 24,
   "consumer_pr_72_modified": false,
   "consumer_pr_head": "f2989da6c6a593f6196d1d989be0b2d126743dc6",
@@ -31,9 +31,8 @@
       "pass": 1428
     },
     "imgproc": {
-      "corrected_harness": "running; focused replacement keyboard assertions 8/8 pass across Imgproc/Geometry",
-      "initial_harness_fail": 4,
-      "initial_pass": 1616
+      "fail": 0,
+      "pass": 1620
     },
     "mel": {
       "fail": 0,
@@ -57,9 +56,9 @@
   ],
   "remaining_blockers": [
     "independent review",
-    "classify existing API-frame overload Back/Forward behavior",
-    "final exact-head hosted CI",
-    "separate consumer update after reviewed merge"
+    "separate disposition of pre-existing API-frame overload Back/Forward limitation",
+    "final exact-head Python 3.11/3.12/3.13 + distribution hosted CI",
+    "separate consumer PR #72 update using reviewed immutable merge SHA"
   ],
   "scope_of_output_changes": "Only Imgproc/Geometry api/index.html + api/presentation.json; all native destinations identical; Core/MEL byte-identical",
   "starting_sha": "f52dcfe37dc2819d86e72e1c38425e5e49d914eb",
