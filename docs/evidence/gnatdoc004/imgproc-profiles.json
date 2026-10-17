@@ -1,0 +1,38 @@
+{
+  "accepted_projections": [
+    {
+      "anchor": "78e3e00d5b4e46e69e31fab252be97fbe6774e2534d7703b879ea21f4c542832",
+      "hidden_literals": 77,
+      "line": 660,
+      "name": "Color_Conversion",
+      "native_signature_sha256": "4c96e5f535fadc8b5c16e0d100089153c5ef69620e789e77aed8927093514857",
+      "omitted_source_tokens": [],
+      "omitted_text_ownership": "source only; not visibly rendered by GNATdoc",
+      "package": "OpenCV.Image_Processing",
+      "page": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html",
+      "rule": "enumeration-first-eight-last",
+      "source_declaration_sha256": "3fbd6d4046ddabe83a0423c027f10b4459c41c4eead98110a4bc7f8583a42456",
+      "source_file_sha256": "03b369760efd81af8c550abd5c9cb6439b4f24b88c62e4b31c7fad4c04824563",
+      "source_path": "src/opencv-image_processing.ads",
+      "source_target": null
+    },
+    {
+      "anchor": "51784c80ccd94b752b2937ced24bddbe87c01de7ce6578af8b1ab8ce3324e1fb",
+      "hidden_literals": 11,
+      "line": 2298,
+      "name": "Built_In_Color_Map",
+      "native_signature_sha256": "d02efc56e3ac02c48bc29402cb600e44dc5309fd3330b4f815cd6e12945405c0",
+      "omitted_source_tokens": [],
+      "omitted_text_ownership": "source only; not visibly rendered by GNATdoc",
+      "package": "OpenCV.Image_Processing",
+      "page": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html",
+      "rule": "enumeration-first-eight-last",
+      "source_declaration_sha256": "a639c5fd76307abe6db02f9a07308aa23062e9e835f83ea359c3575767c153ff",
+      "source_file_sha256": "03b369760efd81af8c550abd5c9cb6439b4f24b88c62e4b31c7fad4c04824563",
+      "source_path": "src/opencv-image_processing.ads",
+      "source_target": null
+    }
+  ],
+  "scope": "all scanner types/subtypes/named calls; not full consumer coverage",
+  "unsupported": []
+}

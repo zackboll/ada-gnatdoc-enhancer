@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Add_Job_Intervals",
+    "native_excerpt": "<h4 id=d7b837564e2f584656d3feabae350fd2ebfe358264570a6a780686f9f579b11c>Add_Job_Intervals</h4><pre class=ada-code-snippet><code>procedure Add_Job_Intervals (Object : in out Job; Intervals : RX_Job_Interval_List)\n</code></pre>",
+    "native_excerpt_sha256": "609b8126d9db13870b9cff7f55e1ff755d2773ef1addffdbdb4072c56e16d639",
+    "native_page_sha256": "edf8be2f851e75268ffa4ea3536b44fc86edc63d84c0da7e42db7611e9f86a34",
+    "native_path": "api/493eaffef5bc1fc3300a1b2e1cc93b9500c778c188650055e07aae6e186bd3cd.html",
+    "native_signature_sha256": "1429dd6d6013fc207b5a3f26bf37c78cc47e1a8e7d18d51acaa7b895b21bac80",
+    "package": "AMS.MEL.RF.C2",
+    "repository": "https://github.com/zackboll/ams-gra-mel-bridge",
+    "revision": "6065129aba5dee89e70b61e05a9e1c9b2c3061c0",
+    "source_declaration_sha256": "a7bd528dcaa276abdc5ed573bded69cdd076616d8f7f213a2fa83fcdb7af5759",
+    "source_file_sha256": "509c94edb5f7d3a95d057a8c2064b77c0379a15115d436d282592ee37ba232aa",
+    "source_path": "ada/src/ams-mel-rf-c2.ads",
+    "source_signature": "--  Synchronously serialize current safe values through native contract version 16, including mixed RX/TX. Historical v1-v15 contracts retain frozen layouts/domains: v16 uses the v8 base, TX-v3 and modulation-v5 plus context, not interchangeable array strides. Full-batch structural validation and local copied-value preparation precede one unlocked provider Add, including empty batches. Ordered intervals/events and duplicates survive. Borrowed transient Ada/C backing lasts through the call; native values own copies (native buffer copies share fresh sample vectors). Invalid final configuration raises Constraint Error before provider Add; lifecycle, registration and provider failures raise Provider Error. Add requires an open Job before any Finalize/full Cancel attempt, even if that attempt failed. Enabled reporting requires usable prior registration; no delivery guarantee. Externally serialize all same-Job calls/Close. No automatic retry: provider may mutate before throwing, and normal void return proves neither scheduling nor event execution/RF emission. Snapshot remains unchanged.\n   --  @param Object Open Job with Add admission still available.\n   --  @param Intervals Complete owned ordered batch; not consumed by submission.\n\n   procedure Add_Job_Intervals (Object : in out Job; Intervals : RX_Job_Interval_List)\n   renames Add_RX_Job_Intervals;"
+  },
+  {
+    "name": "Add_RX_Job_Intervals",
+    "native_excerpt": "<h4 id=f84a5f071a7a9fe539fe7e781627e7de55f6658a5c6261992b53e65fd119ea7b>Add_RX_Job_Intervals</h4><pre class=ada-code-snippet><code>procedure Add_RX_Job_Intervals (Object : in out Job; Intervals : RX_Job_Interval_List)\n</code></pre>",
+    "native_excerpt_sha256": "d757bfdaa48978a3bb682edfb84f3ce569e6242041b1e4649c9e36730753a5d9",
+    "native_page_sha256": "edf8be2f851e75268ffa4ea3536b44fc86edc63d84c0da7e42db7611e9f86a34",
+    "native_path": "api/493eaffef5bc1fc3300a1b2e1cc93b9500c778c188650055e07aae6e186bd3cd.html",
+    "native_signature_sha256": "06741b94653f35cd56ee7de6e07459900fdb85fb8a253ee051f5a958ca3d521c",
+    "package": "AMS.MEL.RF.C2",
+    "repository": "https://github.com/zackboll/ams-gra-mel-bridge",
+    "revision": "6065129aba5dee89e70b61e05a9e1c9b2c3061c0",
+    "source_declaration_sha256": "eb912889649d2128cec3006098a28246848e070582e3cd00512e5dc2e59bc0da",
+    "source_file_sha256": "509c94edb5f7d3a95d057a8c2064b77c0379a15115d436d282592ee37ba232aa",
+    "source_path": "ada/src/ams-mel-rf-c2.ads",
+    "source_signature": "--  Read only the local list length; no Job/provider query.\n   --  @param Intervals Owned list to inspect.\n   --  @return Number of stored interval values; Natural conversion is checked.\n\n   --  Synchronous, externally serialized with same-Job calls and Close.\n   --  Add/Flush reject after Finalize or full Cancel has been attempted.\n   --  Cancel_Remaining is repeatable, including during/after Finalize, until\n   --  full Cancel has been attempted. Failures raise Provider_Error; no retry.\n   procedure Add_RX_Job_Intervals (Object : in out Job; Intervals : RX_Job_Interval_List);"
+  },
+  {
+    "name": "Complex_I16",
+    "native_excerpt": "<h4 id=87f0aabcddc10ff4a8ff2227982865d2553dde4492b207e55e0e91a15a1cec9b>Complex_I16</h4><pre class=ada-code-snippet><code>type Complex_I16 is record\n   Real : Interfaces.Integer_16;\n   Imag : Interfaces.Integer_16;\nend record;\n</code></pre>",
+    "native_excerpt_sha256": "5c76bc4b6cabc0365a942ec28c4b9cb9152976aa2d729cc5f9c64602df228f31",
+    "native_page_sha256": "d7513068354904a55f047c3d4b8cebc17eba95779bc3013d9c5596ad2c8aa452",
+    "native_path": "api/6ed8ea2a1a59f5d24924546adaf2f81b35ead370e48aebb921cc771ad72242c5.html",
+    "native_signature_sha256": "dd93bcec8e899b1cc9c42c5d90ab5f2a67b1f43d352451c5a2d21d408446be17",
+    "package": "AMS.MEL.RF.Product_Rx",
+    "repository": "https://github.com/zackboll/ams-gra-mel-bridge",
+    "revision": "6065129aba5dee89e70b61e05a9e1c9b2c3061c0",
+    "source_declaration_sha256": "2583013fae1939107f8813505d112846503c4d6b1b43e5ddc970e1d7ddff70ae",
+    "source_file_sha256": "dfa6d851e81e7619d824ca5c87e1c9e473dfd0f5f58b4dbc63a0f47ec823d578",
+    "source_path": "ada/src/ams-mel-rf-product_rx.ads",
+    "source_signature": "--  Copy all counters under the native callback-state lock without consuming products. Every\n   --  counter saturates; queue-full drops are distinct from malformed products and allocation\n   --  failures. Closed/invalid native ownership raises Provider Error.\n   --  @param Object Open endpoint whose bridge counters are sampled.\n   --  @return Independent diagnostic counter snapshot.\n\n   type Complex_I16 is record\n      Real : Interfaces.Integer_16;\n      Imag : Interfaces.Integer_16;\n   end record\n   --  C-compatible Cartesian I/Q value with two signed 16-bit integer components. Native\n   --  MELComplex values are copied component-wise; no upstream C++ object-layout compatibility,\n   --  sample scaling or normalization is assumed.\n   --  @field Real Signed real (in-phase) component, copied without DSP conversion.\n   --  @field Imag Signed imaginary (quadrature) component, copied without DSP conversion.\n   with Convention => C;"
+  },
+  {
+    "name": "Complex_I8",
+    "native_excerpt": "<h4 id=963062b3c78b3ea6f55686a8714e0e6eaf33a064e45ebb8fc6eb141904d8e98f>Complex_I8</h4><pre class=ada-code-snippet><code>type Complex_I8 is record\n   Real : Interfaces.Integer_8;\n   Imag : Interfaces.Integer_8;\nend record;\n</code></pre>",
+    "native_excerpt_sha256": "f6342ee6ec50e9d9fcf9e5008b72752c2ccb605f7f307fc87cba67a3aa471ca6",
+    "native_page_sha256": "d7513068354904a55f047c3d4b8cebc17eba95779bc3013d9c5596ad2c8aa452",
+    "native_path": "api/6ed8ea2a1a59f5d24924546adaf2f81b35ead370e48aebb921cc771ad72242c5.html",
+    "native_signature_sha256": "ff1f0efee160b022fc01388a457251fd550c96999324ad06d46220e3d77ad268",
+    "package": "AMS.MEL.RF.Product_Rx",
+    "repository": "https://github.com/zackboll/ams-gra-mel-bridge",
+    "revision": "6065129aba5dee89e70b61e05a9e1c9b2c3061c0",
+    "source_declaration_sha256": "fa4a7b78cc1325f534195493adc9f028a4e39cdfab947aa8ca5468afa084f375",
+    "source_file_sha256": "dfa6d851e81e7619d824ca5c87e1c9e473dfd0f5f58b4dbc63a0f47ec823d578",
+    "source_path": "ada/src/ams-mel-rf-product_rx.ads",
+    "source_signature": "--  C-convention array of signed 16-bit Cartesian pairs; Length counts pairs, not bytes.\n   --  Borrowed nonempty sample arrays use indices 0 through count minus one; explicit copies use 1\n   --  through count. Empty arrays have a null range.\n\n   type Complex_I8 is record\n      Real : Interfaces.Integer_8;\n      Imag : Interfaces.Integer_8;\n   end record\n   --  C-compatible Cartesian I/Q value with two signed 8-bit integer components. Native MELComplex\n   --  values are copied component-wise; no upstream C++ object-layout compatibility, sample\n   --  scaling or normalization is assumed.\n   --  @field Real Signed real (in-phase) component, copied without DSP conversion.\n   --  @field Imag Signed imaginary (quadrature) component, copied without DSP conversion.\n   with Convention => C;"
+  }
+]

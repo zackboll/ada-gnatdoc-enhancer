@@ -1,0 +1,12 @@
+{
+  "baseline_tests": 134,
+  "failure": {
+    "phase": "inventory",
+    "reason": "native declaration profile unmatched or swapped: AMS.MEL.RF.C2.Add_Job_Intervals at 1513; requires unique exact or supported source-verified profile (unsupported/ambiguous projection rejected)"
+  },
+  "mel_result": "fail",
+  "original_inputs_preserved": true,
+  "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "starting_sha": "3be5739901e2ac5559f66a47a0a1765987942173",
+  "working_tree_clean": true
+}

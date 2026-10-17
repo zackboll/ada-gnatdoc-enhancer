@@ -1,0 +1,134 @@
+{
+  "authentic_excerpts": [
+    {
+      "name": "Add_Job_Intervals",
+      "native_excerpt": "<h4 id=d7b837564e2f584656d3feabae350fd2ebfe358264570a6a780686f9f579b11c>Add_Job_Intervals</h4><pre class=ada-code-snippet><code>procedure Add_Job_Intervals (Object : in out Job; Intervals : RX_Job_Interval_List)\n</code></pre>",
+      "native_excerpt_sha256": "609b8126d9db13870b9cff7f55e1ff755d2773ef1addffdbdb4072c56e16d639",
+      "native_page_sha256": "edf8be2f851e75268ffa4ea3536b44fc86edc63d84c0da7e42db7611e9f86a34",
+      "native_path": "api/493eaffef5bc1fc3300a1b2e1cc93b9500c778c188650055e07aae6e186bd3cd.html",
+      "native_signature_sha256": "1429dd6d6013fc207b5a3f26bf37c78cc47e1a8e7d18d51acaa7b895b21bac80",
+      "package": "AMS.MEL.RF.C2",
+      "repository": "https://github.com/zackboll/ams-gra-mel-bridge",
+      "revision": "6065129aba5dee89e70b61e05a9e1c9b2c3061c0",
+      "source_declaration_sha256": "a7bd528dcaa276abdc5ed573bded69cdd076616d8f7f213a2fa83fcdb7af5759",
+      "source_file_sha256": "509c94edb5f7d3a95d057a8c2064b77c0379a15115d436d282592ee37ba232aa",
+      "source_path": "ada/src/ams-mel-rf-c2.ads",
+      "source_signature": "--  Synchronously serialize current safe values through native contract version 16, including mixed RX/TX. Historical v1-v15 contracts retain frozen layouts/domains: v16 uses the v8 base, TX-v3 and modulation-v5 plus context, not interchangeable array strides. Full-batch structural validation and local copied-value preparation precede one unlocked provider Add, including empty batches. Ordered intervals/events and duplicates survive. Borrowed transient Ada/C backing lasts through the call; native values own copies (native buffer copies share fresh sample vectors). Invalid final configuration raises Constraint Error before provider Add; lifecycle, registration and provider failures raise Provider Error. Add requires an open Job before any Finalize/full Cancel attempt, even if that attempt failed. Enabled reporting requires usable prior registration; no delivery guarantee. Externally serialize all same-Job calls/Close. No automatic retry: provider may mutate before throwing, and normal void return proves neither scheduling nor event execution/RF emission. Snapshot remains unchanged.\n   --  @param Object Open Job with Add admission still available.\n   --  @param Intervals Complete owned ordered batch; not consumed by submission.\n\n   procedure Add_Job_Intervals (Object : in out Job; Intervals : RX_Job_Interval_List)\n   renames Add_RX_Job_Intervals;"
+    },
+    {
+      "name": "Add_RX_Job_Intervals",
+      "native_excerpt": "<h4 id=f84a5f071a7a9fe539fe7e781627e7de55f6658a5c6261992b53e65fd119ea7b>Add_RX_Job_Intervals</h4><pre class=ada-code-snippet><code>procedure Add_RX_Job_Intervals (Object : in out Job; Intervals : RX_Job_Interval_List)\n</code></pre>",
+      "native_excerpt_sha256": "d757bfdaa48978a3bb682edfb84f3ce569e6242041b1e4649c9e36730753a5d9",
+      "native_page_sha256": "edf8be2f851e75268ffa4ea3536b44fc86edc63d84c0da7e42db7611e9f86a34",
+      "native_path": "api/493eaffef5bc1fc3300a1b2e1cc93b9500c778c188650055e07aae6e186bd3cd.html",
+      "native_signature_sha256": "06741b94653f35cd56ee7de6e07459900fdb85fb8a253ee051f5a958ca3d521c",
+      "package": "AMS.MEL.RF.C2",
+      "repository": "https://github.com/zackboll/ams-gra-mel-bridge",
+      "revision": "6065129aba5dee89e70b61e05a9e1c9b2c3061c0",
+      "source_declaration_sha256": "eb912889649d2128cec3006098a28246848e070582e3cd00512e5dc2e59bc0da",
+      "source_file_sha256": "509c94edb5f7d3a95d057a8c2064b77c0379a15115d436d282592ee37ba232aa",
+      "source_path": "ada/src/ams-mel-rf-c2.ads",
+      "source_signature": "--  Read only the local list length; no Job/provider query.\n   --  @param Intervals Owned list to inspect.\n   --  @return Number of stored interval values; Natural conversion is checked.\n\n   --  Synchronous, externally serialized with same-Job calls and Close.\n   --  Add/Flush reject after Finalize or full Cancel has been attempted.\n   --  Cancel_Remaining is repeatable, including during/after Finalize, until\n   --  full Cancel has been attempted. Failures raise Provider_Error; no retry.\n   procedure Add_RX_Job_Intervals (Object : in out Job; Intervals : RX_Job_Interval_List);"
+    },
+    {
+      "name": "Complex_I16",
+      "native_excerpt": "<h4 id=87f0aabcddc10ff4a8ff2227982865d2553dde4492b207e55e0e91a15a1cec9b>Complex_I16</h4><pre class=ada-code-snippet><code>type Complex_I16 is record\n   Real : Interfaces.Integer_16;\n   Imag : Interfaces.Integer_16;\nend record;\n</code></pre>",
+      "native_excerpt_sha256": "5c76bc4b6cabc0365a942ec28c4b9cb9152976aa2d729cc5f9c64602df228f31",
+      "native_page_sha256": "d7513068354904a55f047c3d4b8cebc17eba95779bc3013d9c5596ad2c8aa452",
+      "native_path": "api/6ed8ea2a1a59f5d24924546adaf2f81b35ead370e48aebb921cc771ad72242c5.html",
+      "native_signature_sha256": "dd93bcec8e899b1cc9c42c5d90ab5f2a67b1f43d352451c5a2d21d408446be17",
+      "package": "AMS.MEL.RF.Product_Rx",
+      "repository": "https://github.com/zackboll/ams-gra-mel-bridge",
+      "revision": "6065129aba5dee89e70b61e05a9e1c9b2c3061c0",
+      "source_declaration_sha256": "2583013fae1939107f8813505d112846503c4d6b1b43e5ddc970e1d7ddff70ae",
+      "source_file_sha256": "dfa6d851e81e7619d824ca5c87e1c9e473dfd0f5f58b4dbc63a0f47ec823d578",
+      "source_path": "ada/src/ams-mel-rf-product_rx.ads",
+      "source_signature": "--  Copy all counters under the native callback-state lock without consuming products. Every\n   --  counter saturates; queue-full drops are distinct from malformed products and allocation\n   --  failures. Closed/invalid native ownership raises Provider Error.\n   --  @param Object Open endpoint whose bridge counters are sampled.\n   --  @return Independent diagnostic counter snapshot.\n\n   type Complex_I16 is record\n      Real : Interfaces.Integer_16;\n      Imag : Interfaces.Integer_16;\n   end record\n   --  C-compatible Cartesian I/Q value with two signed 16-bit integer components. Native\n   --  MELComplex values are copied component-wise; no upstream C++ object-layout compatibility,\n   --  sample scaling or normalization is assumed.\n   --  @field Real Signed real (in-phase) component, copied without DSP conversion.\n   --  @field Imag Signed imaginary (quadrature) component, copied without DSP conversion.\n   with Convention => C;"
+    },
+    {
+      "name": "Complex_I8",
+      "native_excerpt": "<h4 id=963062b3c78b3ea6f55686a8714e0e6eaf33a064e45ebb8fc6eb141904d8e98f>Complex_I8</h4><pre class=ada-code-snippet><code>type Complex_I8 is record\n   Real : Interfaces.Integer_8;\n   Imag : Interfaces.Integer_8;\nend record;\n</code></pre>",
+      "native_excerpt_sha256": "f6342ee6ec50e9d9fcf9e5008b72752c2ccb605f7f307fc87cba67a3aa471ca6",
+      "native_page_sha256": "d7513068354904a55f047c3d4b8cebc17eba95779bc3013d9c5596ad2c8aa452",
+      "native_path": "api/6ed8ea2a1a59f5d24924546adaf2f81b35ead370e48aebb921cc771ad72242c5.html",
+      "native_signature_sha256": "ff1f0efee160b022fc01388a457251fd550c96999324ad06d46220e3d77ad268",
+      "package": "AMS.MEL.RF.Product_Rx",
+      "repository": "https://github.com/zackboll/ams-gra-mel-bridge",
+      "revision": "6065129aba5dee89e70b61e05a9e1c9b2c3061c0",
+      "source_declaration_sha256": "fa4a7b78cc1325f534195493adc9f028a4e39cdfab947aa8ca5468afa084f375",
+      "source_file_sha256": "dfa6d851e81e7619d824ca5c87e1c9e473dfd0f5f58b4dbc63a0f47ec823d578",
+      "source_path": "ada/src/ams-mel-rf-product_rx.ads",
+      "source_signature": "--  C-convention array of signed 16-bit Cartesian pairs; Length counts pairs, not bytes.\n   --  Borrowed nonempty sample arrays use indices 0 through count minus one; explicit copies use 1\n   --  through count. Empty arrays have a null range.\n\n   type Complex_I8 is record\n      Real : Interfaces.Integer_8;\n      Imag : Interfaces.Integer_8;\n   end record\n   --  C-compatible Cartesian I/Q value with two signed 8-bit integer components. Native MELComplex\n   --  values are copied component-wise; no upstream C++ object-layout compatibility, sample\n   --  scaling or normalization is assumed.\n   --  @field Real Signed real (in-phase) component, copied without DSP conversion.\n   --  @field Imag Signed imaginary (quadrature) component, copied without DSP conversion.\n   with Convention => C;"
+    }
+  ],
+  "boundary": "Independent historical pins establish acquisition identity. Omitted source tokens are not visibly represented; no semantic equivalence claim. Reduced wrappers and mutations are synthetic.",
+  "renderer_files": {
+    "source/backend/xml_templates/gnatdoc-entities-proxies.adb": {
+      "excerpts": [
+        {
+          "lines": [
+            278,
+            284
+          ],
+          "text": "      elsif Name = \"code\" then\n         return\n           VSS.XML.Templates.Proxies.Strings.Virtual_String_Proxy'\n             (Text =>\n                GNATdoc.Comments.Helpers.Get_Ada_Code_Snippet\n                  (Self.Entity.Documentation).Join_Lines (VSS.Strings.LF));\n\n"
+        }
+      ],
+      "sha256": "f80b0d7002fa3b7500ddb8b9bc30ce5ea5e79f3762d4370e409b9d2eb4d06c06"
+    },
+    "source/gnatdoc-comments-extractor-code_snippets.adb": {
+      "excerpts": [
+        {
+          "lines": [
+            80,
+            152
+          ],
+          "text": "        Sloc_Range (Data (First_Token));\n      Snippet_Section      : Section_Access;\n      Text                 : Virtual_String_Vector;\n\n   begin\n      Text :=\n        To_Virtual_String\n          (Libadalang.Common.Text (First_Token, Last_Token)).Split_Lines\n            (Ada_New_Line_Function);\n\n      --  Indent first line correctly.\n\n      declare\n         Line : Virtual_String := Text (1);\n\n      begin\n         for J in 2 .. First_Token_Location.Start_Column loop\n            Line.Prepend (' ');\n         end loop;\n\n         Text.Replace (1, Line);\n      end;\n\n      --  Remove comments\n\n      if First_Token /= Last_Token then\n         declare\n            Line_Offset : constant Line_Number :=\n              First_Token_Location.Start_Line - 1;\n            Token       : Token_Reference      := Last_Token;\n\n         begin\n            loop\n               Token := Previous (Token);\n\n               exit when Token = First_Token or Token = No_Token;\n\n               if Kind (Data (Token)) = Ada_Comment then\n                  declare\n                     Location : constant Source_Location_Range :=\n                       Sloc_Range (Data (Token));\n                     Index    : constant Positive :=\n                       Positive (Location.Start_Line - Line_Offset);\n                     Line     : Virtual_String := Text (Index);\n                     Iterator : Character_Iterator :=\n                       Line.After_Last_Character;\n\n                  begin\n                     --  Move iterator till first character before the\n                     --  comment's start column.\n\n                     while Iterator.Backward loop\n                        exit when\n                          Iterator.Character_Index\n                            < Character_Index (Location.Start_Column);\n                     end loop;\n\n                     --  Rewind all whitespaces before the comment\n\n                     while Iterator.Backward loop\n                        exit when not Is_Ada_Separator (Iterator.Element);\n                     end loop;\n\n                     --  Remove comment and spaces before it from the line.\n\n                     Line := Line.Slice (Line.At_First_Character, Iterator);\n                     Text.Replace (Index, Line);\n                  end;\n               end if;\n            end loop;\n         end;\n      end if;\n\n"
+        },
+        {
+          "lines": [
+            365,
+            411
+          ],
+          "text": "                           Character_Count (First_Column) * ' ' & \"…\");\n                     end if;\n                  end if;\n               end;\n            end if;\n         end;\n      end if;\n\n      --  For record type add ';' at the end\n\n      if Node.Kind = Ada_Concrete_Type_Decl\n        and then Node.As_Concrete_Type_Decl.F_Type_Def.Kind\n                  in Ada_Record_Type_Def | Ada_Derived_Type_Def\n        and then not\n          (Node.As_Concrete_Type_Decl.F_Type_Def.Kind = Ada_Derived_Type_Def\n             and then Node.As_Concrete_Type_Decl.F_Type_Def.As_Derived_Type_Def\n                        .F_Record_Extension.Is_Null)\n      then\n         Text.Replace (Text.Length, Text.Last_Element & \";\");\n      end if;\n\n      --  Remove all empty lines\n\n      for Index in reverse 1 .. Text.Length loop\n         if Text (Index).Is_Empty then\n            Text.Delete (Index);\n         end if;\n      end loop;\n\n      --  For the subprogram specification check whether \"overriding\"/\"not\n      --  overriding\" indicator is used at the same line with subprogram\n      --  specification and reformat code snippet: first line of the\n      --  subprogram specification is moved left to position of the indicator;\n      --  if subprogram parameter is present on this line too, all lines\n      --  below is moved too, unless any non-space characters are found in\n      --  the removed slice of the line.\n\n      if Node.Kind = Ada_Subp_Spec\n        and then Node.Parent.Kind\n                   in Ada_Classic_Subp_Decl | Ada_Base_Subp_Body\n      then\n         declare\n            Indicator_Node     : constant Overriding_Node :=\n              (if Node.Parent.Kind in Ada_Classic_Subp_Decl\n               then Node.Parent.As_Classic_Subp_Decl.F_Overriding\n               else Node.Parent.As_Base_Subp_Body.F_Overriding);\n            Indicator_Location : constant Source_Location_Range :=\n"
+        },
+        {
+          "lines": [
+            453,
+            469
+          ],
+          "text": "      --  Remove indentation\n\n      declare\n         Indent : constant VSS.Strings.Character_Count :=\n           Count_Leading_Whitespaces (Text (1));\n\n      begin\n         for Index in Text.First_Index .. Text.Last_Index loop\n            Text.Replace\n              (Index, Remove_Leading_Whitespaces (Text (Index), Indent));\n         end loop;\n      end;\n\n      Snippet_Section :=\n        new Section'\n          (Kind => Snippet, Symbol => \"ada\", Text => Text, others => <>);\n      Sections.Append (Snippet_Section);\n"
+        }
+      ],
+      "sha256": "52f6f9d179c3d301c914345852a3dd8fc0d57976459b4c16a8a355044f00e0a7"
+    },
+    "source/gnatdoc-comments-extractor.adb": {
+      "excerpts": [
+        {
+          "lines": [
+            540,
+            551
+          ],
+          "text": "         when Ada_Subp_Renaming_Decl =>\n            Extract_Subprogram_Documentation\n              (Decl_Node     => Node,\n               Spec_Node     => Node.As_Subp_Renaming_Decl.F_Subp_Spec,\n               Expr_Node     => No_Expr,\n               Aspects_Node  => No_Aspect_Spec,\n               Options       => Options,\n               Sections      => Documentation.Sections,\n               Messages      => Messages,\n               Allow_Private => True,\n               Belongs_To    => Documentation.Belongs_To,\n               Is_Private    => Documentation.Is_Private);\n"
+        },
+        {
+          "lines": [
+            2207,
+            2241
+          ],
+          "text": "   procedure Extract_Record_Type_Documentation\n     (Node          : Libadalang.Analysis.Type_Decl'Class;\n      Options       : GNATdoc.Comments.Options.Extractor_Options;\n      Documentation : out Structured_Comment'Class;\n      Messages      : in out GNATdoc.Messages.Message_Container)\n   is\n      Last_Section      : Section_Access;\n      Minimum_Indent    : Column_Number;\n      Leading_Section   : Section_Access;\n      Trailing_Section  : Section_Access;\n      Component_Builder :\n        GNATdoc.Comments.Builders.Records.Record_Components_Builder;\n\n   begin\n      Component_Builder.Build\n        (Documentation.Sections'Unchecked_Access,\n         Options,\n         Node,\n         Last_Section,\n         Minimum_Indent);\n\n      Extract_General_Leading_Trailing_Documentation\n        (Decl_Node        => Node,\n         Options          => Options,\n         Last_Section     => Last_Section,\n         Minimum_Indent   => Minimum_Indent,\n         Sections         => Documentation.Sections,\n         Leading_Section  => Leading_Section,\n         Trailing_Section => Trailing_Section);\n\n      GNATdoc.Comments.Extractor.Code_Snippets.Fill_Code_Snippet\n        (Node,\n         Node.Token_Start,\n         Node.F_Type_Def.Token_End,\n         Documentation.Sections);\n"
+        },
+        {
+          "lines": [
+            2623,
+            2648
+          ],
+          "text": "         if Decl_Node.Kind in Ada_Type_Decl then\n            --  Access to subprogram type\n\n            GNATdoc.Comments.Extractor.Code_Snippets.Fill_Code_Snippet\n              (Decl_Node,\n               Decl_Node.Token_Start,\n               Decl_Node.Token_End,\n               Sections);\n\n         elsif Decl_Node.Kind in Ada_Generic_Subp_Internal then\n            --  Generic subprogram declaration includes generic formals\n            --  declarations.\n\n            GNATdoc.Comments.Extractor.Code_Snippets.Fill_Code_Snippet\n              (Spec_Node,\n               Decl_Node.Parent.Token_Start,\n               Spec_Node.Token_End,\n               Sections);\n\n         else\n            GNATdoc.Comments.Extractor.Code_Snippets.Fill_Code_Snippet\n              (Spec_Node,\n               Spec_Node.Token_Start,\n               Spec_Node.Token_End,\n               Sections);\n         end if;\n"
+        }
+      ],
+      "sha256": "b26f25ed91da20d91aaa18c09b5848ed1fef9f05ee3e9c24565ccc9a61726643"
+    }
+  },
+  "renderer_repository": "https://github.com/AdaCore/gnatdoc",
+  "renderer_revision": "04606c2152636ca2125047e3db701b50ed356cd4",
+  "renderer_version": "GNATdoc 26.0.0 (20260415)"
+}

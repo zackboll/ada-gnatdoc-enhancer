@@ -12,8 +12,10 @@ import functools
 import json
 import os
 import threading
+import tomllib
 from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
+from urllib.parse import urljoin, urlsplit
 
 
 class Quiet(SimpleHTTPRequestHandler):
@@ -22,10 +24,13 @@ class Quiet(SimpleHTTPRequestHandler):
 
 def run(workspace):
     from playwright.sync_api import sync_playwright
+    configuration=tomllib.loads((workspace/'first/qualification.toml').read_text())
+    navigation_mode=configuration['navigation']['mode']
     handler=functools.partial(Quiet,directory=str(workspace))
     server=ThreadingHTTPServer(('127.0.0.1',0),handler)
     thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
-    report={'checks':[],'scope':'isolated real native API site; not consumer portal'}
+    report={'checks':[],'scope':'isolated real native API site; not consumer portal',
+            'navigation_mode':navigation_mode}
     url=f'http://127.0.0.1:{server.server_port}/first/_site/api/index.html'
     def check(name,action,**dimensions):
         try:
@@ -52,8 +57,8 @@ def run(workspace):
                             page.goto(url,wait_until='networkidle')
                             links=page.locator('#compilation-units + ul a')
                             names=links.all_text_contents()
-                            require(len(names)>=2)
-                            first,second=names[:2]
+                            require(len(names)>=1)
+                            first=names[0];second=names[1] if len(names)>1 else first
                             check('theme assets and color scheme',lambda:require(page.evaluate(
                                 "() => document.styleSheets.length >= 2 && matchMedia('(prefers-color-scheme: "+theme+")').matches")),**dimensions)
                             def search():
@@ -62,6 +67,17 @@ def run(workspace):
                                 page.locator('#package-clear').click();require(box.input_value()=='')
                             check('search and clear',search,**dimensions)
                             def navigation():
+                                if len(names)==1:
+                                    # No second package exists in Imgproc's pinned
+                                    # site. Exercise reloadable bookmark/history,
+                                    # not a fictitious cross-package transition.
+                                    page.goto(url+'?package='+first,wait_until='networkidle')
+                                    page.goto(url+'?package='+first+'&bookmark=1',wait_until='networkidle')
+                                    page.go_back();page.wait_for_url('**?package='+first)
+                                    page.go_forward();page.wait_for_url('**&bookmark=1')
+                                    require(page.locator('a[aria-current="page"]').inner_text()==first)
+                                    page.frame_locator('iframe').get_by_role('heading',name=first,exact=True).wait_for()
+                                    return
                                 page.get_by_role('link',name=second,exact=True).click()
                                 page.wait_for_url('**?package='+second)
                                 page.frame_locator('iframe').get_by_role('heading',name=second,exact=True).wait_for()
@@ -69,17 +85,31 @@ def run(workspace):
                                 page.go_forward();page.wait_for_url('**?package='+second)
                                 page.goto(url+'?package='+second,wait_until='networkidle')
                                 require(page.locator('a[aria-current="page"]').inner_text()==second)
-                            check('package bookmark direct link Back Forward',navigation,**dimensions)
+                            check('package bookmark direct link Back Forward' if len(names)>1 else
+                                  'single-package bookmark reload Back Forward (no cross-package transition)',
+                                  navigation,**dimensions)
                             def category():
                                 link=page.locator('#operation-navigation a').first
                                 href=link.get_attribute('href');link.click()
                                 frame=page.frame(name='document-content')
                                 frame.wait_for_url('**/'+href)
                                 require(frame.locator('[id="'+href.split('#')[1]+'"]').count()==1)
-                            check('operation category real anchor',category,**dimensions)
+                            if navigation_mode=='operations':
+                                check('operation category real anchor',category,**dimensions)
+                            else:
+                                check('package-only policy has no operation categories',lambda:require(
+                                    page.locator('#operation-navigation').count()==0),**dimensions)
                             check('syntax and local type links',lambda:require(
                                 page.frame_locator('iframe').locator('.ada-keyword').count()>0 and
                                 page.frame_locator('iframe').locator('a.type-reference').count()>0),**dimensions)
+                            def type_destination():
+                                frame=page.frame(name='document-content')
+                                link=frame.locator('a.type-reference').first
+                                href=link.get_attribute('href');destination=urljoin(frame.url,href)
+                                link.click();frame.wait_for_url(destination)
+                                anchor=urlsplit(destination).fragment
+                                require(bool(anchor) and frame.locator('[id="'+anchor+'"]').count()==1)
+                            check('follow local type link to unique native anchor',type_destination,**dimensions)
                             def keyboard():
                                 page.locator('#package-search').focus();page.keyboard.press('Tab')
                                 require(page.locator('#package-clear').evaluate('(e) => e === document.activeElement'))
@@ -97,8 +127,9 @@ def run(workspace):
                         def fallback():
                             page.goto(url)
                             links=page.locator('#compilation-units + ul a[target="document-content"]')
-                            require(links.count()>=2)
-                            name=links.nth(1).inner_text();links.nth(1).click()
+                            require(links.count()>=1)
+                            link=links.nth(1) if links.count()>1 else links.first
+                            name=link.inner_text();link.click()
                             page.frame_locator('iframe').get_by_role('heading',name=name,exact=True).wait_for()
                         check('JavaScript-disabled native navigation',fallback,width=width)
                     finally:context.close()

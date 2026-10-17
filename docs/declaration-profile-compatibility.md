@@ -1,5 +1,10 @@
 # GNATDOC-003 — source-verified declaration profile compatibility
 
+This document records GNATDOC-003's historical result. GNATDOC-004's current
+four-site results and narrowly added rules are documented in
+`/home/zboll/git/ada-gnatdoc-enhancer/docs/mel-profile-compatibility.md`.
+Historical evidence remains unchanged.
+
 ## Disposition and proof boundary
 
 **PARTIAL_COMPATIBILITY**. All three original GNATDOC-002 profile blockers are

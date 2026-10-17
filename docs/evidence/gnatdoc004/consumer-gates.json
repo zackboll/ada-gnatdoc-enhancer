@@ -1,0 +1,176 @@
+{
+  "approved_mel_integrity": {
+    "checkout_clean_after": true,
+    "command": [
+      "python3",
+      "/tmp/gnatdoc002-integrity-mel/source/scripts/check_doc_source_integrity.py"
+    ],
+    "exit": 0,
+    "policy_changed": false,
+    "stderr": "",
+    "stdout": "{'base': '42648a92eb0cc84b2980d16db6028992c0494ba1', 'protected_files': 1162, 'reviewed_native_tests': 'original'}\n"
+  },
+  "consumer_coverage": {
+    "geometry": {
+      "command": [
+        "python3",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/snapshot/scripts/check_doc_coverage.py",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/snapshot/docs/gnatdoc-coverage-baseline.txt",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/pristine",
+        "--root",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/snapshot",
+        "--fail-on-removed"
+      ],
+      "exit": 0,
+      "policy_changed": false,
+      "stderr": "",
+      "stdout": "Documentation coverage: 452/452 items (100.0%); 0 newly undocumented, 0 newly documented\n"
+    },
+    "imgproc": {
+      "command": [
+        "python3",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/snapshot/scripts/check_doc_coverage.py",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/snapshot/docs/gnatdoc-coverage-baseline.txt",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/pristine",
+        "--root",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/snapshot",
+        "--fail-on-removed"
+      ],
+      "exit": 0,
+      "policy_changed": false,
+      "stderr": "",
+      "stdout": "Documentation coverage: 1512/1512 items (100.0%); 0 newly undocumented, 0 newly documented\n"
+    },
+    "mel": {
+      "command": [
+        "python3",
+        "/tmp/gnatdoc002-validated-acquisition/mel/snapshot/scripts/check_doc_coverage.py",
+        "/tmp/gnatdoc002-validated-acquisition/mel/pristine",
+        "--root",
+        "/tmp/gnatdoc002-validated-acquisition/mel/snapshot",
+        "--report",
+        "/tmp/gnatdoc004-mel-coverage.json"
+      ],
+      "exit": 0,
+      "policy_changed": false,
+      "stderr": "",
+      "stdout": "Coverage 4294/4295 (99.9767%); 1238 source / 1237 native / 1 renderer omission\n"
+    }
+  },
+  "enhanced_consumer_coverage": {
+    "geometry": {
+      "command": [
+        "python3",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/snapshot/scripts/check_doc_coverage.py",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/snapshot/docs/gnatdoc-coverage-baseline.txt",
+        "/tmp/gnatdoc004-first/geometry/first/_site",
+        "--root",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/snapshot",
+        "--fail-on-removed"
+      ],
+      "exit": 0,
+      "policy_changed": false,
+      "stderr": "",
+      "stdout": "Documentation coverage: 452/452 items (100.0%); 0 newly undocumented, 0 newly documented\n"
+    },
+    "imgproc": {
+      "command": [
+        "python3",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/snapshot/scripts/check_doc_coverage.py",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/snapshot/docs/gnatdoc-coverage-baseline.txt",
+        "/tmp/gnatdoc004-first/imgproc/first/_site",
+        "--root",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/snapshot",
+        "--fail-on-removed"
+      ],
+      "exit": 0,
+      "policy_changed": false,
+      "stderr": "",
+      "stdout": "Documentation coverage: 1512/1512 items (100.0%); 0 newly undocumented, 0 newly documented\n"
+    },
+    "mel": {
+      "command": [
+        "python3",
+        "/tmp/gnatdoc002-validated-acquisition/mel/snapshot/scripts/check_doc_coverage.py",
+        "/tmp/gnatdoc004-first/mel/first/_site",
+        "--root",
+        "/tmp/gnatdoc002-validated-acquisition/mel/snapshot",
+        "--report",
+        "/tmp/gnatdoc004-mel-enhanced-coverage.json"
+      ],
+      "exit": 0,
+      "policy_changed": false,
+      "stderr": "",
+      "stdout": "Coverage 4294/4295 (99.9767%); 1238 source / 1237 native / 1 renderer omission\n"
+    }
+  },
+  "warning_ratchets_on_reused_logs": {
+    "core": {
+      "command": [
+        "python3",
+        "/tmp/gnatdoc002-validated-acquisition/core/snapshot/scripts/compare_gnatdoc_warnings.py",
+        "/tmp/gnatdoc002-validated-acquisition/core/snapshot/docs/gnatdoc-warning-baseline.txt",
+        "/tmp/gnatdoc002-validated-acquisition/core/gnatdoc.log",
+        "--sources",
+        "/tmp/gnatdoc002-validated-acquisition/core/snapshot/src"
+      ],
+      "exit": 0,
+      "native_regeneration": false,
+      "policy_changed": false,
+      "reused_native_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "",
+      "stdout": "GNATdoc warning delta: 0 added, 0 removed\n"
+    },
+    "geometry": {
+      "command": [
+        "python3",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/snapshot/scripts/compare_gnatdoc_warnings.py",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/snapshot/docs/gnatdoc-warning-baseline.txt",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/gnatdoc.log",
+        "--sources",
+        "/tmp/gnatdoc002-validated-acquisition/geometry/snapshot/src",
+        "--fail-on-removed"
+      ],
+      "exit": 0,
+      "native_regeneration": false,
+      "policy_changed": false,
+      "reused_native_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "",
+      "stdout": "GNATdoc warning delta: 0 added, 0 removed\n"
+    },
+    "imgproc": {
+      "command": [
+        "python3",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/snapshot/scripts/compare_gnatdoc_warnings.py",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/snapshot/docs/gnatdoc-warning-baseline.txt",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/gnatdoc.log",
+        "--sources",
+        "/tmp/gnatdoc002-validated-acquisition/imgproc/snapshot/src",
+        "--fail-on-removed"
+      ],
+      "exit": 0,
+      "native_regeneration": false,
+      "policy_changed": false,
+      "reused_native_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "",
+      "stdout": "GNATdoc warning delta: 0 added, 0 removed\n"
+    },
+    "mel": {
+      "command": [
+        "python3",
+        "/tmp/gnatdoc002-validated-acquisition/mel/snapshot/scripts/compare_gnatdoc_warnings.py",
+        "/tmp/gnatdoc002-validated-acquisition/mel/snapshot/docs/gnatdoc-warning-baseline.txt",
+        "/tmp/gnatdoc002-validated-acquisition/mel/gnatdoc.log",
+        "--sources",
+        "/tmp/gnatdoc002-validated-acquisition/mel/snapshot/ada/src",
+        "--fail-on-removed"
+      ],
+      "exit": 0,
+      "native_regeneration": false,
+      "policy_changed": false,
+      "reused_native_log_sha256": "8edbc91925d34db3e392f717f20e44c6d65c7ec359772e606eb36e1667d0da8e",
+      "stderr": "",
+      "stdout": "GNATdoc warning delta: 0 added, 0 removed\n"
+    }
+  }
+}
