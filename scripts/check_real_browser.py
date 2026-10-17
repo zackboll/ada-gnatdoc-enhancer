@@ -395,8 +395,10 @@ def authored_checks(browser, workspace, api_url, check, require):
                             require(focused.count() == 1 and focused.evaluate(
                                 '(e) => getComputedStyle(e).outlineStyle !== "none"'))
                             target = focused.get_attribute('href')
-                            if target:
-                                page.keyboard.press('Enter'); page.wait_for_url(urljoin(destination, target))
+                            if target and not urlsplit(target).scheme and urljoin(destination, target) != page.url:
+                                with page.expect_navigation(wait_until='load'):
+                                    page.keyboard.press('Enter')
+                                page.wait_for_url(urljoin(destination, target))
                                 page.goto(destination)
                             for table in page.locator('.table-scroll').all():
                                 require(table.evaluate('(e) => e.clientWidth <= innerWidth+2'))
