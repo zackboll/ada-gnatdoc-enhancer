@@ -398,7 +398,17 @@ def authored_checks(browser, workspace, api_url, check, require):
                             if target and not urlsplit(target).scheme and urljoin(destination, target) != page.url:
                                 with page.expect_navigation(wait_until='load'):
                                     page.keyboard.press('Enter')
-                                page.wait_for_url(urljoin(destination, target))
+                                expected = urljoin(destination, target)
+                                if javascript and expected == urljoin(root_url, 'api/index.html'):
+                                    # The API shell initializes its package query
+                                    # before wait_for_url observes the destination.
+                                    # Still require the exact initialized identity.
+                                    from urllib.parse import urlencode
+                                    from ada_gnatdoc_enhancer.inventory import packages
+                                    first_package = next(iter(packages(config).values())).name
+                                    expected += '?' + urlencode({'package': first_package})
+                                    require(page.locator('#package-navigation').is_visible())
+                                page.wait_for_url(expected)
                                 page.goto(destination)
                             for table in page.locator('.table-scroll').all():
                                 require(table.evaluate('(e) => e.clientWidth <= innerWidth+2'))

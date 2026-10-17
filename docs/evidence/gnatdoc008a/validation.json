@@ -12,6 +12,7 @@
   "baseline_tests": 352,
   "before_label_errors": 66,
   "browser": "Corrected-overload Chromium: 108/112 pass; 4 pre-existing API-frame overload-history failures. Baseline history-only: 4/4 fail. All exact click/profile/fragment, direct bookmark Back/Forward, JS-disabled, keyboard, search and layout checks pass. Existing Core harness 1442 pass; other full browser runs pending.",
+  "browser_harness_followup": "Existing full harness has 4 Imgproc + 4 Geometry authored keyboard failures: navigation to bare api/index.html races existing package query initialization. Initial runs retained. Narrow harness-only fix awaits exact expected package query, controls visibility and native identity; no assertions removed and production UI unchanged. Corrected runs pending.",
   "consumer_negative_tests": 24,
   "consumer_pr_72_modified": false,
   "consumer_pr_head": "f2989da6c6a593f6196d1d989be0b2d126743dc6",
@@ -24,6 +25,7 @@
   "hosted_ci": "pending exact final PR head",
   "imgproc_navigation_entries": 314,
   "implementation_sha": "c077b088cb6764157afe1edfb69e8aa6ee84aafe",
+  "mel_policy": "Unchanged original policy executed: 1162 protected files, reviewed native tests original; coverage 4294/4295, 1238 source/1237 native/1 approved omission.",
   "new_tests": 20,
   "qualification_setup_failures": [
     "First run used an already authored predecessor: duplicate guides TOML section; retried with original GNATDOC-006 native-only predecessor.",
@@ -39,5 +41,6 @@
     "separate consumer update after reviewed merge"
   ],
   "scope_of_output_changes": "Only Imgproc/Geometry api/index.html + api/presentation.json; all native destinations identical; Core/MEL byte-identical",
-  "starting_sha": "f52dcfe37dc2819d86e72e1c38425e5e49d914eb"
+  "starting_sha": "f52dcfe37dc2819d86e72e1c38425e5e49d914eb",
+  "structural_tested_sha": "6a0d99528f42f90dd72b339be42a21e229eb6697"
 }

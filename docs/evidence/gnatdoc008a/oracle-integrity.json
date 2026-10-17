@@ -1,0 +1,22 @@
+{
+  "docs/api-categories.json": {
+    "github_blob_sha": "5e9604d5c04c03dd23d0364e9b27cbfba05e4ef1",
+    "matches_pinned_pr_head": true,
+    "sha256": "325bb623fde1594c4e88fa2ecba78378034f90efead93a96ed0ea4113c718d00"
+  },
+  "docs/evidence/gnatdoc008/navigation-comparison.json": {
+    "github_blob_sha": "02d5dbb6ea3e6b0ed1a119249c52a575b0257708",
+    "matches_pinned_pr_head": true,
+    "sha256": "903b29ae5e58af710402cbffcd2910819947dc43d0daebe110e47dba73da25b1"
+  },
+  "scripts/compare_shared_gnatdoc_navigation.py": {
+    "github_blob_sha": "b3e9e6ab4440a8ff4a97b88a25d98d3ab30f5b3d",
+    "matches_pinned_pr_head": true,
+    "sha256": "b02f7145472a0a3c60e9eef77fb5a01bec39e6d5c679f85bcc1865fe3e709080"
+  },
+  "scripts/enhance_gnatdoc_navigation.py": {
+    "github_blob_sha": "58caf822420c9b28fe46ce7965c87bee17ba5757",
+    "matches_pinned_pr_head": true,
+    "sha256": "231243f6ea8f1859687e165d4d4035e0a74dea62e7d5d02ce7703753e1dca5c3"
+  }
+}
