@@ -404,8 +404,7 @@ def authored_checks(browser, workspace, api_url, check, require):
                                     # before wait_for_url observes the destination.
                                     # Still require the exact initialized identity.
                                     from urllib.parse import urlencode
-                                    from ada_gnatdoc_enhancer.inventory import packages
-                                    first_package = next(iter(packages(config).values())).name
+                                    first_package = page.locator('#compilation-units + ul a').first.inner_text()
                                     expected += '?' + urlencode({'package': first_package})
                                     require(page.locator('#package-navigation').is_visible())
                                 page.wait_for_url(expected)
