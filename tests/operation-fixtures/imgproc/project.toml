@@ -1,0 +1,11 @@
+schema_version = 1
+project = "Authentic Imgproc operation excerpts"
+[gnatdoc]
+version = "26.0.0"
+[sources]
+directories = ["source"]
+packages = ["OpenCV.Image_Processing"]
+comment_style = "leading"
+[navigation]
+mode = "operations"
+categories = "categories.json"

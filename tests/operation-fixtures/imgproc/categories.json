@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "id": "filtering",
+      "title": "Filtering",
+      "declarations": [
+        "Bilateral_Filter",
+        "Filter_2D",
+        "Get_Gaussian_Kernel",
+        "Pyramid_Up",
+        "Squared_Box_Filter"
+      ]
+    }
+  ]
+}

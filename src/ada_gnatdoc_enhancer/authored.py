@@ -16,9 +16,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
 
-from .inventory import (Declaration, HEADER, direct_callables, packages, normalized,
-                        mask_ada, visible_prefix, last_semicolon)
-from .profiles import reconcile
+from .inventory import normalized, packages
+from .destinations import source_destinations
 from .util import digest, inside, regular, require
 from .validation import Page, css_safe
 
@@ -226,30 +225,13 @@ def markdown(text, languages, rewrite=None):
 def api_destinations(config, native):
     """Resolve overloads in source order using unique complete profile evidence."""
     result, owners = {}, {}
-    for key, pkg in packages(config).items():
-        page = native.pages[key]; counters = Counter()
-        callables = direct_callables(pkg)
-        result[pkg.name.lower()] = '../api/' + page.path.name
-        declarations = list(pkg.declarations)
-        # Narrow constant support required by authored entry links. Do not
-        # reinterpret nested scopes or expand the API scanner's historical counts.
-        masked = mask_ada(pkg.source); header = HEADER.search(masked)
-        public = visible_prefix(pkg.source, header.end())
-        public_mask = mask_ada(public)
-        if direct_callables(pkg):
-            for match in re.finditer(r'(?im)^\s*([A-Za-z][A-Za-z0-9_]*)\s*:\s*constant\b', public_mask):
-                end = last_semicolon(public_mask, match.start())
-                declarations.append(Declaration('constant', match[1], public[match.start():end].strip(),
-                    pkg.source.count('\n', 0, header.end() + match.start()) + 1))
-        declarations.sort(key=lambda d: d.line)
-        for decl in declarations:
-            found = [s for s in page.sections if s.name.lower() == decl.name.lower() and
-                     reconcile(decl.signature, s.code, callables) is not None]
-            require(len(found) == 1, 'authored API declaration lacks unique source identity')
-            name = decl.name.lower(); counters[name] += 1
+    for key, destinations in source_destinations(config, native, packages(config)).items():
+        result[key] = '../api/' + native.pages[key].path.name
+        for destination in destinations:
+            name = destination.declaration.name.lower()
             qualified = key + '.' + name
-            url = '../api/' + page.path.name + '#' + found[0].anchor
-            result[qualified + '/' + str(counters[name])] = url
+            url = '../api/' + destination.href
+            result[qualified + '/' + str(destination.ordinal)] = url
             result.setdefault(qualified, url)
             owners.setdefault(name, set()).add(key)
     for name, parents in owners.items():
