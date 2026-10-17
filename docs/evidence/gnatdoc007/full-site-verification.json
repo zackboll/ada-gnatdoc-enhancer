@@ -1,0 +1,105 @@
+{
+  "core": {
+    "idempotence": true,
+    "native": {
+      "declarations": 1268,
+      "packages": 195,
+      "pages": 196,
+      "signatures": 1268,
+      "status": "preserved"
+    },
+    "publication": {
+      "declaration_snippets": 1268,
+      "files": 207,
+      "generic_actual_type_links": 25,
+      "generic_conversion_package_links": 1,
+      "generic_member_links": 51,
+      "generic_summary_links": 102,
+      "generic_template_links": 25,
+      "html_pages": 202,
+      "linked_external_types": 0,
+      "linked_local_types": 2459,
+      "linked_types": 2459,
+      "links": 4565,
+      "matrix_summaries": 1,
+      "mode": "verified",
+      "native_instance_member_declarations": 0,
+      "presentation_only_anchors": 25,
+      "public_packages": 195,
+      "qualified_generic_instances": 25,
+      "unrendered_renderer_exceptions": 0,
+      "unsupported_instances": [],
+      "vector_summaries": 24
+    },
+    "two_copy_determinism": true
+  },
+  "geometry": {
+    "idempotence": true,
+    "native": {
+      "declarations": 130,
+      "packages": 2,
+      "pages": 3,
+      "signatures": 172,
+      "status": "preserved"
+    },
+    "publication": {
+      "declaration_snippets": 130,
+      "files": 14,
+      "html_pages": 9,
+      "linked_external_types": 95,
+      "linked_local_types": 171,
+      "linked_types": 266,
+      "links": 749,
+      "mode": "verified",
+      "public_packages": 2,
+      "unrendered_renderer_exceptions": 0
+    },
+    "two_copy_determinism": true
+  },
+  "imgproc": {
+    "idempotence": true,
+    "native": {
+      "declarations": 314,
+      "packages": 1,
+      "pages": 2,
+      "signatures": 467,
+      "status": "preserved"
+    },
+    "publication": {
+      "declaration_snippets": 314,
+      "files": 13,
+      "html_pages": 8,
+      "linked_external_types": 549,
+      "linked_local_types": 326,
+      "linked_types": 875,
+      "links": 1750,
+      "mode": "verified",
+      "public_packages": 1,
+      "unrendered_renderer_exceptions": 0
+    },
+    "two_copy_determinism": true
+  },
+  "mel": {
+    "idempotence": true,
+    "native": {
+      "declarations": 1237,
+      "packages": 29,
+      "pages": 30,
+      "signatures": 1237,
+      "status": "preserved"
+    },
+    "publication": {
+      "declaration_snippets": 1237,
+      "files": 42,
+      "html_pages": 37,
+      "linked_external_types": 0,
+      "linked_local_types": 1418,
+      "linked_types": 1418,
+      "links": 2965,
+      "mode": "verified",
+      "public_packages": 29,
+      "unrendered_renderer_exceptions": 1
+    },
+    "two_copy_determinism": true
+  }
+}

@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interoperability, compatibility and contributor architecture — OpenCV Core Ada</title>
+<link rel="stylesheet" href="../api/gnatdoc-theme.css">
+<link rel="stylesheet" href="gnatdoc-guides.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header><nav aria-label="Documentation"><a href="../index.html">Documentation home</a> · <a href="../api/index.html">GNATdoc API browser</a></nav></header>
+<div class="guide-layout">
+<nav class="guide-nav" aria-label="Developer guides"><ul>
+<li><a href="ownership-and-views.html">Ownership and views</a></li>
+<li><a href="typed-access-guide.html">Typed access guide</a></li>
+<li><a href="core-operations-guide.html">Core operations guide</a></li>
+<li><a href="sparse-and-persistence-guide.html">Sparse matrices and persistence</a></li>
+<li><a href="interop-and-compatibility.html" aria-current="page">Interoperability, compatibility and contributor architecture</a></li>
+</ul></nav>
+<main id="main-content">
+<h1 id="interoperability-compatibility-and-contributor-architecture">Interoperability, compatibility and contributor architecture</h1>
+<p><a href="https://github.com/zackboll/opencv_core_ada/blob/main/README.md">README</a> · <a href="https://zackboll.github.io/opencv_core_ada/api/index.html">GNATdoc API Reference</a> · <a href="https://github.com/zackboll/opencv_core_ada/blob/main/docs/documentation.md">Building and Contributing</a></p>
+<p>This guide is published as HTML on the documentation site and maintained as
+Markdown in the source repository. The public Ada specifications are authoritative for exact profiles
+and per-overload restrictions. Examples below include both complete programs
+and fragments intended for the surrounding application.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#goals-and-scope">Goals and scope</a></li>
+<li><a href="#cross-module-interoperability">Cross-module interoperability</a></li>
+<li><a href="#opencv-compatibility">OpenCV compatibility</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#requirements">Requirements</a>, <a href="#building">building</a> and <a href="#running-the-tests">tests</a></li>
+<li><a href="#safety-and-validation-boundary">Safety and validation boundary</a></li>
+<li><a href="#spark-and-gnatprove">SPARK and GNATprove</a></li>
+<li><a href="#known-limitations">Known limitations</a></li>
+<li><a href="#project-layout">Project layout</a> and <a href="#installed-core-mat-consumer">installed consumer</a></li>
+<li><a href="#development-approach">Development approach</a> and <a href="#contributing">contributing</a></li>
+</ul>
+<h2 id="goals-and-scope">Goals and scope</h2>
+<p>The project is designed around the following principles:</p>
+<ul>
+<li>Provide an <strong>idiomatic Ada API</strong> rather than reproducing C++ syntax.</li>
+<li>Keep C++ implementation details behind a stable <strong><code>extern &quot;C&quot;</code> ABI</strong>.</li>
+<li>Never expose <code>cv::Mat</code>, C++ references, templates, STL containers,
+<code>std::string</code>, C++ exceptions, raw C status codes, or <code>Interfaces.C</code> types in
+the normal public Ada API.</li>
+<li>Represent OpenCV resources with Ada controlled types and preserve OpenCV's
+reference-counted ownership semantics where that is the correct model.</li>
+<li>Prefer strong Ada enums, records, subtypes, discriminated result types,
+generics, overloads, and exceptions over integer flags and output-parameter
+conventions.</li>
+<li>Preserve important OpenCV behavior such as saturation, rounding,
+non-contiguous Regions, multi-channel layouts, floating-point edge cases,
+and version-specific numerical behavior where it affects correctness or
+safety.</li>
+<li>Keep compatibility handling below the public Ada layer whenever practical.</li>
+<li>Keep AUnit, GNATprove, GNATcov, formatting tools, and other development-only
+dependencies out of the public crate.</li>
+<li>Use SPARK selectively for small pure-Ada safety properties where formal proof
+gives a concrete guarantee.</li>
+<li>Inspect authoritative OpenCV declarations and source when exact behavior or
+safety differs from a high-level API description.</li>
+</ul>
+<p>Features are built vertically:</p>
+<pre><code class="language-text">public Ada API
+     -&gt; thin private Ada C interop
+     -&gt; stable C ABI / C++ shim
+     -&gt; OpenCV Core
+     -&gt; focused AUnit coverage
+</code></pre>
+<p>Literal symbol-for-symbol coverage of every internal OpenCV Core implementation
+surface is not a goal. The target is broad coverage of portable, user-facing
+Core functionality with a coherent Ada design.</p>
+<hr />
+<h2 id="cross-module-interoperability">Cross-module interoperability</h2>
+<p>Module crates such as <code>opencv_imgproc</code>, <code>opencv_imgcodecs</code>,
+<code>opencv_highgui</code>, <code>opencv_videoio</code>, <code>opencv_features2d</code>, and
+<code>opencv_calib3d</code> depend on <code>opencv_core</code>. Application code continues to use
+the public Core types such as <code>OpenCV.Core.Mat</code>, <code>OpenCV.Core.UMat</code>, and
+<code>OpenCV.Core.Sparse.Sparse_Mat</code>; no public raw-pointer API is introduced.</p>
+<p><code>OpenCV.Core.Module_Interop</code> is a deliberately low-level binding
+implementation interface for those crates. Its callback-scoped input and
+output handles are passed only to a module's private Ada/C++ interop. Core
+provides the installed <code>opencv_core_module_bridge.hpp</code> header for the module
+shim. The header is installed in the dependent project's <code>include</code> artifact
+directory by the Core GPR project, rather than being found through a
+repository-relative path.</p>
+<p>The bridge does not copy pixel data. Core remains the sole creator, owner, and
+destroyer of Core <code>cv::Mat</code> headers and opaque wrappers. A cooperating module
+shim may borrow the native header only for its callback/call scope, must never
+store or delete it, and must be compiled against the same compatible OpenCV ABI
+and installation as Core. Input handles permit inspection, including temporary
+external-buffer views. Output handles expose the actual Core header so an
+OutputArray operation can allocate or rebind it; temporary external-buffer
+views are rejected for output because rebinding would violate their no-escape
+ownership contract.</p>
+<p>UMat capabilities in <code>OpenCV.Core.Module_Interop</code> likewise borrow the actual
+Core-owned header through callback-scoped <code>Input_UMat_Handle</code> and
+<code>Output_UMat_Handle</code>. The installed typed C++ bridge performs no Mat transfer
+or mapping. Output operations may rebind that header, including ordinary UMat
+Regions. Core retains ownership; modules must neither retain nor delete the
+borrowed header and must use the same compatible OpenCV ABI and installation.
+This is module implementation infrastructure, not an application raw-handle API.</p>
+<p><code>OpenCV.Core.Sparse.Module_Interop</code> is the same kind of implementation
+interface for <code>Sparse_Mat</code>. OpenCV 4.1.0, 4.10.0, and 5.0.0 Imgproc all
+declare <code>calcHist</code> with a mutable <code>SparseMat&amp;</code> output and <code>calcBackProject</code>
+and <code>compareHist</code> with <code>const SparseMat&amp;</code> inputs. The installed bridge
+therefore exposes callback-scoped input and output resolvers. Core remains
+the sole owner of the opaque wrapper and the native <code>cv::SparseMat</code> header.
+A module shim borrows that header only during the callback, must neither
+delete nor retain it, and does not copy node storage. Output resolution
+returns the actual Core header so <code>SparseMat::create</code> can replace its shape
+in place. SparseMat has no temporary external-buffer view, so output
+resolution does not apply the Mat external-view rejection. Imgproc histogram
+operations themselves are not part of this Core crate.</p>
+<hr />
+<h2 id="opencv-compatibility">OpenCV compatibility</h2>
+<p>The supported compatibility range is <strong>OpenCV 4.1 through 5.0</strong>. One public Ada
+API is used across the range; callers do not select version-specific Ada
+packages or conditional APIs.</p>
+<p>GitHub Actions currently tests these representative targets:</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable table"><table>
+<thead>
+<tr>
+<th>OpenCV target</th>
+<th>CI environment</th>
+<th>OpenCV installation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>4.1.0</code></td>
+<td>Debian 12</td>
+<td>Core-focused source build</td>
+</tr>
+<tr>
+<td><code>4.6</code></td>
+<td>Debian 12</td>
+<td>Distribution development package</td>
+</tr>
+<tr>
+<td><code>4.10</code></td>
+<td>Debian 13</td>
+<td>Distribution development package</td>
+</tr>
+<tr>
+<td><code>5.0.0</code></td>
+<td>Debian 13</td>
+<td>Core-focused source build</td>
+</tr>
+</tbody>
+</table></div>
+<p>These are <strong>validation points, not an exhaustive list of supported releases</strong>.
+Intermediate releases within the supported range are not all individually run
+in CI.</p>
+<p>Row-strided external views use the longstanding
+<code>cv::Mat(rows, cols, type, data, step)</code> constructor. The OpenCV 4.1.0 and 5.0.0
+headers both declare this overload with <code>size_t step</code>; both document <code>step</code> in
+bytes, including row-end padding, and state that data is neither copied nor
+automatically deallocated. The binding uses the same ABI path across the
+supported range.</p>
+<p>GitHub Actions also runs the same public test path natively on Ubuntu 24.04
+ARM64 against the distribution OpenCV packages. That job is for architecture
+portability, not another OpenCV-version matrix entry.</p>
+<p>Version differences are isolated in the configuration and C++ shim layers.
+Depending on the linked OpenCV release, the shim may use a native API, a
+compatible older signature, or a behavior-preserving fallback. This includes
+older Core APIs whose signatures or availability changed over the lifetime of
+OpenCV 4.x and empty-<code>Mat</code> behavior that changed in OpenCV 5.</p>
+<p>OpenCV discovery is intentionally version-tolerant. <code>scripts/configure_opencv.sh</code>
+probes the following pkg-config package names in order:</p>
+<pre><code class="language-text">opencv5
+opencv4
+opencv
+</code></pre>
+<p>It also handles the legacy include-directory variable used by early supported
+4.x pkg-config files.</p>
+<hr />
+<h2 id="architecture">Architecture</h2>
+<p>The binding is deliberately layered:</p>
+<pre><code class="language-text">Ada application
+     |
+     v
++-------------------------------------------+
+| Thick Ada API                             |
+| OpenCV shared values / OpenCV.Core        |
+| controlled types, strong enums, records   |
+| exceptions, generics, scoped callbacks    |
++-------------------------------------------+
+     |
+     v
++-------------------------------------------+
+| Thin private Ada interop                  |
+| OpenCV.Internal.C_API                     |
+| fixed-width C ABI types                   |
++-------------------------------------------+
+     |
+     v
++-------------------------------------------+
+| C++ shim / stable C ABI                   |
+| extern &quot;C&quot;                                |
+| opaque handles, exception containment     |
+| OpenCV-version compatibility handling     |
++-------------------------------------------+
+     |
+     v
++-------------------------------------------+
+| OpenCV Core                               |
+| cv::Mat / cv::FileStorage / cv::*         |
++-------------------------------------------+
+</code></pre>
+<h3 id="thick-ada-layer">Thick Ada layer</h3>
+<p>The public layer is Ada-shaped:</p>
+<ul>
+<li><code>Mat</code> is a tagged controlled type.</li>
+<li>ordinary <code>Mat</code> assignment is shallow, matching <code>cv::Mat</code> header semantics;</li>
+<li><code>Clone</code> is the explicit deep-copy operation;</li>
+<li><code>File_Storage</code> is a limited controlled type with exclusive ownership;</li>
+<li>normal failures raise <code>OpenCV_Error</code>, while mathematically meaningful
+success/failure states use discriminated result types where appropriate;</li>
+<li>multi-result OpenCV operations return Ada records instead of exposing output
+parameters;</li>
+<li>typed data access is exposed through dedicated child packages rather than raw
+pointers.</li>
+</ul>
+<h3 id="thin-ada-interop">Thin Ada interop</h3>
+<p><code>OpenCV.Internal.C_API</code> defines the fixed C ABI used by the thick layer. It is
+an implementation detail, not the normal application interface.</p>
+<h3 id="c-shim">C++ shim</h3>
+<p>The shim:</p>
+<ul>
+<li>exports only C-compatible functions;</li>
+<li>uses opaque handles for C++ objects;</li>
+<li>uses fixed-width integers and simple C-compatible records;</li>
+<li>validates raw ABI and memory-safety conditions;</li>
+<li>contains OpenCV-version-specific compatibility code;</li>
+<li>initializes caller-visible outputs before work that may fail;</li>
+<li>catches OpenCV, standard C++, and unknown exceptions;</li>
+<li>converts failures into stable status codes and diagnostic text;</li>
+<li>never allows a C++ exception or C++ object lifetime to cross directly into
+Ada.</li>
+</ul>
+<hr />
+<h2 id="requirements">Requirements</h2>
+<p>A normal build requires:</p>
+<ul>
+<li>an Ada toolchain supported by Alire;</li>
+<li><strong>Alire</strong>;</li>
+<li>a C++17 compiler;</li>
+<li><strong>pkg-config</strong>;</li>
+<li>OpenCV development headers and libraries in the supported 4.1-5.0 range;</li>
+<li>the OpenCV Core library (<code>opencv_core</code>).</li>
+</ul>
+<p>The project links against:</p>
+<pre><code class="language-text">opencv_core
+libstdc++   (Linux)
+libc++      (macOS)
+</code></pre>
+<p>On macOS the C++ shim is compiled with Apple <code>clang++</code> and linked against
+<code>libc++</code> so it matches Homebrew OpenCV. Ada remains on the GNAT toolchain.
+Linux continues to compile C++ with <code>g++</code> and link <code>libstdc++</code>.</p>
+<p>The compatibility containers currently use Alire 2.1.1, GNAT 16.1.0, and
+GPRbuild 26.0.1. Those pinned versions make CI reproducible; they are not a
+claim that every local build must use exactly those versions.</p>
+<p>OpenCV include and library paths are discovered by:</p>
+<pre><code class="language-text">scripts/configure_opencv.sh
+</code></pre>
+<p>The script accepts pkg-config metadata under <code>opencv5</code>, <code>opencv4</code>, or <code>opencv</code>.</p>
+<hr />
+<h2 id="building">Building</h2>
+<p>Clone and build:</p>
+<pre><code class="language-sh">git clone https://github.com/zackboll/opencv_core_ada.git
+cd opencv_core_ada
+alr build
+</code></pre>
+<p>The Alire pre-build action runs <code>scripts/configure_opencv.sh</code>, which creates the
+local OpenCV GPR configuration from pkg-config metadata.</p>
+<p>If configuration fails, first check what OpenCV pkg-config name is available:</p>
+<pre><code class="language-sh">pkg-config --modversion opencv5 || \
+pkg-config --modversion opencv4 || \
+pkg-config --modversion opencv
+</code></pre>
+<p>The GPR project supports the standard library kinds through
+<code>OPENCV_CORE_LIBRARY_TYPE</code> (falling back to <code>LIBRARY_TYPE</code>):</p>
+<pre><code class="language-text">static-pic    (default)
+static
+relocatable
+</code></pre>
+<p>For example:</p>
+<pre><code class="language-sh">OPENCV_CORE_LIBRARY_TYPE=relocatable alr build
+</code></pre>
+<p>Both Ada and C++ are compiled with warnings promoted to errors. C++ is compiled
+as C++17 with <code>-Wall -Wextra -Wpedantic -Werror</code>.</p>
+<hr />
+<h2 id="running-the-tests">Running the tests</h2>
+<p>Tests live in a separate Alire crate under <code>tests/</code>:</p>
+<pre><code class="language-sh">alr -C tests build
+alr -C tests run
+</code></pre>
+<p>The crate also defines a root test action, which is the release
+entry-point gate:</p>
+<pre><code class="language-sh">alr test
+</code></pre>
+<p>The test crate carries development-only dependencies such as AUnit, GNATprove,
+and GNATcov. They are intentionally not dependencies of the public library
+crate.</p>
+<p>At the time of this README update, the full suite contains <strong>2025 AUnit tests</strong>.
+Coverage includes ordinary behavior, invalid input, shape/depth/channel
+compatibility, empty Mats, non-contiguous Regions, shallow-versus-independent
+ownership, callback lifetimes, arbitrary Ada array lower bounds, failure
+atomicity, persistence, numerical boundary behavior, and version compatibility.</p>
+<p>The <code>OpenCV Compatibility</code> GitHub Actions workflow runs the same test suite
+against all four compatibility targets listed above, and on native Ubuntu 24.04
+ARM64. <code>fail-fast</code> is disabled so a failure on one target does not hide the
+state of the others.</p>
+<hr />
+<h2 id="safety-and-validation-boundary">Safety and validation boundary</h2>
+<p>The project separates <strong>public semantic validation</strong> from <strong>raw ABI safety</strong>.</p>
+<h3 id="ada-layer">Ada layer</h3>
+<p>The thick API normally validates caller-facing rules such as:</p>
+<ul>
+<li>shape compatibility;</li>
+<li>depth and channel restrictions;</li>
+<li>index and Region bounds;</li>
+<li>continuity requirements for whole-buffer borrowing;</li>
+<li>legal enum/mode combinations;</li>
+<li>non-empty requirements;</li>
+<li>exact caller-buffer shape/stride requirements for external views;</li>
+<li>string restrictions that cannot safely cross the underlying native
+interface.</li>
+</ul>
+<h3 id="c-shim-1">C++ shim</h3>
+<p>The shim defensively validates conditions a raw C caller could violate and
+conditions needed to keep the C++ call safe:</p>
+<ul>
+<li>null handles and output pointers;</li>
+<li>fixed ABI enum decoding;</li>
+<li>pointer/count and byte-count relationships;</li>
+<li>signed arithmetic before OpenCV receives arguments;</li>
+<li>pointer alignment and row-step arithmetic for external Mat storage;</li>
+<li>failure-atomic handle publication;</li>
+<li>C++ exception containment.</li>
+</ul>
+<h3 id="source-backed-safety-boundaries">Source-backed safety boundaries</h3>
+<p>Where a supported OpenCV implementation contains signed intermediate arithmetic
+or other source-level hazards, the binding establishes an Ada/C-ABI boundary
+before the native call instead of relying on undefined behavior.</p>
+<p>Examples in the current codebase include:</p>
+<ul>
+<li>signed product guards around SVD/pseudoinverse and related workspaces;</li>
+<li>eigensolver and decomposition size guards;</li>
+<li>DFT/DCT dimension and work-buffer arithmetic checks;</li>
+<li>persistence integer and embedded-NUL restrictions;</li>
+<li>exact external-buffer byte-count, stride, and alignment checks;</li>
+<li>prevention of shallow aliases escaping callback-scoped external-buffer Mats.</li>
+</ul>
+<p>Compatibility code follows the same rule: version-dependent details belong in
+the configuration/C++ boundary rather than leaking into the thick Ada API.</p>
+<hr />
+<h2 id="spark-and-gnatprove">SPARK and GNATprove</h2>
+<p>Formal verification is focused on small pure-Ada safety helpers rather than
+foreign-resource ownership or OpenCV numerical algorithms.</p>
+<p>The current proof island is:</p>
+<pre><code class="language-text">OpenCV.Internal.Safe_Arithmetic
+</code></pre>
+<p>with <code>SPARK_Mode =&gt; On</code>.</p>
+<p>It currently contains proved contracts for:</p>
+<ul>
+<li><code>Product_Exceeds_Signed_Int32</code></li>
+<li><code>Fits_Signed_Int32</code></li>
+<li><code>To_Signed_Int32</code></li>
+</ul>
+<p>This supports safe dimensional and ABI conversions without trying to prove the
+C++ library itself.</p>
+<p>GNATprove is supplied by the separate <code>tests</code> Alire environment.</p>
+<hr />
+<h2 id="known-limitations">Known limitations</h2>
+<p>The current limitations are intentional and help keep the public API coherent:</p>
+<ol>
+<li>
+<p><strong>The dense public <code>Mat</code> model is primarily 2-D.</strong>
+N-dimensional construction, UInt8/Int8/UInt16/Int16/Int32/Float16/Float32/Float64 C1
+Get/Set, UInt8/UInt16/Int16/Int32/Float16/Float32/Float64 C2 Vec2,
+UInt8/UInt16/Int16/Int32/Float16/Float32/Float64 C3 Vec3, and
+UInt8/UInt16/Int16/Int32/Float16/Float32/Float64 C4 Vec4 Get/Set, <code>Slice</code> views, <code>Shape</code>, and
+Shape-based N-D reshape are available. Callback-scoped whole-buffer
+borrowing is provided for continuous N-D Mats of every typed layout.
+Packed and strided (gapped) caller-owned external views support genuine
+N-D shapes for every typed layout. Callback-scoped dimension-dropping
+selected views (<code>With_Selected_View</code>) are available: any non-final
+dimensions may be fixed to one index and dropped while the others keep
+half-open ranges. The final source dimension must remain, because OpenCV
+always uses the element size as a Mat's last step, and at least two result
+dimensions must remain; there is no 1-D or scalar selected Mat
+representation yet. This is not a general NumPy-style indexing model:
+there is no step slicing, axis reordering, broadcasting, or
+dimension-dropping shallow <code>Mat</code> returned outside a callback. N-D row APIs
+are not provided because a row is a 2-D concept. OpenCV 5.0's native Mat
+shape capacity remains 10 dimensions.</p>
+</li>
+<li>
+<p><strong>SparseMat and UMat are not complete native APIs.</strong>
+UMat has no direct mapped typed access, public OpenCL controls or raw OpenCL
+handles, masked Set_To, mixed Mat/UMat operands, reshape, DFT/DCT overloads,
+or downstream Imgproc UMat overloads. Its arithmetic, bitwise/mask, and math
+subset and callback-scoped module bridge are available as described above.
+Direct typed node access and read-only stored-node traversal cover all eight
+depths in C1/C2/C3/C4 (32 layouts). One vector is one complete element.
+Explicit all-zero vectors remain stored nodes; missing reads return zero and
+do not create a node. Float16 components keep exact binary16 bits.
+<code>Convert_To</code> and numeric <code>To_Dense</code> cover stored-node scaling and
+sparse-to-dense scale/offset conversion for every depth except Float16,
+which OpenCV 4.1 through 5.0 does not implement in the sparse conversion
+tables. <code>Norm</code> and <code>Normalize</code> are restricted to Float32 and Float64 with
+exactly one channel; only stored nodes participate, and <code>Min_Max</code>
+normalization is unavailable. Broader sparse arithmetic, C5+ typed layouts,
+and native 1-D SparseMat are not wrapped. Native 1-D
+SparseMat is deliberately omitted because the dense interoperability model
+begins at 2-D.</p>
+</li>
+<li>
+<p><strong>Typed direct/zero-copy access covers C1/C2/C3/C4 only.</strong>
+Every supported depth — UInt8, Int8, UInt16, Int16, Int32, Float16,
+Float32, and Float64 — has complete C1/C2/C3/C4 typed and zero-copy
+coverage (32 layouts). UInt8, Int8, UInt16, Int16 and Int32 C1/C2/C3/C4 have 2-D and N-D Get/Set, copied and borrowed
+2-D rows, continuous whole-buffer borrowing, and packed or row-strided
+2-D caller-buffer views. Int8 preserves the exact signed domain <code>-128 .. 127</code>
+without unsigned or floating-point intermediates. Float16 C1 has 2-D and N-D Get/Set that
+preserve the exact binary16 encoding, plus copied and borrowed 2-D row
+access, continuous 2-D/N-D whole-buffer borrowing, and packed or row-strided
+2-D caller-buffer views. Float16 C2, C3, and C4 have 2-D and N-D
+Vec2/Vec3/Vec4 Get/Set, copied and borrowed 2-D rows, continuous 2-D/N-D
+whole-buffer borrowing, and packed or strided 2-D/N-D caller-buffer views
+that preserve exact binary16 encodings per channel, so Float16 has complete
+C1/C2/C3/C4 coverage. UInt8, UInt16, Int16, Int32, Float32, and Float64 C3
+likewise have 2-D and N-D Vec3 Get/Set. No C1–C4 typed-layout gap remains;
+the deliberate typed-layout limitation is C5+.
+One vector remains one complete three-channel element; neither N-D access
+nor N-D buffer borrowing flattens channels into scalar indices. Rows
+remain 2-D concepts; packed and strided external views accept N-D shapes,
+with strides counted in complete vectors.
+Float64 C1 has 2-D and N-D Get/Set, classification, 2-D row access,
+continuous 2-D/N-D whole-buffer borrowing, and packed or row-strided 2-D
+caller-buffer views. Every packed caller-buffer view listed in this item
+also accepts an N-D <code>Shape</code>, and every strided view an N-D <code>Shape</code> with
+per-dimension <code>Strides</code> (see item 4). Other OpenCV
+depths are available to general Mat operations but do not yet have the same
+typed access families. Float16 now has an exact 16-bit public value
+representation, IEEE-754 classification helpers, numeric
+Float32 &lt;-&gt; Float16 conversion, scalar C1 2-D/N-D Get/Set, copied and
+borrowed row access, continuous buffer borrowing, packed or strided
+external caller-buffer Mat views, and C2/C3/C4 2-D and N-D vector Get/Set
+plus 2-D rows, continuous buffer borrowing, and packed or strided external
+caller-buffer Mat views. All eight supported depths have complete
+C1/C2/C3/C4 typed coverage; C5+ typed families remain unavailable. N-D row
+APIs remain unavailable.</p>
+</li>
+<li>
+<p><strong>External caller-buffer views are callback-scoped.</strong>
+Packed 2-D and packed N-D (<code>Shape</code>, 2 .. 32 dimensions on OpenCV 4.x;
+at most 10 on OpenCV 5.0) views are available
+for UInt8, Int8, UInt16, Int16, Int32, Float16, Float32, and Float64 C1,
+UInt8/Int8/UInt16/Int16/Int32/Float16/Float32/Float64 C2,
+UInt8/Int8/UInt16/Int16/Int32/Float16/Float32/Float64 C3, and
+UInt8/Int8/UInt16/Int16/Int32/Float16/Float32/Float64 C4. Packed views require exact logical
+capacity: <code>Data'Length</code> equals
+<code>Rows * Columns</code> or <code>product (Shape)</code>.
+Strided storage is exposed for the same layouts both as 2-D row strides
+and as N-D per-dimension strides (<code>Dimension_Stride_Array</code>). C2, C3, and C4
+strides count complete vectors, not scalar channels. N-D strides require a
+final stride of <code>1</code> and non-overlapping nesting. Strided backing storage
+must contain the complete outer extent (<code>Rows * Row_Stride</code> or
+<code>Shape (first) * Strides (first)</code> elements), including padding after the
+final logical row or outer block. Both read-only and writable scoped views
+exist; read-only is an Ada mode/capability restriction, not page protection.
+C5+ typed external layouts are not available.</p>
+</li>
+<li>
+<p><strong>Whole-buffer borrowing requires continuous storage.</strong>
+Genuine continuous N-D Mats and continuous N-D Slices are supported, in
+OpenCV element order with the final dimension varying fastest. A typed
+empty Mat invokes the callback with an empty array. Use row borrowing for
+non-contiguous 2-D Regions or row-strided Mats. A non-contiguous N-D Slice
+has no row-based alternative; use <code>Clone</code> to obtain continuous storage.</p>
+</li>
+<li>
+<p><strong>Scalar-valued APIs represent at most four components.</strong>
+Operations returning <code>Scalar</code> validate channel limits rather than silently
+discarding channels.</p>
+</li>
+<li>
+<p><strong>Arithmetic overloads are intentionally conservative.</strong>
+The public API does not mirror the full C++ Mat/Scalar, masked, mixed-depth,
+and expression-template overload matrix.</p>
+</li>
+<li>
+<p><strong><code>Invert</code> and ordinary <code>Solve</code> are LU-specific.</strong>
+Least-squares, SVD back-substitution, null-space solving, pseudoinverse, and
+condition-number behavior are exposed as separate explicit APIs.</p>
+</li>
+<li>
+<p><strong>No general public <code>cv::MatExpr</code> equivalent.</strong>
+The Ada interface favors explicit operations and explicit ownership.</p>
+</li>
+<li>
+<p><strong>No raw public pixel pointers or <code>System.Address</code> API.</strong>
+Zero-copy use cases are expressed through callback-scoped typed views.</p>
+</li>
+<li>
+<p><strong>No public raw OpenCV integer mode flags.</strong>
+Wrapped modes use strong Ada types or deliberately narrower operations.</p>
+</li>
+<li>
+<p><strong>Persistence hides <code>FileNode</code>.</strong>
+Nested maps and sequences are supported, but public FileNode objects or iterators,
+file append mode, Base64, comments, gzip controls, FLOW
+formatting, and raw persistence APIs are not part of the current slice.</p>
+</li>
+<li>
+<p><strong>The spectral API is deliberately focused.</strong>
+Full-complex and packed CCS DFT/DCT workflows, including <code>DFT_ROWS</code> and
+<code>DCT_ROWS</code> forms, are supported. Packed-spectrum division, CCS-bin
+accessors, packed/full representation conversion, and in-place transforms
+are not yet exposed.</p>
+</li>
+<li>
+<p><strong>The supported OpenCV range is not exhaustively tested release-by-release.</strong>
+CI validates four representative OpenCV-version targets across 4.1-5.0, plus
+native Ubuntu 24.04 ARM64 against distribution OpenCV. Compatibility
+fixes are kept below the public Ada API, but an untested intermediate
+release may still expose an undiscovered upstream difference.</p>
+</li>
+<li>
+<p><strong>The API is pre-1.0.</strong>
+Names and overloads may still evolve as N-D matrices, broader typed access,
+additional strided layouts, persistence features, and future cross-module
+integration are designed.</p>
+</li>
+</ol>
+<hr />
+<h2 id="project-layout">Project layout</h2>
+<pre><code class="language-text">opencv_core_ada/
+├── .github/
+│   └── workflows/
+│       └── opencv-compatibility.yml
+├── .clinerules/
+├── alire.toml
+├── opencv_core.gpr
+├── LICENSE
+├── README.md
+├── containers/
+│   └── ... compatibility container definitions ...
+├── cpp/
+│   ├── opencv_core_shim.cpp
+│   └── opencv_core_shim.h
+├── scripts/
+│   └── configure_opencv.sh
+├── src/
+│   ├── opencv.ads
+│   ├── opencv-core.ads
+│   ├── opencv-core.adb
+│   ├── opencv-core-persistence.ads
+│   ├── opencv-core-persistence.adb
+│   ├── opencv-core-*_access.*
+│   ├── opencv-core-*_row_access.*
+│   ├── opencv-core-*_buffer_access.*
+│   ├── opencv-core-*_mat_view.*
+│   ├── opencv-core-*_vec3*
+│   ├── opencv-core-vectors.ads
+│   ├── opencv-core-fixed_matrices.ads
+│   ├── opencv-core-float32_matx3x3*
+│   └── internal/
+└── tests/
+    ├── alire.toml
+    ├── tests.gpr
+    └── src/
+        ├── tests.adb
+        ├── mat_tests.*
+        ├── mat_*_tests.*
+        ├── persistence_tests.*
+        ├── cubic_tests.*
+        ├── polynomial_tests.*
+        ├── k_means_tests.*
+        ├── k_nearest_neighbor_tests.*
+        ├── random_tests.*
+        └── linear_discriminant_analysis_tests.*
+</code></pre>
+<p><code>config/opencv_core_install.gpr</code> is generated locally by
+<code>scripts/configure_opencv.sh</code> and is not a hand-maintained public interface.</p>
+<h3 id="installed-core-mat-consumer">Installed Core Mat consumer</h3>
+<p>After native prerequisites and the Alire toolchain are available, run directly:</p>
+<pre><code class="language-sh">sh scripts/validate_installed_mat_consumer.sh
+alr -n exec -- python3 -m unittest discover -s tests -p test_external_shim_install.py -v
+</code></pre>
+<p>The first command recursively installs real Core projects with GPRinstall, checks
+the authoritative exported bridge, then compiles/links/runs a fresh public Mat
+consumer against prefix-only project lookup. It moves prefix A to a longer B,
+verifies A is absent, and repeats with new consumer objects. On Windows it also
+checks installed DLL/import-archive byte equality and PE imports, using the
+external MSYS2 compiler/runtime and static Ada runtime isolation. It does not
+manually copy shim artifacts. Evidence and build logs remain in the reported
+temporary directory. Linux and macOS retain their existing shim build modes.</p>
+<p>The Python tests are separate GPRinstall configuration/helper evidence, not
+native Core algorithm coverage. They reproduce the language-less external
+project failure, demonstrate that declaring only C++ loses the library, and
+exercise library/required-artifact installation plus missing-archive rejection.
+See <a href="https://github.com/zackboll/opencv_core_ada/blob/main/docs/windows-external-shim-install.md">the corrective qualification record</a>.</p>
+<hr />
+<h2 id="development-approach">Development approach</h2>
+<p>New vertically integrated features generally follow this sequence:</p>
+<ol>
+<li>Inspect authoritative OpenCV declarations, implementation source, and tests
+for the target operation and supported-version differences.</li>
+<li>Inspect existing repository conventions and nearby Ada abstractions.</li>
+<li>Design the public thick Ada API and its deliberate restrictions.</li>
+<li>Separate public semantic validation from raw C ABI/memory-safety validation.</li>
+<li>Add only the C ABI surface actually required.</li>
+<li>Implement the C++ shim with exception containment, compatibility handling,
+and failure-atomic output publication.</li>
+<li>Add/update the thin Ada import.</li>
+<li>Implement the thick Ada operation.</li>
+<li>Add focused AUnit coverage, including non-contiguous Regions and ownership
+cases where relevant.</li>
+<li>Build the public crate with warnings as errors.</li>
+<li>Build and run the complete tests crate.</li>
+<li>Let the compatibility workflow exercise all CI OpenCV targets.</li>
+<li>Run targeted GNATprove when a SPARK proof boundary changes.</li>
+<li>Inspect the final diff and keep the change vertically focused.</li>
+</ol>
+<p>For typed zero-copy work, additional rules apply:</p>
+<ul>
+<li>prove the Ada element representation before overlaying native storage;</li>
+<li>keep raw addresses internal;</li>
+<li>use callback-scoped lifetimes;</li>
+<li>retain OpenCV storage with a controlled lease while borrowed;</li>
+<li>require explicit <code>aliased</code> formals where caller-owned Ada storage is passed
+directly to native code;</li>
+<li>validate row strides and byte-step arithmetic before constructing external
+native headers;</li>
+<li>prohibit shallow escape from temporary external-buffer Mats;</li>
+<li>never silently fall back to copying when an API is documented as zero-copy.</li>
+</ul>
+<hr />
+<h2 id="contributing">Contributing</h2>
+<p>New work starts on a feature branch, or on a corrective branch for focused
+repairs. A larger cohesive vertical bundle is acceptable when its public API,
+ABI, ownership, tests, and documentation are reviewed together; unrelated
+speculative batches and broad rewrites remain prohibited.</p>
+<p>Complete local formatting, builds, and tests before final submission. Cline
+then commits and pushes the source branch and opens a real pull request against
+<code>main</code>. Pull requests remain open and unmerged pending review, with auto-merge
+disabled. Corrective review work continues on the same pull-request branch and
+must be revalidated at its new head. Completion reports identify the exact
+locally tested and pushed source SHA rather than relying only on a PR merge-ref
+result.</p>
+<p>Contributions should preserve the central abstraction boundary:</p>
+<pre><code class="language-text">idiomatic Ada
+    |
+    v
+thin fixed C ABI
+    |
+    v
+C++ shim
+    |
+    v
+OpenCV Core
+</code></pre>
+<p>Please avoid:</p>
+<ul>
+<li>exposing <code>Interfaces.C</code>, status codes, raw handles, or raw pointers in the
+normal public API;</li>
+<li>passing C++ objects through Ada;</li>
+<li>leaking OpenCV-version conditionals into the public Ada API when the shim can
+absorb them;</li>
+<li>mechanically reproducing C++ overloads without considering Ada ergonomics;</li>
+<li>exposing raw OpenCV integer flags when a strong Ada type is suitable;</li>
+<li>silently changing shallow/deep ownership semantics;</li>
+<li>adding test/proof/coverage tooling to the public crate merely for development
+convenience;</li>
+<li>manually reimplementing an OpenCV algorithm when a corresponding Core
+primitive exists and is available across the compatibility strategy;</li>
+<li>suppressing warnings simply to make a build pass;</li>
+<li>broad unrelated cleanup in otherwise focused feature changes.</li>
+</ul>
+<p>Small, vertically complete features with focused tests are preferred over large
+partially integrated batches.</p>
+
+<section aria-label="Native API entry points"><h2 id="native-api-entry-points">Native API entry points</h2><ul>
+<li><a href="../api/9387d1e0578c52db5ca3b68cf755c181555b2e9bb2df6a24d1b5550a758f492f.html">OpenCV.Core.Module_Interop</a></li>
+<li><a href="../api/ab7f42b87f5659a06c60ec3b8858611c40598215d41c50551a1b7223dbd3cbf8.html">OpenCV.Core.Transfers</a></li>
+</ul></section>
+<p class="guide-source"><a href="https://github.com/zackboll/opencv_core_ada/blob/main/docs/interop-and-compatibility.md">Original Markdown source on GitHub</a></p>
+</main>
+</div>
+</body>
+</html>

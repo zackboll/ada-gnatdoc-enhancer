@@ -303,12 +303,116 @@ def run(workspace):
                     finally:context.close()
                 if configuration.get('generic_instances'):
                     generic_checks(browser,workspace,url,check,require)
+                if configuration.get('guides', {}).get('mode', '').startswith('authored-'):
+                    authored_checks(browser, workspace, url, check, require)
             finally:browser.close()
     finally:server.shutdown();server.server_close();thread.join(timeout=2)
     report['status']='pass' if all(x['status']=='pass' for x in report['checks']) else 'fail'
-    report['not_qualified']=['screen-reader audit','touch-device interaction','consumer authored guides',
+    report['not_qualified']=['screen-reader audit','touch-device interaction',
                              'real external HTTPS hosting','visual design review']
     return report
+
+
+def authored_checks(browser, workspace, api_url, check, require):
+    """Visit every authored page/fragment and every source-backed API target.
+
+    The native publication verifier reconstructs all links before browser checks.
+    These checks do not certify a screen reader or an actual hosted deployment.
+    """
+    from ada_gnatdoc_enhancer.config import load
+    from ada_gnatdoc_enhancer.pipeline import verify
+    from ada_gnatdoc_enhancer.validation import Page
+    config = load(workspace/'first', 'qualification.toml')
+    site = workspace/'first/_site'; verify(config, site)
+    data = json.loads((config.root/config.guide_manifest).read_text())
+    root_url = urljoin(api_url, '../')
+    pages = ['index.html', *(e['path'] for e in data['guides'])]
+    for width in (1280, 390):
+        for theme in ('light', 'dark'):
+            for javascript in (True, False):
+                context = browser.new_context(viewport={'width': width, 'height': 760},
+                    color_scheme=theme, java_script_enabled=javascript)
+                page = context.new_page(); page.set_default_timeout(5000)
+                errors, assets = [], []
+                page.on('pageerror', lambda error: errors.append(str(error)))
+                page.on('response', lambda response: assets.append(response.url) if response.status >= 400 else None)
+                try:
+                    for path in pages:
+                        destination = urljoin(root_url, path)
+                        parsed = Page((site/path).read_text())
+                        dimensions = {'width': width, 'theme': theme, 'javascript': javascript, 'page': path}
+                        def visible():
+                            response = page.goto(destination)
+                            require(response.status == 200 and page.locator('h1').count() == 1)
+                            require(page.locator('script').count() == 0)
+                            require(page.locator('body').evaluate('(e) => e.scrollWidth <= innerWidth+2'))
+                            require(page.locator('main').is_visible())
+                        check('authored page visible no scripts or outer overflow', visible, **dimensions)
+                        def navigation():
+                            for entry in data['guides']:
+                                target = urljoin(root_url, entry['path'])
+                                links = page.locator('a').evaluate_all('(es) => es.map(e => e.href)')
+                                require(target in links)
+                            require(urljoin(root_url, 'api/index.html') in
+                                    page.locator('a').evaluate_all('(es) => es.map(e => e.href)'))
+                            if path == 'index.html':
+                                for entry in data['guides']:
+                                    page.goto(destination)
+                                    link = page.locator('a[href="' + entry['path'] + '"]').first
+                                    link.click(); page.wait_for_url(urljoin(root_url, entry['path']))
+                                    require(page.locator('h1').count() == 1)
+                                    page.go_back(); page.wait_for_url(destination)
+                                    page.go_forward(); page.wait_for_url(urljoin(root_url, entry['path']))
+                                page.goto(destination)
+                        check('all approved guides and API browser navigable', navigation, **dimensions)
+                        for fragment in parsed.ids:
+                            def direct_fragment():
+                                page.goto(destination + '#' + fragment)
+                                require(page.locator('[id="' + fragment + '"]').count() == 1)
+                                require(page.locator(':target').get_attribute('id') == fragment)
+                            check('authored direct fragment', direct_fragment, fragment=fragment, **dimensions)
+                        api_links = sorted(set(link for link in parsed.links if
+                            __import__('re').fullmatch(r'(?:\.\./)?api/[a-f0-9]{64}\.html(?:#[a-f0-9]{64})?', link)))
+                        for target in api_links:
+                            def api_click():
+                                page.goto(destination)
+                                link = page.locator('a[href="' + target + '"]').first
+                                link.click(); page.wait_for_url(urljoin(destination, target))
+                                require(page.locator('h1').count() == 1)
+                                fragment = urlsplit(target).fragment
+                                if fragment:
+                                    require(page.locator('h4[id="' + fragment + '"]').count() == 1)
+                                page.go_back(); page.wait_for_url(destination)
+                                page.go_forward(); page.wait_for_url(urljoin(destination, target))
+                            check('authored source-verified API click anchor Back Forward', api_click,
+                                  target=target, **dimensions)
+                        def keyboard():
+                            page.goto(destination)
+                            link = page.locator('a').first; link.focus()
+                            require(link.evaluate('(e) => e === document.activeElement'))
+                            page.keyboard.press('Tab')
+                            focused = page.locator(':focus')
+                            require(focused.count() == 1 and focused.evaluate(
+                                '(e) => getComputedStyle(e).outlineStyle !== "none"'))
+                            target = focused.get_attribute('href')
+                            if target:
+                                page.keyboard.press('Enter'); page.wait_for_url(urljoin(destination, target))
+                                page.goto(destination)
+                            for table in page.locator('.table-scroll').all():
+                                require(table.evaluate('(e) => e.clientWidth <= innerWidth+2'))
+                        check('authored keyboard focus and responsive tables', keyboard, **dimensions)
+                        if parsed.package_entries:
+                            def directory():
+                                page.goto(destination)
+                                entries = page.locator('[data-package-entry]')
+                                require(entries.count() == sum(len(g['packages']) for g in data['groups']))
+                                require([x.inner_text() for x in page.locator(
+                                    'section[aria-label="Public package directory"] h3').all()] ==
+                                    [g['label'] for g in data['groups']])
+                            check('complete grouped package directory', directory, **dimensions)
+                        check('authored no page errors or broken assets', lambda: require(not errors and not assets), **dimensions)
+                finally:
+                    context.close()
 
 
 if __name__=='__main__':

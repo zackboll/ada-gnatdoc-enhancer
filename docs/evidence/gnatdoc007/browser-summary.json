@@ -1,0 +1,14 @@
+{
+  "core": {
+    "assertions": 1442,
+    "status": "pass"
+  },
+  "geometry": {
+    "assertions": 1428,
+    "status": "pass"
+  },
+  "mel": {
+    "assertions": 1126,
+    "status": "pass"
+  }
+}

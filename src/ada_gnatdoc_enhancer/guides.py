@@ -144,6 +144,9 @@ def _markdown(source:str,page:str,data:dict,native:NativeSite, config:Config, ex
 
 def render(config:Config,native:NativeSite) -> dict[str,bytes]:
     if config.guides=='none':return {}
+    if config.guides.startswith('authored-'):
+        from .authored import render as authored_render
+        return authored_render(config,native)
     data=manifest(config)
     written={}
     home=regular(inside(config.root,'docs/index.html')).read_text(encoding='utf-8')

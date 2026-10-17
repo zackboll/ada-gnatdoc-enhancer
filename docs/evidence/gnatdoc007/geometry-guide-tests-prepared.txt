@@ -1,0 +1,26 @@
+test_ada_code_that_is_not_a_compiled_example_is_rejected (test_gnatdoc_guides.Guides.test_ada_code_that_is_not_a_compiled_example_is_rejected) ... ok
+test_child_package_links_reach_the_child_page (test_gnatdoc_guides.Guides.test_child_package_links_reach_the_child_page) ... ok
+test_code_and_text_mutations_are_rejected (test_gnatdoc_guides.Guides.test_code_and_text_mutations_are_rejected) ... ok
+test_example_missing_from_guides_is_rejected (test_gnatdoc_guides.Guides.test_example_missing_from_guides_is_rejected) ... ok
+test_generated_guides_validate (test_gnatdoc_guides.Guides.test_generated_guides_validate) ... ok
+test_missing_and_extra_pages_are_rejected (test_gnatdoc_guides.Guides.test_missing_and_extra_pages_are_rejected) ... ok
+test_missing_guide_heading_is_rejected (test_gnatdoc_guides.Guides.test_missing_guide_heading_is_rejected) ... ok
+test_name_declared_in_both_packages_is_ambiguous (test_gnatdoc_guides.Guides.test_name_declared_in_both_packages_is_ambiguous) ... ok
+test_overloads_resolve_to_distinct_declarations (test_gnatdoc_guides.Guides.test_overloads_resolve_to_distinct_declarations) ... ok
+test_raw_html_is_rejected (test_gnatdoc_guides.Guides.test_raw_html_is_rejected) ... ok
+test_regeneration_is_idempotent (test_gnatdoc_guides.Guides.test_regeneration_is_idempotent) ... ok
+test_script_and_handler_are_rejected (test_gnatdoc_guides.Guides.test_script_and_handler_are_rejected) ... ok
+test_tampered_stylesheet_is_rejected (test_gnatdoc_guides.Guides.test_tampered_stylesheet_is_rejected) ... ok
+test_unapproved_guide_source_is_rejected (test_gnatdoc_guides.Guides.test_unapproved_guide_source_is_rejected) ... ok
+test_unapproved_link_targets_are_rejected (test_gnatdoc_guides.Guides.test_unapproved_link_targets_are_rejected) ... ok
+test_unknown_api_declaration_is_rejected (test_gnatdoc_guides.Guides.test_unknown_api_declaration_is_rejected) ... ok
+test_unknown_overload_is_rejected (test_gnatdoc_guides.Guides.test_unknown_overload_is_rejected) ... ok
+test_unsupported_fence_language_is_rejected (test_gnatdoc_guides.Guides.test_unsupported_fence_language_is_rejected) ... ok
+test_wrong_but_existing_api_anchor_is_rejected (test_gnatdoc_guides.Guides.test_wrong_but_existing_api_anchor_is_rejected) ... ok
+test_wrong_but_existing_guide_link_is_rejected (test_gnatdoc_guides.Guides.test_wrong_but_existing_guide_link_is_rejected) ... ok
+test_wrong_title_is_rejected (test_gnatdoc_guides.Guides.test_wrong_title_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 6.558s
+
+OK

@@ -1,0 +1,28 @@
+{
+  "inputs": {
+    "docs/assets/gnatdoc-guides.css": "8461dad011b761734cbeaeaeca741b0cf45f777efe6dc381802ef0d1fe0ad3bc",
+    "docs/example.adb": "b3a3d8b812255b4df5ac3a30e473ae416a9dca08ddc76b83733919cc8b6d4bb8",
+    "docs/example.gpr": "f1f6e9f9b08f118ed37f8e3506b0bdb52a1bd53f9eec93d3571d791cc42170a5",
+    "docs/examples/affine_and_perspective.adb": "8475efdea3ad2656e739c4a67e9d981383681965d3abdd6b050a572fc6af75e9",
+    "docs/examples/compatibility_and_safety.adb": "76c564b2c675e2b1a51331bfa10c6771e0fdad501d0517db82440d14ca031a32",
+    "docs/examples/contours_and_moments.adb": "bb51cf92e097a91c93659ef699d2ef8451885611033d039451dfe80d13c3649d",
+    "docs/examples/delaunay_and_voronoi.adb": "2467756f429604643c5db9fe217f288258a92eaf8e98c864a2dc5b60b3fbc87a",
+    "docs/examples/examples.gpr": "05cc69a2561311f5810eb0e1f9cf1c317a7cb33b9b435bea5eb28dfcfb78a5c9",
+    "docs/examples/fitting_and_intersections.adb": "2c3393ad30adb04e017eac2251872ef8e13f5d8f166943d41a8f07b8a0efd565",
+    "docs/guides/affine-and-perspective-geometry.md": "80248fec743cffa0d560f3d0919cb1c8fd0b0e699799c2fe455bf0cb5e2dafb3",
+    "docs/guides/compatibility-ownership-and-safety.md": "90a901d18fdbd9525850cc107f4234046495501479b83d6c4d7d2dd2e0e954cc",
+    "docs/guides/delaunay-and-voronoi.md": "c41de934d81b070a90cfa0ffa381c289704ff9fa7aab3189c10e8cf2ec53d433",
+    "docs/guides/geometry-fundamentals-and-contours.md": "e666b1fba2b9177f9456c4606cce155f99334cc49d94b8cbc9d3b655fe9c4b4b",
+    "docs/guides/shape-fitting-and-intersections.md": "73ba24c7f598acbe28bdaf302cce708ce7ebc037d23b5b34ae4b3cff5990496e",
+    "docs/index.html": "5db416e22306bdc0df26567173002a94da4184d7e9f2ce9a046a86d20617011b"
+  },
+  "native": {
+    "api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html": "66e1c621aa2dc8f36ca225c46745d42b19f7be370ba1099a8a146ec7c9baabe8",
+    "api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html": "018538fdbef120204f8cdf7bdccebf787fce4a48e42de8c4f5ccd38e5ff4c56f",
+    "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+    "api/index.html": "e5132ce2c3804326c83f7b73827770ec30467b10a67f520146667bbda8adfd23"
+  },
+  "renderer_sha256": "ccfa812141ddbdc46b12d4ecdffbacd07afee585fbc4994da24b6d56580fccda",
+  "revision": "fa81e5140cbebf2aa41397a40c08ba194a5f6f73",
+  "scope": "authentic full native inputs and approved authored inputs; not compiled-example execution evidence"
+}

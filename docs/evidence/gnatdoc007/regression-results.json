@@ -1,0 +1,11 @@
+{
+  "baseline_tests": 306,
+  "full_site_authored_tamper_mutations": 20,
+  "historical_tests_modified": false,
+  "new_authored_tests": 46,
+  "result": "pass",
+  "source_native_integrity": "four full sites pass; full-site-verification.json",
+  "synthetic_adversarial_fixtures": true,
+  "tamper_result": "all rejected; restored verification passed",
+  "total_tests": 352
+}

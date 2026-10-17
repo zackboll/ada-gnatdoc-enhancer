@@ -1,0 +1,10 @@
+{
+  "baseline_result": "pass",
+  "baseline_tests": 306,
+  "historical_evidence_changed": false,
+  "prior_qualification_workspace": "/tmp/gnatdoc006/qualified",
+  "prior_stale_cache_note": "final-sites cache contained literal multiplication sign; qualified cache matches committed ASCII entity. No source or historical evidence modified.",
+  "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "starting_revision": "4c75e86524648bd84fad17f112ea2f56f24ebffa",
+  "working_tree_initially_clean": true
+}

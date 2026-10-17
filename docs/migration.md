@@ -23,3 +23,9 @@ qualification record, separate from native declarations and dependency anchors.
 Existing configurations remain unchanged; adopting consumers must independently
 review and opt in to that source/native record rather than copying output metadata.
 See `/home/zboll/git/ada-gnatdoc-enhancer/docs/generic-instance-summaries.md`.
+
+GNATDOC-007 adds opt-in source-backed authored compatibility without replacing
+consumer workflows. Adoption must approve the authoritative input contract,
+preserve original compiled-example and source-integrity gates, and separately
+qualify deployment. See
+`/home/zboll/git/ada-gnatdoc-enhancer/docs/authored-guides-portal-compatibility.md`.

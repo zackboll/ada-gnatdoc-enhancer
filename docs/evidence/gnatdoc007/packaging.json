@@ -1,0 +1,46 @@
+{
+  "artifacts": {
+    "ada_gnatdoc_enhancer-0.1.0.dev0-py3-none-any.whl": "53fbcb797b0c8538c5f66a1f2665e9d98787e3850e4c7ea97f998e9d4c9cde1d",
+    "ada_gnatdoc_enhancer-0.1.0.dev0.tar.gz": "70d596fee69f4c3f1fc242f7778121ffbbce8fbad97dfaecbe4e1a8c946bb56c"
+  },
+  "sdist": {
+    "extracted_source": true,
+    "pythonpath_unset": true,
+    "rebuilt_wheel": true,
+    "result": "pass",
+    "tests": 352
+  },
+  "tested_production_source_sha256": {
+    "src/ada_gnatdoc_enhancer/__init__.py": "21896c73fca800e37688baf29579a31a9a19f232fdc2845dfd2bc3caa085c17b",
+    "src/ada_gnatdoc_enhancer/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/ada_gnatdoc_enhancer/adapters/__init__.py": "bc7839c1ed01b2d028cbb28537f7ab636ae839e11e9c6fba0c82ae9669a882d3",
+    "src/ada_gnatdoc_enhancer/adapters/mel.py": "4e3d20173d81a03a18d1027814334100f00d9159ba3031d5a94f2f85a3a9bef8",
+    "src/ada_gnatdoc_enhancer/adapters/opencv.py": "7f45fca90c6c8656398a56ff02bf4aacbde19a96dc4f81d553e7d16a87c55410",
+    "src/ada_gnatdoc_enhancer/authored.py": "1803b16ce1b2ce54515a554feacf3f08fc15af02d5cae7904f3705ebf83145b4",
+    "src/ada_gnatdoc_enhancer/cli.py": "2236a2c01928a42772ddb3a8b4e16f02fdbec63fb30f396a8ddd3366d6a1789e",
+    "src/ada_gnatdoc_enhancer/config.py": "01dab5ed7c0b26bd027f0bba4e7ce57b960705a1a010aca3001f95d3eb6f41fb",
+    "src/ada_gnatdoc_enhancer/conformance.py": "ae2f04143abf23dd70f0c56ff82fe500af6111b1a8abbff18cff904778d4507d",
+    "src/ada_gnatdoc_enhancer/coverage.py": "b5e78be5f070f65731bcc16e1338ad034e6feac4420b2ed3ed31c91d737fdecf",
+    "src/ada_gnatdoc_enhancer/errors.py": "6fa7d9eab4bac0a32a114685606f11fd1e8838fc8463c8852766edacf8a480da",
+    "src/ada_gnatdoc_enhancer/external_types.py": "86333d6a961a5f02af71f14cb276e888f35ef4fbd531921f2ea71ae4fc85bc33",
+    "src/ada_gnatdoc_enhancer/generic_instances.py": "07efc9e92201548f7c33939c57ef1f8c3c3aecd92f3199a52f657aff65ff12f8",
+    "src/ada_gnatdoc_enhancer/guides.py": "c5e66f5fd1e22dca2990d015ffdbea2f633e2e868cae3ae7c5838fe31bc6bdf0",
+    "src/ada_gnatdoc_enhancer/inventory.py": "d8e29273e8960cee5cf435eaa7a52ba266a8ad9d2fc8ceb1e0fa4eb13e01b593",
+    "src/ada_gnatdoc_enhancer/native_html.py": "1e29e589c7ed30de1933c7902fa920894d5b4f2decb77502d3dbc337cb8193ca",
+    "src/ada_gnatdoc_enhancer/navigation.py": "eb0ff6420781901297afb898702e55630576c3d89e74b93a7cdc7e99eda34a0b",
+    "src/ada_gnatdoc_enhancer/pipeline.py": "ef611672577fe2650ab02513e325b53af17b3224dd61bdea779b6c0fd86fcc23",
+    "src/ada_gnatdoc_enhancer/profiles.py": "be0fa1b79f2a522d6c830841709906953c7f746c1a021bc9fdda11a6642c6ab2",
+    "src/ada_gnatdoc_enhancer/qualification.py": "1e36e59542e19c5a30689e8b94aa6703f7081f733de7463b2bce42bc4c70d28d",
+    "src/ada_gnatdoc_enhancer/syntax.py": "3d4868b5efa69799b32c5af29ae0690838c45d10a24a6e0c8263f8c73f589848",
+    "src/ada_gnatdoc_enhancer/theme.py": "ec24fcdd209c976a8d17473544f2ad5ed1b6e92ae4d7a6c85d5500697680d55e",
+    "src/ada_gnatdoc_enhancer/util.py": "0b2c9d554263ca6d3251737e191b2859c738a64b7b41607adecf0e7e204a66f1",
+    "src/ada_gnatdoc_enhancer/validation.py": "067cc2ef12cb1716c1292d3e0338dd8c64552765f626686a9e86d55daec30e52",
+    "src/ada_gnatdoc_enhancer/warnings.py": "3e3e2090f541c5872b08594e72af4fedb39301cd66c919cf040d63ba9e6e15fc"
+  },
+  "wheel": {
+    "clean_environment": true,
+    "pythonpath_unset": true,
+    "result": "pass",
+    "tests": 352
+  }
+}

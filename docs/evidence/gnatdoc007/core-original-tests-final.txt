@@ -1,0 +1,243 @@
+test_additional_duplicate_occurrence_fails (test_compare_gnatdoc_warnings.CompareWarningsTest.test_additional_duplicate_occurrence_fails) ... ok
+test_ambiguous_declaration_identity_fails_closed (test_compare_gnatdoc_warnings.CompareWarningsTest.test_ambiguous_declaration_identity_fails_closed) ... ok
+test_comments_and_movement_do_not_change_scoped_identity (test_compare_gnatdoc_warnings.CompareWarningsTest.test_comments_and_movement_do_not_change_scoped_identity) ... ok
+test_different_categories_do_not_cancel (test_compare_gnatdoc_warnings.CompareWarningsTest.test_different_categories_do_not_cancel) ... ok
+test_documentation_and_movement_do_not_false_positive (test_compare_gnatdoc_warnings.CompareWarningsTest.test_documentation_and_movement_do_not_false_positive) ... ok
+test_generic_and_discriminant_keep_scope (test_compare_gnatdoc_warnings.CompareWarningsTest.test_generic_and_discriminant_keep_scope) ... ok
+test_identical_warnings_pass (test_compare_gnatdoc_warnings.CompareWarningsTest.test_identical_warnings_pass) ... ok
+test_indentation_does_not_merge_scopes (test_compare_gnatdoc_warnings.CompareWarningsTest.test_indentation_does_not_merge_scopes) ... ok
+test_inserted_overload_does_not_shift_matches (test_compare_gnatdoc_warnings.CompareWarningsTest.test_inserted_overload_does_not_shift_matches) ... ok
+test_malformed_baseline_fails (test_compare_gnatdoc_warnings.CompareWarningsTest.test_malformed_baseline_fails) ... ok
+test_multiline_function_keeps_return_profile (test_compare_gnatdoc_warnings.CompareWarningsTest.test_multiline_function_keeps_return_profile) ... ok
+test_multiline_procedure_keeps_complete_profile (test_compare_gnatdoc_warnings.CompareWarningsTest.test_multiline_procedure_keeps_complete_profile) ... ok
+test_nested_package_signatures_stay_distinct (test_compare_gnatdoc_warnings.CompareWarningsTest.test_nested_package_signatures_stay_distinct) ... ok
+test_new_warning_fails (test_compare_gnatdoc_warnings.CompareWarningsTest.test_new_warning_fails) ... ok
+test_non_warning_output_is_ignored (test_compare_gnatdoc_warnings.CompareWarningsTest.test_non_warning_output_is_ignored) ... ok
+test_overloads_stay_distinct (test_compare_gnatdoc_warnings.CompareWarningsTest.test_overloads_stay_distinct) ... ok
+test_pure_line_shift_passes (test_compare_gnatdoc_warnings.CompareWarningsTest.test_pure_line_shift_passes) ... ok
+test_qualified_return_overloads_stay_distinct (test_compare_gnatdoc_warnings.CompareWarningsTest.test_qualified_return_overloads_stay_distinct) ... ok
+test_record_components_with_the_same_name_stay_distinct (test_compare_gnatdoc_warnings.CompareWarningsTest.test_record_components_with_the_same_name_stay_distinct) ... ok
+test_removed_warning_is_reported_and_succeeds (test_compare_gnatdoc_warnings.CompareWarningsTest.test_removed_warning_is_reported_and_succeeds) ... ok
+test_reordered_diagnostics_pass (test_compare_gnatdoc_warnings.CompareWarningsTest.test_reordered_diagnostics_pass) ... ok
+test_same_text_on_another_declaration_fails (test_compare_gnatdoc_warnings.CompareWarningsTest.test_same_text_on_another_declaration_fails)
+Historical false negative: same file, column, and message. ... ok
+test_string_literals_do_not_corrupt_declaration_scanning (test_compare_gnatdoc_warnings.CompareWarningsTest.test_string_literals_do_not_corrupt_declaration_scanning) ... ok
+test_unrecognized_warning_format_fails (test_compare_gnatdoc_warnings.CompareWarningsTest.test_unrecognized_warning_format_fails) ... ok
+test_unsupported_unclosed_scope_fails_closed (test_compare_gnatdoc_warnings.CompareWarningsTest.test_unsupported_unclosed_scope_fails_closed) ... ok
+test_warning_moved_between_scopes_fails (test_compare_gnatdoc_warnings.CompareWarningsTest.test_warning_moved_between_scopes_fails) ... ok
+test_code_mutation (test_gnatdoc_guides.Guides.test_code_mutation) ... ok
+test_css (test_gnatdoc_guides.Guides.test_css) ... ok
+test_duplicate (test_gnatdoc_guides.Guides.test_duplicate) ... ok
+test_duplicate_heading (test_gnatdoc_guides.Guides.test_duplicate_heading) ... ok
+test_duplicate_heading_source_has_unique_ids (test_gnatdoc_guides.Guides.test_duplicate_heading_source_has_unique_ids) ... ok
+test_event (test_gnatdoc_guides.Guides.test_event) ... ok
+test_final_site_validator_rejects_mutations (test_gnatdoc_guides.Guides.test_final_site_validator_rejects_mutations) ... Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Theme: 196 API pages verified; asset/metadata errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Type cross-references:
+  Public package pages inspected: 195
+  Declaration snippets inspected: 1268
+  Resolved type links: 2698
+  Package pages enhanced: 168
+  Ambiguous references skipped: 3
+  Unsupported references skipped: 580
+  Invalid targets: 0
+  Structural errors: 0
+  Links by type family: angle_unit=22, batch_distance_kind=1, border_interpolation_result=1, border_kind=2, buffer_array=320, cartesian_coordinates=4, channel_count=7, channel_route=1, channel_route_array=1, channel_source_kind=1, comparison_kind=4, covariance_result=1, covariance_scaling=1, cubic_root_status=1, cubic_solution_result=1, depth_type=13, dimension_array=136, dimension_selection=1, dimension_selection_array=1, dimension_selection_kind=1, dimension_stride_array=64, eigen_decomposition_result=2, extremum_occurrence=2, file_storage=35, flip_kind=1, float16_value=20, float32_classification=1, float32_point=1, float32_point_3d=1, float32_size=1, float32_value=21, float64_classification=1, float64_value=10, index_array=166, index_range=4, index_range_array=2, input_mat_handle=1, input_sparse_mat_handle=1, input_umat_handle=1, int16_value=10, int32_value=10, int8_value=10, inversion_result=1, k_means_criteria=2, k_means_initialization=2, k_means_iteration_count=1, k_means_result=2, linear_discriminant_analysis_result=4, linear_program_result=1, linear_program_status=1, mat=969, mat_array=6, mat_size=10, mat_type=7, matrix=2, mean_std_dev_result=2, min_max_result=2, nd_min_max_result=2, nearest_neighbor_result=1, node_kind=2, norm_kind=4, normalize_kind=4, output_mat_handle=1, output_sparse_mat_handle=1, output_umat_handle=1, point=5, point_3d=1, point_array=1, point_coordinate=9, polar_coordinates=2, polynomial_solution_result=1, principal_component_analysis_result=5, random_number_generator=7, range_check_result=2, rect=2, reduction_axis=4, reduction_kind=2, region_adjustment=2, region_location=2, rotation_kind=1, row_array=128, sample_orientation=6, scalar=25, singular_value_decomposition_result=2, size_coordinate=15, solve_result=1, sort_axis=2, sort_order=2, sparse_extrema=1, sparse_mat=122, spectrum_multiplication_kind=3, storage_format=1, storage_mode=1, symmetry_source=1, transposed_product_order=4, uint16_value=10, uint8_value=10, umat=159, umat_cartesian_coordinates=4, umat_polar_coordinates=2, vector=240
+  Highlighted snippets verified: 1268; Ada text/markup errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Theme: 196 API pages verified; asset/metadata errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Type cross-references:
+  Public package pages inspected: 195
+  Declaration snippets inspected: 1268
+  Resolved type links: 2698
+  Package pages enhanced: 168
+  Ambiguous references skipped: 3
+  Unsupported references skipped: 580
+  Invalid targets: 0
+  Structural errors: 0
+  Links by type family: angle_unit=22, batch_distance_kind=1, border_interpolation_result=1, border_kind=2, buffer_array=320, cartesian_coordinates=4, channel_count=7, channel_route=1, channel_route_array=1, channel_source_kind=1, comparison_kind=4, covariance_result=1, covariance_scaling=1, cubic_root_status=1, cubic_solution_result=1, depth_type=13, dimension_array=136, dimension_selection=1, dimension_selection_array=1, dimension_selection_kind=1, dimension_stride_array=64, eigen_decomposition_result=2, extremum_occurrence=2, file_storage=35, flip_kind=1, float16_value=20, float32_classification=1, float32_point=1, float32_point_3d=1, float32_size=1, float32_value=21, float64_classification=1, float64_value=10, index_array=166, index_range=4, index_range_array=2, input_mat_handle=1, input_sparse_mat_handle=1, input_umat_handle=1, int16_value=10, int32_value=10, int8_value=10, inversion_result=1, k_means_criteria=2, k_means_initialization=2, k_means_iteration_count=1, k_means_result=2, linear_discriminant_analysis_result=4, linear_program_result=1, linear_program_status=1, mat=969, mat_array=6, mat_size=10, mat_type=7, matrix=2, mean_std_dev_result=2, min_max_result=2, nd_min_max_result=2, nearest_neighbor_result=1, node_kind=2, norm_kind=4, normalize_kind=4, output_mat_handle=1, output_sparse_mat_handle=1, output_umat_handle=1, point=5, point_3d=1, point_array=1, point_coordinate=9, polar_coordinates=2, polynomial_solution_result=1, principal_component_analysis_result=5, random_number_generator=7, range_check_result=2, rect=2, reduction_axis=4, reduction_kind=2, region_adjustment=2, region_location=2, rotation_kind=1, row_array=128, sample_orientation=6, scalar=25, singular_value_decomposition_result=2, size_coordinate=15, solve_result=1, sort_axis=2, sort_order=2, sparse_extrema=1, sparse_mat=122, spectrum_multiplication_kind=3, storage_format=1, storage_mode=1, symmetry_source=1, transposed_product_order=4, uint16_value=10, uint8_value=10, umat=159, umat_cartesian_coordinates=4, umat_polar_coordinates=2, vector=240
+  Highlighted snippets verified: 1268; Ada text/markup errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Theme: 196 API pages verified; asset/metadata errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Type cross-references:
+  Public package pages inspected: 195
+  Declaration snippets inspected: 1268
+  Resolved type links: 2698
+  Package pages enhanced: 168
+  Ambiguous references skipped: 3
+  Unsupported references skipped: 580
+  Invalid targets: 0
+  Structural errors: 0
+  Links by type family: angle_unit=22, batch_distance_kind=1, border_interpolation_result=1, border_kind=2, buffer_array=320, cartesian_coordinates=4, channel_count=7, channel_route=1, channel_route_array=1, channel_source_kind=1, comparison_kind=4, covariance_result=1, covariance_scaling=1, cubic_root_status=1, cubic_solution_result=1, depth_type=13, dimension_array=136, dimension_selection=1, dimension_selection_array=1, dimension_selection_kind=1, dimension_stride_array=64, eigen_decomposition_result=2, extremum_occurrence=2, file_storage=35, flip_kind=1, float16_value=20, float32_classification=1, float32_point=1, float32_point_3d=1, float32_size=1, float32_value=21, float64_classification=1, float64_value=10, index_array=166, index_range=4, index_range_array=2, input_mat_handle=1, input_sparse_mat_handle=1, input_umat_handle=1, int16_value=10, int32_value=10, int8_value=10, inversion_result=1, k_means_criteria=2, k_means_initialization=2, k_means_iteration_count=1, k_means_result=2, linear_discriminant_analysis_result=4, linear_program_result=1, linear_program_status=1, mat=969, mat_array=6, mat_size=10, mat_type=7, matrix=2, mean_std_dev_result=2, min_max_result=2, nd_min_max_result=2, nearest_neighbor_result=1, node_kind=2, norm_kind=4, normalize_kind=4, output_mat_handle=1, output_sparse_mat_handle=1, output_umat_handle=1, point=5, point_3d=1, point_array=1, point_coordinate=9, polar_coordinates=2, polynomial_solution_result=1, principal_component_analysis_result=5, random_number_generator=7, range_check_result=2, rect=2, reduction_axis=4, reduction_kind=2, region_adjustment=2, region_location=2, rotation_kind=1, row_array=128, sample_orientation=6, scalar=25, singular_value_decomposition_result=2, size_coordinate=15, solve_result=1, sort_axis=2, sort_order=2, sparse_extrema=1, sparse_mat=122, spectrum_multiplication_kind=3, storage_format=1, storage_mode=1, symmetry_source=1, transposed_product_order=4, uint16_value=10, uint8_value=10, umat=159, umat_cartesian_coordinates=4, umat_polar_coordinates=2, vector=240ok
+test_manifest_cannot_authorize_content (test_gnatdoc_guides.Guides.test_manifest_cannot_authorize_content) ... ok
+test_missing (test_gnatdoc_guides.Guides.test_missing) ... ok
+test_missing_source (test_gnatdoc_guides.Guides.test_missing_source) ... ok
+test_reject_invalid_links (test_gnatdoc_guides.Guides.test_reject_invalid_links) ... ok
+test_reject_malformed_fence (test_gnatdoc_guides.Guides.test_reject_malformed_fence) ... ok
+test_reject_raw_html (test_gnatdoc_guides.Guides.test_reject_raw_html) ... ok
+test_renderer_code_tables_and_angles (test_gnatdoc_guides.Guides.test_renderer_code_tables_and_angles) ... ok
+test_repeat (test_gnatdoc_guides.Guides.test_repeat) ... ok
+test_script (test_gnatdoc_guides.Guides.test_script) ... ok
+test_source_fences_preserved (test_gnatdoc_guides.Guides.test_source_fences_preserved) ... ok
+test_table_tampering (test_gnatdoc_guides.Guides.test_table_tampering) ... ok
+test_wrong_existing_api (test_gnatdoc_guides.Guides.test_wrong_existing_api) ... ok
+test_wrong_existing_guide (test_gnatdoc_guides.Guides.test_wrong_existing_guide) ... ok
+test_wrong_fragment (test_gnatdoc_guides.Guides.test_wrong_fragment) ... ok
+test_final_validator_rejects_valid_html_wrong_facts_and_targets (test_gnatdoc_instances.GeneratedSiteTests.test_final_validator_rejects_valid_html_wrong_facts_and_targets) ... ok
+test_full_site_all_depths_and_exact_baseline (test_gnatdoc_instances.GeneratedSiteTests.test_full_site_all_depths_and_exact_baseline) ... ok
+test_wrong_but_existing_instance_targets_and_missing_links (test_gnatdoc_instances.GeneratedSiteTests.test_wrong_but_existing_instance_targets_and_missing_links) ... ok
+test_ambiguous_actual_visibility (test_gnatdoc_instances.InstanceTests.test_ambiguous_actual_visibility) ... ok
+test_ancestor_private_and_renamed_blockers (test_gnatdoc_instances.InstanceTests.test_ancestor_private_and_renamed_blockers) ... ok
+test_every_intervening_parent_is_checked (test_gnatdoc_instances.InstanceTests.test_every_intervening_parent_is_checked) ... ok
+test_existing_metadata_cannot_bless_ancestor_shadowing (test_gnatdoc_instances.InstanceTests.test_existing_metadata_cannot_bless_ancestor_shadowing) ... ok
+test_inconsistent_template_fails (test_gnatdoc_instances.InstanceTests.test_inconsistent_template_fails) ... ok
+test_instance_type_signatures_link_to_own_summary (test_gnatdoc_instances.InstanceTests.test_instance_type_signatures_link_to_own_summary) ... ok
+test_instance_visibility_and_case_controls (test_gnatdoc_instances.InstanceTests.test_instance_visibility_and_case_controls) ... ok
+test_linker_rejects_missing_summary_anchor_and_metadata (test_gnatdoc_instances.InstanceTests.test_linker_rejects_missing_summary_anchor_and_metadata) ... ok
+test_metadata_only_tampering (test_gnatdoc_instances.InstanceTests.test_metadata_only_tampering) ... ok
+test_missing_member_anchor (test_gnatdoc_instances.InstanceTests.test_missing_member_anchor) ... ok
+test_missing_template_page (test_gnatdoc_instances.InstanceTests.test_missing_template_page) ... ok
+test_positive_members_links_semantics_and_idempotence (test_gnatdoc_instances.InstanceTests.test_positive_members_links_semantics_and_idempotence) ... ok
+test_private_descendant_cannot_bypass_ancestor_blocker (test_gnatdoc_instances.InstanceTests.test_private_descendant_cannot_bypass_ancestor_blocker) ... ok
+test_public_ancestor_shadowing_regression (test_gnatdoc_instances.InstanceTests.test_public_ancestor_shadowing_regression) ... ok
+test_rectangular_matrix_independent_facts_and_mutations (test_gnatdoc_instances.InstanceTests.test_rectangular_matrix_independent_facts_and_mutations) ... ok
+test_source_mutations_fail_closed (test_gnatdoc_instances.InstanceTests.test_source_mutations_fail_closed) ... ok
+test_summary_mutations_fail (test_gnatdoc_instances.InstanceTests.test_summary_mutations_fail) ... ok
+test_tampered_metadata_even_with_native_tampering_fails (test_gnatdoc_instances.InstanceTests.test_tampered_metadata_even_with_native_tampering_fails) ... ok
+test_unsupported_insertion_point (test_gnatdoc_instances.InstanceTests.test_unsupported_insertion_point) ... ok
+test_valid_actuals_case_insensitive (test_gnatdoc_instances.InstanceTests.test_valid_actuals_case_insensitive) ... ok
+test_wrong_existing_matrix_destination_fails (test_gnatdoc_instances.InstanceTests.test_wrong_existing_matrix_destination_fails) ... ok
+test_complete_inventory_and_idempotence (test_gnatdoc_navigation.NavigationTests.test_complete_inventory_and_idempotence) ... ok
+test_final_validator_rejects_mutations (test_gnatdoc_navigation.NavigationTests.test_final_validator_rejects_mutations) ... ok
+test_tampered_asset (test_gnatdoc_navigation.NavigationTests.test_tampered_asset) ... ok
+test_broken_stylesheet_link_and_index_navigation (test_highlight_gnatdoc_ada.Pipeline.test_broken_stylesheet_link_and_index_navigation) ... ok
+test_failed_insertion_is_atomic (test_highlight_gnatdoc_ada.Pipeline.test_failed_insertion_is_atomic) ... ok
+test_final_text_links_order_and_overload_integrity (test_highlight_gnatdoc_ada.Pipeline.test_final_text_links_order_and_overload_integrity) ... ok
+test_idempotence_and_determinism (test_highlight_gnatdoc_ada.Pipeline.test_idempotence_and_determinism) ... ok
+test_missing_anchor (test_highlight_gnatdoc_ada.Pipeline.test_missing_anchor) ... ok
+test_missing_and_corrupted_theme_assets (test_highlight_gnatdoc_ada.Pipeline.test_missing_and_corrupted_theme_assets) ... ok
+test_native_css_unchanged (test_highlight_gnatdoc_ada.Pipeline.test_native_css_unchanged) ... ok
+test_unapproved_non_snippet_changes (test_highlight_gnatdoc_ada.Pipeline.test_unapproved_non_snippet_changes) ... ok
+test_unknown_nested_or_corrupted_markup (test_highlight_gnatdoc_ada.Pipeline.test_unknown_nested_or_corrupted_markup) ... ok
+test_valid_but_wrong_syntax_category (test_highlight_gnatdoc_ada.Pipeline.test_valid_but_wrong_syntax_category) ... ok
+test_valid_html_changed_token_and_whitespace (test_highlight_gnatdoc_ada.Pipeline.test_valid_html_changed_token_and_whitespace) ... ok
+test_wrong_but_existing_type_destination (test_highlight_gnatdoc_ada.Pipeline.test_wrong_but_existing_type_destination) ... ok
+test_atomic_links (test_highlight_gnatdoc_ada.Tokens.test_atomic_links) ... ok
+test_characters_and_attributes (test_highlight_gnatdoc_ada.Tokens.test_characters_and_attributes) ... ok
+test_comments_not_recursive (test_highlight_gnatdoc_ada.Tokens.test_comments_not_recursive) ... ok
+test_escaped_operators (test_highlight_gnatdoc_ada.Tokens.test_escaped_operators) ... ok
+test_mixed_case_and_identifier_boundaries (test_highlight_gnatdoc_ada.Tokens.test_mixed_case_and_identifier_boundaries) ... ok
+test_multiline_arrays_records_and_generics (test_highlight_gnatdoc_ada.Tokens.test_multiline_arrays_records_and_generics) ... ok
+test_numbers_based_decimal_exponents_underscores (test_highlight_gnatdoc_ada.Tokens.test_numbers_based_decimal_exponents_underscores) ... ok
+test_profiles_modes_and_nested_access (test_highlight_gnatdoc_ada.Tokens.test_profiles_modes_and_nested_access) ... ok
+test_strings_doubled_quotes_not_recursive (test_highlight_gnatdoc_ada.Tokens.test_strings_doubled_quotes_not_recursive) ... ok
+test_ambiguous_use_visibility (test_link_gnatdoc_types.TypeLinks.test_ambiguous_use_visibility) ... ok
+test_comments_literals_and_unimported_qualification (test_link_gnatdoc_types.TypeLinks.test_comments_literals_and_unimported_qualification) ... ok
+test_duplicate_type_identity_rejected (test_link_gnatdoc_types.TypeLinks.test_duplicate_type_identity_rejected) ... ok
+test_enumeration_literal_blocks_parent_namesake (test_link_gnatdoc_types.TypeLinks.test_enumeration_literal_blocks_parent_namesake) ... ok
+test_generic_formal_shadows_parent_type (test_link_gnatdoc_types.TypeLinks.test_generic_formal_shadows_parent_type) ... ok
+test_generic_formals_and_instance_without_anchor (test_link_gnatdoc_types.TypeLinks.test_generic_formals_and_instance_without_anchor) ... ok
+test_idempotence_determinism_and_text_preservation (test_link_gnatdoc_types.TypeLinks.test_idempotence_determinism_and_text_preservation) ... ok
+test_internal_page_rejected (test_link_gnatdoc_types.TypeLinks.test_internal_page_rejected) ... ok
+test_invalid_structures_fail_before_writes (test_link_gnatdoc_types.TypeLinks.test_invalid_structures_fail_before_writes) ... ok
+test_local_arrays_nested_profiles_case_and_qualified (test_link_gnatdoc_types.TypeLinks.test_local_arrays_nested_profiles_case_and_qualified) ... ok
+test_missing_page_and_anchor_site_validator (test_link_gnatdoc_types.TypeLinks.test_missing_page_and_anchor_site_validator) ... ok
+test_nested_or_duplicate_links_and_altered_text_rejected (test_link_gnatdoc_types.TypeLinks.test_nested_or_duplicate_links_and_altered_text_rejected) ... ok
+test_non_type_shadow_blocks_parent (test_link_gnatdoc_types.TypeLinks.test_non_type_shadow_blocks_parent) ... ok
+test_order_and_future_local_shadow (test_link_gnatdoc_types.TypeLinks.test_order_and_future_local_shadow) ... ok
+test_overload_signatures_survive_links (test_link_gnatdoc_types.TypeLinks.test_overload_signatures_survive_links) ... ok
+test_parameters_returns_modes_and_families (test_link_gnatdoc_types.TypeLinks.test_parameters_returns_modes_and_families) ... ok
+test_record_component_names_are_not_links (test_link_gnatdoc_types.TypeLinks.test_record_component_names_are_not_links) ... ok
+test_subtypes_access_and_local_shadowing (test_link_gnatdoc_types.TypeLinks.test_subtypes_access_and_local_shadowing) ... ok
+test_unambiguous_import (test_link_gnatdoc_types.TypeLinks.test_unambiguous_import) ... ok
+test_unknown_names_namesakes_substrings_attributes_and_standard (test_link_gnatdoc_types.TypeLinks.test_unknown_names_namesakes_substrings_attributes_and_standard) ... ok
+test_wrong_real_type_anchor_rejected (test_link_gnatdoc_types.TypeLinks.test_wrong_real_type_anchor_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 116 tests in 75.822s
+
+OK
+
+  Highlighted snippets verified: 1268; Ada text/markup errors: 0
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Type cross-references:
+  Public package pages inspected: 195
+  Declaration snippets inspected: 1268
+  Resolved type links: 2698
+  Package pages enhanced: 168
+  Ambiguous references skipped: 3
+  Unsupported references skipped: 580
+  Invalid targets: 0
+  Structural errors: 0
+  Links by type family: angle_unit=22, batch_distance_kind=1, border_interpolation_result=1, border_kind=2, buffer_array=320, cartesian_coordinates=4, channel_count=7, channel_route=1, channel_route_array=1, channel_source_kind=1, comparison_kind=4, covariance_result=1, covariance_scaling=1, cubic_root_status=1, cubic_solution_result=1, depth_type=13, dimension_array=136, dimension_selection=1, dimension_selection_array=1, dimension_selection_kind=1, dimension_stride_array=64, eigen_decomposition_result=2, extremum_occurrence=2, file_storage=35, flip_kind=1, float16_value=20, float32_classification=1, float32_point=1, float32_point_3d=1, float32_size=1, float32_value=21, float64_classification=1, float64_value=10, index_array=166, index_range=4, index_range_array=2, input_mat_handle=1, input_sparse_mat_handle=1, input_umat_handle=1, int16_value=10, int32_value=10, int8_value=10, inversion_result=1, k_means_criteria=2, k_means_initialization=2, k_means_iteration_count=1, k_means_result=2, linear_discriminant_analysis_result=4, linear_program_result=1, linear_program_status=1, mat=969, mat_array=6, mat_size=10, mat_type=7, matrix=2, mean_std_dev_result=2, min_max_result=2, nd_min_max_result=2, nearest_neighbor_result=1, node_kind=2, norm_kind=4, normalize_kind=4, output_mat_handle=1, output_sparse_mat_handle=1, output_umat_handle=1, point=5, point_3d=1, point_array=1, point_coordinate=9, polar_coordinates=2, polynomial_solution_result=1, principal_component_analysis_result=5, random_number_generator=7, range_check_result=2, rect=2, reduction_axis=4, reduction_kind=2, region_adjustment=2, region_location=2, rotation_kind=1, row_array=128, sample_orientation=6, scalar=25, singular_value_decomposition_result=2, size_coordinate=15, solve_result=1, sort_axis=2, sort_order=2, sparse_extrema=1, sparse_mat=122, spectrum_multiplication_kind=3, storage_format=1, storage_mode=1, symmetry_source=1, transposed_product_order=4, uint16_value=10, uint8_value=10, umat=159, umat_cartesian_coordinates=4, umat_polar_coordinates=2, vector=240
+  Highlighted snippets verified: 1268; Ada text/markup errors: 0
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Theme: 196 API pages verified; asset/metadata errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Theme: 196 API pages verified; asset/metadata errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Theme: 196 API pages verified; asset/metadata errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Generic instances: 7 pages; 30 template/member/type links; integrity errors: 0
+Generic instances: 7 pages; 30 template/member/type links; integrity errors: 0
+Generic instances: 7 pages; 30 template/member/type links; integrity errors: 0
+Type cross-references:
+  Public package pages inspected: 13
+  Declaration snippets inspected: 16
+  Resolved type links: 3
+  Package pages enhanced: 1
+  Ambiguous references skipped: 0
+  Unsupported references skipped: 12
+  Invalid targets: 0
+  Structural errors: 0
+  Links by type family: matrix=1, vector=2
+Generic instances: 7 pages; 30 template/member/type links; integrity errors: 0
+Generic instances: 7 pages; 30 template/member/type links; integrity errors: 0
+Generic instances: 7 pages; 30 template/member/type links; integrity errors: 0
+Generic instances: 7 pages; 30 template/member/type links; integrity errors: 0
+Generic instances: 7 pages; 30 template/member/type links; integrity errors: 0
+Generic instances: 7 pages; 30 template/member/type links; integrity errors: 0
+Generic instances: 7 pages; 30 template/member/type links; integrity errors: 0
+Generic instances: 7 pages; 30 template/member/type links; integrity errors: 0
+Generic instances: 7 pages; 30 template/member/type links; integrity errors: 0
+Generic instances: 7 pages; 30 template/member/type links; integrity errors: 0
+Generic instances: 7 pages; 30 template/member/type links; integrity errors: 0
+Generic instances: 8 pages; 36 template/member/type links; integrity errors: 0
+Generic instances: 8 pages; 36 template/member/type links; integrity errors: 0
+Generic instances: 7 pages; 30 template/member/type links; integrity errors: 0
+Generic instances: 7 pages; 30 template/member/type links; integrity errors: 0
+Generic instances: 7 pages; 30 template/member/type links; integrity errors: 0

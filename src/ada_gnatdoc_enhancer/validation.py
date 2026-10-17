@@ -79,6 +79,9 @@ def validate_files(site:Path,config:Config,expected:set[str], *, raw=False):
                     f"machine-local path leak: {relative}")
             require('{{' not in text and '}}' not in text, f"unresolved template in {relative}")
             page=Page(text)
+            if config.guides.startswith('authored-') and not relative.startswith('api/'):
+                from .authored import check_html
+                check_html(text)
             require(not page.issues and len(page.ids)==len(set(page.ids)),
                     f"unsafe HTML/duplicate IDs in {relative}: {page.issues}")
             if page.scripts:
@@ -90,8 +93,27 @@ def validate_files(site:Path,config:Config,expected:set[str], *, raw=False):
     require(expected==observed,f"missing site files: {sorted(expected-observed)}")
     for path,page in pages.items():
         for link in page.links:
+            authored = config.guides.startswith('authored-') and path.parent != site.resolve()/'api'
+            if authored:
+                from urllib.parse import urlsplit
+                from .authored import safe_uri
+                # The only parent links belong to a guide and terminate in an
+                # actual approved root page/resource. No normalizing traversal.
+                if link.startswith('../'):
+                    require('%' not in link and not re.search(r'[\x00-\x20\\]', link),
+                            'unsafe authored parent URL encoding')
+                    require(path.parent == site.resolve()/'guides' and
+                            '..' not in link[3:].split('/') and
+                            link[3:].split('#')[0] in expected,
+                            'unapproved authored parent link')
+                else:
+                    safe_uri(link, config)
+                uri = urlsplit(link)
+                exact = frozenset({link}) if uri.scheme == 'https' else frozenset()
+            else:
+                exact = frozenset()
             target,fragment=local_link(path,site,link,external=config.allowed_hosts,
-                                       exact_external_fragments=frozenset(external.values()))
+                                       exact_external_fragments=frozenset(external.values()) | exact)
             if target is None:continue
             if fragment:
                 require(target.resolve() in pages and fragment in pages[target.resolve()].ids,

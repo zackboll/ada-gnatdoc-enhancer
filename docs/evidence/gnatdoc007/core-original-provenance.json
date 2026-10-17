@@ -1,0 +1,44 @@
+{
+  "authored_sources": {
+    "README.md": "01186a027ced66946ce90cbdc9f1eb113fd60272cb4bf235093101931817fc6b",
+    "docs/assets/gnatdoc-guides.css": "31c4ae37d107364fba4deb598892b245a0f1034ac83d79e44928fc1d883e1dba",
+    "docs/core-operations-guide.md": "94a8d9a9123acfe733a30f2017a749f32fa3b78136f08320802cae20c5b97d50",
+    "docs/documentation.md": "712245d89bac57f5c66c85ec2999526a3db31ad527b41a6ec9dea8842cbd1517",
+    "docs/example.adb": "d762c586f5cbdcccc9dc2901b67e08628546b3d08aa6e9d0f321f42c460e2cfa",
+    "docs/example.gpr": "f2eff62f0bb8908e4974bc560581caa6935b78b560575dd1203004199b8b0a81",
+    "docs/index.html": "3b859c15dfb85d4f5ab8a88b576f11671e790334c7c773d1c6eac72103abac8f",
+    "docs/interop-and-compatibility.md": "7bc6ea052d9f8470f86f1dee4ff63dcecf6833fdf1c22ec4e8c1bb27d2636ade",
+    "docs/ownership-and-views.md": "404f2c380c2ebc2bf76c320803f9a5c06be7c4c117452bd259f8938c61687636",
+    "docs/sparse-and-persistence-guide.md": "4f79aae400e972e9f5353f0800a0bb573dece6ddeed9839e7a59df30469e5589",
+    "docs/typed-access-guide.md": "213fad57085b7b90e7925dd14e8e4a779ed4b2bfb46e3bb138e9359a20b1134c",
+    "docs/windows-external-shim-install.md": "9b3925691ad84bc736d7faeee3b64819a7abb094ddb941a2e6dd992a0b976fd1",
+    "tests/probes/abs_diff_destination_source_findings.md": "65d62fa4b1f8624d1cc697e82252ce9cfd6aff735a74daa89f4fc7a5c36fc581",
+    "tests/probes/add_subtract_destination_source_findings.md": "5c201c96c055b9500a45497486e69f17cce4dac38bbeaf0b52fc3eb0adede056",
+    "tests/probes/bitwise_destination_source_findings.md": "41822151e815ae407974c260cf42c4cf8cdfe3ac9b182012f9dee7299b59e6a9",
+    "tests/probes/convert_destination_source_findings.md": "94642992a969fc60388a6bbfaf5214ab35a283edb84d00c887883daaaef45fc6",
+    "tests/probes/divide_destination_source_findings.md": "6d984cb94bb0b65bd0fa4088ce200a04d0694efccbd14d4f07e7d12ffa95b1dc",
+    "tests/probes/mask_destination_source_findings.md": "2cf79f4fae2aaae1185e08689b1aaa569eb2bfc9a2d67e433cf3f14199e3d24e",
+    "tests/probes/min_max_destination_source_findings.md": "7806c65f9cb24db505ed1e4cfd87748a14ec64141d0f9c5042b5608ba3e0621d",
+    "tests/probes/multiply_destination_source_findings.md": "abe3b93c138899cb651720ce4f9fb11bb8f845711d68fcb3c8eded7ef724c02d",
+    "tests/probes/nd_min_max_source_findings.md": "cd46f1757fddc0a90906bf00fa6b0daa6ba97ff5bb8913f3da8b1b77c199058e",
+    "tests/probes/weighted_destination_source_findings.md": "7e315f4d673157c23b92186d6e6b8543f490cca2ec52f7ef0f446215bdc73146"
+  },
+  "reference_output": {
+    "guides/core-operations-guide.html": "c6d08264daa9e155581e324ac48c1dad1842a9be5060b5daf7a7a42972835fc4",
+    "guides/gnatdoc-guides.css": "31c4ae37d107364fba4deb598892b245a0f1034ac83d79e44928fc1d883e1dba",
+    "guides/interop-and-compatibility.html": "3ea1e251d38095f5fe7ad192d2f5305e104c27910cdcd358af7a3e682fe2fea0",
+    "guides/ownership-and-views.html": "1deb024efcc7507a55eebd8a0cc038ac3e0f971c5ca79ae38b7217b3f54c7060",
+    "guides/sparse-and-persistence-guide.html": "9384f8fc437a2d7ad92fc9166ae325de09c88100cc9a53237a8dfa39a97b1719",
+    "guides/typed-access-guide.html": "a9ee7cff045ec573b6124e8c5b3181dee7046b0704ab939e195ccd0671b2fdae",
+    "index.html": "3b859c15dfb85d4f5ab8a88b576f11671e790334c7c773d1c6eac72103abac8f"
+  },
+  "revision": "c5545eee815431568495c6c76af83df56cf5c3dd",
+  "scripts_and_contracts": {
+    ".github/workflows/documentation.yml": "81212c2f6496ba924710ca46e33923470a28da13544d4c76aae9c833018f11ef",
+    "docs/index.html": "3b859c15dfb85d4f5ab8a88b576f11671e790334c7c773d1c6eac72103abac8f",
+    "docs/requirements.txt": "898338213eac29323ac9cb314059d8a4c5a348a368b2e1ee5c8fa8cfc3c9bd4e",
+    "scripts/generate_docs.sh": "df98bd30508f0e6214ade64bdbce306087331f7ee0d576cf4dad8b60dd8fa6b4",
+    "scripts/render_gnatdoc_guides.py": "39239662c755741d63c30a243473a95e273d345c486c401b658dc568fd7daa87",
+    "scripts/validate_docs.py": "e4d80ab72a554a89af336d1b06b4ad743d55354cb470322e40774c2d7615e7f8"
+  }
+}

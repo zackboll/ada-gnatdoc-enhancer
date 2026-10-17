@@ -1,0 +1,180 @@
++ alr exec -- gprbuild -P docs/example.gpr
+gprbuild: "example" up to date
++ echo LANDING_BUILD_EXIT:0
+LANDING_BUILD_EXIT:0
++ obj/docs-example/example
++ echo LANDING_RUN_EXIT:0
+LANDING_RUN_EXIT:0
++ alr exec -- gprbuild -P docs/examples/examples.gpr
+gprbuild: "filtering_and_transforms" up to date
+gprbuild: "color_and_representation" up to date
+gprbuild: "features_and_analysis" up to date
+gprbuild: "segmentation_and_contours" up to date
+gprbuild: "matching_and_registration" up to date
++ echo GUIDES_BUILD_EXIT:0
+GUIDES_BUILD_EXIT:0
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__color_and_representation.adb
++ test -x obj/docs-examples/b__color_and_representation.adb
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__color_and_representation.ads
++ test -x obj/docs-examples/b__color_and_representation.ads
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__color_and_representation.ali
++ test -x obj/docs-examples/b__color_and_representation.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__color_and_representation.o
++ test -x obj/docs-examples/b__color_and_representation.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__features_and_analysis.adb
++ test -x obj/docs-examples/b__features_and_analysis.adb
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__features_and_analysis.ads
++ test -x obj/docs-examples/b__features_and_analysis.ads
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__features_and_analysis.ali
++ test -x obj/docs-examples/b__features_and_analysis.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__features_and_analysis.o
++ test -x obj/docs-examples/b__features_and_analysis.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__filtering_and_transforms.adb
++ test -x obj/docs-examples/b__filtering_and_transforms.adb
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__filtering_and_transforms.ads
++ test -x obj/docs-examples/b__filtering_and_transforms.ads
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__filtering_and_transforms.ali
++ test -x obj/docs-examples/b__filtering_and_transforms.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__filtering_and_transforms.o
++ test -x obj/docs-examples/b__filtering_and_transforms.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__matching_and_registration.adb
++ test -x obj/docs-examples/b__matching_and_registration.adb
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__matching_and_registration.ads
++ test -x obj/docs-examples/b__matching_and_registration.ads
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__matching_and_registration.ali
++ test -x obj/docs-examples/b__matching_and_registration.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__matching_and_registration.o
++ test -x obj/docs-examples/b__matching_and_registration.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__segmentation_and_contours.adb
++ test -x obj/docs-examples/b__segmentation_and_contours.adb
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__segmentation_and_contours.ads
++ test -x obj/docs-examples/b__segmentation_and_contours.ads
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__segmentation_and_contours.ali
++ test -x obj/docs-examples/b__segmentation_and_contours.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__segmentation_and_contours.o
++ test -x obj/docs-examples/b__segmentation_and_contours.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/color_and_representation
++ test -x obj/docs-examples/color_and_representation
++ obj/docs-examples/color_and_representation
++ echo 'RUN obj/docs-examples/color_and_representation EXIT:0'
+RUN obj/docs-examples/color_and_representation EXIT:0
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/color_and_representation.adb.stderr
++ test -x obj/docs-examples/color_and_representation.adb.stderr
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/color_and_representation.adb.stdout
++ test -x obj/docs-examples/color_and_representation.adb.stdout
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/color_and_representation.ali
++ test -x obj/docs-examples/color_and_representation.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/color_and_representation.bexch
++ test -x obj/docs-examples/color_and_representation.bexch
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/color_and_representation.o
++ test -x obj/docs-examples/color_and_representation.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/features_and_analysis
++ test -x obj/docs-examples/features_and_analysis
++ obj/docs-examples/features_and_analysis
++ echo 'RUN obj/docs-examples/features_and_analysis EXIT:0'
+RUN obj/docs-examples/features_and_analysis EXIT:0
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/features_and_analysis.adb.stderr
++ test -x obj/docs-examples/features_and_analysis.adb.stderr
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/features_and_analysis.adb.stdout
++ test -x obj/docs-examples/features_and_analysis.adb.stdout
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/features_and_analysis.ali
++ test -x obj/docs-examples/features_and_analysis.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/features_and_analysis.bexch
++ test -x obj/docs-examples/features_and_analysis.bexch
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/features_and_analysis.o
++ test -x obj/docs-examples/features_and_analysis.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/filtering_and_transforms
++ test -x obj/docs-examples/filtering_and_transforms
++ obj/docs-examples/filtering_and_transforms
++ echo 'RUN obj/docs-examples/filtering_and_transforms EXIT:0'
+RUN obj/docs-examples/filtering_and_transforms EXIT:0
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/filtering_and_transforms.adb.stderr
++ test -x obj/docs-examples/filtering_and_transforms.adb.stderr
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/filtering_and_transforms.adb.stdout
++ test -x obj/docs-examples/filtering_and_transforms.adb.stdout
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/filtering_and_transforms.ali
++ test -x obj/docs-examples/filtering_and_transforms.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/filtering_and_transforms.bexch
++ test -x obj/docs-examples/filtering_and_transforms.bexch
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/filtering_and_transforms.o
++ test -x obj/docs-examples/filtering_and_transforms.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/matching_and_registration
++ test -x obj/docs-examples/matching_and_registration
++ obj/docs-examples/matching_and_registration
++ echo 'RUN obj/docs-examples/matching_and_registration EXIT:0'
+RUN obj/docs-examples/matching_and_registration EXIT:0
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/matching_and_registration.adb.stderr
++ test -x obj/docs-examples/matching_and_registration.adb.stderr
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/matching_and_registration.adb.stdout
++ test -x obj/docs-examples/matching_and_registration.adb.stdout
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/matching_and_registration.ali
++ test -x obj/docs-examples/matching_and_registration.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/matching_and_registration.bexch
++ test -x obj/docs-examples/matching_and_registration.bexch
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/matching_and_registration.o
++ test -x obj/docs-examples/matching_and_registration.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/segmentation_and_contours
++ test -x obj/docs-examples/segmentation_and_contours
++ obj/docs-examples/segmentation_and_contours
++ echo 'RUN obj/docs-examples/segmentation_and_contours EXIT:0'
+RUN obj/docs-examples/segmentation_and_contours EXIT:0
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/segmentation_and_contours.adb.stderr
++ test -x obj/docs-examples/segmentation_and_contours.adb.stderr
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/segmentation_and_contours.adb.stdout
++ test -x obj/docs-examples/segmentation_and_contours.adb.stdout
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/segmentation_and_contours.ali
++ test -x obj/docs-examples/segmentation_and_contours.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/segmentation_and_contours.bexch
++ test -x obj/docs-examples/segmentation_and_contours.bexch
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/segmentation_and_contours.o
++ test -x obj/docs-examples/segmentation_and_contours.o

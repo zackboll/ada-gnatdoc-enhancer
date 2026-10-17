@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ownership and views — OpenCV Core Ada</title>
+<link rel="stylesheet" href="../api/gnatdoc-theme.css">
+<link rel="stylesheet" href="gnatdoc-guides.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header><nav aria-label="Documentation"><a href="../index.html">Documentation home</a> · <a href="../api/index.html">GNATdoc API browser</a></nav></header>
+<div class="guide-layout">
+<nav class="guide-nav" aria-label="Developer guides"><ul>
+<li><a href="ownership-and-views.html" aria-current="page">Ownership and views</a></li>
+<li><a href="typed-access-guide.html">Typed access guide</a></li>
+<li><a href="core-operations-guide.html">Core operations guide</a></li>
+<li><a href="sparse-and-persistence-guide.html">Sparse matrices and persistence</a></li>
+<li><a href="interop-and-compatibility.html">Interoperability, compatibility and contributor architecture</a></li>
+</ul></nav>
+<main id="main-content">
+<h1 id="ownership-and-views">Ownership and views</h1>
+<p><a href="https://github.com/zackboll/opencv_core_ada/blob/main/README.md">README</a> · <a href="https://zackboll.github.io/opencv_core_ada/api/index.html">GNATdoc API Reference</a> · <a href="https://github.com/zackboll/opencv_core_ada/blob/main/docs/documentation.md">Building and Contributing</a></p>
+<p>This guide is published as HTML on the documentation site and maintained as
+Markdown in the source repository. The public Ada specifications are authoritative for exact profiles
+and per-overload restrictions. Examples below include both complete programs
+and fragments intended for the surrounding application.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#view-examples">View examples</a></li>
+<li><a href="#ownership-views-and-zero-copy-access">Ownership, views, and zero-copy access</a></li>
+<li><a href="#umat-and-the-transparent-api-baseline">UMat and the Transparent API baseline</a></li>
+<li>Related: <a href="typed-access-guide.html#typed-access-matrix">typed access matrix</a> and
+<a href="core-operations-guide.html#public-api-overview">destination-operation contracts</a></li>
+</ul>
+<h2 id="view-examples">View examples</h2>
+<h3 id="create-from-size">Create from <code>Size</code></h3>
+<pre><code class="language-ada">Image : Mat :=
+  Create
+    (Dimensions   =&gt; (Width =&gt; 640, Height =&gt; 480),
+     Element_Type =&gt; (Depth =&gt; Float32, Channels =&gt; 1));
+
+Dims : constant OpenCV.Size := Image.Dimensions;
+</code></pre>
+<p><code>OpenCV.Size.Width</code> maps to columns and <code>OpenCV.Size.Height</code> maps to rows.</p>
+<h3 id="create-a-shared-region">Create a shared Region</h3>
+<pre><code class="language-ada">ROI : Mat :=
+  Image.Region
+    ((X      =&gt; 100,
+      Y      =&gt; 50,
+      Width  =&gt; 200,
+      Height =&gt; 100));
+</code></pre>
+<p>A Region has its own <code>Mat</code> header but shares the parent's storage.
+<code>OpenCV.Rect</code> origins are signed so they can represent general OpenCV rectangles,
+including negative <code>X</code>/<code>Y</code>. <code>Mat.Region</code> still requires a nonnegative
+zero-based ROI origin that fits inside the source.</p>
+<hr />
+<h3 id="borrow-a-row-without-copying">Borrow a row without copying</h3>
+<pre><code class="language-ada">with OpenCV.Core.Float32_Row_Access;
+
+procedure Inspect_Row
+  (Data : aliased OpenCV.Core.Float32_Row_Access.Row_Array)
+is
+begin
+   -- Data (0) is column 0 of the borrowed row.
+   null;
+end Inspect_Row;
+
+OpenCV.Core.Float32_Row_Access.With_Read_Only_Row
+  (Image   =&gt; Image,
+   Row     =&gt; 0,
+   Process =&gt; Inspect_Row'Access);
+</code></pre>
+<p>The callback is the lifetime boundary. The row directly aliases <code>Mat</code> storage
+and no pixel values are copied.</p>
+<h3 id="wrap-caller-owned-packed-storage-in-a-temporary-mat">Wrap caller-owned packed storage in a temporary <code>Mat</code></h3>
+<pre><code class="language-ada">with OpenCV.Core;
+with OpenCV.Core.UInt8_Access;
+with OpenCV.Core.UInt8_Mat_View;
+
+procedure External_Buffer_Example is
+   Data : aliased OpenCV.Core.UInt8_Mat_View.Buffer_Array :=
+     (11 =&gt; 10,
+      12 =&gt; 20,
+      13 =&gt; 30,
+      14 =&gt; 40,
+      15 =&gt; 50,
+      16 =&gt; 60);
+
+   procedure Process (Image : in out OpenCV.Core.Mat) is
+   begin
+      OpenCV.Core.UInt8_Access.Set
+        (Image, Row =&gt; 1, Column =&gt; 0, Value =&gt; 200);
+      -- Data (14) is now 200 immediately. There is no copy-back phase.
+   end Process;
+begin
+   OpenCV.Core.UInt8_Mat_View.With_Writable_Mat_View
+     (Data, Rows =&gt; 2, Columns =&gt; 3, Process =&gt; Process'Access);
+end External_Buffer_Example;
+</code></pre>
+<p><code>Data'Length</code> must equal <code>Rows * Columns</code>. The Ada lower bound is arbitrary.
+The temporary <code>Mat</code> does not own the caller's storage.</p>
+<h3 id="wrap-caller-owned-packed-n-d-storage-in-a-temporary-mat">Wrap caller-owned packed N-D storage in a temporary <code>Mat</code></h3>
+<p>Every <code>*_Mat_View</code> package also overloads <code>With_Writable_Mat_View</code> with a
+<code>Shape</code> parameter that selects a genuine packed N-dimensional <code>Mat</code>:</p>
+<pre><code class="language-ada">with OpenCV.Core;
+with OpenCV.Core.Float32_Access;
+with OpenCV.Core.Float32_Mat_View;
+
+procedure External_Volume_Example is
+   Volume : aliased OpenCV.Core.Float32_Mat_View.Buffer_Array :=
+     (11 .. 34 =&gt; 0.0);
+
+   procedure Process (Image : in out OpenCV.Core.Mat) is
+   begin
+      --  Image.Shape = (2, 3, 4) and Image.Is_Continuous.
+      OpenCV.Core.Float32_Access.Set (Image, (1, 2, 3), 1.5);
+      --  Volume (34) is now 1.5 immediately.
+   end Process;
+begin
+   OpenCV.Core.Float32_Mat_View.With_Writable_Mat_View
+     (Volume, Shape =&gt; (2, 3, 4), Process =&gt; Process'Access);
+end External_Volume_Example;
+</code></pre>
+<p><code>Shape'Length</code> must be in <code>2 .. 32</code>, every extent must be positive, and
+<code>Data'Length</code> must equal <code>product (Shape)</code> exactly. Shape iteration order is
+OpenCV dimension order regardless of <code>Shape'First</code>, and neither Ada lower bound
+is visible through the <code>Mat</code>. The final dimension varies fastest: for
+<code>Shape =&gt; (D1, ..., Dn)</code> the zero-based index <code>(I1, ..., In)</code> is
+<code>Data (Data'First + ((I1 * D2 + I2) * D3 + ...) * Dn + In)</code>, the same order used
+by N-D <code>Get</code>/<code>Set</code> and N-D continuous buffer borrowing. For Vec2/Vec3/Vec4
+packages one <code>Data</code> entry is one complete Mat element, so a <code>(2, 3, 4)</code> Float64
+C4 view takes 24 <code>Vector</code> values, not 96 scalars. <code>Shape =&gt; (Rows, Columns)</code>
+produces the same 2-D geometry as the <code>Rows</code>/<code>Columns</code> overload, which is
+unchanged. Gapped N-D storage uses the strided N-D overload described below.
+OpenCV 5.0's native <code>MatShape</code> capacity is 10 dimensions
+(<code>MatShape::MAX_DIMS</code>). The binding rejects N-D construction, view, and
+reshape requests above that native capacity with <code>OpenCV_Error</code> before
+invoking the affected OpenCV constructor or reshape, so on OpenCV 5.0 an
+11 .. 32 dimensional view never runs <code>Process</code>. OpenCV 4.x retains the
+historic 32-dimensional limit. Public signatures are unchanged: the
+compatibility restriction is enforced below the Ada API, in the C++ shim.</p>
+<h3 id="read-only-caller-owned-storage">Read-only caller-owned storage</h3>
+<p>The same thirty-two typed <code>*_Mat_View</code> packages also provide
+<code>With_Read_Only_Mat_View</code> (packed 2-D and N-D) and
+<code>With_Read_Only_Strided_Mat_View</code> (row-strided 2-D and arbitrary-strided N-D).
+For example, an aliased constant may be passed without copying pixels:</p>
+<pre><code class="language-ada">with Ada.Text_IO;
+with OpenCV;
+with OpenCV.Core;
+with OpenCV.Core.UInt8_Access;
+with OpenCV.Core.UInt8_Mat_View;
+
+procedure Inspect_Constant_Example is
+   Data : aliased constant OpenCV.Core.UInt8_Mat_View.Buffer_Array :=
+     (11 =&gt; 1, 12 =&gt; 2, 13 =&gt; 3, 14 =&gt; 4, 15 =&gt; 5, 16 =&gt; 6);
+
+   procedure Inspect (Image : OpenCV.Core.Mat) is
+   begin
+      Ada.Text_IO.Put_Line
+        (OpenCV.UInt8_Value'Image
+           (OpenCV.Core.UInt8_Access.Get (Image, 1, 2)));
+   end Inspect;
+begin
+   OpenCV.Core.UInt8_Mat_View.With_Read_Only_Mat_View
+     (Data, Rows =&gt; 2, Columns =&gt; 3, Process =&gt; Inspect'Access);
+end Inspect_Constant_Example;
+</code></pre>
+<p>Read-only views provide zero-copy input to Core algorithms and cooperating Ada
+OpenCV modules via <code>Module_Interop.With_Input_Handle</code>. The callback receives
+<code>Image</code> by mode <code>in</code>, so normal in-place Ada operations and output handles
+requiring <code>in out Mat</code> cannot accept it. This is an Ada capability restriction,
+<strong>not</strong> OS/page protection: the native external-data header uses OpenCV's
+mutable pointer representation. The caller retains ownership; shallow escape
+is rejected and <code>Clone</code> creates independent storage. Read-only views obey the
+same geometry, full-stride capacity, and callback lifetime rules as writable
+views. Input-only operations remain available during the callback.</p>
+<h3 id="wrap-row-strided-caller-owned-storage">Wrap row-strided caller-owned storage</h3>
+<p><code>OpenCV.Core.Float32_Mat_View</code> also provides a row-strided overload:</p>
+<pre><code class="language-ada">OpenCV.Core.Float32_Mat_View.With_Writable_Mat_View
+  (Data                =&gt; Data,
+   Rows                =&gt; 3,
+   Columns             =&gt; 4,
+   Row_Stride_Elements =&gt; 8,
+   Process             =&gt; Process'Access);
+</code></pre>
+<p>Each logical row exposes the first <code>Columns</code> Float32 elements of its stride.
+Padding remains outside the <code>Mat</code>. <code>Row_Stride_Elements</code> must be at least
+<code>Columns</code>, and the caller retains ownership of the complete backing buffer.</p>
+<p><code>OpenCV.Core.Float64_Mat_View</code> provides a separately named operation whose
+stride is also measured in complete Ada elements rather than bytes:</p>
+<pre><code class="language-ada">OpenCV.Core.Float64_Mat_View.With_Writable_Strided_Mat_View
+  (Data       =&gt; Data,
+   Rows       =&gt; 3,
+   Columns    =&gt; 4,
+   Row_Stride =&gt; 6,
+   Process    =&gt; Process'Access);
+</code></pre>
+<p><code>Row_Stride</code> is the number of <code>Float64_Value</code> elements from the start of one
+logical row to the next and must be at least <code>Columns</code>. <code>Data'Length</code> must be
+at least <code>Rows * Row_Stride</code>, including a complete final-row stride. A buffer
+that reaches only the last logical element is rejected. Padding and extra
+trailing storage are not logical Mat elements and are left untouched.</p>
+<p>The same full-stride rule applies to the integer C1 view packages. For example,
+this UInt16 buffer contains two complete six-element strides for a <code>2 x 4</code>
+logical Mat. The two padding elements after each logical row remain outside the
+Mat and must still exist after the final row:</p>
+<pre><code class="language-ada">with OpenCV.Core;
+with OpenCV.Core.UInt16_Access;
+with OpenCV.Core.UInt16_Mat_View;
+
+procedure Padded_UInt16_Example is
+   Data : aliased OpenCV.Core.UInt16_Mat_View.Buffer_Array :=
+     (11 =&gt; 10, 12 =&gt; 20, 13 =&gt; 30, 14 =&gt; 40, 15 =&gt; 999, 16 =&gt; 999,
+      17 =&gt; 50, 18 =&gt; 60, 19 =&gt; 70, 20 =&gt; 80, 21 =&gt; 999, 22 =&gt; 999);
+
+   procedure Process (Image : in out OpenCV.Core.Mat) is
+   begin
+      OpenCV.Core.UInt16_Access.Set
+        (Image, Row =&gt; 1, Column =&gt; 2, Value =&gt; 65_535);
+      --  Data (19) changes immediately. Padding Data (15), Data (16),
+      --  Data (21), and Data (22) remains outside the logical Mat.
+   end Process;
+begin
+   OpenCV.Core.UInt16_Mat_View.With_Writable_Strided_Mat_View
+     (Data, Rows =&gt; 2, Columns =&gt; 4, Row_Stride =&gt; 6,
+      Process =&gt; Process'Access);
+   --  The caller still owns Data. The temporary Mat was callback-scoped.
+end Padded_UInt16_Example;
+</code></pre>
+<h3 id="wrap-gapped-strided-n-d-caller-owned-storage">Wrap gapped (strided) N-D caller-owned storage</h3>
+<p>Every <code>*_Mat_View</code> package also overloads <code>With_Writable_Strided_Mat_View</code>
+with a <code>Shape</code> and a <code>Strides : Dimension_Stride_Array</code>, supplying one stride
+per dimension:</p>
+<pre><code class="language-ada">with OpenCV.Core;
+with OpenCV.Core.Float32_Access;
+with OpenCV.Core.Float32_Mat_View;
+
+procedure Gapped_Volume_Example is
+   --  2 planes of 3 rows of 4 elements, each row padded to 6 elements and
+   --  each plane padded to 20 elements: 2 * 20 = 40 elements in total.
+   Volume : aliased OpenCV.Core.Float32_Mat_View.Buffer_Array :=
+     (0 .. 39 =&gt; 0.0);
+
+   procedure Process (Image : in out OpenCV.Core.Mat) is
+   begin
+      --  Image.Shape = (2, 3, 4); Image.Is_Continuous is False.
+      OpenCV.Core.Float32_Access.Set (Image, (1, 2, 3), 1.5);
+      --  Volume (1 * 20 + 2 * 6 + 3) = Volume (35) is now 1.5.
+   end Process;
+begin
+   OpenCV.Core.Float32_Mat_View.With_Writable_Strided_Mat_View
+     (Volume,
+      Shape   =&gt; (2, 3, 4),
+      Strides =&gt; (20, 6, 1),
+      Process =&gt; Process'Access);
+end Gapped_Volume_Example;
+</code></pre>
+<p>Strides are measured in <strong>complete Mat elements</strong>, never bytes. For Vec2,
+Vec3, and Vec4 packages one stride unit is one complete vector element (for
+example one 32-byte Float64 Vec4), not one scalar channel. For
+<code>Shape =&gt; (D1, ..., Dn)</code> and <code>Strides =&gt; (S1, ..., Sn)</code> the zero-based index
+<code>(I1, ..., In)</code> is <code>Data (Data'First + I1 * S1 + ... + In * Sn)</code>. The
+lower bounds of <code>Shape</code>, <code>Strides</code>, and <code>Data</code> are irrelevant.</p>
+<p>The contract is:</p>
+<ul>
+<li><code>Shape'Length</code> in <code>2 .. 32</code> (OpenCV 5.0: at most 10, enforced by the shim)
+with positive extents, and <code>Strides'Length = Shape'Length</code>;</li>
+<li>the final stride is exactly <code>1</code>;</li>
+<li>every outer stride covers its complete nested block:
+<code>Strides (I) &gt;= Strides (I + 1) * Shape (I + 1)</code>, so overlapping or
+backwards layouts are rejected;</li>
+<li><code>Data'Length &gt;= Shape (first) * Strides (first)</code>. OpenCV's native header
+spans the complete outer stride (<code>datalimit = data + size[0] * step[0]</code>),
+so the padding after the final logical outer block must exist. Storage that
+ends at the final logical element is rejected. Extra trailing storage beyond
+that extent is allowed and lies outside the header.</li>
+</ul>
+<p>Padding is never a logical element and is never touched. <code>Is_Continuous</code>
+reports the actual layout: a gapped layout is non-continuous, so whole-buffer
+borrowing rejects it before its callback runs, while packed-equivalent strides
+such as <code>(12, 4, 1)</code> for <code>(2, 3, 4)</code> are continuous and can be borrowed.
+<code>Shape =&gt; (Rows, Columns)</code>, <code>Strides =&gt; (Row_Stride, 1)</code> has exactly the same
+geometry as the 2-D row-strided overload. Ownership, callback lifetime, and
+the no-escape rules are identical to the packed views; <code>Clone</code> returns
+independent packed storage holding only the logical values.</p>
+<h3 id="select-a-lower-dimensional-view-by-fixing-dimensions">Select a lower-dimensional view by fixing dimensions</h3>
+<p><code>With_Selected_View</code> fixes chosen source dimensions to one index and <strong>drops</strong>
+them, while the other dimensions keep ordinary half-open ranges. The result
+aliases the source; no data is copied.</p>
+<pre><code class="language-ada">with OpenCV.Core;
+with OpenCV.Core.Float32_Access;
+
+procedure Selected_Plane_Example is
+   use OpenCV.Core;
+
+   Volume : Mat :=
+     Create (Shape =&gt; (2, 3, 2, 4), Element_Type =&gt; (Float32, 1));
+
+   procedure Process (View : in out Mat) is
+   begin
+      --  View.Shape = (3, 4); View (J, K) is Volume (1, J, 1, K).
+      OpenCV.Core.Float32_Access.Set (View, (2, 3), 1.5);
+      --  Volume (1, 2, 1, 3) is now 1.5.
+   end Process;
+begin
+   With_Selected_View
+     (Volume,
+      ((Kind =&gt; Fix_Index,  Index  =&gt; 1),
+       (Kind =&gt; Keep_Range, Bounds =&gt; (Start =&gt; 0, Stop =&gt; 3)),
+       (Kind =&gt; Fix_Index,  Index  =&gt; 1),
+       (Kind =&gt; Keep_Range, Bounds =&gt; (Start =&gt; 0, Stop =&gt; 4))),
+      Process'Access);
+end Selected_Plane_Example;
+</code></pre>
+<p>There is one selector per source dimension, applied in iteration order; the
+array's lower bound is irrelevant. <code>Keep_Range</code> requires
+<code>Start &lt; Stop &lt;= extent</code>; <code>Fix_Index</code> requires <code>Index &lt; extent</code>. The source
+must be a nonempty OpenCV-owned Mat with at least three dimensions; an
+ordinary <code>Slice</code> is a valid source. At least one dimension must be fixed and
+at least two must be kept, so no 1-D or scalar view is produced.</p>
+<p>The <strong>final source dimension must be kept</strong>. This is an OpenCV <code>Mat</code>
+representation rule, not an implementation shortcut: OpenCV always uses the
+element size as the step of a Mat's last dimension, so dropping the source's
+final axis would leave a last axis with a larger stride that no ordinary Mat
+header can describe without copying.</p>
+<p>Retained source strides are inherited. Dropping only leading dimensions
+yields a continuous view that whole-buffer borrowing accepts. Dropping a
+middle dimension keeps the outer stride, so the example above is
+non-continuous (rows begin eight elements apart): whole-buffer borrowing
+rejects it while 2-D row borrowing works. <code>View</code> is valid only during
+<code>Process</code>. It keeps the source allocation alive even if the source is rebound
+inside the callback, but shallow copies, <code>Slice</code>, <code>Reshape</code>, and
+<code>Module_Interop</code> output handles are rejected. <code>Clone</code> is the escape path.
+Selecting from a temporary caller-buffer view is rejected; <code>Clone</code> it first.</p>
+<hr />
+<h2 id="ownership-views-and-zero-copy-access">Ownership, views, and zero-copy access</h2>
+<p><code>OpenCV.Core.Mat</code> is a tagged private Ada controlled type.</p>
+<h3 id="ordinary-assignment-is-shallow">Ordinary assignment is shallow</h3>
+<pre><code class="language-ada">B := A;
+</code></pre>
+<p><code>B</code> receives a distinct <code>cv::Mat</code> header sharing the same OpenCV-owned storage
+with <code>A</code>. Mutations through either alias are visible through the other.</p>
+<h3 id="clone-is-deep"><code>Clone</code> is deep</h3>
+<pre><code class="language-ada">B := A.Clone;
+</code></pre>
+<p>The clone owns independent pixel storage.</p>
+<h3 id="shared-storage-views">Shared-storage views</h3>
+<p>The public API includes no-copy views such as:</p>
+<ul>
+<li><code>Region</code></li>
+<li><code>Row_View</code></li>
+<li><code>Column_View</code></li>
+<li>row-range and column-range view overloads</li>
+<li><code>Slice</code></li>
+<li><code>Reshape</code>, including Shape-based N-D overloads</li>
+<li><code>Diagonal_View</code></li>
+</ul>
+<p>For ordinary OpenCV-owned Mats, these headers retain the shared allocation by
+normal OpenCV reference counting.</p>
+<p><code>With_Selected_View</code> is the callback-scoped, dimension-dropping counterpart.
+Its view keeps the source allocation alive for the callback and follows the
+temporary-view no-escape rules; <code>Slice</code> itself is unchanged and never drops
+dimensions.</p>
+<h3 id="retained-roi-geometry-and-header-adjustment">Retained ROI geometry and header adjustment</h3>
+<p>Both <code>Mat</code> and <code>UMat</code> provide <code>Locate_Region</code> and <code>Adjust_Region</code> for nonempty,
+<strong>exactly 2-D</strong> headers, at any supported depth/channel count. <code>Slice</code> remains
+the N-D view abstraction. <code>Region_Location</code> contains <code>Whole_Size : OpenCV.Size</code>
+and <code>Offset : OpenCV.Point</code>: X is a zero-based column, Y a zero-based row.
+Nested Regions locate against the original retained allocation, not merely
+their immediate parent view. Whole_Size describes OpenCV's retained storage
+geometry; it is not a parent Ada Mat, an ownership handle, or evidence that
+the original parent variable is still alive. Reference-counted Region storage
+remains usable after that variable finalizes.</p>
+<pre><code class="language-ada">Location : constant Region_Location := ROI.Locate_Region;
+--  Move each boundary outward by one, clipping to the retained parent.
+ROI.Adjust_Region (Top =&gt; 1, Bottom =&gt; 1, Left =&gt; 1, Right =&gt; 1);
+</code></pre>
+<p>Each argument has the strong signed type <code>Region_Adjustment</code> (32 bits).
+Positive top/left moves upward/leftward, positive bottom/right downward/rightward;
+negative adjustments contract inward. Native clipping permits over-large
+expansion requests. After clipping, OpenCV <strong>swaps crossed opposing boundaries</strong>,
+so extreme contraction can have a non-intuitive nonempty result. Equal endpoints
+can produce an empty header, which these operations subsequently reject.
+Requests whose native signed intermediates would overflow raise <code>OpenCV_Error</code>
+without changing the header.
+Unsafe native parent-span arithmetic or empty-result Mat pointers are likewise
+rejected rather than invoking undefined native behavior.</p>
+<p>Adjustment changes only that header, never clones or allocates pixel storage.
+Shallow aliases and the parent keep independent geometry while overlapping
+pixels remain shared; Clone remains independent. Ordinary whole headers can
+also shrink. Continuity is recomputed, but native <code>Is_Submatrix</code> is <strong>not</strong>:
+it can remain true after full expansion or false after whole-header shrink.
+Use <code>Locate_Region</code> and <code>Rows</code>/<code>Columns</code> as authoritative geometry.</p>
+<p>Callback-scoped caller-buffer and synthetic selected Mat views reject both
+parent-geometry operations, protecting their logical storage/lifetime contract
+(including row padding). UMat operates directly on its native header and
+requires <strong>no host mapping or transfer</strong>.</p>
+<h3 id="copied-row-access">Copied row access</h3>
+<p>The UInt8, Int8, UInt16, Int16, Int32, Float16, Float32, and Float64 C1 row
+packages and all twenty-four Vec2/Vec3/Vec4 row packages provide <code>Read_Row</code> /
+<code>Write_Row</code> APIs. Caller arrays may use
+arbitrary lower bounds; values map in iteration order to matrix columns.</p>
+<p>These are copy-based APIs and are useful when the caller wants an ordinary Ada
+array with no borrowed lifetime.</p>
+<h3 id="scoped-zero-copy-row-borrowing">Scoped zero-copy row borrowing</h3>
+<p>The same row-access families provide:</p>
+<pre><code class="language-text">With_Read_Only_Row
+With_Writable_Row
+</code></pre>
+<p>The callback receives a zero-based array that directly overlays one logical
+OpenCV row. Row borrowing works with non-contiguous 2-D Regions because only
+the active logical row is exposed; inter-row padding is never exposed.</p>
+<p>A shallow <code>Mat</code> lease is retained during the callback so the underlying OpenCV
+allocation cannot disappear merely because another header is rebound or
+finalized. Integer whole-buffer tests observe that specific allocation: it
+remains live after the ordinary owners are released, and its deallocation is
+observed exactly once when the lease ends. That is test instrumentation, not
+a formal lifetime proof. The lease is a lifetime mechanism, not thread
+synchronization.</p>
+<h3 id="scoped-continuous-whole-buffer-borrowing">Scoped continuous whole-buffer borrowing</h3>
+<p>The thirty-two matching buffer-access packages provide:</p>
+<pre><code class="language-text">With_Read_Only_Buffer
+With_Writable_Buffer
+</code></pre>
+<p>The callback receives one flat zero-based array of <code>Natural (Image.Total)</code>
+elements. Nonempty Mats must be continuous (<code>Is_Continuous</code>); this applies to
+ordinary 2-D Mats and to genuine N-D Mats alike. Continuous Regions and
+continuous N-D <code>Slice</code> views are accepted; gapped Regions and gapped N-D
+Slices are rejected before the callback runs.</p>
+<p>Elements appear in ordinary OpenCV contiguous order: the final dimension
+varies fastest. For a Mat with <code>Shape =&gt; (D1, D2, ..., Dn)</code>, zero-based index
+<code>(I1, I2, ..., In)</code> is at flat offset
+<code>((I1 * D2 + I2) * D3 + ...) * Dn + In</code>. For example, in a <code>(2, 3, 4)</code> Mat,
+<code>(I, J, K)</code> is <code>Data (((I * 3) + J) * 4 + K)</code>. For a 2-D Mat this is the
+familiar <code>Data (Row * Image.Columns + Column)</code>. One array element is always
+one complete Mat element: a <code>(2, 3, 4)</code> Float64 C4 Mat yields
+<code>Data'Length = 24</code> Vec4 values, not 96 scalars.
+There is no per-row copy and no write-back phase. The callback lifetime bounds
+the borrowed view; callers must not retain a reference or address afterward.
+Float64 C1 buffer access directly overlays native CV_64F storage without
+conversion. Use Float64 row access for non-contiguous 2-D Regions. Float16
+C2, C3, and C4 buffer access likewise overlays native CV_16FC2/C3/C4 elements
+as packed <code>Float16_Vec2</code>/<code>Float16_Vec3</code>/<code>Float16_Vec4</code> vectors without
+converting through Float32.</p>
+<h3 id="caller-owned-buffer---temporary-mat">Caller-owned buffer -&gt; temporary <code>Mat</code></h3>
+<p>The thirty-two Mat-view packages provide the reverse zero-copy direction:</p>
+<pre><code class="language-text">OpenCV.Core.UInt8_Mat_View
+OpenCV.Core.Int8_Mat_View
+OpenCV.Core.UInt16_Mat_View
+OpenCV.Core.Int16_Mat_View
+OpenCV.Core.Int32_Mat_View
+OpenCV.Core.Float32_Mat_View
+OpenCV.Core.Float64_Mat_View
+OpenCV.Core.Float16_Mat_View
+OpenCV.Core.UInt8_Vec2_Mat_View
+OpenCV.Core.Int8_Vec2_Mat_View
+OpenCV.Core.UInt16_Vec2_Mat_View
+OpenCV.Core.Int16_Vec2_Mat_View
+OpenCV.Core.Int32_Vec2_Mat_View
+OpenCV.Core.Float16_Vec2_Mat_View
+OpenCV.Core.Float32_Vec2_Mat_View
+OpenCV.Core.Float64_Vec2_Mat_View
+OpenCV.Core.UInt8_Vec3_Mat_View
+OpenCV.Core.Int8_Vec3_Mat_View
+OpenCV.Core.UInt16_Vec3_Mat_View
+OpenCV.Core.Int16_Vec3_Mat_View
+OpenCV.Core.Int32_Vec3_Mat_View
+OpenCV.Core.Float32_Vec3_Mat_View
+OpenCV.Core.Float16_Vec3_Mat_View
+OpenCV.Core.Float64_Vec3_Mat_View
+OpenCV.Core.UInt8_Vec4_Mat_View
+OpenCV.Core.Int8_Vec4_Mat_View
+OpenCV.Core.UInt16_Vec4_Mat_View
+OpenCV.Core.Int16_Vec4_Mat_View
+OpenCV.Core.Int32_Vec4_Mat_View
+OpenCV.Core.Float16_Vec4_Mat_View
+OpenCV.Core.Float32_Vec4_Mat_View
+OpenCV.Core.Float64_Vec4_Mat_View
+</code></pre>
+<p><code>With_Writable_Mat_View</code> creates a callback-scoped <code>cv::Mat</code> header over the
+actual caller-owned Ada array. The public buffer formal is explicitly
+<code>aliased in out</code>, so the native header directly denotes the caller's storage.</p>
+<p>Packed views are available for all thirty-two typed layouts above, both as 2-D
+(<code>Rows</code>, <code>Columns</code>) and as genuine N-D (<code>Shape</code>, 2 .. 32 dimensions on
+OpenCV 4.x; at most 10 on OpenCV 5.0) views.
+Packed N-D views are always continuous, so the matching <code>*_Buffer_Access</code>
+package can borrow the same caller storage again inside the callback without
+copying. Every listed layout also supports strided storage, both as a 2-D
+explicit row stride and as genuine gapped N-D storage
+(<code>With_Writable_Strided_Mat_View (Data, Shape, Strides, Process)</code>), so a Mat
+can represent the logical elements of padded caller-owned rows, planes, or
+higher blocks without copying their padding. N-D strides are expressed in
+complete Mat elements, one per dimension, and the final dimension's stride is
+<code>1</code>. Except for the established Float32 2-D overload, the 2-D row-strided
+views use <code>With_Writable_Strided_Mat_View</code> and measure <code>Row_Stride</code> in
+complete Ada elements rather than bytes. For Vec2/Vec3/Vec4 layouts, one
+element (and one stride unit) is one complete vector pixel, not one scalar
+channel.</p>
+<p>Important lifetime rule: a temporary external-buffer Mat may not create a
+shallow alias that could outlive the callback. Ordinary <code>Mat</code> assignment and
+no-copy view operations (including <code>Region</code>, <code>Slice</code>, and <code>Reshape</code>) are
+therefore rejected for these temporary external views, whether 2-D or N-D.
+This is the external-buffer lifetime policy, not a missing N-D capability.
+<code>Clone</code> remains allowed because it creates independent OpenCV-owned storage
+that can safely outlive the callback, and a clone can then be sliced or
+reshaped normally.</p>
+<p>The external-data <code>Mat</code> header is destroyed at callback exit, including during
+exception unwinding; the caller's Ada array is never freed by OpenCV.</p>
+<p>For a row-strided or N-D strided external view, <code>Is_Continuous</code> reflects
+OpenCV's actual layout rules. A view with padding between logical elements is
+non-contiguous, so operations requiring a single packed buffer must reject it;
+row-based, N-D element access, and other non-contiguous-aware operations can
+still be used. Strides that describe packed storage are continuous.</p>
+<p>Caller storage must remain alive throughout the callback, and OpenCV never
+owns or frees it. Row borrowing remains zero-copy and exposes exactly the
+logical <code>Columns</code> elements, never padding. Whole-buffer borrowing rejects a
+non-contiguous multirow strided view before invoking its callback.</p>
+<hr />
+<h2 id="umat-and-the-transparent-api-baseline">UMat and the Transparent API baseline</h2>
+<p>UMat-native <code>Bitwise_And</code>, <code>Bitwise_Or</code>, <code>Bitwise_Xor</code>, <code>Bitwise_Not</code>
+and their masked overloads operate on stored bits (including exact Float16
+bits). <code>Compare</code> and scalar-bounded <code>In_Range</code> return UInt8 C1 UMat masks;
+these masks feed masked UMat operations directly, without a Mat round-trip.
+Masked UMat operations require UMat masks; Mat operations still require Mat
+inputs and masks. Mixed Mat/UMat operands or masks are not supported. OpenCL
+is optional, and UMat does not guarantee GPU execution.
+Binary bitwise operands require matching 2-D rows, columns, depth and channels;
+unmasked <code>Bitwise_Not</code> also accepts N-D. Masks require matching rows and
+columns, UInt8 depth and one channel. <code>Compare</code> requires compatible 2-D C1
+operands; scalar <code>In_Range</code> accepts N-D with at most four channels and returns
+one mask value per element. Empty <code>In_Range</code> raises <code>OpenCV_Error</code>. A typed
+empty bitwise result retains its source type and 2-D shape; empty <code>Compare</code>
+releases its result, as with the established Mat overload.</p>
+<p><code>OpenCV.Core.UMat</code> is a controlled, Core-owned <code>cv::UMat</code> header behind an
+opaque C handle. Default construction yields an empty native UMat. Use
+<code>Create_UMat (Rows, Columns, Element_Type)</code> or
+<code>Create_UMat (Shape, Element_Type)</code> for 2-D or N-D storage. Shape arrays are
+read in Ada iteration order; UMat uses the existing <code>Mat_Type</code>, <code>Depth_Type</code>,
+<code>Channel_Count</code>, <code>Dimension_Array</code>, and <code>Mat_Size</code>. On OpenCV 4.1 through 4.10,
+shapes may contain 2 through 32 dimensions; OpenCV 5.0's native MatShape
+capacity limits both Mat and UMat to 10. UMat provides <code>Is_Empty</code>,
+<code>Dimension_Count</code>, <code>Extent</code>, <code>Shape</code>, <code>Rows</code>, <code>Columns</code>, <code>Depth</code>, <code>Channels</code>,
+<code>Element_Type</code>, <code>Total</code>, <code>Element_Size</code>, <code>Channel_Size</code>, <code>Is_Continuous</code>, and
+<code>Is_Submatrix</code>. As for Mat, Rows and Columns reject genuine N-D arrays.</p>
+<p>Ada assignment creates a distinct native UMat header sharing underlying
+storage; finalizing either header leaves the other usable. <code>Clone</code> is an
+explicit independent deep copy. <code>Region</code> and half-open N-D <code>Slice</code> are shallow
+views that retain the allocation; <code>Copy_To</code> returns an independent UMat via
+native UMat copy, not a Mat round-trip. <code>Set_To</code> fills complete C1 through C4
+elements using <code>OpenCV.Scalar</code>. The <code>Convert_To</code> function returns an independent
+native UMat conversion; its destination-taking procedure permits native storage
+reuse/reallocation. Nonempty conversion retains shape and channels; see
+<a href="core-operations-guide.html#conversion-and-element-wise-mathematics">conversion semantics</a> for Regions,
+self-conversion, and version-dependent empty metadata.</p>
+<p>Because Ada forbids one dispatching operation on <em>two</em> unrelated tagged
+types, independent host transfers live in <code>OpenCV.Core.Transfers</code>:</p>
+<pre><code class="language-ada">with OpenCV.Core.Transfers;
+Device : OpenCV.Core.UMat := OpenCV.Core.Transfers.To_UMat (Host);
+Copy   : OpenCV.Core.Mat  := OpenCV.Core.Transfers.To_Mat (Device);
+</code></pre>
+<p>Both transfers copy logical contents independently of source lifetime, even
+for a non-contiguous Mat Region. They do not expose a mapped Mat view.
+For typed inspection of UMat contents, transfer to an independent Mat and use
+the existing Mat typed access packages. There is no direct mapped typed UMat
+access or public OpenCL context/device/queue/raw pointer API in this release.</p>
+<p>Cooperating OpenCV Ada module crates can borrow callback-scoped
+<code>Input_UMat_Handle</code> and <code>Output_UMat_Handle</code> capabilities through
+<code>OpenCV.Core.Module_Interop</code>. This is module implementation infrastructure,
+not the normal application API: applications should use <code>OpenCV.Core.UMat</code>.
+The installed <code>opencv_core_module_bridge.hpp</code> lets private module shims
+resolve these capabilities to the actual borrowed <code>const cv::UMat *</code> or
+<code>cv::UMat *</code> header. No Mat transfer, host representation, or <code>getMat()</code> mapping
+occurs in the bridge. Modules can pass these headers directly to OpenCV
+InputArray/OutputArray operations; output operations may rebind the actual
+Core UMat header, and Core observes that rebinding after the callback.
+Core retains ownership of the opaque wrapper and native header. Neither the
+handle nor the native pointer may be saved for later use; the pointer must
+not be retained or deleted after the callback/call scope. No ownership
+transfer occurs. All cooperating shims must use a compatible OpenCV ABI and
+installation with Core. OpenCL remains optional, and GPU execution is not
+guaranteed.</p>
+<p>All public allocations use <code>USAGE_DEFAULT</code>; host/device/shared allocation
+preferences are intentionally deferred. OpenCL need not be compiled in,
+available, enabled, or backed by a device: CPU fallback is required behavior,
+and the test suite explicitly disables OpenCL while exercising the public
+operations. <strong>UMat enables OpenCV's Transparent API dispatch where native
+operations support it. It is not a guarantee that an operation executes on a
+GPU.</strong> <code>Add</code>, <code>Subtract</code>, <code>Multiply</code>, <code>Divide</code>, <code>Abs_Diff</code>, <code>Minimum</code>,
+<code>Maximum</code>, <code>Add_Weighted</code>, and <code>Scale_Add</code> accept two UMat operands and return
+independent UMat results. No Mat transfer or mapping is used in these paths.
+The first seven operations and <code>Scale_Add</code> require matching 2-D shape, depth,
+and channels. <code>Add_Weighted</code> accepts matching N-D shape, depth, and channels,
+just like its Mat overload. On OpenCV 4.x Float16 <code>Add_Weighted</code> widens UMat
+operands to Float32 UMat, computes using double Alpha/Beta/Gamma, then narrows
+once; OpenCV 5 uses native Float16. Float16 <code>Scale_Add</code> widens UMat operands on
+all supported versions, narrows Scale to Float32 before the native Float32
+kernel, then narrows the result once. SIMD/FMA rounding may vary by platform.
+<code>Normalize</code>, <code>Sqrt</code>, <code>Exp</code>, <code>Log</code>, <code>Pow</code>, <code>Magnitude</code>, <code>Phase</code>,
+<code>Cart_To_Polar</code>, and <code>Polar_To_Cart</code> also execute UMat-native, through shared
+typed Mat/UMat helpers with no binding-side Mat temporaries or transfers.
+Normalize keeps the source depth, accepts N-D, and offers L1, L2, Infinity,
+and Min_Max without masks. Float16 norm normalization uses native support;
+Float16 Min_Max is unsupported in OpenCV 4.x and supported in OpenCV 5.
+Float16 Infinity also retains native version/backend differences (CPU 4.1/4.6
+have incorrect half reduction results; 4.10/5.0 correct them). No new half
+widening or normalization policy is introduced.</p>
+<p>Both <code>Mat</code> and <code>UMat</code> offer independent results and reusable destinations:</p>
+<pre><code class="language-ada">Result := Source.Normalize (Kind =&gt; L2, Alpha =&gt; 1.0);
+Source.Normalize
+  (Destination =&gt; Existing,
+   Kind        =&gt; L2,
+   Alpha       =&gt; 1.0);
+</code></pre>
+<p>The procedure uses the actual native destination header. Compatible shape,
+source depth, and channels reuse storage, including interior <code>Region</code> storage
+still shared with its parent and existing shallow aliases. Incompatible shape
+or type can reallocate; an incompatible Region may detach while old aliases
+retain the original parent storage. Exact self (<code>Source.Normalize (Source, ...)</code>)
+and distinct same-layout shallow aliases are supported. Arbitrarily partially
+overlapping Regions are <strong>not</strong> guaranteed. N-D and unmasked multichannel
+normalization remain supported; there is no destination depth parameter.</p>
+<p>For L1/L2/Infinity, Alpha is the target norm, Beta is ignored, and a zero norm
+uses native zero scale. Min_Max uses the sorted Alpha/Beta bounds; equal bounds
+produce a constant, and constant input maps to the lower bound. Native integer
+rounding/saturation and floating approximation remain unchanged.</p>
+<p>Empty sources release destination pixels. OpenCV 4.x Mat release retains the
+old destination type; OpenCV 5.0 Mat recreates the empty source type. The existing
+UMat empty-storage safety helper releases ordinary empty outputs, retaining old
+type metadata even on 5.0 (where release resets dimension count to zero, giving
+a null <code>Shape</code>). Empty Float16 Min_Max remains native/version-sensitive
+(4.x rejects; 5.0 CPU succeeds); no new empty OpenCL guarantee is introduced.
+Temporary external/selected Mat views may be sources but are never mutable
+normalization destinations, even when currently compatible. Pre-native null,
+raw-kind, and temporary-destination rejection preserves the destination;
+arbitrary failure atomicity after native execution begins is not promised.
+UMat normalization introduces no binding-side host mapping/transfers. Exact-tag
+source ranges and probes are recorded in
+<code>tests/probes/normalize_destination_source_findings.md</code>.</p>
+<p>Sqrt/Exp/Log require Float32 or
+Float64, process channels independently, and accept N-D. Their approximation
+and special-value contracts match the Mat operations. Pow rejects Float16;
+floating depths accept integer and non-integer powers, while integer depths
+accept only nonnegative integer powers. UInt8/Int8/UInt16/Int16 saturate;
+Int32 overflow remains native and non-saturating.</p>
+<p>All four operations also accept reusable <code>Mat</code> and <code>UMat</code> destinations:</p>
+<pre><code class="language-ada">Sqrt
+  (Self        =&gt; Input,
+   Destination =&gt; Existing);
+
+Pow
+  (Self        =&gt; Input,
+   Power       =&gt; 2.0,
+   Destination =&gt; Existing);
+</code></pre>
+<p>The procedure passes Existing directly as the native output: compatible whole
+or Region storage is reused, including shallow Alias attachment. A shape,
+depth, or channel mismatch detaches Existing; old Parents and Aliases retain
+their storage. No temporary-result assignment or copy-back is used. N-D
+sources and outputs are supported; use Dimension_Count and Shape rather than
+Rows/Columns for their metadata.</p>
+<p>Exact and distinct same-layout shallow source aliases retain native operation
+ordering. Arbitrary partially overlapping Regions are unsupported; no overlap
+copies are added. Temporary external/selected Mat sources are permitted, but
+temporary Mat destinations are prohibited even when compatible. Validation
+failures before native execution leave Destination unchanged; arbitrary
+post-native failure atomicity is not promised.</p>
+<p>Sqrt follows native Pow(0.5); Exp/Log and general fractional Pow retain native
+approximations, HAL/backend precision and special-value limitations. There is
+no portable NaN payload, signed-zero, overflow or subnormal bit contract.
+Float16 remains unsupported. Integer powers retain native saturation except
+for Int32 overflow, which is not promised to saturate.</p>
+<p>Typed-empty Float32/Float64 sources are accepted by the float operations;
+default-empty and integer-depth sources are rejected by their existing policy.
+Pow accepts default-empty for nonnegative integer powers and typed empties
+under its existing depth/power policy. Empty Pow avoids unsafe zero-element
+native HAL paths. Releasing a reused destination can retain old metadata
+differently from a fresh empty result; native version-specific representation
+is not normalized across Mat/UMat or OpenCV versions.</p>
+<p>UMat procedures pass cv::UMat directly; no binding-level mapping, transfers or
+host staging occur. Native OpenCV may fall back to CPU, especially for N-D.
+Requesting OpenCL does not establish GPU execution. Audit evidence is in
+<code>tests/probes/unary_math_destination_source_findings.md</code>.</p>
+<p>Magnitude, Phase, and Cart_To_Polar require matching 2-D Float32/Float64
+operands, including channels. Angles use radians by default or <code>Degrees</code>.
+<code>UMat_Polar_Coordinates</code> owns Magnitude/Angle UMat results, and
+<code>UMat_Cartesian_Coordinates</code> owns X/Y UMat results; both fields are produced
+failure-atomically by one native call and have independent storage. Empty
+Magnitude (default or typed), or angle-only Polar_To_Cart, means unit magnitude.
+Non-empty Magnitude must match Angle's 2-D layout. Typed-empty unary/vector
+results retain type and shape; Normalize preserves the empty compatibility
+behavior described above.
+Empty-storage safety bypasses avoid native OpenCL vector-width crashes.
+OpenCL is optional and the public math family is tested with it disabled;
+there is no GPU-execution guarantee.</p>
+<p>Compatibility handling includes OpenCV 4.10 UMat empty-storage safety and
+legacy pre-4.10 Float64 empty-magnitude <code>polarToCart</code> behavior. OpenCL is
+optional; CPU fallback is tested. Mixed Mat/UMat operands, UMat reshape,
+DFT/DCT UMat overloads, callback-scoped CPU mapping, and downstream Imgproc
+UMat overloads remain unsupported.</p>
+
+<section aria-label="Native API entry points"><h2 id="native-api-entry-points">Native API entry points</h2><ul>
+<li><a href="../api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html">OpenCV.Core</a></li>
+<li><a href="../api/ab7f42b87f5659a06c60ec3b8858611c40598215d41c50551a1b7223dbd3cbf8.html">OpenCV.Core.Transfers</a></li>
+</ul></section>
+<p class="guide-source"><a href="https://github.com/zackboll/opencv_core_ada/blob/main/docs/ownership-and-views.md">Original Markdown source on GitHub</a></p>
+</main>
+</div>
+</body>
+</html>

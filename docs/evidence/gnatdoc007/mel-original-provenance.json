@@ -1,0 +1,35 @@
+{
+  "authored_sources": {
+    "docs/assets/portal.css": "2c116f8ded7e519e12966c8d3cca674a5c6950f8e5c8f696d660754e923ef37e",
+    "docs/gnatdoc-native-anchors.json": "06b602439be15557118790a2827bb8bacc45c1b02d055fa3e9502204857f5aed",
+    "docs/guides/api-map.html": "c207a3f8c686d1bc2c7a319c0721498cddf722b170cb9cb7854252bc1f741783",
+    "docs/guides/architecture.html": "328e061337a6e2f16b7c7f180a6d0d829cf8ccdf130fb8e2fc8532e4be8bb759",
+    "docs/guides/getting-started.html": "ab11c88cdf717a2a352af9a3b166a48d3fe24941c4368f507512fb7b25c88927",
+    "docs/guides/ir-workflows.html": "68da97b34702923cce676a25880017377d3f7d7cebb771512e0316a97e6c07f2",
+    "docs/guides/ownership-and-errors.html": "7fc26d87754ed08ef7496c04d8b534dad0b44e228c314949f0fba1982dd2f563",
+    "docs/guides/rf-workflows.html": "2b4adced31dde12d4b33026477eb249b1b27ce327537352c02057c850f6cc51e",
+    "docs/index.html": "2c6a3d50832faf7d0204e10675ae80af6014f2ce8a308daaea106c14d8d4258e",
+    "docs/site-map.json": "6f6dc3dd15e5132c5f7248af08ba591d7d7c416a493bb2697f66b648ec4e24ef"
+  },
+  "reference_output": {
+    "assets/portal.css": "2c116f8ded7e519e12966c8d3cca674a5c6950f8e5c8f696d660754e923ef37e",
+    "guides/api-map.html": "4421c11535785d34ad9baee9846f077069d8ffa7384e14af574a12834f3774d5",
+    "guides/architecture.html": "8c17d0522012691641925a7edc7cfc88647ac6148d216f72bb6fd4103c2b50e9",
+    "guides/getting-started.html": "2d946ff0aa0f9edc761ce6a7bd7af1c6862f89ebb85e46373be1d6046fd7ad8f",
+    "guides/ir-workflows.html": "b663b5d85f1b60d3874728634e51388791f1f9ce636be257f9bb0f52d61f8f6d",
+    "guides/ownership-and-errors.html": "f28136c8b0673e513f625db1926e60bf3f8dcb5cb004cd79c8254ecaadf0240c",
+    "guides/rf-workflows.html": "1741628f4f9f46dd28869bacd776a58afa5e7f7477ac3d6d2bb8ea01314e50ba",
+    "index.html": "d509b8e12b6f1a5d7620d09bc9abb8156fa48a2c743c4de63f20c1c3187ca192"
+  },
+  "revision": "6065129aba5dee89e70b61e05a9e1c9b2c3061c0",
+  "scripts_and_contracts": {
+    ".github/workflows/documentation.yml": "daccc95e0a8229b712784f9c0401d31a104a0c6b55545b3846cae7496400f906",
+    "docs/gnatdoc-native-anchors.json": "06b602439be15557118790a2827bb8bacc45c1b02d055fa3e9502204857f5aed",
+    "docs/index.html": "2c6a3d50832faf7d0204e10675ae80af6014f2ce8a308daaea106c14d8d4258e",
+    "docs/site-map.json": "6f6dc3dd15e5132c5f7248af08ba591d7d7c416a493bb2697f66b648ec4e24ef",
+    "scripts/build_docs_portal.py": "dea6b78b941df69cc7d6ef835775734c19cd6fec4e972ce81d4f3a2c56b2fded",
+    "scripts/check_doc_source_integrity.py": "efff803e901f2f130cef739d054d2387b446f1b5d8f7f297e07e607a26c661a8",
+    "scripts/gnatdoc_inventory.py": "72af372cb297381eeb076099db391fdd70dfcf2222bb0f0b97a66b972798089a",
+    "scripts/validate_docs.py": "7c372d581c6cb8d13270de2b7d3e430e79eca2c27074122928b0a8cc57d76a0e"
+  }
+}

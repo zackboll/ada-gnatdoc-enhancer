@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Affine and perspective geometry — OpenCV Geometry Ada</title>
+<link rel="stylesheet" href="../api/gnatdoc-theme.css">
+<link rel="stylesheet" href="gnatdoc-guides.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header><nav aria-label="Documentation"><a href="../index.html">Documentation home</a> · <a href="../api/index.html">API browser</a></nav></header>
+<div class="guide-layout">
+<nav class="guide-nav" aria-label="Developer guides"><ul>
+<li><a href="geometry-fundamentals-and-contours.html">Geometry fundamentals and contour analysis</a></li>
+<li><a href="shape-fitting-and-intersections.html">Shape fitting and intersections</a></li>
+<li><a href="affine-and-perspective-geometry.html" aria-current="page">Affine and perspective geometry</a></li>
+<li><a href="delaunay-and-voronoi.html">Delaunay and Voronoi with Subdiv2D</a></li>
+<li><a href="compatibility-ownership-and-safety.html">Compatibility, ownership and native safety</a></li>
+</ul></nav>
+<main id="main-content">
+<h1 id="affine-and-perspective-geometry">Affine and perspective geometry</h1>
+<p>This guide covers the transforms of <code>OpenCV.Geometry</code>: computing affine and
+perspective transforms from point correspondences, inverting them, mapping
+points, and building rotation matrices. The public Ada specifications are
+authoritative: if this guide or the README disagrees with a declaration's
+documentation in the API reference, the specification is right.</p>
+<h2 id="transform-values">Transform values</h2>
+<p>An <a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#a0893b8da763652282fa398e6ef799cc1bbdfc73759b02bdddfcbc104ea56c9a">Affine_Transform_2D</a> is a 2 x 3 array and a
+<a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#d5b98bc1260cc18e18848a7786d3c2f516a248fe03c1a4f80dffcb2816e4c141">Perspective_Transform_2D</a> a 3 x 3 array of
+binary64 coefficients. Both are ordinary Ada values that the caller owns and
+copies freely. Indices start at 1, so <code>T (R, C)</code> is OpenCV's
+<code>M (R - 1, C - 1)</code>: an affine transform maps <code>(X, Y)</code> to
+<code>(T (1, 1) * X + T (1, 2) * Y + T (1, 3), T (2, 1) * X + T (2, 2) * Y + T (2, 3))</code>.
+<code>Identity_Affine_Transform</code> and <code>Identity_Perspective_Transform</code> map every
+point to itself.</p>
+<h2 id="transforms-from-correspondences">Transforms from correspondences</h2>
+<p><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#d4d18c9ccf30c84a7531ac81885280060fdc40d12adb7e7ddd077c2ac3ba24f0">Get_Affine_Transform</a> takes exactly three Source
+and three Destination points, paired in iteration order, and returns the
+transform that maps one triangle onto the other.
+<a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#9684641ee32404bbc291f5728a485edf3e8e7b556f04ce9af81827180a9ea6c3">Invert_Affine_Transform</a> returns its inverse.
+Both follow OpenCV in returning the all-zero transform, not an error, when
+the system is singular, as for collinear Source points; check the Source
+triangle when you need a nondegenerate mapping.</p>
+<p><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#5a5df1d42190dd5657e6042b3f87e746e7ce334f13998d283ab2ee7c1f279924">Get_Perspective_Transform</a> takes exactly four
+correspondences and a <a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#a3016ca57a11e0b231c60dc9cafc5543f3774187cfd3cf06d1683396c02bb8d5">Perspective_Solve_Method</a>.
+OpenCV solves for eight coefficients with <code>T (3, 3)</code> fixed at 1.0. OpenCV
+4.12 and later keep that solution only when the solver succeeds with a small
+residual; otherwise, as for degenerate correspondences, they return a
+least-squares solution with unit norm and arbitrary sign, whose <code>T (3, 3)</code>
+need not be 1.0. A homography and any nonzero multiple of it map points
+identically, so compare mapped points rather than coefficients.</p>
+<h2 id="mapping-points">Mapping points</h2>
+<p><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#549574f469e3de56e9bd121289bc8795ad2a8174ac09c890f11d943379019a61">Transform_Point</a> and
+<a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#75937b73150b80f463933d8acbd67019c94ef394205e389cea66108abf089111">Transform_Points</a> map points with Ada arithmetic, not
+a native call: each coordinate is evaluated in binary64 and rounded to
+binary32. Points must be finite and coefficients finite with magnitude at
+most 1.0E+269; within those limits SPARK proves that no binary64
+intermediate overflows.</p>
+<ul>
+<li>The <a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#21166afd9f59d286e4bb8ccb0983d6cea45e297f95402b567b6133564867f734">perspective overload</a> divides by every nonzero
+<code>W</code> and raises <code>OpenCV.OpenCV_Error</code> for <code>W = 0.0</code>, whereas
+<code>cv::perspectiveTransform</code> maps a point with a tiny <code>W</code> to the origin.</li>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#75937b73150b80f463933d8acbd67019c94ef394205e389cea66108abf089111">Transform_Points</a> keeps the bounds and order of its
+input, and raises without a partial result if any point fails.</li>
+</ul>
+<h2 id="rotation-matrices">Rotation matrices</h2>
+<p><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#ec068289d836e143df9ec9f805316133f312bb13fea8eb378ba187612166f35c">Get_Rotation_Matrix_2D</a> returns a new 2 x 3
+binary64 <code>OpenCV.Core.Mat</code>, ready for an affine image warp such as
+<code>OpenCV.Image_Processing.Warp_Affine</code> in the Imgproc binding. The Mat has
+ordinary Core lifetime, and its coefficients can be read with
+<code>OpenCV.Core.Float64_Access</code>. The angle is in degrees by default or radians
+on request, and is reduced modulo a full turn in either unit. Positive
+angles turn counterclockwise as seen on an image whose origin is the
+top-left corner, with Y pointing down.</p>
+<h2 id="example">Example</h2>
+<p>The example builds a scale-and-translate transform from three
+correspondences, inverts it, maps a batch with shifted bounds, solves a
+homography, and reads a rotation matrix through Core.</p>
+<pre><code class="language-ada">with OpenCV;
+with OpenCV.Core;
+with OpenCV.Core.Float64_Access;
+with OpenCV.Geometry;
+
+--  Builds affine and perspective transforms from correspondences, maps and
+--  inverts points, and inspects a rotation matrix returned as a Core Mat.
+
+procedure Affine_And_Perspective is
+   use OpenCV.Geometry;
+   use type OpenCV.Float32_Point;
+   use type OpenCV.Float32_Value;
+   use type OpenCV.Float64_Value;
+
+   function Near (Left, Right, Tolerance : OpenCV.Float64_Value) return Boolean
+   is (abs (Left - Right) &lt;= Tolerance);
+
+   --  Scale X by 2 and Y by 3, then translate by (10, 20).
+   Affine   : constant Affine_Transform_2D :=
+     Get_Affine_Transform
+       (Source      =&gt;
+          [(X =&gt; 0.0, Y =&gt; 0.0), (X =&gt; 1.0, Y =&gt; 0.0), (X =&gt; 0.0, Y =&gt; 1.0)],
+        Destination =&gt;
+          [(X =&gt; 10.0, Y =&gt; 20.0),
+           (X =&gt; 12.0, Y =&gt; 20.0),
+           (X =&gt; 10.0, Y =&gt; 23.0)]);
+   Inverse  : constant Affine_Transform_2D := Invert_Affine_Transform (Affine);
+   Mapped   : constant OpenCV.Float32_Point :=
+     Transform_Point (Affine, (X =&gt; 1.0, Y =&gt; 1.0));
+   Restored : constant OpenCV.Float32_Point :=
+     Transform_Point (Inverse, Mapped);
+
+   --  A batch keeps the bounds of its input, here 5 .. 6.
+   Batch   : constant Float32_Point_Array (5 .. 6) :=
+     [(X =&gt; 0.0, Y =&gt; 0.0), (X =&gt; 2.0, Y =&gt; 1.0)];
+   Results : constant Float32_Point_Array := Transform_Points (Affine, Batch);
+
+   --  The unit square onto a trapezoid.
+   Homography : constant Perspective_Transform_2D :=
+     Get_Perspective_Transform
+       (Source      =&gt;
+          [(X =&gt; 0.0, Y =&gt; 0.0),
+           (X =&gt; 1.0, Y =&gt; 0.0),
+           (X =&gt; 1.0, Y =&gt; 1.0),
+           (X =&gt; 0.0, Y =&gt; 1.0)],
+        Destination =&gt;
+          [(X =&gt; 0.0, Y =&gt; 0.0),
+           (X =&gt; 4.0, Y =&gt; 0.0),
+           (X =&gt; 3.0, Y =&gt; 2.0),
+           (X =&gt; 1.0, Y =&gt; 2.0)]);
+   Corner     : constant OpenCV.Float32_Point :=
+     Transform_Point (Homography, (X =&gt; 1.0, Y =&gt; 1.0));
+
+   --  A 90 degree rotation about the origin, as a 2 x 3 Float64 Mat.
+   Rotation : constant OpenCV.Core.Mat :=
+     Get_Rotation_Matrix_2D (Center =&gt; (X =&gt; 0.0, Y =&gt; 0.0), Angle =&gt; 90.0);
+begin
+   pragma Assert (Near (Affine (1, 1), 2.0, 1.0E-9));
+   pragma Assert (Near (Affine (2, 2), 3.0, 1.0E-9));
+   pragma Assert (Near (Affine (1, 3), 10.0, 1.0E-9));
+   pragma Assert (Near (Affine (2, 3), 20.0, 1.0E-9));
+   pragma Assert (Near (Affine (1, 2), 0.0, 1.0E-9));
+   pragma Assert (Mapped = (X =&gt; 12.0, Y =&gt; 23.0));
+   pragma Assert (abs (Restored.X - 1.0) &lt; 1.0E-5);
+   pragma Assert (abs (Restored.Y - 1.0) &lt; 1.0E-5);
+
+   pragma Assert (Results'First = 5 and then Results'Last = 6);
+   pragma Assert (Results (5) = (X =&gt; 10.0, Y =&gt; 20.0));
+   pragma Assert (Results (6) = (X =&gt; 14.0, Y =&gt; 23.0));
+
+   --  The mapping holds whatever overall scale OpenCV gives the solution.
+   pragma Assert (abs (Corner.X - 3.0) &lt; 1.0E-4);
+   pragma Assert (abs (Corner.Y - 2.0) &lt; 1.0E-4);
+
+   pragma
+     Assert
+       (OpenCV.Core.Rows (Rotation) = 2
+          and then OpenCV.Core.Columns (Rotation) = 3);
+   pragma
+     Assert
+       (Near (OpenCV.Core.Float64_Access.Get (Rotation, 0, 0), 0.0, 1.0E-12));
+   pragma
+     Assert
+       (Near (OpenCV.Core.Float64_Access.Get (Rotation, 0, 1), 1.0, 1.0E-12));
+   pragma
+     Assert
+       (Near (OpenCV.Core.Float64_Access.Get (Rotation, 1, 0), -1.0, 1.0E-12));
+end Affine_And_Perspective;
+</code></pre>
+<h2 id="interpreting-results">Interpreting results</h2>
+<ul>
+<li>Transforms computed by OpenCV are native binary64 coefficients, returned
+without normalization; compare them with tolerances.</li>
+<li>Mapped points are rounded to binary32, so exact equality holds only when
+the true result is representable, as in the example's small integers.</li>
+<li>Core's <code>Mat</code> row and column indices start at 0, while transform arrays
+start at 1.</li>
+<li>The <a href="compatibility-ownership-and-safety.html">compatibility guide</a> explains
+ownership of the <code>Mat</code> returned here and the error model shared by every
+operation.</li>
+</ul>
+
+<section aria-label="Native API entry points"><h2 id="native-api-entry-points">Native API entry points</h2><ul>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#a0893b8da763652282fa398e6ef799cc1bbdfc73759b02bdddfcbc104ea56c9a">Affine_Transform_2D</a></li>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#d4d18c9ccf30c84a7531ac81885280060fdc40d12adb7e7ddd077c2ac3ba24f0">Get_Affine_Transform</a></li>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#9684641ee32404bbc291f5728a485edf3e8e7b556f04ce9af81827180a9ea6c3">Invert_Affine_Transform</a></li>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#5a5df1d42190dd5657e6042b3f87e746e7ce334f13998d283ab2ee7c1f279924">Get_Perspective_Transform</a></li>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#75937b73150b80f463933d8acbd67019c94ef394205e389cea66108abf089111">Transform_Points</a></li>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#ec068289d836e143df9ec9f805316133f312bb13fea8eb378ba187612166f35c">Get_Rotation_Matrix_2D</a></li>
+</ul></section>
+<p class="guide-source"><a href="https://github.com/zackboll/opencv_geometry_ada/blob/main/docs/guides/affine-and-perspective-geometry.md">Original Markdown source on GitHub</a></p>
+</main>
+</div>
+</body>
+</html>

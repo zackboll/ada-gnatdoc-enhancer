@@ -1,0 +1,61 @@
+{
+  "core": {
+    "mode": "verified",
+    "files": 200,
+    "html_pages": 196,
+    "links": 4423,
+    "linked_types": 2459,
+    "declaration_snippets": 1268,
+    "public_packages": 195,
+    "linked_local_types": 2459,
+    "linked_external_types": 0,
+    "unrendered_renderer_exceptions": 0,
+    "qualified_generic_instances": 25,
+    "vector_summaries": 24,
+    "matrix_summaries": 1,
+    "generic_summary_links": 102,
+    "presentation_only_anchors": 25,
+    "unsupported_instances": [],
+    "native_instance_member_declarations": 0,
+    "generic_template_links": 25,
+    "generic_member_links": 51,
+    "generic_actual_type_links": 25,
+    "generic_conversion_package_links": 1
+  },
+  "imgproc": {
+    "mode": "verified",
+    "files": 6,
+    "html_pages": 2,
+    "links": 1511,
+    "linked_types": 875,
+    "declaration_snippets": 314,
+    "public_packages": 1,
+    "linked_local_types": 326,
+    "linked_external_types": 549,
+    "unrendered_renderer_exceptions": 0
+  },
+  "geometry": {
+    "mode": "verified",
+    "files": 7,
+    "html_pages": 3,
+    "links": 537,
+    "linked_types": 266,
+    "declaration_snippets": 130,
+    "public_packages": 2,
+    "linked_local_types": 171,
+    "linked_external_types": 95,
+    "unrendered_renderer_exceptions": 0
+  },
+  "mel": {
+    "mode": "verified",
+    "files": 34,
+    "html_pages": 30,
+    "links": 2755,
+    "linked_types": 1418,
+    "declaration_snippets": 1237,
+    "public_packages": 29,
+    "linked_local_types": 1418,
+    "linked_external_types": 0,
+    "unrendered_renderer_exceptions": 1
+  }
+}
