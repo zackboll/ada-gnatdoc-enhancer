@@ -1,0 +1,180 @@
++ alr exec -- gprbuild -P docs/example.gpr
+gprbuild: "example" up to date
++ echo LANDING_BUILD_EXIT:0
+LANDING_BUILD_EXIT:0
++ obj/docs-example/example
++ echo LANDING_RUN_EXIT:0
+LANDING_RUN_EXIT:0
++ alr exec -- gprbuild -P docs/examples/examples.gpr
+gprbuild: "contours_and_moments" up to date
+gprbuild: "fitting_and_intersections" up to date
+gprbuild: "affine_and_perspective" up to date
+gprbuild: "delaunay_and_voronoi" up to date
+gprbuild: "compatibility_and_safety" up to date
++ echo GUIDES_BUILD_EXIT:0
+GUIDES_BUILD_EXIT:0
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/affine_and_perspective
++ test -x obj/docs-examples/affine_and_perspective
++ obj/docs-examples/affine_and_perspective
++ echo 'RUN obj/docs-examples/affine_and_perspective EXIT:0'
+RUN obj/docs-examples/affine_and_perspective EXIT:0
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/affine_and_perspective.adb.stderr
++ test -x obj/docs-examples/affine_and_perspective.adb.stderr
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/affine_and_perspective.adb.stdout
++ test -x obj/docs-examples/affine_and_perspective.adb.stdout
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/affine_and_perspective.ali
++ test -x obj/docs-examples/affine_and_perspective.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/affine_and_perspective.bexch
++ test -x obj/docs-examples/affine_and_perspective.bexch
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/affine_and_perspective.o
++ test -x obj/docs-examples/affine_and_perspective.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__affine_and_perspective.adb
++ test -x obj/docs-examples/b__affine_and_perspective.adb
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__affine_and_perspective.ads
++ test -x obj/docs-examples/b__affine_and_perspective.ads
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__affine_and_perspective.ali
++ test -x obj/docs-examples/b__affine_and_perspective.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__affine_and_perspective.o
++ test -x obj/docs-examples/b__affine_and_perspective.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__compatibility_and_safety.adb
++ test -x obj/docs-examples/b__compatibility_and_safety.adb
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__compatibility_and_safety.ads
++ test -x obj/docs-examples/b__compatibility_and_safety.ads
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__compatibility_and_safety.ali
++ test -x obj/docs-examples/b__compatibility_and_safety.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__compatibility_and_safety.o
++ test -x obj/docs-examples/b__compatibility_and_safety.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__contours_and_moments.adb
++ test -x obj/docs-examples/b__contours_and_moments.adb
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__contours_and_moments.ads
++ test -x obj/docs-examples/b__contours_and_moments.ads
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__contours_and_moments.ali
++ test -x obj/docs-examples/b__contours_and_moments.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__contours_and_moments.o
++ test -x obj/docs-examples/b__contours_and_moments.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__delaunay_and_voronoi.adb
++ test -x obj/docs-examples/b__delaunay_and_voronoi.adb
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__delaunay_and_voronoi.ads
++ test -x obj/docs-examples/b__delaunay_and_voronoi.ads
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__delaunay_and_voronoi.ali
++ test -x obj/docs-examples/b__delaunay_and_voronoi.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__delaunay_and_voronoi.o
++ test -x obj/docs-examples/b__delaunay_and_voronoi.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__fitting_and_intersections.adb
++ test -x obj/docs-examples/b__fitting_and_intersections.adb
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__fitting_and_intersections.ads
++ test -x obj/docs-examples/b__fitting_and_intersections.ads
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__fitting_and_intersections.ali
++ test -x obj/docs-examples/b__fitting_and_intersections.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/b__fitting_and_intersections.o
++ test -x obj/docs-examples/b__fitting_and_intersections.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/compatibility_and_safety
++ test -x obj/docs-examples/compatibility_and_safety
++ obj/docs-examples/compatibility_and_safety
++ echo 'RUN obj/docs-examples/compatibility_and_safety EXIT:0'
+RUN obj/docs-examples/compatibility_and_safety EXIT:0
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/compatibility_and_safety.adb.stderr
++ test -x obj/docs-examples/compatibility_and_safety.adb.stderr
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/compatibility_and_safety.adb.stdout
++ test -x obj/docs-examples/compatibility_and_safety.adb.stdout
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/compatibility_and_safety.ali
++ test -x obj/docs-examples/compatibility_and_safety.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/compatibility_and_safety.bexch
++ test -x obj/docs-examples/compatibility_and_safety.bexch
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/compatibility_and_safety.o
++ test -x obj/docs-examples/compatibility_and_safety.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/contours_and_moments
++ test -x obj/docs-examples/contours_and_moments
++ obj/docs-examples/contours_and_moments
++ echo 'RUN obj/docs-examples/contours_and_moments EXIT:0'
+RUN obj/docs-examples/contours_and_moments EXIT:0
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/contours_and_moments.adb.stderr
++ test -x obj/docs-examples/contours_and_moments.adb.stderr
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/contours_and_moments.adb.stdout
++ test -x obj/docs-examples/contours_and_moments.adb.stdout
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/contours_and_moments.ali
++ test -x obj/docs-examples/contours_and_moments.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/contours_and_moments.bexch
++ test -x obj/docs-examples/contours_and_moments.bexch
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/contours_and_moments.o
++ test -x obj/docs-examples/contours_and_moments.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/delaunay_and_voronoi
++ test -x obj/docs-examples/delaunay_and_voronoi
++ obj/docs-examples/delaunay_and_voronoi
++ echo 'RUN obj/docs-examples/delaunay_and_voronoi EXIT:0'
+RUN obj/docs-examples/delaunay_and_voronoi EXIT:0
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/delaunay_and_voronoi.adb.stderr
++ test -x obj/docs-examples/delaunay_and_voronoi.adb.stderr
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/delaunay_and_voronoi.adb.stdout
++ test -x obj/docs-examples/delaunay_and_voronoi.adb.stdout
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/delaunay_and_voronoi.ali
++ test -x obj/docs-examples/delaunay_and_voronoi.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/delaunay_and_voronoi.bexch
++ test -x obj/docs-examples/delaunay_and_voronoi.bexch
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/delaunay_and_voronoi.o
++ test -x obj/docs-examples/delaunay_and_voronoi.o
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/fitting_and_intersections
++ test -x obj/docs-examples/fitting_and_intersections
++ obj/docs-examples/fitting_and_intersections
++ echo 'RUN obj/docs-examples/fitting_and_intersections EXIT:0'
+RUN obj/docs-examples/fitting_and_intersections EXIT:0
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/fitting_and_intersections.adb.stderr
++ test -x obj/docs-examples/fitting_and_intersections.adb.stderr
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/fitting_and_intersections.adb.stdout
++ test -x obj/docs-examples/fitting_and_intersections.adb.stdout
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/fitting_and_intersections.ali
++ test -x obj/docs-examples/fitting_and_intersections.ali
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/fitting_and_intersections.bexch
++ test -x obj/docs-examples/fitting_and_intersections.bexch
++ for example in obj/docs-examples/*
++ test -f obj/docs-examples/fitting_and_intersections.o
++ test -x obj/docs-examples/fitting_and_intersections.o

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RF Workflows — AMS MEL</title>
+<link rel="stylesheet" href="../assets/portal.css"></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header><p>AMS MEL developer documentation</p><nav aria-label="Documentation"><ul><li><a href="../index.html">Home</a></li><li><a href="getting-started.html">Getting Started</a></li><li><a href="architecture.html">Architecture</a></li><li><a href="ir-workflows.html">IR Workflows</a></li><li><a href="rf-workflows.html">RF Workflows</a></li><li><a href="ownership-and-errors.html">Ownership and Errors</a></li><li><a href="api-map.html">API Map</a></li><li><a href="../api/index.html">Complete API Reference</a></li></ul></nav></header>
+<main id="main"><h1>RF Workflows</h1>
+<p>RF has two distinct paths: C2 allocates and controls resources, while DataMEL
+creates receive endpoints. They have independent owners and provider factories;
+neither is an IR Session. A pending future, a successful provider outcome and
+physical RF activity are three different facts.</p>
+<h2>Control: aperture, Job and intervals</h2>
+<pre aria-label="RF control workflow">C2_MEL
+  -- Submit_Virtual_Aperture --> Virtual_Aperture_Request
+  -- Wait (cached result), Claim once --> Virtual_Aperture
+  -- Job_Config, Submit_Job --> Job_Request
+  -- Wait (cached result), Claim once --> Job
+  -- Add_Job_Intervals --> JobIntervals
+  -- Finalize_Job / Cancel_Job / Wait_Job_Status</pre>
+<p>This is an illustrative operation sequence, not standalone executable Ada.
+<a href="../api/493eaffef5bc1fc3300a1b2e1cc93b9500c778c188650055e07aae6e186bd3cd.html">AMS.MEL.RF.C2</a> supplies the owners, configurations and operations.
+<code>Open</code> creates an independent <code>C2_MEL</code>.
+<code>Create_Virtual_Aperture_Config</code> builds local copied inputs;
+<code>Submit_Virtual_Aperture</code> invokes the provider request.
+<code>Wait</code> returns cached <code>Created</code>/<code>Failed</code> data;
+it does not acquire ownership. Only <code>Claim</code> transfers the successful
+resource into a unique limited <code>Virtual_Aperture</code>.</p>
+<p>Build a <code>Job_Config</code> and call <code>Submit_Job</code> on the aperture.
+Again, the <code>Job_Request</code> owns asynchronous completion, Wait observes
+the cache, and one successful Claim yields the controlled <code>Job</code> with
+copied JobDetail values. Configuration describes RX/TX groups, intervals and
+events, not RF execution. <code>Add_Job_Intervals</code> (and its compatible
+<code>Add_RX_Job_Intervals</code> name), <code>Finalize_Job</code>,
+<code>Wait_Job_Status</code> and <code>Cancel_Job</code> have separate contracts.
+Request Close is not Cancel_Job. Successful Add/Finalize does not prove physical
+transmission or reception. Preserve units and optional distinctions when building
+timing, pointing, modulation, user-context and waveform values.</p>
+<p>A native worker consumes each request future once; repeatable Wait reads its
+cache. Timeout does not cancel. C2 child claims follow pending/unclaimed/claimed
+resources; Jobs retain their own aperture reference and sibling C2 claim, so
+public parent-first closure does not destroy resources still in use.</p>
+<h2>Data: ProductRx creation and consumption</h2>
+<pre aria-label="RF receive workflow">Data_MEL
+  -- Product_Rx.Submit --> Create_Request
+  -- Wait, Claim once --> Endpoint
+  -- provider callback --> bounded native receive queue
+  -- Receive --> Event
+  -- With_* scoped borrow OR Copy_* independent Ada payload</pre>
+<p><a href="../api/8dafffc917553edb77fadf90c468b603cc65f7475b8fc26a51b6791c7de36e27.html">AMS.MEL.RF</a> owns DataMEL and copied MFA information.
+<a href="../api/6ed8ea2a1a59f5d24924546adaf2f81b35ead370e48aebb921cc771ad72242c5.html">AMS.MEL.RF.Product_Rx</a> builds a format-specific configuration and
+submits the ProductRx creation request. Created means a nonnull endpoint with
+verified assigned format became available; it proves neither RF delivery nor
+hardware readiness. Claim registers the callback and acquires one Endpoint.
+The endpoint's ID and assigned format are cached creation values, not live status.</p>
+<p>Current integer formats are Complex INT16 and INT8 Cartesian I/Q pairs, plus
+Direct INT8 and INT16 signed scalars. AMS VITA Small, Medium, Large and ExtraLarge
+use packet capacities of 512, 1,024, 8,192 and 32,768 bytes. The native bridge
+copies validated serialized packet bytes; the Ada VITA copy operations are
+<strong>not VITA sample decoding</strong>. Counts are pairs, scalar elements or
+packet objects according to the selected format, not interchangeable byte counts.
+PDW and Local Function receive payloads are not enabled by their enum names.</p>
+<p><code>Receive</code> returns a controlled Event holding immutable native-copied
+payload and Ada-owned ProductRx metadata. Metadata preserves timing, pointing
+and stabilization points, with absent/present-empty/present-nonempty VITA
+receive-event associations distinguished. <code>With_Samples</code> and the
+format-specific With operations borrow only during the synchronous processor;
+<code>Copy_Samples</code> and corresponding format-specific Copy operations
+allocate independent Ada values. This is not end-to-end zero-copy: the bridge
+already copied provider callback data.</p>
+<p>Queue capacity and maximum event size are explicit bounds. Incoming data can
+be dropped and counters must be monitored. Endpoint Close stops admission and
+drains active callbacks under the documented contract; held Events remain
+independent. The exact registered callable shell and DSO are permanently retained
+because providers may retain references to the callback. Never manually unload it.</p>
+<h2>Descriptors, observers and conditional services</h2>
+<ul>
+<li><a href="../api/38765e13248ea3978f2c83e61df9b0482eeb463a4193380d90135352522acdc9.html">AMS.MEL.RF.Admin</a>: independent administration commands; a normal
+Boolean rejection is not an exception.</li>
+<li><a href="../api/a46df8f589745583d3030d17f329e6337a12bb0f0235a8fed8fc64a4be7381bb.html">AMS.MEL.RF.C2.Interval_Status</a>: optional bounded JobInterval
+status observer and copied event/log values, not automatic proof of execution.</li>
+<li><a href="../api/85bdf131eee4421967de0570d64d4ce3b86c679c2f8077c21fa184ea09305b0d.html">AMS.MEL.RF.C2.Virtual_Aperture_Notifications</a>: observes a pending
+change signal, not a queue of provider status values or a recorded status-transition
+history. The signal contains no status snapshot, and multiple changes can coalesce.
+<a href="../api/ec990b43f1efbfd2bfe04f7434f0bf147f1bb30ab32a5643d2f00f9273a5a383.html">AMS.MEL.RF.C2.Virtual_Aperture_Queries</a> performs explicit fresh status
+queries. Register first, query on the application thread, wait for a change signal,
+then query again; the subsequent query need not return a different status.</li>
+<li><a href="../api/40bb9105550e6e6d6acf30301f0bf248ccb1f8319e052bc72539c966bb2dc3f0.html">AMS.MEL.RF.C2.Element_Groups</a> and
+<a href="../api/41caa696ab8ac14c61e60cfcb837f9d0e8c3da62ec8bcf5c8f54807afef1b12b.html">AMS.MEL.RF.C2.Data_Pipes</a>: copied descriptors, labels, endpoints and
+pipe information; inspecting them does not configure hardware activity.</li>
+<li><a href="../api/b81d2f3019580a411fe075fabb6e46b4269b9373582fe8115c44b9345169b822.html">AMS.MEL.RF.C2.Local_Functions</a>: conditional Local Function catalog
+and status queries; these neither execute Local Functions nor perform hardware
+register writes. Local Function command configuration for JobIntervals belongs
+to <code>AMS.MEL.RF.C2</code> itself, not this child query package. Both are
+separate from unsupported Local Function ProductRx payload delivery.</li>
+<li><a href="../api/87b9fd33a70c836f29680781683801c72ff5392e04bdaeff9590a7778e1646ea.html">AMS.MEL.RF.C2.Transmit_Power</a>: conditional power calculations;
+a calculated result is not a command to radiate.</li>
+</ul>
+<h2>Evidence and source basis</h2>
+<p>Mock tests qualify bridge conversions, cached completion, unique Claim,
+queues and lifetime. Pinned Squall reports qualify only their exact observed
+operations/configurations, not all RF surfaces or physical behavior.
+Read <a href="ownership-and-errors.html">Ownership and Errors</a> and
+<a href="api-map.html">API Map</a> for result access and package choice.</p>
+<p>Sources: <code>ada/src/ams-mel-rf*.ads</code>,
+<code>native/src/rf_virtual_aperture.cpp</code>, <code>rf_job.cpp</code>,
+<code>rf_job_interval_status.cpp</code>, <code>rf_va_status.cpp</code> and
+<code>rf_product_rx.cpp</code>. Contract examples are in
+<code>ada/tests/src/ams_mel_rf_job_tests.adb</code>,
+<code>ams_mel_rf_product_rx_tests.adb</code> and the focused RF tests.
+<code>docs/task-034*</code> reports and <code>docs/upstream-provenance.md</code>
+record the implementation and real-provider evidence boundaries.</p>
+</main></body></html>

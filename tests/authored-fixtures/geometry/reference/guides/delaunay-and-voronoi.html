@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delaunay and Voronoi with Subdiv2D — OpenCV Geometry Ada</title>
+<link rel="stylesheet" href="../api/gnatdoc-theme.css">
+<link rel="stylesheet" href="gnatdoc-guides.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header><nav aria-label="Documentation"><a href="../index.html">Documentation home</a> · <a href="../api/index.html">API browser</a></nav></header>
+<div class="guide-layout">
+<nav class="guide-nav" aria-label="Developer guides"><ul>
+<li><a href="geometry-fundamentals-and-contours.html">Geometry fundamentals and contour analysis</a></li>
+<li><a href="shape-fitting-and-intersections.html">Shape fitting and intersections</a></li>
+<li><a href="affine-and-perspective-geometry.html">Affine and perspective geometry</a></li>
+<li><a href="delaunay-and-voronoi.html" aria-current="page">Delaunay and Voronoi with Subdiv2D</a></li>
+<li><a href="compatibility-ownership-and-safety.html">Compatibility, ownership and native safety</a></li>
+</ul></nav>
+<main id="main-content">
+<h1 id="delaunay-and-voronoi-with-subdiv2d">Delaunay and Voronoi with Subdiv2D</h1>
+<p>This guide covers <code>OpenCV.Geometry.Subdiv2D</code>, an incremental Delaunay
+triangulation backed by one <code>cv::Subdiv2D</code>: creating and owning a
+subdivision, inserting and locating points, walking its quad-edge structure,
+and extracting the Voronoi diagram. The public Ada specifications are
+authoritative: if this guide or the README disagrees with a declaration's
+documentation in the API reference, the specification is right.</p>
+<h2 id="creating-and-owning-a-subdivision">Creating and owning a subdivision</h2>
+<p>A <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#2e8fcfedfbf19b2208b3731936405081ecc91d15ddfa0b22ba69c9ce2f2b2f52">Subdivision</a> exclusively owns its native object. It is
+limited, so it cannot be copied, and finalization releases the native object
+when the variable goes out of scope; no native handle is visible.</p>
+<ul>
+<li><a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#f1ed3ec83a6df7197b87f750151e7e2aa4f2397f8c4e61c008f205173a329c76">Create</a> and <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#78cad4e7575c44c2e65e72335848e764c0cefd803dfae2d46a002e02fd5e50b9">Reset</a> take integer bounds, and
+<a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#c83e0ed56ddd87e613028f87ca967f2da1a90be5751ac14cea2d20884a5cfaa5">Create_Float32</a> and <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#c4ebe8e3910bba90be1b27e3a1c5b9cfca8808da57edca77f449b3e6b1f09993">Reset_Float32</a>
+binary32 bounds without rounding, on every supported release. Points are
+accepted in the half-open region from <code>X</code> to <code>X + Width</code> and from <code>Y</code> to
+<code>Y + Height</code>.</li>
+<li>A declared but never created object is not ready, and
+<a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#1dba028766a42c4b730b73e78df21edd66461caa5c6a52b32ca25cb9987bb425">Is_Ready</a> reports it. Every operation except the bounds
+queries raises <code>OpenCV.OpenCV_Error</code> on an object that is not ready, and
+only a successful reset makes it ready again, for example after a failed
+insertion.</li>
+<li><a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#84ae12c265ab51107ff60d0639974a089298c5746103783fff3ef63927ffe9ab">Bounds</a> returns integer bounds and raises instead of rounding
+Float32 ones; <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#8373cc3123ae8722a02c20fe75624324a05b240e96e48ff9037199ef989f6b86">Bounds_Float32</a> works for both.</li>
+<li>A subdivision must not be used by more than one task at a time, even for
+queries: OpenCV updates internal state in <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#fbfdbf46f2545c15887368c29713f59ae1c2afbd27f47be65777acc8b4d44c43">Locate</a>,
+<a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#b597c65821fbff756de2b3f7c927b5f360599958ed84aab216ba14ea54562eb3">Find_Nearest</a> and <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#e0402b3aee8b3781289bab36d68dc32c0ec62ce50d276fbb333035ae0d6757ea">Voronoi_Facets</a>.
+Distinct objects are independent.</li>
+</ul>
+<h2 id="inserting-and-locating-points">Inserting and locating points</h2>
+<p>The <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#c5833967df20dd7e966292b6dc5425b3fe8447b6615fdd59ee780fa1d27346c6">single-point Insert</a> returns the point's
+<a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#dd050c3c0687b6ef8dd3fa3345b429f52beaa94e575a53319b505a97f530c9a2">Vertex_Id</a>, or the existing vertex when OpenCV finds the
+point coincident with one. The <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#2d682176b7e149bf13a16d367cc17e78deced31317ada954300c221a384ede35">batch Insert</a> is not atomic:
+when OpenCV rejects a point, the earlier points stay inserted and the
+exception message names the rejected index.</p>
+<p><a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#fbfdbf46f2545c15887368c29713f59ae1c2afbd27f47be65777acc8b4d44c43">Locate</a> returns a <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#b9ff3363e884f40cabc55b3a7470a1c2def2d2b1d3673ee93fe87db24f734081">Locate_Result</a> whose
+discriminant <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#d0382199f6d647399cbec96d1100f908f3fd73e8b389c00721ceefede0ba4426">Point_Location_Kind</a> says whether the
+point lies inside a facet, on an edge, or on a vertex. Points outside the
+bounds raise <code>OpenCV.OpenCV_Error</code>. <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#b597c65821fbff756de2b3f7c927b5f360599958ed84aab216ba14ea54562eb3">Find_Nearest</a>
+returns the vertex whose Voronoi facet contains the query, normally the
+nearest inserted vertex. Its native facet walk is unbounded, and some
+numerically pathological triangulations can keep it from returning, so do
+not rely on it for untrusted or poorly conditioned geometry when you need a
+deadline.</p>
+<h2 id="identifiers-and-their-lifetimes">Identifiers and their lifetimes</h2>
+<p>Vertex and edge identifiers are OpenCV's and belong to the subdivision that
+produced them.</p>
+<ul>
+<li>A <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#dd050c3c0687b6ef8dd3fa3345b429f52beaa94e575a53319b505a97f530c9a2">Vertex_Id</a> of an inserted point stays valid until the
+next reset. <code>No_Vertex</code> is 0, and 1 .. 3 are the vertices of OpenCV's
+bounding super-triangle, which lie outside the bounds. Identifiers are not
+dense, because Voronoi computation also creates vertices.</li>
+<li>An <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#4f4ba2bc1497150545680c01c96c8a1e137be7dae83c261885d4ca66f8e5d11e">Edge_Id</a> stays valid only until the next insertion or
+reset: insertion flips edges and reuses their slots.</li>
+</ul>
+<h2 id="triangles-edges-and-navigation">Triangles, edges and navigation</h2>
+<p><a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#8413db754673e07fff9f3958b92e006c6795a6a04ee22052af1b67edb41315e6">Triangle_List</a> returns the triangles whose three vertices
+lie inside the bounds, <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#51c30b3309ed26d54c340ebf9856de71182aab08b217deaf686d658b4f3ab40b">Edge_List</a> the Delaunay edges as pairs
+of positions, including edges to the super-triangle, and <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#6b327953f9eb1d4d7e518e7149ce1976680326aa5e337d616c31f2a2eb3e5490">Leading_Edge_List</a> one edge of each
+facet. Results are Ada-owned arrays indexed <code>1 .. N</code> in native order. Near
+the convex hull, triangles can differ between releases, because OpenCV 4.12
+and later use a larger super-triangle.</p>
+<p>Edges are directed. <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#a7ad958478fe2b1a3b54eb1901fdf350b7603cba7deec6ad41dc5989da119123">Navigate</a> follows one of the eight
+<a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#eab663978f5ba01a8c495e3e3b90a7e08384fea96d604bc144b0f3e932679d4a">Edge_Navigation</a> relations of OpenCV's quad-edge
+structure, <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#231a4c73968ecfe809a383b8aa8250e757965b378a715ec20da7cfe05b7c8297">Rotate</a> selects one of the four
+<a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#4b3f7a676b58c5934faa79d2e55db7aa7dc92ad37ac0fcfa4d7c389d7895cbd1">Edge_Rotation</a> members of an edge's quad-edge, and
+<a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#603aef11200a5330fae979463002638ce4e2361b49be81fd844a7a571496c936">Symmetric_Edge</a>, <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#b8cda029656252b719904711289d9b8a20388c14b115057a2d7afccd7a8037bc">Origin</a>,
+<a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#ed071994bb70f5747223262217d0d65bff03048e7986743e3cc16dd7ec46215f">Destination</a> and <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#e534b3fbdfcf897aa843fdcda37d3655fe8a6c23a74f27ada360ed1c2793f3ae">Vertex_Point</a> answer
+the common questions directly. A rotated edge is a dual Voronoi edge.</p>
+<h2 id="voronoi-diagrams">Voronoi diagrams</h2>
+<p><a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#e0402b3aee8b3781289bab36d68dc32c0ec62ce50d276fbb333035ae0d6757ea">Voronoi_Facets</a> returns a
+<a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#a125ec53d879614b49bbf461cde07b3f335e7774560ef81a43c67875bd6f10ae">Voronoi_Diagram</a> with one facet per inserted point, in
+increasing site order; the <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#0bf4599039a7b13e965e24657a52ac19280f856f1903755ea34285df69c39ab7">second overload</a> returns
+the facets of chosen sites. Each <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#c33bf84ac459e6212120426ff4dfdf5797c3ac2bdd58d381bc380e5fcebe2f7d">Voronoi_Facet</a> names a
+slice of the diagram's points, which <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#d9d0858b70058d688f0dc7ec0b09e3a4b3fa4f1b0de3dfb09553beab0976fadc">Facet_Points</a>
+copies.</p>
+<ul>
+<li>A facet whose region reaches beyond the super-triangle, as every facet on
+the convex hull does, is closed by far-away circumcenters that differ
+between releases.</li>
+<li><code>Complete</code> is False when OpenCV could not create one of the facet's
+vertices; OpenCV then reports the origin in its place, so an incomplete
+polygon is not the true facet.</li>
+</ul>
+<h2 id="scale-and-conditioning">Scale and conditioning</h2>
+<p>OpenCV's predicates use absolute binary32 tolerances, so behavior depends on
+coordinate scale and conditioning. Probes on OpenCV 4.10 and 5.0 found no
+nearest-vertex failures for random points about 0.03 units apart or more,
+but some wrong answers at 0.01 units or less. These are observations, not a
+safe minimum: scale your geometry so that distinct features are comfortably
+separated.</p>
+<h2 id="example">Example</h2>
+<p>The example triangulates four points tens of units apart, walks the
+quad-edge structure, extracts the Voronoi diagram and resets the
+subdivision.</p>
+<pre><code class="language-ada">with OpenCV;
+with OpenCV.Geometry;
+with OpenCV.Geometry.Subdiv2D;
+
+--  Triangulates four well-separated points, walks the quad-edge structure,
+--  extracts the Voronoi diagram and resets the subdivision. The points are
+--  tens of units apart, far from the spacings where OpenCV's predicates lose
+--  accuracy.
+
+procedure Delaunay_And_Voronoi is
+   use OpenCV.Geometry.Subdiv2D;
+   use type OpenCV.Float32_Point;
+   use type OpenCV.Size_Coordinate;
+
+   --  The subdivision owns its native object and is released when Plane
+   --  goes out of scope. It must not be shared between tasks.
+   Plane : Subdivision :=
+     Create (Bounds =&gt; (X =&gt; 0, Y =&gt; 0, Width =&gt; 100, Height =&gt; 100));
+begin
+   --  Three corners and one interior point: three Delaunay triangles.
+   Insert
+     (Plane,
+      [(X =&gt; 10.0, Y =&gt; 10.0),
+       (X =&gt; 90.0, Y =&gt; 10.0),
+       (X =&gt; 50.0, Y =&gt; 90.0)]);
+   declare
+      Center    : constant Vertex_Id := Insert (Plane, (X =&gt; 50.0, Y =&gt; 40.0));
+      Triangles : constant Triangle_Array := Triangle_List (Plane);
+      Edges     : constant Edge_Id_Array := Leading_Edge_List (Plane);
+      Edge      : constant Edge_Id := Edges (Edges'First);
+      Walk      : Edge_Id := Edge;
+      Found     : constant Locate_Result :=
+        Locate (Plane, (X =&gt; 50.0, Y =&gt; 40.0));
+      --  Well conditioned, so the native nearest-vertex walk returns.
+      Nearest   : constant Nearest_Result :=
+        Find_Nearest (Plane, (X =&gt; 48.0, Y =&gt; 42.0));
+      Diagram   : constant Voronoi_Diagram := Voronoi_Facets (Plane);
+   begin
+      pragma Assert (Is_Ready (Plane));
+      pragma Assert (Center &gt; 3);  --  1 .. 3 are the super-triangle vertices
+      pragma Assert (Triangles'Length = 3 and then Triangles'First = 1);
+
+      --  Three steps around the facet on the left return to the edge.
+      for Step in 1 .. 3 loop
+         Walk := Navigate (Plane, Walk, Next_Around_Left);
+      end loop;
+      pragma Assert (Walk = Edge);
+      --  Four dual rotations, or two reversals, return to the edge.
+      Walk := Edge;
+      for Step in 1 .. 4 loop
+         Walk := Rotate (Plane, Walk, Rotated_Edge);
+      end loop;
+      pragma Assert (Walk = Edge);
+      pragma
+        Assert (Symmetric_Edge (Plane, Symmetric_Edge (Plane, Edge)) = Edge);
+      pragma
+        Assert
+          (Origin (Plane, Symmetric_Edge (Plane, Edge))
+             = Destination (Plane, Edge));
+
+      pragma Assert (Found.Kind = On_Vertex and then Found.Vertex = Center);
+      pragma Assert (Nearest.Vertex = Center);
+      pragma Assert (Nearest.Point = Vertex_Point (Plane, Center));
+
+      --  One facet per inserted point, in increasing site order.
+      pragma Assert (Diagram.Facet_Count = 4);
+      for Index in Diagram.Facets'Range loop
+         pragma Assert (Diagram.Facets (Index).Complete);
+         pragma Assert (Facet_Points (Diagram, Index)'Length &gt;= 3);
+         pragma
+           Assert
+             (Index = 1
+                or else Diagram.Facets (Index - 1).Site
+                        &lt; Diagram.Facets (Index).Site);
+      end loop;
+      pragma Assert (for some Facet of Diagram.Facets =&gt; Facet.Site = Center);
+   end;
+
+   --  Reset discards every point; the old identifiers are no longer valid.
+   Reset (Plane, (X =&gt; 0, Y =&gt; 0, Width =&gt; 10, Height =&gt; 10));
+   pragma Assert (Is_Ready (Plane));
+   pragma Assert (Voronoi_Facets (Plane).Facet_Count = 0);
+   pragma Assert (Bounds (Plane).Width = 10);
+end Delaunay_And_Voronoi;
+</code></pre>
+<h2 id="interpreting-results">Interpreting results</h2>
+<ul>
+<li>Compare triangles, edges and facets as sets: their order is OpenCV's.</li>
+<li>Query identifiers again after every insertion instead of keeping edge
+identifiers, and after every reset instead of keeping vertex identifiers.</li>
+<li>The far-away points that close hull facets, and triangles near the hull,
+depend on the OpenCV release.</li>
+<li>The <a href="compatibility-ownership-and-safety.html">compatibility guide</a> covers
+Float32 bounds on older releases and the error model shared by both
+packages.</li>
+</ul>
+
+<section aria-label="Native API entry points"><h2 id="native-api-entry-points">Native API entry points</h2><ul>
+<li><a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#2e8fcfedfbf19b2208b3731936405081ecc91d15ddfa0b22ba69c9ce2f2b2f52">Subdivision</a></li>
+<li><a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#c5833967df20dd7e966292b6dc5425b3fe8447b6615fdd59ee780fa1d27346c6">Insert</a></li>
+<li><a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#fbfdbf46f2545c15887368c29713f59ae1c2afbd27f47be65777acc8b4d44c43">Locate</a></li>
+<li><a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#b597c65821fbff756de2b3f7c927b5f360599958ed84aab216ba14ea54562eb3">Find_Nearest</a></li>
+<li><a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#a7ad958478fe2b1a3b54eb1901fdf350b7603cba7deec6ad41dc5989da119123">Navigate</a></li>
+<li><a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#e0402b3aee8b3781289bab36d68dc32c0ec62ce50d276fbb333035ae0d6757ea">Voronoi_Facets</a></li>
+</ul></section>
+<p class="guide-source"><a href="https://github.com/zackboll/opencv_geometry_ada/blob/main/docs/guides/delaunay-and-voronoi.md">Original Markdown source on GitHub</a></p>
+</main>
+</div>
+</body>
+</html>

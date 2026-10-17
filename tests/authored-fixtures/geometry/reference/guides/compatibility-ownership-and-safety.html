@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compatibility, ownership and native safety — OpenCV Geometry Ada</title>
+<link rel="stylesheet" href="../api/gnatdoc-theme.css">
+<link rel="stylesheet" href="gnatdoc-guides.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header><nav aria-label="Documentation"><a href="../index.html">Documentation home</a> · <a href="../api/index.html">API browser</a></nav></header>
+<div class="guide-layout">
+<nav class="guide-nav" aria-label="Developer guides"><ul>
+<li><a href="geometry-fundamentals-and-contours.html">Geometry fundamentals and contour analysis</a></li>
+<li><a href="shape-fitting-and-intersections.html">Shape fitting and intersections</a></li>
+<li><a href="affine-and-perspective-geometry.html">Affine and perspective geometry</a></li>
+<li><a href="delaunay-and-voronoi.html">Delaunay and Voronoi with Subdiv2D</a></li>
+<li><a href="compatibility-ownership-and-safety.html" aria-current="page">Compatibility, ownership and native safety</a></li>
+</ul></nav>
+<main id="main-content">
+<h1 id="compatibility-ownership-and-native-safety">Compatibility, ownership and native safety</h1>
+<p>This guide collects the rules shared by every operation of
+<code>OpenCV.Geometry</code> and <code>OpenCV.Geometry.Subdiv2D</code>: which OpenCV releases they
+support and where those releases differ, who owns results, how errors are
+reported, and which native limits remain. The public Ada specifications are
+authoritative: if this guide or the README disagrees with a declaration's
+documentation in the API reference, the specification is right.</p>
+<h2 id="supported-releases">Supported releases</h2>
+<p>The Ada declarations are the same on OpenCV 4.6, later 4.x releases and 5.x.
+On OpenCV 4 the operations call the native imgproc library, and on OpenCV 5
+the native geometry library. Where native results differ between releases,
+the declaration says so; the most visible differences are these.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable table"><table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Since</th>
+<th>Newer behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#6db6b75bcfeebdfa09e8a3bddd598d12a0d56235e999f6605368b649411de36a">Minimum_Area_Rectangle</a></td>
+<td>4.13</td>
+<td>Angles in <code>[-90, 0)</code>, with a different width and height assignment</td>
+</tr>
+<tr>
+<td><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#aea1319c5bef8a0978afde90a41a0c9ed0ea2ec5879617420204bdfc2dd5779d">Approximate_Curve</a></td>
+<td>5.x</td>
+<td>Distances to the chord rather than to the line through it</td>
+</tr>
+<tr>
+<td><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#726a899c9e1ab6af0ec8631c1d0414c711dd21166076b6a4f2c500a9fd0996b6">Fit_Ellipse</a> and its variants</td>
+<td>4.12</td>
+<td>Random perturbation of singular systems, from <code>cv::theRNG</code></td>
+</tr>
+<tr>
+<td><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#5a5df1d42190dd5657e6042b3f87e746e7ce334f13998d283ab2ee7c1f279924">Get_Perspective_Transform</a></td>
+<td>4.12</td>
+<td>A unit-norm least-squares fallback whose <code>T (3, 3)</code> need not be 1.0</td>
+</tr>
+<tr>
+<td><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#bd6955f2bff30fe6242f626cb6987754094fbcf74a010518a72fdc8a32d98c24">Float32 Minimum_Enclosing_Circle</a></td>
+<td>5.x</td>
+<td>More than ten points shuffled before the search; results can differ in rounding, or more near degeneracy</td>
+</tr>
+<tr>
+<td><a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#8413db754673e07fff9f3958b92e006c6795a6a04ee22052af1b67edb41315e6">Triangle_List</a> and <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#e0402b3aee8b3781289bab36d68dc32c0ec62ce50d276fbb333035ae0d6757ea">Voronoi_Facets</a></td>
+<td>4.12</td>
+<td>A larger super-triangle, which changes results near the convex hull</td>
+</tr>
+</tbody>
+</table></div>
+<p>A 4.x version in the table means that release and every later one,
+including 5.x.</p>
+<h2 id="native-capabilities-and-binding-coverage">Native capabilities and binding coverage</h2>
+<p><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#88913bfcdf32a14f364b47fb7494827a555a82592d57f765517d5729a8cb84e3">Is_Natively_Supported</a> reports whether the linked
+OpenCV provides a <a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#15581cf6da8bb82b322cf81df2f969c0866bdff13091bda16e2c23ec83d48653">Native_Feature</a>. The answer is fixed
+when the native shim is built, and it never says whether an Ada operation
+exists. Native <code>approxPolyN</code> and <code>minEnclosingConvexPolygon</code> remain unbound
+even where OpenCV provides them, as do 3-D line fitting, the raster-image
+modes of moments, bounding rectangles and shape matching, and Float32
+enclosing triangles. Extracting contours from images belongs to the OpenCV
+Imgproc binding.</p>
+<p>Two features work on every supported release regardless of the answer:</p>
+<ul>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#fec5ade1e5d8a3ed86580feb6e6063cda08d77d9de1075ab512b909eaeb41521">Closest_Ellipse_Points</a> is native on 4.12 and
+5.x and uses a private compatibility implementation on 4.6 to 4.11.</li>
+<li>Float32 subdivision bounds, through <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#c83e0ed56ddd87e613028f87ca967f2da1a90be5751ac14cea2d20884a5cfaa5">Create_Float32</a>
+and <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#c4ebe8e3910bba90be1b27e3a1c5b9cfca8808da57edca77f449b3e6b1f09993">Reset_Float32</a>, use a private initialization
+backport before 4.13 and native <code>Rect2f</code> bounds from 4.13.</li>
+</ul>
+<h2 id="ownership">Ownership</h2>
+<ul>
+<li>Every operation of <code>OpenCV.Geometry</code> is a function that leaves its inputs
+unchanged and returns Ada-owned values, arrays and records; none refers to
+native storage.</li>
+<li>The one exception is <a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#ec068289d836e143df9ec9f805316133f312bb13fea8eb378ba187612166f35c">Get_Rotation_Matrix_2D</a>,
+which returns an <code>OpenCV.Core.Mat</code> with Core's ordinary <code>Mat</code> ownership.</li>
+<li>A <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#2e8fcfedfbf19b2208b3731936405081ecc91d15ddfa0b22ba69c9ce2f2b2f52">Subdivision</a> is limited and owns its native object,
+which finalization releases. Its vertex and edge identifiers are
+meaningful only for that object, and for the lifetimes the
+<a href="delaunay-and-voronoi.html#identifiers-and-their-lifetimes">Subdiv2D guide</a>
+describes.</li>
+</ul>
+<h2 id="errors">Errors</h2>
+<p>Input that the binding rejects, failures reported by OpenCV and non-finite
+native results raise <code>OpenCV.OpenCV_Error</code>. Where native arithmetic or
+memory safety requires it, an operation checks documented limits, such as
+point counts and coordinate spans, before it calls OpenCV, and each
+declaration states its own.</p>
+<ul>
+<li>Functions return a complete result or raise; none returns a partial
+result.</li>
+<li>The batch <a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#2d682176b7e149bf13a16d367cc17e78deced31317ada954300c221a384ede35">Insert</a> of Subdiv2D is not atomic: points before
+a rejected one stay inserted.</li>
+<li>A native failure while a subdivision is being modified, such as an
+insertion that exhausts memory, can leave it not ready; only a reset
+recovers it.</li>
+<li><a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#d9d0858b70058d688f0dc7ec0b09e3a4b3fa4f1b0de3dfb09553beab0976fadc">Facet_Points</a> raises <code>Constraint_Error</code> for a facet
+index outside the diagram, as Ada indexing does.</li>
+</ul>
+<h2 id="native-calls-that-may-not-return">Native calls that may not return</h2>
+<p>Two native searches have no iteration bound. The binding cannot detect the
+inputs that trigger them in advance, nor interrupt a native call:</p>
+<ul>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#088dc36517e1a4aff3bdae7106cf93acf22524e0e8db5603db033c52d1169d68">Minimum_Enclosing_Triangle</a> can fail to
+return for some nearly degenerate hulls; it has no Float32 overload because
+binary32 point sets add more such inputs.</li>
+<li><a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#b597c65821fbff756de2b3f7c927b5f360599958ed84aab216ba14ea54562eb3">Find_Nearest</a> can fail to return for some numerically
+pathological triangulations.</li>
+</ul>
+<p>Callers that need a deadline must not pass untrusted or poorly conditioned
+geometry to either. A subdivision must also never be used by two tasks at
+once, even for queries.</p>
+<h2 id="example">Example</h2>
+<p>The example queries native capabilities, uses the two portable features,
+and shows the error model.</p>
+<pre><code class="language-ada">with OpenCV;
+with OpenCV.Geometry;
+with OpenCV.Geometry.Subdiv2D;
+
+--  Native capability queries, portable operations that work on every
+--  supported OpenCV release, and the binding's error model.
+
+procedure Compatibility_And_Safety is
+   use OpenCV.Geometry;
+   use type OpenCV.Float32_Value;
+   use type OpenCV.Size_Coordinate;
+
+   --  Native availability in the linked OpenCV, NOT Ada binding coverage:
+   --  4.11 adds approxPolyN, 4.12 getClosestEllipsePoints, 4.13
+   --  minEnclosingConvexPolygon and Rect2f subdivision bounds; 5.x has all.
+   Polygon_N     : constant Boolean :=
+     Is_Natively_Supported (Approximate_Convex_Polygon_Feature);
+   Ellipse_Point : constant Boolean :=
+     Is_Natively_Supported (Closest_Ellipse_Points_Feature);
+   Enclosing     : constant Boolean :=
+     Is_Natively_Supported (Minimum_Enclosing_Convex_Polygon_Feature);
+   Float_Bounds  : constant Boolean :=
+     Is_Natively_Supported (Float32_Subdivision_Bounds_Feature);
+
+   --  Works on every release: native on 4.12+ and 5.x, a private
+   --  compatibility implementation on 4.6 .. 4.11.
+   Closest : constant Float32_Point_Array :=
+     Closest_Ellipse_Points
+       (Ellipse =&gt;
+          (Center        =&gt; (X =&gt; 0.0, Y =&gt; 0.0),
+           Size          =&gt; (Width =&gt; 4.0, Height =&gt; 2.0),
+           Angle_Degrees =&gt; 0.0),
+        Points  =&gt; Float32_Point_Array'[(X =&gt; 10.0, Y =&gt; 0.0)]);
+
+   Raised : Boolean;
+begin
+   --  The thresholds only grow with the release.
+   pragma Assert (if Enclosing then Ellipse_Point and Polygon_N);
+   pragma Assert (if Ellipse_Point then Polygon_N);
+   pragma Assert (Float_Bounds = Enclosing);
+
+   --  The point of the 4 x 2 ellipse (semi-axes 2 and 1) nearest (10, 0).
+   pragma Assert (Closest'First = 0 and then Closest'Last = 0);
+   pragma Assert (abs (Closest (0).X - 2.0) &lt; 1.0E-3);
+   pragma Assert (abs Closest (0).Y &lt; 1.0E-3);
+
+   --  Float32 subdivision bounds also work on every release.
+   declare
+      use OpenCV.Geometry.Subdiv2D;
+      Plane : constant Subdivision :=
+        Create_Float32 ((X =&gt; 0.5, Y =&gt; 0.5, Width =&gt; 9.0, Height =&gt; 9.0));
+   begin
+      pragma Assert (Bounds_Float32 (Plane).X = 0.5);
+      --  Integer Bounds would have to round, so it raises instead.
+      begin
+         Raised := Bounds (Plane).Width = 0;
+         Raised := False;
+      exception
+         when OpenCV.OpenCV_Error =&gt;
+            Raised := True;
+      end;
+      pragma Assert (Raised);
+   end;
+
+   --  Rejected input raises OpenCV.OpenCV_Error; no partial result.
+   begin
+      Raised :=
+        Fit_Ellipse (Contour'[(X =&gt; 0, Y =&gt; 0), (X =&gt; 1, Y =&gt; 1)]).Size.Width
+        &lt; 0.0;
+      Raised := False;
+   exception
+      when OpenCV.OpenCV_Error =&gt;
+         Raised := True;
+   end;
+   pragma Assert (Raised);
+
+   --  A declared but never created subdivision is not ready.
+   declare
+      use OpenCV.Geometry.Subdiv2D;
+      Unused : Subdivision;
+   begin
+      pragma Assert (not Is_Ready (Unused));
+      Raised := Insert (Unused, (X =&gt; 1.0, Y =&gt; 1.0)) = No_Vertex;
+      Raised := False;
+   exception
+      when OpenCV.OpenCV_Error =&gt;
+         Raised := True;
+   end;
+   pragma Assert (Raised);
+end Compatibility_And_Safety;
+</code></pre>
+<h2 id="interpreting-results">Interpreting results</h2>
+<ul>
+<li>Branch on <a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#88913bfcdf32a14f364b47fb7494827a555a82592d57f765517d5729a8cb84e3">Is_Natively_Supported</a> only to
+report the linked OpenCV, never to decide whether an Ada operation exists:
+every declaration is present on every supported release.</li>
+<li>Tests that must pass on several releases should check geometric
+properties, such as areas, vertex sets and mapped points, rather than
+native representations, orders or exact binary32 values.</li>
+<li>The other guides start with the
+<a href="geometry-fundamentals-and-contours.html">geometry fundamentals</a>.</li>
+</ul>
+
+<section aria-label="Native API entry points"><h2 id="native-api-entry-points">Native API entry points</h2><ul>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#15581cf6da8bb82b322cf81df2f969c0866bdff13091bda16e2c23ec83d48653">Native_Feature</a></li>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#88913bfcdf32a14f364b47fb7494827a555a82592d57f765517d5729a8cb84e3">Is_Natively_Supported</a></li>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#fec5ade1e5d8a3ed86580feb6e6063cda08d77d9de1075ab512b909eaeb41521">Closest_Ellipse_Points</a></li>
+<li><a href="../api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html#c4ebe8e3910bba90be1b27e3a1c5b9cfca8808da57edca77f449b3e6b1f09993">Reset_Float32</a></li>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#088dc36517e1a4aff3bdae7106cf93acf22524e0e8db5603db033c52d1169d68">Minimum_Enclosing_Triangle</a></li>
+</ul></section>
+<p class="guide-source"><a href="https://github.com/zackboll/opencv_geometry_ada/blob/main/docs/guides/compatibility-ownership-and-safety.md">Original Markdown source on GitHub</a></p>
+</main>
+</div>
+</body>
+</html>

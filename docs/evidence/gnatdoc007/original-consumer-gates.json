@@ -1,0 +1,108 @@
+{
+  "core": {
+    "cwd": "/tmp/gnatdoc007/sources/core",
+    "deployment_executed": false,
+    "environment": {
+      "DOC_PYTHON": "/home/zboll/git/ada-gnatdoc-enhancer/.venv/bin/python",
+      "GNATDOC_PREFIX": "/home/zboll/.local/share/alire/releases/gnatdoc_bin_26.0.0_a3a91ecf"
+    },
+    "generation_command": [
+      "sh",
+      "scripts/generate_docs.sh"
+    ],
+    "original_test_command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts",
+      "-p",
+      "test_*doc*.py",
+      "-v"
+    ],
+    "original_test_count": 116,
+    "result": "pass"
+  },
+  "geometry": {
+    "cwd": "/tmp/gnatdoc007/sources/geometry",
+    "deployment_executed": false,
+    "environment": {
+      "DOC_PYTHON": "/home/zboll/git/ada-gnatdoc-enhancer/.venv/bin/python",
+      "GNATDOC_PREFIX": "/home/zboll/.local/share/alire/releases/gnatdoc_bin_26.0.0_a3a91ecf"
+    },
+    "generation_command": [
+      "sh",
+      "scripts/generate_docs.sh"
+    ],
+    "original_test_command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts",
+      "-p",
+      "test_*doc*.py",
+      "-v"
+    ],
+    "original_test_count": 205,
+    "result": "pass"
+  },
+  "imgproc": {
+    "cwd": "/tmp/gnatdoc007/sources/imgproc",
+    "deployment_executed": false,
+    "environment": {
+      "DOC_PYTHON": "/home/zboll/git/ada-gnatdoc-enhancer/.venv/bin/python",
+      "GNATDOC_PREFIX": "/home/zboll/.local/share/alire/releases/gnatdoc_bin_26.0.0_a3a91ecf"
+    },
+    "generation_command": [
+      "sh",
+      "scripts/generate_docs.sh"
+    ],
+    "original_test_command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts",
+      "-p",
+      "test_*doc*.py",
+      "-v"
+    ],
+    "original_test_count": 149,
+    "result": "pass"
+  },
+  "mel": {
+    "cwd": "/tmp/gnatdoc007/mel-integrity",
+    "deployment_executed": false,
+    "environment": {
+      "DOC_PYTHON": "/home/zboll/git/ada-gnatdoc-enhancer/.venv/bin/python",
+      "GNATDOC_PREFIX": "/home/zboll/.local/share/alire/releases/gnatdoc_bin_26.0.0_a3a91ecf"
+    },
+    "generation_command": [
+      "alr",
+      "-n",
+      "-C",
+      "docs/toolchain",
+      "exec",
+      "--",
+      "sh",
+      "../../scripts/generate_docs_baseline.sh"
+    ],
+    "original_test_command": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts",
+      "-p",
+      "test_*doc*.py",
+      "-v"
+    ],
+    "original_test_count": 105,
+    "result": "pass"
+  }
+}

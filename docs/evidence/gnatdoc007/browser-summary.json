@@ -1,0 +1,66 @@
+{
+  "core": {
+    "desktop_mobile": [
+      1280,
+      390
+    ],
+    "final_authored_assertions": 1048,
+    "final_authored_status": "pass",
+    "javascript": [
+      true,
+      false
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ]
+  },
+  "geometry": {
+    "desktop_mobile": [
+      1280,
+      390
+    ],
+    "final_authored_assertions": 1384,
+    "final_authored_status": "pass",
+    "javascript": [
+      true,
+      false
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ]
+  },
+  "imgproc": {
+    "desktop_mobile": [
+      1280,
+      390
+    ],
+    "final_authored_assertions": 1576,
+    "final_authored_status": "pass",
+    "javascript": [
+      true,
+      false
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ]
+  },
+  "mel": {
+    "desktop_mobile": [
+      1280,
+      390
+    ],
+    "final_authored_assertions": 1088,
+    "final_authored_status": "pass",
+    "javascript": [
+      true,
+      false
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ]
+  }
+}

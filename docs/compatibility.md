@@ -50,7 +50,7 @@ See `/home/zboll/git/ada-gnatdoc-enhancer/docs/mel-profile-compatibility.md`.
 Production adoption remains unqualified, including the 25 Core generic-instance
 summary gaps, external Core anchors, authored guides and consumer integration.
 
-## GNATDOC-006 generic-instance presentation (current)
+## GNATDOC-006 generic-instance presentation (historical)
 
 All four pinned native API structural qualifications remain passing. Core's
 25 instance summaries (24 Vectors, one Matrix) add 102 independently checked
@@ -60,3 +60,13 @@ for existing configurations, including dependency inventories. See
 `/home/zboll/git/ada-gnatdoc-enhancer/docs/generic-instance-summaries.md`.
 Production consumer migration, public dependency deployments and full accessibility
 certification remain unqualified. GNATDOC-002–005 evidence is unchanged.
+
+## GNATDOC-007 authored-content qualification (current)
+
+The opt-in hash-bound authored modes qualify the original five guides each for
+Core, Imgproc and Geometry, plus MEL's six HTML guides and authored portal.
+The original authored stylesheet identity and bytes are retained, including
+`assets/portal.css`. Native inventory/type-link/generic-summary guarantees are
+unchanged. See the executed proof boundaries and per-guide evidence in
+`/home/zboll/git/ada-gnatdoc-enhancer/docs/authored-guides-portal-compatibility.md`.
+This does not authorize consumer adoption, deployment, or production URLs.

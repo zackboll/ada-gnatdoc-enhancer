@@ -1,0 +1,7 @@
+Compile
+   [Ada]          example.adb
+Bind
+   [gprbind]      example.bexch
+   [Ada]          example.ali
+Link
+   [link]         example.adb

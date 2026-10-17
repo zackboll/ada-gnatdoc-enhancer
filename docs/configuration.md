@@ -1,3 +1,17 @@
+# Authored-content opt-in
+
+`guides.mode = "authored-markdown"` and `"authored-html"` require `manifest`
+and its reviewed `sha256`. They do not change `mode = "none"` or the original
+bootstrap guide modes. The schema-2 contract binds explicit sources, canonical
+output paths, guide identities/order, stylesheet bytes, verified native input
+hashes, example ownership/build projects, and approved portal inputs.
+Unknown/duplicate keys and unlisted publication inputs are rejected.
+
+Full contracts and proof boundaries are documented in
+`/home/zboll/git/ada-gnatdoc-enhancer/docs/authored-guides-portal-compatibility.md`.
+The Markdown documentation-only extra remains pinned to
+`markdown-it-py==3.0.0` and `mdurl==0.1.2`.
+
 # TOML configuration
 
 Configuration is scoped to a consuming repository root. Paths are relative to

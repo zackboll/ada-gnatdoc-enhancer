@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Segmentation, contours and morphology — OpenCV Imgproc Ada</title>
+<link rel="stylesheet" href="../api/gnatdoc-theme.css">
+<link rel="stylesheet" href="gnatdoc-guides.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header><nav aria-label="Documentation"><a href="../index.html">Documentation home</a> · <a href="../api/index.html">API browser</a></nav></header>
+<div class="guide-layout">
+<nav class="guide-nav" aria-label="Developer guides"><ul>
+<li><a href="filtering-and-transforms.html">Filtering and image transformations</a></li>
+<li><a href="color-and-image-representation.html">Color conversion and image representation</a></li>
+<li><a href="features-and-structural-analysis.html">Geometry, features and structural analysis</a></li>
+<li><a href="segmentation-contours-and-morphology.html" aria-current="page">Segmentation, contours and morphology</a></li>
+<li><a href="template-matching-and-registration.html">Template matching and image registration</a></li>
+</ul></nav>
+<main id="main-content">
+<h1 id="segmentation-contours-and-morphology">Segmentation, contours and morphology</h1>
+<p>This guide covers turning images into regions and shapes: thresholding,
+morphology, distance transforms, flood fill, watershed, GrabCut, contours,
+connected components, and drawing results back into images.</p>
+<h2 id="thresholding">Thresholding</h2>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#f30ce539f6999fde9b477e41ba19d25cf84139348e0c44dd089a39cc5e8765a0">Apply_Threshold</a> applies a fixed threshold to every
+channel of a UInt8, UInt16, Int16, Float32 or Float64 image using a
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#b53058737d6334d4b6e07a1fef3465143ca896112f750673e5d8b83c8050310b">Threshold_Mode</a>; <code>Binary</code> writes <code>Maximum_Value</code> above
+the threshold and zero elsewhere.
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#79a73ca0c21fd882774362a1034a93b005e39ae3ad65a99f2676afa9b280990a">Apply_Automatic_Threshold</a> chooses the
+threshold with Otsu (UInt8 or UInt16 C1; OpenCV 4.1 rejects UInt16) or
+Triangle (UInt8 C1) and reports it.
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#dfcfa6aeccd6d92ba19280d62407bfe27fe7e0c01ffcd1b084cf42cfbb7a7b84">Apply_Adaptive_Threshold</a> compares each UInt8
+C1 pixel with its local mean or Gaussian-weighted mean minus a finite Bias,
+over an odd block size. All three write Destination as a direct native
+output: matching storage is reused, so shallow copies see the result.</p>
+<h2 id="morphology">Morphology</h2>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#38324364f4359dc9d543f4fbe0353d82d2092f6904667dd6b75bae5dbc60ea18">Erode</a>, <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#37e5e2efa6646ea3f007f789f16a9f2624b7d9676b02ecbe001c973a0866c1fe">Dilate</a> and
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#04d6162afff13b755973048251bb6ab207dd8b4d28a79f8a329efd1af06d0bb9">Apply_Morphology</a> (opening, closing, gradient,
+top-hat, black-hat) take either a shape and size or an explicit kernel Mat
+from <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#98856c6bcb19af724c714981a0b69d35137f16d89dfcae84c671bfefa3b56173">Get_Structuring_Element</a>; overloads add an
+explicit anchor. With <code>Constant_Border</code>, pixels outside the image take
+<code>Border_Value</code>, which by default is OpenCV's neutral morphology value, so
+borders do not erode or dilate the image.
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#aeb1bbc154c74ffe807265e28fa2b77b4f6f79510f2d919dfaf0372e6b43f5d3">Explicit_Morphology_Border</a> builds another
+value. <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#afb14c1415470bde283ffe1659f6bf2b5eac9a780cfac7475cc6576fc10f1eff">Hit_Or_Miss</a> matches an Int8 kernel of foreground
+(+1), background (-1) and don't-care (0) cells against a UInt8 C1 image
+whose pixels are exactly 0 or 255.</p>
+<h2 id="distances-flood-fill-and-region-growing">Distances, flood fill and region growing</h2>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#3469c8867c9934a75f9e60fac9a41bc121222626cb3c82e09f6a3f1902f3ecc9">Distance_Transform</a> returns the Float32 distance
+from every pixel to the nearest zero pixel of a UInt8 C1 image; L1 and
+chessboard distances are exact, the 3 x 3 and 5 x 5 Euclidean masks are
+OpenCV's approximations and <code>Euclidean_Precise</code> is exact up to Float32
+rounding. <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#e5dcdba9ef621f279924dbca7f0bb52ba105030ed1720ecc714cc920b7efdac1">Distance_Transform_With_Labels</a>
+also labels the nearest zero component or pixel.</p>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#cb297b2c34e589f3c7eaa5b69bc2fafb277e351cbf20be2ba32ba3b36f5e1175">Flood_Fill</a> and <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#3b0f90a1ad34bb4cc590367326a40785bab19c4054174b5ebb81be2b527d695d">Flood_Fill_With_Mask</a>
+modify their image (and mask) <strong>in place</strong>, starting at a seed and growing
+through neighbours within the given differences;
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#f48f7e27e5c4e7ca1169f767ecd6c24f270214c05fe62ef8bbf423186c331d34">Flood_Fill_Range_Mode</a> compares with the seed or
+with the already-filled neighbour.</p>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#91f4fdc039fe3cd953e11fd8cb8ed2d60b90a4b93487264f72458785371461a4">Watershed</a> updates an Int32 C1 marker image in place: zero
+means unknown, positive values seed regions, and on return boundaries are
+-1. <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#f07064810ae823bfeb8bcf481133d5962dd8418dc9f5436456428d89ade1f1f0">Initialize_GrabCut</a> and
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#7423b1ea02159e98e8fc7b0b78ef5c0ad4f3b836462f4e5b94bd011d5cc00965">Refine_GrabCut</a> segment a UInt8 C3 image into
+foreground and background labels held in a private
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#4566ca711bcb7bbe91d4fcb59e10bc9cee87bc4e80305329f98ceeeaae6f3958">GrabCut_State</a>; refinement works on private clones and
+commits them only after success. Exact boundary labels can differ between
+OpenCV 4.1 and later releases.</p>
+<h2 id="contours-and-connected-components">Contours and connected components</h2>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#bcfa19b4b914085f4b3a05a8c8f0c4447c9ec55e258c69e23b89a37b18717bbb">Find_Contours</a> treats zero as background and nonzero as
+foreground and returns an Ada-owned <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#80a0e523fb64cffb14997c149c4bba3e6e85817a354f28869cdd5df0618d493c">Contour_Set</a>;
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#022c5e967676db23ef2e0ae3e562f389aae9e8d2a172d01746ceb9cfa971dfa6">Contour_Retrieval_Mode</a> selects outer contours
+only or the hierarchy to build, and
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#25883e7bd8138dc0c0fb8971f478c3b9a830dff1dfc6b3e1eb5425f496c65b1f">Contour_Approximation_Mode</a> whether every
+boundary point is kept. Read it with <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#1dab3c12345c2c8ee56412b0b7b195c37e710951dc0b7bf2ec06192b9e4ac9fa">Contour_Count</a>,
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#52d1c132aa4b8d109092923e1ca308247d218d0411a1616cf27495187845f2f4">Get_Contour</a> and <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9aec8a3b066e003b3932ff0cd9928abdbf501d92f9f2b50be4123331acc06c4e">Get_Hierarchy</a>, whose
+links are <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#53de6fbfae21268a547cb32dba2e8b9dc5d4cf4bb3893a07b8a43cf3df3adde0">Optional_Contour_Index</a> values.</p>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#dc2624df655677b85508f2332f45a229203a61eefa889bc073600b6a6ee024c9">Connected_Components_With_Stats</a>
+writes an Int32 label image and returns per-component area, bounds and
+centroid. Label zero is <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#49f23914348d447f67af72bc705fe3581cf9f23bd374f364a20c9ab2fd37b9ff">Background_Label</a>; foreground
+labels run from 1 to <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fdc2a47cd480efc701a5f3401c1a5f130c8021c175e00190d83ef9300baef58a">Component_Count</a> but have <strong>no
+spatial-order guarantee</strong>, so identify components by their statistics.</p>
+<h2 id="drawing-results">Drawing results</h2>
+<p>The drawing procedures, from <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#4c969f0c16c942c8b63f9b5b6f05e91c08a4674b6f25bfa424471c28ffeb97a7">Draw_Line</a> to
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#7285868c2d4fe05204675c4262b1ce7562d8d4321da377460562b4deb9e7cefe">Draw_Contours</a> and <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#5444b106838768ff30d4458c8494c4010e71e1a2ef59463408660ea9ef0b1f26">Fill_Contours</a>,
+modify their image in place; through a Region they draw into the parent's
+storage, with Region-relative coordinates. Images may be UInt8, UInt16,
+Int16, Float32 or Float64 with 1 to 4 channels; coordinates outside the image
+are clipped, and anti-aliasing requires UInt8. <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#71015fbbe36b4cce7ef2dbb4ef653dd7f439e6e60665ce14acc0583b72c0ca75">Draw_Text</a>
+and <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#8c25988e363cfcdcb2f5017cc615521c3673cd587f080bb2573b07499f438379">Measure_Text</a> use the Hershey fonts.</p>
+<h2 id="example">Example</h2>
+<p>The example thresholds an image with two blobs and a speck of noise, removes
+the speck with an opening, then counts components and contours and flood
+fills one blob. It is <code>docs/examples/segmentation_and_contours.adb</code>,
+compiled and executed by the documentation workflow.</p>
+<pre><code class="language-ada">with OpenCV.Core;
+with OpenCV.Core.UInt8_Access;
+with OpenCV.Image_Processing;
+
+procedure Segmentation_And_Contours is
+   use OpenCV.Core;
+   use OpenCV.Image_Processing;
+   use type OpenCV.Size_Coordinate;
+   use type OpenCV.UInt8_Value;
+
+   Image  : Mat := Create (60, 80, (Depth =&gt; UInt8, Channels =&gt; 1));
+   Binary : Mat;
+   Opened : Mat;
+   Labels : Mat;
+   Blobs  : Connected_Component_Set;
+begin
+   --  Two solid blobs, a one-pixel speck of noise, and a gray background.
+   Image.Set_To (OpenCV.Make_Scalar (40.0));
+   Fill_Rectangle
+     (Image,
+      Bounds =&gt; (X =&gt; 5, Y =&gt; 5, Width =&gt; 20, Height =&gt; 10),
+      Color  =&gt; OpenCV.Make_Scalar (220.0));
+   Fill_Circle
+     (Image,
+      Center =&gt; (X =&gt; 55, Y =&gt; 35),
+      Radius =&gt; 10,
+      Color  =&gt; OpenCV.Make_Scalar (220.0));
+   UInt8_Access.Set (Image, 50, 10, 220);
+
+   --  Fixed threshold: 255 above 128, 0 elsewhere.
+   Apply_Threshold (Image, Binary, Threshold_Value =&gt; 128.0);
+   pragma Assert (UInt8_Access.Get (Binary, 10, 10) = 255);
+   pragma Assert (UInt8_Access.Get (Binary, 0, 0) = 0);
+
+   --  A 3 x 3 opening removes the speck and keeps both blobs.
+   Apply_Morphology
+     (Binary, Opened, Opening, Kernel_Size =&gt; (Width =&gt; 3, Height =&gt; 3));
+   pragma Assert (UInt8_Access.Get (Opened, 50, 10) = 0);
+   pragma Assert (UInt8_Access.Get (Opened, 10, 10) = 255);
+
+   --  Connected components: label 0 is the background. Foreground labels
+   --  have no spatial order, so find the rectangle by its statistics.
+   Connected_Components_With_Stats (Opened, Labels, Blobs);
+   pragma Assert (Component_Count (Blobs) = 2);
+   declare
+      Rectangles : Natural := 0;
+   begin
+      for Label in 1 .. Component_Label (Component_Count (Blobs)) loop
+         declare
+            Blob : constant Component_Statistics :=
+              Get_Component (Blobs, Label);
+         begin
+            if Blob.Area = 200 and then Blob.Bounds.Width = 20 then
+               Rectangles := Rectangles + 1;
+            end if;
+         end;
+      end loop;
+      pragma Assert (Rectangles = 1);
+   end;
+
+   --  Outer contours of the same binary image.
+   declare
+      Outlines : constant Contour_Set := Find_Contours (Opened);
+   begin
+      pragma Assert (Contour_Count (Outlines) = 2);
+   end;
+
+   --  Flood fill grows from a seed through equal neighbours, in place.
+   declare
+      Filled : Flood_Fill_Result;
+   begin
+      Flood_Fill
+        (Opened,
+         Seed      =&gt; (X =&gt; 10, Y =&gt; 10),
+         New_Value =&gt; OpenCV.Make_Scalar (100.0),
+         Result    =&gt; Filled);
+      pragma Assert (Filled.Pixel_Count = 200);
+      pragma Assert (UInt8_Access.Get (Opened, 14, 24) = 100);
+   end;
+end Segmentation_And_Contours;
+</code></pre>
+<h2 id="failure-conditions-and-limits">Failure conditions and limits</h2>
+<p>Unsupported depths or channel counts, even adaptive block sizes, nonfinite
+thresholds or Bias, seeds outside the image, negative watershed markers,
+GrabCut regions without enough pixels inside and outside, and native
+arithmetic limits raise <code>OpenCV.OpenCV_Error</code>. Out-of-range subtype values,
+such as a zero <code>Morphology_Iterations</code>, raise <code>Constraint_Error</code>.
+In-place mutation is part of the contract only where a declaration states it:
+the flood fills, watershed markers and drawing procedures.</p>
+
+<section aria-label="Native API entry points"><h2 id="native-api-entry-points">Native API entry points</h2><ul>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#f30ce539f6999fde9b477e41ba19d25cf84139348e0c44dd089a39cc5e8765a0">Apply_Threshold</a></li>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#04d6162afff13b755973048251bb6ab207dd8b4d28a79f8a329efd1af06d0bb9">Apply_Morphology</a></li>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#bcfa19b4b914085f4b3a05a8c8f0c4447c9ec55e258c69e23b89a37b18717bbb">Find_Contours</a></li>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#dc2624df655677b85508f2332f45a229203a61eefa889bc073600b6a6ee024c9">Connected_Components_With_Stats</a></li>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#cb297b2c34e589f3c7eaa5b69bc2fafb277e351cbf20be2ba32ba3b36f5e1175">Flood_Fill</a></li>
+</ul></section>
+<p class="guide-source"><a href="https://github.com/zackboll/opencv_imgproc_ada/blob/main/docs/guides/segmentation-contours-and-morphology.md">Original Markdown source on GitHub</a></p>
+</main>
+</div>
+</body>
+</html>

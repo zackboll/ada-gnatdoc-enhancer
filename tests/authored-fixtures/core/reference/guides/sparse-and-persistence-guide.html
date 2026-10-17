@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sparse matrices and persistence — OpenCV Core Ada</title>
+<link rel="stylesheet" href="../api/gnatdoc-theme.css">
+<link rel="stylesheet" href="gnatdoc-guides.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header><nav aria-label="Documentation"><a href="../index.html">Documentation home</a> · <a href="../api/index.html">GNATdoc API browser</a></nav></header>
+<div class="guide-layout">
+<nav class="guide-nav" aria-label="Developer guides"><ul>
+<li><a href="ownership-and-views.html">Ownership and views</a></li>
+<li><a href="typed-access-guide.html">Typed access guide</a></li>
+<li><a href="core-operations-guide.html">Core operations guide</a></li>
+<li><a href="sparse-and-persistence-guide.html" aria-current="page">Sparse matrices and persistence</a></li>
+<li><a href="interop-and-compatibility.html">Interoperability, compatibility and contributor architecture</a></li>
+</ul></nav>
+<main id="main-content">
+<h1 id="sparse-matrices-and-persistence">Sparse matrices and persistence</h1>
+<p><a href="https://github.com/zackboll/opencv_core_ada/blob/main/README.md">README</a> · <a href="https://zackboll.github.io/opencv_core_ada/api/index.html">GNATdoc API Reference</a> · <a href="https://github.com/zackboll/opencv_core_ada/blob/main/docs/documentation.md">Building and Contributing</a></p>
+<p>This guide is published as HTML on the documentation site and maintained as
+Markdown in the source repository. The public Ada specifications are authoritative for exact profiles
+and per-overload restrictions. Examples below include both complete programs
+and fragments intended for the surrounding application.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#sparse-matrices">Sparse matrices</a></li>
+<li><a href="#persistence">Persistence</a></li>
+<li><a href="#formats-and-backends">Formats and backends</a></li>
+<li><a href="#nested-mappings-and-sequences">Nested mappings and sequences</a></li>
+<li><a href="#type-policy-and-edge-conditions">Type policy and edge conditions</a></li>
+<li>Related: <a href="typed-access-guide.html">dense typed access</a> and <a href="ownership-and-views.html">ownership</a></li>
+</ul>
+<h2 id="sparse-matrices">Sparse matrices</h2>
+<p><code>OpenCV.Core.Sparse.Sparse_Mat</code> is a controlled, pointer-free wrapper around
+<code>cv::SparseMat</code>. A default instance is unallocated (dimension count and stored
+node count zero, null <code>Shape</code>). <code>Clear</code> is a no-op on it; operations needing a
+shape or type raise <code>OpenCV_Error</code>. <code>Create</code> takes 2..32 strictly positive
+extents (any Ada array lower bound); <code>Clear</code> removes nodes but retains shape
+and type. Ordinary assignment makes a separate native header sharing the
+reference-counted node storage; <code>Clone</code> makes independent node storage.</p>
+<p><code>Contains</code> checks node existence and <code>Erase</code> removes a node. The
+<code>Stored_Element_Count</code> is OpenCV's <code>nzcount()</code>: the number of stored hash-table
+nodes, <strong>not</strong> the count of mathematically nonzero values. Setting a zero with
+any typed <code>Set</code> creates a node; <code>Contains</code> then returns True and the count
+increases. Missing typed <code>Get</code> returns zero. All access uses full N-D index
+arrays and validates each extent. Direct typed node access covers all eight
+depths in C1, C2, C3, and C4 (32 layouts) through <code>Sparse.UInt8_Access</code> /
+<code>UInt8_Vec2_Access</code> / <code>UInt8_Vec3_Access</code> / <code>UInt8_Vec4_Access</code> and the matching
+<code>Int8</code>, <code>UInt16</code>, <code>Int16</code>, <code>Int32</code>, <code>Float16</code>, <code>Float32</code>, and <code>Float64</code>
+packages. One <code>Vec2</code>, <code>Vec3</code>, or <code>Vec4</code> is one complete SparseMat element;
+components are channels <code>0 .. N-1</code> with no RGB, XY, or complex meaning.
+Float16 components use exact <code>Float16_Bits</code>/<code>Float16_From_Bits</code> binary16
+encodings, including signed zero and NaN payload bits.</p>
+<p>Each of these 32 typed access packages also provides callback-scoped,
+read-only <code>For_Each_Stored</code>:</p>
+<pre><code class="language-ada">OpenCV.Core.Sparse.UInt8_Access.For_Each_Stored (Image, Visit'Access);
+--  Visit (Indices : Index_Array; Value : UInt8_Value)
+</code></pre>
+<p>It calls <code>Visit</code> once per <strong>stored hash node</strong>, including explicitly stored
+numeric zero; missing positions (whose <code>Get</code> would return zero) are not
+visited. An allocated sparse matrix with no nodes calls it zero times;
+unallocated or wrong-depth/wrong-channel matrices raise <code>OpenCV_Error</code>
+before the
+callback. Each copied index vector has Ada bounds <code>1 .. Dimension_Count</code>,
+with zero-based coordinate values. Values are copied, not borrowed; Float16
+preserves exact binary16 encodings, including signed zero and NaN payloads.
+Native hash-table traversal determines the <strong>unspecified order</strong>: never rely
+on callback order. No native iterator, node, or pointer escapes the callback.
+Do not structurally mutate the source or any shallow alias (for example with
+<code>Set</code>, <code>Erase</code>, or <code>Clear</code>) while traversal is active: such changes can
+invalidate native traversal. Iterator ownership preserves storage lifetime,
+but provides no thread synchronization. Callback exceptions propagate
+unchanged after iterator cleanup.</p>
+<p><code>From_Dense</code> copies complete elements of an owned nonempty dense Mat,
+including non-contiguous Regions and multi-channel Mats; it does not share
+dense pixels. Native construction omits elements only when <strong>every byte of the
+entire element is zero</strong>. In particular, negative IEEE zero may be stored,
+NaNs are stored, and any nonzero byte in a C3 element stores the whole C3
+element. <code>To_Dense</code> independently copies stored nodes and fills missing
+positions with zero, preserving shape, depth, and channels. Sparse matrices
+support 32 dimensions, but on OpenCV 5 <code>To_Dense</code> rejects more than the linked
+native dense Mat capacity (<code>MatShape::MAX_DIMS</code>, 10 in supported 5.0); on
+OpenCV 4.x the dense capacity remains 32. No public node pointers or
+iterators are exposed.</p>
+<p><code>Convert_To</code> is native <code>SparseMat::convertTo</code> into an independent sparse
+matrix. Shape and channel count stay the same; only the depth changes. OpenCV
+walks stored nodes, so a missing coordinate stays missing and an explicitly
+stored zero stays a stored node. Each component becomes
+<code>saturate_cast (source * Scale)</code>. There is no offset. A scale that maps a
+stored value to zero still leaves that node stored. <code>Scale =&gt; 1.0</code> uses
+OpenCV's unscaled conversion.</p>
+<pre><code class="language-ada">Scaled := Source.Convert_To (OpenCV.Core.Float32, Scale =&gt; 2.0);
+</code></pre>
+<p>The numeric <code>To_Dense</code> overload is the native sparse-to-dense conversion, not
+plain <code>To_Dense</code> followed by dense <code>Convert_To</code>:</p>
+<pre><code class="language-ada">Dense :=
+  Source.To_Dense (OpenCV.Core.Float32, Scale =&gt; 2.0, Offset =&gt; 5.0);
+</code></pre>
+<p>A stored component becomes <code>saturate_cast (source * Scale + Offset)</code>. A
+missing element is initialized with OpenCV <code>Scalar(Offset)</code>: channel 0
+receives <code>Offset</code> and channels 1..3 receive 0, because <code>cv::Scalar</code> has one
+value and three zeros. Both results own independent storage and leave the
+source unchanged. The same OpenCV 5 dense-dimension capacity rule as plain
+<code>To_Dense</code> applies; sparse-to-sparse conversion still accepts the full 32
+dimensions.</p>
+<p>Float16 is not a supported numeric source or destination. OpenCV 4.1.0,
+4.10.0, and 5.0.0 leave every <code>CV_16F</code> entry null in the sparse
+<code>getConvertElem</code> / <code>getConvertScaleElem</code> tables, and this binding does not
+invent a Float32 fallback. <code>Convert_To</code> and numeric <code>To_Dense</code> raise
+<code>OpenCV_Error</code> before the ABI call. Exact-bit Float16 <code>Get</code>/<code>Set</code> and plain
+<code>To_Dense</code> are unchanged. The other seven depths convert in every
+source/destination direction, using OpenCV saturation.</p>
+<p><code>Norm</code> and <code>Normalize</code> use the existing <code>Norm_Kind</code> (<code>L1</code>, <code>L2</code>, <code>Infinity</code>)
+and require an allocated Float32 or Float64 matrix with exactly one channel.
+Integer depths, Float16, and every multi-channel layout are rejected before
+the ABI call. <code>Min_Max</code> normalization is deliberately unavailable: shifting
+the implicit sparse zero would materialize nodes and change sparse semantics.</p>
+<pre><code class="language-ada">Magnitude := Values.Norm (OpenCV.Core.L2);
+Unit      := Values.Normalize (Target_Norm =&gt; 1.0, Kind =&gt; OpenCV.Core.L2);
+</code></pre>
+<p>Both operations consider stored nodes only. A missing coordinate contributes
+zero and is not created. An explicitly stored zero contributes zero to the
+norm and remains a stored node. <code>Norm</code> does not modify the matrix and returns
+<code>0.0</code> when an allocated matrix has no stored nodes. <code>L1</code> is the sum of
+absolute stored values, <code>L2</code> is the square root of the sum of their squares,
+and <code>Infinity</code> is the maximum absolute stored value.</p>
+<p><code>Normalize</code> returns an independent matrix with the same shape, depth, channel
+count, and stored-node coordinates. OpenCV scales every stored value by
+<code>Target_Norm / Norm</code> when that norm exceeds <code>DBL_EPSILON</code>. Otherwise the scale
+is <code>0.0</code>: stored values become zero, stored nodes remain stored, and an empty
+allocated matrix stays empty. A negative <code>Target_Norm</code> is supported and
+reverses the sign of every stored value. The source is unchanged. Because no
+dense <code>Mat</code> is constructed, both 5-D and 32-D sparse matrices are accepted.</p>
+<p><code>Min_Max_Loc</code> uses the same allocated Float32 or Float64 single-channel
+restriction. It returns a <code>Sparse_Extrema</code> value whose <code>Has_Minimum</code> and
+<code>Has_Maximum</code> flags are independent:</p>
+<pre><code class="language-ada">Extrema := Values.Min_Max_Loc;
+--  Extrema.Has_Minimum, Has_Maximum, Minimum, Maximum
+--  Minimum_Location (1 .. Extrema.Dimensions)
+--  Maximum_Location (1 .. Extrema.Dimensions)
+</code></pre>
+<p>Only stored nodes participate. A missing coordinate is not a candidate and is
+not created. An explicitly stored zero is a candidate, and negative zero
+compares equal to positive zero. Comparisons are strict, so equal extrema keep
+the earliest node in OpenCV's hash traversal. That traversal order is
+unspecified and is not insertion order. NaN never replaces a finite extremum.</p>
+<p>Each flag is True only when native OpenCV wrote that location. Empty storage
+and a NaN-only matrix establish neither side. Positive infinity, and a stored
+Float32 <code>FLT_MAX</code> or Float64 <code>DBL_MAX</code>, establish only the maximum. Negative
+infinity, and a stored <code>-FLT_MAX</code> or <code>-DBL_MAX</code>, establish only the minimum.
+A side that was not established returns <code>0.0</code> and an all-zero location. The
+native initialization sentinels are not exposed as public extrema.</p>
+<p>On an established side, each location is a fixed 32-coordinate array; only
+<code>1 .. Dimensions</code> is meaningful, and those coordinates are zero-based. The
+source is not modified. Because no dense <code>Mat</code> is constructed, both 5-D and
+32-D sparse matrices are accepted.</p>
+<h2 id="persistence">Persistence</h2>
+<p>Persistence is provided by:</p>
+<pre><code class="language-ada">OpenCV.Core.Persistence
+</code></pre>
+<p>through a limited controlled <code>File_Storage</code> abstraction over <code>cv::FileStorage</code>.</p>
+<h3 id="formats-and-backends">Formats and backends</h3>
+<p>Supported formats:</p>
+<pre><code class="language-text">XML
+YAML
+JSON
+</code></pre>
+<p>Disk <code>Open</code> selects the format from the filename extension:</p>
+<pre><code class="language-text">.xml
+.yml
+.yaml
+.json
+</code></pre>
+<p>Memory writers select the format explicitly with <code>Create_Memory</code>; memory
+readers use <code>Open_Memory</code>, letting OpenCV detect the serialized format.</p>
+<h3 id="supported-values">Supported values</h3>
+<p>Named and sequence values currently include:</p>
+<ul>
+<li><code>Mat</code></li>
+<li><code>Integer</code></li>
+<li><code>Long_Float</code></li>
+<li><code>String</code></li>
+</ul>
+<h3 id="nested-mappings-and-sequences">Nested mappings and sequences</h3>
+<p>The current persistence API supports hierarchy without exposing <code>FileNode</code>.</p>
+<p>Writing:</p>
+<ul>
+<li>named and unnamed <code>Begin_Map</code></li>
+<li>named and unnamed <code>Begin_Sequence</code></li>
+<li><code>End_Structure</code></li>
+<li>named <code>Write</code></li>
+<li>sequence <code>Append</code></li>
+</ul>
+<p>Reading:</p>
+<ul>
+<li>named/indexed <code>Enter_Map</code></li>
+<li>named/indexed <code>Enter_Sequence</code></li>
+<li><code>Leave_Structure</code></li>
+<li><code>Sequence_Length</code></li>
+<li><code>Map_Length</code> and zero-based <code>Map_Key</code> (root or entered map)</li>
+<li>named/indexed <code>Kind</code> for structural node categories</li>
+<li>named/indexed <code>Read_Mat</code></li>
+<li>named/indexed <code>Read_Integer</code></li>
+<li>named/indexed <code>Read_Real</code></li>
+<li>named/indexed <code>Read_String</code></li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-ada">with OpenCV.Core.Persistence;
+
+declare
+   package P renames OpenCV.Core.Persistence;
+   Storage : P.File_Storage := P.Create_Memory (P.JSON);
+begin
+   Storage.Begin_Map (&quot;Camera&quot;);
+   Storage.Write (&quot;Name&quot;, &quot;Front Camera&quot;);
+
+   Storage.Begin_Sequence (&quot;Distortion&quot;);
+   Storage.Append (0.1);
+   Storage.Append (-0.05);
+   Storage.Append (0.001);
+   Storage.End_Structure;
+
+   Storage.End_Structure;
+
+   declare
+      Text : constant String := Storage.Close_And_Get_Text;
+   begin
+      null;
+   end;
+end;
+</code></pre>
+<p>The implicit FileStorage root is a mapping. Hierarchy is navigated by the
+controlled <code>File_Storage</code> object itself; no public <code>FileNode</code> lifetime is
+exposed.</p>
+<p>For an open read-only storage, keys at the root or entered mapping are returned
+as independent Ada strings in OpenCV's mapping iteration order, not sorted.
+When the current node is a mapping with no entries, <code>Map_Length</code> returns zero;
+map enumeration in a sequence context is invalid. For example:</p>
+<pre><code class="language-ada">Count := Reader.Map_Length;
+if Count &gt; 0 then
+   for I in 0 .. Count - 1 loop
+      Put_Line (Reader.Map_Key (I));
+   end loop;
+end if;
+</code></pre>
+<p><code>Node_Kind</code> describes the <strong>OpenCV FileNode structure</strong>, not the type of an
+arbitrary serialized OpenCV object. A persisted 2-D or N-D <code>Mat</code> is a mapping
+(<code>opencv-matrix</code> or <code>opencv-nd-matrix</code>), so <code>Kind (&quot;Matrix&quot;)</code> returns
+<code>Mapping_Node</code>, not a separate Mat kind. Use <code>Read_Mat</code> when Mat conversion is
+intended. Named <code>Kind</code> works at the root or in an entered map; indexed <code>Kind</code>
+works in an entered sequence. Both leave navigation unchanged. For example:</p>
+<pre><code class="language-ada">declare
+   Count : constant Natural := Reader.Map_Length;
+begin
+   if Count &gt; 0 then
+      for I in 0 .. Count - 1 loop
+         declare
+            Key : constant String := Reader.Map_Key (I);
+         begin
+            case Reader.Kind (Key) is
+               when P.Integer_Node  =&gt; Put_Line (Key &amp; &quot;: integer&quot;);
+               when P.Real_Node     =&gt; Put_Line (Key &amp; &quot;: real&quot;);
+               when P.String_Node   =&gt; Put_Line (Key &amp; &quot;: string&quot;);
+               when P.Sequence_Node =&gt; Put_Line (Key &amp; &quot;: sequence&quot;);
+               when P.Mapping_Node  =&gt; Put_Line (Key &amp; &quot;: mapping&quot;);
+            end case;
+         end;
+      end loop;
+   end if;
+end;
+</code></pre>
+<h3 id="type-policy-and-edge-conditions">Type policy and edge conditions</h3>
+<p>The API avoids surprising lossy conversions:</p>
+<pre><code class="language-text">integer node -&gt; Read_Integer    allowed
+real node    -&gt; Read_Integer    rejected
+
+real node    -&gt; Read_Real       allowed
+integer node -&gt; Read_Real       allowed by widening
+
+string node  -&gt; Read_String     allowed
+other node   -&gt; Read_String     rejected
+</code></pre>
+<p>Missing nodes raise <code>OpenCV_Error</code>; stored zero, empty string, empty Mat, and
+empty sequence remain distinguishable from absence. Empty mapping preservation
+depends on OpenCV and the persistence format; when OpenCV parses a node as a
+mapping with no entries, <code>Map_Length</code> reports zero.</p>
+<p>Integer writes use OpenCV's signed 32-bit file node. The binding currently
+supports the write range:</p>
+<pre><code class="language-text">-2_147_483_647 .. 2_147_483_647
+</code></pre>
+<p>The signed 32-bit minimum is rejected rather than entering an unsafe native
+integer-formatting path present in affected supported releases.</p>
+<p>Embedded NUL is rejected in filenames, node names, String values, and memory
+input because those paths cross NUL-terminated native interfaces.</p>
+
+<section aria-label="Native API entry points"><h2 id="native-api-entry-points">Native API entry points</h2><ul>
+<li><a href="../api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html">OpenCV.Core.Sparse</a></li>
+<li><a href="../api/c0f83ab3d6cc49c455cf6a912c839dff7898cc95131738320f3de7777fe0869c.html">OpenCV.Core.Persistence</a></li>
+</ul></section>
+<p class="guide-source"><a href="https://github.com/zackboll/opencv_core_ada/blob/main/docs/sparse-and-persistence-guide.md">Original Markdown source on GitHub</a></p>
+</main>
+</div>
+</body>
+</html>

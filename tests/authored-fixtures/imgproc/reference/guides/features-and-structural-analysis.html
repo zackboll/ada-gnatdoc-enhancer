@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geometry, features and structural analysis — OpenCV Imgproc Ada</title>
+<link rel="stylesheet" href="../api/gnatdoc-theme.css">
+<link rel="stylesheet" href="gnatdoc-guides.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header><nav aria-label="Documentation"><a href="../index.html">Documentation home</a> · <a href="../api/index.html">API browser</a></nav></header>
+<div class="guide-layout">
+<nav class="guide-nav" aria-label="Developer guides"><ul>
+<li><a href="filtering-and-transforms.html">Filtering and image transformations</a></li>
+<li><a href="color-and-image-representation.html">Color conversion and image representation</a></li>
+<li><a href="features-and-structural-analysis.html" aria-current="page">Geometry, features and structural analysis</a></li>
+<li><a href="segmentation-contours-and-morphology.html">Segmentation, contours and morphology</a></li>
+<li><a href="template-matching-and-registration.html">Template matching and image registration</a></li>
+</ul></nav>
+<main id="main-content">
+<h1 id="geometry-features-and-structural-analysis">Geometry, features and structural analysis</h1>
+<p>This guide covers operations that measure image structure rather than
+produce a new picture: edges, corners and subpixel refinement, Hough
+detection, histograms, integral images, image accumulation and the earth
+mover's distance. Geometric warps are in the
+<a href="filtering-and-transforms.html">filtering and transforms guide</a>.</p>
+<h2 id="edges-and-corners">Edges and corners</h2>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c2dfcd6f24630eba6fec728e6f1212f935fb2bdfbe1917f320d4cf53f911cb4f">Canny_Edges</a> writes a UInt8 edge map that is nonzero on
+edges and zero elsewhere, using hysteresis thresholds and a Sobel aperture.</p>
+<p>The corner response functions
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#7337730994f7d94c12ef5a4f31a3bc845fe54cac7980a9e9371bd4790c9bbdbf">Corner_Minimum_Eigenvalue</a>,
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#d118b85500bb50136957860e6248dc4a7f5a0cbd70acff12b82c103ba8744475">Harris_Corner_Response</a>,
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#ac20515c5e720223e2bd2a3be6f12aedac798bbe824b1b2ae0bfc90edf74c568">Corner_Eigenvalues_And_Vectors</a> and
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#5feb739f3250f73d7597d66317ac2bc59e385c903140a65e3e8d772e460f1002">Pre_Corner_Response</a> accept UInt8 or Float32 C1
+images. Each copies Source into a private snapshot, so a Region is analyzed
+as its own image, and returns a fresh Float32 map (six channels for the
+eigenvalue and eigenvector form). <code>Block_Size</code> 1 and <code>Wrap</code> borders are
+rejected. Use <code>OpenCV.Core.Min_Max_Loc</code> on a response map to locate its
+strongest corner.</p>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#b0350c251c75c0c7de4e5de4ad86dfa1c99f516924d0138f4154c81e36195caa">Refine_Corners_Subpixel</a> iteratively refines
+initial points inside a search window. Every point must lie inside the
+image, a Float32 image must be finite everywhere, and the image must be at
+least <code>2 * Width + 5</code> columns by <code>2 * Height + 5</code> rows of the window. If the
+native covariance degenerates, OpenCV 4.1 can return a NaN point where 4.10
+and 5.0 keep the previous estimate.
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fc956f99da71fc9207ea715b75af1dd050ea47c0b0d0eabe9f7da04603c6fec2">Extract_Subpixel_Patch</a> samples a patch
+centered at a subpixel point inside Source; samples beyond the border come
+from a private replicated copy, never from a Region's parent.</p>
+<h2 id="hough-detection">Hough detection</h2>
+<p>The Hough functions take a binary UInt8 C1 image: zero pixels are
+background and every nonzero pixel is a candidate. Each takes a private
+snapshot of Source and returns an Ada-owned array; result order is not part
+of the contract.</p>
+<ul>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#12c1eb4d1adfc6e283303bcb4a40fd3c6d1cbfe33b49565928ff068d316719ae">Find_Hough_Lines</a> returns quantized lines as
+<code>Rho</code> (pixels) and <code>Angle_Radians</code>: the points satisfying
+<code>X * cos (Angle_Radians) + Y * sin (Angle_Radians) = Rho</code>, so a vertical
+line at column c appears near <code>(c, 0)</code>.
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#60c0c42adbe368d9bb18eca8354d8fcf58be6d219b28d5f5d47871bffcd6bfaf">Find_Hough_Lines_With_Votes</a> adds the
+accumulator votes. Accepted lines have strictly more votes than
+<code>Vote_Threshold</code>.</li>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#5a029eafbe78969faa384b9dbebf4093d05513d7e7255130e09fc17a8e3db3eb">Find_Hough_Line_Segments</a> runs the
+probabilistic transform and returns endpoints, which can differ by a pixel
+or two across OpenCV builds.</li>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#a216a6035b674fe459e4c8790d2653a9de0e0342d27cf1ccfddc82f5d45f8d28">Find_Hough_Circles</a> and its vote-bearing variant
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#8cfdb92a10e4094807a1e0a1dd89f7db26127de24aa291210005e1fd8ce17e0b">Find_Hough_Circles_With_Votes</a> detect
+circles with the gradient method;
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#a9c69a96979144b0e14a6e5574e86ad423748f0e41195294dbba5158a18a7d85">Find_Hough_Circle_Centers</a> returns centers
+only.</li>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fd2ef4d8b899096fa8c3d02689803d58e0fc7c714aa9aaa4d5735f66a582a1ed">Find_Hough_Lines_From_Points</a> works on
+an Ada array of finite Float32 points instead of an image.</li>
+</ul>
+<p>Vote magnitudes and ordering can differ between OpenCV generations and
+optional acceleration backends; use votes for ranking, not as portable
+constants.</p>
+<h2 id="histograms">Histograms</h2>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#a99d7e2f03df51ab3b4af6721fd99bb182c8df6b4b8b26046dbe987a8b17e1b4">Calculate_Histogram</a> builds a dense
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9a28350b75a23a395566b30797a9a427684e474a92e5e84df7d6b313386818d4">Histogram</a> over up to
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#05026342e35b7537b783aa41ab5c56890da3edec748a8fa5562eedf72f2f94df">Maximum_Histogram_Dimensions</a> axes. Each
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#bd04c543707010c5877353d8945268bccd61d489b5aa12f0011169ea75ae9d43">Histogram_Dimension</a> names a channel, a bin count
+and a half-open <code>Lower_Bound .. Upper_Bound</code> range; the
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9055717d089e5e8eac7c0e6dfbe89c9c4708da3d1cfaba33feab969ec1e27d5a">nonuniform variants</a> take explicit bin
+edges. Masked and multi-source overloads exist.
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#d5a95327564713d2d6052586e9b3bdd819955a63a70ce5e4ce6453db64861067">Histogram_Values</a> returns an independent Float32 copy
+of the counts, <code>Bin_Count</code> rows by one column for one dimension.</p>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#70ec70804571d2c6cb109a4bf239b7fd31d56aec0e101f31e706051b99c3e463">Compare_Histograms</a> supports correlation,
+chi-square, intersection, Hellinger distance, alternative chi-square and
+Kullback-Leibler divergence. <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fcc25d61a920f6c31cfb502a64742f32a3d9c4bad683dfaef3561dc31214eef9">Back_Project</a> maps each pixel
+to its bin value, and <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#0e614d72ab1d1bcba26f556a8d2ab11f3159b30f865c0c633331d055a22dbb61">Accumulate_Histogram</a> returns
+a new histogram with more samples added. These functions publish fresh
+results only after success.</p>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9f63542641472439b0851a063e4592f9d04e23aa974bbc114dffcd85ff799e9f">Equalize_Histogram</a> equalizes a UInt8 C1 image and
+supports <code>Equalize_Histogram (Image, Image)</code>. <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#137e17eb00c4e839bc8f512fd044985ed67f549811db84d1123ab8847a245fe3">CLAHE</a> applies
+contrast-limited adaptive equalization to UInt8 or UInt16 C1 images; its
+documentation describes when a Region may sample parent pixels.</p>
+<h2 id="integral-images-accumulation-and-distances">Integral images, accumulation and distances</h2>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#22a83cb95b9840d9108fcd6beafdf2eff9f8b7ab0e9e9baa81ff230ac1426914">Integral_Sum</a> returns a <code>(Rows + 1) x (Columns + 1)</code> Mat
+with a zero first row and column, so the sum of any rectangle needs four
+reads. <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#5484a2bf06d02dfff3f61daaf87401be2cd3402f268820ea2fa74ee2e8b58950">Integral_Sum_And_Squares</a> and
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#520b9782d4ba8114809be1b7f574afc790e1edbd0e36e99a627c953383945881">Integral_Images</a> add squared and tilted sums.</p>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#62dc590bb341370cc938d2e8d8b352ba556ea64f7cd367ca38a66fcd29a1d149">Accumulate_Image</a>,
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#da180c09fd618cb0b446d1e4f5b0d3e716f4bd08f554000a75e442fe69e59b26">Accumulate_Image_Square</a>,
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#1d4c54900be951d7ce0ed093c761d2319843f21876fd2d32f28295649f64d05e">Accumulate_Image_Product</a> and
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#a9b6e3fc902453ccda360c43248fe4e6c71d638d77e48de23a97b719de22e2c8">Update_Running_Average</a> never modify <code>Base</code>:
+each returns a fresh result computed from a private clone. Optional masks
+select pixels with any nonzero byte.</p>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#3a424211b6de68220c41b4fd064bc1fbd57a1ebff70dfedcd6d89128e1e7fec5">Earth_Mover_Distance</a> compares two weighted
+signatures with a built-in ground metric. Its variants return the transport
+flow, take an explicit cost matrix, or
+(<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#2979554c552b4800f43b1b7c471a79bec4d5465728e78273bc14cdcbb47847ff">Earth_Mover_Distance_With_Lower_Bound</a>)
+stop early when a lower bound already exceeds a threshold. Both signatures
+always need the same column count.</p>
+<h2 id="example">Example</h2>
+<p>The example finds the outline, corners, straight sides, gray-level
+histogram and pixel sum of a bright square. It is
+<code>docs/examples/features_and_analysis.adb</code>, compiled and executed by the
+documentation workflow.</p>
+<pre><code class="language-ada">with OpenCV.Core;
+with OpenCV.Core.Float32_Access;
+with OpenCV.Core.Float64_Access;
+with OpenCV.Core.UInt8_Access;
+with OpenCV.Image_Processing;
+
+procedure Features_And_Analysis is
+   use OpenCV.Core;
+   use OpenCV.Image_Processing;
+   use type OpenCV.Float32_Value;
+   use type OpenCV.Float64_Value;
+   use type OpenCV.Point_Coordinate;
+   use type OpenCV.UInt8_Value;
+
+   Image : Mat := Create (64, 64, (Depth =&gt; UInt8, Channels =&gt; 1));
+   Edges : Mat;
+begin
+   --  A bright filled square on a dark background.
+   Image.Set_To (OpenCV.Make_Scalar (0.0));
+   Fill_Rectangle
+     (Image,
+      Bounds =&gt; (X =&gt; 16, Y =&gt; 16, Width =&gt; 32, Height =&gt; 32),
+      Color  =&gt; OpenCV.Make_Scalar (255.0));
+
+   --  Canny marks the outline: nonzero on the border, zero inside.
+   Canny_Edges
+     (Image, Edges, Lower_Threshold =&gt; 50.0, Upper_Threshold =&gt; 150.0);
+   pragma Assert (Edges.Depth = UInt8 and then Edges.Channels = 1);
+   pragma Assert (UInt8_Access.Get (Edges, 32, 32) = 0);
+
+   --  The strongest Harris corner response lies at a corner of the square.
+   declare
+      Response : constant Mat := Harris_Corner_Response (Image);
+      Peak     : constant Min_Max_Result := Min_Max_Loc (Response);
+   begin
+      pragma Assert (Response.Depth = Float32);
+      pragma Assert (Peak.Maximum &gt; 0.0);
+      pragma
+        Assert
+          (abs (Peak.Maximum_Location.X - 16) &lt;= 2
+             or else abs (Peak.Maximum_Location.X - 47) &lt;= 2);
+   end;
+
+   --  The standard Hough transform finds the square's straight sides.
+   declare
+      Lines : constant Hough_Line_Array :=
+        Find_Hough_Lines
+          (Edges,
+           Distance_Resolution      =&gt; 1.0,
+           Angle_Resolution_Radians =&gt; Hough_Degree,
+           Vote_Threshold           =&gt; 20);
+   begin
+      pragma Assert (Lines'Length &gt;= 4);
+   end;
+
+   --  A 2-bin histogram over 0 .. 256 counts dark and bright pixels.
+   declare
+      Counts : constant Histogram :=
+        Calculate_Histogram
+          (Image,
+           [1 =&gt;
+              (Channel     =&gt; 0,
+               Bin_Count   =&gt; 2,
+               Lower_Bound =&gt; 0.0,
+               Upper_Bound =&gt; 256.0)]);
+      Values : constant Mat := Histogram_Values (Counts);
+   begin
+      pragma Assert (Float32_Access.Get (Values, 0, 0) = 3072.0);
+      pragma Assert (Float32_Access.Get (Values, 1, 0) = 1024.0);
+   end;
+
+   --  An integral image sums any rectangle in four lookups.
+   declare
+      Sums  : constant Mat := Integral_Sum (Image);
+      Total : constant OpenCV.Float64_Value :=
+        Float64_Access.Get (Sums, 64, 64);
+   begin
+      pragma Assert (Sums.Rows = 65 and then Sums.Columns = 65);
+      pragma Assert (Total = 255.0 * 1024.0);
+   end;
+end Features_And_Analysis;
+</code></pre>
+<h2 id="failure-conditions-and-limits">Failure conditions and limits</h2>
+<p>Non-binary or wrongly typed Hough sources, nonfinite or nonpositive
+resolutions, invalid angle ranges, corner windows that do not fit, histogram
+bounds that are not increasing and native arithmetic limits raise
+<code>OpenCV.OpenCV_Error</code>. Corner responses, Hough votes and floating histogram
+comparisons keep native floating-point rounding; compare them with
+tolerances. Hough results are accumulator bins, quantized by the requested
+resolutions.</p>
+
+<section aria-label="Native API entry points"><h2 id="native-api-entry-points">Native API entry points</h2><ul>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c2dfcd6f24630eba6fec728e6f1212f935fb2bdfbe1917f320d4cf53f911cb4f">Canny_Edges</a></li>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#d118b85500bb50136957860e6248dc4a7f5a0cbd70acff12b82c103ba8744475">Harris_Corner_Response</a></li>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#12c1eb4d1adfc6e283303bcb4a40fd3c6d1cbfe33b49565928ff068d316719ae">Find_Hough_Lines</a></li>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#a99d7e2f03df51ab3b4af6721fd99bb182c8df6b4b8b26046dbe987a8b17e1b4">Calculate_Histogram</a></li>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#22a83cb95b9840d9108fcd6beafdf2eff9f8b7ab0e9e9baa81ff230ac1426914">Integral_Sum</a></li>
+</ul></section>
+<p class="guide-source"><a href="https://github.com/zackboll/opencv_imgproc_ada/blob/main/docs/guides/features-and-structural-analysis.md">Original Markdown source on GitHub</a></p>
+</main>
+</div>
+</body>
+</html>

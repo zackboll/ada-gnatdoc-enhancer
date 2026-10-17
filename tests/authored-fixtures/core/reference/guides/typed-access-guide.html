@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Typed access guide — OpenCV Core Ada</title>
+<link rel="stylesheet" href="../api/gnatdoc-theme.css">
+<link rel="stylesheet" href="gnatdoc-guides.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header><nav aria-label="Documentation"><a href="../index.html">Documentation home</a> · <a href="../api/index.html">GNATdoc API browser</a></nav></header>
+<div class="guide-layout">
+<nav class="guide-nav" aria-label="Developer guides"><ul>
+<li><a href="ownership-and-views.html">Ownership and views</a></li>
+<li><a href="typed-access-guide.html" aria-current="page">Typed access guide</a></li>
+<li><a href="core-operations-guide.html">Core operations guide</a></li>
+<li><a href="sparse-and-persistence-guide.html">Sparse matrices and persistence</a></li>
+<li><a href="interop-and-compatibility.html">Interoperability, compatibility and contributor architecture</a></li>
+</ul></nav>
+<main id="main-content">
+<h1 id="typed-access-guide">Typed access guide</h1>
+<p><a href="https://github.com/zackboll/opencv_core_ada/blob/main/README.md">README</a> · <a href="https://zackboll.github.io/opencv_core_ada/api/index.html">GNATdoc API Reference</a> · <a href="https://github.com/zackboll/opencv_core_ada/blob/main/docs/documentation.md">Building and Contributing</a></p>
+<p>This guide is published as HTML on the documentation site and maintained as
+Markdown in the source repository. The public Ada specifications are authoritative for exact profiles
+and per-overload restrictions. Examples below include both complete programs
+and fragments intended for the surrounding application.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#shared-value-types">Shared value types</a></li>
+<li><a href="#typed-access-matrix">Typed access matrix</a></li>
+<li>Related: <a href="ownership-and-views.html">borrowed and external views</a> and
+<a href="sparse-and-persistence-guide.html#sparse-matrices">sparse typed access</a></li>
+</ul>
+<h2 id="shared-value-types">Shared value types</h2>
+<p><code>OpenCV</code> owns the shared public values used across Core and later module
+crates. The <code>opencv_core</code> crate still distributes the parent package.
+<code>OpenCV.Core</code> continues to own <code>Mat</code> and matrix-specific abstractions.</p>
+<p>Shared root types include numeric value subtypes (<code>OpenCV.UInt8_Value</code>,
+<code>OpenCV.Int8_Value</code>, <code>OpenCV.UInt16_Value</code>, <code>OpenCV.Int16_Value</code>,
+<code>OpenCV.Int32_Value</code>, <code>OpenCV.Float32_Value</code>, <code>OpenCV.Float64_Value</code>),
+integer coordinates
+and geometry (<code>OpenCV.Point_Coordinate</code>, <code>OpenCV.Size_Coordinate</code>,
+<code>OpenCV.Point</code>, <code>OpenCV.Point_Array</code>, <code>OpenCV.Point_3D</code>,
+<code>OpenCV.Point_3D_Array</code>, <code>OpenCV.Size</code>, <code>OpenCV.Rect</code>),
+floating-point geometry (<code>OpenCV.Float32_Point</code>, <code>OpenCV.Float32_Point_3D</code>,
+<code>OpenCV.Float32_Point_3D_Array</code>, <code>OpenCV.Float32_Size</code>,
+<code>OpenCV.Rotated_Rect</code>), the shared scalar (<code>OpenCV.Scalar</code>,
+<code>OpenCV.Make_Scalar</code>), and shared options (<code>OpenCV.Border_Kind</code> with
+literals such as <code>OpenCV.Reflect_101</code>, and <code>OpenCV.Angle_Unit</code>).</p>
+<p>The 3-D point families are ordinary Ada values with signed 32-bit integer
+or binary32 coordinates, all defaulting to zero. Their arrays preserve
+arbitrary <code>Natural</code> bounds, including null ranges. Binary32 values may
+represent NaN and infinities; each consuming operation defines its own
+finiteness policy. Root ownership follows native OpenCV's Core <code>Point3</code>
+value concept, allowing Geometry, Calib3D, and future 3-D module bindings
+to reuse these shared coordinates rather than redeclare them. These
+additive types are included in the prepared <code>0.5.0</code> candidate, not the latest
+indexed <code>0.4.1</code> release. Candidate preparation is not Alire publication.</p>
+<p>The earlier relocation of existing values to the root was source-breaking.
+Callers that previously wrote
+<code>OpenCV.Core.Point</code> or <code>OpenCV.Core.Make_Scalar</code> must update
+qualification and visibility to the root <code>OpenCV</code> package. Clients that
+use <code>&quot;=&quot;</code> or other operators on those values need <code>with OpenCV;</code> so the
+operators are visible. Core does not keep compatibility aliases for the
+moved names.</p>
+<p>Representative spellings:</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable table"><table>
+<thead>
+<tr>
+<th>Old</th>
+<th>New</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OpenCV.Core.Point</code></td>
+<td><code>OpenCV.Point</code></td>
+</tr>
+<tr>
+<td><code>OpenCV.Core.Point_Coordinate</code></td>
+<td><code>OpenCV.Point_Coordinate</code></td>
+</tr>
+<tr>
+<td><code>OpenCV.Core.Size</code></td>
+<td><code>OpenCV.Size</code></td>
+</tr>
+<tr>
+<td><code>OpenCV.Core.Rect</code></td>
+<td><code>OpenCV.Rect</code></td>
+</tr>
+<tr>
+<td><code>OpenCV.Core.Scalar</code></td>
+<td><code>OpenCV.Scalar</code></td>
+</tr>
+<tr>
+<td><code>OpenCV.Core.Make_Scalar</code></td>
+<td><code>OpenCV.Make_Scalar</code></td>
+</tr>
+<tr>
+<td><code>OpenCV.Core.Point_Array</code></td>
+<td><code>OpenCV.Point_Array</code></td>
+</tr>
+<tr>
+<td><code>OpenCV.Core.Reflect_101</code></td>
+<td><code>OpenCV.Reflect_101</code></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="typed-access-matrix">Typed access matrix</h2>
+<p>Direct typed access covers thirty-two layouts: every supported depth in
+C1/C2/C3/C4:</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable table"><table>
+<thead>
+<tr>
+<th>Layout</th>
+<th>2-D Get/Set</th>
+<th>N-D Get/Set</th>
+<th>Classification</th>
+<th>Copied row</th>
+<th>Borrowed row</th>
+<th>Continuous buffer borrow</th>
+<th>Packed caller buffer -&gt; <code>Mat</code></th>
+<th>Strided caller buffer -&gt; <code>Mat</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UInt8 C1</td>
+<td><code>UInt8_Access</code></td>
+<td><code>UInt8_Access</code></td>
+<td>—</td>
+<td><code>UInt8_Row_Access</code></td>
+<td><code>UInt8_Row_Access</code></td>
+<td><code>UInt8_Buffer_Access</code></td>
+<td><code>UInt8_Mat_View</code></td>
+<td><code>UInt8_Mat_View</code></td>
+</tr>
+<tr>
+<td>Int8 C1</td>
+<td><code>Int8_Access</code></td>
+<td><code>Int8_Access</code></td>
+<td>—</td>
+<td><code>Int8_Row_Access</code></td>
+<td><code>Int8_Row_Access</code></td>
+<td><code>Int8_Buffer_Access</code></td>
+<td><code>Int8_Mat_View</code></td>
+<td><code>Int8_Mat_View</code></td>
+</tr>
+<tr>
+<td>UInt16 C1</td>
+<td><code>UInt16_Access</code></td>
+<td><code>UInt16_Access</code></td>
+<td>—</td>
+<td><code>UInt16_Row_Access</code></td>
+<td><code>UInt16_Row_Access</code></td>
+<td><code>UInt16_Buffer_Access</code></td>
+<td><code>UInt16_Mat_View</code></td>
+<td><code>UInt16_Mat_View</code></td>
+</tr>
+<tr>
+<td>Int16 C1</td>
+<td><code>Int16_Access</code></td>
+<td><code>Int16_Access</code></td>
+<td>—</td>
+<td><code>Int16_Row_Access</code></td>
+<td><code>Int16_Row_Access</code></td>
+<td><code>Int16_Buffer_Access</code></td>
+<td><code>Int16_Mat_View</code></td>
+<td><code>Int16_Mat_View</code></td>
+</tr>
+<tr>
+<td>Int32 C1</td>
+<td><code>Int32_Access</code></td>
+<td><code>Int32_Access</code></td>
+<td>—</td>
+<td><code>Int32_Row_Access</code></td>
+<td><code>Int32_Row_Access</code></td>
+<td><code>Int32_Buffer_Access</code></td>
+<td><code>Int32_Mat_View</code></td>
+<td><code>Int32_Mat_View</code></td>
+</tr>
+<tr>
+<td>Float16 C1</td>
+<td><code>Float16_Access</code></td>
+<td><code>Float16_Access</code></td>
+<td><code>Float16_Value</code> helpers</td>
+<td><code>Float16_Row_Access</code></td>
+<td><code>Float16_Row_Access</code></td>
+<td><code>Float16_Buffer_Access</code></td>
+<td><code>Float16_Mat_View</code></td>
+<td><code>Float16_Mat_View</code></td>
+</tr>
+<tr>
+<td>Float32 C1</td>
+<td><code>Float32_Access</code></td>
+<td><code>Float32_Access</code></td>
+<td>—</td>
+<td><code>Float32_Row_Access</code></td>
+<td><code>Float32_Row_Access</code></td>
+<td><code>Float32_Buffer_Access</code></td>
+<td><code>Float32_Mat_View</code></td>
+<td><code>Float32_Mat_View</code></td>
+</tr>
+<tr>
+<td>Float64 C1</td>
+<td><code>Float64_Access</code></td>
+<td><code>Float64_Access</code></td>
+<td><code>Float64_Access</code></td>
+<td><code>Float64_Row_Access</code></td>
+<td><code>Float64_Row_Access</code></td>
+<td><code>Float64_Buffer_Access</code></td>
+<td><code>Float64_Mat_View</code></td>
+<td><code>Float64_Mat_View</code></td>
+</tr>
+<tr>
+<td>UInt8 C2</td>
+<td><code>UInt8_Vec2_Access</code></td>
+<td><code>UInt8_Vec2_Access</code></td>
+<td>—</td>
+<td><code>UInt8_Vec2_Row_Access</code></td>
+<td><code>UInt8_Vec2_Row_Access</code></td>
+<td><code>UInt8_Vec2_Buffer_Access</code></td>
+<td><code>UInt8_Vec2_Mat_View</code></td>
+<td><code>UInt8_Vec2_Mat_View</code></td>
+</tr>
+<tr>
+<td>Int8 C2</td>
+<td><code>Int8_Vec2_Access</code></td>
+<td><code>Int8_Vec2_Access</code></td>
+<td>—</td>
+<td><code>Int8_Vec2_Row_Access</code></td>
+<td><code>Int8_Vec2_Row_Access</code></td>
+<td><code>Int8_Vec2_Buffer_Access</code></td>
+<td><code>Int8_Vec2_Mat_View</code></td>
+<td><code>Int8_Vec2_Mat_View</code></td>
+</tr>
+<tr>
+<td>UInt16 C2</td>
+<td><code>UInt16_Vec2_Access</code></td>
+<td><code>UInt16_Vec2_Access</code></td>
+<td>—</td>
+<td><code>UInt16_Vec2_Row_Access</code></td>
+<td><code>UInt16_Vec2_Row_Access</code></td>
+<td><code>UInt16_Vec2_Buffer_Access</code></td>
+<td><code>UInt16_Vec2_Mat_View</code></td>
+<td><code>UInt16_Vec2_Mat_View</code></td>
+</tr>
+<tr>
+<td>Int16 C2</td>
+<td><code>Int16_Vec2_Access</code></td>
+<td><code>Int16_Vec2_Access</code></td>
+<td>—</td>
+<td><code>Int16_Vec2_Row_Access</code></td>
+<td><code>Int16_Vec2_Row_Access</code></td>
+<td><code>Int16_Vec2_Buffer_Access</code></td>
+<td><code>Int16_Vec2_Mat_View</code></td>
+<td><code>Int16_Vec2_Mat_View</code></td>
+</tr>
+<tr>
+<td>Int32 C2</td>
+<td><code>Int32_Vec2_Access</code></td>
+<td><code>Int32_Vec2_Access</code></td>
+<td>—</td>
+<td><code>Int32_Vec2_Row_Access</code></td>
+<td><code>Int32_Vec2_Row_Access</code></td>
+<td><code>Int32_Vec2_Buffer_Access</code></td>
+<td><code>Int32_Vec2_Mat_View</code></td>
+<td><code>Int32_Vec2_Mat_View</code></td>
+</tr>
+<tr>
+<td>Float16 C2</td>
+<td><code>Float16_Vec2_Access</code></td>
+<td><code>Float16_Vec2_Access</code></td>
+<td>—</td>
+<td><code>Float16_Vec2_Row_Access</code></td>
+<td><code>Float16_Vec2_Row_Access</code></td>
+<td><code>Float16_Vec2_Buffer_Access</code></td>
+<td><code>Float16_Vec2_Mat_View</code></td>
+<td><code>Float16_Vec2_Mat_View</code></td>
+</tr>
+<tr>
+<td>Float32 C2</td>
+<td><code>Float32_Vec2_Access</code></td>
+<td><code>Float32_Vec2_Access</code></td>
+<td>—</td>
+<td><code>Float32_Vec2_Row_Access</code></td>
+<td><code>Float32_Vec2_Row_Access</code></td>
+<td><code>Float32_Vec2_Buffer_Access</code></td>
+<td><code>Float32_Vec2_Mat_View</code></td>
+<td><code>Float32_Vec2_Mat_View</code></td>
+</tr>
+<tr>
+<td>Float64 C2</td>
+<td><code>Float64_Vec2_Access</code></td>
+<td><code>Float64_Vec2_Access</code></td>
+<td>—</td>
+<td><code>Float64_Vec2_Row_Access</code></td>
+<td><code>Float64_Vec2_Row_Access</code></td>
+<td><code>Float64_Vec2_Buffer_Access</code></td>
+<td><code>Float64_Vec2_Mat_View</code></td>
+<td><code>Float64_Vec2_Mat_View</code></td>
+</tr>
+<tr>
+<td>UInt8 C3</td>
+<td><code>UInt8_Vec3_Access</code></td>
+<td><code>UInt8_Vec3_Access</code></td>
+<td>—</td>
+<td><code>UInt8_Vec3_Row_Access</code></td>
+<td><code>UInt8_Vec3_Row_Access</code></td>
+<td><code>UInt8_Vec3_Buffer_Access</code></td>
+<td><code>UInt8_Vec3_Mat_View</code></td>
+<td><code>UInt8_Vec3_Mat_View</code></td>
+</tr>
+<tr>
+<td>Int8 C3</td>
+<td><code>Int8_Vec3_Access</code></td>
+<td><code>Int8_Vec3_Access</code></td>
+<td>—</td>
+<td><code>Int8_Vec3_Row_Access</code></td>
+<td><code>Int8_Vec3_Row_Access</code></td>
+<td><code>Int8_Vec3_Buffer_Access</code></td>
+<td><code>Int8_Vec3_Mat_View</code></td>
+<td><code>Int8_Vec3_Mat_View</code></td>
+</tr>
+<tr>
+<td>UInt16 C3</td>
+<td><code>UInt16_Vec3_Access</code></td>
+<td><code>UInt16_Vec3_Access</code></td>
+<td>—</td>
+<td><code>UInt16_Vec3_Row_Access</code></td>
+<td><code>UInt16_Vec3_Row_Access</code></td>
+<td><code>UInt16_Vec3_Buffer_Access</code></td>
+<td><code>UInt16_Vec3_Mat_View</code></td>
+<td><code>UInt16_Vec3_Mat_View</code></td>
+</tr>
+<tr>
+<td>Int16 C3</td>
+<td><code>Int16_Vec3_Access</code></td>
+<td><code>Int16_Vec3_Access</code></td>
+<td>—</td>
+<td><code>Int16_Vec3_Row_Access</code></td>
+<td><code>Int16_Vec3_Row_Access</code></td>
+<td><code>Int16_Vec3_Buffer_Access</code></td>
+<td><code>Int16_Vec3_Mat_View</code></td>
+<td><code>Int16_Vec3_Mat_View</code></td>
+</tr>
+<tr>
+<td>Int32 C3</td>
+<td><code>Int32_Vec3_Access</code></td>
+<td><code>Int32_Vec3_Access</code></td>
+<td>—</td>
+<td><code>Int32_Vec3_Row_Access</code></td>
+<td><code>Int32_Vec3_Row_Access</code></td>
+<td><code>Int32_Vec3_Buffer_Access</code></td>
+<td><code>Int32_Vec3_Mat_View</code></td>
+<td><code>Int32_Vec3_Mat_View</code></td>
+</tr>
+<tr>
+<td>Float16 C3</td>
+<td><code>Float16_Vec3_Access</code></td>
+<td><code>Float16_Vec3_Access</code></td>
+<td>—</td>
+<td><code>Float16_Vec3_Row_Access</code></td>
+<td><code>Float16_Vec3_Row_Access</code></td>
+<td><code>Float16_Vec3_Buffer_Access</code></td>
+<td><code>Float16_Vec3_Mat_View</code></td>
+<td><code>Float16_Vec3_Mat_View</code></td>
+</tr>
+<tr>
+<td>Float32 C3</td>
+<td><code>Float32_Vec3_Access</code></td>
+<td><code>Float32_Vec3_Access</code></td>
+<td>—</td>
+<td><code>Float32_Vec3_Row_Access</code></td>
+<td><code>Float32_Vec3_Row_Access</code></td>
+<td><code>Float32_Vec3_Buffer_Access</code></td>
+<td><code>Float32_Vec3_Mat_View</code></td>
+<td><code>Float32_Vec3_Mat_View</code></td>
+</tr>
+<tr>
+<td>Float64 C3</td>
+<td><code>Float64_Vec3_Access</code></td>
+<td><code>Float64_Vec3_Access</code></td>
+<td>—</td>
+<td><code>Float64_Vec3_Row_Access</code></td>
+<td><code>Float64_Vec3_Row_Access</code></td>
+<td><code>Float64_Vec3_Buffer_Access</code></td>
+<td><code>Float64_Vec3_Mat_View</code></td>
+<td><code>Float64_Vec3_Mat_View</code></td>
+</tr>
+<tr>
+<td>UInt8 C4</td>
+<td><code>UInt8_Vec4_Access</code></td>
+<td><code>UInt8_Vec4_Access</code></td>
+<td>—</td>
+<td><code>UInt8_Vec4_Row_Access</code></td>
+<td><code>UInt8_Vec4_Row_Access</code></td>
+<td><code>UInt8_Vec4_Buffer_Access</code></td>
+<td><code>UInt8_Vec4_Mat_View</code></td>
+<td><code>UInt8_Vec4_Mat_View</code></td>
+</tr>
+<tr>
+<td>Int8 C4</td>
+<td><code>Int8_Vec4_Access</code></td>
+<td><code>Int8_Vec4_Access</code></td>
+<td>—</td>
+<td><code>Int8_Vec4_Row_Access</code></td>
+<td><code>Int8_Vec4_Row_Access</code></td>
+<td><code>Int8_Vec4_Buffer_Access</code></td>
+<td><code>Int8_Vec4_Mat_View</code></td>
+<td><code>Int8_Vec4_Mat_View</code></td>
+</tr>
+<tr>
+<td>UInt16 C4</td>
+<td><code>UInt16_Vec4_Access</code></td>
+<td><code>UInt16_Vec4_Access</code></td>
+<td>—</td>
+<td><code>UInt16_Vec4_Row_Access</code></td>
+<td><code>UInt16_Vec4_Row_Access</code></td>
+<td><code>UInt16_Vec4_Buffer_Access</code></td>
+<td><code>UInt16_Vec4_Mat_View</code></td>
+<td><code>UInt16_Vec4_Mat_View</code></td>
+</tr>
+<tr>
+<td>Int16 C4</td>
+<td><code>Int16_Vec4_Access</code></td>
+<td><code>Int16_Vec4_Access</code></td>
+<td>—</td>
+<td><code>Int16_Vec4_Row_Access</code></td>
+<td><code>Int16_Vec4_Row_Access</code></td>
+<td><code>Int16_Vec4_Buffer_Access</code></td>
+<td><code>Int16_Vec4_Mat_View</code></td>
+<td><code>Int16_Vec4_Mat_View</code></td>
+</tr>
+<tr>
+<td>Int32 C4</td>
+<td><code>Int32_Vec4_Access</code></td>
+<td><code>Int32_Vec4_Access</code></td>
+<td>—</td>
+<td><code>Int32_Vec4_Row_Access</code></td>
+<td><code>Int32_Vec4_Row_Access</code></td>
+<td><code>Int32_Vec4_Buffer_Access</code></td>
+<td><code>Int32_Vec4_Mat_View</code></td>
+<td><code>Int32_Vec4_Mat_View</code></td>
+</tr>
+<tr>
+<td>Float16 C4</td>
+<td><code>Float16_Vec4_Access</code></td>
+<td><code>Float16_Vec4_Access</code></td>
+<td>—</td>
+<td><code>Float16_Vec4_Row_Access</code></td>
+<td><code>Float16_Vec4_Row_Access</code></td>
+<td><code>Float16_Vec4_Buffer_Access</code></td>
+<td><code>Float16_Vec4_Mat_View</code></td>
+<td><code>Float16_Vec4_Mat_View</code></td>
+</tr>
+<tr>
+<td>Float32 C4</td>
+<td><code>Float32_Vec4_Access</code></td>
+<td><code>Float32_Vec4_Access</code></td>
+<td>—</td>
+<td><code>Float32_Vec4_Row_Access</code></td>
+<td><code>Float32_Vec4_Row_Access</code></td>
+<td><code>Float32_Vec4_Buffer_Access</code></td>
+<td><code>Float32_Vec4_Mat_View</code></td>
+<td><code>Float32_Vec4_Mat_View</code></td>
+</tr>
+<tr>
+<td>Float64 C4</td>
+<td><code>Float64_Vec4_Access</code></td>
+<td><code>Float64_Vec4_Access</code></td>
+<td>—</td>
+<td><code>Float64_Vec4_Row_Access</code></td>
+<td><code>Float64_Vec4_Row_Access</code></td>
+<td><code>Float64_Vec4_Buffer_Access</code></td>
+<td><code>Float64_Vec4_Mat_View</code></td>
+<td><code>Float64_Vec4_Mat_View</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>The <strong>Continuous buffer borrow</strong> column applies to every continuous Mat of the
+listed layout, including genuine N-D Mats and continuous N-D <code>Slice</code> views.
+The flat array uses OpenCV element order with the final dimension varying
+fastest (see &quot;Scoped continuous whole-buffer borrowing&quot; above). The
+<strong>Packed caller buffer -&gt; <code>Mat</code></strong> column likewise covers both 2-D and genuine
+packed N-D caller storage in that same element order. <strong>Strided caller buffer
+-&gt; <code>Mat</code></strong> covers both 2-D row strides and genuine N-D element strides
+(<code>Dimension_Stride_Array</code>, one complete-element stride per dimension, final
+stride <code>1</code>). The row columns remain 2-D concepts.</p>
+<p>For UInt8, UInt16, Int16, Int32, Float16, Float32 and Float64 Vec2 APIs, <strong>one
+vector is one complete two-channel Mat element</strong>. Components are indexed 0 and 1; the vector
+packages attach no semantic meaning to either channel. All seven depths support
+2-D and N-D Get/Set,
+copied and borrowed 2-D rows, continuous 2-D or N-D whole-buffer borrowing, and
+packed or strided 2-D/N-D caller-owned views. Strides count complete Vec2
+elements, not scalar channels. Borrowed references must not escape
+callbacks.
+UInt8 C2 elements occupy 2 bytes (scalar alignment 1); UInt16, Int16, and
+Float16 C2 elements occupy 4 bytes (scalar alignment 2); Int32 and Float32 C2
+elements occupy 8 bytes (scalar alignment 4); Float64 C2 elements
+occupy 16 bytes. The predefined semantic-neutral value
+types include <code>OpenCV.Core.UInt8_Vec2</code>, <code>OpenCV.Core.UInt16_Vec2</code>,
+<code>OpenCV.Core.Int16_Vec2</code>, <code>OpenCV.Core.Int32_Vec2</code>, and
+<code>OpenCV.Core.Float16_Vec2</code>, with component indices <code>0 .. 1</code>. UInt8, UInt16,
+Int16, Int32, Float16, Float32, and Float64 each have complete C1/C2/C3/C4
+typed and zero-copy access, and so does Int8 (see below): every supported
+depth is complete. The 32 layouts include 24 vector layouts, with 24 vector
+row packages and 32 buffer-access and 32 Mat-view packages.</p>
+<p>For Vec3 APIs, <strong>one Ada vector is one complete OpenCV element/pixel</strong>, not one
+scalar channel:</p>
+<ul>
+<li>UInt8 Vec3: 24 bits / 3 bytes per element, native alignment 1;</li>
+<li>UInt16 Vec3: 48 bits / 6 bytes per element, native alignment 2;</li>
+<li>Int16 Vec3: 48 bits / 6 bytes per element, native alignment 2;</li>
+<li>Int32 Vec3: 96 bits / 12 bytes per element, native alignment 4;</li>
+<li>Float16 Vec3: 48 bits / 6 bytes per element, native scalar alignment 2;</li>
+<li>Float32 Vec3: 96 bits / 12 bytes per element, native scalar alignment 4;</li>
+<li>Float64 Vec3: 192 bits / 24 bytes per element, native scalar alignment 8.</li>
+</ul>
+<p>The predefined Vec3 packages are component-oriented and do not impose RGB,
+BGR, XYZ, or any other semantic channel interpretation. All seven predefined
+Vec3 layouts support 2-D Row/Column Get/Set and N-D <code>Index_Array</code> Get/Set.
+One vector remains one complete OpenCV element. <code>Float16_Vec3</code> is an exact
+three-component binary16 pixel type: indices <code>0 .. 2</code> are OpenCV channel
+indices, not RGB or BGR names.</p>
+<p><code>UInt8_Vec4</code>, <code>UInt16_Vec4</code>, <code>Int16_Vec4</code>, <code>Int32_Vec4</code>, <code>Float16_Vec4</code>,
+<code>Float32_Vec4</code>, and <code>Float64_Vec4</code> provide semantic-neutral components <code>0 .. 3</code>:
+one Vec4 is one complete four-channel Mat element, not a single scalar.
+No package assigns RGBA, BGRA, or XYZW meanings to channels. Each has
+2-D/N-D Get/Set, copied and callback-scoped borrowed 2-D rows, continuous
+whole-buffer borrowing, packed 2-D/N-D caller-owned views, and row-strided
+2-D caller-owned views. Row strides count complete Vec4 elements, including
+final-row padding.
+UInt8 C4 elements occupy 4 bytes; UInt16, Int16, and Float16 C4 elements occupy
+8 bytes (scalar alignment 2);
+Int32 C4 elements occupy 16 bytes (native scalar alignment 4);
+Float32 C4 elements occupy 16 bytes;
+Float64 C4 elements occupy 32 bytes.
+Float32 and Float64 now have complete typed C1/C2/C3/C4 families.</p>
+<p><code>UInt16_Access</code> provides scalar 2-D and N-D Get/Set for single-channel <code>CV_16U</code>
+Mats. <code>UInt16_Row_Access</code> adds copied and callback-scoped zero-copy row access
+for 2-D C1 Mats, including non-contiguous Regions. <code>UInt16_Buffer_Access</code> adds
+continuous whole-buffer borrowing, and <code>UInt16_Mat_View</code> adds packed and
+row-strided callback-scoped caller-owned views.</p>
+<p><code>OpenCV.Core.Int16_Vec2</code>, <code>Int16_Vec3</code>, and <code>Int16_Vec4</code> use
+<code>OpenCV.Int16_Value</code> components in the full <code>-32768 .. 32767</code> signed domain.
+Indexes are respectively <code>0 .. 1</code>, <code>0 .. 2</code>, and <code>0 .. 3</code>, with no semantic
+channel names. One vector is one complete <code>CV_16S</code> Mat element (4, 6, or
+8 bytes; native scalar alignment 2). Each width has matching <code>_Access</code>,
+<code>_Row_Access</code>, <code>_Buffer_Access</code>, and <code>_Mat_View</code> packages: 2-D/N-D Get/Set,
+copied and leased zero-copy 2-D rows, continuous whole-buffer borrowing,
+and writable/read-only packed or strided 2-D/N-D caller-owned views. Strides
+count complete vector elements. A Region row can be borrowed despite gaps;
+non-contiguous whole buffers are rejected. Caller storage remains owned by
+the caller, shallow Mat escape is forbidden, and Clone can escape independently.</p>
+<p><code>OpenCV.Core.Int32_Vec2</code>, <code>Int32_Vec3</code>, and <code>Int32_Vec4</code> model OpenCV
+<code>cv::Vec2i</code>, <code>cv::Vec3i</code>, and <code>cv::Vec4i</code> as semantic-neutral complete Mat
+elements. They preserve the exact <code>OpenCV.Int32_Value</code> signed 32-bit domain,
+with component indices <code>0 .. 1</code>, <code>0 .. 2</code>, and <code>0 .. 3</code>. Elements occupy
+8, 12, and 16 bytes respectively, with 4-byte native scalar alignment.
+Each width has matching <code>_Access</code>, <code>_Row_Access</code>, <code>_Buffer_Access</code>, and
+<code>_Mat_View</code> packages, including 2-D and N-D access, copied/borrowed rows,
+continuous whole-buffer borrowing, and read-only/writable packed and strided
+2-D/N-D caller-owned views. Strides count complete vectors, not channels.
+The stable C ABI uses <code>int32_t</code> records and row buffers; OpenCV stores native
+<code>int</code> vectors. The shim proves identical signed ranges and converts components
+explicitly without assuming C++ type identity or aliasing the representations.</p>
+<p><code>Int8_Access</code> provides scalar 2-D and N-D Get/Set for single-channel <code>CV_8S</code>
+Mats. <code>Int8_Row_Access</code> adds copied and callback-scoped zero-copy row access
+for 2-D C1 Mats, including non-contiguous Regions. <code>Int8_Buffer_Access</code> adds
+continuous whole-buffer borrowing, and <code>Int8_Mat_View</code> adds packed and
+row-strided callback-scoped caller-owned views. All paths preserve the exact
+signed 8-bit domain, <code>-128 .. 127</code>, without unsigned or floating-point
+intermediates.</p>
+<p><code>OpenCV.Core.Int8_Vec2</code>, <code>Int8_Vec3</code>, and <code>Int8_Vec4</code> complete the signed
+8-bit family: Int8 now has full C1/C2/C3/C4 typed and zero-copy coverage, so
+every supported depth (UInt8, Int8, UInt16, Int16, Int32, Float16, Float32,
+Float64) is complete for C1 through C4. Components are <code>OpenCV.Int8_Value</code>
+in the exact signed <code>-128 .. 127</code> domain, indexed <code>0 .. 1</code>, <code>0 .. 2</code>, and
+<code>0 .. 3</code> as OpenCV channel order with no XY, RGB, or other semantic meaning.
+One vector is one complete <code>CV_8SC2</code>/<code>CV_8SC3</code>/<code>CV_8SC4</code> Mat element:
+C2 = 2 bytes, C3 = 3 bytes, C4 = 4 bytes, native alignment 1. Each width has
+matching <code>_Access</code> (2-D and N-D Get/Set), <code>_Row_Access</code> (copied rows and
+callback-scoped zero-copy leased rows), <code>_Buffer_Access</code> (continuous 2-D/N-D
+whole-buffer borrowing), and <code>_Mat_View</code> (writable and read-only packed and
+strided 2-D/N-D caller-owned views; strides count complete vectors, not
+scalar channels) packages. OpenCV defines no named signed-8 vector alias:
+<code>Vec2b</code>/<code>Vec3b</code>/<code>Vec4b</code> are unsigned <code>Vec&lt;uchar, N&gt;</code> and are never used for
+these layouts. Native storage is <code>cv::Vec&lt;schar, N&gt;</code>, where OpenCV's <code>schar</code>
+is <code>signed char</code> in 4.1/4.10 and <code>int8_t</code> in 5.0; the stable C ABI uses
+<code>opencv_core_int8_vec2</code>/<code>_vec3</code>/<code>_vec4</code> records and <code>int8_t</code> row buffers.
+The shim statically proves that <code>schar</code> and <code>int8_t</code> cover exactly the same
+one-byte signed domain (without requiring C++ type identity) and converts
+every component explicitly; ABI buffers are never aliased as native vectors.</p>
+<p><code>Int16_Access</code> provides scalar 2-D and N-D Get/Set for single-channel <code>CV_16S</code>
+Mats. <code>Int16_Row_Access</code> adds copied and callback-scoped zero-copy row access
+for 2-D C1 Mats, including non-contiguous Regions. <code>Int16_Buffer_Access</code> adds
+continuous whole-buffer borrowing, and <code>Int16_Mat_View</code> adds packed and
+row-strided callback-scoped caller-owned views.</p>
+<p><code>Int32_Access</code> provides scalar 2-D and N-D Get/Set for single-channel <code>CV_32S</code>
+Mats. <code>Int32_Row_Access</code> adds copied and callback-scoped zero-copy row access,
+<code>Int32_Buffer_Access</code> adds continuous whole-buffer borrowing, and
+<code>Int32_Mat_View</code> adds packed and row-strided callback-scoped caller-owned views.
+All paths preserve exact signed 32-bit values without floating-point
+intermediates.</p>
+<p><code>Float16_Access</code> provides scalar 2-D and N-D Get/Set for single-channel
+<code>CV_16F</code> Mats. Access is bit-preserving: every binary16 encoding, including
+signed zeros, subnormals, infinities, and NaN payloads, round-trips through
+<code>Float16_From_Bits</code> / <code>Float16_Bits</code>. <code>Float16_Row_Access</code> adds copied and
+callback-scoped zero-copy row access for 2-D C1 Mats, including
+non-contiguous Regions, and likewise preserves exact binary16 object bits
+without converting through Float32. <code>Float16_Buffer_Access</code> adds
+callback-scoped zero-copy whole-buffer borrowing for continuous 2-D or N-D C1
+Mats. Non-contiguous Regions still require row access. <code>Float16_Mat_View</code>
+adds callback-scoped packed and row-strided caller-owned CV_16FC1 storage.
+Packed views overlay a contiguous Ada array. Row-strided views use
+<code>With_Writable_Strided_Mat_View</code> so a 2-D <code>Row_Stride</code> can skip padding
+between logical rows; the <code>Shape</code>/<code>Strides</code> overload adds gapped N-D storage.
+The caller owns the backing storage, OpenCV does not free it, and it must
+remain alive for the callback lifetime. The main C1 FP16 data plane is now complete:
+exact value representation, Float32 conversion, scalar access, row access,
+continuous-buffer borrowing, packed external views, and strided external
+views. <code>Add</code>, <code>Subtract</code>, <code>Multiply</code>, <code>Divide</code>, <code>Abs_Diff</code>, <code>Minimum</code>, and
+<code>Maximum</code> additionally support Float16 with native OpenCV 5.x arithmetic and
+an internal Float32 compatibility path on OpenCV 4.x. This does not add broad OpenCV 4.x FP16
+algorithm coverage.
+<code>Float16_Vec3</code> / <code>Float16_Vec3_Access</code> add exact-bit 2-D and N-D Get/Set for
+ordinary three-channel <code>CV_16FC3</code> Mats. N-D <code>Index_Array</code> access addresses one
+complete six-byte pixel and preserves every binary16 component encoding. <code>Float16_Vec3_Row_Access</code> adds copied and
+callback-scoped zero-copy row access for 2-D C3 Mats, including non-contiguous
+Regions, and likewise preserves exact binary16 component bits without converting
+through Float32. <code>Float16_Vec3_Buffer_Access</code> adds callback-scoped zero-copy
+whole-buffer borrowing for continuous 2-D or N-D C3 Mats. <code>Float16_Vec3_Mat_View</code> adds
+callback-scoped packed and row-strided caller-owned CV_16FC3 storage. Packed
+views overlay a contiguous Ada array of <code>Float16_Vec3.Vector</code> pixels.
+Row-strided views use <code>With_Writable_Strided_Mat_View</code> so a 2-D <code>Row_Stride</code>
+measured in complete C3 pixels can skip padding between logical rows. The main
+C3 FP16 storage/access data plane is now complete: exact-bit pixel Get/Set,
+copied rows, borrowed zero-copy rows, continuous whole-buffer borrowing, packed
+caller-owned Mat views, and row-strided caller-owned Mat views. <code>Add</code>,
+<code>Subtract</code>, <code>Multiply</code>, and <code>Divide</code> support Float16 C3 with the same
+native-or-fallback policy as C1. This does not add broad OpenCV 4.x FP16 algorithm coverage. Component 0, 1,
+and 2 correspond to OpenCV channels 0, 1, and 2; Core does not assign RGB or
+BGR meaning.</p>
+<p><code>Float16_Vec2</code> and <code>Float16_Vec4</code> complete the Float16 family: Float16 now has
+full C1/C2/C3/C4 typed and zero-copy coverage. Each component is a
+<code>Float16_Value</code>, i.e. the exact stored IEEE-754 binary16 encoding, indexed
+<code>0 .. 1</code> or <code>0 .. 3</code> as OpenCV channel order with no real/imaginary, XY, RGB,
+or RGBA meaning. One vector is one complete Mat element: C2 = 4 bytes,
+C3 = 6 bytes, C4 = 8 bytes, with native storage alignment 2. Each width has
+<code>_Access</code> (exact-bit 2-D and N-D Get/Set), <code>_Row_Access</code> (copied rows and
+callback-scoped zero-copy leased rows), <code>_Buffer_Access</code> (continuous 2-D/N-D
+whole-buffer borrowing), and <code>_Mat_View</code> (writable and read-only packed and
+strided 2-D/N-D caller-owned views; strides count complete vectors, not
+scalar channels). Signed zeros, subnormals, infinities, and signaling or
+quiet NaN payloads are never converted or canonicalized. The stable C ABI
+uses <code>opencv_core_float16_vec2</code>/<code>opencv_core_float16_vec4</code> records and
+<code>uint16_t</code> row buffers carrying raw binary16 bit patterns. The shim copies
+exactly 4 or 8 bytes of untyped Mat storage; it never names a C++ half type
+or half-vector alias. OpenCV 4.1, 4.10, and 5.0 define no such alias in
+<code>matx.hpp</code> (only <code>Vec2b</code>/<code>s</code>/<code>w</code>/<code>i</code>/<code>f</code>/<code>d</code> and friends), and the public half
+type itself is spelled differently across releases (<code>cv::float16_t</code> versus
+<code>cv::hfloat</code>), so the binding relies only on the stable <code>CV_16FC2</code>/<code>CV_16FC4</code>
+storage representation. The existing channel-agnostic Float16 arithmetic
+path accepts C2/C4 operands (<code>Add</code> and <code>Multiply</code> are regression-tested with
+exact finite values); no new arithmetic API was added, and <code>Transform</code> still
+rejects Float16 sources.</p>
+<p><code>Float64_Access</code> provides scalar 2-D and N-D Get/Set plus non-finite value
+classification. <code>Float64_Row_Access</code> adds copied and callback-scoped zero-copy
+row access for 2-D C1 Mats, including non-contiguous Regions.
+<code>Float64_Buffer_Access</code> adds callback-scoped zero-copy whole-buffer borrowing
+for continuous 2-D or N-D Mats. <code>Float64_Mat_View</code> adds callback-scoped packed and
+row-strided caller-owned CV_64FC1 storage. Packed views overlay a contiguous
+Ada array. Row-strided views use <code>With_Writable_Strided_Mat_View</code> so a 2-D
+<code>Row_Stride</code> can skip padding between logical rows; the <code>Shape</code>/<code>Strides</code>
+overload adds gapped N-D storage. The caller owns the backing storage, OpenCV
+does not free it, and it must remain alive for the callback lifetime.</p>
+<p>Generic pure-Ada value abstractions are also provided:</p>
+<pre><code class="language-ada">generic
+   type Element_Type is private;
+   Length : Positive;
+package OpenCV.Core.Vectors;
+</code></pre>
+<p>and:</p>
+<pre><code class="language-ada">generic
+   type Element_Type is private;
+   Row_Count : Positive;
+   Column_Count : Positive;
+package OpenCV.Core.Fixed_Matrices;
+</code></pre>
+<p>A predefined Float32 3x3 fixed matrix and copy conversions to/from <code>Mat</code> are
+included. C++ <code>cv::Matx</code> objects do not cross the ABI.</p>
+
+<section aria-label="Native API entry points"><h2 id="native-api-entry-points">Native API entry points</h2><ul>
+<li><a href="../api/5b0a522eb6233561b7a3c6bfcd3ae557b75bab139452e05481af2bed58639bb1.html">OpenCV.Core.UInt8_Access</a></li>
+<li><a href="../api/5df3f2cbe04fcbdb508c7ef52321401cadf7bd1ae7052c2b4ceabee1e527050f.html">OpenCV.Core.Float16_Vec2_Access</a></li>
+</ul></section>
+<p class="guide-source"><a href="https://github.com/zackboll/opencv_core_ada/blob/main/docs/typed-access-guide.md">Original Markdown source on GitHub</a></p>
+</main>
+</div>
+</body>
+</html>

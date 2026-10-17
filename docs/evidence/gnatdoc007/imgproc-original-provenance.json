@@ -1,0 +1,37 @@
+{
+  "authored_sources": {
+    "docs/assets/gnatdoc-guides.css": "31c4ae37d107364fba4deb598892b245a0f1034ac83d79e44928fc1d883e1dba",
+    "docs/example.adb": "3ec3559071ec734aa152e04bca11904afb68952253c857032c62cd3117d70842",
+    "docs/example.gpr": "9c6e8650bb8a38a57b08c931f689abe535fb601171a8f12b00ff9d68d9f6782c",
+    "docs/examples/color_and_representation.adb": "258d4b4bca84154e6f76bfeb3d995b9c574f7b68e520b863408e5d8557201340",
+    "docs/examples/examples.gpr": "ca01090488f9e1b227e9c50c33fc16361a53cb5f2b87150ebcf92fdf1529d532",
+    "docs/examples/features_and_analysis.adb": "b7d5d3d5c2d0c2beb012c91353d2fcfdaa6a79bbc8b6f750a805b3b2847e9ad2",
+    "docs/examples/filtering_and_transforms.adb": "e6f34a878fa10123b8e89c4b70af6128d24021eee8fba8116cd96639efd8d669",
+    "docs/examples/matching_and_registration.adb": "0fb1eeae7cb335579d836da14c9003ba67b418d2740a1ce4d1f8645a572b3597",
+    "docs/examples/segmentation_and_contours.adb": "405241e15d46a56fcd6cf21adc5464f0d28fc705a5a3c7dcb7fc663c46ef9f1d",
+    "docs/guides/color-and-image-representation.md": "bcaa534d2e4fb136076fd2a8c56416591f83c742e5aac85573f06b152d3795de",
+    "docs/guides/features-and-structural-analysis.md": "95bba7531fcd82282ee0aa606c6f5891b8cc2d7ecd9d94caea78a03af95cc48e",
+    "docs/guides/filtering-and-transforms.md": "77a9571850193e7f0c996e176c98a0fa1f7d5b74506e3b63da53deb36ab34656",
+    "docs/guides/segmentation-contours-and-morphology.md": "f9419b65d9bd9de6b4780813dd18d250a87f9793c01b2383f4dceca4928b2c33",
+    "docs/guides/template-matching-and-registration.md": "a069f6aebf74d6f82adf003910bb085b6378fd35170cee995f7a7b772c102704",
+    "docs/index.html": "d42a317705fbbfe097b9a71d42887c82f6007b64012bd4eafc163345ac8cc5e3"
+  },
+  "reference_output": {
+    "guides/color-and-image-representation.html": "b7b68ba3184e64829e1c0c692d176bdfce5d480e63737aab2a40beed785d5177",
+    "guides/features-and-structural-analysis.html": "7f6e269e893020801802b0031d75f6bca57e3e96ed6b40081ae13bb10743a028",
+    "guides/filtering-and-transforms.html": "72cb9cd1212c65dad57d8a349696afd5035fea6b1ba84bbfbf625159051a09c7",
+    "guides/gnatdoc-guides.css": "31c4ae37d107364fba4deb598892b245a0f1034ac83d79e44928fc1d883e1dba",
+    "guides/segmentation-contours-and-morphology.html": "fde563c7341270e51907442ffc09c3e70e3d0488da0593d0abcb9c77c90fdb41",
+    "guides/template-matching-and-registration.html": "f9297b503deb7acf1a3754aa7e8b63162f5681791841d7e8d1ac628133e89518",
+    "index.html": "d42a317705fbbfe097b9a71d42887c82f6007b64012bd4eafc163345ac8cc5e3"
+  },
+  "revision": "9ce22ae5ab70008e1147475a9e6d7baef82f1df0",
+  "scripts_and_contracts": {
+    ".github/workflows/documentation.yml": "c1a04eb5603505d66174bd131de17745c3a69d965f55ff7f8d23c5db24193859",
+    "docs/index.html": "d42a317705fbbfe097b9a71d42887c82f6007b64012bd4eafc163345ac8cc5e3",
+    "docs/requirements.txt": "42439bccef3cf40f69561e86afa035b4f6fa04080033765a25d8ab3175cc4d92",
+    "scripts/generate_docs.sh": "59c03fab56ff29797e57d270748a404aa9c20c18710a94b1b7e9fac1f3077df8",
+    "scripts/render_gnatdoc_guides.py": "2f627d52d2e6a8198a18bfa7bae8b74c969529584c25fdcb2a0480ede4a9af42",
+    "scripts/validate_docs.py": "cce3babc51077056ac8ba829ed749a3c19ce50b98012ee62e3370f7bde393f1e"
+  }
+}

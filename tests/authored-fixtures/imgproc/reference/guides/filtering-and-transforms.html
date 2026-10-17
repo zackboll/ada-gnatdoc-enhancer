@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Filtering and image transformations — OpenCV Imgproc Ada</title>
+<link rel="stylesheet" href="../api/gnatdoc-theme.css">
+<link rel="stylesheet" href="gnatdoc-guides.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header><nav aria-label="Documentation"><a href="../index.html">Documentation home</a> · <a href="../api/index.html">API browser</a></nav></header>
+<div class="guide-layout">
+<nav class="guide-nav" aria-label="Developer guides"><ul>
+<li><a href="filtering-and-transforms.html" aria-current="page">Filtering and image transformations</a></li>
+<li><a href="color-and-image-representation.html">Color conversion and image representation</a></li>
+<li><a href="features-and-structural-analysis.html">Geometry, features and structural analysis</a></li>
+<li><a href="segmentation-contours-and-morphology.html">Segmentation, contours and morphology</a></li>
+<li><a href="template-matching-and-registration.html">Template matching and image registration</a></li>
+</ul></nav>
+<main id="main-content">
+<h1 id="filtering-and-image-transformations">Filtering and image transformations</h1>
+<p>This guide covers smoothing, derivatives, kernels, pyramids and the geometric
+transforms of <code>OpenCV.Image_Processing</code>: resizing, affine and perspective
+warps, polar transforms and remapping. Every statement summarizes the
+declaration's own documentation; follow the links for the complete contract.</p>
+<h2 id="calling-conventions">Calling conventions</h2>
+<p>Filters take a <code>Source</code> Mat of mode <code>in</code> and an <code>in out</code> <code>Destination</code>.
+Two output models exist, and each declaration states which one it uses:</p>
+<ul>
+<li><strong>Direct native output.</strong> The binding hands Destination's own <code>cv::Mat</code>
+to OpenCV. When Destination already has the required size and type,
+OpenCV writes into that storage, so shallow copies of Destination, and the
+parent of a Region passed as Destination, see the result. Otherwise
+Destination is rebound to new storage. <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#e189d3499495fc064fd601fedf49863e6ea4ad9efb252a4365a1710bb51a7155">Gaussian_Blur</a>,
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#827280bbe8b607fcfab94bcbeb0d6dadd1de4677e007f65acb4bcf0e90c6cfd1">Median_Blur</a>, <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c083b262decdf1d36a27fdb5650875a30c61358489fa5a100d874f72d30bd64d">Box_Blur</a>,
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755">Filter_2D</a>, <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#474f0297b3c9c1f2620bbafcd5fdb17bb95e6ee9faf34d5029d0d19b0bff5090">Sobel</a>, <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#b4a8931a55470c3140f0e10b4ac3291546c7124844e77ef6854e40612d1e5ba4">Laplacian</a>,
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c2dfcd6f24630eba6fec728e6f1212f935fb2bdfbe1917f320d4cf53f911cb4f">Canny_Edges</a>, <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#987b6cf7b3bba75b8e9d78c7a061e4064f56b0f5bfc2457794abcf90d985206e">Resize</a> and
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#2bf30578fe6f0cd34fb9091d6a622493df173f8875f1fb9fb49e69da9ca22f46">Warp_Affine</a> work this way.</li>
+<li><strong>Private result, published on success.</strong> The result is computed into
+private storage and Destination is rebound to it only after success, so a
+failure leaves Destination unchanged. <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#117e96106e216527c7d22379c855e1ecad765864a4245c528518777b9864ab17">Remap</a>,
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#e401d391f1bd48e57d626822b112d9eb1861652b32f0cf51533af897f9e20803">Warp_Polar</a>, the explicit-size
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#7cd18c514bd4162491ac1f5ba2d7f70368bfc0a6b7164e02205af88e2394446f">Pyramid_Up</a> and
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#d6f3410e5f7d723658f44306e506bed155510a5495dd1e1aa03148e4bc502d7a">Pyramid_Mean_Shift_Filter</a> work this way.</li>
+</ul>
+<p>Functions such as <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96">Get_Gaussian_Kernel</a>,
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#b9046f6cb1860002110025334ef7974caed8796c525022d3fb4a7119adbaf6a1">Squared_Box_Filter</a> and
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#e3180ae7fe3b9a692ea3efb4e5129827813f00c3b21dc1fe7e6aa2ef02904a0d">Blend_Linear</a> return fresh owning Mats.</p>
+<p>A Region passed directly to OpenCV is a submatrix, and OpenCV's border
+extrapolation may read parent pixels just outside it. Operations that take a
+private snapshot say so and then treat the Region as its own image; see
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#b9046f6cb1860002110025334ef7974caed8796c525022d3fb4a7119adbaf6a1">Squared_Box_Filter</a> and
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#e3180ae7fe3b9a692ea3efb4e5129827813f00c3b21dc1fe7e6aa2ef02904a0d">Blend_Linear</a>. Pixels outside a Destination Region are
+never written.</p>
+<h2 id="smoothing">Smoothing</h2>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#e189d3499495fc064fd601fedf49863e6ea4ad9efb252a4365a1710bb51a7155">Gaussian_Blur</a> accepts nonempty 2-D UInt8, UInt16,
+Int16, Float32 or Float64 Mats. Kernel dimensions must be positive and odd,
+Sigma positive and finite, and <code>Wrap</code> borders are rejected. The same Sigma
+applies along both axes. <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c083b262decdf1d36a27fdb5650875a30c61358489fa5a100d874f72d30bd64d">Box_Blur</a>,
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#827280bbe8b607fcfab94bcbeb0d6dadd1de4677e007f65acb4bcf0e90c6cfd1">Median_Blur</a> and <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#bea61d6357911eca7b83602171dbb6292c71e4d3efee6e883ae4f3ce5665ccb3">Bilateral_Filter</a>
+cover box averaging, median filtering and edge-preserving smoothing; each
+lists its accepted depths and kernel limits.</p>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#b9046f6cb1860002110025334ef7974caed8796c525022d3fb4a7119adbaf6a1">Squared_Box_Filter</a> returns Float64 local means
+(or sums) of squared samples. Float32 inputs keep OpenCV's incremental
+arithmetic, so NaN and infinity can persist beyond the ideal window; that is
+documented native behavior, not a guarantee of exact per-window sums.</p>
+<h2 id="derivatives-edges-and-kernels">Derivatives, edges and kernels</h2>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#474f0297b3c9c1f2620bbafcd5fdb17bb95e6ee9faf34d5029d0d19b0bff5090">Sobel</a> and <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#2bae9ced273e1e1e352f3c503b0910127dfa81e0931d7ee156703ffaed0691db">Scharr</a> compute first or higher
+derivatives; choose <code>Destination_Depth</code> so that negative and large values
+fit (<code>Float32_Depth</code> is the Sobel default). In-place use is supported only
+with <code>Same_Depth</code>. <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#b4a8931a55470c3140f0e10b4ac3291546c7124844e77ef6854e40612d1e5ba4">Laplacian</a> sums second derivatives and
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#a6d1953c94b14381c95db84d94432c6fc8831ffe3bc42687fea4db2a89f39ddb">Spatial_Gradient</a> returns both first derivatives of
+a UInt8 C1 image as fresh Int16 images at once. <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c2dfcd6f24630eba6fec728e6f1212f935fb2bdfbe1917f320d4cf53f911cb4f">Canny_Edges</a> produces an UInt8 edge
+map that is nonzero at edges and zero elsewhere.</p>
+<p>The kernel generators <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96">Get_Gaussian_Kernel</a>,
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#d2256bd614e17f528e14354159edb2f3a4505727c3c8648929c827597a45176c">Get_Derivative_Kernels</a>,
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#95a3d4feff6e9ed0b203d56f980b4c579e0d339e604132675a46cc152aa2889a">Get_Scharr_Kernels</a> and
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#056586cb3051e919cdc5dab3d746c6b7a2ad2a8048c7fcaefb8d5b6d5aa339b4">Get_Gabor_Kernel</a> return coefficient Mats that can be
+passed to <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755">Filter_2D</a> or <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#47fe805461a14c7b65a6c5c6dc6da1205eba5acedbc965b6c10cd3ed504687b0">Sep_Filter_2D</a>.</p>
+<h2 id="pyramids">Pyramids</h2>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#8569e99667b0d4571ac8cb9181fab234735d4a69e224dab76e163e5d54a6c02a">Pyramid_Down</a> blurs and halves each dimension, giving
+<code>(Source.Columns + 1) / 2</code> columns and likewise for rows;
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#ee285b2587a97264b473ef0d7394c132c9f592fc073755ea084cd6c0ce25b798">Pyramid_Up</a> doubles them. Neither works in place.
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#cad504ab2e011ba63efc5916b195cd9fc89af06c97e07bdc661d290482e05559">Build_Gaussian_Pyramid</a> and
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#ec5c6956fee18d749b281dea08a2571b99dc6cee3eff2e493408b590badc0036">Build_Laplacian_Pyramid</a> return every level as
+an <code>OpenCV.Core.Mat_Array</code>, and
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#615587706404cb15314a4ea35af2c23eace7f711dbc3677374cbac95460bb3a5">Reconstruct_Laplacian_Pyramid</a> inverts
+the second. <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#6fed23c8b666c915f4bc8969a183499deb899c0657ac180bbe9cebad25414b35">Maximum_Pyramid_Level_Count</a>
+tells how many levels a Source allows.</p>
+<h2 id="geometric-transforms">Geometric transforms</h2>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#987b6cf7b3bba75b8e9d78c7a061e4064f56b0f5bfc2457794abcf90d985206e">Resize</a> takes the output size explicitly; <code>Width</code> counts
+columns and <code>Height</code> rows. <code>Linear_Exact</code> is a fixed-point bilinear mode for
+UInt8, UInt16 and Int16 only; Float32 and Float64 requests are rejected rather
+than silently falling back to <code>Linear</code>.</p>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#2bf30578fe6f0cd34fb9091d6a622493df173f8875f1fb9fb49e69da9ca22f46">Warp_Affine</a> takes a 2 x 3 single-channel Float32 or
+Float64 transform Mat and <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#20b9497f182698474b6e611ab75f1d5ffc332ae13ec26d6a2c6465a188e84c58">Warp_Perspective</a> a 3 x 3
+one; coefficients must be finite. By default the matrix maps Source
+coordinates to Destination coordinates (<code>Source_To_Destination</code>); pass
+<code>Destination_To_Source</code> when the matrix is already the inverse map.
+Uncovered Destination pixels take <code>Border_Value</code> with the default
+<code>Constant_Border</code>. The warps reject <code>Area</code>, <code>Lanczos_4</code> and <code>Linear_Exact</code>
+interpolation, and Destination must not share storage with Source or the
+transform.</p>
+<p><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#117e96106e216527c7d22379c855e1ecad765864a4245c528518777b9864ab17">Remap</a> samples Source at per-pixel coordinates given either as
+two Float32 maps, one interleaved map, or the fixed-point representation
+produced by <a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#564fff9fb38181b5b4f4085cdcbc5b1f3bebfc7df3c747d94ed0f2556febabd4">Convert_Remap_To_Fixed</a>.
+Nearest-only fixed maps round coordinates to integers.
+<a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#e401d391f1bd48e57d626822b112d9eb1861652b32f0cf51533af897f9e20803">Warp_Polar</a> maps between Cartesian and linear or
+logarithmic polar coordinates.</p>
+<h2 id="example">Example</h2>
+<p>The example builds an image with a vertical edge, smooths it, takes an X
+derivative, halves it and translates it with an affine matrix. It is
+<code>docs/examples/filtering_and_transforms.adb</code>, compiled with assertions and
+warnings as errors and executed by the documentation workflow.</p>
+<pre><code class="language-ada">with OpenCV.Core;
+with OpenCV.Core.Float32_Access;
+with OpenCV.Core.Float64_Access;
+with OpenCV.Core.UInt8_Access;
+with OpenCV.Image_Processing;
+
+procedure Filtering_And_Transforms is
+   use OpenCV.Core;
+   use OpenCV.Image_Processing;
+   use type OpenCV.Float32_Value;
+   use type OpenCV.UInt8_Value;
+
+   Image     : Mat := Create (40, 60, (Depth =&gt; UInt8, Channels =&gt; 1));
+   Smoothed  : Mat;
+   Gradient  : Mat;
+   Half      : Mat;
+   Transform : Mat := Create (2, 3, (Depth =&gt; Float64, Channels =&gt; 1));
+   Moved     : Mat;
+begin
+   --  A dark image whose right half (columns 30 .. 59) is bright.
+   Image.Set_To (OpenCV.Make_Scalar (0.0));
+   Fill_Rectangle
+     (Image,
+      Bounds =&gt; (X =&gt; 30, Y =&gt; 0, Width =&gt; 30, Height =&gt; 40),
+      Color  =&gt; OpenCV.Make_Scalar (200.0));
+
+   --  Smoothing keeps the geometry and type; flat areas are unchanged.
+   Gaussian_Blur
+     (Image, Smoothed, Kernel_Size =&gt; (Width =&gt; 5, Height =&gt; 5), Sigma =&gt; 1.0);
+   pragma Assert (Smoothed.Rows = 40 and then Smoothed.Columns = 60);
+   pragma Assert (UInt8_Access.Get (Smoothed, 20, 5) = 0);
+   pragma Assert (UInt8_Access.Get (Smoothed, 20, 55) = 200);
+
+   --  A Float32 X derivative responds only at the vertical edge.
+   Sobel
+     (Image,
+      Gradient,
+      X_Order           =&gt; 1,
+      Y_Order           =&gt; 0,
+      Destination_Depth =&gt; Float32_Depth);
+   pragma Assert (Float32_Access.Get (Gradient, 20, 30) &gt; 0.0);
+   pragma Assert (Float32_Access.Get (Gradient, 20, 10) = 0.0);
+
+   --  Area interpolation halves the image.
+   Resize
+     (Image,
+      Half,
+      Output_Size   =&gt; (Width =&gt; 30, Height =&gt; 20),
+      Interpolation =&gt; Area);
+   pragma Assert (Half.Rows = 20 and then Half.Columns = 30);
+
+   --  A 2 x 3 Float64 affine matrix translating by 5 columns and 3 rows.
+   Transform.Set_To (OpenCV.Make_Scalar (0.0));
+   Float64_Access.Set (Transform, 0, 0, 1.0);
+   Float64_Access.Set (Transform, 0, 2, 5.0);
+   Float64_Access.Set (Transform, 1, 1, 1.0);
+   Float64_Access.Set (Transform, 1, 2, 3.0);
+   Warp_Affine
+     (Image, Transform, Moved, Output_Size =&gt; (Width =&gt; 60, Height =&gt; 40));
+   --  The edge moves from column 30 to 35; uncovered rows use the zero
+   --  Constant_Border.
+   pragma Assert (UInt8_Access.Get (Moved, 10, 35) = 200);
+   pragma Assert (UInt8_Access.Get (Moved, 10, 34) = 0);
+   pragma Assert (UInt8_Access.Get (Moved, 1, 50) = 0);
+end Filtering_And_Transforms;
+</code></pre>
+<h2 id="failure-conditions-and-limits">Failure conditions and limits</h2>
+<p>Contract violations raise <code>OpenCV.OpenCV_Error</code> before OpenCV runs: empty or
+non-2-D sources, unsupported depths or channel counts, even or nonpositive
+kernel sizes where odd ones are required, nonfinite parameters, <code>Wrap</code>
+borders where unsupported and <code>Linear_Exact</code> on floating images. Values
+outside an Ada subtype range, such as a zero <code>Morphology_Iterations</code>, raise
+<code>Constraint_Error</code>.</p>
+<p>Results keep OpenCV's native rounding. Bit-for-bit identity across OpenCV
+4.1, 4.10 and 5.0, platforms or optional acceleration backends is not
+promised unless a declaration says so; where a version difference is known,
+the declaration documents it.</p>
+
+<section aria-label="Native API entry points"><h2 id="native-api-entry-points">Native API entry points</h2><ul>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#e189d3499495fc064fd601fedf49863e6ea4ad9efb252a4365a1710bb51a7155">Gaussian_Blur</a></li>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#474f0297b3c9c1f2620bbafcd5fdb17bb95e6ee9faf34d5029d0d19b0bff5090">Sobel</a></li>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#8569e99667b0d4571ac8cb9181fab234735d4a69e224dab76e163e5d54a6c02a">Pyramid_Down</a></li>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#987b6cf7b3bba75b8e9d78c7a061e4064f56b0f5bfc2457794abcf90d985206e">Resize</a></li>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#2bf30578fe6f0cd34fb9091d6a622493df173f8875f1fb9fb49e69da9ca22f46">Warp_Affine</a></li>
+<li><a href="../api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#117e96106e216527c7d22379c855e1ecad765864a4245c528518777b9864ab17">Remap</a></li>
+</ul></section>
+<p class="guide-source"><a href="https://github.com/zackboll/opencv_imgproc_ada/blob/main/docs/guides/filtering-and-transforms.md">Original Markdown source on GitHub</a></p>
+</main>
+</div>
+</body>
+</html>

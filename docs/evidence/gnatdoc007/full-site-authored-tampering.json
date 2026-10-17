@@ -1,0 +1,90 @@
+{
+  "core": {
+    "guide-source": {
+      "reason": "authored source changed: docs/ownership-and-views.md",
+      "rejected": true
+    },
+    "published-guide": {
+      "reason": "published file differs from reconstructed output: guides/ownership-and-views.html",
+      "rejected": true
+    },
+    "published-link": {
+      "reason": "published file differs from reconstructed output: guides/ownership-and-views.html",
+      "rejected": true
+    },
+    "published-stylesheet": {
+      "reason": "published file differs from reconstructed output: guides/gnatdoc-guides.css",
+      "rejected": true
+    },
+    "stylesheet-source": {
+      "reason": "authored source changed: docs/assets/gnatdoc-guides.css",
+      "rejected": true
+    }
+  },
+  "geometry": {
+    "guide-source": {
+      "reason": "authored source changed: docs/guides/geometry-fundamentals-and-contours.md",
+      "rejected": true
+    },
+    "published-guide": {
+      "reason": "published file differs from reconstructed output: guides/geometry-fundamentals-and-contours.html",
+      "rejected": true
+    },
+    "published-link": {
+      "reason": "published file differs from reconstructed output: guides/geometry-fundamentals-and-contours.html",
+      "rejected": true
+    },
+    "published-stylesheet": {
+      "reason": "published file differs from reconstructed output: guides/gnatdoc-guides.css",
+      "rejected": true
+    },
+    "stylesheet-source": {
+      "reason": "authored source changed: docs/assets/gnatdoc-guides.css",
+      "rejected": true
+    }
+  },
+  "imgproc": {
+    "guide-source": {
+      "reason": "authored source changed: docs/guides/filtering-and-transforms.md",
+      "rejected": true
+    },
+    "published-guide": {
+      "reason": "published file differs from reconstructed output: guides/filtering-and-transforms.html",
+      "rejected": true
+    },
+    "published-link": {
+      "reason": "published file differs from reconstructed output: guides/filtering-and-transforms.html",
+      "rejected": true
+    },
+    "published-stylesheet": {
+      "reason": "published file differs from reconstructed output: guides/gnatdoc-guides.css",
+      "rejected": true
+    },
+    "stylesheet-source": {
+      "reason": "authored source changed: docs/assets/gnatdoc-guides.css",
+      "rejected": true
+    }
+  },
+  "mel": {
+    "guide-source": {
+      "reason": "authored source changed: docs/guides/getting-started.html",
+      "rejected": true
+    },
+    "published-guide": {
+      "reason": "published file differs from reconstructed output: guides/getting-started.html",
+      "rejected": true
+    },
+    "published-link": {
+      "reason": "published file differs from reconstructed output: guides/getting-started.html",
+      "rejected": true
+    },
+    "published-stylesheet": {
+      "reason": "published file differs from reconstructed output: assets/portal.css",
+      "rejected": true
+    },
+    "stylesheet-source": {
+      "reason": "authored source changed: docs/assets/portal.css",
+      "rejected": true
+    }
+  }
+}

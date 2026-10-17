@@ -1,0 +1,11 @@
+schema_version = 1
+project = "authored-fixture"
+[sources]
+directories = ["source"]
+comment_style = "leading"
+[security]
+external_hosts = ["github.com", "zackboll.github.io"]
+[guides]
+mode = "authored-markdown"
+manifest = "authored.json"
+sha256 = "c7f5bb0ad8afe4c8d530a2bcf04c8a9ba243c016d6500e251005c95e9858727c"

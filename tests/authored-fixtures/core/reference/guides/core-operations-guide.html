@@ -1,0 +1,1002 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Core operations guide — OpenCV Core Ada</title>
+<link rel="stylesheet" href="../api/gnatdoc-theme.css">
+<link rel="stylesheet" href="gnatdoc-guides.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header><nav aria-label="Documentation"><a href="../index.html">Documentation home</a> · <a href="../api/index.html">GNATdoc API browser</a></nav></header>
+<div class="guide-layout">
+<nav class="guide-nav" aria-label="Developer guides"><ul>
+<li><a href="ownership-and-views.html">Ownership and views</a></li>
+<li><a href="typed-access-guide.html">Typed access guide</a></li>
+<li><a href="core-operations-guide.html" aria-current="page">Core operations guide</a></li>
+<li><a href="sparse-and-persistence-guide.html">Sparse matrices and persistence</a></li>
+<li><a href="interop-and-compatibility.html">Interoperability, compatibility and contributor architecture</a></li>
+</ul></nav>
+<main id="main-content">
+<h1 id="core-operations-guide">Core operations guide</h1>
+<p><a href="https://github.com/zackboll/opencv_core_ada/blob/main/README.md">README</a> · <a href="https://zackboll.github.io/opencv_core_ada/api/index.html">GNATdoc API Reference</a> · <a href="https://github.com/zackboll/opencv_core_ada/blob/main/docs/documentation.md">Building and Contributing</a></p>
+<p>This guide is published as HTML on the documentation site and maintained as
+Markdown in the source repository. The public Ada specifications are authoritative for exact profiles
+and per-overload restrictions. Examples below include both complete programs
+and fragments intended for the surrounding application.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#reusable-paired-polar-destinations">Reusable paired polar destinations</a></li>
+<li><a href="#public-api-overview">Public API overview</a></li>
+<li><a href="#conversion-and-element-wise-mathematics">Conversion and element-wise mathematics</a></li>
+<li><a href="#arithmetic">Arithmetic</a>, <a href="#masks-and-selection">masks</a> and <a href="#bitwise-operations">bitwise operations</a></li>
+<li><a href="#linear-algebra-and-decomposition">Linear algebra and decomposition</a></li>
+<li><a href="#spectral-transforms">Spectral transforms</a></li>
+<li><a href="#random-numbers-clustering-and-nearest-neighbors">Random numbers, clustering, and nearest neighbors</a></li>
+<li>Related: <a href="ownership-and-views.html">ownership and overlap context</a></li>
+</ul>
+<h2 id="reusable-paired-polar-destinations">Reusable paired polar destinations</h2>
+<p>The allocation-returning polar functions remain available. Six procedure
+overloads write two actual caller-owned destinations, for both <code>Mat</code> and
+<code>UMat</code>, including angle-only <code>Polar_To_Cart</code>:</p>
+<pre><code class="language-ada">Cart_To_Polar
+  (X         =&gt; Horizontal,
+   Y         =&gt; Vertical,
+   Magnitude =&gt; Existing_Magnitude,
+   Angle     =&gt; Existing_Angle,
+   Units     =&gt; Radians);
+
+Polar_To_Cart
+  (Magnitude =&gt; Existing_Magnitude,
+   Angle     =&gt; Existing_Angle,
+   X         =&gt; Horizontal,
+   Y         =&gt; Vertical,
+   Units     =&gt; Radians);
+
+Polar_To_Cart (Existing_Angle, Horizontal, Vertical, Degrees);
+</code></pre>
+<p>Each transform uses the existing single native transform helper, not separate
+Magnitude/Phase or trigonometric operations. Compatible whole outputs and
+Regions keep their storage and shallow aliases. Each output with mismatched
+shape, depth, or channels detaches independently; old Parents and retained
+aliases remain alive. Cart_To_Polar follows X's layout; Polar_To_Cart follows
+Angle's. Destination layout need not be prevalidated or preallocated.</p>
+<p>Both outputs must be distinct native objects, and neither may be exactly
+either source. These portable identity restrictions are checked before native
+execution on every supported version. Input/input identity remains permitted.
+Distinct headers sharing overlapping storage and arbitrary partial Region
+overlap are unsupported. Disjoint output Regions of one Parent are supported:
+distinct headers retain their offsets and row steps, and writes to either
+output do not affect the other or the intervening guards. This does not permit
+source/output storage overlap or partially overlapping output Regions.
+Temporary external or selected Mat views are permitted as sources under the
+existing validators, but prohibited in either output position. Preflight
+rejection preserves both outputs; native exceptions do not promise two-output
+rollback. No hidden source/output copies support forbidden aliases.</p>
+<p>Empty Magnitude (default or typed) means unit magnitude. The angle-only
+procedure forwards a default-empty Magnitude to the two-input procedure.
+The existing pre-4.10 Float64 correction still performs native Float32
+coordinates followed by numeric Float64 conversion into the destinations.
+Cart_To_Polar retains matching Float32/Float64 2-D inputs. Polar_To_Cart
+retains its existing N-D Angle support with empty Magnitude and its matching
+2-D policy for nonempty Magnitude. Default-empty Angle is rejected;
+typed-empty Angle remains accepted. Empty outputs follow the shared helpers'
+native metadata behavior, with direct UMat observation rather than transfers.</p>
+<p>Radians remain default; Degrees is explicit. Fast angles retain approximately
+0.3-degree accuracy and do not imply a strict half-open turn interval.
+Coordinates retain native approximations, not libc bit-pattern guarantees.
+UMat production inputs and outputs remain UMat, without new host staging;
+OpenCL availability and actual kernel execution depend on the native runtime.</p>
+<h2 id="public-api-overview">Public API overview</h2>
+<p>The following is a practical overview of the current public surface. Exact
+shape, depth, channel, continuity, and numerical restrictions are documented on
+the Ada declarations and covered by tests.</p>
+<h3 id="core-types">Core types</h3>
+<p>Major public abstractions include:</p>
+<ul>
+<li><code>OpenCV.Core.Mat</code>, <code>Mat_Type</code>, <code>Depth_Type</code>, <code>Channel_Count</code>, <code>Mat_Size</code></li>
+<li><code>OpenCV.Size</code>, <code>OpenCV.Point</code>, <code>OpenCV.Point_Array</code>, <code>OpenCV.Rect</code>, <code>OpenCV.Scalar</code></li>
+<li><code>OpenCV.Point_3D</code>, <code>OpenCV.Point_3D_Array</code>, <code>OpenCV.Float32_Point_3D</code>,
+<code>OpenCV.Float32_Point_3D_Array</code></li>
+<li><code>Index_Range</code>, <code>Index_Range_Array</code></li>
+<li><code>Float16_Value</code></li>
+<li><code>Mat_Array</code></li>
+<li><code>Random_Number_Generator</code></li>
+<li><code>Min_Max_Result</code>, <code>Mean_Std_Dev_Result</code>, <code>Range_Check_Result</code></li>
+<li><code>Inversion_Result</code>, <code>Solve_Result</code>, <code>Linear_Program_Result</code></li>
+<li><code>Polar_Coordinates</code>, <code>Cartesian_Coordinates</code></li>
+<li><code>Covariance_Result</code>, <code>Eigen_Decomposition_Result</code></li>
+<li><code>Principal_Component_Analysis_Result</code></li>
+<li><code>Linear_Discriminant_Analysis_Result</code></li>
+<li><code>Singular_Value_Decomposition_Result</code></li>
+<li><code>K_Means_Result</code>, <code>Nearest_Neighbor_Result</code></li>
+<li>cubic and polynomial solution result types</li>
+<li>channel routing records and arrays.</li>
+</ul>
+<p>The public depth enumeration contains:</p>
+<pre><code class="language-text">UInt8
+Int8
+UInt16
+Int16
+Int32
+Float32
+Float64
+Float16
+</code></pre>
+<p><code>Float16_Value</code> is a private 16-bit type for the exact IEEE-754 binary16
+encoding used by OpenCV <code>CV_16F</code>. <code>Float16_From_Bits</code> / <code>Float16_Bits</code> preserve
+every pattern, including signed zeros, subnormals, infinities, and NaN
+payloads. Classification helpers inspect those stored bits. <code>To_Float16</code> /
+<code>To_Float32</code> convert numerically between binary16 and binary32 using
+round-to-nearest, ties-to-even. <code>OpenCV.Core.Float16_Access</code> provides scalar
+C1 2-D and N-D Get/Set that store and load the exact encoding. Copied row
+access, borrowed row access, whole-buffer borrowing, and packed or row-strided
+external Mat views are available for Float16 C1, C2, C3, and C4. <code>Add</code>, <code>Subtract</code>,
+<code>Multiply</code>, <code>Divide</code>, <code>Abs_Diff</code>, <code>Minimum</code>, <code>Maximum</code>, <code>Add_Weighted</code>, and
+<code>Scale_Add</code> accept Float16 Mats
+and return Float16; they use native OpenCV FP16 arithmetic where the supported
+OpenCV version implements a conforming operation and an internal Float32
+compatibility path otherwise. Storage
+and access bit preservation is distinct from arithmetic numeric semantics.
+This does not imply broad Float16 coverage of every Core algorithm.</p>
+<h3 id="creation-shape-metadata-and-views">Creation, shape, metadata, and views</h3>
+<p>Creation and structure:</p>
+<ul>
+<li><code>Create</code></li>
+<li><code>Clone</code></li>
+<li><code>Copy_To</code></li>
+<li>masked <code>Copy_To</code></li>
+<li><code>Region</code></li>
+<li><code>Row_View</code></li>
+<li><code>Column_View</code></li>
+<li>range views</li>
+<li><code>Slice</code></li>
+<li><code>With_Selected_View</code> (callback-scoped dimension-dropping N-D selection)</li>
+<li><code>Reshape</code>, including the existing 2-D overloads and Shape-based N-D overloads</li>
+<li><code>Diagonal_View</code></li>
+<li><code>Diagonal_Matrix</code></li>
+</ul>
+<p>Metadata:</p>
+<ul>
+<li><code>Is_Empty</code></li>
+<li><code>Rows</code></li>
+<li><code>Columns</code></li>
+<li><code>Dimensions</code></li>
+<li><code>Dimension_Count</code></li>
+<li><code>Extent</code></li>
+<li><code>Shape</code></li>
+<li><code>Channels</code></li>
+<li><code>Depth</code></li>
+<li><code>Total</code></li>
+<li><code>Element_Size</code></li>
+<li><code>Channel_Size</code></li>
+<li><code>Is_Continuous</code></li>
+<li><code>Is_Submatrix</code></li>
+</ul>
+<p><code>Index_Range</code> is half-open:</p>
+<pre><code class="language-text">Start &lt;= index &lt; Stop
+</code></pre>
+<p>Continuous genuine N-D Mats, including continuous N-D <code>Slice</code> views, can also
+be borrowed as one flat typed array through every <code>*_Buffer_Access</code> package;
+the final dimension varies fastest. A gapped Slice (for example one that
+restricts a middle axis while keeping several outer blocks) is rejected
+before the callback runs.</p>
+<p><code>Dimensions</code> is the 2-D <code>Size</code> view: width is <code>Columns</code> and height is <code>Rows</code>.
+<code>Shape</code> is the all-dimensional counterpart. It returns every extent in Mat
+dimension order, indexed <code>1 .. Dimension_Count</code>. A default Mat returns a null
+array. A typed empty <code>0 x 0</code> Mat returns two zero extents. A normal 2-D Mat
+returns <code>(Rows, Columns)</code>. A genuine N-D Mat reports <code>Extent</code> for every axis
+rather than <code>Rows</code> or <code>Columns</code>.</p>
+<p>Shape-based reshape creates another header over the same storage:</p>
+<pre><code class="language-ada">Volume := Image.Reshape (Shape =&gt; (2, 3, 4));
+Pixels := Scalars.Reshape (Channels =&gt; 3, Shape =&gt; (2, 2, 3));
+</code></pre>
+<p>The <code>Dimension_Array</code> is read in Ada iteration order, regardless of its lower
+bound. Every target extent must be nonzero: this API does not expose OpenCV's
+zero-sentinel &quot;preserve this dimension&quot; convention. The target dimension count
+must be <code>2 .. 32</code> (on OpenCV 5.0, at most its native 10-dimension capacity;
+longer targets raise <code>OpenCV_Error</code> before native reshape). The scalar count,
+including channels, must stay identical,
+and depth is unchanged. Shape-based reshape requires continuous storage. The
+result shares storage; <code>Clone</code> creates independent storage. The existing
+<code>Reshape (Channels)</code> and <code>Reshape (Channels, Rows)</code> overloads are unchanged.</p>
+<h3 id="conversion-and-element-wise-mathematics">Conversion and element-wise mathematics</h3>
+<p>Mat and UMat provide both return-value and destination-taking conversions:</p>
+<pre><code class="language-ada">Result := Source.Convert_To
+  (Depth =&gt; OpenCV.Core.UInt8, Scale =&gt; 2.0, Offset =&gt; 3.0);
+Source.Convert_To
+  (Destination =&gt; Existing, Depth =&gt; OpenCV.Core.UInt8,
+   Scale =&gt; 2.0, Offset =&gt; 3.0);
+</code></pre>
+<p>The function returns independent storage. The procedure converts directly into
+<code>Existing</code>'s native header: compatible shape/type permits allocation reuse;
+incompatible shape/type triggers native reallocation. Nonempty results keep the
+source shape and channel count, selecting only the destination depth, and use
+OpenCV's <code>saturate_cast&lt;Depth&gt;(Source * Scale + Offset)</code> semantics. Genuine N-D
+arrays are supported, and Float16 follows the existing native conversion policy.</p>
+<p>A compatible destination <code>Region</code> remains attached to its original parent:
+conversion modifies only the selected pixels, visible through the parent and
+other shallow aliases, leaving surrounding guard pixels untouched. This is
+verified by parent/alias pixel tests, not inferred from <code>Is_Submatrix</code>. If native
+reallocation is required, an incompatible Region can detach; its old parent and
+other headers keep their original allocation and pixels. Exact self-conversion,
+including a depth change, is supported. Same-layout shallow aliases follow
+native sharing; arbitrary partially overlapping views are not supported.</p>
+<p>Temporary callback-scoped external/selected Mat views are permitted as sources,
+but rejected as destinations with <code>OpenCV_Error</code>, independently enforced by the
+raw ABI. Null handles, invalid raw depth identifiers, and temporary destinations
+are rejected before native mutation and leave existing destination data/header
+unchanged. No failure-atomicity guarantee is made for exceptions after native
+conversion begins. UMat conversion uses native UMat destinations without any
+binding-side host mapping or staging; OpenCV may itself choose CPU fallback.</p>
+<p>Empty sources produce empty destinations, but metadata deliberately follows
+the installed OpenCV: 4.1/4.6/4.10 release storage while retaining destination
+type metadata; 5.0 recreates empty metadata. In 5.0 Mat retains source channels,
+whereas the native empty UMat depth-only path creates one channel. See
+<a href="https://github.com/zackboll/opencv_core_ada/blob/main/tests/probes/convert_destination_source_findings.md"><code>tests/probes/convert_destination_source_findings.md</code></a>
+for exact-tag source references and the isolated probe results.</p>
+<p>Conversion/mapping:</p>
+<ul>
+<li><code>Convert_To</code></li>
+<li><code>Convert_Scale_Abs</code></li>
+<li><code>Apply_LUT</code></li>
+<li><code>Normalize</code></li>
+</ul>
+<p>Element-wise mathematics and coordinate conversion:</p>
+<ul>
+<li><code>Sqrt</code></li>
+<li><code>Exp</code></li>
+<li><code>Log</code></li>
+<li><code>Pow</code></li>
+<li><code>Magnitude</code></li>
+<li><code>Phase</code></li>
+<li><code>Cart_To_Polar</code></li>
+<li><code>Polar_To_Cart</code></li>
+</ul>
+<h3 id="reusable-magnitude-and-phase-destinations">Reusable Magnitude and Phase destinations</h3>
+<p>Both Mat and UMat retain their allocation-returning functions and also accept
+an actual caller-owned output:</p>
+<pre><code class="language-ada">Magnitude
+  (X           =&gt; Horizontal,
+   Y           =&gt; Vertical,
+   Destination =&gt; Existing);
+
+Phase
+  (X           =&gt; Horizontal,
+   Y           =&gt; Vertical,
+   Destination =&gt; Existing,
+   Units       =&gt; Degrees);
+</code></pre>
+<p>Compatible whole and Region destinations retain their storage and geometry;
+shallow aliases observe the writes. A mismatched shape, depth, or channel count
+detaches the destination through native output creation, leaving old Parent
+storage and retained aliases intact. No temporary result/copy-back is used.</p>
+<p>Sources must have matching 2-D layout, Float32 or Float64 depth, and channel
+count. Channels are computed independently. Genuine N-D and default-empty
+sources are rejected before destination mutation. Matching typed-empty sources
+retain existing native Mat empty behavior and the source-typed UMat empty
+compatibility helper; empty metadata is not a universal cross-version release
+contract. Query UMat metadata directly rather than through an empty transfer.</p>
+<p>Magnitude preserves native <code>sqrt(X*X + Y*Y)</code> precision/overflow behavior.
+Phase computes native <code>atan2(Y, X)</code> angles with approximately 0.3-degree
+accuracy; omitted units mean Radians. Degrees may be selected explicitly.
+Use angular wraparound distance near the full-turn boundary rather than a
+strict half-open interval or exact mathematical bit comparisons. Special
+floating values retain native backend behavior, without normalization.</p>
+<p>Exact X/Y destination aliases and distinct shallow source aliases are
+supported, including X=Y. Arbitrarily partially overlapping Regions are not
+supported. Temporary external/selected Mat sources are legal, but temporary
+Mat destinations are prohibited because native output creation can release or
+rebind callback-scoped storage. UMat stays native at the binding boundary;
+OpenCV may choose CPU fallback without binding-level host staging.</p>
+<h3 id="arithmetic">Arithmetic</h3>
+<p>Explicit Mat/Mat operations include:</p>
+<ul>
+<li><code>Add</code></li>
+<li><code>Subtract</code></li>
+<li><code>Multiply</code> — element-wise</li>
+<li><code>Divide</code> — element-wise</li>
+<li><code>Abs_Diff</code></li>
+<li><code>Minimum</code></li>
+<li><code>Maximum</code></li>
+<li><code>Add_Weighted</code></li>
+<li><code>Scale_Add</code></li>
+</ul>
+<p><code>Mat</code> and <code>UMat</code> support both allocation-returning and destination-taking
+<code>Add</code> / <code>Subtract</code> / <code>Multiply</code> / <code>Divide</code> / <code>Abs_Diff</code> / <code>Minimum</code> / <code>Maximum</code>
+forms. All require matching <strong>2-D</strong>
+operands (shape, depth, and channels); Destination does not participate in
+validation.</p>
+<pre><code class="language-ada">Result := Add (A, B);
+Result := Subtract (A, B);
+Result := Multiply (A, B);
+Result := Divide (A, B);
+Result := Abs_Diff (A, B);
+Low  := Minimum (A, B);
+High := Maximum (A, B);
+
+Add
+  (Left        =&gt; A,
+   Right       =&gt; B,
+   Destination =&gt; Existing);
+Subtract
+  (Left        =&gt; A,
+   Right       =&gt; B,
+   Destination =&gt; Existing);
+Multiply
+  (Left        =&gt; A,
+   Right       =&gt; B,
+   Destination =&gt; Existing);
+Divide
+  (Left        =&gt; A,
+   Right       =&gt; B,
+   Destination =&gt; Existing);
+Abs_Diff
+  (Left        =&gt; A,
+   Right       =&gt; B,
+   Destination =&gt; Existing);
+</code></pre>
+<p>Functions retain their independent-result contract. Procedures pass the
+caller's actual native destination header to arithmetic, reusing compatible
+whole storage or an interior <code>Region</code>: its parent/geometry and preexisting
+shallow aliases remain attached, and outside parent pixels remain unchanged.
+An incompatible shape, depth, or channel count permits native reallocation;
+a Region may detach while its old aliases/parent retain their storage.</p>
+<p>Destination may be Left or Right, or a distinct same-layout shallow alias of
+either, including order-sensitive <code>Subtract (A, B, B)</code> computing <code>A - old(B)</code>.
+Operands may themselves share the same layout/storage: <code>A + A</code>, <code>A - A</code>, and
+<code>A * A</code> retain native numeric semantics. Arbitrarily partially overlapping Regions
+are <strong>not supported</strong>. Temporary external/selected Mat views are allowed as
+sources, but never as destinations, even with compatible shape/type.
+Operand/capability validation occurs before mutation; arbitrary post-native
+failure atomicity is not promised. Integer saturation remains native (UInt8
+and Int16 saturate; Int32 does not saturate and overflow may change sign).</p>
+<p>Float16 follows the existing function policy: Float32 widening on OpenCV 4.x,
+native half arithmetic on 5.x. The 4.x final narrowing writes into the actual
+destination and can reuse compatible half whole/Region storage. No extra half
+compatibility layer or cross-architecture bitwise guarantee is introduced.
+UMat arithmetic remains UMat-native at the binding boundary; OpenCV chooses
+OpenCL execution or CPU fallback, not necessarily GPU residency/execution.</p>
+<p>Reusable elementwise extrema are available for both Mat and UMat:</p>
+<pre><code class="language-ada">Minimum
+  (Left        =&gt; A,
+   Right       =&gt; B,
+   Destination =&gt; Existing_Low);
+
+Maximum
+  (Left        =&gt; A,
+   Right       =&gt; B,
+   Destination =&gt; Existing_High);
+</code></pre>
+<p>These pass the actual native Destination to the unchanged <code>dense_min_max</code>
+helper. Compatible whole/Region storage is reused, preserving shallow aliases
+and parent geometry; shape/depth/channel mismatches can reallocate/detach the
+destination without changing the old parent or its aliases. Destination may be
+Left or Right or an exact same-layout shallow alias of either; operands may
+alias each other. Arbitrary partially overlapping Regions are unsupported.
+The public contract remains matching <strong>2-D</strong> operands, with Destination excluded
+from operand validation. Temporary external/selected Mat views remain valid
+sources but cannot be destinations. Pre-native rejection preserves Destination;
+arbitrary post-native failure atomicity is not promised.</p>
+<p>Integer extrema are direct, channel-independent element selection, without
+arithmetic overflow or saturation (including Int16 and Int32 extrema). Ordinary
+finite values retain numerical correctness in place. Floating NaN and
+signed-zero selection follows native OpenCV, <strong>not IEEE <code>fmin</code>/<code>fmax</code></strong>: neither
+unconditional NaN propagation nor bitwise commutativity/payload identity is
+promised. Independent destinations match the allocation-returning functions.
+Exact/shallow aliases instead retain native aliased-output behavior. In OpenCV
+5.0, fresh outputs can use a final SIMD block where exact aliases use a scalar
+tail; this can change NaN classification or zero sign at affected tail positions.
+This is native behavior, not a binding-created discrepancy or a memory-safety
+defect. The tested 4.1/4.6/4.10 CPU builds retained fresh/alias parity in these
+cases; that observation is not imposed on other versions/backends/architectures.</p>
+<p>Float16 policy is unchanged: 4.x widens both operands to Float32 Dense and
+narrows into the actual half Destination (reusing compatible whole/Region
+storage); 5.0 uses native half min/max, including its native alias/tail boundary.
+No normalization, copy-back or defensive preallocation is added. UMat remains
+native at the binding boundary, including Dense half intermediates; OpenCV may
+fall back internally to CPU, and GPU execution is not guaranteed. Empty output
+metadata remains native/version-specific. The existing helper avoids the known
+default-empty Mat and typed-empty UMat/OpenCL hazards. See
+<a href="https://github.com/zackboll/opencv_core_ada/blob/main/tests/probes/min_max_destination_source_findings.md"><code>tests/probes/min_max_destination_source_findings.md</code></a>
+for the exact four-version source audit and actual-helper evidence.</p>
+<p><code>Abs_Diff</code> passes the actual destination to the unchanged <code>dense_abs_diff</code>
+helper. Compatible whole/Region storage is reused; mismatched shape, depth or
+channels may detach/reallocate without changing the old parent or aliases.
+Destination may be Left or Right, including distinct same-layout shallow
+aliases; arbitrary partially overlapping Regions are unsupported. Public
+operands remain matching <strong>2-D</strong> arrays, not scalars or N-D arithmetic.
+UInt8 differences do not wrap (<code>10</code> vs <code>200</code> gives <code>190</code>), channels are
+independent, and Int16 saturates (<code>-32768</code> vs <code>0</code> gives <code>32767</code>). Int32 overflow
+has no saturation guarantee and may yield negative native values; the binding
+does not normalize it. Ordinary finite/integer <code>Abs_Diff (A, A)</code> is zero, but
+equal infinities and NaNs produce native NaNs. Finite vs either infinity gives
+positive infinity; NaN operands propagate NaN classification, without payload
+preservation promises. Signed-zero pairs produced positive zero in the exact
+four-version CPU matrix; no stronger architecture-independent bit contract is
+introduced. Float16 policy is unchanged (4.x Float32 widening/final narrowing
+into the actual destination; 5.0 native half), and UMat stays native at the
+binding boundary. Typed/default Mat empty order differs on 4.x, whereas 5.0
+Mat releases early; the established UMat typed-empty compatibility path remains
+unchanged. OpenCV 5's same-width scalar helper cannot introduce an old-output
+write-width mismatch here, so no preallocation correction was added. See
+<a href="https://github.com/zackboll/opencv_core_ada/blob/main/tests/probes/abs_diff_destination_source_findings.md"><code>tests/probes/abs_diff_destination_source_findings.md</code></a>
+for exact-tag paths, empty metadata, alias boundaries, and actual-helper probes.</p>
+<p><code>Divide</code> passes the actual destination to the unchanged division compatibility
+helper. <code>Divide (A, B, A)</code> and <code>Divide (A, B, B)</code> are supported: the latter still
+computes <strong>old Left / old Right</strong>, including exact-layout shallow aliases.
+Partial overlap is unsupported. Scale remains 1.0 and output preserves operand
+depth. Zero denominators are <strong>not invalid</strong>: native integer storage returns
+zero; Float32/Float64 preserve infinity/NaN, including the denominator zero sign
+where native execution preserves it. Integer quotients use OpenCV conversion/
+rounding, not Ada integer <code>/</code> (for example UInt8 <code>7 / 2 = 4</code>). <code>A / A</code> is one
+only for ordinary nonzero finite inputs: integer <code>0 / 0</code> is zero and ordinary
+floating <code>0 / 0</code> is NaN. Float16 policy is unchanged and procedure results match
+the existing function under the same build; no NaN payload guarantee is added.
+OpenCV 5.0 typed-empty Mat division releases the destination, unlike ordinary
+4.x typed-empty Mat creation; the existing UMat empty helper remains unchanged.
+No Divide old-destination-depth selector or preallocation correction exists.
+See <a href="https://github.com/zackboll/opencv_core_ada/blob/main/tests/probes/divide_destination_source_findings.md"><code>tests/probes/divide_destination_source_findings.md</code></a>
+for the four exact-tag source audit, empty metadata, and actual-helper probe.</p>
+<p>Accepted empty operands release destination storage or create typed-empty
+headers through the established native/helper path. Old aliases keep their
+allocation. Release retains the old destination depth/channels, unlike a
+fresh return-value result; 4.x release retains zeroed dimensional extents,
+whereas 5.0 clears dimensionality. Typed-empty UMat outputs retain operand
+type/2-D shape through the existing helper; typed-empty Mat outputs differ
+between 4.x and 5.0. See the exact-version table and source/probe evidence in
+<a href="https://github.com/zackboll/opencv_core_ada/blob/main/tests/probes/add_subtract_destination_source_findings.md"><code>tests/probes/add_subtract_destination_source_findings.md</code></a>.</p>
+<p><code>Multiply</code> uses the existing multiplication helper with the actual destination,
+including its empty and Float16 compatibility paths. Exact <code>Multiply (A, B, A)</code>
+and <code>Multiply (A, B, B)</code>, same-layout shallow aliases of either operand, and
+<code>Multiply (A, A, A)</code> are supported; arbitrary partial Region overlap is not.
+UInt8 products saturate (<code>20 * 20 = 255</code>), signed Int16 products saturate at both
+limits, and Int32 retains OpenCV's non-saturating contract; no binding overflow
+policy is added. Scale remains 1.0 and output depth remains the operand depth.
+Multiply's typed-empty Mat path retains operand type/2-D shape except Float16
+on 4.x (release); typed-empty UMat retains operand metadata. Default/mixed Mat
+empties release output, whereas mixed UMat empties take the typed operand's
+metadata. Release preserves old destination depth/channels and old aliases;
+the released shape is zeroed 2-D on 4.x and dimensionless on 5.0.
+Native HAL configuration can also reject typed-empty Mat multiplication:
+OpenCV 5.0's KleidiCV <code>mul8u</code> does so on macOS ARM64. Both forms preserve the
+translated <code>OpenCV_Error</code>; the procedure may have created typed-empty output
+before that native failure. No cross-platform empty normalization is added.
+The helper narrowly corrects the old UInt16/Int16 destination layout before
+byte multiplication on OpenCV 4.10+/5.x, preventing an extended HAL kernel from
+writing 16-bit values into recreated byte storage. Compatible destinations,
+fresh results, and empty operands are unaffected. See
+<a href="https://github.com/zackboll/opencv_core_ada/blob/main/tests/probes/multiply_destination_source_findings.md"><code>tests/probes/multiply_destination_source_findings.md</code></a>
+for the exact four-version source audit, native-call layout probe, and empty
+metadata table. No guaranteed GPU execution or cross-platform Float16 bit
+identity is implied.</p>
+<p><code>Add</code>, <code>Subtract</code>, <code>Multiply</code>, <code>Divide</code>, <code>Abs_Diff</code>, <code>Minimum</code>, and <code>Maximum</code>
+accept Float16 operands with the same shape, depth, and channel-count
+compatibility rules as the other public depths. The result is always Float16;
+the public result type does not change on older OpenCV releases. Finite results
+for <code>Add</code>, <code>Subtract</code>, <code>Multiply</code>, <code>Divide</code>, and <code>Abs_Diff</code> are defined as</p>
+<pre><code class="language-text">To_Float16 (To_Float32 (Left) +/- To_Float32 (Right))
+To_Float16 (To_Float32 (Left) * To_Float32 (Right))
+To_Float16 (To_Float32 (Left) / To_Float32 (Right))
+To_Float16 (abs (To_Float32 (Left) - To_Float32 (Right)))
+</code></pre>
+<p>with a nonzero finite denominator required for Divide. OpenCV 5.x native
+<code>CV_16F</code> paths for these operations are used only while they satisfy this
+established Float32-to-Float16 result model. OpenCV 4.1, 4.6, and 4.10 expose
+Float16 storage and <code>convertTo</code> but do not implement these arithmetic kernels,
+so the binding widens internally to Float32, performs the operation, and
+narrows back to Float16. That fallback exists only for compatibility.</p>
+<h3 id="reusable-weighted-arithmetic-destinations">Reusable weighted arithmetic destinations</h3>
+<h3 id="reusable-comparison-and-scalar-range-masks">Reusable comparison and scalar-range masks</h3>
+<p>Both <code>Mat</code> and <code>UMat</code> retain their allocation-returning <code>Compare</code> and
+scalar-bounded <code>In_Range</code> functions and also provide reusable destinations:</p>
+<pre><code class="language-ada">Compare
+  (Left        =&gt; A,
+   Right       =&gt; B,
+   Kind        =&gt; Greater_Than,
+   Destination =&gt; Mask);
+
+In_Range
+  (Self        =&gt; Image,
+   Lower       =&gt; Make_Scalar (10.0, 20.0, 30.0),
+   Upper       =&gt; Make_Scalar (50.0, 60.0, 70.0),
+   Destination =&gt; Mask);
+</code></pre>
+<p>Successful nonempty outputs always have source shape and <strong>UInt8 C1</strong> type,
+with bytes exactly <strong>0 or 255</strong>. Compatible whole outputs and interior Regions
+reuse storage: retained shallow aliases and the Parent see mask writes, and
+later writes remain reciprocal. Shape, depth or channel mismatches cause native
+reallocation/detachment of Destination only; the old Parent and aliases retain
+their old storage. The binding passes the actual native Destination, without
+hidden preallocation, temporary output/copy-back or overlap copies.</p>
+<p>Compare retains its existing <strong>single-channel</strong>, identical Rows/Columns/Depth
+policy and all six comparison kinds. Genuine N-D operands are rejected through
+the existing Rows/Columns validation before Destination mutation. Scalar-bounded
+In_Range accepts at most four source channels and supports genuine <strong>N-D</strong>
+sources, including <code>(2, 3, 5)</code> Mat/UMat. Both bounds are inclusive. An element is
+selected only when <strong>every</strong> source channel satisfies its own scalar bounds.
+Bounds undergo native source-depth conversion: for example, integer sources
+with bounds 1.2 and 2.8 use rounded bounds 1 and 3, not mathematical ceiling and
+floor. Floating comparisons, NaN, infinities and signed zero follow the same-build
+native/function behavior; no replacement NaN policy is imposed.
+For example, some native CPU builds produce different NaN <code>Not_Equal</code> bytes
+in vector lanes and the scalar tail; masks still contain only exact 0/255.</p>
+<p>For both functions and procedures, <strong>Float16 requires OpenCV 5.0 or newer</strong>.
+On supported OpenCV 4.x, shared production helpers reject Float16 with a
+controlled OpenCV/Ada error before native output creation, because the CPU
+dispatch tables lack half kernels and some paths call a null function pointer.
+This applies regardless of OpenCL availability and preserves Destination on
+that failure. OpenCV 5 uses native half kernels. There is no Float32 compatibility
+conversion or binding-level host staging.</p>
+<p>Mat Compare supports exact Left/Right destinations and same-layout shallow
+aliases. UMat Compare supports UInt8 C1 exact aliases and distinct same-layout
+shallow aliases; <strong>exact depth-changing UMat source/Destination aliases are
+rejected for ABI safety</strong> before native execution, raising <code>OpenCV_Error</code> and
+preserving both sources and retained aliases. Native CPU mapping ownership
+assertions and OpenCL source-acquisition order make those cases unsafe.
+<strong>Exact UMat In_Range Self/Destination aliases are rejected for ABI safety</strong>
+regardless of OpenCL state. Other shared-storage In_Range aliases, and Mat
+In_Range source/Destination aliases, remain outside the supported contract;
+Mat behavior is unchanged. Only native object/header address identity is checked,
+not UMatData/refcounts or generalized shared-storage overlap. Arbitrary
+partially overlapping Regions are unsupported for both operations. Use a
+separate output when these restrictions apply; no overlap detection is added.</p>
+<p>Compatible both-empty Compare operands release Destination. Release metadata
+follows native OpenCV and the old output, rather than a fresh function result:
+4.x retains rank with zero extents; 5.0 clears rank/shape. Old depth/channels
+remain, and old aliases survive. Empty In_Range raises <code>OpenCV_Error</code> and leaves
+Destination unchanged. Temporary external/selected Mat inputs are legal, but
+temporary Destinations are rejected independently in Ada and the raw ABI,
+even when their layout already matches. Null/enum/capability rejection is
+pre-native; arbitrary failures after native execution starts are not promised
+atomic. UMat paths stay UMat-native at the boundary; OpenCV can internally fall
+back to CPU (including N-D iteration). OpenCL enabled is not proof of GPU
+execution. See <a href="https://github.com/zackboll/opencv_core_ada/blob/main/tests/probes/mask_destination_source_findings.md">exact source and helper findings</a>.</p>
+<p>Both Mat and UMat retain allocation-returning weighted functions with
+independent result storage, and also provide direct destination procedures:</p>
+<pre><code class="language-ada">Weighted := Add_Weighted (Left, 0.75, Right, 0.25, Gamma =&gt; 2.0);
+Add_Weighted
+  (Left        =&gt; Left,
+   Alpha       =&gt; 0.75,
+   Right       =&gt; Right,
+   Beta        =&gt; 0.25,
+   Destination =&gt; Existing,
+   Gamma       =&gt; 2.0);
+
+Scaled := Scale_Add (A, 1.5, B);
+Scale_Add
+  (Self        =&gt; A,
+   Scale       =&gt; 1.5,
+   Right       =&gt; B,
+   Destination =&gt; Existing);
+</code></pre>
+<p>Gamma stays last/defaulted. <code>Add_Weighted</code> accepts identical N-D source shape,
+depth and channels; <code>Scale_Add</code> intentionally requires matching 2-D sources.
+Destination is not an operand: incompatible shape, depth or channels reallocate
+or detach it. Compatible whole storage and interior Regions are reused, including
+the final Float16 compatibility narrowing, so retained aliases see writes and
+Regions stay attached to their Parent. Old aliases retain old storage after
+detachment. Exact Left/Self/Right and distinct same-layout shallow aliases are
+supported, using the old operand values. Operands may share storage with each
+other. Arbitrary partially overlapping Regions are <strong>unsupported</strong>; there is no
+overlap detection or hidden temporary-result/copy-back.</p>
+<p>Independent compatible output follows the allocation-returning function's
+same-build numerical contract. Floating alias rounding follows direct native
+execution: specifically, OpenCV 5.0 weighted Float32 kernels can use an overlapping
+SIMD last block for fresh output but a scalar tail for aliases, exposing FMA/order
+rounding differences at width 257. This does not relax ordinary integer exactness
+or floating numerical correctness. NaN payload identity, universal signed-zero
+identity, cross-architecture bits and fused/non-fused equivalence are not promised.</p>
+<p>Coefficients are passed as double without added finiteness checks. Generic CPU
+weighted UInt8/Int16 kernels narrow coefficients to Float32; the generic Int32
+fallback uses double work/coefficient precision, but a platform HAL can preempt
+that fallback with different native precision. On 4.x weighted Float32 CPU
+scalar tails use double coefficients while SIMD lanes use Float32;
+5.0 narrows Float32 coefficients on both
+paths. Float64 retains double. OpenCL arithmetic narrows scalars whenever its work
+depth is Float32 (including integer weighted work); double work retains double.
+Scale_Add narrows Scale for Float32, retains double for Float64, and delegates
+integer CPU arithmetic to addWeighted. UInt8 and Int16 saturate; Int32 has <strong>no
+overflow/saturation promise</strong>. OpenCL Float32 work and platform CPU backends can
+round large Int32 values differently from the generic double fallback. Native
+backend behavior is authoritative for function and destination forms, rather
+than normalized by the binding. Disabling OpenCL does not force generic CPU
+execution or disable CPU HALs. Exact integer observations use typed access,
+not Float64 conversion; portable exact mathematics is tested separately from
+deliberately precision-sensitive large-integer native parity.</p>
+<p>Temporary external/selected Mat views may be sources, but cannot be Destination:
+native output creation/rebinding could sever their callback-scoped capability.
+Source-validation and raw null/capability failures preserve output; arbitrary
+post-native failure atomicity is not promised. Empty output metadata follows the
+existing helper, version and argument order, not normalization: weighted mixed
+default/typed empties are rejected by rank validation, whereas scale-add accepts
+the compatible UInt8 mixes. UMat stays UMat-native at the binding boundary,
+including Float16 intermediates; OpenCV may fall back to CPU. No GPU execution is
+claimed. See <a href="https://github.com/zackboll/opencv_core_ada/blob/main/tests/probes/weighted_destination_source_findings.md">exact source and probe findings</a>.</p>
+<p><code>Add_Weighted</code> accepts Float16 operands with the same shape, depth, and
+channel-count compatibility rules as the other public depths. Its result is
+always Float16. On OpenCV 4.1, 4.6, and 4.10, the binding widens Float16
+operands to Float32, executes OpenCV's optimized Float32 <code>addWeighted</code> with
+the public <code>double</code> coefficients, and narrows once to Float16. On OpenCV 5.0,
+the binding uses native <code>CV_16F</code> <code>addWeighted</code> with those same public <code>double</code>
+coefficients. The optimized paths may use SIMD, fused multiply-add, differing
+vector widths, and scalar tails, so exact Float16 result bits may differ
+between OpenCV versions and platforms. NaN payload identity and signed-zero
+identity are not promised.</p>
+<p>For <code>Scale_Add</code>, OpenCV 4.1 through 5.0 expose dedicated CPU <code>scaleAdd</code>
+kernels only for Float32 and Float64, not Float16. Float16 <code>Scale_Add</code> is
+implemented by widening the operands to Float32, narrowing Scale to Float32,
+executing OpenCV's optimized Float32 <code>scaleAdd</code> operation, and narrowing the
+result back to Float16. Unlike <code>Add_Weighted</code>, this path preserves OpenCV's
+optimized SIMD and fused-multiply-add execution rather than imposing
+binding-controlled rounding. Numerical results therefore follow the OpenCV
+Float32 execution path and may exhibit platform- or SIMD-dependent last-bit
+differences after conversion to Float16. Exact Float16 bits are not promised
+to be independent of architecture, SIMD dispatch, or scalar-tail placement.
+This compatibility path is used across OpenCV 4.1-5.0 because those supported
+versions do not expose a <code>CV_16F</code> <code>scaleAdd</code> kernel. <code>Scale_Add</code> remains
+intentionally 2-D.
+For finite numerically unequal operands, <code>Minimum</code> and <code>Maximum</code> select the
+smaller or larger binary16 operand exactly. Their signed-zero, infinity, and
+NaN behavior follows the established Float32 <code>cv::min</code> / <code>cv::max</code> semantics
+through the compatibility model; they are not advertised as IEEE <code>fmin</code> or
+<code>fmax</code>. OpenCV 5.x uses native Float16 min/max only while it conforms to that
+model. This is an arithmetic semantic policy, distinct from Float16 storage and
+typed access, which preserve exact binary16 object bits including NaN payloads.
+Arithmetic does not promise NaN-payload preservation; it preserves numeric and
+classification behavior. This does not imply broad Float16 support for other
+Core algorithms.</p>
+<p>Algebraic multiplication is deliberately separate as <code>Matrix_Multiply</code>.</p>
+<h3 id="masks-and-selection">Masks and selection</h3>
+<p>Mask production and selection include:</p>
+<ul>
+<li><code>In_Range</code></li>
+<li><code>Compare</code></li>
+<li><code>Count_Non_Zero</code></li>
+<li><code>Has_Non_Zero</code></li>
+<li><code>Find_Non_Zero</code></li>
+</ul>
+<p>Masked consumers include:</p>
+<ul>
+<li><code>Copy_To</code></li>
+<li><code>Set_To</code></li>
+<li>bitwise operations</li>
+<li><code>Mean</code></li>
+<li><code>Mean_Std_Dev</code></li>
+<li><code>Norm</code></li>
+<li><code>Min_Max_Loc</code></li>
+</ul>
+<p>The common mask model is a same-shape UInt8 C1 Mat; any nonzero mask value
+selects the complete source element.</p>
+<h3 id="bitwise-operations">Bitwise operations</h3>
+<p>Available masked/unmasked families include:</p>
+<ul>
+<li><code>Bitwise_And</code></li>
+<li><code>Bitwise_Or</code></li>
+<li><code>Bitwise_Xor</code></li>
+<li><code>Bitwise_Not</code></li>
+</ul>
+<p>OpenCV's stored-bit interpretation is preserved for floating-point Mats.</p>
+<p>All four families also provide masked and unmasked reusable destination
+procedures for both <code>Mat</code> and <code>UMat</code>. Existing functions still allocate
+independent results:</p>
+<pre><code class="language-ada">Bitwise_Xor
+  (Left        =&gt; A,
+   Right       =&gt; B,
+   Destination =&gt; Existing);
+Bitwise_And
+  (Left        =&gt; A,
+   Right       =&gt; B,
+   Mask        =&gt; Selection,
+   Destination =&gt; Existing);
+</code></pre>
+<p><strong>Masked reuse preserves unselected values.</strong> With a compatible masked
+Destination, <code>mask == 0</code> preserves the exact old Destination element. If native
+output creation reallocates Destination, OpenCV initializes the new masked
+output to zero, so <code>mask == 0</code> produces zero there. This is intentionally not
+normalized to the allocation-returning function. An all-zero mask leaves a
+compatible destination unchanged, but produces zeros after reallocation and
+in the allocation-returning function. Every nonzero mask byte selects: <code>1</code>,
+<code>2</code>, <code>127</code>, and <code>255</code> all select the whole element, including all C3/C4 channels.</p>
+<p>Compatible whole matrices and Regions retain their storage, geometry and
+shallow aliases. Shape, depth or channel mismatches detach only Destination's
+header; the old Parent and aliases survive. Exact source/destination aliases
+and distinct shallow headers with the same storage/layout are supported for
+Left, Right and Not's Self, including masks; selected elements use old source
+bits and unselected elements retain old destination bits. Arbitrarily partially
+overlapping Regions are unsupported. Destination aliasing Mask is outside the
+supported alias contract; there are no overlap detection or hidden copies.</p>
+<p>Floating storage is treated as raw bits, including Float16 binary16 zeros,
+infinities and NaN payloads; this is not floating arithmetic. Unmasked Not
+retains genuine N-D capability. Binary And/Or/Xor retain matching 2-D operands;
+masked operations retain the existing matching 2-D UInt8 C1 mask boundary.
+Temporary external/selected Mat views are legal sources/masks, but never
+destinations, even if compatible. Ada validation and raw pre-native rejection
+leave destination unchanged; arbitrary post-native failure atomicity is not
+promised. Empty results preserve the existing helper/version representation
+boundary: release may retain the old destination type and (4.x) zero extents,
+while 5.0 release resets rank. Function and destination empty metadata need not
+be identical. UMat operations remain native at the binding boundary, without
+Mat mapping or staging; OpenCV itself may fall back to CPU.</p>
+<p>See <a href="https://github.com/zackboll/opencv_core_ada/blob/main/tests/probes/bitwise_destination_source_findings.md">exact source and helper-probe findings</a>.</p>
+<h3 id="channel-manipulation">Channel manipulation</h3>
+<p>Current channel operations include:</p>
+<ul>
+<li><code>Split</code></li>
+<li><code>Merge</code></li>
+<li><code>Extract_Channel</code></li>
+<li><code>Insert_Channel</code></li>
+<li><code>Mix_Channels</code></li>
+<li><code>Channel_Route</code></li>
+<li>explicit zero-fill routing</li>
+</ul>
+<p>Collection APIs respect Ada array iteration order instead of assuming lower
+bound zero.</p>
+<h3 id="layout-rearrangement-and-borders">Layout, rearrangement, and borders</h3>
+<p>Implemented operations include:</p>
+<ul>
+<li><code>Transpose</code></li>
+<li><code>Flip</code></li>
+<li><code>Rotate</code></li>
+<li><code>Repeat</code></li>
+<li><code>HConcat</code></li>
+<li><code>VConcat</code></li>
+<li><code>Diagonal_View</code></li>
+<li><code>Diagonal_Matrix</code></li>
+<li><code>Copy_Make_Border</code></li>
+<li><code>Border_Interpolate</code></li>
+</ul>
+<p>Border modes use strong Ada values rather than exposing OpenCV integer flags.
+<code>Border_Interpolate</code> returns an Ada discriminated result for constant-border
+coordinates instead of exposing OpenCV's <code>-1</code> sentinel.</p>
+<h3 id="sorting-reductions-and-statistics">Sorting, reductions, and statistics</h3>
+<p>Sorting:</p>
+<ul>
+<li><code>Sort</code></li>
+<li><code>Sort_Indices</code></li>
+</ul>
+<p>Scalar/statistical operations include:</p>
+<ul>
+<li><code>Sum</code></li>
+<li><code>Trace</code></li>
+<li><code>Mean</code></li>
+<li><code>Mean_Std_Dev</code></li>
+<li><code>Norm</code></li>
+<li><code>Min_Max_Loc</code></li>
+<li><code>Count_Non_Zero</code></li>
+<li><code>Has_Non_Zero</code></li>
+<li><code>Find_Non_Zero</code></li>
+<li><code>Dot_Product</code></li>
+<li><code>Mahalanobis_Distance</code></li>
+<li><code>Covariance</code></li>
+<li><code>Peak_Signal_To_Noise_Ratio</code></li>
+</ul>
+<p><code>Min_Max_Loc</code> remains the 2-D Point-based API (<code>X = column</code>, <code>Y = row</code>).
+<code>Min_Max_Indices</code> adds dense N-D extrema for non-empty C1 Mats of depth UInt8,
+Int8, UInt16, Int16, Int32, Float32, or Float64; Float16 is unsupported in the
+portable Ada API. Its <code>ND_Min_Max_Result</code> holds independent <code>Has_Minimum</code> and
+<code>Has_Maximum</code> flags and 32-entry locations. Coordinates are zero-based in
+<code>Shape</code> / <code>Extent</code> / <code>Index_Array</code> / <code>Slice</code> dimension order: for 2-D, entry 1
+is row and entry 2 is column. <code>Dimensions = Self.Dimension_Count</code>; only
+<code>1 .. Dimensions</code> location entries are meaningful, and unused entries are zero.
+Non-contiguous N-D Slices are supported with coordinates relative to the Slice.</p>
+<p>The masked overload requires UInt8 C1 and equality of the <strong>entire N-D shape</strong>;
+any nonzero mask element selects its corresponding dense element. An all-zero
+mask returns zero values/locations with both flags false. Unlike sparse extrema,
+all logical dense elements selected by the mask participate. Inputs and shallow
+aliases remain unchanged. Ordinary finite extrema are the portable guarantee;
+NaN/Infinity values and index validity follow native version/backend behavior,
+not mathematical normalization. See the
+<a href="https://github.com/zackboll/opencv_core_ada/blob/main/tests/probes/nd_min_max_source_findings.md">exact-version research note</a>.</p>
+<p>Axis reduction:</p>
+<ul>
+<li><code>Reduce</code> with Sum, Average, Maximum, Minimum, and Sum of Squares</li>
+<li>explicit output-depth overloads</li>
+<li><code>Arg_Minimum</code></li>
+<li><code>Arg_Maximum</code></li>
+<li>first/last equal-extremum selection through <code>Extremum_Occurrence</code></li>
+</ul>
+<p>Range/non-finite operations:</p>
+<ul>
+<li><code>Check_Range</code></li>
+<li>bounded <code>Check_Range</code></li>
+<li><code>Patch_NaNs</code></li>
+</ul>
+<h3 id="in-place-initialization-and-symmetry">In-place initialization and symmetry</h3>
+<ul>
+<li><code>Set_To</code></li>
+<li><code>Set_Identity</code></li>
+<li><code>Complete_Symmetry</code></li>
+</ul>
+<h3 id="per-element-transforms">Per-element transforms</h3>
+<ul>
+<li><code>Transform</code></li>
+<li><code>Perspective_Transform</code></li>
+</ul>
+<p><code>Perspective_Transform</code> outputs can be inspected directly with
+<code>Float32_Vec2_Access</code> for Float32 C2, <code>Float64_Vec2_Access</code> for Float64 C2,
+<code>Float32_Vec3_Access</code> for Float32 C3, and <code>Float64_Vec3_Access</code> for Float64 C3.
+<code>Transform</code> C4 outputs can be inspected directly with <code>UInt8_Vec4_Access</code>,
+<code>UInt16_Vec4_Access</code>, <code>Int32_Vec4_Access</code>, <code>Float32_Vec4_Access</code>, or <code>Float64_Vec4_Access</code>, without splitting channels or
+narrowing Float64.</p>
+<p>These transform channel vectors stored at each element. They are not image
+resampling/warping operations; those belong in an <code>imgproc</code> binding.</p>
+<h3 id="polynomial-and-optimization-helpers">Polynomial and optimization helpers</h3>
+<p>The current Core slice also includes:</p>
+<ul>
+<li><code>Solve_Cubic</code></li>
+<li><code>Solve_Polynomial</code></li>
+<li><code>Solve_Linear_Program</code></li>
+</ul>
+<p>These APIs use Ada result types to represent mathematically meaningful status
+rather than exposing raw OpenCV integer return conventions.</p>
+<hr />
+<h2 id="linear-algebra-and-decomposition">Linear algebra and decomposition</h2>
+<p>Dense linear-algebra coverage is substantial.</p>
+<h3 id="basic-algebra">Basic algebra</h3>
+<ul>
+<li><code>Trace</code></li>
+<li><code>Determinant</code></li>
+<li>LU <code>Invert</code></li>
+<li>LU <code>Solve</code></li>
+<li><code>Solve_Least_Squares</code> using SVD</li>
+<li><code>Dot_Product</code></li>
+<li><code>Cross_Product</code></li>
+<li><code>Mahalanobis_Distance</code></li>
+<li><code>Matrix_Multiply</code></li>
+<li><code>Matrix_Multiply_Add</code></li>
+<li>centered and uncentered <code>Transposed_Product</code></li>
+<li><code>Set_Identity</code></li>
+<li><code>Complete_Symmetry</code></li>
+</ul>
+<p><code>Multiply</code> remains element-wise. <code>Matrix_Multiply</code> is algebraic multiplication.</p>
+<h3 id="covariance-and-eigen-decomposition">Covariance and eigen decomposition</h3>
+<ul>
+<li><code>Covariance</code></li>
+<li>symmetric <code>Eigen_Decomposition</code></li>
+<li><code>Non_Symmetric_Eigen_Decomposition</code></li>
+</ul>
+<p>The symmetric API requires a caller-supplied real symmetric matrix. The
+non-symmetric API follows OpenCV's real-eigenvalue assumptions rather than
+inventing complex-eigenvalue behavior.</p>
+<h3 id="pca">PCA</h3>
+<ul>
+<li><code>Principal_Component_Analysis</code></li>
+<li>explicit component-count selection</li>
+<li>retained-variance selection</li>
+<li><code>PCA_Project</code></li>
+<li><code>PCA_Back_Project</code></li>
+</ul>
+<p>Both row-oriented and column-oriented sample layouts are represented explicitly
+through <code>Sample_Orientation</code>.</p>
+<h3 id="lda">LDA</h3>
+<ul>
+<li><code>Linear_Discriminant_Analysis</code></li>
+<li>explicit component-count overload</li>
+<li><code>LDA_Project</code></li>
+<li><code>LDA_Reconstruct</code></li>
+</ul>
+<p>LDA uses a dedicated result record and keeps OpenCV's basis representation
+behind an Ada-friendly API.</p>
+<h3 id="svd-family">SVD family</h3>
+<ul>
+<li>compact <code>Singular_Value_Decomposition</code></li>
+<li><code>SVD_Back_Substitute</code></li>
+<li><code>SVD_Solve_Zero</code></li>
+<li><code>Pseudo_Inverse</code></li>
+<li><code>Reciprocal_Condition_Number</code></li>
+</ul>
+<h3 id="lu-versus-svd-apis">LU versus SVD APIs</h3>
+<p><code>Invert</code> and <code>Solve</code> deliberately remain LU-specific. Least-squares and
+rank-deficient SVD pseudo-solutions, SVD back substitution, pseudoinverse,
+condition number, and null-space solving are separate explicit APIs instead of
+being hidden behind a C++ decomposition flag. Rank-deficient
+<code>Solve_Least_Squares</code> is a residual-minimizing <code>cv::solve(DECOMP_SVD)</code> result,
+not a uniquely specified Moore-Penrose minimum-norm vector.</p>
+<hr />
+<h2 id="spectral-transforms">Spectral transforms</h2>
+<p>The current spectral slice includes full-complex and packed real-input DFT
+support, plus orthonormal DCT support:</p>
+<ul>
+<li><code>Discrete_Fourier_Transform</code></li>
+<li><code>Inverse_Discrete_Fourier_Transform</code></li>
+<li><code>Inverse_Real_Discrete_Fourier_Transform</code></li>
+<li><code>Packed_Discrete_Fourier_Transform</code></li>
+<li><code>Inverse_Packed_Discrete_Fourier_Transform</code></li>
+<li><code>Discrete_Fourier_Transform_Rows</code></li>
+<li><code>Inverse_Discrete_Fourier_Transform_Rows</code></li>
+<li><code>Inverse_Real_Discrete_Fourier_Transform_Rows</code></li>
+<li><code>Packed_Discrete_Fourier_Transform_Rows</code></li>
+<li><code>Inverse_Packed_Discrete_Fourier_Transform_Rows</code></li>
+<li><code>Discrete_Cosine_Transform</code></li>
+<li><code>Inverse_Discrete_Cosine_Transform</code></li>
+<li><code>Discrete_Cosine_Transform_Rows</code></li>
+<li><code>Inverse_Discrete_Cosine_Transform_Rows</code></li>
+<li><code>Multiply_Spectra</code></li>
+<li><code>Multiply_Packed_Spectra</code></li>
+<li><code>Multiply_Packed_Spectra_Rows</code></li>
+<li><code>Optimal_DFT_Size</code></li>
+</ul>
+<p>Four forward Fourier forms are available: ordinary full-complex, ordinary
+packed CCS, row-wise full-complex, and row-wise packed CCS.
+<code>Discrete_Fourier_Transform</code> returns a full two-channel (<code>C2</code>) complex spectrum.
+Use <code>Float32_Vec2_Access</code> or <code>Float64_Vec2_Access</code> to inspect full-complex
+spectra: for these spectral APIs, component 0 is real and component 1 is
+imaginary. Vec2 values outside this context remain semantic-neutral.
+For real (<code>C1</code>) input, <code>Packed_Discrete_Fourier_Transform</code> returns OpenCV's
+native same-shape, same-depth packed CCS (<code>C1</code>) spectrum. The <code>_Rows</code> forms
+perform each row as an independent 1-D transform. In particular,
+<code>Packed_Discrete_Fourier_Transform_Rows</code> returns a same-shape C1 Mat containing
+one independent packed CCS representation per row, rather than an ordinary 2-D
+spectrum. The packed representation is opaque and its physical storage layout
+follows OpenCV. All inverse paths are scaled, so a forward/inverse round trip
+approximately recovers the source without an extra caller scale factor.
+<code>Inverse_Real_Discrete_Fourier_Transform</code> provides the real-output path for
+The corresponding <code>_Rows</code> operations use <code>DFT_ROWS</code> to transform every row as
+an independent 1-D signal. Full-complex C2 and packed CCS C1 row spectra have
+distinct inverse operations.
+The corresponding row-wise DCT operations use <code>DCT_ROWS</code> and OpenCV's
+orthonormal inverse convention. Only the row length must be one or even; the
+number of independent rows may be odd.</p>
+<p><code>Multiply_Spectra</code> operates on full-complex C2 spectra interpreted as one
+spectrum. <code>Multiply_Packed_Spectra</code> operates on packed CCS C1 spectra using
+ordinary non-row-wise spectrum geometry. <code>Multiply_Packed_Spectra_Rows</code>
+expects packed CCS C1 input containing one independent spectrum per row, such
+as output from <code>Packed_Discrete_Fourier_Transform_Rows</code>, and uses <code>DFT_ROWS</code>.
+These operations distinguish ordinary multiplication from conjugate-right
+multiplication with <code>Spectrum_Multiplication_Kind</code>.</p>
+<p>Spectrum multiplication does not automatically perform forward or inverse
+transforms, scale, pad, crop, or construct a complete convolution or
+correlation pipeline. Callers are responsible for those operations and for
+deciding whether their padding and geometry represent circular or linear
+convolution or correlation. Packed spectrum division, CCS-bin accessors,
+representation conversion, and in-place transforms are not yet exposed.</p>
+<hr />
+<h2 id="random-numbers-clustering-and-nearest-neighbors">Random numbers, clustering, and nearest neighbors</h2>
+<h3 id="rng">RNG</h3>
+<p>The API supports both OpenCV's thread-local default RNG and caller-owned RNG
+state:</p>
+<ul>
+<li><code>Set_Random_Seed</code></li>
+<li><code>Make_Random_Number_Generator</code></li>
+<li><code>Next_Random</code></li>
+<li><code>Uniform_Random</code></li>
+<li><code>Fill_Uniform</code></li>
+<li><code>Fill_Normal</code></li>
+<li><code>Shuffle</code></li>
+</ul>
+<p><code>Fill_Uniform</code>, <code>Fill_Normal</code>, and <code>Shuffle</code> have overloads using an explicit
+caller-owned generator, allowing deterministic sequences without mutating the
+calling thread's default OpenCV RNG state.</p>
+<p>The RNG is deterministic pseudorandom state, not a cryptographic RNG.</p>
+<h3 id="k-means">K-means</h3>
+<p><code>K_Means</code> supports:</p>
+<ul>
+<li>random centers;</li>
+<li>k-means++ centers;</li>
+<li>configurable count+epsilon criteria;</li>
+<li>multiple attempts;</li>
+<li>an overload using caller-supplied initial labels.</li>
+</ul>
+<p>The result record contains independently owned labels, centers, and compactness.</p>
+<h3 id="k-nearest-neighbors--batch-distance">K-nearest neighbors / batch distance</h3>
+<p><code>K_Nearest_Neighbors</code> exposes a focused nearest-neighbor slice over OpenCV
+batch-distance behavior. Supported distance kinds include:</p>
+<ul>
+<li>L1</li>
+<li>L2</li>
+<li>squared L2</li>
+<li>Hamming</li>
+<li>Hamming2</li>
+</ul>
+<p>The result contains independent distance and zero-based candidate-index Mats.</p>
+
+<section aria-label="Native API entry points"><h2 id="native-api-entry-points">Native API entry points</h2><ul>
+<li><a href="../api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html">OpenCV.Core</a></li>
+</ul></section>
+<p class="guide-source"><a href="https://github.com/zackboll/opencv_core_ada/blob/main/docs/core-operations-guide.md">Original Markdown source on GitHub</a></p>
+</main>
+</div>
+</body>
+</html>

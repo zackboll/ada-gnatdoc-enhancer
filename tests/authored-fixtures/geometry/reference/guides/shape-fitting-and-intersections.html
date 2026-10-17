@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shape fitting and intersections — OpenCV Geometry Ada</title>
+<link rel="stylesheet" href="../api/gnatdoc-theme.css">
+<link rel="stylesheet" href="gnatdoc-guides.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header><nav aria-label="Documentation"><a href="../index.html">Documentation home</a> · <a href="../api/index.html">API browser</a></nav></header>
+<div class="guide-layout">
+<nav class="guide-nav" aria-label="Developer guides"><ul>
+<li><a href="geometry-fundamentals-and-contours.html">Geometry fundamentals and contour analysis</a></li>
+<li><a href="shape-fitting-and-intersections.html" aria-current="page">Shape fitting and intersections</a></li>
+<li><a href="affine-and-perspective-geometry.html">Affine and perspective geometry</a></li>
+<li><a href="delaunay-and-voronoi.html">Delaunay and Voronoi with Subdiv2D</a></li>
+<li><a href="compatibility-ownership-and-safety.html">Compatibility, ownership and native safety</a></li>
+</ul></nav>
+<main id="main-content">
+<h1 id="shape-fitting-and-intersections">Shape fitting and intersections</h1>
+<p>This guide covers the shapes <code>OpenCV.Geometry</code> fits to or wraps around a
+point set, and the intersections of convex polygons and rotated rectangles.
+The public Ada specifications are authoritative: if this guide or the README
+disagrees with a declaration's documentation in the API reference, the
+specification is right.</p>
+<h2 id="rotated-rectangles">Rotated rectangles</h2>
+<p><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#6db6b75bcfeebdfa09e8a3bddd598d12a0d56235e999f6605368b649411de36a">Minimum_Area_Rectangle</a> returns OpenCV's
+smallest-area rotated rectangle as an <code>OpenCV.Rotated_Rect</code>: a binary32
+center, size and angle in degrees. OpenCV 4.13 and 5.x report angles in
+<code>[-90, 0)</code> and assign width and height differently from 4.12 and earlier.
+For an ordinary point set the region is the same, but <code>Width</code> need not name
+the same physical side on every release.</p>
+<p><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#ff65c1d26d55afeda2fe7a7e7788a233c58ba7052def5ee1ff4410904a4cd3b3">Box_Points</a> converts any rotated rectangle into its four
+vertices, consecutive around the rectangle. The starting vertex is OpenCV's
+and moves with the angle, so portable code compares the vertices as a set.</p>
+<h2 id="fitted-ellipses">Fitted ellipses</h2>
+<p><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#726a899c9e1ab6af0ec8631c1d0414c711dd21166076b6a4f2c500a9fd0996b6">Fit_Ellipse</a>, <a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#ca25ecd050328608407023fd517fbcb09c099749523a2d6becd54fe70c211d81">Fit_Ellipse_AMS</a> and
+<a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#fae4d1c7a78cd97ec9c6e011e030eec27b964cd8351350d2be2f3f060826ed84">Fit_Ellipse_Direct</a> fit an ellipse to at least five
+points by least squares, Taubin's Approximate Mean Square method, and the
+direct method of Fitzgibbon, Pilu and Fisher. Each returns the rotated
+rectangle in which the ellipse is inscribed, so <code>Size</code> holds full axis
+lengths, not radii. A fitted ellipse need not enclose the points.</p>
+<p>When a system is singular, as for points exactly on one conic, OpenCV
+perturbs the points and retries. OpenCV 4.12 and later draw that
+perturbation from <code>cv::theRNG</code>, so such results need not repeat; the example
+below avoids the case with points on two different circles.</p>
+<h2 id="fitted-lines">Fitted lines</h2>
+<p><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#7d7e8172b914b72e0bd0d4c553c8cad54e3c27d43bd328d6a29784281687f0d4">Fit_Line_2D</a> returns a <a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#9711b264ade5f48734bc12cdb66e4e9b7cbd551468e8a8a3c3cae3cd1f8be0cd">Fitted_Line_2D</a>:
+a unit <code>Direction</code> and a <code>Point</code> on the line. The opposite direction
+describes the same line, and the binding keeps OpenCV's sign.
+<a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#8a4501f4c2d3f4cf774c6cb726226e2f941fe3e19699d3fbd325e823b5316931">Line_Fit_Distance</a> selects orthogonal least squares
+(<code>L2</code>, the default, in closed form) or one of five robust M-estimators that
+OpenCV solves iteratively. Robust fits repeat for the same input, but they
+draw subsets by position, so reordering the points can change the result
+slightly.</p>
+<h2 id="enclosing-shapes">Enclosing shapes</h2>
+<p><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#93d6b5c797bd2d2dcc1690febba6455143d7ef91e21981e6f319903b49555f78">Minimum_Enclosing_Circle</a> returns an
+<a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#89d13a6c8d894b84e2738057fe35514d9665317ad87a2b45913af980a0196b3f">Enclosing_Circle</a>. OpenCV adds a small EPS to every
+radius, and it computes in binary32 from absolute coordinates, so a point
+set far from the origin relative to its size can get a circle that misses a
+point; the declaration gives a measured example.</p>
+<p><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#088dc36517e1a4aff3bdae7106cf93acf22524e0e8db5603db033c52d1169d68">Minimum_Enclosing_Triangle</a> accepts integer
+contours only. OpenCV's search has no iteration bound and can fail to return
+for some nearly degenerate hulls, such as long thin quadrilaterals; the
+binding cannot detect those inputs in advance. Use it on well-conditioned
+hulls.</p>
+<h2 id="intersections">Intersections</h2>
+<p><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#16afa6aa06b5512f3acb168efd143327bf4fc2bb960fea889153af4f1767822a">Intersect_Convex_Polygons</a> intersects two
+simple, strictly convex polygons of at least three vertices each and returns
+a <a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#4f5c0331a0e38274c6685871020a1275c7d44820402badf5c06f59e02be58088">Convex_Polygon_Intersection</a>: the area
+and the vertices, indexed <code>1 .. Vertex_Count</code>. Repeated or collinear
+vertices raise <code>OpenCV.OpenCV_Error</code>, and coordinates must stay in the range
+where OpenCV's binary32 arithmetic is exact, which the declaration states.
+<code>Handle_Nested</code> decides whether a polygon strictly inside the other is the
+result or gives an empty one.</p>
+<p>The <a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#4a17247596647dad23c772a762cd75e4bf1a7724337bd1bbe9049e5826fe2a56">Float32 overload</a> accepts only
+coordinates on one binary grid, such as multiples of 0.25, because older
+OpenCV releases can corrupt memory when their orientation tests round.
+<a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#20d07f402335d362a5b512a9e975a5b75c42e222c45e5bbc5cb71f0886bb5604">Intersect_Convex_Polygons_Extended_Float32</a>
+is the opt-in alternative for ordinary fractions such as 0.1: it runs a
+private hardened copy of OpenCV's algorithm, with its own conditioning limit.</p>
+<p><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#4b53c026be5fe7719392b5222e12dc8eb8c19091f7ec80f6f25d7bcf01065c2f">Intersect_Rotated_Rectangles</a> returns a
+<a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#7e4d653ebb605fbf335d9f96087389e2b216cd66ba1a9687361c28cccbb03d86">Rectangle_Intersection_Kind</a> and at most
+eight vertices. Rectangles that only touch can be reported with one or two
+contact vertices.</p>
+<h2 id="example">Example</h2>
+<p>The example fits and encloses small, well-conditioned point sets and
+intersects two squares and two rectangles. It checks binary32 results with
+tolerances and never depends on a native starting vertex.</p>
+<pre><code class="language-ada">with OpenCV;
+with OpenCV.Geometry;
+
+--  Fits and encloses well-conditioned point sets, then intersects convex
+--  polygons and rotated rectangles. Checks use tolerances where OpenCV
+--  computes in binary32, and never a native vertex order.
+
+procedure Fitting_And_Intersections is
+   use OpenCV.Geometry;
+   use type OpenCV.Float32_Value;
+   use type OpenCV.Point_Coordinate;
+
+   function Near (Left, Right, Tolerance : OpenCV.Float32_Value) return Boolean
+   is (abs (Left - Right) &lt;= Tolerance);
+
+   --  A 4 x 2 axis-aligned rectangle, possibly reported rotated by 90
+   --  degrees, depending on the OpenCV release's angle convention.
+   Corners   : constant Contour :=
+     [(X =&gt; 0, Y =&gt; 0), (X =&gt; 4, Y =&gt; 0), (X =&gt; 4, Y =&gt; 2), (X =&gt; 0, Y =&gt; 2)];
+   Rectangle : constant OpenCV.Rotated_Rect :=
+     Minimum_Area_Rectangle (Corners);
+   Vertices  : constant Box_Vertices := Box_Points (Rectangle);
+
+   --  Eight points on two concentric circles around (5, 5), not on one
+   --  conic, so the ellipse fit needs no random perturbation.
+   Ring    : constant Contour :=
+     [(X =&gt; 15, Y =&gt; 5),
+      (X =&gt; 12, Y =&gt; 12),
+      (X =&gt; 5, Y =&gt; 15),
+      (X =&gt; -2, Y =&gt; 12),
+      (X =&gt; -5, Y =&gt; 5),
+      (X =&gt; -2, Y =&gt; -2),
+      (X =&gt; 5, Y =&gt; -5),
+      (X =&gt; 12, Y =&gt; -2)];
+   Ellipse : constant OpenCV.Rotated_Rect := Fit_Ellipse (Ring);
+
+   --  Overloaded operations need a qualified aggregate.
+   Line   : constant Fitted_Line_2D :=
+     Fit_Line_2D
+       (Contour'
+          [(X =&gt; 0, Y =&gt; 1),
+           (X =&gt; 2, Y =&gt; 3),
+           (X =&gt; 4, Y =&gt; 5),
+           (X =&gt; 6, Y =&gt; 7)]);
+   Circle : constant Enclosing_Circle :=
+     Minimum_Enclosing_Circle
+       (Contour'
+          [(X =&gt; 0, Y =&gt; 0),
+           (X =&gt; 4, Y =&gt; 0),
+           (X =&gt; 4, Y =&gt; 4),
+           (X =&gt; 0, Y =&gt; 4)]);
+
+   Overlap  : constant Convex_Polygon_Intersection :=
+     Intersect_Convex_Polygons
+       (Left  =&gt;
+          Contour'
+            [(X =&gt; 0, Y =&gt; 0),
+             (X =&gt; 4, Y =&gt; 0),
+             (X =&gt; 4, Y =&gt; 4),
+             (X =&gt; 0, Y =&gt; 4)],
+        Right =&gt;
+          Contour'
+            [(X =&gt; 2, Y =&gt; 2),
+             (X =&gt; 6, Y =&gt; 2),
+             (X =&gt; 6, Y =&gt; 6),
+             (X =&gt; 2, Y =&gt; 6)]);
+   Crossing : constant Rotated_Rectangle_Intersection :=
+     Intersect_Rotated_Rectangles
+       ((Center        =&gt; (X =&gt; 0.0, Y =&gt; 0.0),
+         Size          =&gt; (Width =&gt; 4.0, Height =&gt; 4.0),
+         Angle_Degrees =&gt; 0.0),
+        (Center        =&gt; (X =&gt; 2.0, Y =&gt; 0.0),
+         Size          =&gt; (Width =&gt; 4.0, Height =&gt; 4.0),
+         Angle_Degrees =&gt; 0.0));
+begin
+   --  The area is version independent; Width and Height may be swapped.
+   pragma
+     Assert (Near (Rectangle.Size.Width * Rectangle.Size.Height, 8.0, 1.0E-4));
+   pragma Assert (Near (Rectangle.Center.X, 2.0, 1.0E-4));
+   pragma Assert (Near (Rectangle.Center.Y, 1.0, 1.0E-4));
+   --  Every box vertex is a rectangle corner, whatever the starting vertex.
+   pragma
+     Assert
+       (for all Vertex of Vertices =&gt;
+          (for some Corner of Corners =&gt;
+             Near (Vertex.X, OpenCV.Float32_Value (Corner.X), 1.0E-4)
+             and then Near
+                        (Vertex.Y, OpenCV.Float32_Value (Corner.Y), 1.0E-4)));
+
+   --  Full axis lengths, not radii.
+   pragma Assert (Near (Ellipse.Center.X, 5.0, 0.1));
+   pragma Assert (Near (Ellipse.Center.Y, 5.0, 0.1));
+   pragma Assert (Ellipse.Size.Width in 19.0 .. 21.0);
+   pragma Assert (Ellipse.Size.Height in 19.0 .. 21.0);
+
+   --  A unit direction along Y = X + 1, through the centroid (3, 4).
+   pragma Assert (Near (abs Line.Direction.X, 0.70710677, 1.0E-5));
+   pragma Assert (Near (Line.Direction.X, Line.Direction.Y, 1.0E-5));
+   pragma Assert (Near (Line.Point.X, 3.0, 1.0E-4));
+   pragma Assert (Near (Line.Point.Y, 4.0, 1.0E-4));
+
+   --  The circumscribed circle of the square, radius 2 * Sqrt (2) plus
+   --  OpenCV's small EPS.
+   pragma Assert (Near (Circle.Center.X, 2.0, 1.0E-3));
+   pragma Assert (Near (Circle.Center.Y, 2.0, 1.0E-3));
+   pragma Assert (Near (Circle.Radius, 2.828427, 1.0E-3));
+
+   --  The two squares overlap in the square (2, 2) .. (4, 4).
+   pragma Assert (Near (Overlap.Area, 4.0, 1.0E-4));
+   pragma Assert (Overlap.Vertex_Count in 4 .. 8);
+   pragma
+     Assert
+       (for all Vertex of Overlap.Vertices =&gt;
+          Vertex.X in 2.0 .. 4.0 and then Vertex.Y in 2.0 .. 4.0);
+
+   pragma Assert (Crossing.Kind = Partial_Intersection);
+   pragma Assert (Crossing.Vertex_Count &gt;= 3);
+end Fitting_And_Intersections;
+</code></pre>
+<h2 id="interpreting-results">Interpreting results</h2>
+<ul>
+<li>Rotated rectangles, ellipses and intersections are binary32 OpenCV
+results; compare them with tolerances and compare vertices as sets.</li>
+<li>For ordinary nondegenerate input, a minimum-area rectangle's region, and so
+its area, center and vertex set, is the same on every release; its
+<code>Width</code>, <code>Height</code> and angle are not.</li>
+<li>Fitting needs enough points: at least five for an ellipse, and two
+distinct points for a meaningful line direction. Each declaration lists
+the point counts and coordinate limits that raise <code>OpenCV.OpenCV_Error</code>.</li>
+<li>The <a href="geometry-fundamentals-and-contours.html">fundamentals guide</a> describes
+the point types, and the
+<a href="compatibility-ownership-and-safety.html">compatibility guide</a> summarizes the
+native limits that these operations guard.</li>
+</ul>
+
+<section aria-label="Native API entry points"><h2 id="native-api-entry-points">Native API entry points</h2><ul>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#6db6b75bcfeebdfa09e8a3bddd598d12a0d56235e999f6605368b649411de36a">Minimum_Area_Rectangle</a></li>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#726a899c9e1ab6af0ec8631c1d0414c711dd21166076b6a4f2c500a9fd0996b6">Fit_Ellipse</a></li>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#7d7e8172b914b72e0bd0d4c553c8cad54e3c27d43bd328d6a29784281687f0d4">Fit_Line_2D</a></li>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#93d6b5c797bd2d2dcc1690febba6455143d7ef91e21981e6f319903b49555f78">Minimum_Enclosing_Circle</a></li>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#16afa6aa06b5512f3acb168efd143327bf4fc2bb960fea889153af4f1767822a">Intersect_Convex_Polygons</a></li>
+<li><a href="../api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html#4b53c026be5fe7719392b5222e12dc8eb8c19091f7ec80f6f25d7bcf01065c2f">Intersect_Rotated_Rectangles</a></li>
+</ul></section>
+<p class="guide-source"><a href="https://github.com/zackboll/opencv_geometry_ada/blob/main/docs/guides/shape-fitting-and-intersections.md">Original Markdown source on GitHub</a></p>
+</main>
+</div>
+</body>
+</html>

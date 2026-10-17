@@ -44,6 +44,7 @@ class Config:
     renderer_exceptions: tuple[str, ...] = ()
     dependencies: tuple[dict, ...] = ()
     generic_instances: dict = field(default_factory=dict)
+    guide_sha256: str | None = None
 
 
 def load(root: Path, path: str) -> Config:
@@ -80,15 +81,22 @@ def load(root: Path, path: str) -> Config:
     for k in pres:
         require(type(pres[k]) is bool, f"presentation.{k} must be Boolean")
     guide = raw.get("guides", {})
-    members(guide, {"mode", "manifest"}, "guides")
+    members(guide, {"mode", "manifest", "sha256"}, "guides")
     guide_mode = guide.get("mode", "none")
-    require(guide_mode in ("none", "html", "markdown"), "invalid guide mode")
+    require(guide_mode in ("none", "html", "markdown", "authored-html", "authored-markdown"), "invalid guide mode")
     guide_manifest = guide.get("manifest")
     if guide_mode != "none":
         require(isinstance(guide_manifest, str), "guide manifest required")
         regular(inside(root, guide_manifest))
     else:
         require(guide_manifest is None, "guide manifest requires a guide mode")
+    guide_hash = guide.get('sha256')
+    import re
+    if guide_mode.startswith('authored-'):
+        require(isinstance(guide_hash, str) and re.fullmatch('[a-f0-9]{64}', guide_hash),
+                'authored guide manifest requires SHA-256')
+    else:
+        require(guide_hash is None, 'guide SHA-256 requires authored mode')
     sec = raw.get("security", {})
     members(sec, {"external_hosts"}, "security")
     hosts = words(sec.get("external_hosts", []), "external hosts")
@@ -137,4 +145,4 @@ def load(root: Path, path: str) -> Config:
     return Config(root, project, version, names, packages, style, mode, categories,
                   pres.get("theme", True), pres.get("syntax_highlighting", True),
                   pres.get("type_links", True), guide_mode, guide_manifest,
-                  ext, frozenset(hosts), exceptions, tuple(dependencies), generic)
+                  ext, frozenset(hosts), exceptions, tuple(dependencies), generic, guide_hash)

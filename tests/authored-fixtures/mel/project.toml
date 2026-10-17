@@ -1,0 +1,12 @@
+schema_version = 1
+project = "authored-fixture"
+renderer_exceptions = ["AMS.MEL.IR.Health_Status.Metadata.Status"]
+[sources]
+directories = ["source"]
+comment_style = "trailing"
+[security]
+external_hosts = ["github.com", "zackboll.github.io"]
+[guides]
+mode = "authored-html"
+manifest = "authored.json"
+sha256 = "891ec6f598091c3e2f693c3221992696b5ff8eb453335455d87cf543e5607696"

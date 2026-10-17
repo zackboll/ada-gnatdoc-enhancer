@@ -61,6 +61,8 @@ def local_link(page: Path, site: Path, link: str, *, external: frozenset[str] = 
                exact_external_fragments: frozenset[str] = frozenset()):
     require(isinstance(link, str) and bool(link), "empty URL")
     require(not re.search(r"[\x00-\x20\\]", link), f"unsafe URL whitespace/backslash: {link}")
+    require(not re.search(r'%(?![0-9a-fA-F]{2})|%25', link, re.I),
+            f"malformed/double-encoded URL: {link}")
     uri = urlsplit(link)
     if uri.scheme or uri.netloc:
         require(uri.scheme == "https" and uri.netloc in external and not uri.username and not uri.password
