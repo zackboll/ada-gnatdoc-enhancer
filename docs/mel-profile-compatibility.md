@@ -7,6 +7,12 @@ structural qualification. **Production adoption is not complete.** The work
 stops at independent review, without consumer changes, deployment, release,
 workflow migration, merge or auto-merge.
 
+**READY_FOR_INDEPENDENT_REVIEW**. Hosted push run `39007740840` and PR run
+`39007792510` pass all Python 3.11/3.12/3.13 and wheel/sdist jobs on tested
+implementation `d875f3a9051dfb2c1c541cf377e911b9412787d8`; exact job/step
+results are in the new `hosted-ci.json`. Evidence-only final-head checks and
+final tested SHA are recorded in PR #4, without self-referential commit claims.
+
 Starting SHA: `3be5739901e2ac5559f66a47a0a1765987942173`, fetched `origin/main`
 including merged GNATDOC-003. The tree was clean and all **134 baseline tests**
 passed on Python 3.13.5. Final tested SHA and exact hosted check identities are
@@ -178,6 +184,7 @@ New evidence is under
 * `consumer-gates.json`: original coverage, warning and integrity executions.
 * `*-browser.json`, `browser-initial.json`: executed browser assertions/history.
 * `validation.json`: test/distribution/log identities and remaining blockers.
+* `hosted-ci.json`: exact successful implementation CI runs/jobs/steps.
 
 ```sh
 /absolute/python /home/zboll/git/ada-gnatdoc-enhancer/scripts/qualify_profile_sites.py \

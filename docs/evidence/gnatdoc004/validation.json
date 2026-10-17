@@ -1,8 +1,8 @@
 {
-  "disposition": "HOSTED_CI_PENDING",
+  "disposition": "READY_FOR_INDEPENDENT_REVIEW",
   "extracted_sdist_rebuilt_wheel": "189 tests pass out of tree; CLI/assets/four profiles pass",
   "historical_evidence_unchanged": true,
-  "hosted_ci": "pending; exact commit/run results to be recorded in PR",
+  "hosted_ci": "Push 39007740840 and pull_request 39007792510: all Python 3.11/3.12/3.13 and wheel/sdist jobs successful on tested implementation; exact jobs/steps in hosted-ci.json. Final evidence-only head checks recorded in PR.",
   "installed_wheel": "189 tests pass out of tree; CLI/assets/four profiles pass",
   "limitations": [
     "Full-site local evidence is independent of hosted reduced fixtures.",
@@ -154,6 +154,7 @@
     "independent review; no production adoption certificate"
   ],
   "starting_sha": "3be5739901e2ac5559f66a47a0a1765987942173",
+  "tested_implementation_sha": "d875f3a9051dfb2c1c541cf377e911b9412787d8",
   "tested_input_sha256": {
     "scripts/acquire_real_sites.py": "150fba6f87ab92ae2071fc222b56211770cfe3f752398add8d43ff6b07e1afe2",
     "scripts/check_real_browser.py": "e2be19dfc9d0a3e9c678428eecb37c177026d69a4ba3bb4b07c556000dfe247c",
