@@ -116,6 +116,12 @@ Original Ada interfaces, native libraries and generated sites are **not vendored
 
 ## Safety and limitations
 
+For GNATdoc 26.0.0 expression-function and abbreviated-enumeration support,
+see [source-verified declaration profiles](docs/declaration-profile-compatibility.md).
+Core/Imgproc/Geometry pass pinned full native API structural qualification;
+MEL advances beyond its enum blocker but retains other inventory mismatches.
+These results are not full production-adoption certification.
+
 This tool expects the verified GNATdoc 26.0.0 native HTML shape. Unknown output
 fails; it does not attempt permissive best-effort conversion. It is not a full
 Ada semantic front end. In particular, complex nested scopes, arbitrary generic

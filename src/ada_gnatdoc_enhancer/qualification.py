@@ -200,7 +200,8 @@ def run(spec_path:Path, source:Path, pristine:Path, workspace:Path):
                 'profiles':{p.name:[{'name':d.name,'kind':d.kind,'line':d.line,
                                     'signature':d.signature} for d in p.declarations]
                             for p in source_packages.values()}}
-            snapshot(config,site)
+            native_site=snapshot(config,site)
+            report['checks']['declaration_profiles']=native_site.profile_matches
             phase='dry_run';report['checks']['dry_run']=enhance(config,site,dry_run=True)
             require(hashes(site)==input_hashes,'dry-run changed input bytes')
             phase='enhance';report['checks']['enhancement']=enhance(config,site)

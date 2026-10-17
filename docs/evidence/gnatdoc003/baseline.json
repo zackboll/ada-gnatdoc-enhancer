@@ -1,0 +1,43 @@
+{
+  "baseline_tests": 90,
+  "python": "3.13.5",
+  "reproductions": {
+    "core": {
+      "failure": {
+        "phase": "inventory",
+        "reason": "native declaration profile unmatched or swapped: OpenCV.Make_Scalar at 175"
+      },
+      "historical_input_spec_sha256": "46fe84de1ac840dc41ac10c3fb93d47ddac440a0ebc3383317e9112ec28aa822",
+      "original_inputs_preserved": true,
+      "structural_result": "fail"
+    },
+    "geometry": {
+      "failure": null,
+      "historical_input_spec_sha256": "5a8a2411ae7cb2570c17af4cb1236a9477f055728dd00c94986beffb68dfda08",
+      "original_inputs_preserved": true,
+      "structural_result": "pass"
+    },
+    "imgproc": {
+      "failure": {
+        "phase": "inventory",
+        "reason": "native declaration profile unmatched or swapped: OpenCV.Image_Processing.Color_Conversion at 660"
+      },
+      "historical_input_spec_sha256": "3521e8a0a58c722d9d81328efbc22e3890fd039cda13893c135b715c4e5a1941",
+      "original_inputs_preserved": true,
+      "structural_result": "fail"
+    },
+    "mel": {
+      "failure": {
+        "phase": "inventory",
+        "reason": "native declaration profile unmatched or swapped: AMS.MEL.IR.C2.Metadata.Cannot_Comply at 61"
+      },
+      "historical_input_spec_sha256": "5bcb4c3212ca1b455477f5cebcf2ed7aa521542fcd5fcbd13149d062e6e7f4f4",
+      "original_inputs_preserved": true,
+      "structural_result": "fail"
+    }
+  },
+  "starting_ref": "origin/main",
+  "starting_sha": "619f1ef3fb37bc2d66ba0a73090943c6b87e8dcd",
+  "starting_tree": "clean",
+  "task": "GNATDOC-003"
+}

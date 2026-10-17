@@ -1,0 +1,20 @@
+{
+  "accepted_projections": [
+    {
+      "anchor": "d3250abef70de6aa20012a540a9df4c5463c7b774f13541786bc752fb356bd0a",
+      "hidden_literals": 0,
+      "line": 175,
+      "name": "Make_Scalar",
+      "native_signature_sha256": "5b9d70ae33d65945fba5fdf81d732b12b89cc054fdc999698518a4c03f7be0d2",
+      "omitted_text_ownership": "source only; not visibly rendered by GNATdoc",
+      "package": "OpenCV",
+      "page": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "rule": "expression-function-profile",
+      "source_declaration_sha256": "c40b52a6ccb6d9a3d90d1f5cce9018d8a7f92636637692052707889fb2b56af6",
+      "source_file_sha256": "2ebf97ba3b08e88cef529f77e78cf896cab17fa24b7a6f3363db33016b58d076",
+      "source_path": "src/opencv.ads"
+    }
+  ],
+  "scope": "all scanner types/subtypes/named calls; not full consumer coverage",
+  "unsupported": []
+}

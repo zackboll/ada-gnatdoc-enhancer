@@ -8,7 +8,8 @@ from pathlib import Path
 
 from .config import Config
 from .errors import EnhancementError, UnsupportedStructure
-from .inventory import Package, normalized
+from .inventory import Package
+from .profiles import reconcile
 from .util import PAGE_NAME, require, regular
 
 HEADING = re.compile(r'<h1>([^<]+)</h1>')
@@ -38,6 +39,7 @@ class NativeSite:
     original_css: bytes
     pages: dict[str, NativePage]
     nav_entries: list[tuple[str, str]]
+    profile_matches: list[dict]
 
 
 def snapshot(config: Config, site: Path) -> NativeSite:
@@ -73,18 +75,29 @@ def snapshot(config: Config, site: Path) -> NativeSite:
     require('iframe name=document-content' in index, "missing GNATdoc document-content frame")
     # Validate supported original declaration profiles against the Ada source.
     # A same-named but different overload is never accepted as equivalent.
+    profile_matches=[]
     for key, package in source.items():
         page=records[key]
+        used=set()
         for decl in package.declarations:
-            expected=normalized(decl.signature).removesuffix(' ;').strip()
-            # GNATdoc 26 strips aspects; only a trailing top-level aspect is
-            # excluded from presentation matching, not from source ownership.
-            expected=re.split(r'\swith\s(?:pre|post|global|depends)\s',expected,maxsplit=1)[0]
-            found=[s for s in page.sections if s.name.lower()==decl.name.lower() and
-                   normalized(s.code).removesuffix(' ;').strip()==expected]
+            found=[]
+            for section in page.sections:
+                if section.name.lower()!=decl.name.lower():continue
+                projection=reconcile(decl.signature,section.code)
+                if projection is not None:found.append((section,projection))
             require(len(found)==1,
-                    f"native declaration profile unmatched or swapped: {package.name}.{decl.name} at {decl.line}")
-    return NativeSite(api, index, (api / 'gnatdoc.css').read_bytes(), records, nav_items)
+                    f"native declaration profile unmatched or swapped: {package.name}.{decl.name} at {decl.line}; "
+                    "requires unique exact or supported source-verified profile (unsupported/ambiguous projection rejected)")
+            section,projection=found[0]
+            require(section.anchor not in used,
+                    f"ambiguous source declarations share native anchor: {package.name}.{decl.name}")
+            used.add(section.anchor)
+            if projection.rule!='exact':
+                profile_matches.append({'package':package.name,'name':decl.name,'line':decl.line,
+                    'page':page.path.name,'anchor':section.anchor,'rule':projection.rule,
+                    'hidden_literals':projection.hidden_literals,
+                    'omitted_text_ownership':'source only; not visibly rendered by GNATdoc'})
+    return NativeSite(api, index, (api / 'gnatdoc.css').read_bytes(), records, nav_items, profile_matches)
 
 
 def verified_types(site: NativeSite, source: dict[str, Package]) -> dict[str, tuple[Path, str]]:
