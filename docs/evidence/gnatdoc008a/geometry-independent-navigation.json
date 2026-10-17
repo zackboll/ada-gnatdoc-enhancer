@@ -1,0 +1,10 @@
+{
+  "entries": 130,
+  "exact_labels_destinations_category_and_display_order": true,
+  "oracle": "Unchanged pinned Geometry enhance_gnatdoc_navigation.entries()",
+  "package_counts": {
+    "OpenCV.Geometry": 86,
+    "OpenCV.Geometry.Subdiv2D": 44
+  },
+  "status": "pass"
+}

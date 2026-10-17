@@ -372,6 +372,6 @@ test_missing_package_rejected_before_enhance (test_security_extra.SecurityMutati
 test_symlink_presentation_file_rejected (test_security_extra.SecurityMutations.test_symlink_presentation_file_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 372 tests in 165.291s
+Ran 372 tests in 191.586s
 
 OK

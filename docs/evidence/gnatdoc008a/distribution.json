@@ -1,0 +1,36 @@
+{
+  "artifacts": {
+    "ada_gnatdoc_enhancer-0.1.0.dev0-py3-none-any.whl": "d8a0db2be8991718c2945662de2407e284da922c084a171ab5372007ce338899",
+    "ada_gnatdoc_enhancer-0.1.0.dev0.tar.gz": "96e2a301773644846206369482ac7b0821410e0ef19ae1bb58f92696b51c9b8b"
+  },
+  "build_revision": "3f9caa0bef547db5a36a395915af14953c554998",
+  "local_python": "Python 3.13.5",
+  "notes": "Runtime/test bytes unchanged after test-only missing-overload assertion adjustment; subsequent commits change only browser harness/evidence. No local Python 3.11/3.12 available: hosted matrix is separate.",
+  "runs": {
+    "baseline": {
+      "exit_status": "0",
+      "summary": "\n----------------------------------------------------------------------\nRan 352 tests in 139.875s\n\nOK"
+    },
+    "committed": {
+      "exit_status": "0",
+      "summary": "\n----------------------------------------------------------------------\nRan 372 tests in 179.059s\n\nOK"
+    },
+    "corrected": {
+      "exit_status": "0",
+      "summary": "\n----------------------------------------------------------------------\nRan 372 tests in 165.291s\n\nOK"
+    },
+    "extracted-sdist-rebuilt-wheel": {
+      "exit_status": "0",
+      "summary": "\n----------------------------------------------------------------------\nRan 372 tests in 189.514s\n\nOK"
+    },
+    "final-local": {
+      "exit_status": "0",
+      "summary": "\n----------------------------------------------------------------------\nRan 372 tests in 191.586s\n\nOK"
+    },
+    "installed-wheel": {
+      "exit_status": "0",
+      "summary": "\n----------------------------------------------------------------------\nRan 372 tests in 191.762s\n\nOK"
+    }
+  },
+  "source_native_implementation_revision": "c077b088cb6764157afe1edfb69e8aa6ee84aafe"
+}

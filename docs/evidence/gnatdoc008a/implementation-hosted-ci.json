@@ -1,0 +1,990 @@
+{
+  "head_sha": "c077b088cb6764157afe1edfb69e8aa6ee84aafe",
+  "runs": [
+    {
+      "conclusion": "success",
+      "headSha": "c077b088cb6764157afe1edfb69e8aa6ee84aafe",
+      "jobs": [
+        {
+          "completedAt": "2026-10-17T19:44:41Z",
+          "conclusion": "success",
+          "databaseId": 117485532739,
+          "name": "test (3.13)",
+          "startedAt": "2026-10-17T19:37:44Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-17T19:37:46Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-17T19:37:45Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:37:47Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "startedAt": "2026-10-17T19:37:46Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:37:47Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-17T19:37:47Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:37:53Z",
+              "conclusion": "success",
+              "name": "Install offline-core package in editable mode",
+              "number": 4,
+              "startedAt": "2026-10-17T19:37:47Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:38:32Z",
+              "conclusion": "success",
+              "name": "Authentic source-backed authored guide and portal qualification",
+              "number": 5,
+              "startedAt": "2026-10-17T19:37:53Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:42:00Z",
+              "conclusion": "success",
+              "name": "Unit and mutation tests",
+              "number": 6,
+              "startedAt": "2026-10-17T19:38:32Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:42:02Z",
+              "conclusion": "success",
+              "name": "Source-verified declaration profiles (authentic excerpts and synthetic mutations)",
+              "number": 7,
+              "startedAt": "2026-10-17T19:42:00Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:42:03Z",
+              "conclusion": "success",
+              "name": "Synthetic four-profile conformance",
+              "number": 8,
+              "startedAt": "2026-10-17T19:42:02Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:42:07Z",
+              "conclusion": "success",
+              "name": "Pinned external dependency reduced-fixture and adversarial qualification",
+              "number": 9,
+              "startedAt": "2026-10-17T19:42:03Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:44:30Z",
+              "conclusion": "success",
+              "name": "Authentic generic-instance reduced fixture and adversarial qualification",
+              "number": 10,
+              "startedAt": "2026-10-17T19:42:07Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:44:38Z",
+              "conclusion": "success",
+              "name": "Authentic reduced real-site CLI qualification (not full-site certification)",
+              "number": 11,
+              "startedAt": "2026-10-17T19:44:30Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:44:38Z",
+              "conclusion": "success",
+              "name": "Compile and CLI checks",
+              "number": 12,
+              "startedAt": "2026-10-17T19:44:38Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:44:38Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 23,
+              "startedAt": "2026-10-17T19:44:38Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:44:38Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 24,
+              "startedAt": "2026-10-17T19:44:38Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:44:38Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 25,
+              "startedAt": "2026-10-17T19:44:38Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/actions/runs/39063280586/job/117485532739"
+        },
+        {
+          "completedAt": "2026-10-17T19:47:17Z",
+          "conclusion": "success",
+          "databaseId": 117485532891,
+          "name": "wheel",
+          "startedAt": "2026-10-17T19:37:44Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-17T19:37:46Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-17T19:37:45Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:37:47Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "startedAt": "2026-10-17T19:37:46Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:37:47Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-17T19:37:47Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:37:55Z",
+              "conclusion": "success",
+              "name": "Build wheel and source distribution",
+              "number": 4,
+              "startedAt": "2026-10-17T19:37:47Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:37:58Z",
+              "conclusion": "success",
+              "name": "Install wheel in a clean environment",
+              "number": 5,
+              "startedAt": "2026-10-17T19:37:55Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:42:35Z",
+              "conclusion": "success",
+              "name": "Installed CLI, assets and four-profile conformance outside checkout",
+              "number": 6,
+              "startedAt": "2026-10-17T19:37:58Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:42:38Z",
+              "conclusion": "success",
+              "name": "Build a wheel from the source distribution",
+              "number": 7,
+              "startedAt": "2026-10-17T19:42:35Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:47:15Z",
+              "conclusion": "success",
+              "name": "Qualify tests and fixtures shipped in the source distribution",
+              "number": 8,
+              "startedAt": "2026-10-17T19:42:38Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:47:15Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 15,
+              "startedAt": "2026-10-17T19:47:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:47:15Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 16,
+              "startedAt": "2026-10-17T19:47:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:47:15Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 17,
+              "startedAt": "2026-10-17T19:47:15Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/actions/runs/39063280586/job/117485532891"
+        },
+        {
+          "completedAt": "2026-10-17T19:46:32Z",
+          "conclusion": "success",
+          "databaseId": 117485532957,
+          "name": "test (3.11)",
+          "startedAt": "2026-10-17T19:37:45Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-17T19:37:46Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-17T19:37:46Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:37:48Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "startedAt": "2026-10-17T19:37:46Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:37:48Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-17T19:37:48Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:37:55Z",
+              "conclusion": "success",
+              "name": "Install offline-core package in editable mode",
+              "number": 4,
+              "startedAt": "2026-10-17T19:37:48Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:38:47Z",
+              "conclusion": "success",
+              "name": "Authentic source-backed authored guide and portal qualification",
+              "number": 5,
+              "startedAt": "2026-10-17T19:37:55Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:43:10Z",
+              "conclusion": "success",
+              "name": "Unit and mutation tests",
+              "number": 6,
+              "startedAt": "2026-10-17T19:38:47Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:43:13Z",
+              "conclusion": "success",
+              "name": "Source-verified declaration profiles (authentic excerpts and synthetic mutations)",
+              "number": 7,
+              "startedAt": "2026-10-17T19:43:10Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:43:14Z",
+              "conclusion": "success",
+              "name": "Synthetic four-profile conformance",
+              "number": 8,
+              "startedAt": "2026-10-17T19:43:13Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:43:20Z",
+              "conclusion": "success",
+              "name": "Pinned external dependency reduced-fixture and adversarial qualification",
+              "number": 9,
+              "startedAt": "2026-10-17T19:43:14Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:46:18Z",
+              "conclusion": "success",
+              "name": "Authentic generic-instance reduced fixture and adversarial qualification",
+              "number": 10,
+              "startedAt": "2026-10-17T19:43:20Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:46:28Z",
+              "conclusion": "success",
+              "name": "Authentic reduced real-site CLI qualification (not full-site certification)",
+              "number": 11,
+              "startedAt": "2026-10-17T19:46:18Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:46:28Z",
+              "conclusion": "success",
+              "name": "Compile and CLI checks",
+              "number": 12,
+              "startedAt": "2026-10-17T19:46:28Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:46:28Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 23,
+              "startedAt": "2026-10-17T19:46:28Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:46:29Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 24,
+              "startedAt": "2026-10-17T19:46:28Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:46:29Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 25,
+              "startedAt": "2026-10-17T19:46:29Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/actions/runs/39063280586/job/117485532957"
+        },
+        {
+          "completedAt": "2026-10-17T19:42:39Z",
+          "conclusion": "success",
+          "databaseId": 117485532968,
+          "name": "test (3.12)",
+          "startedAt": "2026-10-17T19:37:45Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-17T19:37:46Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-17T19:37:45Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:37:47Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "startedAt": "2026-10-17T19:37:46Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:37:47Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-17T19:37:47Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:37:49Z",
+              "conclusion": "success",
+              "name": "Install offline-core package in editable mode",
+              "number": 4,
+              "startedAt": "2026-10-17T19:37:47Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:38:19Z",
+              "conclusion": "success",
+              "name": "Authentic source-backed authored guide and portal qualification",
+              "number": 5,
+              "startedAt": "2026-10-17T19:37:49Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:40:45Z",
+              "conclusion": "success",
+              "name": "Unit and mutation tests",
+              "number": 6,
+              "startedAt": "2026-10-17T19:38:19Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:40:46Z",
+              "conclusion": "success",
+              "name": "Source-verified declaration profiles (authentic excerpts and synthetic mutations)",
+              "number": 7,
+              "startedAt": "2026-10-17T19:40:45Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:40:47Z",
+              "conclusion": "success",
+              "name": "Synthetic four-profile conformance",
+              "number": 8,
+              "startedAt": "2026-10-17T19:40:46Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:40:50Z",
+              "conclusion": "success",
+              "name": "Pinned external dependency reduced-fixture and adversarial qualification",
+              "number": 9,
+              "startedAt": "2026-10-17T19:40:47Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:42:30Z",
+              "conclusion": "success",
+              "name": "Authentic generic-instance reduced fixture and adversarial qualification",
+              "number": 10,
+              "startedAt": "2026-10-17T19:40:50Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:42:36Z",
+              "conclusion": "success",
+              "name": "Authentic reduced real-site CLI qualification (not full-site certification)",
+              "number": 11,
+              "startedAt": "2026-10-17T19:42:30Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:42:36Z",
+              "conclusion": "success",
+              "name": "Compile and CLI checks",
+              "number": 12,
+              "startedAt": "2026-10-17T19:42:36Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:42:37Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 23,
+              "startedAt": "2026-10-17T19:42:36Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:42:37Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 24,
+              "startedAt": "2026-10-17T19:42:37Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:42:37Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 25,
+              "startedAt": "2026-10-17T19:42:37Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/actions/runs/39063280586/job/117485532968"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/actions/runs/39063280586"
+    },
+    {
+      "conclusion": "",
+      "headSha": "c077b088cb6764157afe1edfb69e8aa6ee84aafe",
+      "jobs": [
+        {
+          "completedAt": "0001-01-01T00:00:00Z",
+          "conclusion": "",
+          "databaseId": 117485636603,
+          "name": "wheel",
+          "startedAt": "2026-10-17T19:38:14Z",
+          "status": "in_progress",
+          "steps": [
+            {
+              "completedAt": "2026-10-17T19:38:15Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-17T19:38:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:38:17Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "startedAt": "2026-10-17T19:38:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:38:17Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-17T19:38:17Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:38:25Z",
+              "conclusion": "success",
+              "name": "Build wheel and source distribution",
+              "number": 4,
+              "startedAt": "2026-10-17T19:38:17Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:38:29Z",
+              "conclusion": "success",
+              "name": "Install wheel in a clean environment",
+              "number": 5,
+              "startedAt": "2026-10-17T19:38:25Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:43:06Z",
+              "conclusion": "success",
+              "name": "Installed CLI, assets and four-profile conformance outside checkout",
+              "number": 6,
+              "startedAt": "2026-10-17T19:38:29Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:43:09Z",
+              "conclusion": "success",
+              "name": "Build a wheel from the source distribution",
+              "number": 7,
+              "startedAt": "2026-10-17T19:43:06Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Qualify tests and fixtures shipped in the source distribution",
+              "number": 8,
+              "startedAt": "2026-10-17T19:43:09Z",
+              "status": "in_progress"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 15,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run actions/checkout@v4",
+              "number": 16,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            }
+          ],
+          "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/actions/runs/39063313185/job/117485636603"
+        },
+        {
+          "completedAt": "0001-01-01T00:00:00Z",
+          "conclusion": "",
+          "databaseId": 117485636849,
+          "name": "test (3.13)",
+          "startedAt": "2026-10-17T19:38:14Z",
+          "status": "in_progress",
+          "steps": [
+            {
+              "completedAt": "2026-10-17T19:38:15Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-17T19:38:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:38:16Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "startedAt": "2026-10-17T19:38:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:38:17Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-17T19:38:16Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:38:21Z",
+              "conclusion": "success",
+              "name": "Install offline-core package in editable mode",
+              "number": 4,
+              "startedAt": "2026-10-17T19:38:17Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:39:18Z",
+              "conclusion": "success",
+              "name": "Authentic source-backed authored guide and portal qualification",
+              "number": 5,
+              "startedAt": "2026-10-17T19:38:21Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:44:16Z",
+              "conclusion": "success",
+              "name": "Unit and mutation tests",
+              "number": 6,
+              "startedAt": "2026-10-17T19:39:18Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:44:19Z",
+              "conclusion": "success",
+              "name": "Source-verified declaration profiles (authentic excerpts and synthetic mutations)",
+              "number": 7,
+              "startedAt": "2026-10-17T19:44:16Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:44:19Z",
+              "conclusion": "success",
+              "name": "Synthetic four-profile conformance",
+              "number": 8,
+              "startedAt": "2026-10-17T19:44:19Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:44:26Z",
+              "conclusion": "success",
+              "name": "Pinned external dependency reduced-fixture and adversarial qualification",
+              "number": 9,
+              "startedAt": "2026-10-17T19:44:19Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Authentic generic-instance reduced fixture and adversarial qualification",
+              "number": 10,
+              "startedAt": "2026-10-17T19:44:26Z",
+              "status": "in_progress"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Authentic reduced real-site CLI qualification (not full-site certification)",
+              "number": 11,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Compile and CLI checks",
+              "number": 12,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 23,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run actions/checkout@v4",
+              "number": 24,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            }
+          ],
+          "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/actions/runs/39063313185/job/117485636849"
+        },
+        {
+          "completedAt": "2026-10-17T19:43:03Z",
+          "conclusion": "success",
+          "databaseId": 117485636875,
+          "name": "test (3.11)",
+          "startedAt": "2026-10-17T19:38:14Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-17T19:38:15Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-17T19:38:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:38:17Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "startedAt": "2026-10-17T19:38:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:38:17Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-17T19:38:17Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:38:19Z",
+              "conclusion": "success",
+              "name": "Install offline-core package in editable mode",
+              "number": 4,
+              "startedAt": "2026-10-17T19:38:17Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:38:47Z",
+              "conclusion": "success",
+              "name": "Authentic source-backed authored guide and portal qualification",
+              "number": 5,
+              "startedAt": "2026-10-17T19:38:19Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:41:12Z",
+              "conclusion": "success",
+              "name": "Unit and mutation tests",
+              "number": 6,
+              "startedAt": "2026-10-17T19:38:47Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:41:13Z",
+              "conclusion": "success",
+              "name": "Source-verified declaration profiles (authentic excerpts and synthetic mutations)",
+              "number": 7,
+              "startedAt": "2026-10-17T19:41:12Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:41:13Z",
+              "conclusion": "success",
+              "name": "Synthetic four-profile conformance",
+              "number": 8,
+              "startedAt": "2026-10-17T19:41:13Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:41:17Z",
+              "conclusion": "success",
+              "name": "Pinned external dependency reduced-fixture and adversarial qualification",
+              "number": 9,
+              "startedAt": "2026-10-17T19:41:13Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:42:55Z",
+              "conclusion": "success",
+              "name": "Authentic generic-instance reduced fixture and adversarial qualification",
+              "number": 10,
+              "startedAt": "2026-10-17T19:41:17Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:43:00Z",
+              "conclusion": "success",
+              "name": "Authentic reduced real-site CLI qualification (not full-site certification)",
+              "number": 11,
+              "startedAt": "2026-10-17T19:42:55Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:43:01Z",
+              "conclusion": "success",
+              "name": "Compile and CLI checks",
+              "number": 12,
+              "startedAt": "2026-10-17T19:43:00Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:43:01Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 23,
+              "startedAt": "2026-10-17T19:43:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:43:01Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 24,
+              "startedAt": "2026-10-17T19:43:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:43:01Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 25,
+              "startedAt": "2026-10-17T19:43:01Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/actions/runs/39063313185/job/117485636875"
+        },
+        {
+          "completedAt": "2026-10-17T19:47:17Z",
+          "conclusion": "success",
+          "databaseId": 117485636911,
+          "name": "test (3.12)",
+          "startedAt": "2026-10-17T19:38:14Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-17T19:38:16Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-17T19:38:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:38:18Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "startedAt": "2026-10-17T19:38:16Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:38:18Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-17T19:38:18Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:38:22Z",
+              "conclusion": "success",
+              "name": "Install offline-core package in editable mode",
+              "number": 4,
+              "startedAt": "2026-10-17T19:38:18Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:39:17Z",
+              "conclusion": "success",
+              "name": "Authentic source-backed authored guide and portal qualification",
+              "number": 5,
+              "startedAt": "2026-10-17T19:38:22Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:43:51Z",
+              "conclusion": "success",
+              "name": "Unit and mutation tests",
+              "number": 6,
+              "startedAt": "2026-10-17T19:39:17Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:43:53Z",
+              "conclusion": "success",
+              "name": "Source-verified declaration profiles (authentic excerpts and synthetic mutations)",
+              "number": 7,
+              "startedAt": "2026-10-17T19:43:51Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:43:54Z",
+              "conclusion": "success",
+              "name": "Synthetic four-profile conformance",
+              "number": 8,
+              "startedAt": "2026-10-17T19:43:53Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:44:01Z",
+              "conclusion": "success",
+              "name": "Pinned external dependency reduced-fixture and adversarial qualification",
+              "number": 9,
+              "startedAt": "2026-10-17T19:43:54Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:47:03Z",
+              "conclusion": "success",
+              "name": "Authentic generic-instance reduced fixture and adversarial qualification",
+              "number": 10,
+              "startedAt": "2026-10-17T19:44:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:47:14Z",
+              "conclusion": "success",
+              "name": "Authentic reduced real-site CLI qualification (not full-site certification)",
+              "number": 11,
+              "startedAt": "2026-10-17T19:47:03Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:47:14Z",
+              "conclusion": "success",
+              "name": "Compile and CLI checks",
+              "number": 12,
+              "startedAt": "2026-10-17T19:47:14Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:47:15Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 23,
+              "startedAt": "2026-10-17T19:47:14Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:47:15Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 24,
+              "startedAt": "2026-10-17T19:47:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-17T19:47:15Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 25,
+              "startedAt": "2026-10-17T19:47:15Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/actions/runs/39063313185/job/117485636911"
+        }
+      ],
+      "status": "in_progress",
+      "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/actions/runs/39063313185"
+    }
+  ],
+  "scope": "Implementation head only; NOT final PR-head CI"
+}
