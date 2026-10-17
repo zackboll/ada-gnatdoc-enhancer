@@ -50,7 +50,7 @@ def escaped_offsets(raw: str):
 def plain(raw: str):
     value = SPAN.sub(lambda m:m[1], raw)
     value = TYPE_LINK.sub(lambda m:m[3], value)
-    require('<' not in value and '>' not in value,
+    require('<' not in value,
             "unsupported or nested HTML tags inside Ada declaration snippet")
     return html.unescape(value)
 
@@ -122,7 +122,7 @@ def type_positions(code: str):
 
 def linked(raw: str, pkg: Package, source: dict[str, Package],
            native: NativeSite, targets: dict[str,tuple[Path,str]], config: Config):
-    require('<' not in raw and '>' not in raw,"type linking requires raw GNATdoc snippets")
+    require('<' not in raw,"type linking requires raw GNATdoc snippets")
     text,starts,ends=escaped_offsets(raw)
     inserts=[]
     for a,b,name in type_positions(text):

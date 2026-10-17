@@ -1,5 +1,10 @@
 # Ada GNATdoc Enhancer
 
+GNATDOC-002 pinned real-site qualification, authentic regression provenance,
+observed compatibility failures and reproduction commands are documented in
+`/home/zboll/git/ada-gnatdoc-enhancer/docs/real-site-qualification.md`.
+No consumer is currently certified fully adoption-ready.
+
 **Offline, source-backed GNATdoc HTML enhancement for Ada documentation websites.**
 
 A development-stage Python CLI that adds an accessible light/dark theme, Ada

@@ -1,0 +1,39 @@
+{
+  "baseline_tests": 70,
+  "browser": "Chromium 156.0.8078.4; 34 Geometry assertions pass",
+  "consumer_modified": false,
+  "final_tests": 90,
+  "full_adoption_qualified": false,
+  "full_site_ci_certification": false,
+  "hosted_ci": "not certified by in-tree evidence; exact final tested SHA and hosted statuses are recorded in the open PR",
+  "local_test_logs": {
+    "gnatdoc002-baseline.log": {
+      "sha256": "bd8a554eeecc3eab96cb1217edf479073741ffab6b27fecb660af92332bbd38b",
+      "summary": "file_rejected (test_security_extra.SecurityMutations.test_symlink_presentation_file_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 70 tests in 1.838s\n\nOK\n"
+    },
+    "gnatdoc002-tested-installed.log": {
+      "sha256": "384ae4fdad6aaad797c9b8e29618d4431fc90155596a79d68a947e0f0192b5d8",
+      "summary": "aration_snippets\": 10,\n    \"files\": 42,\n    \"html_pages\": 37,\n    \"linked_types\": 7,\n    \"links\": 234,\n    \"mode\": \"verified\",\n    \"public_packages\": 29,\n    \"unrendered_renderer_exceptions\": 1\n  }\n}\n"
+    },
+    "gnatdoc002-tested-sdist-tests.log": {
+      "sha256": "0963bae6de0ae6a74cf41a384d13bcc64b340ad1a393e1356a65d887dd04f051",
+      "summary": "ile_rejected (test_security_extra.SecurityMutations.test_symlink_presentation_file_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 90 tests in 21.117s\n\nOK\n"
+    },
+    "gnatdoc002-tested-tests.log": {
+      "sha256": "7fc1ff178a12b8669779ef91b04dff79d450d1c4f30273b84632be50601bfb9b",
+      "summary": "ile_rejected (test_security_extra.SecurityMutations.test_symlink_presentation_file_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 90 tests in 33.698s\n\nOK\n"
+    },
+    "gnatdoc002-tested-wheel-tests.log": {
+      "sha256": "fe2042492d142abefd36802a5001d6719a17158b701f5c7750ca716f53a572fe",
+      "summary": "ile_rejected (test_security_extra.SecurityMutations.test_symlink_presentation_file_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 90 tests in 23.165s\n\nOK\n"
+    }
+  },
+  "native_regeneration": "all four pristine trees byte-identical on fresh regeneration",
+  "new_tests": 20,
+  "sdist_installation": "90 tests pass from extracted sdist using wheel built from sdist; four synthetic profiles pass",
+  "starting_sha": "f2529eef6d3b6cceea1fed0d4347ae13129bf79b",
+  "starting_tree": "clean",
+  "synthetic_profiles": "4 pass; deterministic and idempotent",
+  "unit_tests": "pass",
+  "wheel_installation": "90 tests pass outside checkout; installed CLI/assets/four profiles pass"
+}

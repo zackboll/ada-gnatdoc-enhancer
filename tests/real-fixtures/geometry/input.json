@@ -1,0 +1,33 @@
+{
+  "blockers": [
+    "External Core 0.5.0 anchors have not been independently qualified.",
+    "Compiled authored guides are not qualified by this API-only profile."
+  ],
+  "compiler": "GNAT 16.1.0",
+  "configuration": "schema_version = 1\nproject = \"opencv_geometry_ada\"\n[gnatdoc]\nversion = \"26.0.0\"\n[sources]\ndirectories = [\"qualification-public\"]\npackages = [\"OpenCV.Geometry\", \"OpenCV.Geometry.Subdiv2D\"]\ncomment_style = \"leading\"\n[navigation]\nmode = \"operations\"\ncategories = \"docs/api-categories.json\"\n",
+  "evidence_level": "reduced regression: authentic Geometry API pages and public sources only; NOT full-site qualification",
+  "gnatdoc": "GNATdoc 26.0.0 (20260415)",
+  "gprbuild": "GPRBUILD 26.0.0 (2026-04-15); Alire release 26.0.1",
+  "pristine_sha256": {
+    "api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html": "66e1c621aa2dc8f36ca225c46745d42b19f7be370ba1099a8a146ec7c9baabe8",
+    "api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html": "018538fdbef120204f8cdf7bdccebf787fce4a48e42de8c4f5ccd38e5ff4c56f",
+    "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+    "api/index.html": "e5132ce2c3804326c83f7b73827770ec30467b10a67f520146667bbda8adfd23"
+  },
+  "public_packages": [
+    "OpenCV.Geometry",
+    "OpenCV.Geometry.Subdiv2D"
+  ],
+  "public_sources": [
+    "src/opencv-geometry-subdiv2d.ads",
+    "src/opencv-geometry.ads"
+  ],
+  "repository": "https://github.com/zackboll/opencv_geometry_ada",
+  "revision": "fa81e5140cbebf2aa41397a40c08ba194a5f6f73",
+  "schema_version": 1,
+  "source_sha256": {
+    "docs/api-categories.json": "be3a9dc45808c7bc3007b66130117208a13ba02130f4c1224ea981a6e28cf8f0",
+    "src/opencv-geometry-subdiv2d.ads": "91a3809350aeccabb3f160cec3b20c0bf45a6f5e723479daa8f79683fc893ef8",
+    "src/opencv-geometry.ads": "7beb89c1f8fc32e3b78cfc8580115155e5d06fea04c43c0ae2af3855e9091c21"
+  }
+}

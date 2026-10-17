@@ -16,3 +16,13 @@
 No application runtime depends on the enhancer. Consumer sites are produced
 entirely offline. Future adoption requires separate pinned, exact-site tests,
 reviewed exceptions where applicable and existing compiler/provenance checks.
+
+## GNATDOC-002 real native evidence
+
+The pinned qualification report is at
+`/home/zboll/git/ada-gnatdoc-enhancer/docs/real-site-qualification.md`.
+Genuine GNATdoc 26 inputs were generated for all four reviewed revisions.
+Geometry passes native API structural and Chromium checks, but external Core
+anchors and authored guides remain unqualified. Core/Imgproc/MEL fail closed
+on real source/native profiles. **None is fully adoption-qualified.** Hosted
+CI runs reduced authentic regressions, not four full consumer builds.

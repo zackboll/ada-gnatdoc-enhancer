@@ -23,6 +23,11 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Synthetic four-profile conformance
         run: gnatdoc-enhancer conformance --fixtures tests/fixtures
+      # Unit discovery above includes pinned authentic reduced fixtures. Hosted
+      # CI does NOT generate/certify four complete consumer documentation sites.
+      - name: Authentic reduced real-site CLI qualification (not full-site certification)
+        run: |
+          gnatdoc-enhancer qualify --spec tests/real-fixtures/geometry/input.json --source-root tests/real-fixtures/geometry/source --site "$GITHUB_WORKSPACE/tests/real-fixtures/geometry/pristine" --workspace "$RUNNER_TEMP/real-geometry"
       - name: Compile and CLI checks
         run: |
           python -m compileall -q src

@@ -78,9 +78,11 @@ def last_semicolon(masked: str, start: int) -> int:
     record=re.search(r'\bis\s+(?:tagged\s+|limited\s+)*record\b',beginning,re.I)
     before_first=masked.find(';',start)
     if record and (before_first<0 or start+record.start()<before_first):
-        closer=re.search(r'\bend\s+record\s*;',masked[start:],re.I)
+        closer=re.search(r'\bend\s+record\b',masked[start:],re.I)
         if closer is None:raise EnhancementError('unterminated record type')
-        return start+closer.end()
+        # A record may carry aspects after END RECORD. Scan only the suffix
+        # for its terminating semicolon; component semicolons are not endings.
+        return last_semicolon(masked, start+closer.end())
     depth=0
     for pos in range(start,len(masked)):
         c=masked[pos]
