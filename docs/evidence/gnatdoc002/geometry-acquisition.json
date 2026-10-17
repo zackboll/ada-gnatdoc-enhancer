@@ -1,0 +1,15 @@
+{
+  "alire": "2.1.1",
+  "build_exit": 0,
+  "build_log_sha256": "79c13d821370b47b5c7d9ec2b9c918e23da05ed385bc3172c1d731e19bbc1211",
+  "compiler": "GNAT 16.1.0\nCopyright (C) 1996-2025, Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\nGPRBUILD 26.0.0 (2026-04-15) (x86_64-pc-linux-gnu)\nCopyright (C) 2004-2026, AdaCore\nThis is free software; see the source for copying conditions.\nThere is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\nGNATdoc 26.0.0 (20260415)\n",
+  "coverage_result": "Documentation coverage: 452/452 items (100.0%); 0 newly undocumented, 0 newly documented\n",
+  "gnatdoc": "GNATdoc 26.0.0 (20260415)",
+  "gnatdoc_diagnostics": "",
+  "gnatdoc_exit": 0,
+  "native_opencv": "4.10.0",
+  "native_regeneration_byte_identical": true,
+  "warning_count": 0,
+  "warning_ratchet": "GNATdoc warning delta: 0 added, 0 removed\n",
+  "warning_ratchet_exit": 0
+}

@@ -33,10 +33,20 @@ def parser():
             sub.add_argument('--allow-removed',action='store_true')
     con=subs.add_parser('conformance',help='offline four-profile fixture qualification')
     con.add_argument('--fixtures',default=None,type=Path)
+    qual=subs.add_parser('qualify',help='isolated pinned real-site qualification (no downloads)')
+    qual.add_argument('--spec',required=True,type=Path)
+    qual.add_argument('--source-root',required=True,type=Path)
+    qual.add_argument('--site',required=True,type=Path)
+    qual.add_argument('--workspace',required=True,type=Path)
     return p
 
 
 def run(args):
+    if args.command=='qualify':
+        from .qualification import run as qualify
+        # As with other commands, relative site paths belong to source-root.
+        site=args.site if args.site.is_absolute() else args.source_root/args.site
+        return qualify(args.spec,args.source_root,site,args.workspace)
     if args.command=='conformance':
         from .conformance import run
         return run(args.fixtures)
@@ -80,6 +90,7 @@ def main(argv=None):
     try:
         result=run(args)
         print(sorted_json(result),end='')
+        if args.command=='qualify' and result['structural_result']!='pass':return 2
         return 0
     except (EnhancementError,ValueError,FileNotFoundError,UnicodeError,OSError,KeyError) as exc:
         print(f'gnatdoc-enhancer: {exc}',file=sys.stderr)

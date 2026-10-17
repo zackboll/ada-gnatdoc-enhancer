@@ -1,0 +1,328 @@
+[
+  {
+    "dimensions": [
+      2
+    ],
+    "element_type": "Float16_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html",
+    "package": "OpenCV.Core.Float16_Vec2",
+    "source": "opencv-core-float16_vec2.ads",
+    "source_sha256": "baecbd80d2fca6ef4938361942072ec175d2dc327672b3a0be96d847c683a783",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3
+    ],
+    "element_type": "Float16_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/7b926e05c9907ee7865b04d8df79efba40eb39bd03c780ab2f84184b31fd7332.html",
+    "package": "OpenCV.Core.Float16_Vec3",
+    "source": "opencv-core-float16_vec3.ads",
+    "source_sha256": "0f33910a5d31790b62d3d5c5a54b92229fd2852dda3ba9074c3366869e6ae273",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      4
+    ],
+    "element_type": "Float16_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/f6750f19a539b254e157bb6293afd5936035ddcedabfdf1d6f327a3ef94a65da.html",
+    "package": "OpenCV.Core.Float16_Vec4",
+    "source": "opencv-core-float16_vec4.ads",
+    "source_sha256": "f01beb80029235c8f97ccb6fc3e79a191223143f931815d909a636e409ed5cf7",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3,
+      3
+    ],
+    "element_type": "Float32_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html",
+    "package": "OpenCV.Core.Float32_Matx3x3",
+    "source": "opencv-core-float32_matx3x3.ads",
+    "source_sha256": "842a3a34cec90a773746714aad1475f73fb31ca956e0cbc45b696ece551190f5",
+    "template": "opencv.core.fixed_matrices"
+  },
+  {
+    "dimensions": [
+      2
+    ],
+    "element_type": "Float32_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/4d83fee369e8bd635af43353b4983e985e9bedd27437b6552576c9509c215d81.html",
+    "package": "OpenCV.Core.Float32_Vec2",
+    "source": "opencv-core-float32_vec2.ads",
+    "source_sha256": "7acae484eb2c15dda9909f7093b068aadea4a8a9c4127e8aae365db48030b81c",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3
+    ],
+    "element_type": "Float32_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/9aaa6908f09187b0449763dcc87f460999db6bdc88b7c34666fae481d98c91a6.html",
+    "package": "OpenCV.Core.Float32_Vec3",
+    "source": "opencv-core-float32_vec3.ads",
+    "source_sha256": "7fcf89bd265f8e3f1d6e8213e029c127659bea38f3950385d81c6f671f7d5f93",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      4
+    ],
+    "element_type": "Float32_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/31ff495bceb4792ef0089f519ebb479eb3009f2be680e34034a07c3a4c65e578.html",
+    "package": "OpenCV.Core.Float32_Vec4",
+    "source": "opencv-core-float32_vec4.ads",
+    "source_sha256": "ff3fb2a98a347f3ba60783cc6deaca326648d57c4a9b6f3effe79097d3c7257e",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      2
+    ],
+    "element_type": "Float64_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/d1b2f5cd1eb1397ab175d6abb28c3d6f429390f2f98f513546532da3810d0607.html",
+    "package": "OpenCV.Core.Float64_Vec2",
+    "source": "opencv-core-float64_vec2.ads",
+    "source_sha256": "ec000d249320b44d6904033de653a34a16046dad682638e653711bc82bd69641",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3
+    ],
+    "element_type": "Float64_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/fae0595c101785f242187d2bf1f347bf5f8eb3c4cb1869890af3d9a7af48df89.html",
+    "package": "OpenCV.Core.Float64_Vec3",
+    "source": "opencv-core-float64_vec3.ads",
+    "source_sha256": "2f527f0a3a7d659cac57b2c7ae4dafc368d28ba2209aa553a2448e68a0b69f85",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      4
+    ],
+    "element_type": "Float64_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/1b4c2fc0017fd1a296da5292227432e136aa2b56e71536acc618f8228e13e323.html",
+    "package": "OpenCV.Core.Float64_Vec4",
+    "source": "opencv-core-float64_vec4.ads",
+    "source_sha256": "7a06dbd14764854ebe0f05250e26972d34b96f906d2d3c526535b3f0beee08d6",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      2
+    ],
+    "element_type": "Int16_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/ac6dd4cd8f2e6efc44eb164453b6e265a4c2d78018db9747ef8d6abd62c7d074.html",
+    "package": "OpenCV.Core.Int16_Vec2",
+    "source": "opencv-core-int16_vec2.ads",
+    "source_sha256": "b461be18a09bd4448e63a70c03fb3f6a0a275886d6fb42e80d8a84347dcb2b08",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3
+    ],
+    "element_type": "Int16_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/6e26fcbfdc5ccedc6aa77dd6e34186e484e14c736190d0a0c0d1370e7c67a6cd.html",
+    "package": "OpenCV.Core.Int16_Vec3",
+    "source": "opencv-core-int16_vec3.ads",
+    "source_sha256": "ec6a6668bce397d3a4f355ad7c5ab1bd6ec298560e92e942dea27e0bcce9f778",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      4
+    ],
+    "element_type": "Int16_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/205d1ab3b0b0f90302d746f4012c916279d24816120de3b3e14cc4926a04901c.html",
+    "package": "OpenCV.Core.Int16_Vec4",
+    "source": "opencv-core-int16_vec4.ads",
+    "source_sha256": "f41b1fbf2d5a7c2242dd8cfa56ed049a45a79cf026ccb4e854995ae76678498c",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      2
+    ],
+    "element_type": "Int32_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/3484eaafdf8291e8cc1d9281281f72f87c5fd7d6bfd01fbe57c5798608cc0b3d.html",
+    "package": "OpenCV.Core.Int32_Vec2",
+    "source": "opencv-core-int32_vec2.ads",
+    "source_sha256": "b0bc0390d55b29a870495a2ae61ab07e66e9777b8afb8315f89b3dd345e0c74e",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3
+    ],
+    "element_type": "Int32_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/92cd94df8a420b11b7fd15456853222c4572fbd2d04f15863224059ab6d98f4f.html",
+    "package": "OpenCV.Core.Int32_Vec3",
+    "source": "opencv-core-int32_vec3.ads",
+    "source_sha256": "d0c89cfb2d2ee67f41e19702eabb31d0eff735c1cab0853a0ee94a623c13a4c0",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      4
+    ],
+    "element_type": "Int32_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/d1a4d262635553c2303d440bc0c9b0d5da2013a97fcd6e00610e2d4e2ed80236.html",
+    "package": "OpenCV.Core.Int32_Vec4",
+    "source": "opencv-core-int32_vec4.ads",
+    "source_sha256": "3911196dde0b4df318fbd5a5a3ff643d7c58160f995f2d502140db4f17c7b047",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      2
+    ],
+    "element_type": "Int8_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/2bd29cc1e10dce9656c5e3359956f065274072b163724ad00959221ffe8c89da.html",
+    "package": "OpenCV.Core.Int8_Vec2",
+    "source": "opencv-core-int8_vec2.ads",
+    "source_sha256": "11255f9ddfcf6a48f6b4d64eb90efd09f86a5859a1e89e3e59d22eee11f241e6",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3
+    ],
+    "element_type": "Int8_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/a66cc7e7eb428e03ec01ea75275267546255a3203ed1895014cdd2b143a44140.html",
+    "package": "OpenCV.Core.Int8_Vec3",
+    "source": "opencv-core-int8_vec3.ads",
+    "source_sha256": "7c26d6bd4420f0c452c2dac57eab884d38e128d8e06e0020d5faaf66bb23f5d4",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      4
+    ],
+    "element_type": "Int8_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/d394ade8721161f64f9c874a76f64d32839e4981ef84e7f248420cef53fd5cf6.html",
+    "package": "OpenCV.Core.Int8_Vec4",
+    "source": "opencv-core-int8_vec4.ads",
+    "source_sha256": "55d98e454f7f6c3f981237d02683fb6d0492250603a95c053411df559881de6a",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      2
+    ],
+    "element_type": "UInt16_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/b6e8fd9a264861791a430685f5117efab83ff9358a92b674a9605f65553ef195.html",
+    "package": "OpenCV.Core.UInt16_Vec2",
+    "source": "opencv-core-sparse-uint16_vec2_access.ads",
+    "source_sha256": "74f3512020615b8b61e9dcb44ef863e4ab2a13cdf265ad5f7b4050b57e787d23",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3
+    ],
+    "element_type": "UInt16_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/76ee27a213ea841ef46ca63704dcea0d6361f8338f40556bbda80fecb2560d1f.html",
+    "package": "OpenCV.Core.UInt16_Vec3",
+    "source": "opencv-core-sparse-uint16_vec3_access.ads",
+    "source_sha256": "48d39fdee03dd4f4b539be916165660b0a46611dfb8ed04673b5b45f0f815185",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      4
+    ],
+    "element_type": "UInt16_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/d07a7be131d8a57fb2dc18e7aad1472801121f4fbcef7605522294e53d54709b.html",
+    "package": "OpenCV.Core.UInt16_Vec4",
+    "source": "opencv-core-sparse-uint16_vec4_access.ads",
+    "source_sha256": "d384a96dcd3f2fd959f40cf28186a44267f5938311b143bbc6427bfd57fd1a1b",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      2
+    ],
+    "element_type": "UInt8_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/e4a53bc2fadb6312c53f37e2e9893de203c9851744fc0cd8deb7a925633364ee.html",
+    "package": "OpenCV.Core.UInt8_Vec2",
+    "source": "opencv-core-sparse-uint8_vec2_access.ads",
+    "source_sha256": "1b289c12601d985fc397c41e4be49349d0739c8063d01bbbbbeaf598f856f784",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      3
+    ],
+    "element_type": "UInt8_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/51805d4ebf800f07b2c5b4f3c69b37bbd0fd19f269a930189bf322400826c140.html",
+    "package": "OpenCV.Core.UInt8_Vec3",
+    "source": "opencv-core-sparse-uint8_vec3_access.ads",
+    "source_sha256": "750bccb069325d648bc4fd2ff29619f057a4730b908302bc8bb8e33017bb945e",
+    "template": "opencv.core.vectors"
+  },
+  {
+    "dimensions": [
+      4
+    ],
+    "element_type": "UInt8_Value",
+    "gap": "generic-instance summary not implemented; no members/anchors invented",
+    "native_declarations": 0,
+    "native_path": "api/ac97c1fb444a21ec40bac83783c10d55ab74367fe648ad6edb18c7c5b9dbfe89.html",
+    "package": "OpenCV.Core.UInt8_Vec4",
+    "source": "opencv-core-sparse-uint8_vec4_access.ads",
+    "source_sha256": "6652d8aae30fd87ed5897312a93deda3c8d06a60319e56a419bdb58cb699bd2a",
+    "template": "opencv.core.vectors"
+  }
+]

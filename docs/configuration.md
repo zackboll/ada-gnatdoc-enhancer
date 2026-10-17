@@ -51,3 +51,10 @@ The only supported `renderer_exceptions` entry in the bootstrap is the known
 MEL `AMS.MEL.IR.Health_Status.Metadata.Status` package renaming. It remains a
 **gap**, not documentation credit; the consumer's full coverage checker still
 owns its evidence and approval.
+
+The `qualify` subcommand accepts a reviewed JSON acquisition specification and
+constructs this same TOML inside a new isolated workspace. Relative `--site`
+paths still belong to `--source-root`; no consumer checkout is enhanced. See
+`/home/zboll/git/ada-gnatdoc-enhancer/docs/real-site-qualification.md` for the
+pinning, input hashes, public-source staging contract and non-certification
+boundary of successful structural runs.
