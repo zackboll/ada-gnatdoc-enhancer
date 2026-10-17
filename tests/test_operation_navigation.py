@@ -123,7 +123,8 @@ class OperationNavigation(unittest.TestCase):
         self.reject()
 
     def test_missing_overloaded_declaration(self):
-        self.page.sections.pop(); self.reject()
+        self.page.sections.remove(next(s for s in self.page.sections if s.name == 'Filter_2D'))
+        self.reject()
 
     def test_unowned_native_section_revision_mismatch(self):
         self.page.sections.append(replace(self.page.sections[0], name='Unexpected', anchor='f'*64))

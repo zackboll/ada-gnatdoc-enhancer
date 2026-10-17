@@ -1,0 +1,65 @@
+{
+  "core": {
+    "warning_command": [
+      "/home/zboll/git/ada-gnatdoc-enhancer/.venv/bin/python",
+      "/tmp/gnatdoc002-acquisition/core/snapshot/scripts/compare_gnatdoc_warnings.py",
+      "/tmp/gnatdoc002-acquisition/core/snapshot/docs/gnatdoc-warning-baseline.txt",
+      "/tmp/gnatdoc002-acquisition/core/gnatdoc.log",
+      "--sources",
+      "/tmp/gnatdoc002-acquisition/core/snapshot/src"
+    ],
+    "warning_exit": 0,
+    "warning_stdout": "GNATdoc warning delta: 0 added, 0 removed\n"
+  },
+  "geometry": {
+    "coverage_command": [
+      "/home/zboll/git/ada-gnatdoc-enhancer/.venv/bin/python",
+      "/tmp/gnatdoc007/exports/geometry/scripts/check_doc_coverage.py",
+      "--fail-on-removed",
+      "/tmp/gnatdoc007/exports/geometry/docs/gnatdoc-coverage-baseline.txt",
+      "/tmp/gnatdoc008a/qualified-r3/geometry/first/_site"
+    ],
+    "coverage_exit": 0,
+    "coverage_stdout": "Documentation coverage: 452/452 items (100.0%); 0 newly undocumented, 0 newly documented\n",
+    "warning_command": [
+      "/home/zboll/git/ada-gnatdoc-enhancer/.venv/bin/python",
+      "/tmp/gnatdoc002-acquisition/geometry/snapshot/scripts/compare_gnatdoc_warnings.py",
+      "--fail-on-removed",
+      "/tmp/gnatdoc002-acquisition/geometry/snapshot/docs/gnatdoc-warning-baseline.txt",
+      "/tmp/gnatdoc002-acquisition/geometry/gnatdoc.log"
+    ],
+    "warning_exit": 0,
+    "warning_stdout": "GNATdoc warning delta: 0 added, 0 removed\n"
+  },
+  "imgproc": {
+    "coverage_command": [
+      "/home/zboll/git/ada-gnatdoc-enhancer/.venv/bin/python",
+      "/tmp/gnatdoc007/exports/imgproc/scripts/check_doc_coverage.py",
+      "--fail-on-removed",
+      "/tmp/gnatdoc007/exports/imgproc/docs/gnatdoc-coverage-baseline.txt",
+      "/tmp/gnatdoc008a/qualified-r3/imgproc/first/_site"
+    ],
+    "coverage_exit": 0,
+    "coverage_stdout": "Documentation coverage: 1512/1512 items (100.0%); 0 newly undocumented, 0 newly documented\n",
+    "warning_command": [
+      "/home/zboll/git/ada-gnatdoc-enhancer/.venv/bin/python",
+      "/tmp/gnatdoc002-acquisition/imgproc/snapshot/scripts/compare_gnatdoc_warnings.py",
+      "--fail-on-removed",
+      "/tmp/gnatdoc002-acquisition/imgproc/snapshot/docs/gnatdoc-warning-baseline.txt",
+      "/tmp/gnatdoc002-acquisition/imgproc/gnatdoc.log"
+    ],
+    "warning_exit": 0,
+    "warning_stdout": "GNATdoc warning delta: 0 added, 0 removed\n"
+  },
+  "mel": {
+    "warning_command": [
+      "/home/zboll/git/ada-gnatdoc-enhancer/.venv/bin/python",
+      "/tmp/gnatdoc002-acquisition/mel/snapshot/scripts/compare_gnatdoc_warnings.py",
+      "--fail-on-removed",
+      "/tmp/gnatdoc002-acquisition/mel/snapshot/docs/gnatdoc-warning-baseline.txt",
+      "/tmp/gnatdoc002-acquisition/mel/gnatdoc.log"
+    ],
+    "warning_exit": 0,
+    "warning_stdout": "GNATdoc warning delta: 0 added, 0 removed\n"
+  }
+}

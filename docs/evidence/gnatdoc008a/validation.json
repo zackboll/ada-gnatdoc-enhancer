@@ -1,8 +1,17 @@
 {
+  "additional_geometry_corrections": 40,
   "after_label_errors": 0,
+  "api_frame_history": {
+    "cause": "gnatdoc-navigation.js tracks package only and uses frame.contentWindow.location.replace; no overload fragment history is pushed",
+    "classification": "Pre-existing shared UI limitation; not introduced by source-order fix; separately reported, no UI changes",
+    "corrected_fail": 4,
+    "corrected_pass": 108,
+    "followup": "Independent decision or separate narrowly scoped history fix required before full browser acceptance.",
+    "unchanged_baseline_fail": 4
+  },
   "baseline_tests": 352,
   "before_label_errors": 66,
-  "browser": "Core full existing harness passes 1442 assertions; remaining runs in progress. Initial operation harness retained; history check classification pending.",
+  "browser": "Corrected-overload Chromium: 108/112 pass; 4 pre-existing API-frame overload-history failures. Baseline history-only: 4/4 fail. All exact click/profile/fragment, direct bookmark Back/Forward, JS-disabled, keyboard, search and layout checks pass. Existing Core harness 1442 pass; other full browser runs pending.",
   "consumer_negative_tests": 24,
   "consumer_pr_72_modified": false,
   "consumer_pr_head": "f2989da6c6a593f6196d1d989be0b2d126743dc6",
@@ -14,12 +23,21 @@
   "historical_evidence_modified": false,
   "hosted_ci": "pending exact final PR head",
   "imgproc_navigation_entries": 314,
+  "implementation_sha": "c077b088cb6764157afe1edfb69e8aa6ee84aafe",
   "new_tests": 20,
+  "qualification_setup_failures": [
+    "First run used an already authored predecessor: duplicate guides TOML section; retried with original GNATDOC-006 native-only predecessor.",
+    "Second run compared a mutable historical Imgproc output restored to pristine by prior tamper qualification; replaced that invalid comparison with independent f52dcfe baseline reconstruction from pinned inputs.",
+    "Initial full test/distribution run found an existing mocked authored.packages seam removed by refactor; restored injectable source inventory and retained original test unchanged. Corrected full suite and both distribution runs pass.",
+    "Initial browser harness waited for bare index URL, but existing JS adds package query; corrected expected observed index URL. Initial failure record retained.",
+    "Consumer negative harness initially rejected the original checkout containing ignored symlinks; rerun using isolated clean shared clone passed 24/24."
+  ],
   "remaining_blockers": [
     "independent review",
     "classify existing API-frame overload Back/Forward behavior",
     "final exact-head hosted CI",
     "separate consumer update after reviewed merge"
   ],
+  "scope_of_output_changes": "Only Imgproc/Geometry api/index.html + api/presentation.json; all native destinations identical; Core/MEL byte-identical",
   "starting_sha": "f52dcfe37dc2819d86e72e1c38425e5e49d914eb"
 }
