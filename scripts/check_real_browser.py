@@ -31,6 +31,25 @@ def run(workspace):
     thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
     report={'checks':[],'scope':'isolated real native API site; not consumer portal',
             'navigation_mode':navigation_mode}
+    # HTTPS interception is explicitly a local publication simulation, NOT
+    # evidence of a remotely hosted deployment. First revalidate pinned inputs.
+    external_proofs={}
+    if configuration.get('external_dependencies'):
+        from ada_gnatdoc_enhancer.config import load
+        from ada_gnatdoc_enhancer.external_types import destinations, read_json
+        from ada_gnatdoc_enhancer.util import inside, regular
+        config=load(workspace/'first','qualification.toml')
+        destinations(config)
+        for dep in config.dependencies:
+            manifest=read_json(inside(config.root,dep['manifest']))
+            for identity in dep['types']:
+                item=manifest['types'][identity.lower()]
+                destination=dep['base_url']+item['page']+'#'+item['anchor']
+                external_proofs[destination]={'revision':dep['revision'],**item,
+                    'native_root':inside(config.root,dep['site'])/'api',
+                    'base_url':dep['base_url']}
+        report['external_publication']='intercepted reserved .invalid HTTPS test mapping; NOT actual HTTPS hosting'
+        report['published_url_verified']=False
     url=f'http://127.0.0.1:{server.server_port}/first/_site/api/index.html'
     def check(name,action,**dimensions):
         try:
@@ -46,9 +65,22 @@ def run(workspace):
             browser=playwright.chromium.launch(**opts)
             report['browser']='Chromium '+browser.version
             try:
+                def intercept(route):
+                    request=route.request.url
+                    proof=next((p for p in external_proofs.values()
+                                if request.startswith(p['base_url'])),None)
+                    if proof is None:route.abort();return
+                    filename=request.removeprefix(proof['base_url'])
+                    if '/' in filename or '?' in filename or '%' in filename:
+                        route.abort();return
+                    path=regular(proof['native_root']/filename)
+                    route.fulfill(status=200,body=path.read_bytes(),
+                                  content_type='text/css' if path.suffix=='.css' else 'text/html')
                 for width in (1280,390):
                     for theme in ('light','dark'):
-                        page=browser.new_page(viewport={'width':width,'height':760},color_scheme=theme)
+                        context=browser.new_context(viewport={'width':width,'height':760},color_scheme=theme)
+                        page=context.new_page()
+                        if external_proofs:page.context.route('https://core.invalid/**',intercept)
                         page.set_default_timeout(5000)
                         dimensions={'width':width,'theme':theme}
                         errors=[]
@@ -110,6 +142,38 @@ def run(workspace):
                                 anchor=urlsplit(destination).fragment
                                 require(bool(anchor) and frame.locator('[id="'+anchor+'"]').count()==1)
                             check('follow local type link to unique native anchor',type_destination,**dimensions)
+                            if external_proofs:
+                                def external_destination():
+                                    # Reset the API iframe; local navigation may
+                                    # have changed its current declaration page.
+                                    page.goto(url,wait_until='networkidle')
+                                    frame=page.frame(name='document-content')
+                                    link=frame.locator('a.type-reference[href^="https://"]').first
+                                    destination=link.get_attribute('href');proof=external_proofs[destination]
+                                    before=frame.url
+                                    link.click();frame.wait_for_url(destination)
+                                    anchor=proof['anchor']
+                                    require('/'+proof['revision']+'/' in frame.url)
+                                    require(frame.get_by_role('heading',name=proof['package'],exact=True).count()==1)
+                                    heading=frame.locator('[id="'+anchor+'"]')
+                                    require(heading.count()==1 and heading.inner_text()==proof['qualified_name'].rsplit('.',1)[1])
+                                    from ada_gnatdoc_enhancer.util import digest
+                                    require(digest(heading.locator('xpath=following-sibling::pre[1]/code').inner_text().encode())==proof['native_declaration_sha256'])
+                                    # A child-frame history entry does not emit
+                                    # a top-level load event. Trigger browser
+                                    # history and assert the actual frame URL.
+                                    page.evaluate('history.back()');frame.wait_for_url(before)
+                                    page.evaluate('history.forward()');frame.wait_for_url(destination)
+                                    direct=page.context.new_page()
+                                    try:
+                                        direct.goto(destination,wait_until='networkidle')
+                                        require(direct.locator('[id="'+anchor+'"]').count()==1)
+                                    finally:direct.close()
+                                    report.setdefault('external_destinations',[]).append({
+                                        'url':destination,'revision':proof['revision'],
+                                        'type':proof['qualified_name'],'anchor':anchor,**dimensions,
+                                        'transport':'local interception; not hosted'})
+                                check('external pinned type click direct Back Forward',external_destination,**dimensions)
                             def keyboard():
                                 page.locator('#package-search').focus();page.keyboard.press('Tab')
                                 require(page.locator('#package-clear').evaluate('(e) => e === document.activeElement'))
@@ -118,9 +182,10 @@ def run(workspace):
                             check('responsive outer viewport',lambda:require(page.locator('body').evaluate(
                                 '(e) => e.scrollWidth <= innerWidth+2')),**dimensions)
                             check('no JavaScript errors',lambda:require(not errors),**dimensions)
-                        finally:page.close()
+                        finally:context.close()
                 for width in (1280,390):
                     context=browser.new_context(java_script_enabled=False,viewport={'width':width,'height':760})
+                    if external_proofs:context.route('https://core.invalid/**',intercept)
                     page=context.new_page()
                     page.set_default_timeout(5000)
                     try:
@@ -132,12 +197,20 @@ def run(workspace):
                             name=link.inner_text();link.click()
                             page.frame_locator('iframe').get_by_role('heading',name=name,exact=True).wait_for()
                         check('JavaScript-disabled native navigation',fallback,width=width)
+                        if external_proofs:
+                            def external_fallback():
+                                page.goto(url);page.locator('#compilation-units + ul a').first.click()
+                                frame=page.frame(name='document-content')
+                                link=frame.locator('a.type-reference[href^="https://"]').first
+                                target=link.get_attribute('href');link.click();frame.wait_for_url(target)
+                                require(frame.locator('[id="'+external_proofs[target]['anchor']+'"]').count()==1)
+                            check('JavaScript-disabled pinned external link',external_fallback,width=width)
                     finally:context.close()
             finally:browser.close()
     finally:server.shutdown();server.server_close();thread.join(timeout=2)
     report['status']='pass' if all(x['status']=='pass' for x in report['checks']) else 'fail'
     report['not_qualified']=['screen-reader audit','touch-device interaction','consumer authored guides',
-                             'external Core targets','visual design review']
+                             'real external HTTPS hosting','visual design review']
     return report
 
 

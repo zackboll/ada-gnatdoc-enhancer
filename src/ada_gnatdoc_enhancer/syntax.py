@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import html
 import re
+from functools import lru_cache
 from pathlib import Path
 
 from .config import Config
@@ -83,6 +84,34 @@ def _local_shadow(pkg: Package, name: str) -> bool:
                for d in pkg.declarations)
 
 
+def external_visible(owner: str, pkg: Package) -> bool:
+    """Narrow external guard, not a general Ada semantic resolver.
+
+    Private/limited context clauses do not authorize a public type mark.
+    Package aliases, instances, nested scopes and prefix declarations require
+    semantics outside this adapter and therefore cannot grant external links.
+    """
+    return _external_profile(owner,pkg.source)
+
+
+@lru_cache(maxsize=64)
+def _external_profile(owner: str, source: str) -> bool:
+    # Cache only immutable source text, never filesystem validation or evidence.
+    from .inventory import HEADER, mask_ada, visible_prefix
+    masked=mask_ada(source);header=HEADER.search(masked)
+    if header is None or header[3].lower()!='is':return False
+    context=masked[:header.start()]
+    if re.search(r'\bgeneric\b',context,re.I):return False
+    public=mask_ada(visible_prefix(source,header.end()))
+    if re.search(r'\b(package|generic|task|protected|begin|declare)\b',public,re.I):return False
+    prefix=owner.split('.')[0]
+    if re.search(r'(?im)^\s*'+re.escape(prefix)+r'\s*(?:,|:)',public):return False
+    restricted=set()
+    for clause in re.finditer(r'(?im)^\s*(?:private\s+|limited\s+)+with\s+([^;]+);',context):
+        restricted.update(n.strip().lower() for n in clause[1].split(','))
+    return owner not in restricted
+
+
 def resolve(name: str, pkg: Package, source: dict[str, Package],
             targets: dict[str, tuple[Path,str]], external: dict[str,str]) -> tuple[str, str] | None:
     """Conservative resolution: never choose a destination from name alone."""
@@ -94,8 +123,14 @@ def resolve(name: str, pkg: Package, source: dict[str, Package],
             return None
         if token in targets: return token, 'local'
         exact=next((k for k in external if k.lower()==token),None)
-        if exact: return exact,'external'
-        return None
+        if exact is None:return None
+        # A source-owned package never acquires imported or aliased type owners.
+        if owner in source:return None
+        # Decline qualified prefixes shadowed in the current public scope.
+        prefix=token.split('.')[0]
+        if any(d.name.lower()==prefix for d in pkg.declarations):return None
+        if not external_visible(owner,pkg):return None
+        return exact,'external'
     # A local non-type declaration prevents guessing an ancestor type.
     if _local_shadow(pkg,token): return None
     p=key
@@ -113,7 +148,8 @@ def resolve(name: str, pkg: Package, source: dict[str, Package],
 def type_positions(code: str):
     """Typed contexts only; do not link constraints, defaults or attributes."""
     positions=[]
-    for m in TYPE_MARK.finditer(code):
+    from .inventory import mask_ada
+    for m in TYPE_MARK.finditer(mask_ada(code)):
         word=m[1]
         if word.lower() not in KEYWORDS and word.lower() not in STANDARD:
             positions.append((m.start(1),m.end(1),word))

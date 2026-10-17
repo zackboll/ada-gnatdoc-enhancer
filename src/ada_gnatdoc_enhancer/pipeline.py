@@ -9,6 +9,7 @@ from __future__ import annotations
 import json
 import shutil
 import tempfile
+from dataclasses import replace
 from pathlib import Path
 
 from . import __version__
@@ -41,6 +42,8 @@ def _raw(site:Path):
 
 def expected_output(config:Config,site:Path):
     """Produce expected published bytes without modifying the input site."""
+    from .external_types import destinations
+    config=replace(config,externals=destinations(config))
     native=snapshot(config,site)
     source=packages(config)
     from .adapters.mel import verify_renderer_exceptions
@@ -48,11 +51,17 @@ def expected_output(config:Config,site:Path):
     types=verified_types(native,source) if config.type_links else {}
     values={}
     totals={'linked_types':0,'declaration_snippets':0,'public_packages':len(native.pages),
+            'linked_local_types':0,'linked_external_types':0,
             'unrendered_renderer_exceptions':exceptions}
     for name,page in native.pages.items():
         text,counts=transform_page(page.original,source[name],source,native,types,config)
         for label,val in counts.items():
             totals['linked_types' if label=='links' else 'declaration_snippets']+=val
+        from .syntax import TYPE_LINK
+        import html
+        external_count=sum(html.unescape(m[1]).startswith('https://') for m in TYPE_LINK.finditer(text))
+        totals['linked_external_types']+=external_count
+        totals['linked_local_types']+=counts['links']-external_count
         values[page.path.relative_to(site).as_posix()]=themed(text,config.theme).encode()
     index=themed(native.index,config.theme)
     index=enhance_index(native,index,config)

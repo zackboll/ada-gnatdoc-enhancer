@@ -26,7 +26,7 @@ def hashes(root):
             for p in sorted(root.rglob('*')) if p.is_file()}
 
 
-def check_snapshot(root, expected, *, staged=False):
+def check_snapshot(root, expected, *, staged=False, dependency_bundle=False):
     require(isinstance(expected,dict) and expected,'empty pinned source inventory')
     for name,sha in expected.items():
         require(re.fullmatch('[a-f0-9]{64}',sha) is not None,'invalid SHA-256')
@@ -37,7 +37,8 @@ def check_snapshot(root, expected, *, staged=False):
     # Build products may exist, but additional Ada inputs must not slip in.
     actual={p.relative_to(root).as_posix() for p in root.rglob('*')
             if p.suffix.lower() in ('.ads','.adb') and
-            not (staged and p.is_relative_to(root/'qualification-public'))}
+            not (staged and p.is_relative_to(root/'qualification-public')) and
+            not (dependency_bundle and p.is_relative_to(root/'qualification-dependencies'))}
     require(actual=={n for n in expected if Path(n).suffix.lower() in ('.ads','.adb')},
             'unpinned Ada source inventory')
 
@@ -140,7 +141,7 @@ def negative_checks(root,site):
     return results
 
 
-def run(spec_path:Path, source:Path, pristine:Path, workspace:Path):
+def run(spec_path:Path, source:Path, pristine:Path, workspace:Path, *, dependency_bundle:Path|None=None):
     spec=json.loads(regular(spec_path).read_text(encoding='utf-8'))
     require(spec['schema_version']==1,'unsupported qualification specification')
     require(re.fullmatch('[a-f0-9]{40}',spec['revision']) is not None,
@@ -164,6 +165,10 @@ def run(spec_path:Path, source:Path, pristine:Path, workspace:Path):
     require(all('gnatdoc-theme.css' not in p.read_text(encoding='utf-8')
                 for p in pristine.rglob('*.html')),'postprocessed native input')
     native=identities(pristine)
+    bundle_hashes=None
+    if dependency_bundle is not None:
+        dependency_bundle=site_root(dependency_bundle)
+        bundle_hashes=hashes(dependency_bundle)
     workspace.mkdir(parents=True)
     report={'schema_version':1,'repository':spec['repository'],'revision':spec['revision'],
             'evidence_level':spec['evidence_level'],'native_input':'verified against acquisition hashes',
@@ -180,6 +185,9 @@ def run(spec_path:Path, source:Path, pristine:Path, workspace:Path):
                 'acquisition public package inventory mismatch')
         for label in ('first','second'):
             root=workspace/label;root.mkdir()
+            if dependency_bundle is not None:
+                require(hashes(dependency_bundle)==bundle_hashes,'dependency bundle changed')
+                shutil.copytree(dependency_bundle,root/'qualification-dependencies')
             for name in spec['source_sha256']:
                 target=inside(root,name);target.parent.mkdir(parents=True,exist_ok=True)
                 shutil.copyfile(source/name,target)
@@ -216,7 +224,11 @@ def run(spec_path:Path, source:Path, pristine:Path, workspace:Path):
             report['checks']['idempotence']=True
             phase='negative_integrity'
             if label=='first':report['checks']['negative_integrity']=negative_checks(root,site)
-            check_snapshot(root,spec['source_sha256'],staged=True)
+            check_snapshot(root,spec['source_sha256'],staged=True,
+                           dependency_bundle=dependency_bundle is not None)
+            if bundle_hashes is not None:
+                require(hashes(root/'qualification-dependencies')==bundle_hashes,
+                        'staged dependency bundle changed')
             for name in spec['public_sources']:
                 require(digest((root/'qualification-public'/name).read_bytes())==spec['source_sha256'][name],
                         f'staged public source changed: {name}')
@@ -224,6 +236,7 @@ def run(spec_path:Path, source:Path, pristine:Path, workspace:Path):
         phase='determinism';require(states[0]==states[1],'identical pinned inputs differ')
         report['checks']['determinism']=True
         report['output_sha256']=states[0]
+        if bundle_hashes is not None:report['dependency_bundle_sha256']=bundle_hashes
         # A successful structural run alone is not a full adoption certificate.
         report['structural_result']='pass'
         report['full_site_compatibility']='not fully qualified'
@@ -233,6 +246,8 @@ def run(spec_path:Path, source:Path, pristine:Path, workspace:Path):
     finally:
         check_snapshot(source,spec['source_sha256'])
         require(hashes(pristine)==input_hashes,'original pristine input changed')
+        if bundle_hashes is not None:
+            require(hashes(dependency_bundle)==bundle_hashes,'original dependency bundle changed')
         report['original_inputs_preserved']=True
     (workspace/'report.json').write_text(sorted_json(report),encoding='utf-8')
     return report

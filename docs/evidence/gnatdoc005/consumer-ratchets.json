@@ -1,0 +1,68 @@
+{
+  "geometry-enhanced": {
+    "command": [
+      "python3",
+      "scripts/check_doc_coverage.py",
+      "--fail-on-removed",
+      "docs/gnatdoc-coverage-baseline.txt",
+      "/tmp/gnatdoc005-qualified/geometry/first/_site"
+    ],
+    "output": "Documentation coverage: 452/452 items (100.0%); 0 newly undocumented, 0 newly documented\n",
+    "returncode": 0
+  },
+  "geometry-native": {
+    "command": [
+      "python3",
+      "scripts/check_doc_coverage.py",
+      "--fail-on-removed",
+      "docs/gnatdoc-coverage-baseline.txt",
+      "/tmp/gnatdoc002-validated-acquisition/geometry/pristine"
+    ],
+    "output": "Documentation coverage: 452/452 items (100.0%); 0 newly undocumented, 0 newly documented\n",
+    "returncode": 0
+  },
+  "geometry-warnings": {
+    "command": [
+      "python3",
+      "scripts/compare_gnatdoc_warnings.py",
+      "--fail-on-removed",
+      "docs/gnatdoc-warning-baseline.txt",
+      "/tmp/gnatdoc002-validated-acquisition/geometry/gnatdoc.log"
+    ],
+    "output": "GNATdoc warning delta: 0 added, 0 removed\n",
+    "returncode": 0
+  },
+  "imgproc-enhanced": {
+    "command": [
+      "python3",
+      "scripts/check_doc_coverage.py",
+      "--fail-on-removed",
+      "docs/gnatdoc-coverage-baseline.txt",
+      "/tmp/gnatdoc005-qualified/imgproc/first/_site"
+    ],
+    "output": "Documentation coverage: 1512/1512 items (100.0%); 0 newly undocumented, 0 newly documented\n",
+    "returncode": 0
+  },
+  "imgproc-native": {
+    "command": [
+      "python3",
+      "scripts/check_doc_coverage.py",
+      "--fail-on-removed",
+      "docs/gnatdoc-coverage-baseline.txt",
+      "/tmp/gnatdoc002-validated-acquisition/imgproc/pristine"
+    ],
+    "output": "Documentation coverage: 1512/1512 items (100.0%); 0 newly undocumented, 0 newly documented\n",
+    "returncode": 0
+  },
+  "imgproc-warnings": {
+    "command": [
+      "python3",
+      "scripts/compare_gnatdoc_warnings.py",
+      "--fail-on-removed",
+      "docs/gnatdoc-warning-baseline.txt",
+      "/tmp/gnatdoc002-validated-acquisition/imgproc/gnatdoc.log"
+    ],
+    "output": "GNATdoc warning delta: 0 added, 0 removed\n",
+    "returncode": 0
+  }
+}

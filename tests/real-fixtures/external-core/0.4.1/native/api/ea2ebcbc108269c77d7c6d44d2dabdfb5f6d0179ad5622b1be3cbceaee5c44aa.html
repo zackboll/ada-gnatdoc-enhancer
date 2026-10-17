@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html class=main>
+<link rel=stylesheet href=gnatdoc.css><body class=content><h1>OpenCV</h1><h2>Entities</h2><h3>Exceptions</h3><ul><li><a href=#52c7249a8e0143d040c01bfab4a7774709f88369d7a66a6c4c731476391ebf82>OpenCV_Error</a></ul><h3>Simple Types</h3><ul><li><a href=#de966a6db4e74e15e102452acbe5bc993997dbac4c699aa33af780a80d47ad8d>Angle_Unit</a><li><a href=#22674c34048b13f71b8466ef746aa1b680ebdab2d2da7ff1ee9d13eeef4e926a>Border_Kind</a><li><a href=#66147deb3dc9295d4c919025d6dc4e4d1baf765c554a4810b2434caeee82d4aa>Point_Coordinate</a><li><a href=#4195c55322d0e03ef9c6fb729a7f4c117a344499790aeb0a3076eab2c01cb543>Size_Coordinate</a></ul><h3>Array Types</h3><ul><li><a href=#da696e09a1f1b297516365244e16533e23cca626f26df4bb3f727a64beb697b0>Point_Array</a></ul><h3>Record Types</h3><ul><li><a href=#3d6364074d584f6286e97dac0bb60e1eb9fd2d52ae631e75a7c16779818db534>Float32_Point</a><li><a href=#66b673873b7ce845d12c782d76bd22d40764d3f2f82dfa81d3499ce65bd47327>Float32_Size</a><li><a href=#75ed1323f07b5213b00ee5c3d7d803f61530fc13c398fbe3f4febe309afec4d1>Point</a><li><a href=#f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786>Rect</a><li><a href=#998a8afc13ef5c9f3b1601ed43af72a9414c1a3128933accdc3562635bb982eb>Rotated_Rect</a><li><a href=#2e5692f79d23524ec3f1c28c4c7d8599fc344ad15b5bf94f41e76529ccde26ed>Scalar</a><li><a href=#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278>Size</a></ul><h3>Subtypes</h3><ul><li><a href=#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e>Float32_Value</a><li><a href=#0985f6cd46f42219d78cc5076cd83f338a25b4a40d6f5b77e19423d17fb02f49>Float64_Value</a><li><a href=#52161e87bab51a30724241b8ab46c6e7a91868a411e1aee02b4e0b45f3ac5163>Int16_Value</a><li><a href=#27729f704e48101607805cd76dc0097b9fe92332d050a4c0f82253e636ab1ade>Int32_Value</a><li><a href=#768bdfae5c88e294121e9d66e2f8de8f80172d9ab126f739b02c5a513a640de7>Int8_Value</a><li><a href=#1c39633bd6d8bd56b0ff54b3634b5c39d32589c465a5e3b77f25e30da12761fc>UInt16_Value</a><li><a href=#126c1f5d92cb06b013208cdd3e16f14713f74cc2cf2b63dc4ec9ab2558a5981e>UInt8_Value</a></ul><h3>Subprograms</h3><ul><li><a href=#d3250abef70de6aa20012a540a9df4c5463c7b774f13541786bc752fb356bd0a>Make_Scalar</a></ul><h2>Description</h2><h4 id=de966a6db4e74e15e102452acbe5bc993997dbac4c699aa33af780a80d47ad8d>Angle_Unit</h4><pre class=ada-code-snippet><code>type Angle_Unit is (Radians, Degrees);
+</code></pre><h5>Enumeration Literal</h5><dl><dt>Radians<dd><dt>Degrees<dd></dl><h4 id=22674c34048b13f71b8466ef746aa1b680ebdab2d2da7ff1ee9d13eeef4e926a>Border_Kind</h4><pre class=ada-code-snippet><code>type Border_Kind is
+  (Constant_Border, Replicate, Reflect, Reflect_101, Wrap);
+</code></pre><h5>Enumeration Literal</h5><dl><dt>Constant_Border<dd><dt>Replicate<dd><dt>Reflect<dd><dt>Reflect_101<dd><dt>Wrap<dd></dl><h4 id=3d6364074d584f6286e97dac0bb60e1eb9fd2d52ae631e75a7c16779818db534>Float32_Point</h4><pre class=ada-code-snippet><code>type Float32_Point is record
+   X : Float32_Value := 0.0;
+   Y : Float32_Value := 0.0;
+end record;
+</code></pre><p>Value-semantic 2-D point with binary32 coordinates. This is the shared representation for OpenCV floating-point 2-D points.<h5>Record fields</h5><dl><dt>X<dd><dt>Y<dd></dl><h4 id=66b673873b7ce845d12c782d76bd22d40764d3f2f82dfa81d3499ce65bd47327>Float32_Size</h4><pre class=ada-code-snippet><code>type Float32_Size is record
+   Width  : Float32_Value := 0.0;
+   Height : Float32_Value := 0.0;
+end record;
+</code></pre><p>Value-semantic two-dimensional binary32 extent. Individual operations define whether negative dimensions are meaningful.<h5>Record fields</h5><dl><dt>Width<dd><dt>Height<dd></dl><h4 id=2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e>Float32_Value</h4><pre class=ada-code-snippet><code>subtype Float32_Value is Interfaces.IEEE_Float_32;
+</code></pre><h4 id=0985f6cd46f42219d78cc5076cd83f338a25b4a40d6f5b77e19423d17fb02f49>Float64_Value</h4><pre class=ada-code-snippet><code>subtype Float64_Value is Interfaces.IEEE_Float_64;
+</code></pre><h4 id=52161e87bab51a30724241b8ab46c6e7a91868a411e1aee02b4e0b45f3ac5163>Int16_Value</h4><pre class=ada-code-snippet><code>subtype Int16_Value is Interfaces.Integer_16;
+</code></pre><h4 id=27729f704e48101607805cd76dc0097b9fe92332d050a4c0f82253e636ab1ade>Int32_Value</h4><pre class=ada-code-snippet><code>subtype Int32_Value is Interfaces.Integer_32;
+</code></pre><h4 id=768bdfae5c88e294121e9d66e2f8de8f80172d9ab126f739b02c5a513a640de7>Int8_Value</h4><pre class=ada-code-snippet><code>subtype Int8_Value is Interfaces.Integer_8;
+</code></pre><h4 id=d3250abef70de6aa20012a540a9df4c5463c7b774f13541786bc752fb356bd0a>Make_Scalar</h4><pre class=ada-code-snippet><code>function Make_Scalar
+  (Component_0 : Long_Float;
+   Component_1 : Long_Float := 0.0;
+   Component_2 : Long_Float := 0.0;
+   Component_3 : Long_Float := 0.0) return Scalar
+</code></pre><h5>Parameters</h5><dl><dt>Component_0<dd><dt>Component_1<dd><dt>Component_2<dd><dt>Component_3<dd></dl><h5>Return Value</h5><dl><dd></dl><h4 id=52c7249a8e0143d040c01bfab4a7774709f88369d7a66a6c4c731476391ebf82>OpenCV_Error</h4><pre class=ada-code-snippet><code>OpenCV_Error : exception;
+</code></pre><h4 id=75ed1323f07b5213b00ee5c3d7d803f61530fc13c398fbe3f4febe309afec4d1>Point</h4><pre class=ada-code-snippet><code>type Point is record
+   X : Point_Coordinate := 0;
+   Y : Point_Coordinate := 0;
+end record;
+</code></pre><h5>Record fields</h5><dl><dt>X<dd><dt>Y<dd></dl><h4 id=da696e09a1f1b297516365244e16533e23cca626f26df4bb3f727a64beb697b0>Point_Array</h4><pre class=ada-code-snippet><code>type Point_Array is array (Natural range &lt;>) of Point;
+</code></pre><p>A zero-based, value-semantic sequence of points. An empty result has the null range 1 .. 0.<h4 id=66147deb3dc9295d4c919025d6dc4e4d1baf765c554a4810b2434caeee82d4aa>Point_Coordinate</h4><pre class=ada-code-snippet><code>type Point_Coordinate is new Interfaces.Integer_32;
+</code></pre><h4 id=f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786>Rect</h4><pre class=ada-code-snippet><code>type Rect is record
+   X      : Point_Coordinate := 0;
+   Y      : Point_Coordinate := 0;
+   Width  : Size_Coordinate := 0;
+   Height : Size_Coordinate := 0;
+end record;
+</code></pre><p>Axis-aligned rectangle with a signed origin and nonnegative size. OpenCV rectangle origins may be negative. Width and Height remain nonnegative in this Ada value model. A Rect is not restricted merely because Mat ROI operations require nonnegative origins; Mat.Region enforces that ROI-specific constraint itself.<h5>Record fields</h5><dl><dt>X<dd><dt>Y<dd><dt>Width<dd><dt>Height<dd></dl><h4 id=998a8afc13ef5c9f3b1601ed43af72a9414c1a3128933accdc3562635bb982eb>Rotated_Rect</h4><pre class=ada-code-snippet><code>type Rotated_Rect is record
+   Center        : Float32_Point := (X => 0.0, Y => 0.0);
+   Size          : Float32_Size := (Width => 0.0, Height => 0.0);
+   Angle_Degrees : Float32_Value := 0.0;
+end record;
+</code></pre><p>Value-semantic rotated rectangle with binary32 native OpenCV fields. Angle_Degrees is deliberately not normalized because different OpenCV operations and versions can use distinct equivalent representations.<h5>Record fields</h5><dl><dt>Center<dd><dt>Size<dd><dt>Angle_Degrees<dd></dl><h4 id=2e5692f79d23524ec3f1c28c4c7d8599fc344ad15b5bf94f41e76529ccde26ed>Scalar</h4><pre class=ada-code-snippet><code>type Scalar is record
+   Component_0 : Long_Float := 0.0;
+   Component_1 : Long_Float := 0.0;
+   Component_2 : Long_Float := 0.0;
+   Component_3 : Long_Float := 0.0;
+end record;
+</code></pre><h5>Record fields</h5><dl><dt>Component_0<dd><dt>Component_1<dd><dt>Component_2<dd><dt>Component_3<dd></dl><h4 id=1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278>Size</h4><pre class=ada-code-snippet><code>type Size is record
+   Width  : Size_Coordinate := 0;
+   Height : Size_Coordinate := 0;
+end record;
+</code></pre><h5>Record fields</h5><dl><dt>Width<dd><dt>Height<dd></dl><h4 id=4195c55322d0e03ef9c6fb729a7f4c117a344499790aeb0a3076eab2c01cb543>Size_Coordinate</h4><pre class=ada-code-snippet><code>type Size_Coordinate is
+  new Interfaces.Integer_32 range 0 .. Interfaces.Integer_32'Last;
+</code></pre><h4 id=1c39633bd6d8bd56b0ff54b3634b5c39d32589c465a5e3b77f25e30da12761fc>UInt16_Value</h4><pre class=ada-code-snippet><code>subtype UInt16_Value is Interfaces.Unsigned_16;
+</code></pre><h4 id=126c1f5d92cb06b013208cdd3e16f14713f74cc2cf2b63dc4ec9ab2558a5981e>UInt8_Value</h4><pre class=ada-code-snippet><code>subtype UInt8_Value is Interfaces.Unsigned_8;
+</code></pre><p>CV_8U, CV_8S, CV_16U, CV_16S, CV_32S, CV_32F, and CV_64F element value domains used by typed Mat accessors and shared numeric APIs. Float16 remains Core-specific.
