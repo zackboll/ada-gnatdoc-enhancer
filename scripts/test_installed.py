@@ -47,6 +47,15 @@ def run(fixtures:Path):
         require(set(conformance['profiles'])=={'core','imgproc','geometry','mel'},
                 'incomplete installed conformance')
         root=cwd/'fixture';shutil.copytree(fixtures/'mel',root)
+        alias=cwd/'alias';alias.symlink_to(root,target_is_directory=True)
+        pristine=hashes(root)
+        rejected=subprocess.run([str(cli),'enhance','--source-root',str(alias),
+                                 '--config','project.toml','--site','_site'],
+                                cwd=cwd,env=environment,text=True,capture_output=True)
+        require(rejected.returncode==2 and 'symlink site path' in rejected.stderr
+                and 'Traceback' not in rejected.stderr and not rejected.stdout,
+                f'installed CLI failed to reject aliased site: {rejected.stderr}')
+        require(pristine==hashes(root),'rejected installed invocation modified fixture')
         before={p:h for p,h in hashes(root).items() if not p.startswith('_site/')}
         arguments=('--source-root',root,'--config','project.toml','--site','_site')
         result=json.loads(invoke('enhance',*arguments))
@@ -70,6 +79,7 @@ def run(fixtures:Path):
         require(before=={p:h for p,h in hashes(root).items() if not p.startswith('_site/')},
                 'installed enhancement changed files outside the output directory')
     return {'installed_module':str(installed),'help':'passed','assets':3,
+            'symlink_source_root_rejection':'passed',
             'enhancement':'passed','idempotence':'passed','verification':verified,
             'conformance':conformance}
 

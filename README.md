@@ -51,6 +51,10 @@ of pristine GNATdoc output if needed. Native pages must be directly under
 `api/`, even when the site itself is deeply nested. Arbitrarily nested package
 page layouts are not supported. Symlinks in the site path or output tree are
 rejected. Unapproved files fail qualification rather than being deleted.
+For relative `--site` paths this includes symlinks in the supplied
+`--source-root`; canonicalizing the project for source/configuration identity
+does not bypass output-path validation. An explicitly supplied absolute site
+is checked on its own path, independently of how the sources were located.
 
 Try the bundled synthetic input without changing the checked-in fixture:
 

@@ -195,3 +195,76 @@ broader browser/accessibility evidence and independent review of exceptions.
 The filesystem checks assume the caller does not concurrently replace paths;
 they are not a sandbox against an adversarial concurrent writer. No deployments,
 releases, tags, consumer migrations or merges are part of this qualification.
+
+## GNATDOC-001-R1: CLI symlink-ancestor policy
+
+Starting from PR #1 head `12de1e30a79109fa9e1688f8d76913f81b63f69d`, the
+original **61 tests passed**, but an independent disposable Core fixture
+confirmed a CLI bypass. With a sibling `alias` symlink to the fixture's project
+root, the direct pipeline rejected `alias/_site`, while:
+
+```sh
+gnatdoc-enhancer enhance --source-root /tmp/<isolated-fixture>/alias --config project.toml --site _site
+```
+
+exited **0**, modified all four native HTML pages and added
+`api/gnatdoc-theme.css`, `api/gnatdoc-navigation.js` and `api/presentation.json`.
+This contradicted the README policy rejecting symlinks in the output path.
+The reproduction used a temporary copy, never the checked-in fixture or a
+consumer site.
+
+`cli.run()` resolved the project root before constructing relative site paths,
+so `site_root()` could no longer see the alias. The CLI now retains an unresolved
+absolute project path (`Path.cwd() / args.source_root`) for constructing relative
+output paths. Configuration loading and source identities still use its resolved
+root. Explicit absolute site paths remain independent and are passed unchanged
+to the pipeline. **`site_root()` and the filesystem architecture are unchanged.**
+
+Nine new subprocess CLI regressions cover explicit/default relative sites,
+relative source-root aliases, source-root ancestors, absolute and relative site
+aliases, dry-run/verification rejection, ordinary relative/absolute paths, and
+canonical source identity through an alias with a legitimate absolute output.
+Five tests failed against the prior implementation. After correction all nine
+pass; every rejected-path assertion checks status **2**, no traceback, empty
+stdout and unchanged project file hashes. The installed-wheel smoke script also
+checks the originally reported invocation via the published console entry point.
+
+Local Linux / Python 3.13.5 requalification commands and results:
+
+```sh
+cd /home/zboll/git/ada-gnatdoc-enhancer
+.venv/bin/python -m unittest discover -s tests -v
+.venv/bin/gnatdoc-enhancer conformance --fixtures tests/fixtures
+.venv/bin/python -m compileall -q src scripts tests
+.venv/bin/python -m build --outdir /tmp/gnatdoc-r1-dist
+python3 -m venv /tmp/gnatdoc-r1-wheel-env
+/tmp/gnatdoc-r1-wheel-env/bin/python -m pip install --no-deps /tmp/gnatdoc-r1-dist/*.whl
+cd /tmp
+env -u PYTHONPATH /tmp/gnatdoc-r1-wheel-env/bin/gnatdoc-enhancer --help
+env -u PYTHONPATH /tmp/gnatdoc-r1-wheel-env/bin/python /home/zboll/git/ada-gnatdoc-enhancer/scripts/test_installed.py --fixtures /home/zboll/git/ada-gnatdoc-enhancer/tests/fixtures
+env -u PYTHONPATH /tmp/gnatdoc-r1-wheel-env/bin/python -m unittest discover -s /home/zboll/git/ada-gnatdoc-enhancer/tests -v
+/tmp/gnatdoc-r1-wheel-env/bin/python -m pip wheel --no-cache-dir --no-deps --wheel-dir /tmp/gnatdoc-r1-sdist-wheel /tmp/gnatdoc-r1-dist/*.tar.gz
+mkdir -p /tmp/gnatdoc-r1-sdist-source
+tar -xzf /tmp/gnatdoc-r1-dist/ada_gnatdoc_enhancer-0.1.0.dev0.tar.gz -C /tmp/gnatdoc-r1-sdist-source
+python3 -m venv /tmp/gnatdoc-r1-sdist-env
+/tmp/gnatdoc-r1-sdist-env/bin/python -m pip install --no-deps /tmp/gnatdoc-r1-sdist-wheel/*.whl
+cd /tmp/gnatdoc-r1-sdist-source/ada_gnatdoc_enhancer-0.1.0.dev0
+env -u PYTHONPATH /tmp/gnatdoc-r1-sdist-env/bin/python -m unittest discover -s tests -v
+env -u PYTHONPATH /tmp/gnatdoc-r1-sdist-env/bin/gnatdoc-enhancer conformance --fixtures tests/fixtures
+env -u PYTHONPATH /tmp/gnatdoc-r1-sdist-env/bin/python scripts/test_installed.py --fixtures tests/fixtures
+```
+
+- **70/70 tests passed** from source, against the clean wheel outside checkout,
+  and from extracted sdist against its rebuilt wheel: no failures/errors/skips.
+- Wheel and sdist built; rebuilt-sdist wheel installed. Both installed smoke
+  checks passed CLI help, alias rejection without writes, assets, enhancement,
+  verification, idempotence and all four synthetic profiles.
+- Four-profile package/HTML/type-link counts remain respectively Core 3/4/4,
+  Imgproc 1/2/6, Geometry 2/3/5, MEL 29/37/7; deterministic and idempotent.
+- Existing optional Chromium Core checks passed again; all prior real-site,
+  browser and concurrent-writer limitations remain unchanged.
+
+The existing CI automatically includes the new regressions in its Python
+3.11/3.12/3.13 matrix, installed-wheel suite and extracted-sdist suite. PR #1's
+R1 update records the exact new tested head and hosted results. No new PR,
+filesystem-policy relaxation, history rewrite or production adoption is involved.
