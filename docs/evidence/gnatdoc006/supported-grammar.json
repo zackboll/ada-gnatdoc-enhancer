@@ -1,0 +1,24 @@
+{
+  "associations": "named only, each expected formal exactly once, arbitrary order",
+  "context": "exactly one ordinary with clause importing the fully qualified template",
+  "dimensions": "[1-9][0-9]*",
+  "element_actuals": "unqualified supported source-owned type, ancestor visibility verified",
+  "native_layout": "exact reconstructed GNATdoc 26.0.0 empty instance page, no member declarations, one Description insertion point",
+  "presentation_anchor": "instance-members-summary (never native declaration authority)",
+  "reject": [
+    "missing/duplicate/unknown formals",
+    "positional arguments",
+    "expressions and nonliteral dimensions",
+    "unknown templates for expected identities",
+    "use/limited/private/additional context clauses",
+    "renamings/aliases/nested/generic contexts",
+    "unconsumed declarations or pragmas",
+    "altered template members/formals",
+    "changed/ambiguous/shadowed actual types"
+  ],
+  "templates": [
+    "OpenCV.Core.Vectors",
+    "OpenCV.Core.Fixed_Matrices"
+  ],
+  "unit": "one complete public library package instantiation, no trailing code"
+}

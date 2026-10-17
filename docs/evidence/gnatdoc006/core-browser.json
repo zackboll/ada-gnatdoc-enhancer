@@ -1,0 +1,3265 @@
+{
+  "browser": "Chromium 156.0.8078.4",
+  "checks": [
+    {
+      "check": "theme assets and color scheme",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "search and clear",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "package bookmark direct link Back Forward",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "package-only policy has no operation categories",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "syntax and local type links",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "follow local type link to unique native anchor",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard focus and visible outline",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "responsive outer viewport",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "no JavaScript errors",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "theme assets and color scheme",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "search and clear",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "package bookmark direct link Back Forward",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "package-only policy has no operation categories",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "syntax and local type links",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "follow local type link to unique native anchor",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard focus and visible outline",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "responsive outer viewport",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "no JavaScript errors",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "theme assets and color scheme",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "search and clear",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "package bookmark direct link Back Forward",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "package-only policy has no operation categories",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "syntax and local type links",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "follow local type link to unique native anchor",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard focus and visible outline",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "responsive outer viewport",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "no JavaScript errors",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "theme assets and color scheme",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "search and clear",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "package bookmark direct link Back Forward",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "package-only policy has no operation categories",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "syntax and local type links",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "follow local type link to unique native anchor",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard focus and visible outline",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "responsive outer viewport",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "no JavaScript errors",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "JavaScript-disabled native navigation",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "check": "JavaScript-disabled native navigation",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#126c1f5d92cb06b013208cdd3e16f14713f74cc2cf2b63dc4ec9ab2558a5981e",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#8d7064f2629b206599c570addcbccd218d7be8e2c2bd492af3796a687aebd3e3",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#0985f6cd46f42219d78cc5076cd83f338a25b4a40d6f5b77e19423d17fb02f49",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#d54f66a5afc01fb7daad3316abcbbc9ef3a81a71610b2f3c8fb9dacd9e766434",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#8e11295a1b08b0713992ab0f64fa0661b468ccbddaa4bf832caa9052e6eb02e1",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#503c405669f71075210f6305aca5e2a908c7f0d6add86c6cd460dd09a87b42c4",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "95669bcd36486c970254de205b04dc08bf3208f5642e85fe01aaf0a0610827da.html",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#126c1f5d92cb06b013208cdd3e16f14713f74cc2cf2b63dc4ec9ab2558a5981e",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#8d7064f2629b206599c570addcbccd218d7be8e2c2bd492af3796a687aebd3e3",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#0985f6cd46f42219d78cc5076cd83f338a25b4a40d6f5b77e19423d17fb02f49",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#d54f66a5afc01fb7daad3316abcbbc9ef3a81a71610b2f3c8fb9dacd9e766434",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#8e11295a1b08b0713992ab0f64fa0661b468ccbddaa4bf832caa9052e6eb02e1",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#503c405669f71075210f6305aca5e2a908c7f0d6add86c6cd460dd09a87b42c4",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "95669bcd36486c970254de205b04dc08bf3208f5642e85fe01aaf0a0610827da.html",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#126c1f5d92cb06b013208cdd3e16f14713f74cc2cf2b63dc4ec9ab2558a5981e",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#8d7064f2629b206599c570addcbccd218d7be8e2c2bd492af3796a687aebd3e3",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#0985f6cd46f42219d78cc5076cd83f338a25b4a40d6f5b77e19423d17fb02f49",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#d54f66a5afc01fb7daad3316abcbbc9ef3a81a71610b2f3c8fb9dacd9e766434",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#8e11295a1b08b0713992ab0f64fa0661b468ccbddaa4bf832caa9052e6eb02e1",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#503c405669f71075210f6305aca5e2a908c7f0d6add86c6cd460dd09a87b42c4",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "95669bcd36486c970254de205b04dc08bf3208f5642e85fe01aaf0a0610827da.html",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#126c1f5d92cb06b013208cdd3e16f14713f74cc2cf2b63dc4ec9ab2558a5981e",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#8d7064f2629b206599c570addcbccd218d7be8e2c2bd492af3796a687aebd3e3",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#0985f6cd46f42219d78cc5076cd83f338a25b4a40d6f5b77e19423d17fb02f49",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#d54f66a5afc01fb7daad3316abcbbc9ef3a81a71610b2f3c8fb9dacd9e766434",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#8e11295a1b08b0713992ab0f64fa0661b468ccbddaa4bf832caa9052e6eb02e1",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#503c405669f71075210f6305aca5e2a908c7f0d6add86c6cd460dd09a87b42c4",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "95669bcd36486c970254de205b04dc08bf3208f5642e85fe01aaf0a0610827da.html",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#126c1f5d92cb06b013208cdd3e16f14713f74cc2cf2b63dc4ec9ab2558a5981e",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#8d7064f2629b206599c570addcbccd218d7be8e2c2bd492af3796a687aebd3e3",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#0985f6cd46f42219d78cc5076cd83f338a25b4a40d6f5b77e19423d17fb02f49",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#d54f66a5afc01fb7daad3316abcbbc9ef3a81a71610b2f3c8fb9dacd9e766434",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#8e11295a1b08b0713992ab0f64fa0661b468ccbddaa4bf832caa9052e6eb02e1",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#503c405669f71075210f6305aca5e2a908c7f0d6add86c6cd460dd09a87b42c4",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "95669bcd36486c970254de205b04dc08bf3208f5642e85fe01aaf0a0610827da.html",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#126c1f5d92cb06b013208cdd3e16f14713f74cc2cf2b63dc4ec9ab2558a5981e",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#8d7064f2629b206599c570addcbccd218d7be8e2c2bd492af3796a687aebd3e3",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#0985f6cd46f42219d78cc5076cd83f338a25b4a40d6f5b77e19423d17fb02f49",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#d54f66a5afc01fb7daad3316abcbbc9ef3a81a71610b2f3c8fb9dacd9e766434",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#8e11295a1b08b0713992ab0f64fa0661b468ccbddaa4bf832caa9052e6eb02e1",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#503c405669f71075210f6305aca5e2a908c7f0d6add86c6cd460dd09a87b42c4",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "95669bcd36486c970254de205b04dc08bf3208f5642e85fe01aaf0a0610827da.html",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#126c1f5d92cb06b013208cdd3e16f14713f74cc2cf2b63dc4ec9ab2558a5981e",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#8d7064f2629b206599c570addcbccd218d7be8e2c2bd492af3796a687aebd3e3",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#0985f6cd46f42219d78cc5076cd83f338a25b4a40d6f5b77e19423d17fb02f49",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#d54f66a5afc01fb7daad3316abcbbc9ef3a81a71610b2f3c8fb9dacd9e766434",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#8e11295a1b08b0713992ab0f64fa0661b468ccbddaa4bf832caa9052e6eb02e1",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#503c405669f71075210f6305aca5e2a908c7f0d6add86c6cd460dd09a87b42c4",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "95669bcd36486c970254de205b04dc08bf3208f5642e85fe01aaf0a0610827da.html",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic keyboard activation and visible focus",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": true,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#126c1f5d92cb06b013208cdd3e16f14713f74cc2cf2b63dc4ec9ab2558a5981e",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.uint8_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#8d7064f2629b206599c570addcbccd218d7be8e2c2bd492af3796a687aebd3e3",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.float16_vec3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.float32_vec4",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#0985f6cd46f42219d78cc5076cd83f338a25b4a40d6f5b77e19423d17fb02f49",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html#9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.float64_vec2",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic visible unique summary and presentation bookmark",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic dimensions member meanings ownership",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic readable responsive tables and theme",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#d54f66a5afc01fb7daad3316abcbbc9ef3a81a71610b2f3c8fb9dacd9e766434",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#8e11295a1b08b0713992ab0f64fa0661b468ccbddaa4bf832caa9052e6eb02e1",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html#503c405669f71075210f6305aca5e2a908c7f0d6add86c6cd460dd09a87b42c4",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic hyperlink click direct bookmark Back Forward",
+      "hyperlink": "95669bcd36486c970254de205b04dc08bf3208f5642e85fe01aaf0a0610827da.html",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "generic no JavaScript errors",
+      "javascript": false,
+      "package": "opencv.core.float32_matx3x3",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    }
+  ],
+  "navigation_mode": "packages",
+  "not_qualified": [
+    "screen-reader audit",
+    "touch-device interaction",
+    "consumer authored guides",
+    "real external HTTPS hosting",
+    "visual design review"
+  ],
+  "scope": "isolated real native API site; not consumer portal",
+  "status": "pass"
+}

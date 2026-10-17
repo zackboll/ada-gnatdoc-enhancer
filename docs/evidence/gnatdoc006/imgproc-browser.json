@@ -1,0 +1,315 @@
+{
+  "browser": "Chromium 156.0.8078.4",
+  "checks": [
+    {
+      "check": "theme assets and color scheme",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "search and clear",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "single-package bookmark reload Back Forward (no cross-package transition)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation category real anchor",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "syntax and local type links",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "follow local type link to unique native anchor",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "external pinned type click direct Back Forward",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard focus and visible outline",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "responsive outer viewport",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "no JavaScript errors",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "theme assets and color scheme",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "search and clear",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "single-package bookmark reload Back Forward (no cross-package transition)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation category real anchor",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "syntax and local type links",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "follow local type link to unique native anchor",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "external pinned type click direct Back Forward",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard focus and visible outline",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "responsive outer viewport",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "no JavaScript errors",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "theme assets and color scheme",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "search and clear",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "single-package bookmark reload Back Forward (no cross-package transition)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation category real anchor",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "syntax and local type links",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "follow local type link to unique native anchor",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "external pinned type click direct Back Forward",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard focus and visible outline",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "responsive outer viewport",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "no JavaScript errors",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "theme assets and color scheme",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "search and clear",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "single-package bookmark reload Back Forward (no cross-package transition)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "operation category real anchor",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "syntax and local type links",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "follow local type link to unique native anchor",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "external pinned type click direct Back Forward",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard focus and visible outline",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "responsive outer viewport",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "no JavaScript errors",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "JavaScript-disabled native navigation",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "check": "JavaScript-disabled pinned external link",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "check": "JavaScript-disabled native navigation",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "check": "JavaScript-disabled pinned external link",
+      "status": "pass",
+      "width": 390
+    }
+  ],
+  "external_destinations": [
+    {
+      "anchor": "292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "revision": "386c5360ac51f2b62e522853d94290aec4ee14a0",
+      "theme": "light",
+      "transport": "local interception; not hosted",
+      "type": "OpenCV.Core.Mat",
+      "url": "https://core.invalid/386c5360ac51f2b62e522853d94290aec4ee14a0/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "width": 1280
+    },
+    {
+      "anchor": "292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "revision": "386c5360ac51f2b62e522853d94290aec4ee14a0",
+      "theme": "dark",
+      "transport": "local interception; not hosted",
+      "type": "OpenCV.Core.Mat",
+      "url": "https://core.invalid/386c5360ac51f2b62e522853d94290aec4ee14a0/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "width": 1280
+    },
+    {
+      "anchor": "292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "revision": "386c5360ac51f2b62e522853d94290aec4ee14a0",
+      "theme": "light",
+      "transport": "local interception; not hosted",
+      "type": "OpenCV.Core.Mat",
+      "url": "https://core.invalid/386c5360ac51f2b62e522853d94290aec4ee14a0/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "width": 390
+    },
+    {
+      "anchor": "292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "revision": "386c5360ac51f2b62e522853d94290aec4ee14a0",
+      "theme": "dark",
+      "transport": "local interception; not hosted",
+      "type": "OpenCV.Core.Mat",
+      "url": "https://core.invalid/386c5360ac51f2b62e522853d94290aec4ee14a0/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "width": 390
+    }
+  ],
+  "external_publication": "intercepted reserved .invalid HTTPS test mapping; NOT actual HTTPS hosting",
+  "navigation_mode": "operations",
+  "not_qualified": [
+    "screen-reader audit",
+    "touch-device interaction",
+    "consumer authored guides",
+    "real external HTTPS hosting",
+    "visual design review"
+  ],
+  "published_url_verified": false,
+  "scope": "isolated real native API site; not consumer portal",
+  "status": "pass"
+}

@@ -1,0 +1,11 @@
+{
+  ".github/workflows/ci.yml": "c2fbe36d09450d097e95e2cec8d9ff8cdecc58b1716cc994d9bca3eb76ad1566",
+  "scripts/check_real_browser.py": "d0ca47482980038de40bfc9c2a38870a48df2a74d6a0eacd5fb11189d9330983",
+  "scripts/qualify_generic_instances.py": "93afba3e9773dbd3e897948890afb1053d745c8345ae53a9e5360f25e0fd15f5",
+  "src/ada_gnatdoc_enhancer/assets/gnatdoc-theme.css": "cf06637732a8b047a7191bfb991a5c3da7cd31a52076876880d5f8a3f63929bc",
+  "src/ada_gnatdoc_enhancer/config.py": "858dd095fb32e4dfa3b392646a717a12f27743827265cf3ded8fb48332924c3b",
+  "src/ada_gnatdoc_enhancer/generic_instances.py": "07efc9e92201548f7c33939c57ef1f8c3c3aecd92f3199a52f657aff65ff12f8",
+  "src/ada_gnatdoc_enhancer/pipeline.py": "ef611672577fe2650ab02513e325b53af17b3224dd61bdea779b6c0fd86fcc23",
+  "src/ada_gnatdoc_enhancer/qualification.py": "1e36e59542e19c5a30689e8b94aa6703f7081f733de7463b2bce42bc4c70d28d",
+  "tests/test_generic_instances.py": "ac6b3a39c534deb4802f36ba923aec33f7afff74be28320f82fcd90d7c2fe5db"
+}

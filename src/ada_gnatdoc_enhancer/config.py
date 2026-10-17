@@ -8,7 +8,7 @@ from pathlib import Path
 from .errors import EnhancementError
 from .util import inside, regular, require
 
-TOP = frozenset({"schema_version", "project", "gnatdoc", "sources", "navigation", "presentation", "guides", "security", "external_types", "external_dependencies", "renderer_exceptions"})
+TOP = frozenset({"schema_version", "project", "gnatdoc", "sources", "navigation", "presentation", "guides", "security", "external_types", "external_dependencies", "renderer_exceptions", "generic_instances"})
 
 
 def members(data, allowed, at):
@@ -43,6 +43,7 @@ class Config:
     allowed_hosts: frozenset[str] = frozenset()
     renderer_exceptions: tuple[str, ...] = ()
     dependencies: tuple[dict, ...] = ()
+    generic_instances: dict = field(default_factory=dict)
 
 
 def load(root: Path, path: str) -> Config:
@@ -125,7 +126,15 @@ def load(root: Path, path: str) -> Config:
                 'duplicate case-insensitive dependency types')
         for key in ('manifest','acquisition','source','site'):
             inside(root,dep[key])
+    generic = raw.get('generic_instances', {})
+    members(generic, {'qualification', 'sha256'}, 'generic_instances')
+    if generic:
+        require(set(generic) == {'qualification', 'sha256'}, 'incomplete generic instance qualification')
+        require(isinstance(generic['qualification'], str), 'generic qualification must be a path')
+        regular(inside(root, generic['qualification']))
+        require(isinstance(generic['sha256'], str) and re.fullmatch('[a-f0-9]{64}', generic['sha256']),
+                'invalid generic qualification SHA-256')
     return Config(root, project, version, names, packages, style, mode, categories,
                   pres.get("theme", True), pres.get("syntax_highlighting", True),
                   pres.get("type_links", True), guide_mode, guide_manifest,
-                  ext, frozenset(hosts), exceptions, tuple(dependencies))
+                  ext, frozenset(hosts), exceptions, tuple(dependencies), generic)

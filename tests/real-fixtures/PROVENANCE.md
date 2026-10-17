@@ -25,3 +25,11 @@ Full methodology and full-site results are in
 **Reduced regression success is not full-site qualification.** The excerpts
 explicitly retain failing expression-function and abbreviated-enumeration
 profiles; their tests do not claim the enhancer supports those profiles.
+
+`generic-core/` contains ten complete source/native package pairs from Core
+`c5545eee815431568495c6c76af83df56cf5c3dd`: five representative instances,
+their two templates, the two actual-type owners and the conversion package.
+`provenance.json` binds original paths and SHA-256 identities. Only the native
+index lists are reduced to this selected package set; no declaration page or
+Ada source is synthesized or shortened. `qualification.json` records those
+reduced inputs and is explicitly not the full 25-instance qualification.

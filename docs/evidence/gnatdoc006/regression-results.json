@@ -1,0 +1,282 @@
+{
+  "all_tests": 306,
+  "baseline_tests": 238,
+  "full_native_sites": "separate full-site reports, not inferred from reduced tests",
+  "individual_generic_tests": [
+    {
+      "result": "pass",
+      "test": "test_additional_supported_instance (test_generic_instances.GenericInstances.test_additional_supported_instance)"
+    },
+    {
+      "result": "pass",
+      "test": "test_all_five_authentic_families (test_generic_instances.GenericInstances.test_all_five_authentic_families)"
+    },
+    {
+      "result": "pass",
+      "test": "test_altered_generic_formal (test_generic_instances.GenericInstances.test_altered_generic_formal)"
+    },
+    {
+      "result": "pass",
+      "test": "test_altered_member_definition (test_generic_instances.GenericInstances.test_altered_member_definition)"
+    },
+    {
+      "result": "pass",
+      "test": "test_ambiguous_actual_owner_declaration (test_generic_instances.GenericInstances.test_ambiguous_actual_owner_declaration)"
+    },
+    {
+      "result": "pass",
+      "test": "test_authentic_introductions_and_no_native_members (test_generic_instances.GenericInstances.test_authentic_introductions_and_no_native_members)"
+    },
+    {
+      "result": "pass",
+      "test": "test_broken_and_malformed_fragments (test_generic_instances.GenericInstances.test_broken_and_malformed_fragments)"
+    },
+    {
+      "result": "pass",
+      "test": "test_byte_idempotence (test_generic_instances.GenericInstances.test_byte_idempotence)"
+    },
+    {
+      "result": "pass",
+      "test": "test_changed_actual_declaration (test_generic_instances.GenericInstances.test_changed_actual_declaration)"
+    },
+    {
+      "result": "pass",
+      "test": "test_changed_element (test_generic_instances.GenericInstances.test_changed_element)"
+    },
+    {
+      "result": "pass",
+      "test": "test_changed_native_input_hash (test_generic_instances.GenericInstances.test_changed_native_input_hash)"
+    },
+    {
+      "result": "pass",
+      "test": "test_changed_qualification_hash (test_generic_instances.GenericInstances.test_changed_qualification_hash)"
+    },
+    {
+      "result": "pass",
+      "test": "test_changed_source_after_enhancement (test_generic_instances.GenericInstances.test_changed_source_after_enhancement)"
+    },
+    {
+      "result": "pass",
+      "test": "test_changed_source_hash (test_generic_instances.GenericInstances.test_changed_source_hash)"
+    },
+    {
+      "result": "pass",
+      "test": "test_config_requires_explicit_hash_and_rejects_unknown_keys (test_generic_instances.GenericInstances.test_config_requires_explicit_hash_and_rejects_unknown_keys)"
+    },
+    {
+      "result": "pass",
+      "test": "test_context_and_trailing_consumption (test_generic_instances.GenericInstances.test_context_and_trailing_consumption)"
+    },
+    {
+      "result": "pass",
+      "test": "test_disabled_type_links_still_require_genuine_summary_targets (test_generic_instances.GenericInstances.test_disabled_type_links_still_require_genuine_summary_targets)"
+    },
+    {
+      "result": "pass",
+      "test": "test_duplicate_association (test_generic_instances.GenericInstances.test_duplicate_association)"
+    },
+    {
+      "result": "pass",
+      "test": "test_duplicate_element_association (test_generic_instances.GenericInstances.test_duplicate_element_association)"
+    },
+    {
+      "result": "pass",
+      "test": "test_duplicate_generic_formal_declaration (test_generic_instances.GenericInstances.test_duplicate_generic_formal_declaration)"
+    },
+    {
+      "result": "pass",
+      "test": "test_duplicate_summary (test_generic_instances.GenericInstances.test_duplicate_summary)"
+    },
+    {
+      "result": "pass",
+      "test": "test_failed_enhancement_is_atomic (test_generic_instances.GenericInstances.test_failed_enhancement_is_atomic)"
+    },
+    {
+      "result": "pass",
+      "test": "test_incorrect_matrix_dimensions (test_generic_instances.GenericInstances.test_incorrect_matrix_dimensions)"
+    },
+    {
+      "result": "pass",
+      "test": "test_incorrect_positive_length (test_generic_instances.GenericInstances.test_incorrect_positive_length)"
+    },
+    {
+      "result": "pass",
+      "test": "test_independent_reconstruction_and_native_preservation (test_generic_instances.GenericInstances.test_independent_reconstruction_and_native_preservation)"
+    },
+    {
+      "result": "pass",
+      "test": "test_meanings_and_actual_ownership (test_generic_instances.GenericInstances.test_meanings_and_actual_ownership)"
+    },
+    {
+      "result": "pass",
+      "test": "test_member_anchor_removed_from_pristine (test_generic_instances.GenericInstances.test_member_anchor_removed_from_pristine)"
+    },
+    {
+      "result": "pass",
+      "test": "test_missing_actual_anchor (test_generic_instances.GenericInstances.test_missing_actual_anchor)"
+    },
+    {
+      "result": "pass",
+      "test": "test_missing_ancestor (test_generic_instances.GenericInstances.test_missing_ancestor)"
+    },
+    {
+      "result": "pass",
+      "test": "test_missing_conversion_package (test_generic_instances.GenericInstances.test_missing_conversion_package)"
+    },
+    {
+      "result": "pass",
+      "test": "test_missing_expected_instance (test_generic_instances.GenericInstances.test_missing_expected_instance)"
+    },
+    {
+      "result": "pass",
+      "test": "test_missing_formal (test_generic_instances.GenericInstances.test_missing_formal)"
+    },
+    {
+      "result": "pass",
+      "test": "test_missing_member_anchor (test_generic_instances.GenericInstances.test_missing_member_anchor)"
+    },
+    {
+      "result": "pass",
+      "test": "test_missing_member_link (test_generic_instances.GenericInstances.test_missing_member_link)"
+    },
+    {
+      "result": "pass",
+      "test": "test_missing_summary (test_generic_instances.GenericInstances.test_missing_summary)"
+    },
+    {
+      "result": "pass",
+      "test": "test_missing_template_source (test_generic_instances.GenericInstances.test_missing_template_source)"
+    },
+    {
+      "result": "pass",
+      "test": "test_modified_native_introduction (test_generic_instances.GenericInstances.test_modified_native_introduction)"
+    },
+    {
+      "result": "pass",
+      "test": "test_modified_summary_argument (test_generic_instances.GenericInstances.test_modified_summary_argument)"
+    },
+    {
+      "result": "pass",
+      "test": "test_named_association_order_is_not_semantic (test_generic_instances.GenericInstances.test_named_association_order_is_not_semantic)"
+    },
+    {
+      "result": "pass",
+      "test": "test_native_preservation_rejects_modified_summary (test_generic_instances.GenericInstances.test_native_preservation_rejects_modified_summary)"
+    },
+    {
+      "result": "pass",
+      "test": "test_nested_instance_context (test_generic_instances.GenericInstances.test_nested_instance_context)"
+    },
+    {
+      "result": "pass",
+      "test": "test_nested_shadowing_and_renaming (test_generic_instances.GenericInstances.test_nested_shadowing_and_renaming)"
+    },
+    {
+      "result": "pass",
+      "test": "test_object_list_shadowing (test_generic_instances.GenericInstances.test_object_list_shadowing)"
+    },
+    {
+      "result": "pass",
+      "test": "test_output_manifest_cannot_authorize_tampered_summary (test_generic_instances.GenericInstances.test_output_manifest_cannot_authorize_tampered_summary)"
+    },
+    {
+      "result": "pass",
+      "test": "test_output_manifest_cannot_redefine_native_input (test_generic_instances.GenericInstances.test_output_manifest_cannot_redefine_native_input)"
+    },
+    {
+      "result": "pass",
+      "test": "test_positional_association (test_generic_instances.GenericInstances.test_positional_association)"
+    },
+    {
+      "result": "pass",
+      "test": "test_presentation_anchor_cannot_be_native_declaration (test_generic_instances.GenericInstances.test_presentation_anchor_cannot_be_native_declaration)"
+    },
+    {
+      "result": "pass",
+      "test": "test_presentation_fragment_cannot_satisfy_template_member (test_generic_instances.GenericInstances.test_presentation_fragment_cannot_satisfy_template_member)"
+    },
+    {
+      "result": "pass",
+      "test": "test_private_actual_owner (test_generic_instances.GenericInstances.test_private_actual_owner)"
+    },
+    {
+      "result": "pass",
+      "test": "test_private_shadowing (test_generic_instances.GenericInstances.test_private_shadowing)"
+    },
+    {
+      "result": "pass",
+      "test": "test_provenance_hashes_and_pin (test_generic_instances.GenericInstances.test_provenance_hashes_and_pin)"
+    },
+    {
+      "result": "pass",
+      "test": "test_public_shadowing (test_generic_instances.GenericInstances.test_public_shadowing)"
+    },
+    {
+      "result": "pass",
+      "test": "test_qualified_actual_unsupported (test_generic_instances.GenericInstances.test_qualified_actual_unsupported)"
+    },
+    {
+      "result": "pass",
+      "test": "test_script_injection (test_generic_instances.GenericInstances.test_script_injection)"
+    },
+    {
+      "result": "pass",
+      "test": "test_separate_type_accounting (test_generic_instances.GenericInstances.test_separate_type_accounting)"
+    },
+    {
+      "result": "pass",
+      "test": "test_swapped_member_destinations (test_generic_instances.GenericInstances.test_swapped_member_destinations)"
+    },
+    {
+      "result": "pass",
+      "test": "test_swapped_template_package_target (test_generic_instances.GenericInstances.test_swapped_template_package_target)"
+    },
+    {
+      "result": "pass",
+      "test": "test_symlinked_output (test_generic_instances.GenericInstances.test_symlinked_output)"
+    },
+    {
+      "result": "pass",
+      "test": "test_template_extra_declaration (test_generic_instances.GenericInstances.test_template_extra_declaration)"
+    },
+    {
+      "result": "pass",
+      "test": "test_template_renaming (test_generic_instances.GenericInstances.test_template_renaming)"
+    },
+    {
+      "result": "pass",
+      "test": "test_two_copy_determinism (test_generic_instances.GenericInstances.test_two_copy_determinism)"
+    },
+    {
+      "result": "pass",
+      "test": "test_unexpected_native_member_section (test_generic_instances.GenericInstances.test_unexpected_native_member_section)"
+    },
+    {
+      "result": "pass",
+      "test": "test_unexpected_resources (test_generic_instances.GenericInstances.test_unexpected_resources)"
+    },
+    {
+      "result": "pass",
+      "test": "test_unexpected_summary_in_pristine (test_generic_instances.GenericInstances.test_unexpected_summary_in_pristine)"
+    },
+    {
+      "result": "pass",
+      "test": "test_unknown_formal (test_generic_instances.GenericInstances.test_unknown_formal)"
+    },
+    {
+      "result": "pass",
+      "test": "test_unknown_template (test_generic_instances.GenericInstances.test_unknown_template)"
+    },
+    {
+      "result": "pass",
+      "test": "test_unsupported_dimensions (test_generic_instances.GenericInstances.test_unsupported_dimensions)"
+    },
+    {
+      "result": "pass",
+      "test": "test_wrong_existing_native_anchor (test_generic_instances.GenericInstances.test_wrong_existing_native_anchor)"
+    }
+  ],
+  "new_generic_tests": 68,
+  "result": "pass",
+  "source_native_provenance": "tests/real-fixtures/generic-core/provenance.json"
+}

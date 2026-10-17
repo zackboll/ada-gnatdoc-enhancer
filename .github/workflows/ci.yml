@@ -29,6 +29,9 @@ jobs:
         run: gnatdoc-enhancer conformance --fixtures tests/fixtures
       - name: Pinned external dependency reduced-fixture and adversarial qualification
         run: python -m unittest discover -s tests -p test_external_types.py -v
+      # Full-site and Chromium evidence remains a separate offline qualification.
+      - name: Authentic generic-instance reduced fixture and adversarial qualification
+        run: python -m unittest discover -s tests -p test_generic_instances.py -v
       # Unit discovery above includes pinned authentic reduced fixtures. Hosted
       # CI does NOT generate/certify four complete consumer documentation sites.
       - name: Authentic reduced real-site CLI qualification (not full-site certification)

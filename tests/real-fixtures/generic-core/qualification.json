@@ -1,0 +1,77 @@
+{
+  "instances": {
+    "opencv.core.float16_vec3": {
+      "dimensions": [
+        3
+      ],
+      "element_owner": "opencv.core",
+      "element_type": "Float16_Value",
+      "package": "OpenCV.Core.Float16_Vec3",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.float32_matx3x3": {
+      "dimensions": [
+        3,
+        3
+      ],
+      "element_owner": "opencv",
+      "element_type": "Float32_Value",
+      "package": "OpenCV.Core.Float32_Matx3x3",
+      "template": "opencv.core.fixed_matrices"
+    },
+    "opencv.core.float32_vec4": {
+      "dimensions": [
+        4
+      ],
+      "element_owner": "opencv",
+      "element_type": "Float32_Value",
+      "package": "OpenCV.Core.Float32_Vec4",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.float64_vec2": {
+      "dimensions": [
+        2
+      ],
+      "element_owner": "opencv",
+      "element_type": "Float64_Value",
+      "package": "OpenCV.Core.Float64_Vec2",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.uint8_vec2": {
+      "dimensions": [
+        2
+      ],
+      "element_owner": "opencv",
+      "element_type": "UInt8_Value",
+      "package": "OpenCV.Core.UInt8_Vec2",
+      "template": "opencv.core.vectors"
+    }
+  },
+  "native_sha256": {
+    "api/31ff495bceb4792ef0089f519ebb479eb3009f2be680e34034a07c3a4c65e578.html": "b2b2d6793a844c9d2cabc13c2b5dcb307033c9e2f087dd5ce97bb4667ffdf736",
+    "api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html": "581e22023bea46e85651e67c07953490cafd0a95fc839ce11ab6551531bc7c27",
+    "api/7b926e05c9907ee7865b04d8df79efba40eb39bd03c780ab2f84184b31fd7332.html": "63e830993fe76d260941baab5db0d6c339ef39fd5d3c6d32d79e83ea8aa5f35c",
+    "api/95669bcd36486c970254de205b04dc08bf3208f5642e85fe01aaf0a0610827da.html": "3bcb17cfa450bda75ae5e83ac2f2abb7cc309592353d301d0dd675ae93928168",
+    "api/a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html": "dda5baca75da016514bff0da689295ffd226c85789d7f7e23a87c69773cb8263",
+    "api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html": "4f43b3048488ceb4777d9237df13bd87dcaff10ac4c3bbd541af87b5c6c871d5",
+    "api/d1b2f5cd1eb1397ab175d6abb28c3d6f429390f2f98f513546532da3810d0607.html": "b2bf4f70f1a372d65a9a66adec0d8677835f8db5c2c6fdfc70ee48bae57a12ec",
+    "api/e4a53bc2fadb6312c53f37e2e9893de203c9851744fc0cd8deb7a925633364ee.html": "d70b83e4ea1fea2f0c5ab335da23b484ea168e2c5aa67159f2def00f5723f814",
+    "api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html": "322960abaa53682f113481ae778098b8e38263c1b4e128ab6c41f37f0b4b34ec",
+    "api/f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html": "1050ed0bc21601efbf388fd184d477180c8125c29f1e6f8db25f4545952e1a33",
+    "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+    "api/index.html": "49ebf842cba7e9c5b76b1db8dba82880717504bb0808fb9a1060c16fe00f6518"
+  },
+  "schema_version": 1,
+  "source_sha256": {
+    "source/opencv-core-fixed_matrices.ads": "126004d33926e9fe9ce25b939185c8266759f1f70e7f2a1ed3cbd0010ade929c",
+    "source/opencv-core-float16_vec3.ads": "0f33910a5d31790b62d3d5c5a54b92229fd2852dda3ba9074c3366869e6ae273",
+    "source/opencv-core-float32_matx3x3.ads": "842a3a34cec90a773746714aad1475f73fb31ca956e0cbc45b696ece551190f5",
+    "source/opencv-core-float32_matx3x3_conversions.ads": "3af51495f99d3de01e88a7e494e8b71b44af08f51a922c0ead52c9da2fcff906",
+    "source/opencv-core-float32_vec4.ads": "ff3fb2a98a347f3ba60783cc6deaca326648d57c4a9b6f3effe79097d3c7257e",
+    "source/opencv-core-float64_vec2.ads": "ec000d249320b44d6904033de653a34a16046dad682638e653711bc82bd69641",
+    "source/opencv-core-uint8_vec2.ads": "413e33aaf2664485aca68c84509e7fde15b5cee54a59265581491e4eff485778",
+    "source/opencv-core-vectors.ads": "e073bc727bcafe9d20de4f5e84b67bb137f75ecebe577828324cf8f817858c75",
+    "source/opencv-core.ads": "36db8dc5d1d4e70e7139dd03cda2703547b80ce56c8b0ff18500fb66ee58fa4d",
+    "source/opencv.ads": "2ebf97ba3b08e88cef529f77e78cf896cab17fa24b7a6f3363db33016b58d076"
+  }
+}

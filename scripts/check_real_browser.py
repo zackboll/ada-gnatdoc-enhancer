@@ -22,6 +22,101 @@ class Quiet(SimpleHTTPRequestHandler):
     def log_message(self,*args):pass
 
 
+def generic_checks(browser, workspace, url, check, require):
+    """Executed browser checks, separate from static source/native qualification."""
+    from ada_gnatdoc_enhancer.config import load
+    from ada_gnatdoc_enhancer.generic_instances import ANCHOR, summaries
+    from ada_gnatdoc_enhancer.inventory import packages
+    from ada_gnatdoc_enhancer.native_html import snapshot
+    from ada_gnatdoc_enhancer.validation import Page
+    config=load(workspace/'first','qualification.toml')
+    # Original bytes are hash-bound by the trusted project qualification record;
+    # the summary itself is reconstructed, never authorized by output metadata.
+    from ada_gnatdoc_enhancer.pipeline import verify
+    verify(config,workspace/'first/_site')
+    import tempfile
+    with tempfile.TemporaryDirectory() as temp:
+        raw=Path(temp);(raw/'api').mkdir()
+        data=json.loads((workspace/'first/_site/api/presentation.json').read_text())
+        for name,text in data['original_api_html'].items():(raw/name).write_text(text)
+        (raw/'api/gnatdoc.css').write_bytes((workspace/'first/_site/api/gnatdoc.css').read_bytes())
+        native=snapshot(config,raw);sections,_=summaries(config,packages(config),native)
+    selected=('opencv.core.uint8_vec2','opencv.core.float16_vec3','opencv.core.float32_vec4',
+              'opencv.core.float64_vec2','opencv.core.float32_matx3x3')
+    for width in (1280,390):
+        for theme in ('light','dark'):
+            for javascript in (True,False):
+                context=browser.new_context(viewport={'width':width,'height':760},color_scheme=theme,
+                                            java_script_enabled=javascript)
+                page=context.new_page();page.set_default_timeout(5000)
+                errors=[];page.on('pageerror',lambda err:errors.append(str(err)))
+                try:
+                    for key in selected:
+                        file=native.pages[key].path.name; summary=sections['api/'+file]
+                        destination=urljoin(url,file)+'#'+ANCHOR
+                        dimensions={'width':width,'theme':theme,'javascript':javascript,'package':key}
+                        def visible():
+                            page.goto(destination)
+                            section=page.locator('.generic-instance-summary')
+                            require(section.count()==1 and section.is_visible())
+                            require(page.locator('h4').count()==0)
+                            require(page.locator(':target').get_attribute('id')==ANCHOR)
+                            require(section.locator('table').count()==2)
+                            require(section.locator('th[scope="col"]').count()==4)
+                        check('generic visible unique summary and presentation bookmark',visible,**dimensions)
+                        def meanings():
+                            text=' '.join(page.locator('.generic-instance-summary').inner_text().split())
+                            def contains(phrase):
+                                if phrase not in text:
+                                    raise AssertionError('missing rendered phrase '+repr(phrase)+' in '+repr(text))
+                            if key.endswith('matx3x3'):
+                                contains('3 × 3 array of Float32_Value')
+                                contains('Row_Count');contains('Column_Count')
+                                contains('does not imply shared native storage')
+                            else:
+                                length=int(key[-1])
+                                require(f'Natural range 0 .. {length-1}' in text)
+                                require(f'Array of {length} ' in text)
+                            contains('not additional source declarations')
+                            if 'float16' in key:require('binary16 encodings' in text and 'numerical interpretation' in text)
+                        check('generic dimensions member meanings ownership',meanings,**dimensions)
+                        def layout():
+                            require(page.locator('body').evaluate('(e) => e.scrollWidth <= innerWidth+2'))
+                            require(page.locator('.generic-instance-summary table').evaluate_all(
+                                '(es) => es.every(e => e.getBoundingClientRect().width <= innerWidth && e.scrollWidth <= e.clientWidth+2)'))
+                            require(page.evaluate("() => matchMedia('(prefers-color-scheme: "+theme+")').matches"))
+                        check('generic readable responsive tables and theme',layout,**dimensions)
+                        for index,href in enumerate(Page(summary).links):
+                            target=urljoin(destination,href);fragment=urlsplit(target).fragment
+                            def navigation(index=index,href=href,target=target,fragment=fragment):
+                                page.goto(destination)
+                                link=page.locator('.generic-instance-summary a').nth(index)
+                                require(link.get_attribute('href')==href)
+                                link.click();page.wait_for_url(target)
+                                if fragment:
+                                    require(page.locator('h4[id="'+fragment+'"]').count()==1)
+                                else:require(page.locator('h1').count()==1)
+                                page.go_back();page.wait_for_url(destination)
+                                page.go_forward();page.wait_for_url(target)
+                                page.goto(target)
+                                if fragment:require(page.locator(':target').get_attribute('id')==fragment)
+                            check('generic hyperlink click direct bookmark Back Forward',navigation,
+                                  hyperlink=href,**dimensions)
+                        if javascript:
+                            def keyboard():
+                                page.goto(destination)
+                                first=page.locator('.generic-instance-summary a').first
+                                first.focus();page.keyboard.press('Tab')
+                                second=page.locator('.generic-instance-summary a').nth(1)
+                                require(second.evaluate('(e) => e === document.activeElement'))
+                                require(second.evaluate('(e) => getComputedStyle(e).outlineStyle !== "none"'))
+                                target=urljoin(destination,second.get_attribute('href'))
+                                page.keyboard.press('Enter');page.wait_for_url(target)
+                            check('generic keyboard activation and visible focus',keyboard,**dimensions)
+                        check('generic no JavaScript errors',lambda:require(not errors),**dimensions)
+                finally:context.close()
+
+
 def run(workspace):
     from playwright.sync_api import sync_playwright
     configuration=tomllib.loads((workspace/'first/qualification.toml').read_text())
@@ -206,6 +301,8 @@ def run(workspace):
                                 require(frame.locator('[id="'+external_proofs[target]['anchor']+'"]').count()==1)
                             check('JavaScript-disabled pinned external link',external_fallback,width=width)
                     finally:context.close()
+                if configuration.get('generic_instances'):
+                    generic_checks(browser,workspace,url,check,require)
             finally:browser.close()
     finally:server.shutdown();server.server_close();thread.join(timeout=2)
     report['status']='pass' if all(x['status']=='pass' for x in report['checks']) else 'fail'

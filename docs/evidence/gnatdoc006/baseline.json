@@ -1,0 +1,14 @@
+{
+  "baseline_tests": 238,
+  "core_repository": "https://github.com/zackboll/opencv_core_ada",
+  "core_revision": "c5545eee815431568495c6c76af83df56cf5c3dd",
+  "historical_evidence_changed": false,
+  "hosted_scope": "Python 3.11/3.12/3.13 reduced authentic fixtures, synthetic profiles and packaging; full sites and Chromium are local only",
+  "local_python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "new_tests": 68,
+  "qualification_scope": "full pinned native API sites offline, no consumer modification or publication",
+  "starting_branch": "origin/main (merged GNATDOC-005)",
+  "starting_revision": "478d0bbff0be1b9141b5ad39f07a71f0386d86e9",
+  "total_tests": 306,
+  "working_tree_initially_clean": true
+}

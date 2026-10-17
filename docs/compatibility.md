@@ -38,7 +38,7 @@ MEL's nine abbreviated enums match, but subprogram renaming and record
 `Convention` aspect omissions remain rejected. **PARTIAL_COMPATIBILITY**, not
 production adoption. Historical GNATDOC-002 evidence is unchanged.
 
-## GNATDOC-004 MEL profiles (current)
+## GNATDOC-004 MEL profiles (historical)
 
 All four original pinned native API sites now pass structural qualification:
 Core 195 packages / 2,459 local type links; Imgproc 314 sections / 326 links;
@@ -49,3 +49,14 @@ integrity, anchor uniqueness and publication reconstruction are unchanged.
 See `/home/zboll/git/ada-gnatdoc-enhancer/docs/mel-profile-compatibility.md`.
 Production adoption remains unqualified, including the 25 Core generic-instance
 summary gaps, external Core anchors, authored guides and consumer integration.
+
+## GNATDOC-006 generic-instance presentation (current)
+
+All four pinned native API structural qualifications remain passing. Core's
+25 instance summaries (24 Vectors, one Matrix) add 102 independently checked
+presentation links, not native type links or instance declarations. The feature
+requires explicit hash-bound trusted input configuration and remains disabled
+for existing configurations, including dependency inventories. See
+`/home/zboll/git/ada-gnatdoc-enhancer/docs/generic-instance-summaries.md`.
+Production consumer migration, public dependency deployments and full accessibility
+certification remain unqualified. GNATDOC-002–005 evidence is unchanged.
