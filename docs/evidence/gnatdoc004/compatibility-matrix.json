@@ -1,0 +1,125 @@
+{
+  "core": {
+    "determinism": true,
+    "historical_input_spec_sha256": "46fe84de1ac840dc41ac10c3fb93d47ddac440a0ebc3383317e9112ec28aa822",
+    "idempotence": true,
+    "local_type_links": 2459,
+    "native_inventory_sha256": "a8e4706993a0d406a4c9d98fc530cb6a140c2f9010c7f4dd579e5ef9819d44d9",
+    "native_sections": 1268,
+    "new_projections": [],
+    "packages": 195,
+    "production_adoption": "not qualified",
+    "remaining_profile_mismatches": 0,
+    "revision": "c5545eee815431568495c6c76af83df56cf5c3dd",
+    "source_inventory_sha256": "2aa65e8d558ad07daeaaff9bc9bee52351b7928854711222c885c6de4a768331",
+    "structural_result": "pass"
+  },
+  "geometry": {
+    "determinism": true,
+    "historical_input_spec_sha256": "5a8a2411ae7cb2570c17af4cb1236a9477f055728dd00c94986beffb68dfda08",
+    "idempotence": true,
+    "local_type_links": 171,
+    "native_inventory_sha256": "0fdea3a547db4b5327ed2e83b1f6aeae6a7cc077ec5643c129de8b876627aacd",
+    "native_sections": 130,
+    "new_projections": [],
+    "packages": 2,
+    "production_adoption": "not qualified",
+    "remaining_profile_mismatches": 0,
+    "revision": "fa81e5140cbebf2aa41397a40c08ba194a5f6f73",
+    "source_inventory_sha256": "e386f8c3d3c3037a48ed9e26c4a06f79166a03c25500e73e6e70f203e435cc36",
+    "structural_result": "pass"
+  },
+  "imgproc": {
+    "determinism": true,
+    "historical_input_spec_sha256": "3521e8a0a58c722d9d81328efbc22e3890fd039cda13893c135b715c4e5a1941",
+    "idempotence": true,
+    "local_type_links": 326,
+    "native_inventory_sha256": "a1659359b7711ca266eb5d511cfa9fc2d3fc9205aa8995c2cab221e326242128",
+    "native_sections": 314,
+    "new_projections": [],
+    "packages": 1,
+    "production_adoption": "not qualified",
+    "remaining_profile_mismatches": 0,
+    "revision": "9ce22ae5ab70008e1147475a9e6d7baef82f1df0",
+    "source_inventory_sha256": "d26fa0e2bd399dea6b07d02e6cbeb3a1a3fa8cd013820ff885fec7c854a22b56",
+    "structural_result": "pass"
+  },
+  "mel": {
+    "determinism": true,
+    "historical_input_spec_sha256": "5bcb4c3212ca1b455477f5cebcf2ed7aa521542fcd5fcbd13149d062e6e7f4f4",
+    "idempotence": true,
+    "local_type_links": 1418,
+    "native_inventory_sha256": "d2026657ddd02d2513514c545633c13fbaf8ce772e1bf35bf51223e16d811983",
+    "native_sections": 1237,
+    "new_projections": [
+      {
+        "anchor": "d7b837564e2f584656d3feabae350fd2ebfe358264570a6a780686f9f579b11c",
+        "hidden_literals": 0,
+        "line": 1513,
+        "name": "Add_Job_Intervals",
+        "native_signature_sha256": "1429dd6d6013fc207b5a3f26bf37c78cc47e1a8e7d18d51acaa7b895b21bac80",
+        "omitted_source_tokens": [
+          "renames",
+          "add_rx_job_intervals",
+          ";"
+        ],
+        "omitted_text_ownership": "source only; not visibly rendered by GNATdoc",
+        "package": "AMS.MEL.RF.C2",
+        "page": "493eaffef5bc1fc3300a1b2e1cc93b9500c778c188650055e07aae6e186bd3cd.html",
+        "rule": "subprogram-renaming-profile",
+        "source_declaration_sha256": "a7bd528dcaa276abdc5ed573bded69cdd076616d8f7f213a2fa83fcdb7af5759",
+        "source_file_sha256": "509c94edb5f7d3a95d057a8c2064b77c0379a15115d436d282592ee37ba232aa",
+        "source_path": "ada/src/ams-mel-rf-c2.ads",
+        "source_target": "AMS.MEL.RF.C2.add_rx_job_intervals"
+      },
+      {
+        "anchor": "87f0aabcddc10ff4a8ff2227982865d2553dde4492b207e55e0e91a15a1cec9b",
+        "hidden_literals": 0,
+        "line": 336,
+        "name": "Complex_I16",
+        "native_signature_sha256": "dd93bcec8e899b1cc9c42c5d90ab5f2a67b1f43d352451c5a2d21d408446be17",
+        "omitted_source_tokens": [
+          "with",
+          "convention",
+          "=>",
+          "c"
+        ],
+        "omitted_text_ownership": "source only; not visibly rendered by GNATdoc",
+        "package": "AMS.MEL.RF.Product_Rx",
+        "page": "6ed8ea2a1a59f5d24924546adaf2f81b35ead370e48aebb921cc771ad72242c5.html",
+        "rule": "record-convention-aspect",
+        "source_declaration_sha256": "2583013fae1939107f8813505d112846503c4d6b1b43e5ddc970e1d7ddff70ae",
+        "source_file_sha256": "dfa6d851e81e7619d824ca5c87e1c9e473dfd0f5f58b4dbc63a0f47ec823d578",
+        "source_path": "ada/src/ams-mel-rf-product_rx.ads",
+        "source_target": null
+      },
+      {
+        "anchor": "963062b3c78b3ea6f55686a8714e0e6eaf33a064e45ebb8fc6eb141904d8e98f",
+        "hidden_literals": 0,
+        "line": 359,
+        "name": "Complex_I8",
+        "native_signature_sha256": "ff1f0efee160b022fc01388a457251fd550c96999324ad06d46220e3d77ad268",
+        "omitted_source_tokens": [
+          "with",
+          "convention",
+          "=>",
+          "c"
+        ],
+        "omitted_text_ownership": "source only; not visibly rendered by GNATdoc",
+        "package": "AMS.MEL.RF.Product_Rx",
+        "page": "6ed8ea2a1a59f5d24924546adaf2f81b35ead370e48aebb921cc771ad72242c5.html",
+        "rule": "record-convention-aspect",
+        "source_declaration_sha256": "fa4a7b78cc1325f534195493adc9f028a4e39cdfab947aa8ca5468afa084f375",
+        "source_file_sha256": "dfa6d851e81e7619d824ca5c87e1c9e473dfd0f5f58b4dbc63a0f47ec823d578",
+        "source_path": "ada/src/ams-mel-rf-product_rx.ads",
+        "source_target": null
+      }
+    ],
+    "packages": 29,
+    "production_adoption": "not qualified",
+    "remaining_profile_mismatches": 0,
+    "revision": "6065129aba5dee89e70b61e05a9e1c9b2c3061c0",
+    "source_inventory_sha256": "dfabff2785baa09b5788932dbbc12676147e73145b800316cf410975702d7901",
+    "structural_result": "pass"
+  }
+}

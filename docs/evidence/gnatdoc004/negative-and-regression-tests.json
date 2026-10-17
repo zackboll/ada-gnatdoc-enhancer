@@ -1,0 +1,226 @@
+{
+  "executed_suite": "python -m unittest discover -s tests -v",
+  "results": [
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.MelIntegration.test_ambiguous_native_record"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.MelIntegration.test_ambiguous_native_renaming"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.MelIntegration.test_ambiguous_source_target"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.MelIntegration.test_duplicate_anchor"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.MelIntegration.test_generic_package_unsupported"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.MelIntegration.test_inventory_keeps_complete_record"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.MelIntegration.test_missing_own_anchor"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.MelIntegration.test_missing_source_target"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.MelIntegration.test_nested_target_scope_unsupported"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.MelIntegration.test_no_target_hyperlink_and_immutable_native"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.MelIntegration.test_provenance"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.MelIntegration.test_record_preservation_and_idempotence"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.MelIntegration.test_record_source_mutation_after_enhancement"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.MelIntegration.test_renaming_source_mutation_after_enhancement"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.MelIntegration.test_unique_renamed_anchor_and_source_ownership"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.MelIntegration.test_wrong_source_pin"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_ada_convention_rejected"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_additional_field"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_ambiguous_structure"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_authentic_i16"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_authentic_i8"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_changed_constraints"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_changed_field_order"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_changed_field_type"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_comment_not_aspect"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_intervening_comments_owned"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_malformed_aspect"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_missing_end_record"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_missing_field"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_multiple_aspects_unsupported"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_pack_unsupported"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_same_name_different_structure"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_string_not_aspect"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RecordProfiles.test_trailing_declaration"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_ambiguous_target"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_authentic_renaming"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_chain_unsupported"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_comment_not_clause"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_cross_package_unsupported"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_cycles"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_default_changed"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_distinguishable_target_overload_still_unsupported"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_function_with_defaults_and_quoted_delimiters"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_incompatible_target"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_malformed_clause"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_missing_target"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_mode_changed"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_name_changed"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_return_changed"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_self_cycle"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_string_not_clause"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_target_default_changed"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_target_return_changed"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_type_changed"
+    },
+    {
+      "status": "pass",
+      "test": "test_mel_profiles.RenamingProfiles.test_unrelated_same_name_native"
+    }
+  ],
+  "scope": "authentic reduced excerpts; synthetic wrappers/mutations, not full-site substitutes"
+}

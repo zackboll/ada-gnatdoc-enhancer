@@ -5,6 +5,12 @@ observed compatibility failures and reproduction commands are documented in
 `/home/zboll/git/ada-gnatdoc-enhancer/docs/real-site-qualification.md`.
 No consumer is currently certified fully adoption-ready.
 
+GNATDOC-004 now passes structural qualification for **all four pinned native API
+sites**, including MEL's source-verified renaming and two record Convention
+omissions. See
+`/home/zboll/git/ada-gnatdoc-enhancer/docs/mel-profile-compatibility.md`
+for exact proof boundaries, unchanged consumer gates and independent evidence.
+
 **Offline, source-backed GNATdoc HTML enhancement for Ada documentation websites.**
 
 A development-stage Python CLI that adds an accessible light/dark theme, Ada
@@ -17,7 +23,7 @@ safety and determinism. The original GNATdoc CSS is preserved.
 This is a **0.1.0.dev0 bootstrap**, not a published Python/Alire package or a
 claim of four complete production-site migrations. The checked-in four
 conformance profiles contain **explicitly synthetic GNATdoc HTML fixtures**.
-They exercise distinct source structures; full site acceptance is a later task.
+They exercise distinct source structures; production integration is a later task.
 
 ## Quick start
 

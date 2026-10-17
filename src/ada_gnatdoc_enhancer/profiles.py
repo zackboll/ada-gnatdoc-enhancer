@@ -131,14 +131,77 @@ def enumeration(items, *, abbreviated=False):
     return tuple(literals)
 
 
+def callable_profile(items):
+    """Consume a complete, simple callable spec; return its suffix boundary."""
+    if len(items)<2 or items[0] not in ('procedure','function') or not identifier(items[1]):return None
+    at=2
+    if items[at:at+1]==('(',):
+        end=closing(items,at)
+        if not parameters(items[at+1:end]):return None
+        at=end+1
+    if items[0]=='function':
+        if items[at:at+1]!=('return',):return None
+        start=at+1;at=start
+        while at<len(items) and (identifier(items[at]) or items[at]=='.'):at+=1
+        if not type_mark(items[start:at]):return None
+    return at
+
+
+def renaming_profile(items, declarations):
+    """Only a unique direct, non-renaming target in a verified flat package.
+
+    Reject even distinguishable overloads and renaming chains for now. This also
+    excludes cycles, cross-package names, generic and operator renamings.
+    """
+    at=callable_profile(items)
+    if at is None or len(items)!=at+3 or items[at]!='renames' or items[-1]!=';':return None
+    target=items[at+1]
+    if not identifier(target) or target==items[1]:return None
+    candidates=[]
+    for declaration in declarations:
+        owned=tokens(declaration)
+        if len(owned)>1 and owned[1]==target:candidates.append(owned)
+    if len(candidates)!=1:return None
+    owned=candidates[0];end=callable_profile(owned)
+    if end is None or owned[end:]!=(';',):return None
+    # Only the defining name may differ; every other profile token must agree.
+    if owned[:1]+owned[2:end]!=items[:1]+items[2:at]:return None
+    return items[:at],target
+
+
+def record_convention_profile(items):
+    """Simple component-only records; exactly one established Convention aspect."""
+    if len(items)<12 or items[:1]!=('type',) or not identifier(items[1]):return None
+    if items[2:4]!=('is','record'):return None
+    suffix=('end','record','with','convention','=>','c',';')
+    if items[-7:]!=suffix:return None
+    components=items[4:-7]
+    if not components or components[-1]!=';':return None
+    names=set();start=0
+    for at,token in enumerate(components):
+        if token!=';':continue
+        group=components[start:at];start=at+1
+        if ':' not in group:return None
+        colon=group.index(':');fields=group[:colon]
+        if not fields or len(fields)%2!=1 or not all(
+                identifier(t) if i%2==0 else t==',' for i,t in enumerate(fields)):return None
+        if not type_mark(group[colon+1:]):return None
+        for name in fields[::2]:
+            if name in names:return None
+            names.add(name)
+    return items[:-5]+(';',)
+
+
 @dataclass(frozen=True)
 class Projection:
     rule: str
     hidden_literals: int = 0
+    omitted_source_tokens: tuple[str, ...] = ()
+    target_name: str | None = None
 
 
 @lru_cache(maxsize=8192)
-def reconcile(source: str, native: str) -> Projection | None:
+def reconcile(source: str, native: str, declarations: tuple[str, ...] = ()) -> Projection | None:
     """Exact identity stays the default. No arbitrary prefixes or wildcards."""
     expected=normalized(source).removesuffix(' ;').strip()
     # Preserve the existing supported aspect omissions, but ONLY at top level.
@@ -155,6 +218,16 @@ def reconcile(source: str, native: str) -> Projection | None:
         owned=tokens(source);rendered=tokens(native)
     except EnhancementError:
         return None
+    try:
+        renaming=renaming_profile(owned,declarations)
+    except EnhancementError:
+        renaming=None
+    if renaming is not None and rendered==renaming[0]:
+        return Projection('subprogram-renaming-profile',omitted_source_tokens=('renames',renaming[1],';'),
+                          target_name=renaming[1])
+    record=record_convention_profile(owned)
+    if record is not None and rendered==record:
+        return Projection('record-convention-aspect',omitted_source_tokens=('with','convention','=>','c'))
     profile=expression_profile(owned)
     if profile is not None and rendered==profile:return Projection('expression-function-profile')
     literals=enumeration(owned)

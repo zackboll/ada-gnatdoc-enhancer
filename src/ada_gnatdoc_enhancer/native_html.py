@@ -8,7 +8,7 @@ from pathlib import Path
 
 from .config import Config
 from .errors import EnhancementError, UnsupportedStructure
-from .inventory import Package
+from .inventory import Package, direct_callables
 from .profiles import reconcile
 from .util import PAGE_NAME, require, regular
 
@@ -78,12 +78,13 @@ def snapshot(config: Config, site: Path) -> NativeSite:
     profile_matches=[]
     for key, package in source.items():
         page=records[key]
+        callables=direct_callables(package)
         used=set()
         for decl in package.declarations:
             found=[]
             for section in page.sections:
                 if section.name.lower()!=decl.name.lower():continue
-                projection=reconcile(decl.signature,section.code)
+                projection=reconcile(decl.signature,section.code,callables)
                 if projection is not None:found.append((section,projection))
             require(len(found)==1,
                     f"native declaration profile unmatched or swapped: {package.name}.{decl.name} at {decl.line}; "
@@ -96,6 +97,8 @@ def snapshot(config: Config, site: Path) -> NativeSite:
                 profile_matches.append({'package':package.name,'name':decl.name,'line':decl.line,
                     'page':page.path.name,'anchor':section.anchor,'rule':projection.rule,
                     'hidden_literals':projection.hidden_literals,
+                    'omitted_source_tokens':list(projection.omitted_source_tokens),
+                    'source_target':(package.name+'.'+projection.target_name if projection.target_name else None),
                     'omitted_text_ownership':'source only; not visibly rendered by GNATdoc'})
     return NativeSite(api, index, (api / 'gnatdoc.css').read_bytes(), records, nav_items, profile_matches)
 

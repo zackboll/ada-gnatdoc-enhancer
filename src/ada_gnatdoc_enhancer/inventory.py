@@ -159,6 +159,21 @@ def _one(path: Path) -> Package | None:
     return Package(name, path, frozenset(imports), frozenset(uses), type_symbols, declarations, source)
 
 
+def direct_callables(package: Package) -> tuple[str, ...]:
+    """Target evidence only in an ordinary, flat source-owned public package.
+
+    The general inventory is not a scope resolver. Decline the new renaming
+    projection entirely when nested/generic/executable scopes could interfere.
+    """
+    masked=mask_ada(package.source)
+    header=HEADER.search(masked)
+    if header is None or header[3].lower()!='is':return ()
+    if re.search(r'\bgeneric\b',masked[:header.start()],re.I):return ()
+    public=mask_ada(visible_prefix(package.source,header.end()))
+    if re.search(r'\b(package|generic|task|protected|begin|declare)\b',public,re.I):return ()
+    return tuple(d.signature for d in package.declarations if d.kind in ('procedure','function'))
+
+
 def packages(config: Config) -> dict[str, Package]:
     results = {}
     for folder in config.sources:

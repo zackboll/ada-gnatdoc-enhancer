@@ -1,0 +1,663 @@
+{
+  "core": {
+    "browser": "Chromium 156.0.8078.4",
+    "checks": [
+      {
+        "check": "theme assets and color scheme",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "search and clear",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "package bookmark direct link Back Forward",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "operation category real anchor",
+        "reason": "Locator.get_attribute: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"#operation-navigation a\").first\n",
+        "status": "fail",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "syntax and local type links",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "keyboard focus and visible outline",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "responsive outer viewport",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "no JavaScript errors",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "theme assets and color scheme",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "search and clear",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "package bookmark direct link Back Forward",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "operation category real anchor",
+        "reason": "Locator.get_attribute: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"#operation-navigation a\").first\n",
+        "status": "fail",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "syntax and local type links",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "keyboard focus and visible outline",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "responsive outer viewport",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "no JavaScript errors",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "theme assets and color scheme",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "search and clear",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "package bookmark direct link Back Forward",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "operation category real anchor",
+        "reason": "Locator.get_attribute: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"#operation-navigation a\").first\n",
+        "status": "fail",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "syntax and local type links",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "keyboard focus and visible outline",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "responsive outer viewport",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "no JavaScript errors",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "theme assets and color scheme",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "search and clear",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "package bookmark direct link Back Forward",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "operation category real anchor",
+        "reason": "Locator.get_attribute: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"#operation-navigation a\").first\n",
+        "status": "fail",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "syntax and local type links",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "keyboard focus and visible outline",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "responsive outer viewport",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "no JavaScript errors",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "JavaScript-disabled native navigation",
+        "status": "pass",
+        "width": 1280
+      },
+      {
+        "check": "JavaScript-disabled native navigation",
+        "status": "pass",
+        "width": 390
+      }
+    ],
+    "not_qualified": [
+      "screen-reader audit",
+      "touch-device interaction",
+      "consumer authored guides",
+      "external Core targets",
+      "visual design review"
+    ],
+    "scope": "isolated real native API site; not consumer portal",
+    "status": "fail"
+  },
+  "geometry": {
+    "browser": "Chromium 156.0.8078.4",
+    "checks": [
+      {
+        "check": "theme assets and color scheme",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "search and clear",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "package bookmark direct link Back Forward",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "operation category real anchor",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "syntax and local type links",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "keyboard focus and visible outline",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "responsive outer viewport",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "no JavaScript errors",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "theme assets and color scheme",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "search and clear",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "package bookmark direct link Back Forward",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "operation category real anchor",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "syntax and local type links",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "keyboard focus and visible outline",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "responsive outer viewport",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "no JavaScript errors",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "theme assets and color scheme",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "search and clear",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "package bookmark direct link Back Forward",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "operation category real anchor",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "syntax and local type links",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "keyboard focus and visible outline",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "responsive outer viewport",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "no JavaScript errors",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "theme assets and color scheme",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "search and clear",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "package bookmark direct link Back Forward",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "operation category real anchor",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "syntax and local type links",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "keyboard focus and visible outline",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "responsive outer viewport",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "no JavaScript errors",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "JavaScript-disabled native navigation",
+        "status": "pass",
+        "width": 1280
+      },
+      {
+        "check": "JavaScript-disabled native navigation",
+        "status": "pass",
+        "width": 390
+      }
+    ],
+    "not_qualified": [
+      "screen-reader audit",
+      "touch-device interaction",
+      "consumer authored guides",
+      "external Core targets",
+      "visual design review"
+    ],
+    "scope": "isolated real native API site; not consumer portal",
+    "status": "pass"
+  },
+  "imgproc": {
+    "log": "Traceback (most recent call last):\n  File \"/home/zboll/git/ada-gnatdoc-enhancer/scripts/check_real_browser.py\", line 118, in <module>\n    result=run(args.workspace)\n  File \"/home/zboll/git/ada-gnatdoc-enhancer/scripts/check_real_browser.py\", line 55, in run\n    require(len(names)>=2)\n    ~~~~~~~^^^^^^^^^^^^^^^\n  File \"/home/zboll/git/ada-gnatdoc-enhancer/scripts/check_real_browser.py\", line 36, in require\n    if not condition:raise AssertionError('browser invariant failed')\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: browser invariant failed\n",
+    "status": "driver aborted before report"
+  },
+  "interpretation": "Original driver incorrectly required operation categories in package-only configurations and two packages in single-package Imgproc. No site changed; rerun records configuration-specific assertions.",
+  "mel": {
+    "browser": "Chromium 156.0.8078.4",
+    "checks": [
+      {
+        "check": "theme assets and color scheme",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "search and clear",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "package bookmark direct link Back Forward",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "operation category real anchor",
+        "reason": "Locator.get_attribute: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"#operation-navigation a\").first\n",
+        "status": "fail",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "syntax and local type links",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "keyboard focus and visible outline",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "responsive outer viewport",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "no JavaScript errors",
+        "status": "pass",
+        "theme": "light",
+        "width": 1280
+      },
+      {
+        "check": "theme assets and color scheme",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "search and clear",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "package bookmark direct link Back Forward",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "operation category real anchor",
+        "reason": "Locator.get_attribute: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"#operation-navigation a\").first\n",
+        "status": "fail",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "syntax and local type links",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "keyboard focus and visible outline",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "responsive outer viewport",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "no JavaScript errors",
+        "status": "pass",
+        "theme": "dark",
+        "width": 1280
+      },
+      {
+        "check": "theme assets and color scheme",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "search and clear",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "package bookmark direct link Back Forward",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "operation category real anchor",
+        "reason": "Locator.get_attribute: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"#operation-navigation a\").first\n",
+        "status": "fail",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "syntax and local type links",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "keyboard focus and visible outline",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "responsive outer viewport",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "no JavaScript errors",
+        "status": "pass",
+        "theme": "light",
+        "width": 390
+      },
+      {
+        "check": "theme assets and color scheme",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "search and clear",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "package bookmark direct link Back Forward",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "operation category real anchor",
+        "reason": "Locator.get_attribute: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"#operation-navigation a\").first\n",
+        "status": "fail",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "syntax and local type links",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "keyboard focus and visible outline",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "responsive outer viewport",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "no JavaScript errors",
+        "status": "pass",
+        "theme": "dark",
+        "width": 390
+      },
+      {
+        "check": "JavaScript-disabled native navigation",
+        "status": "pass",
+        "width": 1280
+      },
+      {
+        "check": "JavaScript-disabled native navigation",
+        "status": "pass",
+        "width": 390
+      }
+    ],
+    "not_qualified": [
+      "screen-reader audit",
+      "touch-device interaction",
+      "consumer authored guides",
+      "external Core targets",
+      "visual design review"
+    ],
+    "scope": "isolated real native API site; not consumer portal",
+    "status": "fail"
+  }
+}

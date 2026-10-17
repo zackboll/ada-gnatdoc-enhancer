@@ -150,7 +150,7 @@ class EnumerationProfiles(unittest.TestCase):
 
     def test_unrelated_record_aspect_still_rejected(self):
         item=ITEMS['Complex_I8']
-        self.assertIsNone(reconcile(item['source_signature'],native(item)))
+        self.assertIsNone(reconcile(item['source_signature'].replace('Convention => C','Pack'),native(item)))
 
     def test_exact_aspect_omission_is_top_level_only(self):
         self.assertIsNotNone(reconcile('function F (S : String := " with Pre text") return Integer with Pre => True;',
