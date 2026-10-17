@@ -8,7 +8,7 @@ from pathlib import Path
 from .errors import EnhancementError
 from .util import inside, regular, require
 
-TOP = frozenset({"schema_version", "project", "gnatdoc", "sources", "navigation", "presentation", "guides", "security", "external_types", "renderer_exceptions"})
+TOP = frozenset({"schema_version", "project", "gnatdoc", "sources", "navigation", "presentation", "guides", "security", "external_types", "external_dependencies", "renderer_exceptions"})
 
 
 def members(data, allowed, at):
@@ -42,6 +42,7 @@ class Config:
     externals: dict[str, str] = field(default_factory=dict)
     allowed_hosts: frozenset[str] = frozenset()
     renderer_exceptions: tuple[str, ...] = ()
+    dependencies: tuple[dict, ...] = ()
 
 
 def load(root: Path, path: str) -> Config:
@@ -95,6 +96,7 @@ def load(root: Path, path: str) -> Config:
                 "external host must be an exact lower-case hostname")
     ext = raw.get("external_types", {})
     members(ext, ext, "external_types")
+    require(len({k.lower() for k in ext})==len(ext),'duplicate case-insensitive external types')
     for name, url in ext.items():
         require(isinstance(url, str) and url.startswith("https://") and "#" in url,
                 f"external type {name} requires explicit HTTPS page and anchor")
@@ -105,7 +107,25 @@ def load(root: Path, path: str) -> Config:
     exceptions = words(raw.get("renderer_exceptions", []), "renderer exceptions")
     for ex in exceptions:
         require(ex == "AMS.MEL.IR.Health_Status.Metadata.Status", "unsupported renderer exception")
+    dependencies=raw.get('external_dependencies',[])
+    require(isinstance(dependencies,list),'external_dependencies must be an array of tables')
+    fields={'repository','revision','manifest','manifest_sha256','acquisition',
+            'acquisition_sha256','source','site','base_url','publication','types'}
+    import re
+    for dep in dependencies:
+        members(dep,fields,'external dependency')
+        require(set(dep)==fields,'incomplete external dependency')
+        require(all(isinstance(v,str) for k,v in dep.items() if k!='types'),
+                'external dependency fields must be strings')
+        require(re.fullmatch('[a-f0-9]{40}',dep['revision']),'invalid expected dependency SHA')
+        for key in ('manifest_sha256','acquisition_sha256'):
+            require(re.fullmatch('[a-f0-9]{64}',dep[key]),'invalid external evidence hash')
+        types=words(dep['types'],'external dependency types')
+        require(types and len({t.lower() for t in types})==len(types),
+                'duplicate case-insensitive dependency types')
+        for key in ('manifest','acquisition','source','site'):
+            inside(root,dep[key])
     return Config(root, project, version, names, packages, style, mode, categories,
                   pres.get("theme", True), pres.get("syntax_highlighting", True),
                   pres.get("type_links", True), guide_mode, guide_manifest,
-                  ext, frozenset(hosts), exceptions)
+                  ext, frozenset(hosts), exceptions, tuple(dependencies))

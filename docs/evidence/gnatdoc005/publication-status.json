@@ -1,0 +1,11 @@
+{
+  "browser_transport": "local HTTPS request interception, not remotely hosted",
+  "consumer_links_verified_offline": true,
+  "dependency_anchor_verified": true,
+  "deployment_performed": false,
+  "production_manifest_links": "disabled fail-closed",
+  "public_url_checks": "not performed: no reviewed stable deployment supplied",
+  "published_link_verified": false,
+  "remaining_blocker": "version-stable deployment and reviewed production profile",
+  "test_mapping": "https://core.invalid/FULL_DEPENDENCY_SHA/api/"
+}

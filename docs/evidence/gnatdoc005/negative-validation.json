@@ -1,0 +1,203 @@
+{
+  "log_sha256": "e3fc359a34b2b0923e7deb6a0af1d36ffa6d766b9f11059adb65780eb8e32853",
+  "results": [
+    {
+      "status": "ok",
+      "test": "test_authentic_consumer_source_mutation_after_enhancement"
+    },
+    {
+      "status": "ok",
+      "test": "test_authentic_existing_wrong_link_rejected_in_published_output"
+    },
+    {
+      "status": "ok",
+      "test": "test_authentic_geometry_external_generation_idempotence"
+    },
+    {
+      "status": "ok",
+      "test": "test_authentic_new_revision_cannot_satisfy_imgproc_requirement"
+    },
+    {
+      "status": "ok",
+      "test": "test_authentic_old_revision_cannot_satisfy_geometry_requirement"
+    },
+    {
+      "status": "ok",
+      "test": "test_authentic_old_root_inventory"
+    },
+    {
+      "status": "ok",
+      "test": "test_authentic_wrong_existing_native_anchor_rejected"
+    },
+    {
+      "status": "ok",
+      "test": "test_acquisition_hash_not_self_authorizing"
+    },
+    {
+      "status": "ok",
+      "test": "test_backward_compatible_toml_extension"
+    },
+    {
+      "status": "ok",
+      "test": "test_changed_pinned_revision"
+    },
+    {
+      "status": "ok",
+      "test": "test_changed_source_declaration_identity"
+    },
+    {
+      "status": "ok",
+      "test": "test_conflicting_explicit_alias"
+    },
+    {
+      "status": "ok",
+      "test": "test_conflicting_manifests"
+    },
+    {
+      "status": "ok",
+      "test": "test_corrupted_manifest"
+    },
+    {
+      "status": "ok",
+      "test": "test_cross_host_substitution"
+    },
+    {
+      "status": "ok",
+      "test": "test_deleted_destination"
+    },
+    {
+      "status": "ok",
+      "test": "test_dependency_artifact_mutated_after_qualification"
+    },
+    {
+      "status": "ok",
+      "test": "test_duplicate_case_insensitive_config_types"
+    },
+    {
+      "status": "ok",
+      "test": "test_duplicate_case_insensitive_manifest_keys"
+    },
+    {
+      "status": "ok",
+      "test": "test_duplicate_type_identity_in_source"
+    },
+    {
+      "status": "ok",
+      "test": "test_generic_instance_target_not_invented"
+    },
+    {
+      "status": "ok",
+      "test": "test_geometry_cannot_use_old_revision"
+    },
+    {
+      "status": "ok",
+      "test": "test_imgproc_cannot_use_new_revision"
+    },
+    {
+      "status": "ok",
+      "test": "test_imported_type_owner_conflict"
+    },
+    {
+      "status": "ok",
+      "test": "test_incorrect_package_owner"
+    },
+    {
+      "status": "ok",
+      "test": "test_inventory_determinism"
+    },
+    {
+      "status": "ok",
+      "test": "test_invisible_owner"
+    },
+    {
+      "status": "ok",
+      "test": "test_malformed_manifest_structure"
+    },
+    {
+      "status": "ok",
+      "test": "test_manifest_hash_not_self_authorizing"
+    },
+    {
+      "status": "ok",
+      "test": "test_mapping_must_pin_full_sha"
+    },
+    {
+      "status": "ok",
+      "test": "test_missing_source_declaration_even_if_native_exists"
+    },
+    {
+      "status": "ok",
+      "test": "test_pipeline_rechecks_dependency_after_enhancement"
+    },
+    {
+      "status": "ok",
+      "test": "test_positive_exact_native_destination"
+    },
+    {
+      "status": "ok",
+      "test": "test_private_limited_alias_and_object_shadow_not_authority"
+    },
+    {
+      "status": "ok",
+      "test": "test_production_not_enabled_by_offline_claim"
+    },
+    {
+      "status": "ok",
+      "test": "test_publication_byte_verification_is_separate"
+    },
+    {
+      "status": "ok",
+      "test": "test_published_redirect_cross_host_rejected"
+    },
+    {
+      "status": "ok",
+      "test": "test_published_wrong_valid_artifact_rejected"
+    },
+    {
+      "status": "ok",
+      "test": "test_shadowed_qualified_prefix"
+    },
+    {
+      "status": "ok",
+      "test": "test_source_mutated_after_qualification"
+    },
+    {
+      "status": "ok",
+      "test": "test_typed_contexts_ignore_comments_and_literals"
+    },
+    {
+      "status": "ok",
+      "test": "test_unqualified_ambiguous_local_use_owners"
+    },
+    {
+      "status": "ok",
+      "test": "test_unqualified_names_do_not_get_external_owner"
+    },
+    {
+      "status": "ok",
+      "test": "test_unsafe_url_variants"
+    },
+    {
+      "status": "ok",
+      "test": "test_unsupported_acquisition_profile"
+    },
+    {
+      "status": "ok",
+      "test": "test_visible_qualified_owner_and_local_precedence"
+    },
+    {
+      "status": "ok",
+      "test": "test_wrong_existing_declaration"
+    },
+    {
+      "status": "ok",
+      "test": "test_wrong_existing_page"
+    },
+    {
+      "status": "ok",
+      "test": "test_wrong_fragment"
+    }
+  ],
+  "status": "pass",
+  "suite": "49 external manifest/positive/adversarial/reduced-fixture tests"
+}

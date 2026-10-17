@@ -1,0 +1,20 @@
+{
+  "configuration": "schema_version = 1\nproject = \"Authentic reduced Core 0.5.0\"\n[sources]\ndirectories = [\"qualification-public\"]\npackages = [\"OpenCV\"]\n[navigation]\nmode = \"packages\"\n",
+  "gnatdoc": "GNATdoc 26.0.0 (20260415)",
+  "original_input_spec_sha256": "4abd944e932116582efee29adb3eec767da762f67436cba5dddd82377fadcbbb",
+  "pristine_sha256": {
+    "api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html": "322960abaa53682f113481ae778098b8e38263c1b4e128ab6c41f37f0b4b34ec",
+    "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+    "api/index.html": "ff7beac8239d4a87440d47b4c2e787042c15061b9f99cc28deb3ceb982019089"
+  },
+  "public_sources": [
+    "src/opencv.ads"
+  ],
+  "repository": "https://github.com/zackboll/opencv_core_ada",
+  "revision": "f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f",
+  "schema_version": 1,
+  "scope": "Authentic reduced root package; index filtered fixture scaffolding; NOT full-site qualification",
+  "source_sha256": {
+    "src/opencv.ads": "2ebf97ba3b08e88cef529f77e78cf896cab17fa24b7a6f3363db33016b58d076"
+  }
+}

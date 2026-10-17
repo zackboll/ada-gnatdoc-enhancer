@@ -22,6 +22,35 @@ PINS={
     'mel':('ams-gra-mel-bridge','6065129aba5dee89e70b61e05a9e1c9b2c3061c0'),
 }
 CORE_DEP='f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f'
+DEPENDENCIES={
+    'core-0.4.1':('opencv_core_ada','386c5360ac51f2b62e522853d94290aec4ee14a0'),
+    'core-0.5.0':('opencv_core_ada',CORE_DEP),
+}
+
+# Core 0.4.1 predates documentation projects. This acquisition-owned harness
+# selects its actual public src directory and production compiler switches.
+# It is tooling, not a substitute source revision; preserve its exact bytes.
+DOCS_API='''with "config/opencv_core_config.gpr";
+with "docs_internal.gpr";
+project Docs_API is
+   for Languages use ("Ada");
+   for Source_Dirs use ("src");
+   for Object_Dir use "obj/docs";
+   package Compiler is
+      for Default_Switches ("Ada") use OpenCV_Core_Config.Ada_Compiler_Switches;
+   end Compiler;
+   package Documentation is
+      for Excluded_Project_Files use
+        ("docs_internal.gpr", "config/opencv_core_config.gpr");
+   end Documentation;
+end Docs_API;
+'''
+DOCS_INTERNAL='''project Docs_Internal is
+   for Languages use ("Ada");
+   for Source_Dirs use ("src/internal");
+   for Object_Dir use "obj/docs-internal";
+end Docs_Internal;
+'''
 
 
 def command(argv,cwd,log,env=None):
@@ -45,6 +74,8 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--workspace',type=Path,required=True)
     parser.add_argument('--gnatdoc',type=Path,required=True)
+    parser.add_argument('--dependencies-only',action='store_true',
+                        help='independently acquire both actual Core dependencies')
     args=parser.parse_args()
     base=args.workspace.absolute()
     if base.exists():raise ValueError('acquisition workspace must be new')
@@ -57,8 +88,9 @@ def main():
     settings=base/'settings';settings.mkdir()
     alr=['alr','-n','-s',str(settings)]
     command(alr+['--force','toolchain','--select','gnat_native=16.1.0','gprbuild=26.0.1'],base,log)
-    clone('opencv_core_ada',CORE_DEP,base/'core-dependency',log)
-    for profile,(repo,sha) in PINS.items():
+    if not args.dependencies_only:
+        clone('opencv_core_ada',CORE_DEP,base/'core-dependency',log)
+    for profile,(repo,sha) in (DEPENDENCIES if args.dependencies_only else PINS).items():
         directory=base/profile;directory.mkdir();source=directory/'source'
         clone(repo,sha,source,log)
         # Export the immutable tracked snapshot BEFORE Alire generates files.
@@ -78,6 +110,10 @@ def main():
                 command(alr+['pin','opencv_core','--use='+str(base/'core-dependency')],source,log)
             command(alr+['build'],source,log)
             prefix=alr+['exec','--']
+            if args.dependencies_only and not (source/'docs_api.gpr').exists():
+                for name,text in (('docs_api.gpr',DOCS_API),('docs_internal.gpr',DOCS_INTERNAL)):
+                    (source/name).write_text(text)
+                    (directory/name).write_text(text)
             if profile in ('imgproc','geometry'):
                 resolved=command(prefix+['printenv','OPENCV_CORE_ALIRE_PREFIX'],source,log).strip()
                 expected=CORE_DEP if profile=='geometry' else '386c5360ac51f2b62e522853d94290aec4ee14a0'
@@ -111,6 +147,9 @@ def main():
         (directory/'gnatdoc.log').write_text(diagnostics)
         if re.search(r'(^|\s)(error:|fatal:|ignore file due to)',diagnostics,re.I):
             raise ValueError('incomplete native generation')
+        if args.dependencies_only:
+            print(profile,sha,'native output captured; no consumer presentation executed',flush=True)
+            continue
         ratchet=['python3','scripts/compare_gnatdoc_warnings.py']
         if profile!='core':ratchet+=['--fail-on-removed']
         command(ratchet+['docs/gnatdoc-warning-baseline.txt',str(directory/'gnatdoc.log')],source,log)

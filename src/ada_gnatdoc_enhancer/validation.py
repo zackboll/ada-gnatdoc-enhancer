@@ -57,6 +57,8 @@ def css_safe(content:bytes):
 
 def validate_files(site:Path,config:Config,expected:set[str], *, raw=False):
     """Reject unpublished extra content and independently validate local links."""
+    from .external_types import destinations
+    external=destinations(config)
     require(site.is_dir() and not site.is_symlink(),'invalid/symlink site root')
     observed=set(); pages={}
     for path in site.rglob('*'):
@@ -89,7 +91,7 @@ def validate_files(site:Path,config:Config,expected:set[str], *, raw=False):
     for path,page in pages.items():
         for link in page.links:
             target,fragment=local_link(path,site,link,external=config.allowed_hosts,
-                                       exact_external_fragments=frozenset(config.externals.values()))
+                                       exact_external_fragments=frozenset(external.values()))
             if target is None:continue
             if fragment:
                 require(target.resolve() in pages and fragment in pages[target.resolve()].ids,

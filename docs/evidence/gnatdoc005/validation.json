@@ -1,0 +1,52 @@
+{
+  "disposition": [
+    "READY_FOR_INDEPENDENT_REVIEW",
+    "PUBLISHED_URL_PENDING"
+  ],
+  "extracted_sdist_rebuilt_wheel_tests": "pass",
+  "four_sites": "structural pass",
+  "four_synthetic_profiles": "pass",
+  "hosted_ci": "exact final head tracked on PR; not inferred from local results",
+  "installed_wheel_tests": "pass",
+  "logs": {
+    "gnatdoc005-baseline-tests.log": {
+      "sha256": "37e63b70b1f1e643ba0de6cb444c94507536025033c8e0b63272d27b05dec14e",
+      "tail": "----------------------------------------------------------------------\nRan 189 tests in 10.499s\n\nOK\n"
+    },
+    "gnatdoc005-negative-tests.log": {
+      "sha256": "e3fc359a34b2b0923e7deb6a0af1d36ffa6d766b9f11059adb65780eb8e32853",
+      "tail": ".ExternalEvidence.test_unsupported_acquisition_profile) ... ok\ntest_visible_qualified_owner_and_local_precedence (test_external_types.ExternalEvidence.test_visible_qualified_owner_and_local_precedence) ... ok\ntest_wrong_existing_declaration (test_external_types.ExternalEvidence.test_wrong_existing_declaration) ... ok\ntest_wrong_existing_page (test_external_types.ExternalEvidence.test_wrong_existing_page) ... ok\ntest_wrong_fragment (test_external_types.ExternalEvidence.test_wrong_fragment) ... ok\n\n----------------------------------------------------------------------\nRan 49 tests in 2.200s\n\nOK\n"
+    },
+    "gnatdoc005-owner-tests.log": {
+      "sha256": "9151880a77cdbc63a9aae41612037b22bbd91a9d374f98ce2b7f7e02ad3897be",
+      "tail": "----------------------------------------------------------------------\nRan 238 tests in 13.550s\n\nOK\n"
+    },
+    "gnatdoc005-tested-conformance.json": {
+      "sha256": "ec93567d0f3d1fc3aae39a38c323a9027fb287754f9ae13161b407facf08678e",
+      "tail": "nthetic native GNATdoc 26; NOT complete pinned site\",\n      \"html_pages\": 3,\n      \"idempotent\": true,\n      \"linked_types\": 5,\n      \"packages\": 2\n    },\n    \"imgproc\": {\n      \"deterministic\": true,\n      \"fixture\": \"synthetic native GNATdoc 26; NOT complete pinned site\",\n      \"html_pages\": 2,\n      \"idempotent\": true,\n      \"linked_types\": 6,\n      \"packages\": 1\n    },\n    \"mel\": {\n      \"deterministic\": true,\n      \"fixture\": \"synthetic native GNATdoc 26; NOT complete pinned site\",\n      \"html_pages\": 37,\n      \"idempotent\": true,\n      \"linked_types\": 7,\n      \"packages\": 29\n    }\n  }\n}\n"
+    },
+    "gnatdoc005-tested-sdist-conformance.json": {
+      "sha256": "ec93567d0f3d1fc3aae39a38c323a9027fb287754f9ae13161b407facf08678e",
+      "tail": "nthetic native GNATdoc 26; NOT complete pinned site\",\n      \"html_pages\": 3,\n      \"idempotent\": true,\n      \"linked_types\": 5,\n      \"packages\": 2\n    },\n    \"imgproc\": {\n      \"deterministic\": true,\n      \"fixture\": \"synthetic native GNATdoc 26; NOT complete pinned site\",\n      \"html_pages\": 2,\n      \"idempotent\": true,\n      \"linked_types\": 6,\n      \"packages\": 1\n    },\n    \"mel\": {\n      \"deterministic\": true,\n      \"fixture\": \"synthetic native GNATdoc 26; NOT complete pinned site\",\n      \"html_pages\": 37,\n      \"idempotent\": true,\n      \"linked_types\": 7,\n      \"packages\": 29\n    }\n  }\n}\n"
+    },
+    "gnatdoc005-tested-sdist-tests.log": {
+      "sha256": "f419594cfa66ef9b9afbea45406f45b392f87cdf61b6108066795e615b3cbae2",
+      "tail": "s_source_bound (test_security_extra.SecurityMutations.test_mel_exact_renderer_exception_is_source_bound) ... ok\ntest_mel_stale_exception_not_credited (test_security_extra.SecurityMutations.test_mel_stale_exception_not_credited) ... ok\ntest_missing_package_rejected_before_enhance (test_security_extra.SecurityMutations.test_missing_package_rejected_before_enhance) ... ok\ntest_symlink_presentation_file_rejected (test_security_extra.SecurityMutations.test_symlink_presentation_file_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 238 tests in 12.561s\n\nOK\n"
+    },
+    "gnatdoc005-tested-wheel-tests.log": {
+      "sha256": "0438db3c8e64d99b3091b912cacca482c8f675336e3a585a0c3bd4ae1b1d1880",
+      "tail": "s_source_bound (test_security_extra.SecurityMutations.test_mel_exact_renderer_exception_is_source_bound) ... ok\ntest_mel_stale_exception_not_credited (test_security_extra.SecurityMutations.test_mel_stale_exception_not_credited) ... ok\ntest_missing_package_rejected_before_enhance (test_security_extra.SecurityMutations.test_missing_package_rejected_before_enhance) ... ok\ntest_symlink_presentation_file_rejected (test_security_extra.SecurityMutations.test_symlink_presentation_file_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 238 tests in 12.540s\n\nOK\n"
+    }
+  },
+  "native_dependency_repeat": "byte-identical both revisions",
+  "new_tests": 49,
+  "original_tests": 189,
+  "published_urls": "not qualified",
+  "remaining_blockers": [
+    "Version-stable Core dependency hosting and independently verified production publication profile",
+    "Consumer adoption and authored guides are outside scope"
+  ],
+  "starting_sha": "c1a691452cf436624809f4043b30087de6688052",
+  "tests": 238,
+  "unit_tests": "pass"
+}

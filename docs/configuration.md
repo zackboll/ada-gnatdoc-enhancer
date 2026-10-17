@@ -47,6 +47,46 @@ anchors, and `security.external_hosts`. Do not guess an OpenCV Core HTML hash.
 An explicit external URL is not proof of its target unless the consuming CI
 qualifies that external site's exact revision independently.
 
+### Version-pinned dependency manifests (GNATDOC-005)
+
+`[[external_dependencies]]` is an optional, backward-compatible alternative to
+hand-entering `external_types`. It requires all of these fields:
+
+| Field | Contract |
+| --- | --- |
+| `repository` | Exact repository identity in the reviewed acquisition |
+| `revision` | Consumer's expected full immutable 40-character Git SHA |
+| `manifest`, `manifest_sha256` | Root-relative type manifest and its independently reviewed SHA-256 |
+| `acquisition`, `acquisition_sha256` | Root-relative acquisition record and independently reviewed SHA-256 |
+| `source`, `site` | Root-relative original dependency source snapshot and pristine native site, containing `api/` |
+| `types` | Nonempty array of explicitly selected fully qualified type/subtype identities |
+| `base_url` | Explicit allowlisted HTTPS directory URL, including the full dependency SHA as a path segment |
+| `publication` | Currently only `"offline-test"`; requires a reserved `.invalid` hostname |
+
+All paths belong to the consumer configuration root; the native site is **not**
+the consumer output directory. Hashes in project configuration are the trust
+boundary: do not regenerate them automatically from unreviewed evidence. Every
+enhancement and independent publication reconstruction checks the hashes,
+reconciles the supplied source/native inputs, and requires the manifest to equal
+the reconstructed inventory. There is no filename or fragment synthesis.
+
+Keep `security.external_hosts` explicit. Selected identities cannot conflict
+case-insensitively with explicit entries or other manifests. Unqualified names
+do not gain external destinations. Source-owned local packages retain ownership;
+public external references require ordinary visible package ownership, not
+private/limited context clauses, aliases or generic-instance inference.
+
+This first profile deliberately **does not enable production manifest URLs**.
+Offline `.invalid` URLs are test publication mappings, not usable public links.
+`verify_published` provides a separate explicit-fetch audit that rejects redirects
+and requires exact pinned native HTML/CSS bytes; a deployment-owner stability
+guarantee and reviewed production configuration profile remain adoption blockers.
+Existing explicit HTTPS `external_types` remain supported with their existing
+allowlist policy, but do not acquire manifest-level proof automatically.
+
+See `/home/zboll/git/ada-gnatdoc-enhancer/docs/external-core-type-links.md` for
+acquisition, replay commands, evidence, counts and publication limitations.
+
 The only supported `renderer_exceptions` entry in the bootstrap is the known
 MEL `AMS.MEL.IR.Health_Status.Metadata.Status` package renaming. It remains a
 **gap**, not documentation credit; the consumer's full coverage checker still
