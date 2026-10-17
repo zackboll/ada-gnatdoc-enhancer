@@ -1,0 +1,50 @@
+[
+  {
+    "classification": "historical source attribution error; authentic pinned declaration ownership retained",
+    "historical_source": "opencv-core-sparse-uint16_vec2_access.ads",
+    "historical_source_sha256": "74f3512020615b8b61e9dcb44ef863e4ab2a13cdf265ad5f7b4050b57e787d23",
+    "package": "OpenCV.Core.UInt16_Vec2",
+    "verified_source": "src/opencv-core-uint16_vec2.ads",
+    "verified_source_sha256": "12f9171070651824d2f0617627f862e52d551181769ce616a6baa3c5c0611167"
+  },
+  {
+    "classification": "historical source attribution error; authentic pinned declaration ownership retained",
+    "historical_source": "opencv-core-sparse-uint16_vec3_access.ads",
+    "historical_source_sha256": "48d39fdee03dd4f4b539be916165660b0a46611dfb8ed04673b5b45f0f815185",
+    "package": "OpenCV.Core.UInt16_Vec3",
+    "verified_source": "src/opencv-core-uint16_vec3.ads",
+    "verified_source_sha256": "301fc7c528ce6faf9ef3c4b1cdd04a5e6df9842b18ada36e3ca64f1e43837bbf"
+  },
+  {
+    "classification": "historical source attribution error; authentic pinned declaration ownership retained",
+    "historical_source": "opencv-core-sparse-uint16_vec4_access.ads",
+    "historical_source_sha256": "d384a96dcd3f2fd959f40cf28186a44267f5938311b143bbc6427bfd57fd1a1b",
+    "package": "OpenCV.Core.UInt16_Vec4",
+    "verified_source": "src/opencv-core-uint16_vec4.ads",
+    "verified_source_sha256": "0562f7efd1ee3b1a18379390aabe6a83f2f4ffb0e1df2e0cb6c5d1e04c6644b3"
+  },
+  {
+    "classification": "historical source attribution error; authentic pinned declaration ownership retained",
+    "historical_source": "opencv-core-sparse-uint8_vec2_access.ads",
+    "historical_source_sha256": "1b289c12601d985fc397c41e4be49349d0739c8063d01bbbbbeaf598f856f784",
+    "package": "OpenCV.Core.UInt8_Vec2",
+    "verified_source": "src/opencv-core-uint8_vec2.ads",
+    "verified_source_sha256": "413e33aaf2664485aca68c84509e7fde15b5cee54a59265581491e4eff485778"
+  },
+  {
+    "classification": "historical source attribution error; authentic pinned declaration ownership retained",
+    "historical_source": "opencv-core-sparse-uint8_vec3_access.ads",
+    "historical_source_sha256": "750bccb069325d648bc4fd2ff29619f057a4730b908302bc8bb8e33017bb945e",
+    "package": "OpenCV.Core.UInt8_Vec3",
+    "verified_source": "src/opencv-core-uint8_vec3.ads",
+    "verified_source_sha256": "b809d9b6597a94ba43608d3629db918157af8a342f2d9685a6a1bf25b241c58c"
+  },
+  {
+    "classification": "historical source attribution error; authentic pinned declaration ownership retained",
+    "historical_source": "opencv-core-sparse-uint8_vec4_access.ads",
+    "historical_source_sha256": "6652d8aae30fd87ed5897312a93deda3c8d06a60319e56a419bdb58cb699bd2a",
+    "package": "OpenCV.Core.UInt8_Vec4",
+    "verified_source": "src/opencv-core-uint8_vec4.ads",
+    "verified_source_sha256": "06ef0df4e6159a67179f746728e07b628cc8d05651e4d42740e6ccde52e64553"
+  }
+]

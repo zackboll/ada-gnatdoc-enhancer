@@ -13,6 +13,12 @@
     "ada_gnatdoc_enhancer-0.1.0.dev0-py3-none-any.whl": "0907703e10108bcbdfb29f067d17feb017c08b3a84634bc1945def84b9d9c050",
     "ada_gnatdoc_enhancer-0.1.0.dev0.tar.gz": "14ba1a892f3a308e20fb774461a61b5a572388fc8bd0085014f7709503d7bd70"
   },
+  "implementation_head_sdist_rebuilt_wheel": {
+    "pythonpath_unset": true,
+    "result": "pass",
+    "source_revision": "ca1214ca7691d07f77ab291007f2064e3c17f37d",
+    "tests": 306
+  },
   "implementation_revision": "ca1214ca7691d07f77ab291007f2064e3c17f37d",
   "note": "local tested distributions; final hosted head also builds and tests wheel/sdist, full native sites not hosted",
   "wheel": {
