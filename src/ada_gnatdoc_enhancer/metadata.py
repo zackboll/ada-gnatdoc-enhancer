@@ -75,6 +75,38 @@ def guide_title(guide: str, project: str) -> str:
     return safe_title(label(guide, 'guide label') + SEPARATOR + label(project, 'project name'), 'guide')
 
 
+def serialized_title(text: str, start: int, name: str) -> tuple[str, str, int]:
+    """Check a title's original serialization, independently of RCDATA callbacks.
+
+    The caller supplies the parser-observed opening offset, not a document-wide
+    regex search (which could mistake comments or escaped examples for titles).
+    Only an attribute-free opening, text/entities and a plain closing tag are
+    supported. Literal '<' must begin that closure; escaped angle brackets are
+    text. Decode numeric references explicitly so HTMLParser/html.unescape
+    cannot silently discard or replace prohibited controls before validation.
+    """
+    opening = re.match(r'<title[\t\n\f\r ]*>', text[start:], re.I)
+    require(opening is not None, f"malformed serialized document title opening: {name}")
+    content_start = start + opening.end()
+    closing = text.find('<', content_start)
+    require(closing >= 0 and re.match(r'</title[\t\n\f\r ]*>', text[closing:], re.I) is not None,
+            f"literal markup or unfinished serialized document title: {name}")
+    raw = text[content_start:closing]
+
+    def decode(match):
+        entity = match[0]
+        if entity.startswith('&#'):
+            number = entity[2:].rstrip(';')
+            try:
+                return chr(int(number[1:], 16) if number.lower().startswith('x') else int(number))
+            except (ValueError, OverflowError):
+                require(False, f"unsafe document title character reference: {name}")
+        return html.unescape(entity)
+
+    decoded = re.sub(r'&#(?:[xX][0-9a-fA-F]+|[0-9]+);?|&[A-Za-z][A-Za-z0-9]*;?', decode, raw)
+    return raw, safe_title(decoded, name), closing
+
+
 class Document(HTMLParser):
     """Independent document-metadata census; shares no strings with the generator."""
 
@@ -87,6 +119,9 @@ class Document(HTMLParser):
         self.head_closures, self.issues, self.metas = 0, [], []
         self._explicit_head, self._implicit_metadata = False, False
         self._root_closed = False
+        self._serialized = text
+        self._line_offsets = [0] + [m.end() for m in re.finditer('\n', text)]
+        self.serialized_titles, self._title_closing = [], None
         self.feed(text)
         self.close()
 
@@ -114,6 +149,10 @@ class Document(HTMLParser):
         elif tag == 'body':
             self.bodies += 1
         elif tag == 'title':
+            line, column = self.getpos()
+            _, decoded, self._title_closing = serialized_title(
+                self._serialized, self._line_offsets[line - 1] + column, 'HTML document')
+            self.serialized_titles.append(decoded)
             self.title_openings += 1
             if not self.in_head:
                 self.misplaced.append('title')
@@ -146,6 +185,10 @@ class Document(HTMLParser):
             self.in_head = False
         if tag == 'title':
             self.title_closures += 1
+            line, column = self.getpos()
+            if self._title_closing != self._line_offsets[line - 1] + column:
+                self.issues.append('serialized title closure differs from parser boundary')
+            self._title_closing = None
             if self._title is None:
                 self.issues.append('unmatched title closure')
             else:
@@ -190,6 +233,8 @@ def check_document(text: str, name: str, *, title: str | None = None,
     require(page.heads <= 1, f"duplicate document head: {name}")
     require(page.title_openings == page.title_closures == len(page.titles) == 1 and page._title is None,
             f"missing or duplicate document title, nested or unfinished title: {name}")
+    require(page.titles == page.serialized_titles,
+            f"serialized document title differs from decoded parser title: {name}")
     require(not page.issues and page.heads == page.head_closures,
             f"malformed document title/head structure: {name}: {page.issues}")
     require(len(page.charsets) == 1 and isinstance(page.charsets[0], str) and

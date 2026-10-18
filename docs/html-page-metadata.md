@@ -433,6 +433,38 @@ iframe history are retained separately from successful corrected runs. A fresh
 tools environment was acquired after the external temporary work tree vanished;
 no historical repository evidence was removed or rewritten.
 
+## GNATDOC-010R3: serialized title boundary
+
+Starting head `2941d67de75b918e94b9378c750afe311fddc583` failed both hosted
+workflows (push `39152451585`, PR `39152454513`), in all four jobs. Each full
+suite ran 464 tests and failed only `test_nested_title` and
+`test_title_comment_not_misread_as_browser_text`. The logs identify Python
+3.11.17, 3.12.15 and 3.13.16. These historical failures are preserved; earlier
+local 3.13.5 passes do not supersede them.
+
+Security-updated HTMLParser treats title content as RCDATA: literal nested
+markup/comment delimiters can arrive as data rather than start-tag/comment
+callbacks. R2's callback-only prohibition therefore failed on those versions.
+R3 checks the original serialized title at the parser-observed opening offset,
+not a regex search over arbitrary document text. After an attribute-free title
+opening, the first literal `<` must begin a plain closing title tag. Literal
+nested tags, comments, other markup and malformed/unfinished closing structures
+are rejected before tokenization of the content can affect the result.
+
+The raw text, independently decoded value and closing offset are retained and
+cross-checked with the existing document census. Numeric references are decoded
+explicitly before Unicode safety validation, so a parser cannot silently discard
+control characters. Escaped angle brackets remain legitimate text, including
+`Документация &amp; &lt;Ada&gt; — 日本語`. The global HTML parser is unchanged;
+authored implicit heads, all prior contract checks, subtype ownership and browser
+history behavior remain intact. This is a validation-only change: no valid
+publication byte difference is authorized.
+
+Fresh failures, matrix results and publication/browser/distribution checks are
+recorded separately in [evidence/gnatdoc010r3](evidence/gnatdoc010r3/). Exact-head
+hosted workflow IDs and conclusions are reported on PR #10 after the final
+evidence commit; an earlier green run is not final-head qualification.
+
 ## Migration impact
 
 - Every enhanced API page and Markdown guide gains metadata, so their bytes and
