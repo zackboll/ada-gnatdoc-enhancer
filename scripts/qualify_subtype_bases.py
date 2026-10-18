@@ -175,6 +175,12 @@ def geometry_ledger(consumer, site, output):
         links = [x for x in snippet.links if (x['offset'], x['end']) == (row['offset'], row['end'])]
         require(len(links) == 1 and links[0]['identity'] == row['referenced_type'],
                 'missing or changed source-backed Geometry reference')
+        if row['shared'] is None:
+            owner = row['qualified_external_core_owner']
+            require(owner is not None and links[0]['href'] ==
+                    'https://core.invalid/'+CORE+'/api/'+owner['page']+'#'+owner['anchor'],
+                    'restored subtype must use independently verified Core destination')
+            row['reason'] = 'Ordinary subtype base restored to verified Core 0.5.0 native declaration.'
         row['shared'] = links[0]
         row['classification'] = ('equivalent-verified-native-destination' if row['legacy']
                                  else 'shared-only-reference')
@@ -197,7 +203,7 @@ def run(args):
     require(not args.workspace.exists(), 'workspace must be new')
     args.workspace.mkdir(parents=True)
     result = {}
-    for name in ('core', 'imgproc', 'geometry', 'mel'):
+    for name in (() if args.current_only else ('core', 'imgproc', 'geometry', 'mel')):
         previous = args.previous/name/'first'
         spec = json.loads((REPO/f'docs/evidence/gnatdoc002/{name}-input.json').read_text())
         pristine = args.previous/name/'pristine'
@@ -285,4 +291,6 @@ if __name__ == '__main__':
     for name in ('previous','workspace','consumer','geometry-inputs','geometry-pristine','geometry-baseline'):
         parser.add_argument('--'+name, required=True, type=Path)
     parser.add_argument('--baseline-python', required=True)
+    parser.add_argument('--current-only', action='store_true',
+                        help='new isolated current-Geometry run; no four-site claim')
     run(parser.parse_args())

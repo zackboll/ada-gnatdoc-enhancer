@@ -1,0 +1,379 @@
+{
+  "core": {
+    "added_occurrences": [],
+    "byte_idempotent": true,
+    "changed_files": [],
+    "deterministic": true,
+    "native_preservation": {
+      "declarations": 1268,
+      "packages": 195,
+      "pages": 196,
+      "signatures": 1268,
+      "status": "preserved"
+    },
+    "publication": {
+      "declaration_snippets": 1268,
+      "files": 207,
+      "generic_actual_type_links": 25,
+      "generic_conversion_package_links": 1,
+      "generic_member_links": 51,
+      "generic_summary_links": 102,
+      "generic_template_links": 25,
+      "html_pages": 202,
+      "linked_external_types": 0,
+      "linked_local_types": 2459,
+      "linked_types": 2459,
+      "links": 4565,
+      "matrix_summaries": 1,
+      "mode": "enhanced",
+      "native_instance_member_declarations": 0,
+      "presentation_only_anchors": 25,
+      "public_packages": 195,
+      "qualified_generic_instances": 25,
+      "unrendered_renderer_exceptions": 0,
+      "unsupported_instances": [],
+      "vector_summaries": 24
+    },
+    "removed_occurrences": [],
+    "unaffected_bytes_preserved": true
+  },
+  "geometry": {
+    "added_occurrences": [],
+    "byte_idempotent": true,
+    "changed_files": [],
+    "deterministic": true,
+    "native_preservation": {
+      "declarations": 130,
+      "packages": 2,
+      "pages": 3,
+      "signatures": 172,
+      "status": "preserved"
+    },
+    "publication": {
+      "declaration_snippets": 130,
+      "files": 14,
+      "html_pages": 9,
+      "linked_external_types": 95,
+      "linked_local_types": 171,
+      "linked_types": 266,
+      "links": 749,
+      "mode": "enhanced",
+      "public_packages": 2,
+      "unrendered_renderer_exceptions": 0
+    },
+    "removed_occurrences": [],
+    "unaffected_bytes_preserved": true
+  },
+  "geometry_current": {
+    "added_occurrences": [
+      {
+        "declaration": "Contour",
+        "destination_proof": {
+          "anchor": "da696e09a1f1b297516365244e16533e23cca626f26df4bb3f727a64beb697b0",
+          "kind": "type",
+          "native_declaration_sha256": "7f8246b140f26ae48f9850910a340bb9d5fda671b520bc081dabb24e509a6068",
+          "package": "OpenCV",
+          "page": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+          "qualification": "dependency-anchor-verified",
+          "qualified_name": "OpenCV.Point_Array",
+          "source_declaration_sha256": "893ba78cfb1d7e6004e6f0ac743f81f27e3f27f14274057a8e78f57189c768fd",
+          "source_file_sha256": "2ebf97ba3b08e88cef529f77e78cf896cab17fa24b7a6f3363db33016b58d076",
+          "source_line": 81,
+          "source_path": "src/opencv.ads"
+        },
+        "end": 37,
+        "href": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#da696e09a1f1b297516365244e16533e23cca626f26df4bb3f727a64beb697b0",
+        "identity": "opencv.point_array",
+        "native_anchor": "0c3fbeacf849b3776f9533db4d982b2125bc49319590c9215acbc2ffaff07503",
+        "offset": 19,
+        "package": "OpenCV.Geometry",
+        "source_profile": "--  An integer contour or point set, for integer-coordinate geometry: an\n   --  OpenCV.Point_Array passed to OpenCV as CV_32S points in index order.\n   --  Inputs may have any bounds. Contour results are zero-based, or the\n   --  null range 1 .. 0 when empty.\n   subtype Contour is OpenCV.Point_Array;"
+      }
+    ],
+    "changed_files": [
+      "api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html",
+      "api/presentation.json"
+    ],
+    "core_publication": "offline-test",
+    "ledger": {
+      "equivalent": 263,
+      "missing": 0,
+      "navigation": 130,
+      "shared_only": 4
+    },
+    "publication": {
+      "declaration_snippets": 130,
+      "files": 14,
+      "html_pages": 9,
+      "linked_external_types": 96,
+      "linked_local_types": 171,
+      "linked_types": 267,
+      "links": 750,
+      "mode": "enhanced",
+      "public_packages": 2,
+      "unrendered_renderer_exceptions": 0
+    },
+    "removed_occurrences": [],
+    "site_sha256": {
+      "api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html": "200c9399a05fd82ee30710ab302e8f0af7d416309fe360b53f6b012835c5679e",
+      "api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html": "0f3967d25f19131bd9bc69255d1ccd2a6af5251ad698760a35836e81eca55b5d",
+      "api/gnatdoc-navigation.js": "b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd",
+      "api/gnatdoc-theme.css": "cf06637732a8b047a7191bfb991a5c3da7cd31a52076876880d5f8a3f63929bc",
+      "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+      "api/index.html": "32f58242532e9647085d7a4b9c72355143c49343d3e9a2d2c35e589f8b42c5c9",
+      "api/presentation.json": "e5c098b3d9c1463ceabaf6765c7b1adc760ee0a76f015045e09028a048d950d0",
+      "guides/affine-and-perspective-geometry.html": "c11ab615347c6a52751d7451f2d93478ede73c824b761f0a3be17435909c5396",
+      "guides/compatibility-ownership-and-safety.html": "cbaf4f82fd791ac1394566e4e2677f23e2c3eb3119f98b335f7ba2fcb94e854c",
+      "guides/delaunay-and-voronoi.html": "e47d3dd0af18a4035481698e826207b3cd6b76e93369e93ba8df527d27e94be3",
+      "guides/geometry-fundamentals-and-contours.html": "1388217ef07bb56171bd6f1f220663b766d1f074c323ecaaa12cb901ab12992b",
+      "guides/gnatdoc-guides.css": "8461dad011b761734cbeaeaeca741b0cf45f777efe6dc381802ef0d1fe0ad3bc",
+      "guides/shape-fitting-and-intersections.html": "3e2aff4b934d764bb7cf440e31d1411e352d3047540162d919c85eee44880a83",
+      "index.html": "5db416e22306bdc0df26567173002a94da4184d7e9f2ce9a046a86d20617011b"
+    },
+    "unaffected_bytes_preserved": true
+  },
+  "imgproc": {
+    "added_occurrences": [
+      {
+        "declaration": "Affine_Mapping_Direction",
+        "destination_proof": {
+          "anchor": "175b3d9dcf086ed67134bc1a37f9f5ebc395c25ca60de7fa50db844068a347da",
+          "native_profile": "type Warp_Mapping_Direction is\n  (Source_To_Destination, Destination_To_Source);\n",
+          "package": "opencv.image_processing",
+          "page": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html",
+          "source_profile": "--  How Warp_Affine and Warp_Perspective interpret their Transform.\n   --  @enum Source_To_Destination Transform maps Source coordinates to\n   --  Destination coordinates: the usual forward warp, which OpenCV\n   --  inverts internally. A +1 X translation moves content right.\n   --  @enum Destination_To_Source Transform is already inverted and maps\n   --  each Destination pixel to the Source position it samples (native\n   --  WARP_INVERSE_MAP). A +1 X translation moves content left.\n   type Warp_Mapping_Direction is\n     (Source_To_Destination, Destination_To_Source);"
+        },
+        "end": 58,
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#175b3d9dcf086ed67134bc1a37f9f5ebc395c25ca60de7fa50db844068a347da",
+        "identity": "opencv.image_processing.warp_mapping_direction",
+        "native_anchor": "122cddd860e7f276953afd7ed8406c261f8fb58c6ceeb7b75b79dce506729f21",
+        "offset": 36,
+        "package": "OpenCV.Image_Processing",
+        "source_profile": "--  Warp_Mapping_Direction under the name used by Warp_Affine; the\n   --  values and their meaning are identical.\n   subtype Affine_Mapping_Direction is Warp_Mapping_Direction;"
+      },
+      {
+        "declaration": "Contour",
+        "destination_proof": {
+          "anchor": "da696e09a1f1b297516365244e16533e23cca626f26df4bb3f727a64beb697b0",
+          "kind": "type",
+          "native_declaration_sha256": "7f8246b140f26ae48f9850910a340bb9d5fda671b520bc081dabb24e509a6068",
+          "package": "OpenCV",
+          "page": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+          "qualification": "dependency-anchor-verified",
+          "qualified_name": "OpenCV.Point_Array",
+          "source_declaration_sha256": "893ba78cfb1d7e6004e6f0ac743f81f27e3f27f14274057a8e78f57189c768fd",
+          "source_file_sha256": "1abdccf9aaf2c920133e5cde00d55de9ee2fa069ef4d95e273909cb276f533d5",
+          "source_line": 37,
+          "source_path": "src/opencv.ads"
+        },
+        "end": 37,
+        "href": "https://core.invalid/386c5360ac51f2b62e522853d94290aec4ee14a0/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#da696e09a1f1b297516365244e16533e23cca626f26df4bb3f727a64beb697b0",
+        "identity": "opencv.point_array",
+        "native_anchor": "025c7320f6af673bbe2197968500ac73c4a0280ee1a85df554ab7487f61618ed",
+        "offset": 19,
+        "package": "OpenCV.Image_Processing",
+        "source_profile": "--  The boundary points of one shape, as a subtype of the shared point\n   --  array. Any OpenCV.Point_Array, with any Natural bounds, is a Contour,\n   --  and an extracted Contour can be passed directly to Draw_Polyline or\n   --  Fill_Polygon. Get_Contour returns zero-based arrays; a contour without\n   --  points has the null range 1 .. 0.\n   subtype Contour is OpenCV.Point_Array;"
+      },
+      {
+        "declaration": "Derivative_Kernel_Depth",
+        "destination_proof": {
+          "anchor": "2c73a29581410de65bece581d4ec83f73f3d89625e33caebc2e6c22f5dc57f9c",
+          "native_profile": "type Gaussian_Kernel_Depth is (Float32_Kernel, Float64_Kernel);\n",
+          "package": "opencv.image_processing",
+          "page": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html",
+          "source_profile": "--  Element depth of the single-channel coefficient Mats returned by the\n   --  kernel generators Get_Gaussian_Kernel, Get_Derivative_Kernels,\n   --  Get_Scharr_Kernels and Get_Gabor_Kernel.\n   --  @enum Float32_Kernel Coefficients are stored as Float32 C1.\n   --  @enum Float64_Kernel Coefficients are stored as Float64 C1.\n   type Gaussian_Kernel_Depth is (Float32_Kernel, Float64_Kernel);"
+        },
+        "end": 56,
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#2c73a29581410de65bece581d4ec83f73f3d89625e33caebc2e6c22f5dc57f9c",
+        "identity": "opencv.image_processing.gaussian_kernel_depth",
+        "native_anchor": "870353d1d55394daeae0907b758fb5f39e83c29a7b5ad4f29519657901ee74a0",
+        "offset": 35,
+        "package": "OpenCV.Image_Processing",
+        "source_profile": "--  Coefficient depth of Get_Derivative_Kernels and Get_Scharr_Kernels,\n   --  with the Gaussian_Kernel_Depth literals.\n   subtype Derivative_Kernel_Depth is Gaussian_Kernel_Depth;"
+      },
+      {
+        "declaration": "Filter_Depth",
+        "destination_proof": {
+          "anchor": "4cd837fbd513657c083f20a141d728a776c780078141adb249ca4eb71c2ca216",
+          "native_profile": "type Derivative_Depth is\n  (Same_Depth, Int16_Depth, Float32_Depth, Float64_Depth);\n",
+          "package": "opencv.image_processing",
+          "page": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html",
+          "source_profile": "--  Destination depth of Sobel, Scharr and Laplacian, and through\n   --  Filter_Depth of Filter_2D and Sep_Filter_2D. Supported per Source\n   --  depth: UInt8 accepts every literal; UInt16 and Int16 accept\n   --  Same_Depth, Float32_Depth and Float64_Depth; Float32 accepts\n   --  Same_Depth or Float32_Depth; Float64 accepts Same_Depth or\n   --  Float64_Depth. Other combinations raise OpenCV.OpenCV_Error.\n   --  @enum Same_Depth Destination keeps Source's depth.\n   --  @enum Int16_Depth Destination is Int16 (UInt8 Sources only).\n   --  @enum Float32_Depth Destination is Float32.\n   --  @enum Float64_Depth Destination is Float64.\n   type Derivative_Depth is\n     (Same_Depth, Int16_Depth, Float32_Depth, Float64_Depth);"
+        },
+        "end": 40,
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#4cd837fbd513657c083f20a141d728a776c780078141adb249ca4eb71c2ca216",
+        "identity": "opencv.image_processing.derivative_depth",
+        "native_anchor": "c45ad89397cbca6cfbe3660e07c89683e7c9e1b785f7fa06859a73132521fb91",
+        "offset": 24,
+        "package": "OpenCV.Image_Processing",
+        "source_profile": "--  Destination depth of Filter_2D and Sep_Filter_2D, with the literals\n   --  and supported Source combinations of Derivative_Depth.\n   subtype Filter_Depth is Derivative_Depth;"
+      },
+      {
+        "declaration": "Flood_Fill_Mask_Value",
+        "destination_proof": {
+          "anchor": "126c1f5d92cb06b013208cdd3e16f14713f74cc2cf2b63dc4ec9ab2558a5981e",
+          "kind": "subtype",
+          "native_declaration_sha256": "376bf1cae1497c7fbe5cd9e0eaf06b5f9c7f6095e5d20e00b2c137ab05426d26",
+          "package": "OpenCV",
+          "page": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+          "qualification": "dependency-anchor-verified",
+          "qualified_name": "OpenCV.UInt8_Value",
+          "source_declaration_sha256": "4783b0df749a4fb72c6d8ac0f833472f5c777c007e6bf1011554123f53735b44",
+          "source_file_sha256": "1abdccf9aaf2c920133e5cde00d55de9ee2fa069ef4d95e273909cb276f533d5",
+          "source_line": 6,
+          "source_path": "src/opencv.ads"
+        },
+        "end": 51,
+        "href": "https://core.invalid/386c5360ac51f2b62e522853d94290aec4ee14a0/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#126c1f5d92cb06b013208cdd3e16f14713f74cc2cf2b63dc4ec9ab2558a5981e",
+        "identity": "opencv.uint8_value",
+        "native_anchor": "e47dfdaf32b5c8d94dedc3a9adf5d59f408d504aca8abf8de3fd9a9324c609c6",
+        "offset": 33,
+        "package": "OpenCV.Image_Processing",
+        "source_profile": "--  Nonzero byte that Flood_Fill_With_Mask writes into its Mask for every\n   --  filled pixel; a fill enters only zero mask pixels.\n   subtype Flood_Fill_Mask_Value is OpenCV.UInt8_Value range 1 .. 255;"
+      },
+      {
+        "declaration": "Gabor_Kernel_Depth",
+        "destination_proof": {
+          "anchor": "2c73a29581410de65bece581d4ec83f73f3d89625e33caebc2e6c22f5dc57f9c",
+          "native_profile": "type Gaussian_Kernel_Depth is (Float32_Kernel, Float64_Kernel);\n",
+          "package": "opencv.image_processing",
+          "page": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html",
+          "source_profile": "--  Element depth of the single-channel coefficient Mats returned by the\n   --  kernel generators Get_Gaussian_Kernel, Get_Derivative_Kernels,\n   --  Get_Scharr_Kernels and Get_Gabor_Kernel.\n   --  @enum Float32_Kernel Coefficients are stored as Float32 C1.\n   --  @enum Float64_Kernel Coefficients are stored as Float64 C1.\n   type Gaussian_Kernel_Depth is (Float32_Kernel, Float64_Kernel);"
+        },
+        "end": 51,
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#2c73a29581410de65bece581d4ec83f73f3d89625e33caebc2e6c22f5dc57f9c",
+        "identity": "opencv.image_processing.gaussian_kernel_depth",
+        "native_anchor": "08c3888807b11adc203d15fb57dda0857f277aeb61bc1a614ed5c2e8f7274507",
+        "offset": 30,
+        "package": "OpenCV.Image_Processing",
+        "source_profile": "--  Coefficient depth of Get_Gabor_Kernel, with the Gaussian_Kernel_Depth\n   --  literals.\n   subtype Gabor_Kernel_Depth is Gaussian_Kernel_Depth;"
+      },
+      {
+        "declaration": "YUV420_Planar_Layout",
+        "destination_proof": {
+          "anchor": "a3b85f71f994fc46f51a23e7ca582efe380b21cf17bd843d86103ae11835f183",
+          "native_profile": "type YUV420_Layout is (I420, YV12, NV12, NV21);\n",
+          "package": "opencv.image_processing",
+          "page": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html",
+          "source_profile": "--  Plane order of a YUV 4:2:0 frame of logical W columns and H rows, with\n   --  one Y byte per pixel and one U and one V byte per 2x2 pixel block. The\n   --  packed UInt8 C1 form (W columns, H + H/2 rows) is read as one row-major\n   --  byte stream that starts with the W x H Y plane; U and V each occupy\n   --  `W * H / 4` bytes.\n   --  @enum I420 Planar: the Y plane, then the U plane, then the V plane.\n   --  @enum YV12 Planar: the Y plane, then the V plane, then the U plane.\n   --  @enum NV12 Semiplanar: the Y plane, then interleaved U,V byte pairs.\n   --  @enum NV21 Semiplanar: the Y plane, then interleaved V,U byte pairs.\n   type YUV420_Layout is (I420, YV12, NV12, NV21);"
+        },
+        "end": 45,
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#a3b85f71f994fc46f51a23e7ca582efe380b21cf17bd843d86103ae11835f183",
+        "identity": "opencv.image_processing.yuv420_layout",
+        "native_anchor": "af397985766e254e6bbbbfc1bee48108d5cd41d8651d636f8f286fd513fdd8ca",
+        "offset": 32,
+        "package": "OpenCV.Image_Processing",
+        "source_profile": "--  The planar layouts I420 and YV12, the only ones Encode_YUV420_Planar\n   --  produces; NV12/NV21 encoding is not provided.\n   subtype YUV420_Planar_Layout is YUV420_Layout range I420 .. YV12;"
+      },
+      {
+        "declaration": "YUV420_Semiplanar_Layout",
+        "destination_proof": {
+          "anchor": "a3b85f71f994fc46f51a23e7ca582efe380b21cf17bd843d86103ae11835f183",
+          "native_profile": "type YUV420_Layout is (I420, YV12, NV12, NV21);\n",
+          "package": "opencv.image_processing",
+          "page": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html",
+          "source_profile": "--  Plane order of a YUV 4:2:0 frame of logical W columns and H rows, with\n   --  one Y byte per pixel and one U and one V byte per 2x2 pixel block. The\n   --  packed UInt8 C1 form (W columns, H + H/2 rows) is read as one row-major\n   --  byte stream that starts with the W x H Y plane; U and V each occupy\n   --  `W * H / 4` bytes.\n   --  @enum I420 Planar: the Y plane, then the U plane, then the V plane.\n   --  @enum YV12 Planar: the Y plane, then the V plane, then the U plane.\n   --  @enum NV12 Semiplanar: the Y plane, then interleaved U,V byte pairs.\n   --  @enum NV21 Semiplanar: the Y plane, then interleaved V,U byte pairs.\n   type YUV420_Layout is (I420, YV12, NV12, NV21);"
+        },
+        "end": 49,
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#a3b85f71f994fc46f51a23e7ca582efe380b21cf17bd843d86103ae11835f183",
+        "identity": "opencv.image_processing.yuv420_layout",
+        "native_anchor": "b99a1721b3330883bd035a1630657b09a6e77a407b5c343b3ac3bc2a04b26488",
+        "offset": 36,
+        "package": "OpenCV.Image_Processing",
+        "source_profile": "--  The semiplanar layouts NV12 and NV21, whose chroma is one interleaved\n   --  plane; the only layouts Decode_YUV420_Two_Plane accepts.\n   subtype YUV420_Semiplanar_Layout is YUV420_Layout range NV12 .. NV21;"
+      },
+      {
+        "declaration": "YUV422_Color_Output",
+        "destination_proof": {
+          "anchor": "ba63876beabee634d06bde2f4ad115b2460f5000345b752395b950d00e228966",
+          "native_profile": "type YUV420_Color_Output is\n  (BGR_Output, RGB_Output, BGRA_Output, RGBA_Output);\n",
+          "package": "opencv.image_processing",
+          "page": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html",
+          "source_profile": "--  Channel layout of a decoded YUV 4:2:0 or 4:2:2 frame: a UInt8 image with\n   --  the frame's H rows and W columns.\n   --  @enum BGR_Output C3 in B, G, R order.\n   --  @enum RGB_Output C3 in R, G, B order.\n   --  @enum BGRA_Output C4 in B, G, R, alpha order; alpha is always 255.\n   --  @enum RGBA_Output C4 in R, G, B, alpha order; alpha is always 255.\n   type YUV420_Color_Output is\n     (BGR_Output, RGB_Output, BGRA_Output, RGBA_Output);"
+        },
+        "end": 50,
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#ba63876beabee634d06bde2f4ad115b2460f5000345b752395b950d00e228966",
+        "identity": "opencv.image_processing.yuv420_color_output",
+        "native_anchor": "6b0a793ca82e46fdfe7ab0c565bc4ffe3155bc431793568b613293514bc14d03",
+        "offset": 31,
+        "package": "OpenCV.Image_Processing",
+        "source_profile": "--  Result layout of Decode_YUV422: the YUV420_Color_Output literals with\n   --  the same meaning, C3 BGR/RGB or C4 BGRA/RGBA with alpha 255.\n   subtype YUV422_Color_Output is YUV420_Color_Output;"
+      }
+    ],
+    "byte_idempotent": true,
+    "changed_files": [
+      "api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html",
+      "api/presentation.json"
+    ],
+    "deterministic": true,
+    "native_preservation": {
+      "declarations": 314,
+      "packages": 1,
+      "pages": 2,
+      "signatures": 467,
+      "status": "preserved"
+    },
+    "publication": {
+      "declaration_snippets": 314,
+      "files": 13,
+      "html_pages": 8,
+      "linked_external_types": 551,
+      "linked_local_types": 333,
+      "linked_types": 884,
+      "links": 1759,
+      "mode": "enhanced",
+      "public_packages": 1,
+      "unrendered_renderer_exceptions": 0
+    },
+    "removed_occurrences": [],
+    "unaffected_bytes_preserved": true
+  },
+  "mel": {
+    "added_occurrences": [
+      {
+        "declaration": "Navigation_Response",
+        "destination_proof": {
+          "anchor": "8a5baab22f0e0f0f1d7abda3d62db52f34629a4026217c428e5e31b025b18783",
+          "native_profile": "type Navigation_Response is record\n   System_Time_NS : Long_Long_Integer;\n   Command_ID     : Interfaces.Unsigned_32;\n   Request_ID     : Interfaces.Unsigned_32;\nend record;\n",
+          "package": "ams.mel.ir.image",
+          "page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+          "source_profile": "--  Complete supplied Common MEL navigation report. Submission transmits these values; it does\n   --  not estimate, normalize or transform kinematics. Angle, altitude and velocity units below\n   --  follow the pinned header only.\n   --  @field System_Time_NS System time for the report in nanoseconds; no clock or epoch is\n   --  specified.\n   --  @field State Reported aircraft position-solution state.\n   --  @field Latitude_Rad Latitude in radians.\n   --  @field Longitude_Rad Longitude in radians.\n   --  @field Altitude_M Altitude in meters; no additional datum is imposed by the bridge.\n   --  @field Attitude Euler attitude; see the canonical Status Euler definition.\n   --  @field Attitude_Rate Euler attitude rate and its separate timestamp; rate units are not\n   --  explicitly specified upstream.\n   --  @field Speed North/East/Down speed in meters per second.\n   --  @field Acceleration North/East/Down acceleration in meters per second squared.\n   --  @field Wander_Angle_Rad Wander angle in radians.\n   --  @field Magnetic_Heading Provider magnetic heading; the pinned declaration specifies no unit.\n   --  @field Altitude_MSL Upstream altitudeMSL value, described as barometric altitude; no\n   --  explicit unit is stated for this field.\n   --  @field Position_Velocity_Covariance All 18 provided covariance values; the bridge does not\n   --  estimate them.\n\n   type Navigation_Response is record\n      System_Time_NS : Long_Long_Integer;\n      Command_ID     : Interfaces.Unsigned_32;\n      Request_ID     : Interfaces.Unsigned_32;\n   end record;"
+        },
+        "end": 67,
+        "href": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html#8a5baab22f0e0f0f1d7abda3d62db52f34629a4026217c428e5e31b025b18783",
+        "identity": "ams.mel.ir.image.navigation_response",
+        "native_anchor": "f88cb96f059120269c30b8c8b397a177e360a4b71c609f9fb542c01c5e7489b1",
+        "offset": 31,
+        "package": "AMS.MEL.IR.Image.Metadata",
+        "source_profile": "--  Owned aperture line-of-sight Euler angles and rates at their time of validity.\n   --  @field System_Time_NS Line-of-sight time of validity in nanoseconds; no clock or epoch is\n   --  specified.\n   --  @field Attitude Euler angles describing aperture line of sight, in radians.\n   --  @field Attitude_Rates Euler angle rates describing aperture line-of-sight rate, in radians\n   --  per second.\n   subtype Navigation_Response is AMS.MEL.IR.Image.Navigation_Response;"
+      }
+    ],
+    "byte_idempotent": true,
+    "changed_files": [
+      "api/0afc59b2a977edefbce75cba06318530f7d622f6273b796ec530cf7f8723ad28.html",
+      "api/presentation.json"
+    ],
+    "deterministic": true,
+    "native_preservation": {
+      "declarations": 1237,
+      "packages": 29,
+      "pages": 30,
+      "signatures": 1237,
+      "status": "preserved"
+    },
+    "publication": {
+      "declaration_snippets": 1237,
+      "files": 42,
+      "html_pages": 37,
+      "linked_external_types": 0,
+      "linked_local_types": 1419,
+      "linked_types": 1419,
+      "links": 2966,
+      "mode": "enhanced",
+      "public_packages": 29,
+      "unrendered_renderer_exceptions": 1
+    },
+    "removed_occurrences": [],
+    "unaffected_bytes_preserved": true
+  }
+}
