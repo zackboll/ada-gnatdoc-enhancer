@@ -1,0 +1,923 @@
+{
+  "browser": "Chromium 156.0.8078.4",
+  "checks": [
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "responsive category navigation inventory",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "API frame overload Back Forward (existing UI, not changed here)",
+      "javascript": true,
+      "reason": "Navigating frame was detached!\n=========================== logs ===========================\nwaiting for navigation to \"http://127.0.0.1:39777/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755\" until 'load'\n============================================================",
+      "status": "fail",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation search and clear",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "responsive category navigation inventory",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "API frame overload Back Forward (existing UI, not changed here)",
+      "javascript": true,
+      "reason": "Navigating frame was detached!\n=========================== logs ===========================\nwaiting for navigation to \"http://127.0.0.1:39777/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755\" until 'load'\n============================================================",
+      "status": "fail",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation search and clear",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "responsive category navigation inventory",
+      "javascript": false,
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "responsive category navigation inventory",
+      "javascript": false,
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "responsive category navigation inventory",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "API frame overload Back Forward (existing UI, not changed here)",
+      "javascript": true,
+      "reason": "Navigating frame was detached!\n=========================== logs ===========================\nwaiting for navigation to \"http://127.0.0.1:39777/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755\" until 'load'\n============================================================",
+      "status": "fail",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation search and clear",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "responsive category navigation inventory",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "API frame overload Back Forward (existing UI, not changed here)",
+      "javascript": true,
+      "reason": "Navigating frame was detached!\n=========================== logs ===========================\nwaiting for navigation to \"http://127.0.0.1:39777/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755\" until 'load'\n============================================================",
+      "status": "fail",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "operation search and clear",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "responsive category navigation inventory",
+      "javascript": false,
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "responsive category navigation inventory",
+      "javascript": false,
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    }
+  ],
+  "scope": "real pinned Imgproc; local Chromium, no production publication",
+  "status": "fail"
+}

@@ -1,0 +1,11 @@
+{
+  "starting_sha": "255e6453d2ec4801e804625f690a13956d62d145",
+  "original_local_branch_head": "d9bd44aa87a103c73ad935445a69f0ae4308348d",
+  "clean_start": true,
+  "consumer_source": "9ce22ae5ab70008e1147475a9e6d7baef82f1df0",
+  "baseline_browser": {
+    "pass": 108,
+    "fail": 4
+  },
+  "first_baseline_test_attempt": "372 executed; 1 determinism failure: live editable asset changed during run. Preserved log; repeat against immutable baseline archive required."
+}

@@ -1,0 +1,25 @@
+test_bad_links (test_navigation_history.NavigationHistory.test_bad_links) ... ok
+test_deep (test_navigation_history.NavigationHistory.test_deep) ... ok
+test_duplicate_declaration (test_navigation_history.NavigationHistory.test_duplicate_declaration) ... ok
+test_duplicate_package (test_navigation_history.NavigationHistory.test_duplicate_package) ... ok
+test_external_frame (test_navigation_history.NavigationHistory.test_external_frame) ... ok
+test_history (test_navigation_history.NavigationHistory.test_history) ... ok
+test_injection (test_navigation_history.NavigationHistory.test_injection) ... ok
+test_invalid_pop (test_navigation_history.NavigationHistory.test_invalid_pop) ... ok
+test_malformed (test_navigation_history.NavigationHistory.test_malformed) ... ok
+test_malformed_fragment (test_navigation_history.NavigationHistory.test_malformed_fragment) ... ok
+test_native_click (test_navigation_history.NavigationHistory.test_native_click) ... ok
+test_outer_fragment (test_navigation_history.NavigationHistory.test_outer_fragment) ... ok
+test_package (test_navigation_history.NavigationHistory.test_package) ... ok
+test_same_selection (test_navigation_history.NavigationHistory.test_same_selection) ... ok
+test_search (test_navigation_history.NavigationHistory.test_search) ... ok
+test_stale_load (test_navigation_history.NavigationHistory.test_stale_load) ... ok
+test_unknown_declaration (test_navigation_history.NavigationHistory.test_unknown_declaration) ... ok
+test_unknown_package (test_navigation_history.NavigationHistory.test_unknown_package) ... ok
+test_unqualified_frame (test_navigation_history.NavigationHistory.test_unqualified_frame) ... ok
+test_wrong_package (test_navigation_history.NavigationHistory.test_wrong_package) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 1.254s
+
+OK

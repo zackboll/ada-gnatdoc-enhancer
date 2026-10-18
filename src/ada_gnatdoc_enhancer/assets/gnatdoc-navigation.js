@@ -26,42 +26,99 @@
   let current = null;
   const allLinks = Array.from(sidebar.querySelectorAll('a[target="document-content"]'));
   const filtered = allLinks.filter(link => link.closest('li') || link.closest('.operation-group'));
-  function select(item) {
-    if (!item) return;
-    for (const l of allLinks) l.removeAttribute('aria-current');
-    item.link.setAttribute('aria-current','page'); current=item;
+  // Only generated native links confer authority. Neither query state nor an
+  // iframe URL can manufacture a destination, even with a plausible hash.
+  const approved = new Map(), linkStates = new Map();
+  for (const link of allLinks) {
+    const href = link.getAttribute('href');
+    if (!/^[a-f0-9]{64}\.html(?:#[a-f0-9]{64})?$/.test(href || '')) continue;
+    const url = new URL(href, location.href), item = byPath.get(url.pathname);
+    if (!item || url.origin !== location.origin) continue;
+    const state = {item, url, declaration:url.hash.slice(1), link};
+    if (!approved.has(url.href)) approved.set(url.href, state);
+    linkStates.set(link, state);
   }
-  function updateHistory(item, method) {
+  const defaultState = approved.get(first.url.href);
+  let pending = null;
+  const observedDocuments = new WeakSet();
+  function select(state) {
+    for (const l of allLinks) l.removeAttribute('aria-current');
+    state.item.link.setAttribute('aria-current','page');
+    if (state.declaration) state.link.setAttribute('aria-current','location');
+    current=state;
+  }
+  function canonicalUrl(state) {
     const u = new URL(location.href);
-    if (u.searchParams.getAll('package').length===1 && u.searchParams.get('package')===item.name) return;
-    u.searchParams.set('package',item.name);
-    history[method]({package:item.name},'',u);
+    u.searchParams.set('package',state.item.name);
+    u.searchParams.delete('declaration');
+    if (state.declaration) u.searchParams.set('declaration',state.declaration);
+    return u;
   }
   function targetFromUrl() {
-    const all = new URL(location.href).searchParams.getAll('package');
-    return all.length===1 ? byName.get(all[0].toLowerCase()) || first : first;
+    const query = new URL(location.href).searchParams;
+    const packages = query.getAll('package'), declarations = query.getAll('declaration');
+    const item = packages.length===1 && byName.get(packages[0].toLowerCase());
+    if (!item) return defaultState;
+    const packageState = approved.get(item.url.href);
+    if (!declarations.length) return packageState;
+    if (declarations.length!==1 || !/^[a-f0-9]{64}$/.test(declarations[0])) return packageState;
+    return approved.get(item.url.href+'#'+declarations[0]) || packageState;
+  }
+  function frameUrl() {
+    try { return frame.contentWindow.location.href; }
+    catch (_) { return null; }
+  }
+  function navigate(state) {
+    pending=state;
+    if (frameUrl()===state.url.href) { pending=null; return; }
+    // The outer entry owns history. assign()/src would add joint iframe entries.
+    frame.contentWindow.location.replace(state.url.href);
+  }
+  function activate(state) {
+    if (!current || current.url.href!==state.url.href) {
+      history.pushState({package:state.item.name, declaration:state.declaration},'',canonicalUrl(state));
+    }
+    select(state);navigate(state);
   }
   function restore() {
-    const item=targetFromUrl();select(item);updateHistory(item,'replaceState');
-    try { if (frame.contentWindow.location.pathname!==item.url.pathname)
-      frame.contentWindow.location.replace(item.url.href); }
-    catch (_) { frame.src=item.url.href; }
+    const state=targetFromUrl();select(state);navigate(state);
+  }
+  function click(ev, inner=false) {
+    const link=ev.target.closest('a');
+    if (!link || (inner ? link.target && link.target!=='_self' && link.target!==frame.name : link.target!==frame.name) ||
+        ev.button!==0 || ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey) return;
+    let state;
+    if (inner) {
+      // Native document navigation is enhanced only for the exact same allowlist.
+      const raw=link.getAttribute('href') || '';
+      if (/^(?:[a-f0-9]{64}\.html(?:#[a-f0-9]{64})?|#[a-f0-9]{64})$/.test(raw))
+        state=approved.get(new URL(raw,frameUrl()).href);
+      if (!state) return; // Ordinary external/untracked native links stay native.
+    } else {
+      state=linkStates.get(link);
+      // Do not follow a mutated or injected sidebar destination.
+      if (!state || link.getAttribute('href')!==state.url.href.slice(state.url.href.lastIndexOf('/')+1)) {
+        ev.preventDefault();return;
+      }
+    }
+    ev.preventDefault();activate(state);
   }
   frame.addEventListener('load', () => {
+    // Loads are acknowledgements, never history writers. An older completion
+    // cannot replace a newer selection or restored state.
+    if (pending && frameUrl()!==pending.url.href) { navigate(pending); return; }
+    pending=null;
     try {
-      const u=new URL(frame.contentWindow.location.href);
-      const item=u.origin===location.origin && byPath.get(u.pathname);
-      if (item && item!==current) {select(item);updateHistory(item,'pushState');}
+      const doc=frame.contentDocument;
+      if (approved.has(frameUrl()) && doc && !observedDocuments.has(doc)) {
+        doc.addEventListener('click',ev => click(ev,true));observedDocuments.add(doc);
+        frame.contentWindow.addEventListener('hashchange',() => {
+          if (pending && frameUrl()===pending.url.href) pending=null;
+        });
+      }
     } catch (_) { /* Cross-origin navigation is never tracked. */ }
   });
-  sidebar.addEventListener('click',ev => {
-    const l=ev.target.closest('a');
-    if (!l || l.target!==frame.name || ev.button!==0 || ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey) return;
-    const u=new URL(l.href), item=u.origin===location.origin && byPath.get(u.pathname);
-    if (!item) return;
-    ev.preventDefault();select(item);updateHistory(item,'pushState');
-    frame.contentWindow.location.replace(u.href);
-  });
+  sidebar.addEventListener('click',ev => click(ev));
   function filter() {
     const q=search.value.toLowerCase();let shown=0;
     for (const link of filtered) {
@@ -76,5 +133,8 @@
     search.value='';filter();search.focus();
   });
   window.addEventListener('popstate',restore);
+  const initial=targetFromUrl(), canonical=canonicalUrl(initial);
+  if (canonical.href!==location.href)
+    history.replaceState({package:initial.item.name, declaration:initial.declaration},'',canonical);
   controls.dataset.ready='true';filter();restore();controls.hidden=false;
 })();

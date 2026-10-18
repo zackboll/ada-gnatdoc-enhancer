@@ -4,6 +4,6 @@ recursive-include docs *.md
 recursive-include docs/evidence *.json *.txt
 recursive-include examples *.toml
 recursive-include scripts *.py
-recursive-include tests *.py *.toml *.md *.html *.css *.json *.ads *.adb *.gpr
+recursive-include tests *.py *.json *.toml *.ads *.html *.css *.txt *.md *.adb *.gpr *.cjs
 recursive-include .github/workflows *.yml
 global-exclude __pycache__ *.py[cod]

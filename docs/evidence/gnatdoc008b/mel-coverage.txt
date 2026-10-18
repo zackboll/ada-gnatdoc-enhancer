@@ -1,0 +1,1 @@
+Coverage 4294/4295 (99.9767%); 1238 source / 1237 native / 1 renderer omission
