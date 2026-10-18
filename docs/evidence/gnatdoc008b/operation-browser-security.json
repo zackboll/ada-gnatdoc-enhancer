@@ -1,0 +1,1947 @@
+{
+  "browser": "Chromium 156.0.8078.4",
+  "checks": [
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "responsive category navigation inventory",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "API frame overload Back Forward (existing UI, not changed here)",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "Gaussian overload repeated Back Forward exact profiles",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "filtered operation history and search reset",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "package initial state declaration deep link reload",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "invalid and duplicate initial state exact canonical fallback",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "fresh keyboard selections add exactly two history entries",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "cross-origin iframe load untracked and approved recovery",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "mutated unapproved links blocked without navigation",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "real Geometry cross-package history and wrong-owner rejection",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation search and clear",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "responsive category navigation inventory",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "API frame overload Back Forward (existing UI, not changed here)",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "Gaussian overload repeated Back Forward exact profiles",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "filtered operation history and search reset",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "package initial state declaration deep link reload",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "invalid and duplicate initial state exact canonical fallback",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "fresh keyboard selections add exactly two history entries",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "cross-origin iframe load untracked and approved recovery",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "mutated unapproved links blocked without navigation",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "real Geometry cross-package history and wrong-owner rejection",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation search and clear",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "responsive category navigation inventory",
+      "javascript": false,
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "responsive category navigation inventory",
+      "javascript": false,
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "responsive category navigation inventory",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "API frame overload Back Forward (existing UI, not changed here)",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "Gaussian overload repeated Back Forward exact profiles",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "filtered operation history and search reset",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "package initial state declaration deep link reload",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "invalid and duplicate initial state exact canonical fallback",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "fresh keyboard selections add exactly two history entries",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "cross-origin iframe load untracked and approved recovery",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "mutated unapproved links blocked without navigation",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "real Geometry cross-package history and wrong-owner rejection",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation search and clear",
+      "javascript": true,
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": true,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "responsive category navigation inventory",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "API frame overload Back Forward (existing UI, not changed here)",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "Gaussian overload repeated Back Forward exact profiles",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "filtered operation history and search reset",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "package initial state declaration deep link reload",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "invalid and duplicate initial state exact canonical fallback",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "fresh keyboard selections add exactly two history entries",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "cross-origin iframe load untracked and approved recovery",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "mutated unapproved links blocked without navigation",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "real Geometry cross-package history and wrong-owner rejection",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "operation search and clear",
+      "javascript": true,
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "responsive category navigation inventory",
+      "javascript": false,
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Get_Gaussian_Kernel (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Filter_2D (1)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "operation click exact fragment and rendered full profile",
+      "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard Enter exact overload profile",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "direct native bookmark Back Forward exact overload",
+      "javascript": false,
+      "label": "Filter_2D (2)",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "responsive category navigation inventory",
+      "javascript": false,
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    }
+  ],
+  "consumer_source": "9ce22ae5ab70008e1147475a9e6d7baef82f1df0",
+  "enhancer_source": "255e6453d2ec4801e804625f690a13956d62d145",
+  "scope": "real pinned Imgproc; local Chromium, no production publication",
+  "status": "pass",
+  "traces": [
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=fbd2fb812a53fcd97a2120c5d9706f73fe023cc2342c9cd73d2c864c4afc2755"
+    },
+    {
+      "label": "Filter_2D (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (2)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=c4f236f069153235f9a3f9ce1cca3bd26e1a696a088b8b0fda3257faaecd3731"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    },
+    {
+      "label": "Get_Gaussian_Kernel (1)",
+      "native": "http://local/imgproc008/first/_site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96",
+      "outer": "http://local/imgproc008/first/_site/api/index.html?package=OpenCV.Image_Processing&declaration=85eed978831f60165407d558d2bcdd2f0836aa8643dbe53d58d243671f16ff96"
+    }
+  ]
+}

@@ -11,6 +11,7 @@ import argparse
 import functools
 import json
 import os
+import subprocess
 import threading
 import tomllib
 from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
@@ -117,15 +118,19 @@ def generic_checks(browser, workspace, url, check, require):
                 finally:context.close()
 
 
-def run(workspace):
+def run(workspace, source_sha=None):
     from playwright.sync_api import sync_playwright
+    from ada_gnatdoc_enhancer.util import digest
     configuration=tomllib.loads((workspace/'first/qualification.toml').read_text())
     navigation_mode=configuration['navigation']['mode']
     handler=functools.partial(Quiet,directory=str(workspace))
     server=ThreadingHTTPServer(('127.0.0.1',0),handler)
     thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
     report={'checks':[],'scope':'isolated real native API site; not consumer portal',
-            'navigation_mode':navigation_mode}
+            'navigation_mode':navigation_mode,
+            'consumer_source':source_sha,
+            'navigation_asset_sha256':digest((workspace/'first/_site/api/gnatdoc-navigation.js').read_bytes()),
+            'enhancer_source':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()}
     # HTTPS interception is explicitly a local publication simulation, NOT
     # evidence of a remotely hosted deployment. First revalidate pinned inputs.
     external_proofs={}
@@ -430,7 +435,8 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--workspace',required=True,type=Path)
     parser.add_argument('--output',required=True,type=Path)
+    parser.add_argument('--source-sha', help='Exact pinned consumer source revision tested')
     args=parser.parse_args()
-    result=run(args.workspace)
+    result=run(args.workspace, args.source_sha)
     args.output.write_text(json.dumps(result,sort_keys=True,indent=2)+'\n')
     raise SystemExit(0 if result['status']=='pass' else 2)

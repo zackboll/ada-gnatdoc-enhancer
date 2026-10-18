@@ -1,0 +1,102 @@
+{
+  "starting_sha": "255e6453d2ec4801e804625f690a13956d62d145",
+  "consumer_source": "9ce22ae5ab70008e1147475a9e6d7baef82f1df0",
+  "baseline_tests": 372,
+  "current_tests": 392,
+  "new_js_scenarios": 20,
+  "baseline_browser": {
+    "pass": 108,
+    "fail": 4
+  },
+  "original_unchanged_harness_after": {
+    "pass": 112,
+    "fail": 0
+  },
+  "extended_history_security": {
+    "pass": 144,
+    "fail": 0
+  },
+  "full_browser": {
+    "core": {
+      "report": "core-browser.json",
+      "consumer_source": "c5545eee815431568495c6c76af83df56cf5c3dd",
+      "browser": "Chromium 156.0.8078.4",
+      "navigation_asset_sha256": "1abf2f4518eada76d4db4007ae8146b340c5178be753afaa729fa3cdf3700fb4",
+      "checks": 1442,
+      "pass": 1442,
+      "fail": 0
+    },
+    "imgproc": {
+      "report": "imgproc-browser.json",
+      "consumer_source": "9ce22ae5ab70008e1147475a9e6d7baef82f1df0",
+      "browser": "Chromium 156.0.8078.4",
+      "navigation_asset_sha256": "1abf2f4518eada76d4db4007ae8146b340c5178be753afaa729fa3cdf3700fb4",
+      "checks": 1620,
+      "pass": 1620,
+      "fail": 0
+    },
+    "geometry": {
+      "report": "geometry-browser.json",
+      "consumer_source": "fa81e5140cbebf2aa41397a40c08ba194a5f6f73",
+      "browser": "Chromium 156.0.8078.4",
+      "navigation_asset_sha256": "1abf2f4518eada76d4db4007ae8146b340c5178be753afaa729fa3cdf3700fb4",
+      "checks": 1428,
+      "pass": 1428,
+      "fail": 0
+    },
+    "mel": {
+      "report": "mel-browser.json",
+      "consumer_source": "6065129aba5dee89e70b61e05a9e1c9b2c3061c0",
+      "browser": "Chromium 156.0.8078.4",
+      "navigation_asset_sha256": "1abf2f4518eada76d4db4007ae8146b340c5178be753afaa729fa3cdf3700fb4",
+      "checks": 1126,
+      "pass": 1126,
+      "fail": 0
+    }
+  },
+  "wheel_tests": 392,
+  "sdist_tests": 392,
+  "disposition": "HOSTED_CI_PENDING",
+  "historical_evidence_modified": false,
+  "consumer_pr_72_modified": false,
+  "consumer_pr_72_head": "f2989da6c6a593f6196d1d989be0b2d126743dc6",
+  "hosted_ci": "Not yet run on this branch. Exact final SHA and checks must be recorded in PR report, without self-referential evidence commits.",
+  "remaining_blockers": [
+    "exact-final-head hosted CI",
+    "independent review",
+    "separate consumer integration PR outside this task"
+  ],
+  "scope": "Runtime: navigation JS only. Publication: navigation JS and presentation hashes only. No HTML/CSS or resolver changes.",
+  "implementation_sha": "05f47f311daf035677c05a7af0c347d7c66e3cd9",
+  "pr": "https://github.com/zackboll/ada-gnatdoc-enhancer/pull/9",
+  "qualification_note": "Final runtime fully qualified: local/wheel/sdist 392 each, full four-site Chromium original counts preserved, history 144/144, consumer tamper rejection 24/24. Earlier failures retained. Final commit differs only in harness attachment synchronization and evidence/docs.",
+  "runtime_sha": "4ae81808afaaa5815c9a68302fb46d7b8110dec6",
+  "final_runtime_local_tests": 392,
+  "final_runtime_wheel_tests": 392,
+  "final_runtime_sdist_tests": 392,
+  "final_runtime_consumer_negative": 24,
+  "final_runtime_history_browser": {
+    "pass": 144,
+    "fail": 0,
+    "report": "final-runtime/operation-browser-committed-head.json"
+  },
+  "final_runtime_full_browser": {
+    "core": {
+      "pass": 1442,
+      "fail": 0
+    },
+    "imgproc": {
+      "pass": 1620,
+      "fail": 0
+    },
+    "geometry": {
+      "pass": 1428,
+      "fail": 0
+    },
+    "mel": {
+      "pass": 1126,
+      "fail": 0
+    }
+  },
+  "committed_harness_tested_sha": "17f35044de02bbb1bc64326dc755d4ffa50acc8f"
+}

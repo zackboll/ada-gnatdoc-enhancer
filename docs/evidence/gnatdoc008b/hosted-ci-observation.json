@@ -1,0 +1,48 @@
+{
+  "status": "pending",
+  "note": "Observation before final evidence-only commit. Exact final head checks must be recorded in PR without an endless self-reference commit cycle.",
+  "runs": [
+    {
+      "conclusion": "",
+      "databaseId": 39084329842,
+      "headSha": "17f35044de02bbb1bc64326dc755d4ffa50acc8f",
+      "status": "queued",
+      "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/actions/runs/39084329842"
+    },
+    {
+      "conclusion": "",
+      "databaseId": 39084327159,
+      "headSha": "17f35044de02bbb1bc64326dc755d4ffa50acc8f",
+      "status": "in_progress",
+      "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/actions/runs/39084327159"
+    },
+    {
+      "conclusion": "",
+      "databaseId": 39084012362,
+      "headSha": "4ae81808afaaa5815c9a68302fb46d7b8110dec6",
+      "status": "in_progress",
+      "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/actions/runs/39084012362"
+    },
+    {
+      "conclusion": "",
+      "databaseId": 39084009086,
+      "headSha": "4ae81808afaaa5815c9a68302fb46d7b8110dec6",
+      "status": "in_progress",
+      "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/actions/runs/39084009086"
+    },
+    {
+      "conclusion": "",
+      "databaseId": 39083863256,
+      "headSha": "05f47f311daf035677c05a7af0c347d7c66e3cd9",
+      "status": "in_progress",
+      "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/actions/runs/39083863256"
+    },
+    {
+      "conclusion": "",
+      "databaseId": 39083860272,
+      "headSha": "05f47f311daf035677c05a7af0c347d7c66e3cd9",
+      "status": "in_progress",
+      "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/actions/runs/39083860272"
+    }
+  ]
+}

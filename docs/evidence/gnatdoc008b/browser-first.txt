@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<stdin>", line 6, in <module>
+  File "/home/zboll/git/ada-gnatdoc-enhancer/src/ada_gnatdoc_enhancer/pipeline.py", line 116, in enhance
+    if (site/MANIFEST).exists():return verify(config,site)
+                                       ~~~~~~^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer/src/ada_gnatdoc_enhancer/pipeline.py", line 168, in verify
+    require({n:digest(d) for n,d in sorted(values.items())}==data['output_sha256'],
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'enhanced output does not match source/manifest')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer/src/ada_gnatdoc_enhancer/util.py", line 20, in require
+    raise EnhancementError(reason)
+ada_gnatdoc_enhancer.errors.EnhancementError: enhanced output does not match source/manifest
