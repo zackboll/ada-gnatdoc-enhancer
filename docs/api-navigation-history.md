@@ -23,6 +23,9 @@ not evidence that the expected declaration was restored. The **unchanged**
 waits for the exact outer URL before reacquiring the frame, then requires its
 exact URL, unique native heading, and complete expected declaration profile.
 This removes the stale-frame observation race without relaxing an assertion.
+Reload also waits for the exact native heading to attach before checking its
+uniqueness: the frame URL can already equal the reload destination while the
+new document is not yet parsed. Count, full profile and exact URL checks remain.
 It uses no sleeps or arbitrary delays.
 
 ## State contract
@@ -144,6 +147,11 @@ build lacked the no-isolation backend, and the first consumer-oracle invocation
 lacked its isolated legacy input directory. Corrected runs use an immutable
 baseline archive, pristine native reconstruction, isolated package builds and
 the unchanged legacy snapshot respectively.
+One final browser run accidentally overlapped the deliberately destructive
+consumer tamper suite on the same workspace (142/144, two added deep-link/invalid
+checks failed; all four original history checks passed). Its report is retained.
+The tamper suite restores and independently verifies bytes before subsequent
+browser runs; mutation tests and browser checks must not share live inputs.
 
 Final tested revision, distribution results, browser counts, hosted checks and
 remaining blockers are recorded in `validation.json` and the open PR. Exact-final

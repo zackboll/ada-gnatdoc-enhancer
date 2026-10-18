@@ -49,6 +49,9 @@ def run(workspace, proof, history_only=False, geometry=None):
     def declaration(page, d):
         require(urlsplit(page.url).fragment == urlsplit(d['href']).fragment, 'wrong native fragment')
         heading = page.locator('h4[id="'+urlsplit(d['href']).fragment+'"]')
+        # A reload can already expose its destination URL before the new native
+        # DOM exists. Wait for that heading, then still require exact uniqueness.
+        heading.wait_for(state='attached')
         require(heading.count() == 1, 'native heading not unique')
         code = heading.locator('xpath=following-sibling::pre[1]').inner_text()
         require(normalized(code) == normalized(d['native_profile']), 'wrong rendered declaration profile')

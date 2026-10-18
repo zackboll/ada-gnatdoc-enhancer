@@ -62,7 +62,7 @@
   "consumer_pr_72_head": "f2989da6c6a593f6196d1d989be0b2d126743dc6",
   "hosted_ci": "Not yet run on this branch. Exact final SHA and checks must be recorded in PR report, without self-referential evidence commits.",
   "remaining_blockers": [
-    "fresh final runtime full-site/distribution/browser qualification",
+    "completion of final runtime Imgproc full browser and synchronized harness rerun",
     "exact-final-head hosted CI",
     "independent review",
     "separate consumer integration PR outside this task"
@@ -70,5 +70,15 @@
   "scope": "Runtime: navigation JS only. Publication: navigation JS and presentation hashes only. No HTML/CSS or resolver changes.",
   "implementation_sha": "05f47f311daf035677c05a7af0c347d7c66e3cd9",
   "pr": "https://github.com/zackboll/ada-gnatdoc-enhancer/pull/9",
-  "qualification_note": "Previous complete pass results above apply to initial asset. Additional superseded-after-ack guard now requires fresh final runtime qualification; see final-head records."
+  "qualification_note": "Final-runtime evidence supersedes predecessor asset results. Retains 142/144 run overlapped with destructive tamper tests; isolated repeat passes 144/144.",
+  "runtime_sha": "4ae81808afaaa5815c9a68302fb46d7b8110dec6",
+  "final_runtime_local_tests": 392,
+  "final_runtime_wheel_tests": 392,
+  "final_runtime_sdist_tests": 392,
+  "final_runtime_consumer_negative": 24,
+  "final_runtime_history_browser": {
+    "pass": 144,
+    "fail": 0,
+    "report": "final-runtime/operation-browser-after-tamper-completion.json"
+  }
 }
