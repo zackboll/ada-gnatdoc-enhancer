@@ -354,6 +354,48 @@ Evidence: [evidence/gnatdoc010r1](evidence/gnatdoc010r1/). The original
 GNATDOC-010 records in [evidence/gnatdoc010](evidence/gnatdoc010/) are kept
 unchanged.
 
+## GNATDOC-010R corrective review (R2)
+
+R2 follows pushed reconciliation `8d79707b1f31444cc70646a33d5ab6a8b2392983`.
+The two-stage GNATDOC-008B → GNATDOC-009A → metadata comparison is retained
+unchanged, including the separately verified current Geometry Point_Array
+allowlist. No type resolver, native declaration matcher, navigation JavaScript,
+operation-browser expectation, dependency constraint or consumer source is changed.
+
+The independent document census now counts title openings and closures as well
+as completed values. It rejects unfinished, nested, self-closing or misplaced
+titles, unmatched closures, title comments, malformed explicit-head ordering,
+and metadata after the root closes. Authored pages with an intentional implicit
+head remain supported; generated pages require an explicit, closed head.
+
+Every decoded published title is checked without rewriting author content.
+Unicode control/format characters (including bidi overrides and zero-width
+characters), all separators other than ASCII space, leading/trailing space and
+line breaks are unsupported. Components retain their 300-code-point limit;
+the complete title limit is **603 Unicode code points**, consistently for
+generated and authored titles (300 + the three-character separator + 300).
+Numeric character references cannot hide prohibited characters. Diagnostics
+identify an `unsafe document title`.
+
+Generated-page metadata is inventoried independently: exactly one UTF-8 charset
+and at most the exact approved viewport. The API validator supplies the theme
+setting, so that viewport is required when enabled and forbidden when disabled.
+Additional, malformed, duplicate-attribute or body metadata is rejected. Native
+GNATdoc input must contain no meta elements at all. Authored metadata retains
+its separate existing policy; an approved description meta is not prohibited.
+
+Optional browser qualification uses one shared title/language/actual-charset
+assertion on Page and loaded Frame objects. Initial navigation, reload and
+Back/Forward are checked with navigation-aware waits, reacquiring frames after
+transitions. Native no-JavaScript iframe history waits on the frame rather
+than incorrectly expecting an outer-page navigation. Existing operation and
+declaration-history expectations are unchanged; desktop/mobile coverage remains.
+
+Fresh R2 evidence is kept separately from all historical results. No result in
+GNATDOC-009A, GNATDOC-010 or GNATDOC-010R1 is rewritten. See
+[evidence/gnatdoc010r2](evidence/gnatdoc010r2/) for corrective qualification status;
+incomplete gates must not be interpreted as final-head qualification.
+
 ## Migration impact
 
 - Every enhanced API page and Markdown guide gains metadata, so their bytes and

@@ -84,7 +84,8 @@ def validate_files(site:Path,config:Config,expected:set[str], *, raw=False, titl
                     f"machine-local path leak: {relative}")
             require('{{' not in text and '}}' not in text, f"unresolved template in {relative}")
             check_document(text,relative,title=titles.get(relative),
-                           generated=relative.startswith('api/') or relative in titles)
+                           generated=relative.startswith('api/') or relative in titles,
+                           viewport=config.theme if relative.startswith('api/') else None)
             page=Page(text)
             if config.guides.startswith('authored-') and not relative.startswith('api/'):
                 from .authored import check_html

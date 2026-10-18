@@ -42,6 +42,16 @@ BCP47 = re.compile(r'[a-z]{2,3}(?:-[A-Za-z0-9]{1,8})*')
 HEAD_TAGS = frozenset({'html', 'head', 'meta', 'title', 'link', 'script', 'style', 'base',
                        'noscript', 'template'})
 MAX_TITLE = 300
+MAX_DOCUMENT_TITLE = 2 * MAX_TITLE + len(SEPARATOR)
+VIEWPORT = {'name': 'viewport', 'content': 'width=device-width, initial-scale=1'}
+
+
+def safe_title(value: str, what: str) -> str:
+    """Validate decoded title text without normalizing or rewriting author content."""
+    require(bool(value) and value == value.strip() and len(value) <= MAX_DOCUMENT_TITLE and
+            all(c == ' ' or unicodedata.category(c)[0] not in 'CZ' for c in value),
+            f"empty or malformed document title; unsafe document title: {what}")
+    return value
 
 
 def label(value, what: str) -> str:
@@ -54,30 +64,46 @@ def label(value, what: str) -> str:
 
 
 def package_title(package: str, project: str) -> str:
-    return label(package, 'package name') + SEPARATOR + label(project, 'project name')
+    return safe_title(label(package, 'package name') + SEPARATOR + label(project, 'project name'), 'package')
 
 
 def index_title(project: str) -> str:
-    return API_INDEX + SEPARATOR + label(project, 'project name')
+    return safe_title(API_INDEX + SEPARATOR + label(project, 'project name'), 'index')
 
 
 def guide_title(guide: str, project: str) -> str:
-    return label(guide, 'guide label') + SEPARATOR + label(project, 'project name')
+    return safe_title(label(guide, 'guide label') + SEPARATOR + label(project, 'project name'), 'guide')
 
 
 class Document(HTMLParser):
     """Independent document-metadata census; shares no strings with the generator."""
 
     def __init__(self, text: str):
-        super().__init__(convert_charrefs=True)
+        super().__init__(convert_charrefs=False)
         self.roots, self.langs, self.heads, self.bodies = 0, [], 0, 0
         self.titles, self.charsets, self.misplaced = [], [], []
         self.in_head, self._title = True, None
+        self.title_openings, self.title_closures = 0, 0
+        self.head_closures, self.issues, self.metas = 0, [], []
+        self._explicit_head, self._implicit_metadata = False, False
+        self._root_closed = False
         self.feed(text)
         self.close()
 
     def handle_starttag(self, tag, attrs):
         keys = dict(attrs)
+        if self._root_closed:
+            self.issues.append('element after document root closure')
+        if self._title is not None:
+            self.issues.append('markup nested inside title')
+        if tag == 'head':
+            if not self.in_head or self.heads or self._implicit_metadata or self.roots != 1:
+                self.issues.append('malformed head ordering')
+            self._explicit_head = True
+        if tag == 'html' and (self.heads or self._implicit_metadata):
+            self.issues.append('malformed root ordering')
+        if tag not in HEAD_TAGS and self._explicit_head:
+            self.issues.append('unclosed head before body content')
         if tag not in HEAD_TAGS:
             self.in_head = False
         if tag == 'html':
@@ -88,31 +114,72 @@ class Document(HTMLParser):
         elif tag == 'body':
             self.bodies += 1
         elif tag == 'title':
+            self.title_openings += 1
             if not self.in_head:
                 self.misplaced.append('title')
+            if attrs:
+                self.issues.append('unapproved title attributes')
             self._title = ''
-        elif tag == 'meta' and 'charset' in keys:
+        elif tag == 'meta':
+            self.metas.append(attrs)
             if not self.in_head:
-                self.misplaced.append('charset')
-            self.charsets.append(keys['charset'])
+                self.misplaced.append('metadata')
+            if 'charset' in keys:
+                self.charsets.append(keys['charset'])
+        if tag in ('title', 'meta', 'link') and not self.heads:
+            self._implicit_metadata = True
 
     def handle_startendtag(self, tag, attrs):
         self.handle_starttag(tag, attrs)
+        if tag in ('html', 'head', 'title', 'body'):
+            self.issues.append('self-closing document element')
 
     def handle_endtag(self, tag):
-        if tag == 'head':
+        if tag == 'html':
+            self._root_closed = True
             self.in_head = False
-        if tag == 'title' and self._title is not None:
-            self.titles.append(self._title)
-            self._title = None
+        if tag == 'head':
+            self.head_closures += 1
+            if not self._explicit_head or not self.in_head:
+                self.issues.append('unmatched head closure')
+            self._explicit_head = False
+            self.in_head = False
+        if tag == 'title':
+            self.title_closures += 1
+            if self._title is None:
+                self.issues.append('unmatched title closure')
+            else:
+                self.titles.append(self._title)
+                self._title = None
+        elif self._title is not None:
+            self.issues.append('unfinished title before closing markup')
 
     def handle_data(self, data):
         if self._title is not None:
             self._title += data
+        elif self.in_head and data.strip():
+            if self._explicit_head:
+                self.issues.append('body text inside explicit head')
+            self.in_head = False
+
+    def handle_entityref(self, name):
+        self.handle_data(html.unescape('&' + name + ';'))
+
+    def handle_charref(self, name):
+        try:
+            value = chr(int(name[1:], 16) if name.lower().startswith('x') else int(name))
+        except (ValueError, OverflowError):
+            self.issues.append('invalid character reference')
+            return
+        self.handle_data(value)
+
+    def handle_comment(self, data):
+        if self._title is not None:
+            self.issues.append('comment markup inside title')
 
 
 def check_document(text: str, name: str, *, title: str | None = None,
-                   generated: bool = False) -> str:
+                   generated: bool = False, viewport: bool | None = None) -> str:
     """Require exactly one html root with a language, one nonempty head title and
     a UTF-8 charset. Generated pages also need an explicit head, lang="en" and
     their exact verified title. Returns the title text."""
@@ -121,16 +188,29 @@ def check_document(text: str, name: str, *, title: str | None = None,
     require(len(page.langs[0]) == 1 and BCP47.fullmatch(page.langs[0][0] or '') is not None,
             f"missing, duplicate or invalid document language: {name}")
     require(page.heads <= 1, f"duplicate document head: {name}")
-    require(len(page.titles) == 1, f"missing or duplicate document title: {name}")
-    require(len(page.charsets) == 1 and page.charsets[0].lower() == 'utf-8',
+    require(page.title_openings == page.title_closures == len(page.titles) == 1 and page._title is None,
+            f"missing or duplicate document title, nested or unfinished title: {name}")
+    require(not page.issues and page.heads == page.head_closures,
+            f"malformed document title/head structure: {name}: {page.issues}")
+    require(len(page.charsets) == 1 and isinstance(page.charsets[0], str) and
+            page.charsets[0].lower() == 'utf-8',
             f"missing, duplicate or non-UTF-8 charset declaration: {name}")
     require(not page.misplaced, f"document metadata outside the head: {name}")
     found = page.titles[0]
-    require(bool(found.strip()) and found == found.strip() and '\n' not in found,
-            f"empty or malformed document title: {name}")
+    safe_title(found, name)
     if generated:
         require(page.heads == 1 and page.langs[0] == [LANGUAGE],
                 f"generated page lacks its head or lang=\"{LANGUAGE}\": {name}")
+        # All generated metadata is independently inventoried, not just charset.
+        metas = [dict(attrs) for attrs in page.metas]
+        require(all(len(dict(attrs)) == len(attrs) for attrs in page.metas),
+                f"duplicate generated metadata attributes: {name}")
+        charset = [m for m in metas if set(m) == {'charset'} and
+                   isinstance(m['charset'], str) and m['charset'].lower() == 'utf-8']
+        viewports = [m for m in metas if m == VIEWPORT]
+        require(len(charset) == 1 and len(metas) == 1 + len(viewports) and len(viewports) <= 1 and
+                (viewport is None or len(viewports) == int(viewport)),
+                f"unapproved generated metadata inventory: {name}")
     if title is not None:
         require(found == title, f"document title does not match its verified identity: {name}")
     return found
@@ -143,8 +223,8 @@ def check_native_input(original: str, name: str) -> None:
             NATIVE_BODY.match(original, prologue.end() + len(NATIVE_LINK)) is not None,
             f"unsupported native GNATdoc document layout: {name}")
     page = Document(original)
-    require(page.roots == 1 and page.bodies == 1 and page.heads == 0 and not page.titles and
-            not page.charsets and page.langs == [[]],
+    require(page.roots == 1 and page.bodies == 1 and page.heads == 0 and not page.title_openings and
+            not page.title_closures and not page.metas and not page.issues and page.langs == [[]],
             f"native GNATdoc page already has document metadata or a duplicate root: {name}")
 
 

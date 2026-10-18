@@ -135,6 +135,8 @@ def expected_titles(workspace):
 
 
 def run(workspace, source_sha=None):
+    from ada_gnatdoc_enhancer.browser_metadata import (
+        assert_api_documents, assert_document_metadata, native_frame_history)
     from playwright.sync_api import sync_playwright
     from ada_gnatdoc_enhancer.util import digest
     titles,package_pages=expected_titles(workspace)
@@ -306,13 +308,23 @@ def run(workspace, source_sha=None):
                                 frame=page.frame(name='document-content')
                                 require(frame.title()==titles['api/'+urlsplit(frame.url).path.rsplit('/',1)[1]])
                                 require(frame.evaluate('() => document.documentElement.lang')=='en')
+                                assert_api_documents(page,titles,package_pages,first)
+                                page.reload(wait_until='networkidle')
+                                assert_api_documents(page,titles,package_pages,first)
+                                frame=page.frame(name='document-content')
                                 if len(names)>1:
                                     page.get_by_role('link',name=second,exact=True).click()
                                     page.frame_locator('iframe').get_by_role('heading',name=second,exact=True).wait_for()
+                                    frame=page.frame(name='document-content')
                                     require(frame.title()==titles[package_pages[second]] and page.title()==titles['api/index.html'])
+                                    assert_api_documents(page,titles,package_pages,second)
                                     page.go_back()
                                     page.frame_locator('iframe').get_by_role('heading',name=first,exact=True).wait_for()
+                                    frame=page.frame(name='document-content')
                                     require(frame.title()==titles[package_pages[first]] and page.title()==titles['api/index.html'])
+                                    assert_api_documents(page,titles,package_pages,first)
+                                    page.go_forward()
+                                    assert_api_documents(page,titles,package_pages,second)
                             check('document title language charset and frame titles',document_metadata,**dimensions)
                             def title_history():
                                 ordered=sorted(n for n in titles if n!='api/index.html')
@@ -320,9 +332,14 @@ def run(workspace, source_sha=None):
                                 same=lambda target:(lambda current:urlsplit(current).path==urlsplit(target).path)
                                 a=urljoin(url,one.split('/',1)[1]);b=urljoin(url,two.split('/',1)[1])
                                 page.goto(a,wait_until='networkidle');require(page.title()==titles[one])
+                                assert_document_metadata(page,titles[one])
+                                page.reload(wait_until='networkidle');assert_document_metadata(page,titles[one])
                                 page.goto(b,wait_until='networkidle');require(page.title()==titles[two])
+                                assert_document_metadata(page,titles[two])
                                 page.go_back();page.wait_for_url(same(a));require(page.title()==titles[one])
+                                assert_document_metadata(page,titles[one])
                                 page.go_forward();page.wait_for_url(same(b));require(page.title()==titles[two])
+                                assert_document_metadata(page,titles[two])
                             check('document title Back Forward restoration',title_history,**dimensions)
                             check('no JavaScript errors',lambda:require(not errors),**dimensions)
                         finally:context.close()
@@ -346,6 +363,18 @@ def run(workspace, source_sha=None):
                             name=link.inner_text();link.click()
                             page.frame_locator('iframe').get_by_role('heading',name=name,exact=True).wait_for()
                             require(page.frame(name='document-content').title()==titles[package_pages[name]])
+                            assert_api_documents(page,titles,package_pages,name)
+                            with page.expect_navigation(wait_until='load'):
+                                page.reload(wait_until='networkidle')
+                            # Native iframe selection is not persisted without JS.
+                            link=page.locator('#compilation-units + ul a[target="document-content"]').first
+                            link.click();assert_api_documents(page,titles,package_pages,name)
+                            links=page.locator('#compilation-units + ul a[target="document-content"]')
+                            if links.count()>1:
+                                other=links.last.inner_text();links.last.click()
+                                assert_api_documents(page,titles,package_pages,other)
+                                native_frame_history(page,'back');assert_api_documents(page,titles,package_pages,name)
+                                native_frame_history(page,'forward');assert_api_documents(page,titles,package_pages,other)
                         check('JavaScript-disabled document titles',static_titles,width=width)
                         if external_proofs:
                             def external_fallback():
