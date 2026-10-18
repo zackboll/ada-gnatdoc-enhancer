@@ -1,0 +1,68 @@
+{
+  "artifacts": {
+    "ada_gnatdoc_enhancer-0.1.0.dev0-py3-none-any.whl": "7383e75d18fc12aba46d8618afa13312bf8a54de6ceeeb83bfcd3b9737dcfeb9",
+    "ada_gnatdoc_enhancer-0.1.0.dev0.tar.gz": "83d582926e63ea43b2099db8a97aba524ed530efe0b59b4d60888c3dcc4e3970"
+  },
+  "installed_metadata_module": "ada_gnatdoc_enhancer/metadata.py",
+  "sdist_conformance": {
+    "fully_pinned_consumer_sites": "not qualified in bootstrap",
+    "profiles": {
+      "core": {
+        "deterministic": true,
+        "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+        "html_pages": 4,
+        "idempotent": true,
+        "linked_types": 4,
+        "packages": 3
+      },
+      "geometry": {
+        "deterministic": true,
+        "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+        "html_pages": 3,
+        "idempotent": true,
+        "linked_types": 5,
+        "packages": 2
+      },
+      "imgproc": {
+        "deterministic": true,
+        "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+        "html_pages": 2,
+        "idempotent": true,
+        "linked_types": 6,
+        "packages": 1
+      },
+      "mel": {
+        "deterministic": true,
+        "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+        "html_pages": 37,
+        "idempotent": true,
+        "linked_types": 7,
+        "packages": 29
+      }
+    }
+  },
+  "sdist_tests": {
+    "failures": [],
+    "ran": 418,
+    "result": "OK"
+  },
+  "source": "git archive of the tested SHA",
+  "steps": [
+    "build rc=0",
+    "ada_gnatdoc_enhancer-0.1.0.dev0-py3-none-any.whl",
+    "ada_gnatdoc_enhancer-0.1.0.dev0.tar.gz",
+    "wheel install rc=0",
+    "wheel help rc=0",
+    "wheel test_installed rc=0",
+    "wheel tests rc=0 OK",
+    "sdist wheel rc=0",
+    "sdist tests rc=0 OK",
+    "sdist conformance rc=0"
+  ],
+  "tested_sha": "2a42e8520b52ec91896a99a01b25f741d8a2f576",
+  "wheel_tests": {
+    "failures": [],
+    "ran": 418,
+    "result": "OK"
+  }
+}

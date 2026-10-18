@@ -1,0 +1,154 @@
+{
+  "conformance": {
+    "fully_pinned_consumer_sites": "not qualified in bootstrap",
+    "profiles": {
+      "core": {
+        "deterministic": true,
+        "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+        "html_pages": 4,
+        "idempotent": true,
+        "linked_types": 4,
+        "packages": 3
+      },
+      "geometry": {
+        "deterministic": true,
+        "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+        "html_pages": 3,
+        "idempotent": true,
+        "linked_types": 5,
+        "packages": 2
+      },
+      "imgproc": {
+        "deterministic": true,
+        "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+        "html_pages": 2,
+        "idempotent": true,
+        "linked_types": 6,
+        "packages": 1
+      },
+      "mel": {
+        "deterministic": true,
+        "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+        "html_pages": 37,
+        "idempotent": true,
+        "linked_types": 7,
+        "packages": 29
+      }
+    }
+  },
+  "features": {
+    "enhanced_sha256": {
+      "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": "12d49d3c4eb2e0aed99619ee1e3ec5b2d1cb3065f7cd809af8176b53a549f4cd",
+      "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": "bce6ea7d3fdbfbbc8c3a74c09918b363eeef3f6f1b594e4cce183a8954b351e7",
+      "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": "80651b0ac77b5848aa56f53cfe6419fd75a32f89ed5499dffc5e297ff8e27844",
+      "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": "1dcd90fd69b427fc4a2f0dad8394c3b6d04a33f01a6d88f306ab74d39389b30f",
+      "api/gnatdoc-navigation.js": "61eac070e65b38ac63242a54ed0546a8f4a27b25d8958c2824557860623f40b2",
+      "api/gnatdoc-theme.css": "63c1e9c9a6f2e17cbf64287592dcad5d68f2de9064408bd9963b81ae99d17371",
+      "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+      "api/index.html": "448e29550cbad33cc75e03195d8f75a3f3b051c38241b2f20af867e2dc444ee7",
+      "api/presentation.json": "be824a6340d53ff9309955450c2c92444186c9bd957eb5b88e0d0db153fd67a8",
+      "assets/gnatdoc-guides.css": "79f3fc6d5f1e854eb42d225f9bec113b7a41fa833b12d3bd70ca089ba5df0a8c",
+      "guides/binary-matching.html": "79cb0953f4be5e6fe9925fb952bc33674ac76983b1d6afe1d68f3d0f5e6ec202",
+      "guides/candidate-correspondences.html": "a2154f34cfc96e618be2d4536ac1d2c46ebe4b14b2cf49f270e5ae3e819857e3",
+      "guides/getting-started.html": "c40063db5dba967270ad3d72cc234d09d9f5ffcbe77601f7245ac713a836076f",
+      "guides/limitations-roadmap.html": "cee5558287424f62c72c02536ee025ec0a463f66523a7a04b781bde2e6c56fd9",
+      "guides/orb-extraction.html": "b9d4ca2ed2729cd95303e62050d708328e5f1b51441c36b2ddc5424345745025",
+      "guides/ownership-lifecycle.html": "d922c13dedc8e1ff9019e9b87c4365a4bb28a8aba03158365cc24a817834ae74",
+      "guides/platform-compatibility.html": "3a446ef8c9bcac22552eae88412ba9e3594fd19112d00561000846ca041cf4f3",
+      "index.html": "31c286befe39a58e784de45d0b078ca1f3d4b858dc2b300fa86ff64a5933271a"
+    },
+    "enhancement_equals_committed_evidence": true,
+    "enhancer_pin": "478d0bbff0be1b9141b5ad39f07a71f0386d86e9",
+    "features_doc_tests": {
+      "failures": [],
+      "ran": 84,
+      "result": "OK"
+    },
+    "generation": [
+      "PASS inventory: {\"declarations\": 38, \"internal_units\": 2, \"packages\": 4}",
+      "PASS site: {\"files\": 6, \"packages\": 4, \"sections\": 38}",
+      "PASS warnings: {\"baseline\": 0, \"new\": [], \"raw\": 0, \"regions\": {}, \"stale\": []}",
+      "PASS coverage: {\"baseline\": 0, \"categories\": {\"field\": {\"documented\": 23, \"elements\": 23, \"rendered\": 23}, \"function\": {\"documented\": 20, \"elements\": 20, \"rendered\": 20}, \"literal\": {\"documented\": 9, \"elements\": 9, \"rendered\": 9}, \"package\": {\"documented\": 4, \"elements\": 4, \"rendered\": 4}, \"parameter\": {\"documented\": 33, \"elements\": 33, \"rendered\": 33}, \"procedure\": {\"documented\": 1, \"elements\": 1, \"rendered\": 1}, \"return\": {\"documented\": 20, \"elements\": 20, \"rendered\": 20}, \"type\": {\"documented\": 17, \"elements\": 17, \"rendered\": 17}}, \"new_gaps\": [], \"packages\": {\"OpenCV.Features\": {\"documented\": 40, \"elements\": 40, \"rendered\": 40}, \"OpenCV.Features.Correspondences\": {\"documented\": 13, \"elements\": 13, \"rendered\": 13}, \"OpenCV.Features.Matching\": {\"documented\": 40, \"elements\": 40, \"rendered\": 40}, \"OpenCV.Features.ORB\": {\"documented\": 34, \"elements\": 34, \"rendered\": 34}}, \"stale_baseline\": [], \"total\": {\"documented\": 127, \"elements\": 127, \"percent\": 100.0, \"rendered\": 127}}"
+    ],
+    "gnatdoc_log_bytes": 0,
+    "metadata_summary": {
+      "html_pages": 13,
+      "missing_lang": [
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+        "api/index.html"
+      ],
+      "missing_titles": [
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+        "api/index.html",
+        "guides/binary-matching.html",
+        "guides/candidate-correspondences.html",
+        "guides/getting-started.html",
+        "guides/limitations-roadmap.html",
+        "guides/orb-extraction.html",
+        "guides/ownership-lifecycle.html",
+        "guides/platform-compatibility.html"
+      ],
+      "valid_lang": 8,
+      "valid_titles": 1,
+      "with_head_element": 8,
+      "with_utf8_charset": 8
+    },
+    "native_sha256": {
+      "0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": "8528f405aa2c9fb936d426a026781ff1b720172f3715258edab904c7e68f448b",
+      "71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": "bcb5d237fcbcbf0ba493e353015c87b809e5543fde43c606c8dd1969d9ed1cfd",
+      "8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": "bc42228b09c8825211d86149725af11c1857be071cded08a49a79625f526b7ae",
+      "f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": "b213b4ded5f7a4fb2c5effd458651838a0b074843ec762fc914f05924f0fd81c",
+      "gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+      "index.html": "0d4a79efbedd84ceb9107baec943875d34557a2b07d546a3e460a70d1fd83986"
+    },
+    "pages_check": {
+      "blockers": [
+        "12 of 13 HTML pages have no <title>: api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html, api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html, api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html, api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html, api/index.html, guides/binary-matching.html, guides/candidate-correspondences.html, guides/getting-started.html, guides/limitations-roadmap.html, guides/orb-extraction.html, guides/ownership-lifecycle.html, guides/platform-compatibility.html"
+      ],
+      "errors": [],
+      "pages_without_lang": [
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+        "api/index.html"
+      ],
+      "pages_without_title": [
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+        "api/index.html",
+        "guides/binary-matching.html",
+        "guides/candidate-correspondences.html",
+        "guides/getting-started.html",
+        "guides/limitations-roadmap.html",
+        "guides/orb-extraction.html",
+        "guides/ownership-lifecycle.html",
+        "guides/platform-compatibility.html"
+      ],
+      "publication_ready": false,
+      "references": 248
+    },
+    "revision": "78a07df8bfd4884a9546cee78904fb5ff93aae21",
+    "source_sha256": {
+      "src/opencv-features-correspondences.ads": "5d033b894e254f46bb3913a63a69d7d4eaa3098cda16e9a31ff1fb2d51f20aac",
+      "src/opencv-features-matching.ads": "5b75e3b3ea94a60cc8b0fa2905a41b628ab2c476f8e0893bf3831e4fa965aca9",
+      "src/opencv-features-orb.ads": "bb3466d7eef4fa3023c2c8bb308bca346c90e5ebda1558ea5cecbff2cc03d8e9",
+      "src/opencv-features.ads": "0093e62e69815a369478f74d9a39d92ec811bb6cac7df1adf1af940e1301dd01"
+    }
+  },
+  "starting_main": "53a321915da2c5a02a54581040673b61f8595b25",
+  "tests": {
+    "failures": [],
+    "ran": 392,
+    "result": "OK"
+  },
+  "worktree_clean": true
+}

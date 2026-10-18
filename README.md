@@ -96,6 +96,9 @@ own CI workflow. The publication checker is a supplement, not a substitute.
 - Ordinary package sidebar, optional operation categories, local searchable
   navigation and query-parameter package bookmarks. Native links still work
   with JavaScript disabled; no code scripts run in declaration pages.
+- Source-verified document titles, language and UTF-8 charset on every
+  generated page; author pages must carry their own (see
+  [document metadata](docs/html-page-metadata.md)).
 - Strict authored HTML portal with verified package links; optional Markdown
   guides via pinned `markdown-it-py==3.0.0` / `mdurl==0.1.2`.
 - Original native HTML captured and protected by deterministic, independently

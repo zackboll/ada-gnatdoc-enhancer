@@ -1,0 +1,175 @@
+{
+  "browser": "Chromium 156.0.8078.4",
+  "enhancer_source": "2a42e8520b52ec91896a99a01b25f741d8a2f576",
+  "features_own_suites": {
+    "candidate": {
+      "pages": {
+        "failed": 0,
+        "passed": 109,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      },
+      "prefix": {
+        "failed": 0,
+        "passed": 64,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      },
+      "root": {
+        "failed": 0,
+        "passed": 64,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      }
+    },
+    "main": {
+      "pages": {
+        "failed": 0,
+        "passed": 109,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      },
+      "prefix": {
+        "failed": 0,
+        "passed": 64,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      },
+      "root": {
+        "failed": 0,
+        "passed": 64,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      }
+    }
+  },
+  "features_prefix_metadata": {
+    "checks": 86,
+    "passed": 86,
+    "prefix": "/opencv_features_ada/",
+    "report": "features-metadata-browser.json"
+  },
+  "operation_navigation": {
+    "checks": 144,
+    "passed": 144,
+    "predecessor": "gnatdoc008b/operation-browser-cross-declaration.json: 144 checks, 160 traces",
+    "report": "operation-browser.json",
+    "traces": 160
+  },
+  "real_sites": {
+    "core": {
+      "added_check_names": {
+        "JavaScript-disabled document titles": 2,
+        "authored document title and language": 48,
+        "document title Back Forward restoration": 4,
+        "document title language charset and frame titles": 4
+      },
+      "added_checks": 58,
+      "browser": "Chromium 156.0.8078.4",
+      "new_checks": 1500,
+      "new_passed": 1500,
+      "new_status": "pass",
+      "old_checks": 1442,
+      "old_checks_missing": 0,
+      "old_status": "pass",
+      "predecessor": "gnatdoc008b/core-browser.json",
+      "report": "core-browser.json"
+    },
+    "geometry": {
+      "added_check_names": {
+        "JavaScript-disabled document titles": 2,
+        "authored document title and language": 48,
+        "document title Back Forward restoration": 4,
+        "document title language charset and frame titles": 4
+      },
+      "added_checks": 58,
+      "browser": "Chromium 156.0.8078.4",
+      "new_checks": 1486,
+      "new_passed": 1486,
+      "new_status": "pass",
+      "old_checks": 1428,
+      "old_checks_missing": 0,
+      "old_status": "pass",
+      "predecessor": "gnatdoc008b/geometry-browser.json",
+      "report": "geometry-browser.json"
+    },
+    "imgproc": {
+      "added_check_names": {
+        "JavaScript-disabled document titles": 2,
+        "authored document title and language": 48,
+        "document title Back Forward restoration": 4,
+        "document title language charset and frame titles": 4
+      },
+      "added_checks": 58,
+      "browser": "Chromium 156.0.8078.4",
+      "new_checks": 1678,
+      "new_passed": 1678,
+      "new_status": "pass",
+      "old_checks": 1620,
+      "old_checks_missing": 0,
+      "old_status": "pass",
+      "predecessor": "gnatdoc008b/imgproc-browser.json",
+      "report": "imgproc-browser.json"
+    },
+    "imgproc008": {
+      "added_check_names": {
+        "JavaScript-disabled document titles": 2,
+        "authored document title and language": 48,
+        "document title Back Forward restoration": 4,
+        "document title language charset and frame titles": 4
+      },
+      "added_checks": 58,
+      "browser": "Chromium 156.0.8078.4",
+      "new_checks": 1678,
+      "new_passed": 1678,
+      "new_status": "pass",
+      "old_checks": 1620,
+      "old_checks_missing": 0,
+      "old_status": "pass",
+      "predecessor": "gnatdoc008b/imgproc-browser.json",
+      "report": "imgproc008-browser.json"
+    },
+    "mel": {
+      "added_check_names": {
+        "JavaScript-disabled document titles": 2,
+        "authored document title and language": 56,
+        "document title Back Forward restoration": 4,
+        "document title language charset and frame titles": 4
+      },
+      "added_checks": 66,
+      "browser": "Chromium 156.0.8078.4",
+      "new_checks": 1192,
+      "new_passed": 1192,
+      "new_status": "pass",
+      "old_checks": 1126,
+      "old_checks_missing": 0,
+      "old_status": "pass",
+      "predecessor": "gnatdoc008b/mel-browser.json",
+      "report": "mel-browser.json"
+    }
+  },
+  "scope": "local Chromium only; not cross-browser, screen-reader or hosted-deployment certification",
+  "tools": {
+    "node": "v20.19.2",
+    "node_playwright": "1.64.1",
+    "python_playwright": "1.64.0"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "commands": "#!/bin/sh\n# Re-execute each consumer's own documentation ratchets against GNATDOC-010 outputs.\n# Usage: consumer_ratchets.sh CONSUMER_WORKSPACE OUT\nset -u\nW=$1; O=$2; mkdir -p \"$O\"\nA=/tmp/gnatdoc002-acquisition; E=/tmp/gnatdoc007/exports\nrun() { name=$1; shift; \"$@\" > \"$O/$name.txt\" 2>&1; echo \"$name rc=$? $(tail -n 1 \"$O/$name.txt\")\"; }\nrun core-warnings python3 \"$A/core/snapshot/scripts/compare_gnatdoc_warnings.py\" \"$A/core/snapshot/docs/gnatdoc-warning-baseline.txt\" \"$A/core/gnatdoc.log\" --sources \"$A/core/snapshot/src\"\nfor n in imgproc geometry mel; do\n  run \"$n-warnings\" python3 \"$A/$n/snapshot/scripts/compare_gnatdoc_warnings.py\" --fail-on-removed \"$A/$n/snapshot/docs/gnatdoc-warning-baseline.txt\" \"$A/$n/gnatdoc.log\"\ndone\nfor n in imgproc geometry; do\n  run \"$n-coverage\" python3 \"$E/$n/scripts/check_doc_coverage.py\" --fail-on-removed \"$E/$n/docs/gnatdoc-coverage-baseline.txt\" \"$W/$n/first/_site\"\ndone\nrun imgproc008-coverage python3 \"$E/imgproc/scripts/check_doc_coverage.py\" --fail-on-removed \"$E/imgproc/docs/gnatdoc-coverage-baseline.txt\" \"$W/imgproc008/first/_site\"\nrun mel-coverage python3 \"$A/mel/snapshot/scripts/check_doc_coverage.py\" \"$W/mel/first/_site\" --root \"$A/mel/snapshot\" --report \"$O/mel-coverage.json\"\nrun mel-coverage-pristine python3 \"$A/mel/snapshot/scripts/check_doc_coverage.py\" \"$W/mel/pristine\" --root \"$A/mel/snapshot\" --report \"$O/mel-coverage-pristine.json\"\nM=/tmp/gnatdoc002-integrity-mel/source\nrun mel-integrity sh -c \"cd '$M' && git rev-parse HEAD && git status --short | wc -l && python3 scripts/check_doc_source_integrity.py && git status --short | wc -l\"\n",
+  "core-warnings": "GNATdoc warning delta: 0 added, 0 removed",
+  "geometry-coverage": "Documentation coverage: 452/452 items (100.0%); 0 newly undocumented, 0 newly documented",
+  "geometry-warnings": "GNATdoc warning delta: 0 added, 0 removed",
+  "imgproc-coverage": "Documentation coverage: 1512/1512 items (100.0%); 0 newly undocumented, 0 newly documented",
+  "imgproc-warnings": "GNATdoc warning delta: 0 added, 0 removed",
+  "imgproc008-coverage": "Documentation coverage: 1512/1512 items (100.0%); 0 newly undocumented, 0 newly documented",
+  "mel-coverage": "Coverage 4294/4295 (99.9767%); 1238 source / 1237 native / 1 renderer omission",
+  "mel-coverage-pristine": "Coverage 4294/4295 (99.9767%); 1238 source / 1237 native / 1 renderer omission",
+  "mel-integrity": "0",
+  "mel-warnings": "GNATdoc warning delta: 0 added, 0 removed",
+  "mel_coverage_report_sha256": "1c6ef359a1e8e4eda25906e441c74e4f718ca084ec4234c9fc8c1bb220220ec2"
+}

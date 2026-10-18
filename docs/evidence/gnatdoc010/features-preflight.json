@@ -1,0 +1,1702 @@
+{
+  "candidate": {
+    "browser": {
+      "pages": {
+        "failed": 0,
+        "passed": 109,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      },
+      "prefix": {
+        "failed": 0,
+        "passed": 64,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      },
+      "root": {
+        "failed": 0,
+        "passed": 64,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      }
+    },
+    "census": {
+      "distinct_api_targets_from_guides": 32,
+      "errors": [],
+      "fences": {
+        "binary-matching": {
+          "bytes": 5496,
+          "example": "examples/src/orb_match_synthetic.adb",
+          "markdown_fences": 1,
+          "rendered_equal": true
+        },
+        "orb-extraction": {
+          "bytes": 1513,
+          "example": "examples/src/orb_synthetic.adb",
+          "markdown_fences": 1,
+          "rendered_equal": true
+        }
+      },
+      "files": 18,
+      "guide_api_targets": {
+        "guides/binary-matching.html": [
+          "OpenCV.Features.Matching",
+          "OpenCV.Features.Matching.Binary_Descriptor_Distance|type|type Binary_Descriptor_Distance is range 0 .. 256",
+          "OpenCV.Features.Matching.Brute_Force_KNN_2|function|function Brute_Force_KNN_2 (Query : Feature_Set; Train : Feature_Set) return Two_Nearest_Match_Array",
+          "OpenCV.Features.Matching.Brute_Force_Match|function|function Brute_Force_Match (Query : Feature_Set; Train : Feature_Set; Mode : Matching_Mode := Nearest) return Descriptor_Match_Array",
+          "OpenCV.Features.Matching.Brute_Force_Radius_Match|function|function Brute_Force_Radius_Match (Query : Feature_Set; Train : Feature_Set; Maximum_Distance : Binary_Descriptor_Distance) return Descriptor_Match_Array",
+          "OpenCV.Features.Matching.Descriptor_Match|type|type Descriptor_Match is record Query_Index : Positive; Train_Index : Positive; Distance : Binary_Descriptor_Distance; end record",
+          "OpenCV.Features.Matching.Filter_By_Ratio|function|function Filter_By_Ratio (Candidates : Two_Nearest_Match_Array; Maximum_Ratio : OpenCV.Float64_Value) return Descriptor_Match_Array",
+          "OpenCV.Features.Matching.Passes_Ratio_Test|function|function Passes_Ratio_Test (Candidate : Two_Nearest_Match; Maximum_Ratio : OpenCV.Float64_Value) return Boolean",
+          "OpenCV.Features.Matching.Two_Nearest_Match|type|type Two_Nearest_Match is record Query_Index : Positive; Nearest : Binary_Neighbor; Second_Nearest : Binary_Neighbor; end record",
+          "OpenCV.Features.Required_Norm|function|function Required_Norm (Features : Feature_Set) return Binary_Descriptor_Norm"
+        ],
+        "guides/candidate-correspondences.html": [
+          "OpenCV.Features.Correspondences",
+          "OpenCV.Features.Correspondences.From_Matches|function|function From_Matches (Query : Feature_Set; Train : Feature_Set; Matches : Matching.Descriptor_Match_Array) return Point_Correspondence_Array",
+          "OpenCV.Features.Correspondences.Point_Correspondence|type|type Point_Correspondence is record Query_Index : Positive; Train_Index : Positive; Query_Point : OpenCV.Float32_Point; Train_Point : OpenCV.Float32_Point; Distance : Matching.Binary_Descriptor_Distance; end record",
+          "OpenCV.Features.Matching.Descriptor_Match|type|type Descriptor_Match is record Query_Index : Positive; Train_Index : Positive; Distance : Binary_Descriptor_Distance; end record"
+        ],
+        "guides/getting-started.html": [
+          "OpenCV.Features",
+          "OpenCV.Features.Correspondences",
+          "OpenCV.Features.Matching",
+          "OpenCV.Features.ORB"
+        ],
+        "guides/orb-extraction.html": [
+          "OpenCV.Features.Count|function|function Count (Features : Feature_Set) return Natural",
+          "OpenCV.Features.Descriptor_Copy|function|function Descriptor_Copy (Features : Feature_Set) return OpenCV.Core.Mat",
+          "OpenCV.Features.Descriptor_Row|function|function Descriptor_Row (Features : Feature_Set; Index : Positive) return Natural",
+          "OpenCV.Features.Feature_Set|type|type Feature_Set is limited private",
+          "OpenCV.Features.Keypoints|function|function Keypoints (Features : Feature_Set) return Keypoint_Array",
+          "OpenCV.Features.Keypoint|type|type Keypoint is record Position : OpenCV.Float32_Point; Size : OpenCV.Float32_Value; Angle_Degrees : OpenCV.Float32_Value; Response : OpenCV.Float32_Value; Octave : OpenCV.Int32_Value; Class_Id : OpenCV.Int32_Value; end record",
+          "OpenCV.Features.ORB",
+          "OpenCV.Features.ORB.Close|procedure|procedure Close (Self : in out Detector)",
+          "OpenCV.Features.ORB.Configuration|type|type Configuration is record Maximum_Features : Positive := 500; Tuple : Tuple_Size := Two_Samples; Score : Score_Kind := Harris_Score; FAST_Threshold : Natural := 20; end record",
+          "OpenCV.Features.ORB.Create|function|function Create (Parameters : Configuration := (others => <>)) return Detector",
+          "OpenCV.Features.ORB.Detect_And_Compute|function|function Detect_And_Compute (Self : Detector; Image : OpenCV.Core.Mat) return Feature_Set",
+          "OpenCV.Features.ORB.Detect_And_Compute|function|function Detect_And_Compute (Self : Detector; Image, Mask : OpenCV.Core.Mat) return Feature_Set",
+          "OpenCV.Features.ORB.Detector|type|type Detector is tagged limited private",
+          "OpenCV.Features.ORB.Parameters|function|function Parameters (Self : Detector) return Configuration",
+          "OpenCV.Features.Point|function|function Point (Features : Feature_Set; Index : Positive) return Keypoint",
+          "OpenCV.Features.Required_Norm|function|function Required_Norm (Features : Feature_Set) return Binary_Descriptor_Norm"
+        ],
+        "guides/ownership-lifecycle.html": [
+          "OpenCV.Features.Feature_Set|type|type Feature_Set is limited private",
+          "OpenCV.Features.ORB.Close|procedure|procedure Close (Self : in out Detector)",
+          "OpenCV.Features.ORB.Create|function|function Create (Parameters : Configuration := (others => <>)) return Detector",
+          "OpenCV.Features.ORB.Detector|type|type Detector is tagged limited private",
+          "OpenCV.Features.ORB.Is_Ready|function|function Is_Ready (Self : Detector) return Boolean",
+          "OpenCV.Features.ORB.Parameters|function|function Parameters (Self : Detector) return Configuration"
+        ],
+        "guides/platform-compatibility.html": [
+          "OpenCV.Features.Native_Backend|function|function Native_Backend return String",
+          "OpenCV.Features.Native_Version|function|function Native_Version return String"
+        ],
+        "index.html": [
+          "OpenCV.Features",
+          "OpenCV.Features.Correspondences",
+          "OpenCV.Features.Matching",
+          "OpenCV.Features.ORB"
+        ]
+      },
+      "html_pages": 13,
+      "masked_overload": {
+        "identity": [
+          "OpenCV.Features.ORB.Detect_And_Compute|function|function Detect_And_Compute (Self : Detector; Image, Mask : OpenCV.Core.Mat) return Feature_Set"
+        ],
+        "links": [
+          "../api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html#07eb80b590b7f97f4c088474add72fc7d2b3f9a09f745f293468ca8cf358c2df"
+        ],
+        "ok": true
+      },
+      "pages_without_title": [],
+      "per_page": {
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": {
+          "cross-page type links": 2,
+          "fragment references": 7,
+          "h1": [
+            "OpenCV.Features.Correspondences"
+          ],
+          "references": 9,
+          "same-page type links": 2,
+          "scripts": [],
+          "title": "OpenCV.Features.Correspondences — OpenCV Features Ada",
+          "type links": 4
+        },
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": {
+          "cross-page type links": 2,
+          "fragment references": 22,
+          "h1": [
+            "OpenCV.Features.ORB"
+          ],
+          "references": 24,
+          "same-page type links": 10,
+          "scripts": [],
+          "title": "OpenCV.Features.ORB — OpenCV Features Ada",
+          "type links": 12
+        },
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": {
+          "fragment references": 24,
+          "h1": [
+            "OpenCV.Features"
+          ],
+          "references": 26,
+          "same-page type links": 11,
+          "scripts": [],
+          "title": "OpenCV.Features — OpenCV Features Ada",
+          "type links": 11
+        },
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": {
+          "cross-page type links": 6,
+          "fragment references": 32,
+          "h1": [
+            "OpenCV.Features.Matching"
+          ],
+          "references": 34,
+          "same-page type links": 14,
+          "scripts": [],
+          "title": "OpenCV.Features.Matching — OpenCV Features Ada",
+          "type links": 20
+        },
+        "api/index.html": {
+          "fragment references": 3,
+          "h1": [],
+          "references": 10,
+          "scripts": [
+            "gnatdoc-navigation.js"
+          ],
+          "title": "API Reference — OpenCV Features Ada"
+        },
+        "guides/binary-matching.html": {
+          "declaration links": 9,
+          "fragment references": 10,
+          "h1": [
+            "Binary matching"
+          ],
+          "links into api/": 11,
+          "package links": 1,
+          "references": 21,
+          "scripts": [],
+          "title": "Binary matching — OpenCV Features Ada"
+        },
+        "guides/candidate-correspondences.html": {
+          "declaration links": 3,
+          "fragment references": 4,
+          "h1": [
+            "Candidate correspondences"
+          ],
+          "links into api/": 5,
+          "package links": 1,
+          "references": 15,
+          "scripts": [],
+          "title": "Candidate correspondences — OpenCV Features Ada"
+        },
+        "guides/getting-started.html": {
+          "fragment references": 1,
+          "h1": [
+            "Getting started"
+          ],
+          "links into api/": 5,
+          "package links": 4,
+          "references": 15,
+          "scripts": [],
+          "title": "Getting started — OpenCV Features Ada"
+        },
+        "guides/limitations-roadmap.html": {
+          "fragment references": 1,
+          "h1": [
+            "Limitations and roadmap"
+          ],
+          "links into api/": 1,
+          "references": 11,
+          "scripts": [],
+          "title": "Limitations and roadmap — OpenCV Features Ada"
+        },
+        "guides/orb-extraction.html": {
+          "declaration links": 15,
+          "fragment references": 16,
+          "h1": [
+            "ORB feature extraction"
+          ],
+          "links into api/": 17,
+          "package links": 1,
+          "references": 27,
+          "scripts": [],
+          "title": "ORB feature extraction — OpenCV Features Ada"
+        },
+        "guides/ownership-lifecycle.html": {
+          "declaration links": 6,
+          "fragment references": 7,
+          "h1": [
+            "Ownership and lifecycle"
+          ],
+          "links into api/": 7,
+          "references": 17,
+          "scripts": [],
+          "title": "Ownership and lifecycle — OpenCV Features Ada"
+        },
+        "guides/platform-compatibility.html": {
+          "declaration links": 2,
+          "fragment references": 3,
+          "h1": [
+            "Platform compatibility"
+          ],
+          "links into api/": 3,
+          "references": 13,
+          "scripts": [],
+          "title": "Platform compatibility — OpenCV Features Ada"
+        },
+        "index.html": {
+          "fragment references": 1,
+          "h1": [
+            "OpenCV Features for Ada"
+          ],
+          "links into api/": 9,
+          "package links": 7,
+          "references": 26,
+          "scripts": [],
+          "title": "OpenCV Features for Ada documentation"
+        }
+      },
+      "scripts": {
+        "api/index.html": [
+          "gnatdoc-navigation.js"
+        ]
+      },
+      "totals": {
+        "cross-page type links": 10,
+        "declaration links": 35,
+        "fragment references": 131,
+        "links into api/": 58,
+        "package links": 14,
+        "references": 248,
+        "same-page type links": 37,
+        "type links": 47
+      }
+    },
+    "enhancement": {
+      "added_files": [
+        "api/gnatdoc-navigation.js",
+        "api/gnatdoc-theme.css",
+        "api/presentation.json",
+        "assets/gnatdoc-guides.css",
+        "guides/binary-matching.html",
+        "guides/candidate-correspondences.html",
+        "guides/getting-started.html",
+        "guides/limitations-roadmap.html",
+        "guides/orb-extraction.html",
+        "guides/ownership-lifecycle.html",
+        "guides/platform-compatibility.html",
+        "index.html"
+      ],
+      "byte_idempotent": true,
+      "dry_run": {
+        "declaration_snippets": 38,
+        "files": 18,
+        "html_pages": 13,
+        "linked_external_types": 0,
+        "linked_local_types": 47,
+        "linked_types": 47,
+        "links": 248,
+        "mode": "dry-run",
+        "public_packages": 4,
+        "unrendered_renderer_exceptions": 0
+      },
+      "enhance": {
+        "declaration_snippets": 38,
+        "files": 18,
+        "html_pages": 13,
+        "linked_external_types": 0,
+        "linked_local_types": 47,
+        "linked_types": 47,
+        "links": 248,
+        "mode": "enhanced",
+        "public_packages": 4,
+        "unrendered_renderer_exceptions": 0
+      },
+      "enhanced_site": {
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": "68ccd873f4f1cae094a6282a6f346e8711f5932d34b804ab1e1fecc3e41e07aa",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": "bd3475083566736854bbf751d4f2525db74d8ec74c601962d676e0b9eb7e2fd0",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": "7f07159f36cff3827ec11d10766a375b9203a996be6112867beecb965ddad938",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": "0279845dab4b00d8d40d8ad22a4843ae2f9c8efd74719ead3dc7cb9382ef2f86",
+        "api/gnatdoc-navigation.js": "b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd",
+        "api/gnatdoc-theme.css": "cf06637732a8b047a7191bfb991a5c3da7cd31a52076876880d5f8a3f63929bc",
+        "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+        "api/index.html": "60ffd3519d5bfacab78beea825daee4140b38e15a96a2c782e759819dbbb9cf4",
+        "api/presentation.json": "9d1d42c33ae38a880666059cba859234729815e4737b269565fb696d56264a36",
+        "assets/gnatdoc-guides.css": "79f3fc6d5f1e854eb42d225f9bec113b7a41fa833b12d3bd70ca089ba5df0a8c",
+        "guides/binary-matching.html": "11e82e580ce628013631cb350f24d3a374efd624b6a45401e6518201bcc98c72",
+        "guides/candidate-correspondences.html": "353d961c8efa417a97216a2ac1126b2bac55ffb5d27ba4d39e7f54aa8e8fc70d",
+        "guides/getting-started.html": "fbe171fcccf6f091d9da511957a98dadb7059c757189924996f44a304762afa1",
+        "guides/limitations-roadmap.html": "6015d123d655d670dfc6719e15564c82e1ee481686140c374f256fce83c49b76",
+        "guides/orb-extraction.html": "8df438a6ace34cd7fc2c15b03baa16971ed46b7f61d90a1b59140a82163e9647",
+        "guides/ownership-lifecycle.html": "a44e0a900e795e3df5f5138b9c93d20cde60609f8af7c68b9e41d7446819ffd4",
+        "guides/platform-compatibility.html": "fcc6911ebe42b4a11ff263f96fe62be162694060d7ea5e158300046db531aff8",
+        "index.html": "31c286befe39a58e784de45d0b078ca1f3d4b858dc2b300fa86ff64a5933271a"
+      },
+      "enhancer": {
+        "revision": "8768548d30018148643de2fc19c3aa7d132fb7bd",
+        "version": "0.1.0.dev0"
+      },
+      "fresh_enhancement_identical": true,
+      "inventory": {
+        "native_declaration_sections": 38,
+        "project": "OpenCV Features Ada",
+        "public_packages": [
+          "OpenCV.Features",
+          "OpenCV.Features.Correspondences",
+          "OpenCV.Features.Matching",
+          "OpenCV.Features.ORB"
+        ]
+      },
+      "native_comparison": {
+        "added_files": [
+          "gnatdoc-navigation.js",
+          "gnatdoc-theme.css",
+          "presentation.json"
+        ],
+        "errors": [],
+        "scripts": {
+          "index.html": [
+            "gnatdoc-navigation.js"
+          ]
+        }
+      },
+      "pristine_unchanged": true,
+      "site_links": {
+        "errors": [],
+        "pages": 13,
+        "scripts": {
+          "api/index.html": [
+            "gnatdoc-navigation.js"
+          ]
+        }
+      },
+      "staged_specifications": [
+        "opencv-features.ads",
+        "opencv-features-orb.ads",
+        "opencv-features-matching.ads",
+        "opencv-features-correspondences.ads"
+      ],
+      "verify": {
+        "declaration_snippets": 38,
+        "files": 18,
+        "html_pages": 13,
+        "linked_external_types": 0,
+        "linked_local_types": 47,
+        "linked_types": 47,
+        "links": 248,
+        "mode": "verified",
+        "public_packages": 4,
+        "unrendered_renderer_exceptions": 0
+      }
+    },
+    "enhancer": "8768548d30018148643de2fc19c3aa7d132fb7bd",
+    "features_doc_tests": {
+      "failures": [
+        "test_real_site_is_a_qualified_pages_artifact (test_pages_site.RealSiteTests.test_real_site_is_a_qualified_pages_artifact)"
+      ],
+      "ran": 84,
+      "result": "FAILED (failures=1)"
+    },
+    "generation": [
+      "PASS inventory: {\"declarations\": 38, \"internal_units\": 2, \"packages\": 4}",
+      "PASS site: {\"files\": 6, \"packages\": 4, \"sections\": 38}",
+      "PASS warnings: {\"baseline\": 0, \"new\": [], \"raw\": 0, \"regions\": {}, \"stale\": []}",
+      "PASS coverage: {\"baseline\": 0, \"categories\": {\"field\": {\"documented\": 23, \"elements\": 23, \"rendered\": 23}, \"function\": {\"documented\": 20, \"elements\": 20, \"rendered\": 20}, \"literal\": {\"documented\": 9, \"elements\": 9, \"rendered\": 9}, \"package\": {\"documented\": 4, \"elements\": 4, \"rendered\": 4}, \"parameter\": {\"documented\": 33, \"elements\": 33, \"rendered\": 33}, \"procedure\": {\"documented\": 1, \"elements\": 1, \"rendered\": 1}, \"return\": {\"documented\": 20, \"elements\": 20, \"rendered\": 20}, \"type\": {\"documented\": 17, \"elements\": 17, \"rendered\": 17}}, \"new_gaps\": [], \"packages\": {\"OpenCV.Features\": {\"documented\": 40, \"elements\": 40, \"rendered\": 40}, \"OpenCV.Features.Correspondences\": {\"documented\": 13, \"elements\": 13, \"rendered\": 13}, \"OpenCV.Features.Matching\": {\"documented\": 40, \"elements\": 40, \"rendered\": 40}, \"OpenCV.Features.ORB\": {\"documented\": 34, \"elements\": 34, \"rendered\": 34}}, \"stale_baseline\": [], \"total\": {\"documented\": 127, \"elements\": 127, \"percent\": 100.0, \"rendered\": 127}}"
+    ],
+    "gnatdoc_log_bytes": 0,
+    "metadata": {
+      "files": {
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": "68ccd873f4f1cae094a6282a6f346e8711f5932d34b804ab1e1fecc3e41e07aa",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": "bd3475083566736854bbf751d4f2525db74d8ec74c601962d676e0b9eb7e2fd0",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": "7f07159f36cff3827ec11d10766a375b9203a996be6112867beecb965ddad938",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": "0279845dab4b00d8d40d8ad22a4843ae2f9c8efd74719ead3dc7cb9382ef2f86",
+        "api/gnatdoc-navigation.js": "b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd",
+        "api/gnatdoc-theme.css": "cf06637732a8b047a7191bfb991a5c3da7cd31a52076876880d5f8a3f63929bc",
+        "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+        "api/index.html": "60ffd3519d5bfacab78beea825daee4140b38e15a96a2c782e759819dbbb9cf4",
+        "api/presentation.json": "9d1d42c33ae38a880666059cba859234729815e4737b269565fb696d56264a36",
+        "assets/gnatdoc-guides.css": "79f3fc6d5f1e854eb42d225f9bec113b7a41fa833b12d3bd70ca089ba5df0a8c",
+        "guides/binary-matching.html": "11e82e580ce628013631cb350f24d3a374efd624b6a45401e6518201bcc98c72",
+        "guides/candidate-correspondences.html": "353d961c8efa417a97216a2ac1126b2bac55ffb5d27ba4d39e7f54aa8e8fc70d",
+        "guides/getting-started.html": "fbe171fcccf6f091d9da511957a98dadb7059c757189924996f44a304762afa1",
+        "guides/limitations-roadmap.html": "6015d123d655d670dfc6719e15564c82e1ee481686140c374f256fce83c49b76",
+        "guides/orb-extraction.html": "8df438a6ace34cd7fc2c15b03baa16971ed46b7f61d90a1b59140a82163e9647",
+        "guides/ownership-lifecycle.html": "a44e0a900e795e3df5f5138b9c93d20cde60609f8af7c68b9e41d7446819ffd4",
+        "guides/platform-compatibility.html": "fcc6911ebe42b4a11ff263f96fe62be162694060d7ea5e158300046db531aff8",
+        "index.html": "31c286befe39a58e784de45d0b078ca1f3d4b858dc2b300fa86ff64a5933271a"
+      },
+      "pages": {
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "OpenCV.Features.Correspondences"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [
+            {
+              "in_body": false,
+              "text": "OpenCV.Features.Correspondences — OpenCV Features Ada"
+            }
+          ],
+          "valid_lang": true,
+          "valid_title": true
+        },
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "OpenCV.Features.ORB"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [
+            {
+              "in_body": false,
+              "text": "OpenCV.Features.ORB — OpenCV Features Ada"
+            }
+          ],
+          "valid_lang": true,
+          "valid_title": true
+        },
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "OpenCV.Features"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [
+            {
+              "in_body": false,
+              "text": "OpenCV.Features — OpenCV Features Ada"
+            }
+          ],
+          "valid_lang": true,
+          "valid_title": true
+        },
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "OpenCV.Features.Matching"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [
+            {
+              "in_body": false,
+              "text": "OpenCV.Features.Matching — OpenCV Features Ada"
+            }
+          ],
+          "valid_lang": true,
+          "valid_title": true
+        },
+        "api/index.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [
+            {
+              "in_body": false,
+              "text": "API Reference — OpenCV Features Ada"
+            }
+          ],
+          "valid_lang": true,
+          "valid_title": true
+        },
+        "guides/binary-matching.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "Binary matching"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [
+            {
+              "in_body": false,
+              "text": "Binary matching — OpenCV Features Ada"
+            }
+          ],
+          "valid_lang": true,
+          "valid_title": true
+        },
+        "guides/candidate-correspondences.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "Candidate correspondences"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [
+            {
+              "in_body": false,
+              "text": "Candidate correspondences — OpenCV Features Ada"
+            }
+          ],
+          "valid_lang": true,
+          "valid_title": true
+        },
+        "guides/getting-started.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "Getting started"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [
+            {
+              "in_body": false,
+              "text": "Getting started — OpenCV Features Ada"
+            }
+          ],
+          "valid_lang": true,
+          "valid_title": true
+        },
+        "guides/limitations-roadmap.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "Limitations and roadmap"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [
+            {
+              "in_body": false,
+              "text": "Limitations and roadmap — OpenCV Features Ada"
+            }
+          ],
+          "valid_lang": true,
+          "valid_title": true
+        },
+        "guides/orb-extraction.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "ORB feature extraction"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [
+            {
+              "in_body": false,
+              "text": "ORB feature extraction — OpenCV Features Ada"
+            }
+          ],
+          "valid_lang": true,
+          "valid_title": true
+        },
+        "guides/ownership-lifecycle.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "Ownership and lifecycle"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [
+            {
+              "in_body": false,
+              "text": "Ownership and lifecycle — OpenCV Features Ada"
+            }
+          ],
+          "valid_lang": true,
+          "valid_title": true
+        },
+        "guides/platform-compatibility.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "Platform compatibility"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [
+            {
+              "in_body": false,
+              "text": "Platform compatibility — OpenCV Features Ada"
+            }
+          ],
+          "valid_lang": true,
+          "valid_title": true
+        },
+        "index.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "OpenCV Features for Ada"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [
+            {
+              "in_body": false,
+              "text": "OpenCV Features for Ada documentation"
+            }
+          ],
+          "valid_lang": true,
+          "valid_title": true
+        }
+      },
+      "summary": {
+        "html_pages": 13,
+        "missing_lang": [],
+        "missing_titles": [],
+        "valid_lang": 13,
+        "valid_titles": 13,
+        "with_head_element": 13,
+        "with_utf8_charset": 13
+      }
+    },
+    "pages_check": {
+      "base_url": "https://zackboll.github.io/opencv_features_ada/",
+      "blockers": [],
+      "errors": [
+        "api/gnatdoc-navigation.js: JavaScript contains an absolute or root-relative URL literal"
+      ],
+      "files": {
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": "68ccd873f4f1cae094a6282a6f346e8711f5932d34b804ab1e1fecc3e41e07aa",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": "bd3475083566736854bbf751d4f2525db74d8ec74c601962d676e0b9eb7e2fd0",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": "7f07159f36cff3827ec11d10766a375b9203a996be6112867beecb965ddad938",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": "0279845dab4b00d8d40d8ad22a4843ae2f9c8efd74719ead3dc7cb9382ef2f86",
+        "api/gnatdoc-navigation.js": "b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd",
+        "api/gnatdoc-theme.css": "cf06637732a8b047a7191bfb991a5c3da7cd31a52076876880d5f8a3f63929bc",
+        "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+        "api/index.html": "60ffd3519d5bfacab78beea825daee4140b38e15a96a2c782e759819dbbb9cf4",
+        "api/presentation.json": "9d1d42c33ae38a880666059cba859234729815e4737b269565fb696d56264a36",
+        "assets/gnatdoc-guides.css": "79f3fc6d5f1e854eb42d225f9bec113b7a41fa833b12d3bd70ca089ba5df0a8c",
+        "guides/binary-matching.html": "11e82e580ce628013631cb350f24d3a374efd624b6a45401e6518201bcc98c72",
+        "guides/candidate-correspondences.html": "353d961c8efa417a97216a2ac1126b2bac55ffb5d27ba4d39e7f54aa8e8fc70d",
+        "guides/getting-started.html": "fbe171fcccf6f091d9da511957a98dadb7059c757189924996f44a304762afa1",
+        "guides/limitations-roadmap.html": "6015d123d655d670dfc6719e15564c82e1ee481686140c374f256fce83c49b76",
+        "guides/orb-extraction.html": "8df438a6ace34cd7fc2c15b03baa16971ed46b7f61d90a1b59140a82163e9647",
+        "guides/ownership-lifecycle.html": "a44e0a900e795e3df5f5138b9c93d20cde60609f8af7c68b9e41d7446819ffd4",
+        "guides/platform-compatibility.html": "fcc6911ebe42b4a11ff263f96fe62be162694060d7ea5e158300046db531aff8",
+        "index.html": "31c286befe39a58e784de45d0b078ca1f3d4b858dc2b300fa86ff64a5933271a"
+      },
+      "fragment_references": 131,
+      "html_pages": 13,
+      "pages_without_lang": [],
+      "pages_without_title": [],
+      "publication_ready": false,
+      "references": 248,
+      "routes": {
+        "https://zackboll.github.io/opencv_features_ada/": "index.html",
+        "https://zackboll.github.io/opencv_features_ada/api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+        "https://zackboll.github.io/opencv_features_ada/api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+        "https://zackboll.github.io/opencv_features_ada/api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+        "https://zackboll.github.io/opencv_features_ada/api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+        "https://zackboll.github.io/opencv_features_ada/api/index.html": "api/index.html",
+        "https://zackboll.github.io/opencv_features_ada/guides/binary-matching.html": "guides/binary-matching.html",
+        "https://zackboll.github.io/opencv_features_ada/guides/candidate-correspondences.html": "guides/candidate-correspondences.html",
+        "https://zackboll.github.io/opencv_features_ada/guides/getting-started.html": "guides/getting-started.html",
+        "https://zackboll.github.io/opencv_features_ada/guides/limitations-roadmap.html": "guides/limitations-roadmap.html",
+        "https://zackboll.github.io/opencv_features_ada/guides/orb-extraction.html": "guides/orb-extraction.html",
+        "https://zackboll.github.io/opencv_features_ada/guides/ownership-lifecycle.html": "guides/ownership-lifecycle.html",
+        "https://zackboll.github.io/opencv_features_ada/guides/platform-compatibility.html": "guides/platform-compatibility.html"
+      },
+      "titles": {
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": "OpenCV.Features.Correspondences — OpenCV Features Ada",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": "OpenCV.Features.ORB — OpenCV Features Ada",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": "OpenCV.Features — OpenCV Features Ada",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": "OpenCV.Features.Matching — OpenCV Features Ada",
+        "api/index.html": "API Reference — OpenCV Features Ada",
+        "guides/binary-matching.html": "Binary matching — OpenCV Features Ada",
+        "guides/candidate-correspondences.html": "Candidate correspondences — OpenCV Features Ada",
+        "guides/getting-started.html": "Getting started — OpenCV Features Ada",
+        "guides/limitations-roadmap.html": "Limitations and roadmap — OpenCV Features Ada",
+        "guides/orb-extraction.html": "ORB feature extraction — OpenCV Features Ada",
+        "guides/ownership-lifecycle.html": "Ownership and lifecycle — OpenCV Features Ada",
+        "guides/platform-compatibility.html": "Platform compatibility — OpenCV Features Ada",
+        "index.html": "OpenCV Features for Ada documentation"
+      }
+    },
+    "steps": {
+      "enhance": "PASS: enhanced copy verified; byte-idempotent; fresh run identical; native identities preserved; 13 pages with resolved links; added ['api/gnatdoc-navigation.js', 'api/gnatdoc-theme.css', 'api/presentation.json', 'assets/gnatdoc-guides.css', 'guides/binary-matching.html', 'guides/candidate-correspondences.html', 'guides/getting-started.html', 'guides/limitations-roadmap.html', 'guides/orb-extraction.html', 'guides/ownership-lifecycle.html', 'guides/platform-compatibility.html', 'index.html']",
+      "enhanced-compare": "",
+      "generate": "PASS coverage: {\"baseline\": 0, \"categories\": {\"field\": {\"documented\": 23, \"elements\": 23, \"rendered\": 23}, \"function\": {\"documented\": 20, \"elements\": 20, \"rendered\": 20}, \"literal\": {\"documented\": 9, \"elements\": 9, \"rendered\": 9}, \"package\": {\"documented\": 4, \"elements\": 4, \"rendered\": 4}, \"parameter\": {\"documented\": 33, \"elements\": 33, \"rendered\": 33}, \"procedure\": {\"documented\": 1, \"elements\": 1, \"rendered\": 1}, \"return\": {\"documented\": 20, \"elements\": 20, \"rendered\": 20}, \"type\": {\"documented\": 17, \"elements\": 17, \"rendered\": 17}}, \"new_gaps\": [], \"packages\": {\"OpenCV.Features\": {\"documented\": 40, \"elements\": 40, \"rendered\": 40}, \"OpenCV.Features.Correspondences\": {\"documented\": 13, \"elements\": 13, \"rendered\": 13}, \"OpenCV.Features.Matching\": {\"documented\": 40, \"elements\": 40, \"rendered\": 40}, \"OpenCV.Features.ORB\": {\"documented\": 34, \"elements\": 34, \"rendered\": 34}}, \"stale_baseline\": [], \"total\": {\"documented\": 127, \"elements\": 127, \"percent\": 100.0, \"rendered\": 127}}",
+      "pages-check": "  api/gnatdoc-navigation.js: JavaScript contains an absolute or root-relative URL literal",
+      "regen-compare": ""
+    },
+    "temporary_configuration": "diff --git a/docs/gnatdoc-enhanced-assets.json b/docs/gnatdoc-enhanced-assets.json\nindex 84c83ef..7cf0d40 100644\n--- a/docs/gnatdoc-enhanced-assets.json\n+++ b/docs/gnatdoc-enhanced-assets.json\n@@ -13,15 +13,15 @@\n     \"guides/platform-compatibility.html\",\n     \"index.html\"\n   ],\n-  \"enhancer_revision\": \"478d0bbff0be1b9141b5ad39f07a71f0386d86e9\",\n+  \"enhancer_revision\": \"8768548d30018148643de2fc19c3aa7d132fb7bd\",\n   \"enhancer_version\": \"0.1.0.dev0\",\n   \"guide_renderer\": {\n     \"markdown-it-py\": \"3.0.0\",\n     \"mdurl\": \"0.1.2\"\n   },\n   \"packaged_assets\": {\n-    \"api/gnatdoc-navigation.js\": \"61eac070e65b38ac63242a54ed0546a8f4a27b25d8958c2824557860623f40b2\",\n-    \"api/gnatdoc-theme.css\": \"63c1e9c9a6f2e17cbf64287592dcad5d68f2de9064408bd9963b81ae99d17371\",\n+    \"api/gnatdoc-navigation.js\": \"b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd\",\n+    \"api/gnatdoc-theme.css\": \"cf06637732a8b047a7191bfb991a5c3da7cd31a52076876880d5f8a3f63929bc\",\n     \"assets/gnatdoc-guides.css\": \"79f3fc6d5f1e854eb42d225f9bec113b7a41fa833b12d3bd70ca089ba5df0a8c\"\n   },\n   \"public_packages\": [\ndiff --git a/scripts/gnatdoc_enhancer_support.py b/scripts/gnatdoc_enhancer_support.py\nindex 646066d..54d46f6 100644\n--- a/scripts/gnatdoc_enhancer_support.py\n+++ b/scripts/gnatdoc_enhancer_support.py\n@@ -16,7 +16,7 @@ import venv\n from pathlib import Path\n \n ROOT = Path(__file__).resolve().parent.parent\n-PINNED_REVISION = \"478d0bbff0be1b9141b5ad39f07a71f0386d86e9\"\n+PINNED_REVISION = \"8768548d30018148643de2fc19c3aa7d132fb7bd\"\n PROVENANCE = \"gnatdoc-enhancer-provenance.json\"\n \n \n"
+  },
+  "features_revision": "78a07df8bfd4884a9546cee78904fb5ff93aae21",
+  "main": {
+    "browser": {
+      "pages": {
+        "failed": 0,
+        "passed": 109,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      },
+      "prefix": {
+        "failed": 0,
+        "passed": 64,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      },
+      "root": {
+        "failed": 0,
+        "passed": 64,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      }
+    },
+    "census": {
+      "distinct_api_targets_from_guides": 32,
+      "errors": [],
+      "fences": {
+        "binary-matching": {
+          "bytes": 5496,
+          "example": "examples/src/orb_match_synthetic.adb",
+          "markdown_fences": 1,
+          "rendered_equal": true
+        },
+        "orb-extraction": {
+          "bytes": 1513,
+          "example": "examples/src/orb_synthetic.adb",
+          "markdown_fences": 1,
+          "rendered_equal": true
+        }
+      },
+      "files": 18,
+      "guide_api_targets": {
+        "guides/binary-matching.html": [
+          "OpenCV.Features.Matching",
+          "OpenCV.Features.Matching.Binary_Descriptor_Distance|type|type Binary_Descriptor_Distance is range 0 .. 256",
+          "OpenCV.Features.Matching.Brute_Force_KNN_2|function|function Brute_Force_KNN_2 (Query : Feature_Set; Train : Feature_Set) return Two_Nearest_Match_Array",
+          "OpenCV.Features.Matching.Brute_Force_Match|function|function Brute_Force_Match (Query : Feature_Set; Train : Feature_Set; Mode : Matching_Mode := Nearest) return Descriptor_Match_Array",
+          "OpenCV.Features.Matching.Brute_Force_Radius_Match|function|function Brute_Force_Radius_Match (Query : Feature_Set; Train : Feature_Set; Maximum_Distance : Binary_Descriptor_Distance) return Descriptor_Match_Array",
+          "OpenCV.Features.Matching.Descriptor_Match|type|type Descriptor_Match is record Query_Index : Positive; Train_Index : Positive; Distance : Binary_Descriptor_Distance; end record",
+          "OpenCV.Features.Matching.Filter_By_Ratio|function|function Filter_By_Ratio (Candidates : Two_Nearest_Match_Array; Maximum_Ratio : OpenCV.Float64_Value) return Descriptor_Match_Array",
+          "OpenCV.Features.Matching.Passes_Ratio_Test|function|function Passes_Ratio_Test (Candidate : Two_Nearest_Match; Maximum_Ratio : OpenCV.Float64_Value) return Boolean",
+          "OpenCV.Features.Matching.Two_Nearest_Match|type|type Two_Nearest_Match is record Query_Index : Positive; Nearest : Binary_Neighbor; Second_Nearest : Binary_Neighbor; end record",
+          "OpenCV.Features.Required_Norm|function|function Required_Norm (Features : Feature_Set) return Binary_Descriptor_Norm"
+        ],
+        "guides/candidate-correspondences.html": [
+          "OpenCV.Features.Correspondences",
+          "OpenCV.Features.Correspondences.From_Matches|function|function From_Matches (Query : Feature_Set; Train : Feature_Set; Matches : Matching.Descriptor_Match_Array) return Point_Correspondence_Array",
+          "OpenCV.Features.Correspondences.Point_Correspondence|type|type Point_Correspondence is record Query_Index : Positive; Train_Index : Positive; Query_Point : OpenCV.Float32_Point; Train_Point : OpenCV.Float32_Point; Distance : Matching.Binary_Descriptor_Distance; end record",
+          "OpenCV.Features.Matching.Descriptor_Match|type|type Descriptor_Match is record Query_Index : Positive; Train_Index : Positive; Distance : Binary_Descriptor_Distance; end record"
+        ],
+        "guides/getting-started.html": [
+          "OpenCV.Features",
+          "OpenCV.Features.Correspondences",
+          "OpenCV.Features.Matching",
+          "OpenCV.Features.ORB"
+        ],
+        "guides/orb-extraction.html": [
+          "OpenCV.Features.Count|function|function Count (Features : Feature_Set) return Natural",
+          "OpenCV.Features.Descriptor_Copy|function|function Descriptor_Copy (Features : Feature_Set) return OpenCV.Core.Mat",
+          "OpenCV.Features.Descriptor_Row|function|function Descriptor_Row (Features : Feature_Set; Index : Positive) return Natural",
+          "OpenCV.Features.Feature_Set|type|type Feature_Set is limited private",
+          "OpenCV.Features.Keypoints|function|function Keypoints (Features : Feature_Set) return Keypoint_Array",
+          "OpenCV.Features.Keypoint|type|type Keypoint is record Position : OpenCV.Float32_Point; Size : OpenCV.Float32_Value; Angle_Degrees : OpenCV.Float32_Value; Response : OpenCV.Float32_Value; Octave : OpenCV.Int32_Value; Class_Id : OpenCV.Int32_Value; end record",
+          "OpenCV.Features.ORB",
+          "OpenCV.Features.ORB.Close|procedure|procedure Close (Self : in out Detector)",
+          "OpenCV.Features.ORB.Configuration|type|type Configuration is record Maximum_Features : Positive := 500; Tuple : Tuple_Size := Two_Samples; Score : Score_Kind := Harris_Score; FAST_Threshold : Natural := 20; end record",
+          "OpenCV.Features.ORB.Create|function|function Create (Parameters : Configuration := (others => <>)) return Detector",
+          "OpenCV.Features.ORB.Detect_And_Compute|function|function Detect_And_Compute (Self : Detector; Image : OpenCV.Core.Mat) return Feature_Set",
+          "OpenCV.Features.ORB.Detect_And_Compute|function|function Detect_And_Compute (Self : Detector; Image, Mask : OpenCV.Core.Mat) return Feature_Set",
+          "OpenCV.Features.ORB.Detector|type|type Detector is tagged limited private",
+          "OpenCV.Features.ORB.Parameters|function|function Parameters (Self : Detector) return Configuration",
+          "OpenCV.Features.Point|function|function Point (Features : Feature_Set; Index : Positive) return Keypoint",
+          "OpenCV.Features.Required_Norm|function|function Required_Norm (Features : Feature_Set) return Binary_Descriptor_Norm"
+        ],
+        "guides/ownership-lifecycle.html": [
+          "OpenCV.Features.Feature_Set|type|type Feature_Set is limited private",
+          "OpenCV.Features.ORB.Close|procedure|procedure Close (Self : in out Detector)",
+          "OpenCV.Features.ORB.Create|function|function Create (Parameters : Configuration := (others => <>)) return Detector",
+          "OpenCV.Features.ORB.Detector|type|type Detector is tagged limited private",
+          "OpenCV.Features.ORB.Is_Ready|function|function Is_Ready (Self : Detector) return Boolean",
+          "OpenCV.Features.ORB.Parameters|function|function Parameters (Self : Detector) return Configuration"
+        ],
+        "guides/platform-compatibility.html": [
+          "OpenCV.Features.Native_Backend|function|function Native_Backend return String",
+          "OpenCV.Features.Native_Version|function|function Native_Version return String"
+        ],
+        "index.html": [
+          "OpenCV.Features",
+          "OpenCV.Features.Correspondences",
+          "OpenCV.Features.Matching",
+          "OpenCV.Features.ORB"
+        ]
+      },
+      "html_pages": 13,
+      "masked_overload": {
+        "identity": [
+          "OpenCV.Features.ORB.Detect_And_Compute|function|function Detect_And_Compute (Self : Detector; Image, Mask : OpenCV.Core.Mat) return Feature_Set"
+        ],
+        "links": [
+          "../api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html#07eb80b590b7f97f4c088474add72fc7d2b3f9a09f745f293468ca8cf358c2df"
+        ],
+        "ok": true
+      },
+      "pages_without_title": [
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+        "api/index.html",
+        "guides/binary-matching.html",
+        "guides/candidate-correspondences.html",
+        "guides/getting-started.html",
+        "guides/limitations-roadmap.html",
+        "guides/orb-extraction.html",
+        "guides/ownership-lifecycle.html",
+        "guides/platform-compatibility.html"
+      ],
+      "per_page": {
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": {
+          "cross-page type links": 2,
+          "fragment references": 7,
+          "h1": [
+            "OpenCV.Features.Correspondences"
+          ],
+          "references": 9,
+          "same-page type links": 2,
+          "scripts": [],
+          "title": null,
+          "type links": 4
+        },
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": {
+          "cross-page type links": 2,
+          "fragment references": 22,
+          "h1": [
+            "OpenCV.Features.ORB"
+          ],
+          "references": 24,
+          "same-page type links": 10,
+          "scripts": [],
+          "title": null,
+          "type links": 12
+        },
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": {
+          "fragment references": 24,
+          "h1": [
+            "OpenCV.Features"
+          ],
+          "references": 26,
+          "same-page type links": 11,
+          "scripts": [],
+          "title": null,
+          "type links": 11
+        },
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": {
+          "cross-page type links": 6,
+          "fragment references": 32,
+          "h1": [
+            "OpenCV.Features.Matching"
+          ],
+          "references": 34,
+          "same-page type links": 14,
+          "scripts": [],
+          "title": null,
+          "type links": 20
+        },
+        "api/index.html": {
+          "fragment references": 3,
+          "h1": [],
+          "references": 10,
+          "scripts": [
+            "gnatdoc-navigation.js"
+          ],
+          "title": null
+        },
+        "guides/binary-matching.html": {
+          "declaration links": 9,
+          "fragment references": 10,
+          "h1": [
+            "Binary matching"
+          ],
+          "links into api/": 11,
+          "package links": 1,
+          "references": 21,
+          "scripts": [],
+          "title": null
+        },
+        "guides/candidate-correspondences.html": {
+          "declaration links": 3,
+          "fragment references": 4,
+          "h1": [
+            "Candidate correspondences"
+          ],
+          "links into api/": 5,
+          "package links": 1,
+          "references": 15,
+          "scripts": [],
+          "title": null
+        },
+        "guides/getting-started.html": {
+          "fragment references": 1,
+          "h1": [
+            "Getting started"
+          ],
+          "links into api/": 5,
+          "package links": 4,
+          "references": 15,
+          "scripts": [],
+          "title": null
+        },
+        "guides/limitations-roadmap.html": {
+          "fragment references": 1,
+          "h1": [
+            "Limitations and roadmap"
+          ],
+          "links into api/": 1,
+          "references": 11,
+          "scripts": [],
+          "title": null
+        },
+        "guides/orb-extraction.html": {
+          "declaration links": 15,
+          "fragment references": 16,
+          "h1": [
+            "ORB feature extraction"
+          ],
+          "links into api/": 17,
+          "package links": 1,
+          "references": 27,
+          "scripts": [],
+          "title": null
+        },
+        "guides/ownership-lifecycle.html": {
+          "declaration links": 6,
+          "fragment references": 7,
+          "h1": [
+            "Ownership and lifecycle"
+          ],
+          "links into api/": 7,
+          "references": 17,
+          "scripts": [],
+          "title": null
+        },
+        "guides/platform-compatibility.html": {
+          "declaration links": 2,
+          "fragment references": 3,
+          "h1": [
+            "Platform compatibility"
+          ],
+          "links into api/": 3,
+          "references": 13,
+          "scripts": [],
+          "title": null
+        },
+        "index.html": {
+          "fragment references": 1,
+          "h1": [
+            "OpenCV Features for Ada"
+          ],
+          "links into api/": 9,
+          "package links": 7,
+          "references": 26,
+          "scripts": [],
+          "title": "OpenCV Features for Ada documentation"
+        }
+      },
+      "scripts": {
+        "api/index.html": [
+          "gnatdoc-navigation.js"
+        ]
+      },
+      "totals": {
+        "cross-page type links": 10,
+        "declaration links": 35,
+        "fragment references": 131,
+        "links into api/": 58,
+        "package links": 14,
+        "references": 248,
+        "same-page type links": 37,
+        "type links": 47
+      }
+    },
+    "enhancement": {
+      "added_files": [
+        "api/gnatdoc-navigation.js",
+        "api/gnatdoc-theme.css",
+        "api/presentation.json",
+        "assets/gnatdoc-guides.css",
+        "guides/binary-matching.html",
+        "guides/candidate-correspondences.html",
+        "guides/getting-started.html",
+        "guides/limitations-roadmap.html",
+        "guides/orb-extraction.html",
+        "guides/ownership-lifecycle.html",
+        "guides/platform-compatibility.html",
+        "index.html"
+      ],
+      "byte_idempotent": true,
+      "dry_run": {
+        "declaration_snippets": 38,
+        "files": 18,
+        "html_pages": 13,
+        "linked_external_types": 0,
+        "linked_local_types": 47,
+        "linked_types": 47,
+        "links": 248,
+        "mode": "dry-run",
+        "public_packages": 4,
+        "unrendered_renderer_exceptions": 0
+      },
+      "enhance": {
+        "declaration_snippets": 38,
+        "files": 18,
+        "html_pages": 13,
+        "linked_external_types": 0,
+        "linked_local_types": 47,
+        "linked_types": 47,
+        "links": 248,
+        "mode": "enhanced",
+        "public_packages": 4,
+        "unrendered_renderer_exceptions": 0
+      },
+      "enhanced_site": {
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": "12d49d3c4eb2e0aed99619ee1e3ec5b2d1cb3065f7cd809af8176b53a549f4cd",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": "bce6ea7d3fdbfbbc8c3a74c09918b363eeef3f6f1b594e4cce183a8954b351e7",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": "80651b0ac77b5848aa56f53cfe6419fd75a32f89ed5499dffc5e297ff8e27844",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": "1dcd90fd69b427fc4a2f0dad8394c3b6d04a33f01a6d88f306ab74d39389b30f",
+        "api/gnatdoc-navigation.js": "b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd",
+        "api/gnatdoc-theme.css": "cf06637732a8b047a7191bfb991a5c3da7cd31a52076876880d5f8a3f63929bc",
+        "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+        "api/index.html": "448e29550cbad33cc75e03195d8f75a3f3b051c38241b2f20af867e2dc444ee7",
+        "api/presentation.json": "5f9aa0a2fbe3d9d21958606f6971ad9fd0efc3f3315379324ee9ca2739b5faf8",
+        "assets/gnatdoc-guides.css": "79f3fc6d5f1e854eb42d225f9bec113b7a41fa833b12d3bd70ca089ba5df0a8c",
+        "guides/binary-matching.html": "79cb0953f4be5e6fe9925fb952bc33674ac76983b1d6afe1d68f3d0f5e6ec202",
+        "guides/candidate-correspondences.html": "a2154f34cfc96e618be2d4536ac1d2c46ebe4b14b2cf49f270e5ae3e819857e3",
+        "guides/getting-started.html": "c40063db5dba967270ad3d72cc234d09d9f5ffcbe77601f7245ac713a836076f",
+        "guides/limitations-roadmap.html": "cee5558287424f62c72c02536ee025ec0a463f66523a7a04b781bde2e6c56fd9",
+        "guides/orb-extraction.html": "b9d4ca2ed2729cd95303e62050d708328e5f1b51441c36b2ddc5424345745025",
+        "guides/ownership-lifecycle.html": "d922c13dedc8e1ff9019e9b87c4365a4bb28a8aba03158365cc24a817834ae74",
+        "guides/platform-compatibility.html": "3a446ef8c9bcac22552eae88412ba9e3594fd19112d00561000846ca041cf4f3",
+        "index.html": "31c286befe39a58e784de45d0b078ca1f3d4b858dc2b300fa86ff64a5933271a"
+      },
+      "enhancer": {
+        "revision": "53a321915da2c5a02a54581040673b61f8595b25",
+        "version": "0.1.0.dev0"
+      },
+      "fresh_enhancement_identical": true,
+      "inventory": {
+        "native_declaration_sections": 38,
+        "project": "OpenCV Features Ada",
+        "public_packages": [
+          "OpenCV.Features",
+          "OpenCV.Features.Correspondences",
+          "OpenCV.Features.Matching",
+          "OpenCV.Features.ORB"
+        ]
+      },
+      "native_comparison": {
+        "added_files": [
+          "gnatdoc-navigation.js",
+          "gnatdoc-theme.css",
+          "presentation.json"
+        ],
+        "errors": [],
+        "scripts": {
+          "index.html": [
+            "gnatdoc-navigation.js"
+          ]
+        }
+      },
+      "pristine_unchanged": true,
+      "site_links": {
+        "errors": [],
+        "pages": 13,
+        "scripts": {
+          "api/index.html": [
+            "gnatdoc-navigation.js"
+          ]
+        }
+      },
+      "staged_specifications": [
+        "opencv-features.ads",
+        "opencv-features-orb.ads",
+        "opencv-features-matching.ads",
+        "opencv-features-correspondences.ads"
+      ],
+      "verify": {
+        "declaration_snippets": 38,
+        "files": 18,
+        "html_pages": 13,
+        "linked_external_types": 0,
+        "linked_local_types": 47,
+        "linked_types": 47,
+        "links": 248,
+        "mode": "verified",
+        "public_packages": 4,
+        "unrendered_renderer_exceptions": 0
+      }
+    },
+    "enhancer": "53a321915da2c5a02a54581040673b61f8595b25",
+    "features_doc_tests": {
+      "failures": [
+        "test_real_site_is_a_qualified_pages_artifact (test_pages_site.RealSiteTests.test_real_site_is_a_qualified_pages_artifact)"
+      ],
+      "ran": 84,
+      "result": "FAILED (failures=1)"
+    },
+    "generation": [
+      "PASS inventory: {\"declarations\": 38, \"internal_units\": 2, \"packages\": 4}",
+      "PASS site: {\"files\": 6, \"packages\": 4, \"sections\": 38}",
+      "PASS warnings: {\"baseline\": 0, \"new\": [], \"raw\": 0, \"regions\": {}, \"stale\": []}",
+      "PASS coverage: {\"baseline\": 0, \"categories\": {\"field\": {\"documented\": 23, \"elements\": 23, \"rendered\": 23}, \"function\": {\"documented\": 20, \"elements\": 20, \"rendered\": 20}, \"literal\": {\"documented\": 9, \"elements\": 9, \"rendered\": 9}, \"package\": {\"documented\": 4, \"elements\": 4, \"rendered\": 4}, \"parameter\": {\"documented\": 33, \"elements\": 33, \"rendered\": 33}, \"procedure\": {\"documented\": 1, \"elements\": 1, \"rendered\": 1}, \"return\": {\"documented\": 20, \"elements\": 20, \"rendered\": 20}, \"type\": {\"documented\": 17, \"elements\": 17, \"rendered\": 17}}, \"new_gaps\": [], \"packages\": {\"OpenCV.Features\": {\"documented\": 40, \"elements\": 40, \"rendered\": 40}, \"OpenCV.Features.Correspondences\": {\"documented\": 13, \"elements\": 13, \"rendered\": 13}, \"OpenCV.Features.Matching\": {\"documented\": 40, \"elements\": 40, \"rendered\": 40}, \"OpenCV.Features.ORB\": {\"documented\": 34, \"elements\": 34, \"rendered\": 34}}, \"stale_baseline\": [], \"total\": {\"documented\": 127, \"elements\": 127, \"percent\": 100.0, \"rendered\": 127}}"
+    ],
+    "gnatdoc_log_bytes": 0,
+    "metadata": {
+      "files": {
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": "12d49d3c4eb2e0aed99619ee1e3ec5b2d1cb3065f7cd809af8176b53a549f4cd",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": "bce6ea7d3fdbfbbc8c3a74c09918b363eeef3f6f1b594e4cce183a8954b351e7",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": "80651b0ac77b5848aa56f53cfe6419fd75a32f89ed5499dffc5e297ff8e27844",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": "1dcd90fd69b427fc4a2f0dad8394c3b6d04a33f01a6d88f306ab74d39389b30f",
+        "api/gnatdoc-navigation.js": "b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd",
+        "api/gnatdoc-theme.css": "cf06637732a8b047a7191bfb991a5c3da7cd31a52076876880d5f8a3f63929bc",
+        "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+        "api/index.html": "448e29550cbad33cc75e03195d8f75a3f3b051c38241b2f20af867e2dc444ee7",
+        "api/presentation.json": "5f9aa0a2fbe3d9d21958606f6971ad9fd0efc3f3315379324ee9ca2739b5faf8",
+        "assets/gnatdoc-guides.css": "79f3fc6d5f1e854eb42d225f9bec113b7a41fa833b12d3bd70ca089ba5df0a8c",
+        "guides/binary-matching.html": "79cb0953f4be5e6fe9925fb952bc33674ac76983b1d6afe1d68f3d0f5e6ec202",
+        "guides/candidate-correspondences.html": "a2154f34cfc96e618be2d4536ac1d2c46ebe4b14b2cf49f270e5ae3e819857e3",
+        "guides/getting-started.html": "c40063db5dba967270ad3d72cc234d09d9f5ffcbe77601f7245ac713a836076f",
+        "guides/limitations-roadmap.html": "cee5558287424f62c72c02536ee025ec0a463f66523a7a04b781bde2e6c56fd9",
+        "guides/orb-extraction.html": "b9d4ca2ed2729cd95303e62050d708328e5f1b51441c36b2ddc5424345745025",
+        "guides/ownership-lifecycle.html": "d922c13dedc8e1ff9019e9b87c4365a4bb28a8aba03158365cc24a817834ae74",
+        "guides/platform-compatibility.html": "3a446ef8c9bcac22552eae88412ba9e3594fd19112d00561000846ca041cf4f3",
+        "index.html": "31c286befe39a58e784de45d0b078ca1f3d4b858dc2b300fa86ff64a5933271a"
+      },
+      "pages": {
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": {
+          "charsets": [],
+          "h1": [
+            "OpenCV.Features.Correspondences"
+          ],
+          "heads": 0,
+          "html_roots": 1,
+          "lang": [
+            null
+          ],
+          "titles": [],
+          "valid_lang": false,
+          "valid_title": false
+        },
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": {
+          "charsets": [],
+          "h1": [
+            "OpenCV.Features.ORB"
+          ],
+          "heads": 0,
+          "html_roots": 1,
+          "lang": [
+            null
+          ],
+          "titles": [],
+          "valid_lang": false,
+          "valid_title": false
+        },
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": {
+          "charsets": [],
+          "h1": [
+            "OpenCV.Features"
+          ],
+          "heads": 0,
+          "html_roots": 1,
+          "lang": [
+            null
+          ],
+          "titles": [],
+          "valid_lang": false,
+          "valid_title": false
+        },
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": {
+          "charsets": [],
+          "h1": [
+            "OpenCV.Features.Matching"
+          ],
+          "heads": 0,
+          "html_roots": 1,
+          "lang": [
+            null
+          ],
+          "titles": [],
+          "valid_lang": false,
+          "valid_title": false
+        },
+        "api/index.html": {
+          "charsets": [],
+          "h1": [],
+          "heads": 0,
+          "html_roots": 1,
+          "lang": [
+            null
+          ],
+          "titles": [],
+          "valid_lang": false,
+          "valid_title": false
+        },
+        "guides/binary-matching.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "Binary matching"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [],
+          "valid_lang": true,
+          "valid_title": false
+        },
+        "guides/candidate-correspondences.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "Candidate correspondences"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [],
+          "valid_lang": true,
+          "valid_title": false
+        },
+        "guides/getting-started.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "Getting started"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [],
+          "valid_lang": true,
+          "valid_title": false
+        },
+        "guides/limitations-roadmap.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "Limitations and roadmap"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [],
+          "valid_lang": true,
+          "valid_title": false
+        },
+        "guides/orb-extraction.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "ORB feature extraction"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [],
+          "valid_lang": true,
+          "valid_title": false
+        },
+        "guides/ownership-lifecycle.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "Ownership and lifecycle"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [],
+          "valid_lang": true,
+          "valid_title": false
+        },
+        "guides/platform-compatibility.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "Platform compatibility"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [],
+          "valid_lang": true,
+          "valid_title": false
+        },
+        "index.html": {
+          "charsets": [
+            [
+              "utf-8",
+              false
+            ]
+          ],
+          "h1": [
+            "OpenCV Features for Ada"
+          ],
+          "heads": 1,
+          "html_roots": 1,
+          "lang": [
+            "en"
+          ],
+          "titles": [
+            {
+              "in_body": false,
+              "text": "OpenCV Features for Ada documentation"
+            }
+          ],
+          "valid_lang": true,
+          "valid_title": true
+        }
+      },
+      "summary": {
+        "html_pages": 13,
+        "missing_lang": [
+          "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+          "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+          "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+          "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+          "api/index.html"
+        ],
+        "missing_titles": [
+          "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+          "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+          "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+          "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+          "api/index.html",
+          "guides/binary-matching.html",
+          "guides/candidate-correspondences.html",
+          "guides/getting-started.html",
+          "guides/limitations-roadmap.html",
+          "guides/orb-extraction.html",
+          "guides/ownership-lifecycle.html",
+          "guides/platform-compatibility.html"
+        ],
+        "valid_lang": 8,
+        "valid_titles": 1,
+        "with_head_element": 8,
+        "with_utf8_charset": 8
+      }
+    },
+    "pages_check": {
+      "base_url": "https://zackboll.github.io/opencv_features_ada/",
+      "blockers": [
+        "12 of 13 HTML pages have no <title>: api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html, api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html, api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html, api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html, api/index.html, guides/binary-matching.html, guides/candidate-correspondences.html, guides/getting-started.html, guides/limitations-roadmap.html, guides/orb-extraction.html, guides/ownership-lifecycle.html, guides/platform-compatibility.html"
+      ],
+      "errors": [
+        "api/gnatdoc-navigation.js: JavaScript contains an absolute or root-relative URL literal"
+      ],
+      "files": {
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": "12d49d3c4eb2e0aed99619ee1e3ec5b2d1cb3065f7cd809af8176b53a549f4cd",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": "bce6ea7d3fdbfbbc8c3a74c09918b363eeef3f6f1b594e4cce183a8954b351e7",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": "80651b0ac77b5848aa56f53cfe6419fd75a32f89ed5499dffc5e297ff8e27844",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": "1dcd90fd69b427fc4a2f0dad8394c3b6d04a33f01a6d88f306ab74d39389b30f",
+        "api/gnatdoc-navigation.js": "b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd",
+        "api/gnatdoc-theme.css": "cf06637732a8b047a7191bfb991a5c3da7cd31a52076876880d5f8a3f63929bc",
+        "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+        "api/index.html": "448e29550cbad33cc75e03195d8f75a3f3b051c38241b2f20af867e2dc444ee7",
+        "api/presentation.json": "5f9aa0a2fbe3d9d21958606f6971ad9fd0efc3f3315379324ee9ca2739b5faf8",
+        "assets/gnatdoc-guides.css": "79f3fc6d5f1e854eb42d225f9bec113b7a41fa833b12d3bd70ca089ba5df0a8c",
+        "guides/binary-matching.html": "79cb0953f4be5e6fe9925fb952bc33674ac76983b1d6afe1d68f3d0f5e6ec202",
+        "guides/candidate-correspondences.html": "a2154f34cfc96e618be2d4536ac1d2c46ebe4b14b2cf49f270e5ae3e819857e3",
+        "guides/getting-started.html": "c40063db5dba967270ad3d72cc234d09d9f5ffcbe77601f7245ac713a836076f",
+        "guides/limitations-roadmap.html": "cee5558287424f62c72c02536ee025ec0a463f66523a7a04b781bde2e6c56fd9",
+        "guides/orb-extraction.html": "b9d4ca2ed2729cd95303e62050d708328e5f1b51441c36b2ddc5424345745025",
+        "guides/ownership-lifecycle.html": "d922c13dedc8e1ff9019e9b87c4365a4bb28a8aba03158365cc24a817834ae74",
+        "guides/platform-compatibility.html": "3a446ef8c9bcac22552eae88412ba9e3594fd19112d00561000846ca041cf4f3",
+        "index.html": "31c286befe39a58e784de45d0b078ca1f3d4b858dc2b300fa86ff64a5933271a"
+      },
+      "fragment_references": 131,
+      "html_pages": 13,
+      "pages_without_lang": [
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+        "api/index.html"
+      ],
+      "pages_without_title": [
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+        "api/index.html",
+        "guides/binary-matching.html",
+        "guides/candidate-correspondences.html",
+        "guides/getting-started.html",
+        "guides/limitations-roadmap.html",
+        "guides/orb-extraction.html",
+        "guides/ownership-lifecycle.html",
+        "guides/platform-compatibility.html"
+      ],
+      "publication_ready": false,
+      "references": 248,
+      "routes": {
+        "https://zackboll.github.io/opencv_features_ada/": "index.html",
+        "https://zackboll.github.io/opencv_features_ada/api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+        "https://zackboll.github.io/opencv_features_ada/api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+        "https://zackboll.github.io/opencv_features_ada/api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+        "https://zackboll.github.io/opencv_features_ada/api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+        "https://zackboll.github.io/opencv_features_ada/api/index.html": "api/index.html",
+        "https://zackboll.github.io/opencv_features_ada/guides/binary-matching.html": "guides/binary-matching.html",
+        "https://zackboll.github.io/opencv_features_ada/guides/candidate-correspondences.html": "guides/candidate-correspondences.html",
+        "https://zackboll.github.io/opencv_features_ada/guides/getting-started.html": "guides/getting-started.html",
+        "https://zackboll.github.io/opencv_features_ada/guides/limitations-roadmap.html": "guides/limitations-roadmap.html",
+        "https://zackboll.github.io/opencv_features_ada/guides/orb-extraction.html": "guides/orb-extraction.html",
+        "https://zackboll.github.io/opencv_features_ada/guides/ownership-lifecycle.html": "guides/ownership-lifecycle.html",
+        "https://zackboll.github.io/opencv_features_ada/guides/platform-compatibility.html": "guides/platform-compatibility.html"
+      },
+      "titles": {
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": null,
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": null,
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": null,
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": null,
+        "api/index.html": null,
+        "guides/binary-matching.html": null,
+        "guides/candidate-correspondences.html": null,
+        "guides/getting-started.html": null,
+        "guides/limitations-roadmap.html": null,
+        "guides/orb-extraction.html": null,
+        "guides/ownership-lifecycle.html": null,
+        "guides/platform-compatibility.html": null,
+        "index.html": "OpenCV Features for Ada documentation"
+      }
+    },
+    "steps": {
+      "enhance": "PASS: enhanced copy verified; byte-idempotent; fresh run identical; native identities preserved; 13 pages with resolved links; added ['api/gnatdoc-navigation.js', 'api/gnatdoc-theme.css', 'api/presentation.json', 'assets/gnatdoc-guides.css', 'guides/binary-matching.html', 'guides/candidate-correspondences.html', 'guides/getting-started.html', 'guides/limitations-roadmap.html', 'guides/orb-extraction.html', 'guides/ownership-lifecycle.html', 'guides/platform-compatibility.html', 'index.html']",
+      "enhanced-compare": "",
+      "generate": "PASS coverage: {\"baseline\": 0, \"categories\": {\"field\": {\"documented\": 23, \"elements\": 23, \"rendered\": 23}, \"function\": {\"documented\": 20, \"elements\": 20, \"rendered\": 20}, \"literal\": {\"documented\": 9, \"elements\": 9, \"rendered\": 9}, \"package\": {\"documented\": 4, \"elements\": 4, \"rendered\": 4}, \"parameter\": {\"documented\": 33, \"elements\": 33, \"rendered\": 33}, \"procedure\": {\"documented\": 1, \"elements\": 1, \"rendered\": 1}, \"return\": {\"documented\": 20, \"elements\": 20, \"rendered\": 20}, \"type\": {\"documented\": 17, \"elements\": 17, \"rendered\": 17}}, \"new_gaps\": [], \"packages\": {\"OpenCV.Features\": {\"documented\": 40, \"elements\": 40, \"rendered\": 40}, \"OpenCV.Features.Correspondences\": {\"documented\": 13, \"elements\": 13, \"rendered\": 13}, \"OpenCV.Features.Matching\": {\"documented\": 40, \"elements\": 40, \"rendered\": 40}, \"OpenCV.Features.ORB\": {\"documented\": 34, \"elements\": 34, \"rendered\": 34}}, \"stale_baseline\": [], \"total\": {\"documented\": 127, \"elements\": 127, \"percent\": 100.0, \"rendered\": 127}}",
+      "pages-check": "  api/gnatdoc-navigation.js: JavaScript contains an absolute or root-relative URL literal",
+      "regen-compare": ""
+    },
+    "temporary_configuration": "diff --git a/docs/gnatdoc-enhanced-assets.json b/docs/gnatdoc-enhanced-assets.json\nindex 84c83ef..86781d6 100644\n--- a/docs/gnatdoc-enhanced-assets.json\n+++ b/docs/gnatdoc-enhanced-assets.json\n@@ -13,15 +13,15 @@\n     \"guides/platform-compatibility.html\",\n     \"index.html\"\n   ],\n-  \"enhancer_revision\": \"478d0bbff0be1b9141b5ad39f07a71f0386d86e9\",\n+  \"enhancer_revision\": \"53a321915da2c5a02a54581040673b61f8595b25\",\n   \"enhancer_version\": \"0.1.0.dev0\",\n   \"guide_renderer\": {\n     \"markdown-it-py\": \"3.0.0\",\n     \"mdurl\": \"0.1.2\"\n   },\n   \"packaged_assets\": {\n-    \"api/gnatdoc-navigation.js\": \"61eac070e65b38ac63242a54ed0546a8f4a27b25d8958c2824557860623f40b2\",\n-    \"api/gnatdoc-theme.css\": \"63c1e9c9a6f2e17cbf64287592dcad5d68f2de9064408bd9963b81ae99d17371\",\n+    \"api/gnatdoc-navigation.js\": \"b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd\",\n+    \"api/gnatdoc-theme.css\": \"cf06637732a8b047a7191bfb991a5c3da7cd31a52076876880d5f8a3f63929bc\",\n     \"assets/gnatdoc-guides.css\": \"79f3fc6d5f1e854eb42d225f9bec113b7a41fa833b12d3bd70ca089ba5df0a8c\"\n   },\n   \"public_packages\": [\ndiff --git a/scripts/gnatdoc_enhancer_support.py b/scripts/gnatdoc_enhancer_support.py\nindex 646066d..f5ce55e 100644\n--- a/scripts/gnatdoc_enhancer_support.py\n+++ b/scripts/gnatdoc_enhancer_support.py\n@@ -16,7 +16,7 @@ import venv\n from pathlib import Path\n \n ROOT = Path(__file__).resolve().parent.parent\n-PINNED_REVISION = \"478d0bbff0be1b9141b5ad39f07a71f0386d86e9\"\n+PINNED_REVISION = \"53a321915da2c5a02a54581040673b61f8595b25\"\n PROVENANCE = \"gnatdoc-enhancer-provenance.json\"\n \n \n"
+  },
+  "metadata_only_difference": {
+    "changed": {
+      "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": "native metadata only",
+      "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": "native metadata only",
+      "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": "native metadata only",
+      "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": "native metadata only",
+      "api/index.html": "native metadata only",
+      "api/presentation.json": "presentation manifest (output hashes)",
+      "guides/binary-matching.html": "guide title element only",
+      "guides/candidate-correspondences.html": "guide title element only",
+      "guides/getting-started.html": "guide title element only",
+      "guides/limitations-roadmap.html": "guide title element only",
+      "guides/orb-extraction.html": "guide title element only",
+      "guides/ownership-lifecycle.html": "guide title element only",
+      "guides/platform-compatibility.html": "guide title element only"
+    },
+    "titles": {
+      "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": [
+        "OpenCV.Features.Correspondences — OpenCV Features Ada"
+      ],
+      "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": [
+        "OpenCV.Features.ORB — OpenCV Features Ada"
+      ],
+      "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": [
+        "OpenCV.Features — OpenCV Features Ada"
+      ],
+      "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": [
+        "OpenCV.Features.Matching — OpenCV Features Ada"
+      ],
+      "api/index.html": [
+        "API Reference — OpenCV Features Ada"
+      ],
+      "guides/binary-matching.html": [
+        "Binary matching — OpenCV Features Ada"
+      ],
+      "guides/candidate-correspondences.html": [
+        "Candidate correspondences — OpenCV Features Ada"
+      ],
+      "guides/getting-started.html": [
+        "Getting started — OpenCV Features Ada"
+      ],
+      "guides/limitations-roadmap.html": [
+        "Limitations and roadmap — OpenCV Features Ada"
+      ],
+      "guides/orb-extraction.html": [
+        "ORB feature extraction — OpenCV Features Ada"
+      ],
+      "guides/ownership-lifecycle.html": [
+        "Ownership and lifecycle — OpenCV Features Ada"
+      ],
+      "guides/platform-compatibility.html": [
+        "Platform compatibility — OpenCV Features Ada"
+      ],
+      "index.html": [
+        "OpenCV Features for Ada documentation"
+      ]
+    },
+    "unchanged": [
+      "api/gnatdoc-navigation.js",
+      "api/gnatdoc-theme.css",
+      "api/gnatdoc.css",
+      "assets/gnatdoc-guides.css",
+      "index.html"
+    ]
+  },
+  "remaining_downstream_item": "Features check_pages_site.py JavaScript heuristic matches lastIndexOf('/') in the GNATDOC-008B navigation script; identical with enhancer main; not a metadata error",
+  "workspace": "disposable clones; Features repository and production pin unchanged"
+}

@@ -1,0 +1,149 @@
+{
+  "baseline_tests": 392,
+  "browser": {
+    "core": {
+      "checks": 1500,
+      "passed": 1500,
+      "predecessor_checks_missing": 0
+    },
+    "geometry": {
+      "checks": 1486,
+      "passed": 1486,
+      "predecessor_checks_missing": 0
+    },
+    "imgproc": {
+      "checks": 1678,
+      "passed": 1678,
+      "predecessor_checks_missing": 0
+    },
+    "imgproc008": {
+      "checks": 1678,
+      "passed": 1678,
+      "predecessor_checks_missing": 0
+    },
+    "mel": {
+      "checks": 1192,
+      "passed": 1192,
+      "predecessor_checks_missing": 0
+    }
+  },
+  "consumers": {
+    "core": {
+      "byte_idempotent": true,
+      "declarations": 1268,
+      "deterministic": true,
+      "lang": 202,
+      "links_unchanged": true,
+      "mutations": 13,
+      "mutations_rejected": 13,
+      "only_authorized_metadata": true,
+      "pages": 202,
+      "titled": 202,
+      "titles_added": 196
+    },
+    "geometry": {
+      "byte_idempotent": true,
+      "declarations": 130,
+      "deterministic": true,
+      "lang": 9,
+      "links_unchanged": true,
+      "mutations": 13,
+      "mutations_rejected": 13,
+      "only_authorized_metadata": true,
+      "pages": 9,
+      "titled": 9,
+      "titles_added": 3
+    },
+    "imgproc": {
+      "byte_idempotent": true,
+      "declarations": 314,
+      "deterministic": true,
+      "lang": 8,
+      "links_unchanged": true,
+      "mutations": 13,
+      "mutations_rejected": 13,
+      "only_authorized_metadata": true,
+      "pages": 8,
+      "titled": 8,
+      "titles_added": 2
+    },
+    "imgproc008": {
+      "byte_idempotent": true,
+      "declarations": 314,
+      "deterministic": true,
+      "lang": 8,
+      "links_unchanged": true,
+      "mutations": 13,
+      "mutations_rejected": 13,
+      "only_authorized_metadata": true,
+      "pages": 8,
+      "titled": 8,
+      "titles_added": 2
+    },
+    "mel": {
+      "byte_idempotent": true,
+      "declarations": 1237,
+      "deterministic": true,
+      "lang": 37,
+      "links_unchanged": true,
+      "mutations": 13,
+      "mutations_rejected": 13,
+      "only_authorized_metadata": true,
+      "pages": 37,
+      "titled": 37,
+      "titles_added": 30
+    }
+  },
+  "current_tests": 418,
+  "distribution": {
+    "artifacts": {
+      "ada_gnatdoc_enhancer-0.1.0.dev0-py3-none-any.whl": "7383e75d18fc12aba46d8618afa13312bf8a54de6ceeeb83bfcd3b9737dcfeb9",
+      "ada_gnatdoc_enhancer-0.1.0.dev0.tar.gz": "83d582926e63ea43b2099db8a97aba524ed530efe0b59b4d60888c3dcc4e3970"
+    },
+    "sdist_tests": {
+      "failures": [],
+      "ran": 418,
+      "result": "OK"
+    },
+    "wheel_tests": {
+      "failures": [],
+      "ran": 418,
+      "result": "OK"
+    }
+  },
+  "features": {
+    "lang": 13,
+    "pages": 13,
+    "pages_check_errors": [
+      "api/gnatdoc-navigation.js: JavaScript contains an absolute or root-relative URL literal"
+    ],
+    "pages_without_title": [],
+    "publication_blocker": "Features check_pages_site.py JavaScript heuristic matches lastIndexOf('/') in the GNATDOC-008B navigation script; identical with enhancer main; not a metadata error",
+    "publication_ready": false,
+    "revision": "78a07df8bfd4884a9546cee78904fb5ff93aae21",
+    "titles": 13
+  },
+  "features_browser": {
+    "checks": 86,
+    "passed": 86,
+    "prefix": "/opencv_features_ada/",
+    "report": "features-metadata-browser.json"
+  },
+  "hosted_ci": "recorded in the pull request; an in-tree file cannot contain its own commit",
+  "implementation_sha": "8768548d30018148643de2fc19c3aa7d132fb7bd",
+  "new_tests": 26,
+  "operation_browser": {
+    "checks": 144,
+    "passed": 144,
+    "predecessor": "gnatdoc008b/operation-browser-cross-declaration.json: 144 checks, 160 traces",
+    "report": "operation-browser.json",
+    "traces": 160
+  },
+  "src_unchanged_between": [
+    "8768548",
+    "2a42e85"
+  ],
+  "starting_main": "53a321915da2c5a02a54581040673b61f8595b25",
+  "task": "GNATDOC-010",
+  "tested_sha": "2a42e8520b52ec91896a99a01b25f741d8a2f576"
+}

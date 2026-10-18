@@ -55,6 +55,13 @@ install `.[guides]` and pin the exact renderer; see `guides.py` for the strict
 source/example contract. The manifest cannot grant permission to add scripts
 or arbitrary site assets.
 
+`project` names the site in every generated document title (`OpenCV.Core —
+MyAdaLibrary`, `API Reference — MyAdaLibrary`) and must be one line of visible
+text. Markdown guide H1s must equal their site-map labels, which become their
+titles. Author pages (`docs/index.html`, HTML guides, authored portals) must
+carry exactly one title, a language and a UTF-8 charset; they are validated,
+not rewritten. See `docs/html-page-metadata.md`.
+
 Qualified cross-repository links may be defined with `external_types` using
 complete, already independently verified HTTPS URLs including native fragment
 anchors, and `security.external_hosts`. Do not guess an OpenCV Core HTML hash.
