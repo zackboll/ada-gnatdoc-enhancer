@@ -1,0 +1,61 @@
+{
+  "geometry-current": {
+    "declaration_snippets": 130,
+    "linked_external_types": 96,
+    "linked_local_types": 171,
+    "linked_types": 267,
+    "public_packages": 2,
+    "unrendered_renderer_exceptions": 0
+  },
+  "imgproc008": {
+    "declaration_snippets": 314,
+    "linked_external_types": 551,
+    "linked_local_types": 333,
+    "linked_types": 884,
+    "public_packages": 1,
+    "unrendered_renderer_exceptions": 0
+  },
+  "mel": {
+    "declaration_snippets": 1237,
+    "linked_external_types": 0,
+    "linked_local_types": 1419,
+    "linked_types": 1419,
+    "public_packages": 29,
+    "unrendered_renderer_exceptions": 1
+  },
+  "geometry": {
+    "declaration_snippets": 130,
+    "linked_external_types": 95,
+    "linked_local_types": 171,
+    "linked_types": 266,
+    "public_packages": 2,
+    "unrendered_renderer_exceptions": 0
+  },
+  "imgproc": {
+    "declaration_snippets": 314,
+    "linked_external_types": 551,
+    "linked_local_types": 333,
+    "linked_types": 884,
+    "public_packages": 1,
+    "unrendered_renderer_exceptions": 0
+  },
+  "core": {
+    "declaration_snippets": 1268,
+    "generic_actual_type_links": 25,
+    "generic_conversion_package_links": 1,
+    "generic_member_links": 51,
+    "generic_summary_links": 102,
+    "generic_template_links": 25,
+    "linked_external_types": 0,
+    "linked_local_types": 2459,
+    "linked_types": 2459,
+    "matrix_summaries": 1,
+    "native_instance_member_declarations": 0,
+    "presentation_only_anchors": 25,
+    "public_packages": 195,
+    "qualified_generic_instances": 25,
+    "unrendered_renderer_exceptions": 0,
+    "unsupported_instances": [],
+    "vector_summaries": 24
+  }
+}

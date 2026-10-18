@@ -1,0 +1,255 @@
+{
+ "distinct_api_targets_from_guides": 32,
+ "errors": [],
+ "fences": {
+  "binary-matching": {
+   "bytes": 5496,
+   "example": "examples/src/orb_match_synthetic.adb",
+   "markdown_fences": 1,
+   "rendered_equal": true
+  },
+  "orb-extraction": {
+   "bytes": 1513,
+   "example": "examples/src/orb_synthetic.adb",
+   "markdown_fences": 1,
+   "rendered_equal": true
+  }
+ },
+ "files": 18,
+ "guide_api_targets": {
+  "guides/binary-matching.html": [
+   "OpenCV.Features.Matching",
+   "OpenCV.Features.Matching.Binary_Descriptor_Distance|type|type Binary_Descriptor_Distance is range 0 .. 256",
+   "OpenCV.Features.Matching.Brute_Force_KNN_2|function|function Brute_Force_KNN_2 (Query : Feature_Set; Train : Feature_Set) return Two_Nearest_Match_Array",
+   "OpenCV.Features.Matching.Brute_Force_Match|function|function Brute_Force_Match (Query : Feature_Set; Train : Feature_Set; Mode : Matching_Mode := Nearest) return Descriptor_Match_Array",
+   "OpenCV.Features.Matching.Brute_Force_Radius_Match|function|function Brute_Force_Radius_Match (Query : Feature_Set; Train : Feature_Set; Maximum_Distance : Binary_Descriptor_Distance) return Descriptor_Match_Array",
+   "OpenCV.Features.Matching.Descriptor_Match|type|type Descriptor_Match is record Query_Index : Positive; Train_Index : Positive; Distance : Binary_Descriptor_Distance; end record",
+   "OpenCV.Features.Matching.Filter_By_Ratio|function|function Filter_By_Ratio (Candidates : Two_Nearest_Match_Array; Maximum_Ratio : OpenCV.Float64_Value) return Descriptor_Match_Array",
+   "OpenCV.Features.Matching.Passes_Ratio_Test|function|function Passes_Ratio_Test (Candidate : Two_Nearest_Match; Maximum_Ratio : OpenCV.Float64_Value) return Boolean",
+   "OpenCV.Features.Matching.Two_Nearest_Match|type|type Two_Nearest_Match is record Query_Index : Positive; Nearest : Binary_Neighbor; Second_Nearest : Binary_Neighbor; end record",
+   "OpenCV.Features.Required_Norm|function|function Required_Norm (Features : Feature_Set) return Binary_Descriptor_Norm"
+  ],
+  "guides/candidate-correspondences.html": [
+   "OpenCV.Features.Correspondences",
+   "OpenCV.Features.Correspondences.From_Matches|function|function From_Matches (Query : Feature_Set; Train : Feature_Set; Matches : Matching.Descriptor_Match_Array) return Point_Correspondence_Array",
+   "OpenCV.Features.Correspondences.Point_Correspondence|type|type Point_Correspondence is record Query_Index : Positive; Train_Index : Positive; Query_Point : OpenCV.Float32_Point; Train_Point : OpenCV.Float32_Point; Distance : Matching.Binary_Descriptor_Distance; end record",
+   "OpenCV.Features.Matching.Descriptor_Match|type|type Descriptor_Match is record Query_Index : Positive; Train_Index : Positive; Distance : Binary_Descriptor_Distance; end record"
+  ],
+  "guides/getting-started.html": [
+   "OpenCV.Features",
+   "OpenCV.Features.Correspondences",
+   "OpenCV.Features.Matching",
+   "OpenCV.Features.ORB"
+  ],
+  "guides/orb-extraction.html": [
+   "OpenCV.Features.Count|function|function Count (Features : Feature_Set) return Natural",
+   "OpenCV.Features.Descriptor_Copy|function|function Descriptor_Copy (Features : Feature_Set) return OpenCV.Core.Mat",
+   "OpenCV.Features.Descriptor_Row|function|function Descriptor_Row (Features : Feature_Set; Index : Positive) return Natural",
+   "OpenCV.Features.Feature_Set|type|type Feature_Set is limited private",
+   "OpenCV.Features.Keypoints|function|function Keypoints (Features : Feature_Set) return Keypoint_Array",
+   "OpenCV.Features.Keypoint|type|type Keypoint is record Position : OpenCV.Float32_Point; Size : OpenCV.Float32_Value; Angle_Degrees : OpenCV.Float32_Value; Response : OpenCV.Float32_Value; Octave : OpenCV.Int32_Value; Class_Id : OpenCV.Int32_Value; end record",
+   "OpenCV.Features.ORB",
+   "OpenCV.Features.ORB.Close|procedure|procedure Close (Self : in out Detector)",
+   "OpenCV.Features.ORB.Configuration|type|type Configuration is record Maximum_Features : Positive := 500; Tuple : Tuple_Size := Two_Samples; Score : Score_Kind := Harris_Score; FAST_Threshold : Natural := 20; end record",
+   "OpenCV.Features.ORB.Create|function|function Create (Parameters : Configuration := (others => <>)) return Detector",
+   "OpenCV.Features.ORB.Detect_And_Compute|function|function Detect_And_Compute (Self : Detector; Image : OpenCV.Core.Mat) return Feature_Set",
+   "OpenCV.Features.ORB.Detect_And_Compute|function|function Detect_And_Compute (Self : Detector; Image, Mask : OpenCV.Core.Mat) return Feature_Set",
+   "OpenCV.Features.ORB.Detector|type|type Detector is tagged limited private",
+   "OpenCV.Features.ORB.Parameters|function|function Parameters (Self : Detector) return Configuration",
+   "OpenCV.Features.Point|function|function Point (Features : Feature_Set; Index : Positive) return Keypoint",
+   "OpenCV.Features.Required_Norm|function|function Required_Norm (Features : Feature_Set) return Binary_Descriptor_Norm"
+  ],
+  "guides/ownership-lifecycle.html": [
+   "OpenCV.Features.Feature_Set|type|type Feature_Set is limited private",
+   "OpenCV.Features.ORB.Close|procedure|procedure Close (Self : in out Detector)",
+   "OpenCV.Features.ORB.Create|function|function Create (Parameters : Configuration := (others => <>)) return Detector",
+   "OpenCV.Features.ORB.Detector|type|type Detector is tagged limited private",
+   "OpenCV.Features.ORB.Is_Ready|function|function Is_Ready (Self : Detector) return Boolean",
+   "OpenCV.Features.ORB.Parameters|function|function Parameters (Self : Detector) return Configuration"
+  ],
+  "guides/platform-compatibility.html": [
+   "OpenCV.Features.Native_Backend|function|function Native_Backend return String",
+   "OpenCV.Features.Native_Version|function|function Native_Version return String"
+  ],
+  "index.html": [
+   "OpenCV.Features",
+   "OpenCV.Features.Correspondences",
+   "OpenCV.Features.Matching",
+   "OpenCV.Features.ORB"
+  ]
+ },
+ "html_pages": 13,
+ "masked_overload": {
+  "identity": [
+   "OpenCV.Features.ORB.Detect_And_Compute|function|function Detect_And_Compute (Self : Detector; Image, Mask : OpenCV.Core.Mat) return Feature_Set"
+  ],
+  "links": [
+   "../api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html#07eb80b590b7f97f4c088474add72fc7d2b3f9a09f745f293468ca8cf358c2df"
+  ],
+  "ok": true
+ },
+ "pages_without_title": [],
+ "per_page": {
+  "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": {
+   "cross-page type links": 2,
+   "fragment references": 7,
+   "h1": [
+    "OpenCV.Features.Correspondences"
+   ],
+   "references": 9,
+   "same-page type links": 2,
+   "scripts": [],
+   "title": "OpenCV.Features.Correspondences \u2014 OpenCV Features Ada",
+   "type links": 4
+  },
+  "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": {
+   "cross-page type links": 2,
+   "fragment references": 22,
+   "h1": [
+    "OpenCV.Features.ORB"
+   ],
+   "references": 24,
+   "same-page type links": 10,
+   "scripts": [],
+   "title": "OpenCV.Features.ORB \u2014 OpenCV Features Ada",
+   "type links": 12
+  },
+  "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": {
+   "fragment references": 24,
+   "h1": [
+    "OpenCV.Features"
+   ],
+   "references": 26,
+   "same-page type links": 11,
+   "scripts": [],
+   "title": "OpenCV.Features \u2014 OpenCV Features Ada",
+   "type links": 11
+  },
+  "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": {
+   "cross-page type links": 6,
+   "fragment references": 32,
+   "h1": [
+    "OpenCV.Features.Matching"
+   ],
+   "references": 34,
+   "same-page type links": 14,
+   "scripts": [],
+   "title": "OpenCV.Features.Matching \u2014 OpenCV Features Ada",
+   "type links": 20
+  },
+  "api/index.html": {
+   "fragment references": 3,
+   "h1": [],
+   "references": 10,
+   "scripts": [
+    "gnatdoc-navigation.js"
+   ],
+   "title": "API Reference \u2014 OpenCV Features Ada"
+  },
+  "guides/binary-matching.html": {
+   "declaration links": 9,
+   "fragment references": 10,
+   "h1": [
+    "Binary matching"
+   ],
+   "links into api/": 11,
+   "package links": 1,
+   "references": 21,
+   "scripts": [],
+   "title": "Binary matching \u2014 OpenCV Features Ada"
+  },
+  "guides/candidate-correspondences.html": {
+   "declaration links": 3,
+   "fragment references": 4,
+   "h1": [
+    "Candidate correspondences"
+   ],
+   "links into api/": 5,
+   "package links": 1,
+   "references": 15,
+   "scripts": [],
+   "title": "Candidate correspondences \u2014 OpenCV Features Ada"
+  },
+  "guides/getting-started.html": {
+   "fragment references": 1,
+   "h1": [
+    "Getting started"
+   ],
+   "links into api/": 5,
+   "package links": 4,
+   "references": 15,
+   "scripts": [],
+   "title": "Getting started \u2014 OpenCV Features Ada"
+  },
+  "guides/limitations-roadmap.html": {
+   "fragment references": 1,
+   "h1": [
+    "Limitations and roadmap"
+   ],
+   "links into api/": 1,
+   "references": 11,
+   "scripts": [],
+   "title": "Limitations and roadmap \u2014 OpenCV Features Ada"
+  },
+  "guides/orb-extraction.html": {
+   "declaration links": 15,
+   "fragment references": 16,
+   "h1": [
+    "ORB feature extraction"
+   ],
+   "links into api/": 17,
+   "package links": 1,
+   "references": 27,
+   "scripts": [],
+   "title": "ORB feature extraction \u2014 OpenCV Features Ada"
+  },
+  "guides/ownership-lifecycle.html": {
+   "declaration links": 6,
+   "fragment references": 7,
+   "h1": [
+    "Ownership and lifecycle"
+   ],
+   "links into api/": 7,
+   "references": 17,
+   "scripts": [],
+   "title": "Ownership and lifecycle \u2014 OpenCV Features Ada"
+  },
+  "guides/platform-compatibility.html": {
+   "declaration links": 2,
+   "fragment references": 3,
+   "h1": [
+    "Platform compatibility"
+   ],
+   "links into api/": 3,
+   "references": 13,
+   "scripts": [],
+   "title": "Platform compatibility \u2014 OpenCV Features Ada"
+  },
+  "index.html": {
+   "fragment references": 1,
+   "h1": [
+    "OpenCV Features for Ada"
+   ],
+   "links into api/": 9,
+   "package links": 7,
+   "references": 26,
+   "scripts": [],
+   "title": "OpenCV Features for Ada documentation"
+  }
+ },
+ "scripts": {
+  "api/index.html": [
+   "gnatdoc-navigation.js"
+  ]
+ },
+ "totals": {
+  "cross-page type links": 10,
+  "declaration links": 35,
+  "fragment references": 131,
+  "links into api/": 58,
+  "package links": 14,
+  "references": 248,
+  "same-page type links": 37,
+  "type links": 47
+ }
+}

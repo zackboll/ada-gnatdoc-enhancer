@@ -1,0 +1,11 @@
+pre-build rc=0
+generate rc=0
+regenerate rc=0
+regen-compare rc=0
+doc-tests-e2e rc=0
+enhance rc=0
+enhance-second rc=0
+enhanced-compare rc=0
+doc-tests-full rc=1
+pages-check rc=1
+census rc=0

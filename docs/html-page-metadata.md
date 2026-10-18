@@ -396,6 +396,43 @@ GNATDOC-009A, GNATDOC-010 or GNATDOC-010R1 is rewritten. See
 [evidence/gnatdoc010r2](evidence/gnatdoc010r2/) for corrective qualification status;
 incomplete gates must not be interpreted as final-head qualification.
 
+R2 local results on implementation commit
+`9134acb194f0b3c0860a8d6a178c4879c502ee38`:
+
+- **464/464 tests**, including 23 additive corrective tests; the installed wheel
+  and the wheel rebuilt from the extracted sdist also pass **464/464** each.
+  Both installed smoke/conformance runs pass; all 31 installed modules/assets
+  match source, and wheel/rebuilt-wheel package contents are identical.
+- All six real consumer profiles pass the unchanged two-stage subtype and
+  metadata reconstruction. Their publication hashes match committed R1 evidence
+  exactly, including the manifest. Features publication also remains byte-identical.
+- Core retains 195 packages, 1,268 declarations and 25 generic summaries;
+  Imgproc retains 314 source-order identities and 1,512/1,512 documented items;
+  Geometry retains two packages, 130 native declarations and 452/452 items.
+  Current Geometry retains 171 local and 96 external type links. MEL retains
+  4,294/4,295 coverage and its one explicitly recognized renderer omission.
+  All consumer warning deltas remain zero; MEL's 1,162 protected files pass.
+- Chromium: Core **1500/1500**, Imgproc and Imgproc008 **1678/1678 each**,
+  historical and current Geometry **1486/1486 each**, MEL **1192/1192**;
+  operation/history **144/144**, subtype desktop/mobile JS on/off **4/4**.
+  No earlier check identities disappear; metadata assertions supplement their
+  existing check bodies. Features metadata/reload/history **100/100** and its
+  unchanged consumer browser suites **64/64** and **109/109** pass.
+- Features retains four public packages, 38 native declaration sections and
+  all 13 titled/language/UTF-8 pages, deterministic regeneration, independent
+  reconstruction and byte-idempotence. The native documentation suite reports
+  84 tests with four conditional skips; the complete Pages-aware suite reports
+  84 tests with exactly one failure, the existing Pages-artifact assertion.
+  Its sole Pages error remains the `lastIndexOf('/')` URL-heuristic false positive.
+  **Features production publication readiness is not claimed.**
+
+The initial negative-first run (19 tests) and the final 23-test regression file
+against exported R1 source both fail as expected; their diagnostics are retained.
+Exploratory browser failures due to waiting on outer-page navigation for native
+iframe history are retained separately from successful corrected runs. A fresh
+tools environment was acquired after the external temporary work tree vanished;
+no historical repository evidence was removed or rewritten.
+
 ## Migration impact
 
 - Every enhanced API page and Markdown guide gains metadata, so their bytes and

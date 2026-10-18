@@ -1,0 +1,136 @@
+{
+  "previous_pushed_head": "8d79707b1f31444cc70646a33d5ab6a8b2392983",
+  "qualified_implementation_commit": "9134acb194f0b3c0860a8d6a178c4879c502ee38",
+  "normal_merge": "077cb5e4e52e90159ae05e77d81597739828226c",
+  "merged_subtype_commit": "426f38852ef7dfff264f73ad01aab458f5e12b23",
+  "original_pr_head": "79f4d2397e36588722eb908ba0ad1674baa13227",
+  "original_base": "53a321915da2c5a02a54581040673b61f8595b25",
+  "tests": {
+    "focused": {
+      "tests": 23,
+      "result": "OK"
+    },
+    "full": {
+      "tests": 464,
+      "result": "OK"
+    },
+    "wheel": {
+      "tests": 464,
+      "result": "OK"
+    },
+    "rebuilt_sdist_wheel": {
+      "tests": 464,
+      "result": "OK"
+    }
+  },
+  "inventory": {
+    "baseline": 441,
+    "additive_regressions": 23,
+    "combined": 464
+  },
+  "negative_first": {
+    "tests": 19,
+    "result": "FAILED (failures=45, errors=3)"
+  },
+  "final_tests_against_original_base": {
+    "tests": 23,
+    "result": "FAILED (failures=47, errors=4)"
+  },
+  "publication_differences_from_r1": {
+    "core": {
+      "changed_files": [],
+      "files": 207,
+      "all_bytes_equal_to_r1": true
+    },
+    "imgproc": {
+      "changed_files": [],
+      "files": 13,
+      "all_bytes_equal_to_r1": true
+    },
+    "geometry": {
+      "changed_files": [],
+      "files": 14,
+      "all_bytes_equal_to_r1": true
+    },
+    "mel": {
+      "changed_files": [],
+      "files": 42,
+      "all_bytes_equal_to_r1": true
+    },
+    "imgproc008": {
+      "changed_files": [],
+      "files": 13,
+      "all_bytes_equal_to_r1": true
+    },
+    "geometry-current": {
+      "changed_files": [],
+      "files": 14,
+      "all_bytes_equal_to_r1": true
+    },
+    "features": {
+      "changed_files": [],
+      "files": 18,
+      "all_bytes_equal_to_r1": true
+    }
+  },
+  "features_pages_ready": false,
+  "features_remaining_error": [
+    "api/gnatdoc-navigation.js: JavaScript contains an absolute or root-relative URL literal"
+  ],
+  "features_follow_up": "Fix Features JavaScript URL heuristic so lastIndexOf('/') is not a URL; retain rejection tests for actual absolute/root-relative resource URLs. Do not change shared navigation JS.",
+  "browser": {
+    "subtype-browser.json": {
+      "checks": 4,
+      "passed": 4,
+      "failed": []
+    },
+    "geometry-current-browser.json": {
+      "checks": 1486,
+      "passed": 1486,
+      "failed": []
+    },
+    "features-browser.json": {
+      "checks": 100,
+      "passed": 100,
+      "failed": []
+    },
+    "imgproc008-browser.json": {
+      "checks": 1678,
+      "passed": 1678,
+      "failed": []
+    },
+    "imgproc-browser.json": {
+      "checks": 1678,
+      "passed": 1678,
+      "failed": []
+    },
+    "operation-browser.json": {
+      "checks": 144,
+      "passed": 144,
+      "failed": []
+    },
+    "geometry-browser.json": {
+      "checks": 1486,
+      "passed": 1486,
+      "failed": []
+    },
+    "core-browser.json": {
+      "checks": 1500,
+      "passed": 1500,
+      "failed": []
+    },
+    "mel-browser.json": {
+      "checks": 1192,
+      "passed": 1192,
+      "failed": []
+    }
+  },
+  "limitations": [
+    "Local Python 3.13; Python 3.11 and 3.12 require exact-head hosted CI.",
+    "Local Chromium only, no deployment or production external hosting claimed.",
+    "Historical pinned fixtures and current Geometry 8690927 are distinct configurations.",
+    "The externally managed /tmp/claude-1000 tree disappeared during browser qualification; fresh tools were installed under /tmp/gnatdoc010r2/tools.",
+    "Exploratory browser failures are preserved; no failing check was removed.",
+    "Final evidence commit and exact-head hosted CI must be reported in PR metadata, not inferred from this implementation-commit record."
+  ]
+}

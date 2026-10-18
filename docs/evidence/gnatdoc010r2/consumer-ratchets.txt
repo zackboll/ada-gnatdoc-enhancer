@@ -1,0 +1,12 @@
+core-warnings rc=0 GNATdoc warning delta: 0 added, 0 removed
+imgproc-warnings rc=0 GNATdoc warning delta: 0 added, 0 removed
+geometry-warnings rc=0 GNATdoc warning delta: 0 added, 0 removed
+mel-warnings rc=0 GNATdoc warning delta: 0 added, 0 removed
+imgproc-coverage rc=0 Documentation coverage: 1512/1512 items (100.0%); 0 newly undocumented, 0 newly documented
+geometry-coverage rc=0 Documentation coverage: 452/452 items (100.0%); 0 newly undocumented, 0 newly documented
+imgproc008-coverage rc=0 Documentation coverage: 1512/1512 items (100.0%); 0 newly undocumented, 0 newly documented
+mel-coverage rc=0 Coverage 4294/4295 (99.9767%); 1238 source / 1237 native / 1 renderer omission
+mel-coverage-pristine rc=0 Coverage 4294/4295 (99.9767%); 1238 source / 1237 native / 1 renderer omission
+geometry-current-coverage rc=0 Documentation coverage: 452/452 items (100.0%); 0 newly undocumented, 0 newly documented
+geometry-current-coverage-pristine rc=0 Documentation coverage: 452/452 items (100.0%); 0 newly undocumented, 0 newly documented
+mel-integrity rc=0 0

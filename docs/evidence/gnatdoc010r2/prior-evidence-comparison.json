@@ -1,0 +1,50 @@
+{
+  "core": {
+    "publication_equals_prior_record": true,
+    "source_revision": "c5545eee815431568495c6c76af83df56cf5c3dd",
+    "metadata_pages": 202,
+    "native_declarations": 1268,
+    "native_packages": 195,
+    "no_link_losses": true
+  },
+  "geometry": {
+    "publication_equals_prior_record": true,
+    "source_revision": "fa81e5140cbebf2aa41397a40c08ba194a5f6f73",
+    "metadata_pages": 9,
+    "native_declarations": 130,
+    "native_packages": 2,
+    "no_link_losses": true
+  },
+  "geometry-current": {
+    "publication_equals_prior_record": true,
+    "source_revision": "8690927853ffa74729206d8997b09046ad3d2246",
+    "metadata_pages": 9,
+    "native_declarations": 130,
+    "native_packages": 2,
+    "no_link_losses": true
+  },
+  "imgproc": {
+    "publication_equals_prior_record": true,
+    "source_revision": "9ce22ae5ab70008e1147475a9e6d7baef82f1df0",
+    "metadata_pages": 8,
+    "native_declarations": 314,
+    "native_packages": 1,
+    "no_link_losses": true
+  },
+  "imgproc008": {
+    "publication_equals_prior_record": true,
+    "source_revision": "9ce22ae5ab70008e1147475a9e6d7baef82f1df0",
+    "metadata_pages": 8,
+    "native_declarations": 314,
+    "native_packages": 1,
+    "no_link_losses": true
+  },
+  "mel": {
+    "publication_equals_prior_record": true,
+    "source_revision": "6065129aba5dee89e70b61e05a9e1c9b2c3061c0",
+    "metadata_pages": 37,
+    "native_declarations": 1237,
+    "native_packages": 29,
+    "no_link_losses": true
+  }
+}

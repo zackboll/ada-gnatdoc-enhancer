@@ -1,0 +1,38 @@
+{
+  "core": {
+    "old_checks": 1500,
+    "current_checks": 1500,
+    "missing_old_checks": [],
+    "all_pass": true
+  },
+  "imgproc": {
+    "old_checks": 1678,
+    "current_checks": 1678,
+    "missing_old_checks": [],
+    "all_pass": true
+  },
+  "imgproc008": {
+    "old_checks": 1678,
+    "current_checks": 1678,
+    "missing_old_checks": [],
+    "all_pass": true
+  },
+  "geometry": {
+    "old_checks": 1486,
+    "current_checks": 1486,
+    "missing_old_checks": [],
+    "all_pass": true
+  },
+  "geometry-current": {
+    "old_checks": 1486,
+    "current_checks": 1486,
+    "missing_old_checks": [],
+    "all_pass": true
+  },
+  "mel": {
+    "old_checks": 1192,
+    "current_checks": 1192,
+    "missing_old_checks": [],
+    "all_pass": true
+  }
+}

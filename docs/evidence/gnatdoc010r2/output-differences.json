@@ -1,0 +1,37 @@
+{
+  "core": {
+    "changed_files": [],
+    "files": 207,
+    "all_bytes_equal_to_r1": true
+  },
+  "imgproc": {
+    "changed_files": [],
+    "files": 13,
+    "all_bytes_equal_to_r1": true
+  },
+  "geometry": {
+    "changed_files": [],
+    "files": 14,
+    "all_bytes_equal_to_r1": true
+  },
+  "mel": {
+    "changed_files": [],
+    "files": 42,
+    "all_bytes_equal_to_r1": true
+  },
+  "imgproc008": {
+    "changed_files": [],
+    "files": 13,
+    "all_bytes_equal_to_r1": true
+  },
+  "geometry-current": {
+    "changed_files": [],
+    "files": 14,
+    "all_bytes_equal_to_r1": true
+  },
+  "features": {
+    "changed_files": [],
+    "files": 18,
+    "all_bytes_equal_to_r1": true
+  }
+}

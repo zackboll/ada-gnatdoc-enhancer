@@ -1,0 +1,559 @@
+test_browser_rejects_charset_language_and_title_mismatch (test_metadata_contract_corrections.BrowserMetadataAssertion.test_browser_rejects_charset_language_and_title_mismatch) ... FAIL
+test_implicit_authored_head_kept (test_metadata_contract_corrections.MalformedTitles.test_implicit_authored_head_kept) ... ok
+test_malformed_head_order (test_metadata_contract_corrections.MalformedTitles.test_malformed_head_order) ... 
+  test_malformed_head_order (test_metadata_contract_corrections.MalformedTitles.test_malformed_head_order) (text='<!doctype html><html lang="en"><meta charset="utf-8"><title>T — P</title><head></head><body><h1>T</h1></body></html>') ... FAIL
+  test_malformed_head_order (test_metadata_contract_corrections.MalformedTitles.test_malformed_head_order) (text='<!doctype html><html lang="en"><head><meta charset="utf-8"><title>T — P</title><body><h1>T</h1></body></html>') ... FAIL
+  test_malformed_head_order (test_metadata_contract_corrections.MalformedTitles.test_malformed_head_order) (text='<!doctype html><head><html lang="en"><meta charset="utf-8"><title>T — P</title></head><body><h1>T</h1></body></html>') ... FAIL
+  test_malformed_head_order (test_metadata_contract_corrections.MalformedTitles.test_malformed_head_order) (text='<!doctype html><html lang="en"><head/><meta charset="utf-8"><title>T — P</title></head><body><h1>T</h1></body></html>') ... FAIL
+test_nested_title (test_metadata_contract_corrections.MalformedTitles.test_nested_title) ... FAIL
+test_second_unclosed_title (test_metadata_contract_corrections.MalformedTitles.test_second_unclosed_title) ... FAIL
+test_unmatched_title_closure (test_metadata_contract_corrections.MalformedTitles.test_unmatched_title_closure) ... FAIL
+test_authored_metadata_preserved (test_metadata_contract_corrections.MetadataInventory.test_authored_metadata_preserved) ... ok
+test_generated_extra_meta_in_head_and_body (test_metadata_contract_corrections.MetadataInventory.test_generated_extra_meta_in_head_and_body) ... 
+  test_generated_extra_meta_in_head_and_body (test_metadata_contract_corrections.MetadataInventory.test_generated_extra_meta_in_head_and_body) (closing='</head>') ... FAIL
+  test_generated_extra_meta_in_head_and_body (test_metadata_contract_corrections.MetadataInventory.test_generated_extra_meta_in_head_and_body) (closing='</body>') ... FAIL
+test_malformed_charset_attributes (test_metadata_contract_corrections.MetadataInventory.test_malformed_charset_attributes) ... 
+  test_malformed_charset_attributes (test_metadata_contract_corrections.MetadataInventory.test_malformed_charset_attributes) (attributes='charset="utf-8" charset="utf-8"') ... FAIL
+  test_malformed_charset_attributes (test_metadata_contract_corrections.MetadataInventory.test_malformed_charset_attributes) (attributes='charset="utf-8" name="x"') ... FAIL
+  test_malformed_charset_attributes (test_metadata_contract_corrections.MetadataInventory.test_malformed_charset_attributes) (attributes='charset') ... ERROR
+test_native_extra_metadata_rejected (test_metadata_contract_corrections.MetadataInventory.test_native_extra_metadata_rejected) ... FAIL
+test_viewport_disabled_policy (test_metadata_contract_corrections.MetadataInventory.test_viewport_disabled_policy) ... ERROR
+test_viewport_enabled_policy (test_metadata_contract_corrections.MetadataInventory.test_viewport_enabled_policy) ... ERROR
+test_authored_html_safety (test_metadata_contract_corrections.TitleSafety.test_authored_html_safety) ... FAIL
+test_authored_markdown_safety (test_metadata_contract_corrections.TitleSafety.test_authored_markdown_safety) ... FAIL
+test_composed_title_boundary (test_metadata_contract_corrections.TitleSafety.test_composed_title_boundary) ... FAIL
+test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) ... 
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\t'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#9;'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\r'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#13;'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\n'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#10;'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\x00'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#0;'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\x1f'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#31;'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\x7f'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#127;'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\u202e'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#8238;'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\u2066'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#8294;'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\u200b'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#8203;'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\ufeff'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#65279;'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\xa0'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#160;'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\u2028'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#8232;'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\u2029'") ... FAIL
+  test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#8233;'") ... FAIL
+test_generated_unsafe_title_rejected_independently (test_metadata_contract_corrections.TitleSafety.test_generated_unsafe_title_rejected_independently) ... FAIL
+test_html_portal_and_guide_safety (test_metadata_contract_corrections.TitleSafety.test_html_portal_and_guide_safety) ... 
+  test_html_portal_and_guide_safety (test_metadata_contract_corrections.TitleSafety.test_html_portal_and_guide_safety) (path='docs/index.html') ... FAIL
+test_html_portal_and_guide_safety (test_metadata_contract_corrections.TitleSafety.test_html_portal_and_guide_safety) ... FAIL
+test_legitimate_author_title_not_rewritten (test_metadata_contract_corrections.TitleSafety.test_legitimate_author_title_not_rewritten) ... ok
+
+======================================================================
+ERROR: test_malformed_charset_attributes (test_metadata_contract_corrections.MetadataInventory.test_malformed_charset_attributes) (attributes='charset')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 124, in test_malformed_charset_attributes
+    check_document(GOOD.replace('charset="utf-8"', attributes), 'api/p.html', generated=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/src/ada_gnatdoc_enhancer/metadata.py", line 125, in check_document
+    require(len(page.charsets) == 1 and page.charsets[0].lower() == 'utf-8',
+                                        ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'lower'
+
+======================================================================
+ERROR: test_viewport_disabled_policy (test_metadata_contract_corrections.MetadataInventory.test_viewport_disabled_policy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 139, in test_viewport_disabled_policy
+    check_document(text, 'api/p.html', generated=True, viewport=False)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: check_document() got an unexpected keyword argument 'viewport'
+
+======================================================================
+ERROR: test_viewport_enabled_policy (test_metadata_contract_corrections.MetadataInventory.test_viewport_enabled_policy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 143, in test_viewport_enabled_policy
+    self.assertEqual(check_document(text, 'api/p.html', generated=True, viewport=True), 'T — P')
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: check_document() got an unexpected keyword argument 'viewport'
+
+======================================================================
+FAIL: test_browser_rejects_charset_language_and_title_mismatch (test_metadata_contract_corrections.BrowserMetadataAssertion.test_browser_rejects_charset_language_and_title_mismatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 159, in test_browser_rejects_charset_language_and_title_mismatch
+    assertion = self.helper()
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 153, in helper
+    self.assertTrue(path.is_file(), 'missing reusable browser metadata assertion')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : missing reusable browser metadata assertion
+
+======================================================================
+FAIL: test_malformed_head_order (test_metadata_contract_corrections.MalformedTitles.test_malformed_head_order) (text='<!doctype html><html lang="en"><meta charset="utf-8"><title>T — P</title><head></head><body><h1>T</h1></body></html>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 44, in test_malformed_head_order
+    with self.subTest(text=text), self.assertRaises(EnhancementError):
+                                  ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_malformed_head_order (test_metadata_contract_corrections.MalformedTitles.test_malformed_head_order) (text='<!doctype html><html lang="en"><head><meta charset="utf-8"><title>T — P</title><body><h1>T</h1></body></html>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 44, in test_malformed_head_order
+    with self.subTest(text=text), self.assertRaises(EnhancementError):
+                                  ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_malformed_head_order (test_metadata_contract_corrections.MalformedTitles.test_malformed_head_order) (text='<!doctype html><head><html lang="en"><meta charset="utf-8"><title>T — P</title></head><body><h1>T</h1></body></html>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 44, in test_malformed_head_order
+    with self.subTest(text=text), self.assertRaises(EnhancementError):
+                                  ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_malformed_head_order (test_metadata_contract_corrections.MalformedTitles.test_malformed_head_order) (text='<!doctype html><html lang="en"><head/><meta charset="utf-8"><title>T — P</title></head><body><h1>T</h1></body></html>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 44, in test_malformed_head_order
+    with self.subTest(text=text), self.assertRaises(EnhancementError):
+                                  ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_nested_title (test_metadata_contract_corrections.MalformedTitles.test_nested_title)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 31, in test_nested_title
+    with self.assertRaises(EnhancementError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_second_unclosed_title (test_metadata_contract_corrections.MalformedTitles.test_second_unclosed_title)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 27, in test_second_unclosed_title
+    with self.assertRaises(EnhancementError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_unmatched_title_closure (test_metadata_contract_corrections.MalformedTitles.test_unmatched_title_closure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 35, in test_unmatched_title_closure
+    with self.assertRaises(EnhancementError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_generated_extra_meta_in_head_and_body (test_metadata_contract_corrections.MetadataInventory.test_generated_extra_meta_in_head_and_body) (closing='</head>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 117, in test_generated_extra_meta_in_head_and_body
+    with self.subTest(closing=closing), self.assertRaisesRegex(EnhancementError, 'metadata'):
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_generated_extra_meta_in_head_and_body (test_metadata_contract_corrections.MetadataInventory.test_generated_extra_meta_in_head_and_body) (closing='</body>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 117, in test_generated_extra_meta_in_head_and_body
+    with self.subTest(closing=closing), self.assertRaisesRegex(EnhancementError, 'metadata'):
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_malformed_charset_attributes (test_metadata_contract_corrections.MetadataInventory.test_malformed_charset_attributes) (attributes='charset="utf-8" charset="utf-8"')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 123, in test_malformed_charset_attributes
+    with self.subTest(attributes=attributes), self.assertRaises(EnhancementError):
+                                              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_malformed_charset_attributes (test_metadata_contract_corrections.MetadataInventory.test_malformed_charset_attributes) (attributes='charset="utf-8" name="x"')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 123, in test_malformed_charset_attributes
+    with self.subTest(attributes=attributes), self.assertRaises(EnhancementError):
+                                              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_native_extra_metadata_rejected (test_metadata_contract_corrections.MetadataInventory.test_native_extra_metadata_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 129, in test_native_extra_metadata_rejected
+    with self.assertRaisesRegex(EnhancementError, 'metadata'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_authored_html_safety (test_metadata_contract_corrections.TitleSafety.test_authored_html_safety)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 95, in test_authored_html_safety
+    with self.assertRaisesRegex(EnhancementError, 'unsafe document title'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_authored_markdown_safety (test_metadata_contract_corrections.TitleSafety.test_authored_markdown_safety)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 105, in test_authored_markdown_safety
+    with self.assertRaisesRegex(EnhancementError, 'unsafe document title'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_composed_title_boundary (test_metadata_contract_corrections.TitleSafety.test_composed_title_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 64, in test_composed_title_boundary
+    with self.assertRaisesRegex(EnhancementError, 'unsafe document title'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\t'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#9;'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\r'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#13;'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\n'")
+----------------------------------------------------------------------
+ada_gnatdoc_enhancer.errors.EnhancementError: empty or malformed document title: author.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "unsafe document title" does not match "empty or malformed document title: author.html"
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#10;'")
+----------------------------------------------------------------------
+ada_gnatdoc_enhancer.errors.EnhancementError: empty or malformed document title: author.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "unsafe document title" does not match "empty or malformed document title: author.html"
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\x00'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#0;'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\x1f'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#31;'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\x7f'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#127;'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\u202e'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#8238;'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\u2066'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#8294;'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\u200b'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#8203;'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\ufeff'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#65279;'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\xa0'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#160;'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\u2028'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#8232;'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'\\u2029'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) (value="'&#8233;'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 56, in test_decoded_controls_and_separators
+    with self.subTest(value=repr(encoded)), self.assertRaisesRegex(
+                                            ~~~~~~~~~~~~~~~~~~~~~~^
+            EnhancementError, 'unsafe document title'):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_generated_unsafe_title_rejected_independently (test_metadata_contract_corrections.TitleSafety.test_generated_unsafe_title_rejected_independently)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 110, in test_generated_unsafe_title_rejected_independently
+    with self.assertRaisesRegex(EnhancementError, 'unsafe document title'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_html_portal_and_guide_safety (test_metadata_contract_corrections.TitleSafety.test_html_portal_and_guide_safety) (path='docs/index.html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 83, in test_html_portal_and_guide_safety
+    with self.subTest(path=relative), self.assertRaisesRegex(EnhancementError, 'unsafe document title'):
+                                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_html_portal_and_guide_safety (test_metadata_contract_corrections.TitleSafety.test_html_portal_and_guide_safety)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 85, in test_html_portal_and_guide_safety
+    self.assertEqual(hashes(site), before)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'api[69 chars]l': 'cd7b48d32b9ae563e0619cab801a3967b3362d88e[5297 chars]572'} != {'api[69 chars]l': '2c32f21cfaf29afa7bc82da9a2ac90e9e0e3b22b9[4253 chars]1d5'}
+Diff is 9929 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 19 tests in 4.442s
+
+FAILED (failures=45, errors=3)
