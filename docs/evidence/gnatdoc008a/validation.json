@@ -1,0 +1,66 @@
+{
+  "additional_geometry_corrections": 40,
+  "after_label_errors": 0,
+  "api_frame_history": {
+    "cause": "gnatdoc-navigation.js tracks package only and uses frame.contentWindow.location.replace; no overload fragment history is pushed",
+    "classification": "Pre-existing shared UI limitation; not introduced by source-order fix; separately reported, no UI changes",
+    "corrected_fail": 4,
+    "corrected_pass": 108,
+    "followup": "Independent decision or separate narrowly scoped history fix required before full browser acceptance.",
+    "unchanged_baseline_fail": 4
+  },
+  "baseline_tests": 352,
+  "before_label_errors": 66,
+  "browser": "Existing full-site Chromium harness: Core 1442/1442, Imgproc 1620/1620, Geometry 1428/1428, MEL 1126/1126 pass. Corrected-overload dedicated harness: 108/112 pass; four pre-existing API-frame history failures, independently reproduced on unchanged baseline.",
+  "browser_harness_followup": "Initial full harness recorded 4 Imgproc + 4 Geometry authored keyboard failures waiting for bare API URL rather than initialized package query. Initial records retained. Narrow harness-only fix requires exact initialized first native-package URL and visible controls; corrected full Imgproc and Geometry runs pass. No production UI or existing assertion removed. API-frame history failures remain separate.",
+  "consumer_negative_tests": 24,
+  "consumer_pr_72_modified": false,
+  "consumer_pr_head": "f2989da6c6a593f6196d1d989be0b2d126743dc6",
+  "consumer_source": "9ce22ae5ab70008e1147475a9e6d7baef82f1df0",
+  "corrected_tests": 372,
+  "disposition": "PARTIAL_NAVIGATION_COMPATIBILITY",
+  "distribution": "Repeated final local, installed wheel, extracted sdist/rebuilt wheel: 372/372 each pass. Four-profile conformance pass.",
+  "four_site_structural": "pass",
+  "full_browser_counts": {
+    "core": {
+      "fail": 0,
+      "pass": 1442
+    },
+    "geometry": {
+      "fail": 0,
+      "pass": 1428
+    },
+    "imgproc": {
+      "fail": 0,
+      "pass": 1620
+    },
+    "mel": {
+      "fail": 0,
+      "pass": 1126
+    }
+  },
+  "geometry_independent_oracle": "130/130 exact labels, destinations, categories and display order verified by unchanged pinned Geometry entries().",
+  "historical_evidence_modified": false,
+  "hosted_ci": "Implementation c077b08 push run 39063280586: all Python 3.11/3.12/3.13 and wheel/sdist jobs passed. Final head must be checked separately; pending.",
+  "imgproc_navigation_entries": 314,
+  "implementation_sha": "c077b088cb6764157afe1edfb69e8aa6ee84aafe",
+  "local_tests": 372,
+  "mel_policy": "Unchanged original policy executed: 1162 protected files, reviewed native tests original; coverage 4294/4295, 1238 source/1237 native/1 approved omission.",
+  "new_tests": 20,
+  "qualification_setup_failures": [
+    "First run used an already authored predecessor: duplicate guides TOML section; retried with original GNATDOC-006 native-only predecessor.",
+    "Second run compared a mutable historical Imgproc output restored to pristine by prior tamper qualification; replaced that invalid comparison with independent f52dcfe baseline reconstruction from pinned inputs.",
+    "Initial full test/distribution run found an existing mocked authored.packages seam removed by refactor; restored injectable source inventory and retained original test unchanged. Corrected full suite and both distribution runs pass.",
+    "Initial browser harness waited for bare index URL, but existing JS adds package query; corrected expected observed index URL. Initial failure record retained.",
+    "Consumer negative harness initially rejected the original checkout containing ignored symlinks; rerun using isolated clean shared clone passed 24/24."
+  ],
+  "remaining_blockers": [
+    "independent review",
+    "separate disposition of pre-existing API-frame overload Back/Forward limitation",
+    "final exact-head Python 3.11/3.12/3.13 + distribution hosted CI",
+    "separate consumer PR #72 update using reviewed immutable merge SHA"
+  ],
+  "scope_of_output_changes": "Only Imgproc/Geometry api/index.html + api/presentation.json; all native destinations identical; Core/MEL byte-identical",
+  "starting_sha": "f52dcfe37dc2819d86e72e1c38425e5e49d914eb",
+  "structural_tested_sha": "6a0d99528f42f90dd72b339be42a21e229eb6697"
+}

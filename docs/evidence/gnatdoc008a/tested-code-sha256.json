@@ -1,0 +1,6 @@
+{
+  "src/ada_gnatdoc_enhancer/authored.py": "ab263beb88bbd5602b8f61b5269486a56b6ffb91930d641ab192e87dc2cb66de",
+  "src/ada_gnatdoc_enhancer/destinations.py": "7a10181adafbfe236ee7999db5f5093ef746fe367e4e186a15698cb9c04e2bc6",
+  "src/ada_gnatdoc_enhancer/navigation.py": "8687b0ebd90eaf92c7fe1c27749bb063654754ad11dedbceda8f10047cdabc8c",
+  "tests/test_operation_navigation.py": "9c015e2050d7b28814af3e578ca51b33a3a72f795ce5dd26d8dd59e3b201c454"
+}

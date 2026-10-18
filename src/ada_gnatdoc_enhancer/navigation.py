@@ -7,6 +7,7 @@ import re
 from pathlib import Path
 
 from .config import Config
+from .destinations import source_destinations
 from .native_html import NativeSite
 from .theme import asset
 from .util import inside, require
@@ -23,35 +24,60 @@ def operation_entries(config: Config, native: NativeSite):
     if config.navigation!='operations':return []
     require(config.category_file is not None,"operation navigation requires categories JSON")
     data=json.loads(inside(config.root,config.category_file).read_text(encoding='utf-8'))
-    require(data.get('version')==1,"unsupported category manifest version")
+    require(isinstance(data,dict) and data.get('version')==1,"unsupported category manifest version")
     if 'packages' in data:
         require(set(data)=={'version','packages'},"unexpected category manifest keys")
+        require(isinstance(data['packages'],list) and data['packages'],"empty category packages")
+        require(all(isinstance(x,dict) and set(x)=={'package','categories'} for x in data['packages']),
+                "invalid category package structure")
         groups=[(x['package'],x['categories']) for x in data['packages']]
     else:
         require(set(data)=={'version','categories'},"unexpected category manifest keys")
         require(len(native.pages)==1,"multi-package categories must declare package identities")
         groups=[(next(iter(native.pages.values())).package,data['categories'])]
-    result=[]
+    identities=source_destinations(config,native)
+    result=[]; seen_packages=set(); seen_categories=set(); used=set()
     for package,categories in groups:
-        page=native.pages.get(package.lower())
-        require(page is not None, f"unknown categorized package: {package}")
+        require(isinstance(package,str),"invalid category package")
+        key=package.lower()
+        require(key in identities, f"unknown categorized package: {package}")
+        require(key not in seen_packages,"duplicate categorized package")
+        seen_packages.add(key)
+        require(isinstance(categories,list) and categories,"empty categories")
+        available={d.declaration.name.lower() for d in identities[key]}
+        assigned=set()
         for category in categories:
-            require(set(category)=={'id','title','declarations'},"unknown category keys")
+            require(isinstance(category,dict) and set(category)=={'id','title','declarations'},"unknown category keys")
             cid,title=category['id'],category['title']
-            require(re.fullmatch(r'[a-z][a-z0-9-]*',cid)!=None,"unsafe category slug")
+            require(isinstance(cid,str) and re.fullmatch(r'[a-z][a-z0-9-]*',cid)!=None,"unsafe category slug")
+            require(cid not in seen_categories,"duplicate category identity")
+            seen_categories.add(cid)
             require(isinstance(title,str) and bool(title),"invalid category title")
+            names=category['declarations']
+            require(isinstance(names,list) and names,"empty category declarations")
+            selected=set()
+            for requested in names:
+                require(isinstance(requested,str),"invalid category operation")
+                name=requested.lower()
+                require(name in available, f"unresolved operation: {package}.{requested}")
+                require(name not in assigned,"duplicate operation category assignment")
+                assigned.add(name); selected.add(name)
             resolved=[]
-            for requested in category['declarations']:
-                matches=[s for s in page.sections if s.name.lower()==requested.lower()]
-                require(matches, f"unresolved operation: {package}.{requested}")
-                # An overloaded operation becomes one clickable item per actual
-                # native declaration; native anchors are never invented.
-                for section in matches:
-                    resolved.append((f"{section.name} ({len(resolved)+1})" if len(matches)>1 else section.name,
-                                     page.path.name+'#'+section.anchor))
-            require(len(set(target for _,target in resolved))==len(resolved),
-                    "duplicate operation destinations in category")
+            # Consumer presentation order is alphabetical, then source ordinal;
+            # neither category declaration lists nor native section order number overloads.
+            for destination in sorted((d for d in identities[key] if d.declaration.name.lower() in selected),
+                                      key=lambda d:(d.declaration.name.lower(),d.ordinal)):
+                name=destination.declaration.name
+                label=f"{name} ({destination.ordinal})" if destination.total>1 else name
+                require(destination.href not in used,"duplicate operation destinations")
+                used.add(destination.href)
+                resolved.append((label,destination.href))
             result.append((package,cid,title,resolved))
+        require(assigned==available,f"missing category assignments: {package}: {sorted(available-assigned)}")
+        require({d.href for d in identities[key]}==
+                {native.pages[key].path.name+'#'+s.anchor for s in native.pages[key].sections},
+                f"incomplete source/native operation identities: {package}")
+    require(seen_packages==set(identities),"missing categorized packages")
     return result
 
 

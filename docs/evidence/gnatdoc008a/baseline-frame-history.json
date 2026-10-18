@@ -1,0 +1,39 @@
+{
+  "browser": "Chromium 156.0.8078.4",
+  "checks": [
+    {
+      "check": "API frame overload Back Forward (existing UI, not changed here)",
+      "javascript": true,
+      "reason": "Page.evaluate: Execution context was destroyed, most likely because of a navigation.",
+      "status": "fail",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "API frame overload Back Forward (existing UI, not changed here)",
+      "javascript": true,
+      "reason": "Page.evaluate: Execution context was destroyed, most likely because of a navigation.",
+      "status": "fail",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "API frame overload Back Forward (existing UI, not changed here)",
+      "javascript": true,
+      "reason": "Page.evaluate: Execution context was destroyed, most likely because of a navigation.",
+      "status": "fail",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "API frame overload Back Forward (existing UI, not changed here)",
+      "javascript": true,
+      "reason": "Page.evaluate: Execution context was destroyed, most likely because of a navigation.",
+      "status": "fail",
+      "theme": "dark",
+      "width": 390
+    }
+  ],
+  "scope": "real pinned Imgproc; local Chromium, no production publication",
+  "status": "fail"
+}

@@ -1,0 +1,91 @@
+{
+  "sites": {
+    "core": {
+      "byte_idempotent": true,
+      "verification": {
+        "declaration_snippets": 1268,
+        "files": 207,
+        "generic_actual_type_links": 25,
+        "generic_conversion_package_links": 1,
+        "generic_member_links": 51,
+        "generic_summary_links": 102,
+        "generic_template_links": 25,
+        "html_pages": 202,
+        "linked_external_types": 0,
+        "linked_local_types": 2459,
+        "linked_types": 2459,
+        "links": 4565,
+        "matrix_summaries": 1,
+        "mode": "verified",
+        "native_instance_member_declarations": 0,
+        "presentation_only_anchors": 25,
+        "public_packages": 195,
+        "qualified_generic_instances": 25,
+        "unrendered_renderer_exceptions": 0,
+        "unsupported_instances": [],
+        "vector_summaries": 24
+      }
+    },
+    "geometry": {
+      "byte_idempotent": true,
+      "verification": {
+        "declaration_snippets": 130,
+        "files": 14,
+        "html_pages": 9,
+        "linked_external_types": 95,
+        "linked_local_types": 171,
+        "linked_types": 266,
+        "links": 749,
+        "mode": "verified",
+        "public_packages": 2,
+        "unrendered_renderer_exceptions": 0
+      }
+    },
+    "imgproc": {
+      "byte_idempotent": true,
+      "verification": {
+        "declaration_snippets": 314,
+        "files": 13,
+        "html_pages": 8,
+        "linked_external_types": 549,
+        "linked_local_types": 326,
+        "linked_types": 875,
+        "links": 1750,
+        "mode": "verified",
+        "public_packages": 1,
+        "unrendered_renderer_exceptions": 0
+      }
+    },
+    "imgproc008": {
+      "byte_idempotent": true,
+      "verification": {
+        "declaration_snippets": 314,
+        "files": 13,
+        "html_pages": 8,
+        "linked_external_types": 549,
+        "linked_local_types": 326,
+        "linked_types": 875,
+        "links": 1750,
+        "mode": "verified",
+        "public_packages": 1,
+        "unrendered_renderer_exceptions": 0
+      }
+    },
+    "mel": {
+      "byte_idempotent": true,
+      "verification": {
+        "declaration_snippets": 1237,
+        "files": 42,
+        "html_pages": 37,
+        "linked_external_types": 0,
+        "linked_local_types": 1418,
+        "linked_types": 1418,
+        "links": 2965,
+        "mode": "verified",
+        "public_packages": 29,
+        "unrendered_renderer_exceptions": 1
+      }
+    }
+  },
+  "tested_sha": "6a0d99528f42f90dd72b339be42a21e229eb6697"
+}

@@ -1,0 +1,45 @@
+{
+  "source_revision": "9ce22ae5ab70008e1147475a9e6d7baef82f1df0",
+  "consumer_head": "f2989da6c6a593f6196d1d989be0b2d126743dc6",
+  "native_sha256": "b1ace2e8cbf9821e929afaf9bcad80b5a14b34c05376cfe307a30654180152f4",
+  "source_sha256": "03b369760efd81af8c550abd5c9cb6439b4f24b88c62e4b31c7fad4c04824563",
+  "extraction": "Unmodified declaration signatures and native SECTION excerpts; package wrapper only is reduced. Expected labels/hrefs/profiles from unchanged independent consumer entries().",
+  "source_lines": [
+    {
+      "name": "Squared_Box_Filter",
+      "line": 79
+    },
+    {
+      "name": "Get_Gaussian_Kernel",
+      "line": 2492
+    },
+    {
+      "name": "Get_Gaussian_Kernel",
+      "line": 2510
+    },
+    {
+      "name": "Pyramid_Up",
+      "line": 2677
+    },
+    {
+      "name": "Pyramid_Up",
+      "line": 2703
+    },
+    {
+      "name": "Bilateral_Filter",
+      "line": 3501
+    },
+    {
+      "name": "Bilateral_Filter",
+      "line": 3539
+    },
+    {
+      "name": "Filter_2D",
+      "line": 3568
+    },
+    {
+      "name": "Filter_2D",
+      "line": 3615
+    }
+  ]
+}
