@@ -86,6 +86,9 @@ The pending target is owned only by explicit selection/restoration. Frame loads
 are acknowledgements, never history writers. A stale load cannot update selected
 state or outer history; while a newer target is pending it reissues only that
 approved target. Same-document hash changes acknowledge matching pending state.
+Superseded in-flight approved targets are remembered in a bounded allowlist set,
+so an old completion delivered even after a newer acknowledgement restores the
+current target rather than leaving the frame on that obsolete request.
 External/untracked loads after completion do not change tracked outer state.
 An explicit approved selection can recover from a cross-origin frame using the
 cross-origin-permitted `location.replace` operation. Deterministic event-double

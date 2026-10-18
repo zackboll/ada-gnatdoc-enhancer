@@ -55,17 +55,20 @@
     }
   },
   "wheel_tests": 392,
-  "sdist_tests": "running",
+  "sdist_tests": 392,
   "disposition": "HOSTED_CI_PENDING",
   "historical_evidence_modified": false,
   "consumer_pr_72_modified": false,
   "consumer_pr_72_head": "f2989da6c6a593f6196d1d989be0b2d126743dc6",
   "hosted_ci": "Not yet run on this branch. Exact final SHA and checks must be recorded in PR report, without self-referential evidence commits.",
   "remaining_blockers": [
+    "fresh final runtime full-site/distribution/browser qualification",
     "exact-final-head hosted CI",
-    "completion of extracted-sdist qualification",
     "independent review",
     "separate consumer integration PR outside this task"
   ],
-  "scope": "Runtime: navigation JS only. Publication: navigation JS and presentation hashes only. No HTML/CSS or resolver changes."
+  "scope": "Runtime: navigation JS only. Publication: navigation JS and presentation hashes only. No HTML/CSS or resolver changes.",
+  "implementation_sha": "05f47f311daf035677c05a7af0c347d7c66e3cd9",
+  "pr": "https://github.com/zackboll/ada-gnatdoc-enhancer/pull/9",
+  "qualification_note": "Previous complete pass results above apply to initial asset. Additional superseded-after-ack guard now requires fresh final runtime qualification; see final-head records."
 }

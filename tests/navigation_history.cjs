@@ -93,6 +93,10 @@ if (scenario in queries) {
   t.pop('?package=Alpha&declaration='+two);
   t.complete(base+b+'.html#'+other);t.state('Alpha',two);
   t.complete(base+a+'.html#'+two);t.state('Alpha',two);
+  // Even a completion delivered AFTER the newer navigation acknowledges must
+  // not leave the iframe at the superseded target.
+  t.complete(base+a+'.html#'+one);t.state('Alpha',two);
+  t.complete(base+a+'.html#'+two);t.state('Alpha',two);
   assert.equal(t.calls.filter(c=>c[0]==='push').length,2);
 } else if (scenario==='invalid_pop') {
   const t=setup();const n=t.calls.length;t.pop('?package=Beta&declaration='+one);

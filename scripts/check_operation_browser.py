@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Executed Chromium source-profile/fragment assertions for GNATDOC-008A.
+"""Executed Chromium source-profile/fragment/history assertions for GNATDOC-008A/B.
 
 The oracle proof is produced by qualify_operation_navigation.py. This checks
 actual clicks and rendered declarations, not merely matching link labels.
@@ -12,7 +12,7 @@ import subprocess
 import threading
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import urlencode, urljoin, urlsplit
+from urllib.parse import urlencode, urlsplit
 
 from ada_gnatdoc_enhancer.inventory import normalized
 from ada_gnatdoc_enhancer.util import digest
@@ -253,6 +253,29 @@ def run(workspace, proof, history_only=False, geometry=None):
                                         f = page.frame(name='document-content')
                                         f.wait_for_url(geometry_base+next(h for name,h in packages if name==wrong))
                                         require(f.locator('h1').inner_text() == wrong, 'cross-package anchor accepted')
+                                        # Distinct real declaration destinations across both owners.
+                                        chosen = []
+                                        for name, href in packages:
+                                            link = page.locator('.operation-group a[href^="'+href+'#"]').first
+                                            native_href = link.get_attribute('href')
+                                            link.click()
+                                            f = page.frame(name='document-content'); f.wait_for_url(geometry_base+native_href)
+                                            anchor = native_href.split('#')[1]
+                                            profile = f.locator('h4[id="'+anchor+'"]').locator('xpath=following-sibling::pre[1]').inner_text()
+                                            require(bool(profile.strip()), 'empty cross-package native profile')
+                                            chosen.append((name, native_href, profile))
+                                        def operation_state(d):
+                                            name, href, profile = d
+                                            page.wait_for_url(geometry_base+'index.html?'+urlencode({'package':name,'declaration':href.split('#')[1]}))
+                                            f = page.frame(name='document-content'); f.wait_for_url(geometry_base+href)
+                                            require(f.locator('h1').inner_text() == name, 'wrong declaration owner')
+                                            require(f.locator('h4[id="'+href.split('#')[1]+'"]').locator(
+                                                'xpath=following-sibling::pre[1]').inner_text() == profile, 'wrong restored cross-package profile')
+                                        length = page.evaluate('history.length')
+                                        for _ in range(3):
+                                            page.evaluate('history.back()'); operation_state(chosen[0])
+                                            page.evaluate('history.forward()'); operation_state(chosen[1])
+                                        require(page.evaluate('history.length') == length, 'declaration restoration wrote history')
                                     check('real Geometry cross-package history and wrong-owner rejection', cross_package, **dimensions)
                             def search():
                                 page.goto(base+'index.html'); page.locator('#package-search').fill('Filter_2D')

@@ -7,5 +7,10 @@
     "pass": 108,
     "fail": 4
   },
-  "first_baseline_test_attempt": "372 executed; 1 determinism failure: live editable asset changed during run. Preserved log; repeat against immutable baseline archive required."
+  "first_baseline_test_attempt": "372 executed; 1 determinism failure: live editable asset changed during run. Preserved log; repeat against immutable baseline archive required.",
+  "immutable_archive_baseline_tests": {
+    "pass": 372,
+    "fail": 0,
+    "seconds": 146.303
+  }
 }

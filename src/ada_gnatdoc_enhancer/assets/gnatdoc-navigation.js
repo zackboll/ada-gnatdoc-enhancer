@@ -40,6 +40,7 @@
   }
   const defaultState = approved.get(first.url.href);
   let pending = null;
+  const superseded = new Set();
   const observedDocuments = new WeakSet();
   function select(state) {
     for (const l of allLinks) l.removeAttribute('aria-current');
@@ -69,6 +70,8 @@
     catch (_) { return null; }
   }
   function navigate(state) {
+    if (pending && pending.url.href!==state.url.href) superseded.add(pending.url.href);
+    superseded.delete(state.url.href);
     pending=state;
     if (frameUrl()===state.url.href) { pending=null; return; }
     // The outer entry owns history. assign()/src would add joint iframe entries.
@@ -106,7 +109,11 @@
   frame.addEventListener('load', () => {
     // Loads are acknowledgements, never history writers. An older completion
     // cannot replace a newer selection or restored state.
-    if (pending && frameUrl()!==pending.url.href) { navigate(pending); return; }
+    const loaded=frameUrl();
+    if (pending && loaded!==pending.url.href) { navigate(pending); return; }
+    if (!pending && superseded.has(loaded) && loaded!==current.url.href) {
+      superseded.delete(loaded);navigate(current);return;
+    }
     pending=null;
     try {
       const doc=frame.contentDocument;
