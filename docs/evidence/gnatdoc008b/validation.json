@@ -62,7 +62,6 @@
   "consumer_pr_72_head": "f2989da6c6a593f6196d1d989be0b2d126743dc6",
   "hosted_ci": "Not yet run on this branch. Exact final SHA and checks must be recorded in PR report, without self-referential evidence commits.",
   "remaining_blockers": [
-    "completion of final runtime Imgproc full browser and synchronized harness rerun",
     "exact-final-head hosted CI",
     "independent review",
     "separate consumer integration PR outside this task"
@@ -70,7 +69,7 @@
   "scope": "Runtime: navigation JS only. Publication: navigation JS and presentation hashes only. No HTML/CSS or resolver changes.",
   "implementation_sha": "05f47f311daf035677c05a7af0c347d7c66e3cd9",
   "pr": "https://github.com/zackboll/ada-gnatdoc-enhancer/pull/9",
-  "qualification_note": "Final-runtime evidence supersedes predecessor asset results. Retains 142/144 run overlapped with destructive tamper tests; isolated repeat passes 144/144.",
+  "qualification_note": "Final runtime fully qualified: local/wheel/sdist 392 each, full four-site Chromium original counts preserved, history 144/144, consumer tamper rejection 24/24. Earlier failures retained. Final commit differs only in harness attachment synchronization and evidence/docs.",
   "runtime_sha": "4ae81808afaaa5815c9a68302fb46d7b8110dec6",
   "final_runtime_local_tests": 392,
   "final_runtime_wheel_tests": 392,
@@ -79,6 +78,25 @@
   "final_runtime_history_browser": {
     "pass": 144,
     "fail": 0,
-    "report": "final-runtime/operation-browser-after-tamper-completion.json"
-  }
+    "report": "final-runtime/operation-browser-committed-head.json"
+  },
+  "final_runtime_full_browser": {
+    "core": {
+      "pass": 1442,
+      "fail": 0
+    },
+    "imgproc": {
+      "pass": 1620,
+      "fail": 0
+    },
+    "geometry": {
+      "pass": 1428,
+      "fail": 0
+    },
+    "mel": {
+      "pass": 1126,
+      "fail": 0
+    }
+  },
+  "committed_harness_tested_sha": "17f35044de02bbb1bc64326dc755d4ffa50acc8f"
 }

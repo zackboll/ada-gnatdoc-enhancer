@@ -1,0 +1,20 @@
+{
+  "final-dist": {
+    "wheel": "ada_gnatdoc_enhancer-0.1.0.dev0-py3-none-any.whl",
+    "wheel_sha256": "e912dec9bdc19334dff05b28c98465635761d316b8687041accb57df14b31dd3",
+    "asset_sha256": "b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd",
+    "tests": 392,
+    "pass": true
+  },
+  "final-sdist-wheel": {
+    "wheel": "ada_gnatdoc_enhancer-0.1.0.dev0-py3-none-any.whl",
+    "wheel_sha256": "3082458b280809eadd6113e7241cf8f109351d997bcae59cd853b721239fcfe8",
+    "asset_sha256": "b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd",
+    "tests": 392,
+    "pass": true
+  },
+  "sdist": {
+    "sha256": "3b65dd51007a0fc46b5b23a12f6b97dcfee58cf60c05ef6eff4c7e77c16fa8f3",
+    "event_double_included": true
+  }
+}
