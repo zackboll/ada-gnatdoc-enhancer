@@ -14,7 +14,7 @@ from .config import Config
 from .errors import EnhancementError
 from .inventory import Package
 from .native_html import NativeSite
-from .util import QNAME, require
+from .util import IDENT, QNAME, require
 
 KEYWORDS = frozenset('''abort abs abstract accept access aliased all and array at begin body
 case constant declare delay delta digits do else elsif end entry exception exit for
@@ -37,6 +37,11 @@ SIMPLE_TYPE = re.compile(r'^'+QNAME+'$', re.I)
 TYPE_MARK = re.compile(
     r'(?<![\w.])(?:return|of|\bis\s+(?:new|access|not\s+null\s+access)|:\s*(?:not\s+null\s+)?(?:aliased\s+)?(?:(?:in\s+out|in|out|access|constant)\s+)*)\s*('
     + QNAME + r')\b', re.I)
+# A complete declaration snippet, not arbitrary "is Name" syntax. Attributes,
+# null exclusions and other unsupported subtype indications remain unguessed.
+SUBTYPE_BASE = re.compile(
+    r'^\s*subtype\s+' + IDENT + r'\s+is\s+(' + QNAME +
+    r')(?=\s*(?:;|\(|\brange\b))', re.I)
 STANDARD = frozenset('integer natural positive boolean float long_float long_long_float string wide_string duration character wide_character interfaces'.split())
 
 
@@ -149,7 +154,11 @@ def type_positions(code: str):
     """Typed contexts only; do not link constraints, defaults or attributes."""
     positions=[]
     from .inventory import mask_ada
-    for m in TYPE_MARK.finditer(mask_ada(code)):
+    masked=mask_ada(code)
+    matches=list(TYPE_MARK.finditer(masked))
+    base=SUBTYPE_BASE.match(masked)
+    if base is not None:matches.append(base)
+    for m in sorted(matches,key=lambda m:m.start(1)):
         word=m[1]
         if word.lower() not in KEYWORDS and word.lower() not in STANDARD:
             positions.append((m.start(1),m.end(1),word))
@@ -161,7 +170,13 @@ def linked(raw: str, pkg: Package, source: dict[str, Package],
     require('<' not in raw,"type linking requires raw GNATdoc snippets")
     text,starts,ends=escaped_offsets(raw)
     inserts=[]
+    from .inventory import mask_ada
+    base=SUBTYPE_BASE.match(mask_ada(text))
     for a,b,name in type_positions(text):
+        if base is not None and (a,b)==base.span(1):
+            # Reuse the existing flat public-scope guard also for local bases.
+            # A snippet alone must not newly authorize a nested/aliased scope.
+            if not external_visible(pkg.name.lower(),pkg):continue
         target=resolve(name,pkg,source,targets,config.externals)
         if target is None:continue
         identity,kind=target

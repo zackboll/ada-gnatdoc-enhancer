@@ -1,0 +1,70 @@
+{
+  "mutations": [
+    {
+      "diagnostic": "source differs from qualified presentation manifest",
+      "name": "changed-source-type-identity",
+      "observed": true,
+      "rejected": true,
+      "restored": true
+    },
+    {
+      "diagnostic": "published file differs from reconstructed output: api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html",
+      "name": "wrong-but-existing-published-Core-anchor",
+      "observed": true,
+      "rejected": true,
+      "restored": true
+    },
+    {
+      "diagnostic": "dependency native artifact changed",
+      "name": "substituted-Core-native-bytes",
+      "observed": true,
+      "rejected": true,
+      "restored": true
+    },
+    {
+      "diagnostic": "native declaration profile unmatched or swapped: OpenCV.Geometry.Contour at 71; requires unique exact or supported source-verified profile (unsupported/ambiguous projection rejected)",
+      "name": "forged-native-profile-in-output-manifest",
+      "observed": true,
+      "rejected": true,
+      "restored": true
+    },
+    {
+      "diagnostic": "enhanced output does not match source/manifest",
+      "name": "forged-output-hash-cannot-authorize-link",
+      "observed": true,
+      "rejected": true,
+      "restored": true
+    },
+    {
+      "diagnostic": "external dependency repository/revision mismatch",
+      "name": "browser-fixture-substituted-for-Core-dependency",
+      "observed": true,
+      "rejected": true,
+      "restored": true
+    },
+    {
+      "diagnostic": "external dependency repository/revision mismatch",
+      "name": "failed-enhancement-atomic",
+      "observed": true,
+      "rejected": true,
+      "restored": true
+    }
+  ],
+  "publication_reverified_after_every_mutation": true,
+  "restored_site_sha256": {
+    "api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html": "200c9399a05fd82ee30710ab302e8f0af7d416309fe360b53f6b012835c5679e",
+    "api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html": "0f3967d25f19131bd9bc69255d1ccd2a6af5251ad698760a35836e81eca55b5d",
+    "api/gnatdoc-navigation.js": "b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd",
+    "api/gnatdoc-theme.css": "cf06637732a8b047a7191bfb991a5c3da7cd31a52076876880d5f8a3f63929bc",
+    "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+    "api/index.html": "32f58242532e9647085d7a4b9c72355143c49343d3e9a2d2c35e589f8b42c5c9",
+    "api/presentation.json": "e5c098b3d9c1463ceabaf6765c7b1adc760ee0a76f015045e09028a048d950d0",
+    "guides/affine-and-perspective-geometry.html": "c11ab615347c6a52751d7451f2d93478ede73c824b761f0a3be17435909c5396",
+    "guides/compatibility-ownership-and-safety.html": "cbaf4f82fd791ac1394566e4e2677f23e2c3eb3119f98b335f7ba2fcb94e854c",
+    "guides/delaunay-and-voronoi.html": "e47d3dd0af18a4035481698e826207b3cd6b76e93369e93ba8df527d27e94be3",
+    "guides/geometry-fundamentals-and-contours.html": "1388217ef07bb56171bd6f1f220663b766d1f074c323ecaaa12cb901ab12992b",
+    "guides/gnatdoc-guides.css": "8461dad011b761734cbeaeaeca741b0cf45f777efe6dc381802ef0d1fe0ad3bc",
+    "guides/shape-fitting-and-intersections.html": "3e2aff4b934d764bb7cf440e31d1411e352d3047540162d919c85eee44880a83",
+    "index.html": "5db416e22306bdc0df26567173002a94da4184d7e9f2ce9a046a86d20617011b"
+  }
+}

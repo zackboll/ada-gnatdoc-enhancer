@@ -1,0 +1,137 @@
+{
+  "checks": [
+    {
+      "exact_native_profile": "type Point_Array is array (Natural range <>) of Point;",
+      "javascript": true,
+      "status": "pass",
+      "target": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#da696e09a1f1b297516365244e16533e23cca626f26df4bb3f727a64beb697b0",
+      "verified_native_requests": [
+        {
+          "sha256": "322960abaa53682f113481ae778098b8e38263c1b4e128ab6c41f37f0b4b34ec",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html"
+        },
+        {
+          "sha256": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/gnatdoc.css"
+        },
+        {
+          "sha256": "322960abaa53682f113481ae778098b8e38263c1b4e128ab6c41f37f0b4b34ec",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html"
+        },
+        {
+          "sha256": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/gnatdoc.css"
+        },
+        {
+          "sha256": "322960abaa53682f113481ae778098b8e38263c1b4e128ab6c41f37f0b4b34ec",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html"
+        },
+        {
+          "sha256": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/gnatdoc.css"
+        }
+      ],
+      "width": 1280
+    },
+    {
+      "exact_native_profile": "type Point_Array is array (Natural range <>) of Point;",
+      "javascript": false,
+      "status": "pass",
+      "target": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#da696e09a1f1b297516365244e16533e23cca626f26df4bb3f727a64beb697b0",
+      "verified_native_requests": [
+        {
+          "sha256": "322960abaa53682f113481ae778098b8e38263c1b4e128ab6c41f37f0b4b34ec",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html"
+        },
+        {
+          "sha256": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/gnatdoc.css"
+        },
+        {
+          "sha256": "322960abaa53682f113481ae778098b8e38263c1b4e128ab6c41f37f0b4b34ec",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html"
+        },
+        {
+          "sha256": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/gnatdoc.css"
+        },
+        {
+          "sha256": "322960abaa53682f113481ae778098b8e38263c1b4e128ab6c41f37f0b4b34ec",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html"
+        },
+        {
+          "sha256": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/gnatdoc.css"
+        }
+      ],
+      "width": 1280
+    },
+    {
+      "exact_native_profile": "type Point_Array is array (Natural range <>) of Point;",
+      "javascript": true,
+      "status": "pass",
+      "target": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#da696e09a1f1b297516365244e16533e23cca626f26df4bb3f727a64beb697b0",
+      "verified_native_requests": [
+        {
+          "sha256": "322960abaa53682f113481ae778098b8e38263c1b4e128ab6c41f37f0b4b34ec",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html"
+        },
+        {
+          "sha256": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/gnatdoc.css"
+        },
+        {
+          "sha256": "322960abaa53682f113481ae778098b8e38263c1b4e128ab6c41f37f0b4b34ec",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html"
+        },
+        {
+          "sha256": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/gnatdoc.css"
+        },
+        {
+          "sha256": "322960abaa53682f113481ae778098b8e38263c1b4e128ab6c41f37f0b4b34ec",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html"
+        },
+        {
+          "sha256": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/gnatdoc.css"
+        }
+      ],
+      "width": 390
+    },
+    {
+      "exact_native_profile": "type Point_Array is array (Natural range <>) of Point;",
+      "javascript": false,
+      "status": "pass",
+      "target": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#da696e09a1f1b297516365244e16533e23cca626f26df4bb3f727a64beb697b0",
+      "verified_native_requests": [
+        {
+          "sha256": "322960abaa53682f113481ae778098b8e38263c1b4e128ab6c41f37f0b4b34ec",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html"
+        },
+        {
+          "sha256": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/gnatdoc.css"
+        },
+        {
+          "sha256": "322960abaa53682f113481ae778098b8e38263c1b4e128ab6c41f37f0b4b34ec",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html"
+        },
+        {
+          "sha256": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/gnatdoc.css"
+        },
+        {
+          "sha256": "322960abaa53682f113481ae778098b8e38263c1b4e128ab6c41f37f0b4b34ec",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html"
+        },
+        {
+          "sha256": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+          "url": "https://core.invalid/f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f/api/gnatdoc.css"
+        }
+      ],
+      "width": 390
+    }
+  ],
+  "production_hosting_verified": false
+}

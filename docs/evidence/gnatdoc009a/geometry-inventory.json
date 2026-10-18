@@ -1,0 +1,8 @@
+{
+  "native_declaration_sections": 130,
+  "project": "opencv_geometry_ada",
+  "public_packages": [
+    "OpenCV.Geometry",
+    "OpenCV.Geometry.Subdiv2D"
+  ]
+}
