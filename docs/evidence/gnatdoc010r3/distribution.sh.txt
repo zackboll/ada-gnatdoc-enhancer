@@ -1,0 +1,22 @@
+#!/bin/sh
+set -eu
+R=/tmp/gnatdoc010r3
+E=/home/zboll/git/ada-gnatdoc-enhancer-010
+mkdir -p "$R/dist/source" "$R/dist/run"
+git -C "$E" archive HEAD | tar -x -C "$R/dist/source"
+(cd "$R/dist/source" && "$R/build-env/bin/python" -m build --outdir "$R/dist/artifacts") > "$R/dist/build.txt" 2>&1
+/tmp/gnatdoc010r2/tools/bin/uv venv --python 3.12.15 --seed "$R/dist/wheel-env"
+"$R/dist/wheel-env/bin/pip" -q install "$R"/dist/artifacts/*.whl markdown-it-py==3.0.0 mdurl==0.1.2
+cd "$R/dist/run"; unset PYTHONPATH
+"$R/dist/wheel-env/bin/python" "$E/scripts/test_installed.py" --fixtures "$E/tests/fixtures" > "$R/dist/wheel-smoke.json" 2>&1
+"$R/dist/wheel-env/bin/python" -I -m unittest discover -s "$R/dist/source/tests" -v > "$R/dist/wheel-tests.txt" 2>&1
+"$R/dist/wheel-env/bin/pip" -q wheel --no-deps --wheel-dir "$R/dist/rebuilt" "$R"/dist/artifacts/*.tar.gz > "$R/dist/rebuild.txt" 2>&1
+mkdir "$R/dist/extracted"; tar -xzf "$R"/dist/artifacts/*.tar.gz -C "$R/dist/extracted"
+/tmp/gnatdoc010r2/tools/bin/uv venv --python 3.12.15 --seed "$R/dist/sdist-env"
+"$R/dist/sdist-env/bin/pip" -q install "$R"/dist/rebuilt/*.whl markdown-it-py==3.0.0 mdurl==0.1.2
+cd "$R"/dist/extracted/ada_gnatdoc_enhancer-*
+"$R/dist/sdist-env/bin/python" -I -m unittest discover -s tests -v > "$R/dist/sdist-tests.txt" 2>&1
+"$R/dist/sdist-env/bin/gnatdoc-enhancer" conformance --fixtures tests/fixtures > "$R/dist/sdist-conformance.json"
+cd "$R/dist/run"
+"$R/dist/sdist-env/bin/python" "$E/scripts/test_installed.py" --fixtures "$E/tests/fixtures" > "$R/dist/sdist-smoke.json" 2>&1
+sha256sum "$R"/dist/artifacts/* "$R"/dist/rebuilt/* > "$R/dist/artifacts.txt"

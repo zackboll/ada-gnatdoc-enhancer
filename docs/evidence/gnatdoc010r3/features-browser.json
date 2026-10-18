@@ -1,0 +1,647 @@
+{
+  "browser": "Chromium 156.0.8078.4",
+  "checks": [
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/index.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/binary-matching.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/candidate-correspondences.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/getting-started.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/limitations-roadmap.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/orb-extraction.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/ownership-lifecycle.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/platform-compatibility.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "index.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "portal guide navigation and Back Forward titles",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "guide keyboard focus is visible",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "API frame titles follow package navigation and history",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "API search and clear",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "deep-linked native declaration keeps its title",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/index.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/binary-matching.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/candidate-correspondences.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/getting-started.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/limitations-roadmap.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/orb-extraction.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/ownership-lifecycle.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/platform-compatibility.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "index.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "portal guide navigation and Back Forward titles",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "guide keyboard focus is visible",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "API frame titles follow package navigation and history",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "API search and clear",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "deep-linked native declaration keeps its title",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/index.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/binary-matching.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/candidate-correspondences.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/getting-started.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/limitations-roadmap.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/orb-extraction.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/ownership-lifecycle.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/platform-compatibility.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "index.html",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "portal guide navigation and Back Forward titles",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "guide keyboard focus is visible",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "API frame titles follow package navigation and history",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "API search and clear",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "deep-linked native declaration keeps its title",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "api/index.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/binary-matching.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/candidate-correspondences.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/getting-started.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/limitations-roadmap.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/orb-extraction.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/ownership-lifecycle.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "guides/platform-compatibility.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "page title language charset below prefix",
+      "page": "index.html",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "portal guide navigation and Back Forward titles",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "guide keyboard focus is visible",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "API frame titles follow package navigation and history",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "API search and clear",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "deep-linked native declaration keeps its title",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "JavaScript-disabled page title",
+      "page": "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+      "status": "pass"
+    },
+    {
+      "check": "JavaScript-disabled page title",
+      "page": "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+      "status": "pass"
+    },
+    {
+      "check": "JavaScript-disabled page title",
+      "page": "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+      "status": "pass"
+    },
+    {
+      "check": "JavaScript-disabled page title",
+      "page": "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+      "status": "pass"
+    },
+    {
+      "check": "JavaScript-disabled page title",
+      "page": "api/index.html",
+      "status": "pass"
+    },
+    {
+      "check": "JavaScript-disabled page title",
+      "page": "guides/binary-matching.html",
+      "status": "pass"
+    },
+    {
+      "check": "JavaScript-disabled page title",
+      "page": "guides/candidate-correspondences.html",
+      "status": "pass"
+    },
+    {
+      "check": "JavaScript-disabled page title",
+      "page": "guides/getting-started.html",
+      "status": "pass"
+    },
+    {
+      "check": "JavaScript-disabled page title",
+      "page": "guides/limitations-roadmap.html",
+      "status": "pass"
+    },
+    {
+      "check": "JavaScript-disabled page title",
+      "page": "guides/orb-extraction.html",
+      "status": "pass"
+    },
+    {
+      "check": "JavaScript-disabled page title",
+      "page": "guides/ownership-lifecycle.html",
+      "status": "pass"
+    },
+    {
+      "check": "JavaScript-disabled page title",
+      "page": "guides/platform-compatibility.html",
+      "status": "pass"
+    },
+    {
+      "check": "JavaScript-disabled page title",
+      "page": "index.html",
+      "status": "pass"
+    },
+    {
+      "check": "JavaScript-disabled native navigation frame title",
+      "status": "pass"
+    },
+    {
+      "check": "mobile JavaScript-disabled metadata and reload",
+      "page": "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+      "status": "pass"
+    },
+    {
+      "check": "mobile JavaScript-disabled metadata and reload",
+      "page": "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+      "status": "pass"
+    },
+    {
+      "check": "mobile JavaScript-disabled metadata and reload",
+      "page": "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+      "status": "pass"
+    },
+    {
+      "check": "mobile JavaScript-disabled metadata and reload",
+      "page": "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+      "status": "pass"
+    },
+    {
+      "check": "mobile JavaScript-disabled metadata and reload",
+      "page": "api/index.html",
+      "status": "pass"
+    },
+    {
+      "check": "mobile JavaScript-disabled metadata and reload",
+      "page": "guides/binary-matching.html",
+      "status": "pass"
+    },
+    {
+      "check": "mobile JavaScript-disabled metadata and reload",
+      "page": "guides/candidate-correspondences.html",
+      "status": "pass"
+    },
+    {
+      "check": "mobile JavaScript-disabled metadata and reload",
+      "page": "guides/getting-started.html",
+      "status": "pass"
+    },
+    {
+      "check": "mobile JavaScript-disabled metadata and reload",
+      "page": "guides/limitations-roadmap.html",
+      "status": "pass"
+    },
+    {
+      "check": "mobile JavaScript-disabled metadata and reload",
+      "page": "guides/orb-extraction.html",
+      "status": "pass"
+    },
+    {
+      "check": "mobile JavaScript-disabled metadata and reload",
+      "page": "guides/ownership-lifecycle.html",
+      "status": "pass"
+    },
+    {
+      "check": "mobile JavaScript-disabled metadata and reload",
+      "page": "guides/platform-compatibility.html",
+      "status": "pass"
+    },
+    {
+      "check": "mobile JavaScript-disabled metadata and reload",
+      "page": "index.html",
+      "status": "pass"
+    },
+    {
+      "check": "mobile JavaScript-disabled iframe metadata history",
+      "status": "pass"
+    }
+  ],
+  "pages": 13,
+  "passed": 100,
+  "prefix": "/opencv_features_ada/",
+  "scope": "local Chromium below a project prefix; not hosted, cross-browser or screen-reader",
+  "status": "pass",
+  "titles": {
+    "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": "OpenCV.Features.Correspondences \u2014 OpenCV Features Ada",
+    "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": "OpenCV.Features.ORB \u2014 OpenCV Features Ada",
+    "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": "OpenCV.Features \u2014 OpenCV Features Ada",
+    "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": "OpenCV.Features.Matching \u2014 OpenCV Features Ada",
+    "api/index.html": "API Reference \u2014 OpenCV Features Ada",
+    "guides/binary-matching.html": "Binary matching \u2014 OpenCV Features Ada",
+    "guides/candidate-correspondences.html": "Candidate correspondences \u2014 OpenCV Features Ada",
+    "guides/getting-started.html": "Getting started \u2014 OpenCV Features Ada",
+    "guides/limitations-roadmap.html": "Limitations and roadmap \u2014 OpenCV Features Ada",
+    "guides/orb-extraction.html": "ORB feature extraction \u2014 OpenCV Features Ada",
+    "guides/ownership-lifecycle.html": "Ownership and lifecycle \u2014 OpenCV Features Ada",
+    "guides/platform-compatibility.html": "Platform compatibility \u2014 OpenCV Features Ada",
+    "index.html": "OpenCV Features for Ada documentation"
+  }
+}

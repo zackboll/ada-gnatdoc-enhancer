@@ -1,0 +1,19 @@
+#!/bin/sh
+set -eu
+W=/tmp/gnatdoc010r2/consumers
+O=/tmp/gnatdoc010r3/ratchets
+A=/tmp/gnatdoc002-acquisition
+E=/tmp/gnatdoc007/exports
+mkdir -p "$O"
+run() { name=$1; shift; "$@" > "$O/$name.txt" 2>&1; echo "$name PASS $(tail -n 1 "$O/$name.txt")"; }
+run core-warnings python3 "$A/core/snapshot/scripts/compare_gnatdoc_warnings.py" "$A/core/snapshot/docs/gnatdoc-warning-baseline.txt" "$A/core/gnatdoc.log" --sources "$A/core/snapshot/src"
+for n in imgproc geometry mel; do
+ run "$n-warnings" python3 "$A/$n/snapshot/scripts/compare_gnatdoc_warnings.py" --fail-on-removed "$A/$n/snapshot/docs/gnatdoc-warning-baseline.txt" "$A/$n/gnatdoc.log"
+done
+for n in imgproc geometry; do
+ run "$n-coverage" python3 "$E/$n/scripts/check_doc_coverage.py" --fail-on-removed "$E/$n/docs/gnatdoc-coverage-baseline.txt" "$W/$n/first/_site"
+done
+run imgproc008-coverage python3 "$E/imgproc/scripts/check_doc_coverage.py" --fail-on-removed "$E/imgproc/docs/gnatdoc-coverage-baseline.txt" "$W/imgproc008/first/_site"
+run geometry-current-coverage python3 "$E/geometry/scripts/check_doc_coverage.py" --fail-on-removed "$E/geometry/docs/gnatdoc-coverage-baseline.txt" "$W/geometry-current/first/_site"
+run mel-coverage python3 "$A/mel/snapshot/scripts/check_doc_coverage.py" "$W/mel/first/_site" --root "$A/mel/snapshot" --report "$O/mel-coverage.json"
+run mel-integrity sh -c 'cd /tmp/gnatdoc002-integrity-mel/source && python3 scripts/check_doc_source_integrity.py && git status --porcelain'

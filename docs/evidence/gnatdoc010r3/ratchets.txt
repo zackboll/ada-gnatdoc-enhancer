@@ -1,0 +1,10 @@
+core-warnings PASS GNATdoc warning delta: 0 added, 0 removed
+imgproc-warnings PASS GNATdoc warning delta: 0 added, 0 removed
+geometry-warnings PASS GNATdoc warning delta: 0 added, 0 removed
+mel-warnings PASS GNATdoc warning delta: 0 added, 0 removed
+imgproc-coverage PASS Documentation coverage: 1512/1512 items (100.0%); 0 newly undocumented, 0 newly documented
+geometry-coverage PASS Documentation coverage: 452/452 items (100.0%); 0 newly undocumented, 0 newly documented
+imgproc008-coverage PASS Documentation coverage: 1512/1512 items (100.0%); 0 newly undocumented, 0 newly documented
+geometry-current-coverage PASS Documentation coverage: 452/452 items (100.0%); 0 newly undocumented, 0 newly documented
+mel-coverage PASS Coverage 4294/4295 (99.9767%); 1238 source / 1237 native / 1 renderer omission
+mel-integrity PASS {'base': '42648a92eb0cc84b2980d16db6028992c0494ba1', 'protected_files': 1162, 'reviewed_native_tests': 'original'}

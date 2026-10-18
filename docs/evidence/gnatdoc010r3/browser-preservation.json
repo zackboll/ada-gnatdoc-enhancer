@@ -1,0 +1,47 @@
+{
+  "imgproc008": {
+    "checks": 1678,
+    "all_pass": true,
+    "no_prior_checks_lost": true
+  },
+  "imgproc": {
+    "checks": 1678,
+    "all_pass": true,
+    "no_prior_checks_lost": true
+  },
+  "geometry-current": {
+    "checks": 1486,
+    "all_pass": true,
+    "no_prior_checks_lost": true
+  },
+  "geometry": {
+    "checks": 1486,
+    "all_pass": true,
+    "no_prior_checks_lost": true
+  },
+  "mel": {
+    "checks": 1192,
+    "all_pass": true,
+    "no_prior_checks_lost": true
+  },
+  "core": {
+    "checks": 1500,
+    "all_pass": true,
+    "no_prior_checks_lost": true
+  },
+  "features": {
+    "checks": 100,
+    "all_pass": true,
+    "no_prior_checks_lost": true
+  },
+  "operation": {
+    "checks": 144,
+    "all_pass": true,
+    "no_prior_checks_lost": true
+  },
+  "subtype": {
+    "checks": 4,
+    "all_pass": true,
+    "no_prior_checks_lost": true
+  }
+}

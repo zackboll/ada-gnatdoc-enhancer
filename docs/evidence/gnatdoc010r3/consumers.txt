@@ -1,0 +1,7 @@
+core PASS 202 pages; R2/base bytes identical
+geometry PASS 9 pages; R2/base bytes identical
+geometry-current PASS 9 pages; R2/base bytes identical
+imgproc PASS 8 pages; R2/base bytes identical
+imgproc008 PASS 8 pages; R2/base bytes identical
+mel PASS 37 pages; R2/base bytes identical
+features PASS 13 pages; R2 bytes identical

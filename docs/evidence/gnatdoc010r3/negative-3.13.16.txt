@@ -1,0 +1,46 @@
+test_browser_rejects_charset_language_and_title_mismatch (test_metadata_contract_corrections.BrowserMetadataAssertion.test_browser_rejects_charset_language_and_title_mismatch) ... ok
+test_implicit_authored_head_kept (test_metadata_contract_corrections.MalformedTitles.test_implicit_authored_head_kept) ... ok
+test_malformed_head_order (test_metadata_contract_corrections.MalformedTitles.test_malformed_head_order) ... ok
+test_metadata_after_root_closure (test_metadata_contract_corrections.MalformedTitles.test_metadata_after_root_closure) ... ok
+test_nested_title (test_metadata_contract_corrections.MalformedTitles.test_nested_title) ... FAIL
+test_second_unclosed_title (test_metadata_contract_corrections.MalformedTitles.test_second_unclosed_title) ... ok
+test_title_comment_not_misread_as_browser_text (test_metadata_contract_corrections.MalformedTitles.test_title_comment_not_misread_as_browser_text) ... FAIL
+test_unmatched_title_closure (test_metadata_contract_corrections.MalformedTitles.test_unmatched_title_closure) ... ok
+test_authored_metadata_preserved (test_metadata_contract_corrections.MetadataInventory.test_authored_metadata_preserved) ... ok
+test_generated_extra_meta_in_head_and_body (test_metadata_contract_corrections.MetadataInventory.test_generated_extra_meta_in_head_and_body) ... ok
+test_malformed_charset_attributes (test_metadata_contract_corrections.MetadataInventory.test_malformed_charset_attributes) ... ok
+test_native_extra_metadata_rejected (test_metadata_contract_corrections.MetadataInventory.test_native_extra_metadata_rejected) ... ok
+test_viewport_disabled_policy (test_metadata_contract_corrections.MetadataInventory.test_viewport_disabled_policy) ... ok
+test_viewport_enabled_policy (test_metadata_contract_corrections.MetadataInventory.test_viewport_enabled_policy) ... ok
+test_authored_html_safety (test_metadata_contract_corrections.TitleSafety.test_authored_html_safety) ... ok
+test_authored_markdown_safety (test_metadata_contract_corrections.TitleSafety.test_authored_markdown_safety) ... ok
+test_composed_title_boundary (test_metadata_contract_corrections.TitleSafety.test_composed_title_boundary) ... ok
+test_decoded_controls_and_separators (test_metadata_contract_corrections.TitleSafety.test_decoded_controls_and_separators) ... ok
+test_generated_unsafe_title_rejected_independently (test_metadata_contract_corrections.TitleSafety.test_generated_unsafe_title_rejected_independently) ... ok
+test_html_portal_and_guide_safety (test_metadata_contract_corrections.TitleSafety.test_html_portal_and_guide_safety) ... ok
+test_legitimate_author_title_not_rewritten (test_metadata_contract_corrections.TitleSafety.test_legitimate_author_title_not_rewritten) ... ok
+test_markdown_mode_portal_safety (test_metadata_contract_corrections.TitleSafety.test_markdown_mode_portal_safety) ... ok
+test_markdown_mode_unsafe_component (test_metadata_contract_corrections.TitleSafety.test_markdown_mode_unsafe_component) ... ok
+
+======================================================================
+FAIL: test_nested_title (test_metadata_contract_corrections.MalformedTitles.test_nested_title)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 30, in test_nested_title
+    with self.assertRaises(EnhancementError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_title_comment_not_misread_as_browser_text (test_metadata_contract_corrections.MalformedTitles.test_title_comment_not_misread_as_browser_text)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_metadata_contract_corrections.py", line 51, in test_title_comment_not_misread_as_browser_text
+    with self.assertRaises(EnhancementError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+----------------------------------------------------------------------
+Ran 23 tests in 3.152s
+
+FAILED (failures=2)

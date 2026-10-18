@@ -1,0 +1,12 @@
+test_actual_document_rejects_raw_markup_and_malformed_closures (test_title_rcdata.SerializedTitles.test_actual_document_rejects_raw_markup_and_malformed_closures) ... ok
+test_escaped_markup_looking_text_is_not_markup (test_title_rcdata.SerializedTitles.test_escaped_markup_looking_text_is_not_markup) ... ok
+test_numeric_controls_cannot_disappear_in_rcdata (test_title_rcdata.SerializedTitles.test_numeric_controls_cannot_disappear_in_rcdata) ... ok
+test_offsets_and_case_are_not_guessed_from_decoded_text (test_title_rcdata.SerializedTitles.test_offsets_and_case_are_not_guessed_from_decoded_text) ... ok
+test_raw_boundary_accepts_escaped_unicode_and_preserves_serialization (test_title_rcdata.SerializedTitles.test_raw_boundary_accepts_escaped_unicode_and_preserves_serialization) ... ok
+test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) ... ok
+test_raw_boundary_rejects_unfinished_closure (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_unfinished_closure) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK

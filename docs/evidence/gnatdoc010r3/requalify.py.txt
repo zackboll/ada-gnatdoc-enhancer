@@ -1,0 +1,58 @@
+"""Fresh rebuild of R2 reviewed inputs; no historical workspace is modified."""
+import importlib.util
+import json
+from pathlib import Path
+import shutil
+import sys
+
+from ada_gnatdoc_enhancer.config import load
+from ada_gnatdoc_enhancer.metadata import Document
+from ada_gnatdoc_enhancer.pipeline import enhance, verify
+from ada_gnatdoc_enhancer.qualification import bind_pristine, hashes, identities, preserve_native
+
+REPO = Path('/home/zboll/git/ada-gnatdoc-enhancer-010')
+OLD = Path('/tmp/gnatdoc010r2')
+OUT = Path('/tmp/gnatdoc010r3')
+spec = importlib.util.spec_from_file_location('qualifier', REPO/'scripts/qualify_page_metadata.py')
+qualifier = importlib.util.module_from_spec(spec); spec.loader.exec_module(qualifier)
+reviewed = json.loads((REPO/'docs/evidence/gnatdoc010r2/consumer-metadata.json').read_text())
+report = {}
+for name, prior in reviewed.items():
+    inputs = OLD/'consumers'/name/'first'
+    pristine = OLD/'consumers'/name/'pristine' if name != 'geometry-current' else Path('/tmp/gnatdoc009-pristine-first')
+    # Reuse the unchanged separately installed 009A -> metadata qualifier.
+    record = qualifier.qualify(name, inputs, pristine, prior['consumer_revision'],
+                               str(OUT/'base-env/bin/python'), OUT/'consumers')
+    assert record['output_sha256'] == prior['output_sha256'], name
+    base = OUT/'consumers'/name/'predecessor/_site'
+    oldbase = OLD/'consumers'/name/'predecessor/_site'
+    assert hashes(base) == hashes(oldbase), '009A baseline changed: ' + name
+    record['r2_publication_equal'] = True
+    record['r2_independent_009a_predecessor_equal'] = True
+    record['subtype_links'] = prior['subtype_links']
+    record['subtype_reconciliation'] = 'base and combined bytes equal the separately reconciled R2 artifacts'
+    # Verify dry-run of a fresh pristine copy as well as already-enhanced idempotence.
+    dry = OUT/'dry-run'/name
+    shutil.copytree(pristine, dry)
+    config = load(OUT/'consumers'/name/'first', 'qualification.toml')
+    before = hashes(dry); enhance(config, dry, dry_run=True); assert hashes(dry) == before
+    record['dry_run_immutable'] = True
+    report[name] = record
+    (OUT/'consumer-requalification.json').write_text(json.dumps(report, indent=2)+'\n')
+    print(name, 'PASS', record['html_pages'], 'pages; R2/base bytes identical', flush=True)
+
+inputs = OLD/'features/cand'; config = load(inputs, 'docs/gnatdoc-enhance.toml')
+site = OUT/'features/first'; shutil.copytree(inputs/'_site', site)
+before = hashes(site); enhance(config, site, dry_run=True); assert hashes(site) == before
+enhance(config, site); result = verify(config, site); bind_pristine(inputs/'_site', site)
+preserve = preserve_native(identities(inputs/'_site'), site, config=config, pristine=inputs/'_site')
+state = hashes(site); enhance(config, site); assert state == hashes(site)
+second = OUT/'features/second'; shutil.copytree(inputs/'_site', second); enhance(config, second)
+assert state == hashes(second) == hashes(inputs/'_site-enhanced')
+docs = [Document(p.read_text()) for p in site.rglob('*.html')]
+assert len(docs) == 13 and all(len(d.titles) == 1 and d.charsets == ['utf-8'] for d in docs)
+(OUT/'features-requalification.json').write_text(json.dumps({
+    'publication': result, 'native': preserve, 'r2_bytes_equal': True, 'two_copy_deterministic': True,
+    'byte_idempotent': True, 'dry_run_immutable': True, 'metadata_pages': len(docs),
+    'output_sha256': state, 'source_revision': '78a07df8bfd4884a9546cee78904fb5ff93aae21'}, indent=2)+'\n')
+print('features PASS 13 pages; R2 bytes identical', flush=True)

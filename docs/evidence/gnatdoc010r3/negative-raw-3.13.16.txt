@@ -1,0 +1,294 @@
+test_actual_document_rejects_raw_markup_and_malformed_closures (test_title_rcdata.SerializedTitles.test_actual_document_rejects_raw_markup_and_malformed_closures) ... 
+  test_actual_document_rejects_raw_markup_and_malformed_closures (test_title_rcdata.SerializedTitles.test_actual_document_rejects_raw_markup_and_malformed_closures) (title='<title>T<title>N</title>') ... FAIL
+  test_actual_document_rejects_raw_markup_and_malformed_closures (test_title_rcdata.SerializedTitles.test_actual_document_rejects_raw_markup_and_malformed_closures) (title='<title>T<!--comment--></title>') ... FAIL
+  test_actual_document_rejects_raw_markup_and_malformed_closures (test_title_rcdata.SerializedTitles.test_actual_document_rejects_raw_markup_and_malformed_closures) (title='<title>T<b>B</b></title>') ... FAIL
+  test_actual_document_rejects_raw_markup_and_malformed_closures (test_title_rcdata.SerializedTitles.test_actual_document_rejects_raw_markup_and_malformed_closures) (title='<title>T</title extra>') ... FAIL
+  test_actual_document_rejects_raw_markup_and_malformed_closures (test_title_rcdata.SerializedTitles.test_actual_document_rejects_raw_markup_and_malformed_closures) (title='<title>T</title/>') ... FAIL
+test_escaped_markup_looking_text_is_not_markup (test_title_rcdata.SerializedTitles.test_escaped_markup_looking_text_is_not_markup) ... 
+  test_escaped_markup_looking_text_is_not_markup (test_title_rcdata.SerializedTitles.test_escaped_markup_looking_text_is_not_markup) (raw='&lt;title&gt;T') ... ERROR
+  test_escaped_markup_looking_text_is_not_markup (test_title_rcdata.SerializedTitles.test_escaped_markup_looking_text_is_not_markup) (raw='T&lt;!-- comment --&gt;') ... ERROR
+  test_escaped_markup_looking_text_is_not_markup (test_title_rcdata.SerializedTitles.test_escaped_markup_looking_text_is_not_markup) (raw='&#60;Ada&#62;') ... ERROR
+  test_escaped_markup_looking_text_is_not_markup (test_title_rcdata.SerializedTitles.test_escaped_markup_looking_text_is_not_markup) (raw='&amp;lt;Ada&amp;gt;') ... ERROR
+test_numeric_controls_cannot_disappear_in_rcdata (test_title_rcdata.SerializedTitles.test_numeric_controls_cannot_disappear_in_rcdata) ... ok
+test_raw_boundary_accepts_escaped_unicode_and_preserves_serialization (test_title_rcdata.SerializedTitles.test_raw_boundary_accepts_escaped_unicode_and_preserves_serialization) ... ERROR
+test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) ... 
+  test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='<title>Nested') ... ERROR
+  test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='T<!-- comment -->') ... ERROR
+  test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='T<b>bold</b>') ... ERROR
+  test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='T<') ... ERROR
+  test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='T</ title>') ... ERROR
+  test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='T<?instruction?>') ... ERROR
+  test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='T<![CDATA[x]]>') ... ERROR
+  test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='T</title extra>') ... ERROR
+  test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='T</title/>') ... ERROR
+test_raw_boundary_rejects_unfinished_closure (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_unfinished_closure) ... 
+  test_raw_boundary_rejects_unfinished_closure (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_unfinished_closure) (serialized='<title>T') ... ERROR
+  test_raw_boundary_rejects_unfinished_closure (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_unfinished_closure) (serialized='<title>T</title') ... ERROR
+  test_raw_boundary_rejects_unfinished_closure (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_unfinished_closure) (serialized='<title>T</title ') ... ERROR
+  test_raw_boundary_rejects_unfinished_closure (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_unfinished_closure) (serialized='<title>T</title!>') ... ERROR
+
+======================================================================
+ERROR: test_escaped_markup_looking_text_is_not_markup (test_title_rcdata.SerializedTitles.test_escaped_markup_looking_text_is_not_markup) (raw='&lt;title&gt;T')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 40, in test_escaped_markup_looking_text_is_not_markup
+    self.assertEqual(self.boundary('<title>' + raw + '</title>')[1], decoded)
+                     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+ERROR: test_escaped_markup_looking_text_is_not_markup (test_title_rcdata.SerializedTitles.test_escaped_markup_looking_text_is_not_markup) (raw='T&lt;!-- comment --&gt;')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 40, in test_escaped_markup_looking_text_is_not_markup
+    self.assertEqual(self.boundary('<title>' + raw + '</title>')[1], decoded)
+                     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+ERROR: test_escaped_markup_looking_text_is_not_markup (test_title_rcdata.SerializedTitles.test_escaped_markup_looking_text_is_not_markup) (raw='&#60;Ada&#62;')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 40, in test_escaped_markup_looking_text_is_not_markup
+    self.assertEqual(self.boundary('<title>' + raw + '</title>')[1], decoded)
+                     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+ERROR: test_escaped_markup_looking_text_is_not_markup (test_title_rcdata.SerializedTitles.test_escaped_markup_looking_text_is_not_markup) (raw='&amp;lt;Ada&amp;gt;')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 40, in test_escaped_markup_looking_text_is_not_markup
+    self.assertEqual(self.boundary('<title>' + raw + '</title>')[1], decoded)
+                     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+ERROR: test_raw_boundary_accepts_escaped_unicode_and_preserves_serialization (test_title_rcdata.SerializedTitles.test_raw_boundary_accepts_escaped_unicode_and_preserves_serialization)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 18, in test_raw_boundary_accepts_escaped_unicode_and_preserves_serialization
+    content, decoded, closing = self.boundary(serialized)
+                                ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+ERROR: test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='<title>Nested')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 28, in test_raw_boundary_rejects_literal_markup_without_tokenizing_it
+    self.boundary('<title>' + raw + '</title>')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+ERROR: test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='T<!-- comment -->')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 28, in test_raw_boundary_rejects_literal_markup_without_tokenizing_it
+    self.boundary('<title>' + raw + '</title>')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+ERROR: test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='T<b>bold</b>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 28, in test_raw_boundary_rejects_literal_markup_without_tokenizing_it
+    self.boundary('<title>' + raw + '</title>')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+ERROR: test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='T<')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 28, in test_raw_boundary_rejects_literal_markup_without_tokenizing_it
+    self.boundary('<title>' + raw + '</title>')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+ERROR: test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='T</ title>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 28, in test_raw_boundary_rejects_literal_markup_without_tokenizing_it
+    self.boundary('<title>' + raw + '</title>')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+ERROR: test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='T<?instruction?>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 28, in test_raw_boundary_rejects_literal_markup_without_tokenizing_it
+    self.boundary('<title>' + raw + '</title>')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+ERROR: test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='T<![CDATA[x]]>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 28, in test_raw_boundary_rejects_literal_markup_without_tokenizing_it
+    self.boundary('<title>' + raw + '</title>')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+ERROR: test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='T</title extra>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 28, in test_raw_boundary_rejects_literal_markup_without_tokenizing_it
+    self.boundary('<title>' + raw + '</title>')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+ERROR: test_raw_boundary_rejects_literal_markup_without_tokenizing_it (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_literal_markup_without_tokenizing_it) (raw='T</title/>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 28, in test_raw_boundary_rejects_literal_markup_without_tokenizing_it
+    self.boundary('<title>' + raw + '</title>')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+ERROR: test_raw_boundary_rejects_unfinished_closure (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_unfinished_closure) (serialized='<title>T')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 33, in test_raw_boundary_rejects_unfinished_closure
+    self.boundary(serialized)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+ERROR: test_raw_boundary_rejects_unfinished_closure (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_unfinished_closure) (serialized='<title>T</title')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 33, in test_raw_boundary_rejects_unfinished_closure
+    self.boundary(serialized)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+ERROR: test_raw_boundary_rejects_unfinished_closure (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_unfinished_closure) (serialized='<title>T</title ')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 33, in test_raw_boundary_rejects_unfinished_closure
+    self.boundary(serialized)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+ERROR: test_raw_boundary_rejects_unfinished_closure (test_title_rcdata.SerializedTitles.test_raw_boundary_rejects_unfinished_closure) (serialized='<title>T</title!>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 33, in test_raw_boundary_rejects_unfinished_closure
+    self.boundary(serialized)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 13, in boundary
+    return metadata.serialized_title(serialized, 0, 'test title')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'ada_gnatdoc_enhancer.metadata' has no attribute 'serialized_title'
+
+======================================================================
+FAIL: test_actual_document_rejects_raw_markup_and_malformed_closures (test_title_rcdata.SerializedTitles.test_actual_document_rejects_raw_markup_and_malformed_closures) (title='<title>T<title>N</title>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 47, in test_actual_document_rejects_raw_markup_and_malformed_closures
+    with self.subTest(title=title), self.assertRaises(EnhancementError):
+                                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_actual_document_rejects_raw_markup_and_malformed_closures (test_title_rcdata.SerializedTitles.test_actual_document_rejects_raw_markup_and_malformed_closures) (title='<title>T<!--comment--></title>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 47, in test_actual_document_rejects_raw_markup_and_malformed_closures
+    with self.subTest(title=title), self.assertRaises(EnhancementError):
+                                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_actual_document_rejects_raw_markup_and_malformed_closures (test_title_rcdata.SerializedTitles.test_actual_document_rejects_raw_markup_and_malformed_closures) (title='<title>T<b>B</b></title>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 47, in test_actual_document_rejects_raw_markup_and_malformed_closures
+    with self.subTest(title=title), self.assertRaises(EnhancementError):
+                                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_actual_document_rejects_raw_markup_and_malformed_closures (test_title_rcdata.SerializedTitles.test_actual_document_rejects_raw_markup_and_malformed_closures) (title='<title>T</title extra>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 47, in test_actual_document_rejects_raw_markup_and_malformed_closures
+    with self.subTest(title=title), self.assertRaises(EnhancementError):
+                                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+======================================================================
+FAIL: test_actual_document_rejects_raw_markup_and_malformed_closures (test_title_rcdata.SerializedTitles.test_actual_document_rejects_raw_markup_and_malformed_closures) (title='<title>T</title/>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-010/tests/test_title_rcdata.py", line 47, in test_actual_document_rejects_raw_markup_and_malformed_closures
+    with self.subTest(title=title), self.assertRaises(EnhancementError):
+                                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: EnhancementError not raised
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+FAILED (failures=5, errors=18)

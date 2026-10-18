@@ -465,6 +465,36 @@ recorded separately in [evidence/gnatdoc010r3](evidence/gnatdoc010r3/). Exact-he
 hosted workflow IDs and conclusions are reported on PR #10 after the final
 evidence commit; an earlier green run is not final-head qualification.
 
+R3 local qualification on implementation `751794863592bb485167fb71ef0e128cfc140154`:
+
+- Original R2 focused tests reproduce exactly two failures on each of Python
+  **3.11.17, 3.12.15 and 3.13.16** before the fix. The same 23 tests pass
+  afterward. Seven new serialized-title regressions pass on all three, as
+  well as the older 3.13.5 tokenizer; neither original failing test is changed.
+- Complete matrix: **471/471 on each exact version**, no skips or expected
+  failures. Installed wheel and extracted-sdist/rebuilt wheel: **471/471**
+  each on 3.12.15; smoke, conformance, all 31 module/asset hashes and wheel
+  package-byte equivalence pass.
+- All six full consumer configurations are independently regenerated through
+  the unchanged 009A-base → metadata comparison. Each candidate publication
+  equals the committed R2 hashes, and every separately regenerated 009A
+  predecessor equals the R2 predecessor. This preserves R2's first-stage
+  historical 008B → 009A subtype audit transitively without replacing historical
+  evidence. Two-copy determinism, pristine binding, native preservation,
+  independent verification, byte-idempotence and fresh dry-run immutability pass.
+- Features is rebuilt twice from its retained native input; all 13 metadata
+  pages and all publication bytes equal R2. The separate Pages checker still
+  reports only the known navigation-JavaScript heuristic error. No production
+  publication readiness is claimed.
+- Fresh Chromium checks preserve every earlier identity: Core **1500/1500**,
+  Imgproc and Imgproc008 **1678/1678 each**, historical/current Geometry
+  **1486/1486 each**, MEL **1192/1192**, Features **100/100**,
+  operation/history **144/144**, subtype JS on/off desktop/mobile **4/4**.
+  Navigation JavaScript and operation-browser expectations are unchanged.
+- Consumer warning deltas remain zero. Imgproc retains **1512/1512**, Geometry
+  **452/452**, and MEL **4294/4295** with the unchanged single renderer omission
+  and **1162** protected files.
+
 ## Migration impact
 
 - Every enhanced API page and Markdown guide gains metadata, so their bytes and
