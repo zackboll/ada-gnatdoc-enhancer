@@ -1,0 +1,94 @@
+{
+  "disposition": "HOSTED_CI_PENDING",
+  "starting_enhancer_sha": "53a321915da2c5a02a54581040673b61f8595b25",
+  "implementation_tested_sha": "588bc837484d338af7d2e90fcdc6df63f37f4c57",
+  "runtime_syntax_sha256": "2f2c0e45ed158292e0b788a65cdfb5c4933066038afeeeef3a23a8bf2ebf6bee",
+  "focused_test_source_sha256": "a48a6a50435049a16922b5f9c4a47f98576385ddf0dac8868038da5dbaa7e1b5",
+  "geometry_source": "8690927853ffa74729206d8997b09046ad3d2246",
+  "geometry_pr48_unchanged_head": "12e6b8549dd1859aab1526be9bf778e0da60d7f0",
+  "core_dependency_source": "f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f",
+  "core_router_fixture_not_dependency": "ccc2190f9bf0712d65a2b9d2983cde7ce68b4bae",
+  "baseline_tests": {"run": 392, "status": "pass"},
+  "corrected_installed_wheel_tests": {"run": 415, "status": "pass"},
+  "extracted_sdist_rebuilt_wheel_tests": {"run": 415, "status": "pass"},
+  "focused_subtype_tests": {"run": 23, "status": "pass"},
+  "historical_reduced_geometry_external_links": 94,
+  "separate_reduced_geometry_with_point_array_external_links": 95,
+  "geometry_original_ledger": {"equivalent": 262, "shared_only": 4, "missing": 1},
+  "geometry_corrected_ledger": {"equivalent": 263, "shared_only": 4, "missing": 0},
+  "geometry_legacy_links": {"local": 167, "external": 96},
+  "geometry_corrected_shared_links": {"local": 171, "external": 96},
+  "geometry_navigation_matches_unchanged_consumer_oracle": 130,
+  "point_array": {
+    "consumer_source_line": 76,
+    "core_source": "src/opencv.ads",
+    "core_source_line": 81,
+    "qualified_identity": "OpenCV.Point_Array",
+    "native_page": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "native_anchor": "da696e09a1f1b297516365244e16533e23cca626f26df4bb3f727a64beb697b0",
+    "source_native_independently_reconciled": true
+  },
+  "four_site_added_occurrences": {
+    "core": 0,
+    "imgproc": 9,
+    "historical_geometry_unchanged_allowlist": 0,
+    "mel": 1,
+    "current_geometry_explicit_point_array": 1
+  },
+  "preserved": {
+    "core_native_sections": 1268,
+    "imgproc_native_sections": 314,
+    "geometry_native_sections": 130,
+    "mel_native_sections": 1237,
+    "core_generic_summaries": 25,
+    "core_generic_explanatory_links": 102,
+    "authored_guides": 21,
+    "landing_pages": 4,
+    "unaffected_output_bytes": true,
+    "operation_navigation_assets_and_indexes": true,
+    "historical_evidence": true,
+    "consumer_repositories": true
+  },
+  "consumer_gates": {
+    "geometry_coverage": "452/452; zero baseline delta",
+    "imgproc_coverage": "1512/1512; zero baseline delta",
+    "mel_coverage": "4294/4295; 1238 source / 1237 native / 1 approved renderer omission",
+    "four_native_warning_ratchets": "0 added, 0 removed for each",
+    "mel_original_integrity_policy": "pass; 1162 protected files; original reviewed-native-tests state",
+    "mel_original_integrity_tests": "23 pass"
+  },
+  "publication_checks": {
+    "inventory": "pass",
+    "dry_run_immutability": "pass",
+    "native_identity_preservation": "pass",
+    "two_copy_determinism": "pass",
+    "byte_idempotence": "pass",
+    "exact_published_file_inventory": "pass",
+    "authored_byte_parity": "pass",
+    "full_source_native_geometry_comparison": "pass"
+  },
+  "full_geometry_serial_mutations": {"observed_rejected_restored": 7, "status": "pass"},
+  "real_chromium": {
+    "cases": 4,
+    "widths": [1280, 390],
+    "javascript": [true, false],
+    "real_native_core_hash_verified": true,
+    "click_reload_back_forward": "pass",
+    "status": "pass",
+    "production_hosting_verified": false
+  },
+  "distribution_sha256": {
+    "reviewed_wheel": "daa9c995dc8d87da33269a0c745826361d5e46194bc842f7f535d815aa7cf54f",
+    "reviewed_sdist": "cff0a14f92bc856f9f528673be06732e4759e424204c225b0c3c1a4b99e05ec8",
+    "sdist_rebuilt_wheel": "3b245853eb77b83983bcee408412c87beaed45610280f3af99cd0c46afc8ddd9"
+  },
+  "hosted_boundary": "Unchanged CI tests Python 3.11/3.12/3.13 and distributions; full real sites and Chromium are heavyweight local qualification, not hosted consumer builds.",
+  "production_publication": "not authorized; offline-test only",
+  "remaining_geometry_work": "Reviewed merged-pin authority transition, GNATDOC-009 isolated runner, PR-only shadow CI, full browser/adversarial matrix, independent review.",
+  "exploratory_runs_not_credited": [
+    "Incorrect scalar expected offset corrected before passing tests",
+    "Baseline subprocess inherited candidate PYTHONPATH; fresh audit removes it",
+    "Comparator initially failed to restore existing punctuation highlighting after link removal",
+    "An early tamper overlapped exploratory current-Geometry determinism; rejected result discarded; fresh clean generation and serial tamper/browser sequence pass"
+  ]
+}
