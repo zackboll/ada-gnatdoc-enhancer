@@ -125,12 +125,14 @@ def fixture(name,data):
         man={'schema_version':1,'home':'index.html','stylesheet':'assets/gnatdoc-guides.css','guides':guides}
         (docs/'site-map.json').write_text(json.dumps(man,indent=2)+'\n')
         (docs/'index.html').write_text('<!doctype html><html lang="en"><head><meta charset="utf-8">'
+           '<title>AMS MEL synthetic fixture portal</title>'
            '<link rel="stylesheet" href="assets/gnatdoc-guides.css"></head><body>'
            '<a class="skip" href="#main">Skip to content</a><header>{{navigation}}</header>'
            '<main id="main"><h1>AMS MEL synthetic fixture portal</h1>{{package-directory}}'
            '<p>See {{package:AMS.MEL.IR}}.</p></main></body></html>\n')
         for g in guides:
             (docs/g['path']).write_text('<!doctype html><html lang="en"><head><meta charset="utf-8">'
+            '<title>'+g['label']+' — AMS MEL synthetic fixture</title>'
             '<link rel="stylesheet" href="../assets/gnatdoc-guides.css"></head><body>'
             '<a class="skip" href="#main">Skip to content</a><header>{{navigation}}</header>'
             '<main id="main"><h1>'+g['label']+'</h1><p>Reference {{package:AMS.MEL.RF.C2}}.</p>'

@@ -4,9 +4,11 @@ from __future__ import annotations
 import html
 import json
 import re
+from html.parser import HTMLParser
 from pathlib import Path
 
 from .config import Config
+from .metadata import guide_title
 from .native_html import NativeSite
 from .theme import asset
 from .util import inside, regular, require
@@ -79,7 +81,18 @@ def _replace(text:str,page:str,data:dict,native:NativeSite):
     return result
 
 
-def _markdown(source:str,page:str,data:dict,native:NativeSite, config:Config, example:str | None):
+class _Text(HTMLParser):
+    def __init__(self, markup:str):
+        super().__init__(convert_charrefs=True)
+        self.parts=[]
+        self.feed(markup);self.close()
+
+    def handle_data(self, data):
+        self.parts.append(data)
+
+
+def _markdown(source:str,page:str,data:dict,native:NativeSite, config:Config, example:str | None,
+              label:str):
     try:
         from importlib.metadata import version
         from markdown_it import MarkdownIt
@@ -127,6 +140,8 @@ def _markdown(source:str,page:str,data:dict,native:NativeSite, config:Config, ex
                             "unapproved Markdown link scheme")
     require(h1==1 and tokens and tokens[0].type=='heading_open' and tokens[0].tag=='h1',
             "guide must start with exactly one H1")
+    heading=''.join(_Text(parser.renderer.renderInline(tokens[1].children,parser.options,{})).parts)
+    require(heading==label,f"guide H1 differs from its site-map label: {page}")
     if example:
         code=regular(inside(config.root,example)).read_text(encoding='utf-8').strip('\n')
         require(len(examples)==1 and examples[0]==code,
@@ -136,6 +151,7 @@ def _markdown(source:str,page:str,data:dict,native:NativeSite, config:Config, ex
     inner=parser.renderer.render(tokens,parser.options,{})
     inner=inner.replace('<table>','<div class="table-scroll"><table>').replace('</table>','</table></div>')
     return ('<!doctype html>\n<html lang="en"><head><meta charset="utf-8">'
+            '<title>'+html.escape(guide_title(label,config.project))+'</title>'
             '<meta name="viewport" content="width=device-width, initial-scale=1">'
             '<link rel="stylesheet" href="../assets/gnatdoc-guides.css"></head><body>'
             '<a class="skip" href="#main">Skip to content</a><header>'+navigation(data,page)+
@@ -158,7 +174,7 @@ def render(config:Config,native:NativeSite) -> dict[str,bytes]:
             html_text=_replace(source,path,data,native)
         else:
             source=regular(inside(config.root,'docs/'+path[:-5]+'.md')).read_text(encoding='utf-8')
-            html_text=_markdown(source,path,data,native,config,g.get('example'))
+            html_text=_markdown(source,path,data,native,config,g.get('example'),g['label'])
         written[path]=html_text.encode()
     written['assets/gnatdoc-guides.css']=asset('gnatdoc-guides.css')
     return written

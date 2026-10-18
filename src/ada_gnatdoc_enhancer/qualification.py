@@ -15,6 +15,7 @@ from pathlib import Path
 
 from .config import load
 from .inventory import packages
+from .metadata import API_INDEX, LANGUAGE, SEPARATOR, label
 from .native_html import snapshot
 from .pipeline import MANIFEST, enhance, verify
 from .util import digest, inside, regular, require, site_root, sorted_json
@@ -44,26 +45,38 @@ def check_snapshot(root, expected, *, staged=False, dependency_bundle=False):
 
 
 class Identities(HTMLParser):
-    """Independent text/ID collector; deliberately does not use native regexes."""
+    """Independent text/ID collector; deliberately does not use native regexes.
+
+    Document metadata (html lang, head, charset, title) is recorded separately:
+    the title is not visible body content and must not be mistaken for it."""
     def __init__(self,text):
         super().__init__(convert_charrefs=True)
         self.ids=[];self.headings=[];self.snippets=[];self.links=[]
         self.heading=None;self.code=None;self.text=[]
+        self.document={'lang':[],'heads':0,'titles':[],'charsets':[]};self.title=None
         self.feed(text);self.close()
 
     def handle_starttag(self,tag,attrs):
+        if tag=='html':self.document['lang'].append([v for k,v in attrs if k=='lang'])
+        if tag=='head':self.document['heads']+=1
+        if tag=='title':self.title=''
         attrs=dict(attrs)
+        if tag=='meta' and 'charset' in attrs:self.document['charsets'].append(attrs['charset'])
         if 'id' in attrs:self.ids.append(attrs['id'])
         if tag=='h4':self.heading=[attrs.get('id'),'']
         if tag=='code':self.code=''
         if tag=='a' and 'href' in attrs:self.links.append(attrs['href'])
 
     def handle_data(self,data):
+        if self.title is not None:
+            self.title+=data;return
         self.text.append(data)
         if self.heading is not None:self.heading[1]+=data
         if self.code is not None:self.code+=data
 
     def handle_endtag(self,tag):
+        if tag=='title' and self.title is not None:
+            self.document['titles'].append(self.title);self.title=None
         if tag=='h4' and self.heading is not None:
             self.headings.append(self.heading);self.heading=None
         if tag=='code' and self.code is not None:
@@ -84,8 +97,27 @@ def identities(site, authorized_summaries=None):
             'package':html.unescape(title[0]) if len(title)==1 else None,
             'ids':page.ids,'declarations':page.headings,'signatures':page.snippets,
             'visible_text_sha256':digest(''.join(page.text).encode()),
-            'native_links':page.links}
+            'native_links':page.links,'document':page.document}
     return result
+
+
+NATIVE_DOCUMENT={'lang':[[]],'heads':0,'titles':[],'charsets':[]}
+
+
+def _document(name,old,new,projects):
+    """Account exactly for the authorized document metadata of one native page."""
+    if old['document']!=NATIVE_DOCUMENT:
+        require(new['document']==old['document'],f'native document metadata changed: {name}')
+        return
+    document=new['document']
+    require(document['lang']==[[LANGUAGE]] and document['heads']==1 and
+            document['charsets']==['utf-8'] and len(document['titles'])==1,
+            f'native document metadata missing, duplicated or not authorized: {name}')
+    subject=API_INDEX if name=='api/index.html' else old['package']
+    title=document['titles'][0]
+    require(subject is not None and title.startswith(subject+SEPARATOR),
+            f'native document title does not match its verified identity: {name}')
+    projects.add(label(title[len(subject)+len(SEPARATOR):],'project name'))
 
 
 def preserve_native(before,site, *, config=None, pristine=None):
@@ -96,6 +128,7 @@ def preserve_native(before,site, *, config=None, pristine=None):
         authorized,_=summaries(config,packages(config),snapshot(config,pristine))
     after=identities(site,authorized)
     require(set(before)==set(after),'native page inventory changed')
+    projects=set()
     for name,old in before.items():
         new=after[name]
         for key in ('package','declarations','signatures'):
@@ -105,6 +138,9 @@ def preserve_native(before,site, *, config=None, pristine=None):
                     f'native visible content changed: {name}')
         require(set(old['ids'])<=set(new['ids']),f'native anchor removed: {name}')
         require(set(old['native_links'])<=set(new['native_links']),f'native link removed: {name}')
+        _document(name,old,new,projects)
+    require(len(projects)<=1 and (config is None or projects<={config.project}),
+            f'native document titles name another project: {sorted(projects)}')
     return {'pages':len(before),
             'packages':sum(p['package'] is not None for p in before.values()),
             'declarations':sum(len(p['declarations']) for p in before.values()),
