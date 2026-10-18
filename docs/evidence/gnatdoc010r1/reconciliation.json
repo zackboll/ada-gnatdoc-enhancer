@@ -1,0 +1,64 @@
+{
+  "conflicts": [],
+  "expected_total": {
+    "baseline": 392,
+    "metadata_regressions": 26,
+    "subtype_regressions": 23,
+    "total": 441
+  },
+  "files_changed_by_both_sides": [],
+  "interpreters": {
+    "hosted": "Python 3.11, 3.12, 3.13 matrix plus wheel/sdist job; see PR #10 checks",
+    "local": "CPython 3.13.5 only (3.11 and 3.12 not installed locally)"
+  },
+  "merge_commit": "077cb5e4e52e90159ae05e77d81597739828226c",
+  "merge_parents": [
+    "79f4d2397e36588722eb908ba0ad1674baa13227",
+    "426f38852ef7dfff264f73ad01aab458f5e12b23"
+  ],
+  "merge_src_equals_union": true,
+  "merged_pr": {
+    "merge_commit": "426f38852ef7dfff264f73ad01aab458f5e12b23",
+    "number": 11,
+    "title": "GNATDOC-009A: Restore source-verified ordinary subtype-base type links"
+  },
+  "method": "git merge --no-ff origin/main (normal two-parent merge; no rebase, amend or force-push)",
+  "original_pr_head": "79f4d2397e36588722eb908ba0ad1674baa13227",
+  "previous_merge_base": "53a321915da2c5a02a54581040673b61f8595b25",
+  "runtime_files_changed_by_main": [
+    "src/ada_gnatdoc_enhancer/syntax.py"
+  ],
+  "runtime_files_changed_by_pr": [
+    "src/ada_gnatdoc_enhancer/guides.py",
+    "src/ada_gnatdoc_enhancer/metadata.py",
+    "src/ada_gnatdoc_enhancer/pipeline.py",
+    "src/ada_gnatdoc_enhancer/qualification.py",
+    "src/ada_gnatdoc_enhancer/validation.py"
+  ],
+  "starting_main": "426f38852ef7dfff264f73ad01aab458f5e12b23",
+  "tested_sha": "077cb5e4e52e90159ae05e77d81597739828226c",
+  "tests": {
+    "failures": [],
+    "modules": {
+      "test_authored": 46,
+      "test_bootstrap_regressions": 16,
+      "test_cli": 4,
+      "test_cli_site_paths": 9,
+      "test_config_inventory": 11,
+      "test_declaration_profiles": 44,
+      "test_external_types": 49,
+      "test_generic_instances": 68,
+      "test_mel_profiles": 55,
+      "test_navigation_history": 20,
+      "test_operation_navigation": 20,
+      "test_page_metadata": 26,
+      "test_pipeline": 12,
+      "test_profiles_guides": 10,
+      "test_real_qualification": 20,
+      "test_security_extra": 8,
+      "test_subtype_bases": 23
+    },
+    "ran": 441,
+    "result": "OK"
+  }
+}

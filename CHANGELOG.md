@@ -7,6 +7,9 @@
   `API Reference`) and the project name; Markdown guides get their site-map
   label as title, which must equal the H1. Author pages must carry their own
   metadata. See `docs/html-page-metadata.md`.
+- Reconciled with GNATDOC-009A ordinary subtype-base links (merged `main`
+  `426f388`); the combined behavior is requalified on every real consumer,
+  including the current Geometry `Contour` → Core `OpenCV.Point_Array` link.
 
 ## 0.1.0.dev0 — bootstrap
 

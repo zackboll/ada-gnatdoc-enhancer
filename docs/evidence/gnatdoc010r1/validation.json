@@ -1,0 +1,195 @@
+{
+  "browser": {
+    "core": {
+      "checks": null,
+      "new_checks": 1500,
+      "new_passed": 1500,
+      "old_checks_missing": 0,
+      "passed": null
+    },
+    "geometry": {
+      "checks": null,
+      "new_checks": 1486,
+      "new_passed": 1486,
+      "old_checks_missing": 0,
+      "passed": null
+    },
+    "geometry-current": {
+      "checks": 1486,
+      "new_checks": null,
+      "new_passed": null,
+      "old_checks_missing": null,
+      "passed": 1486
+    },
+    "imgproc": {
+      "checks": null,
+      "new_checks": 1678,
+      "new_passed": 1678,
+      "old_checks_missing": 0,
+      "passed": null
+    },
+    "imgproc008": {
+      "checks": null,
+      "new_checks": 1678,
+      "new_passed": 1678,
+      "old_checks_missing": 0,
+      "passed": null
+    },
+    "mel": {
+      "checks": null,
+      "new_checks": 1192,
+      "new_passed": 1192,
+      "old_checks_missing": 0,
+      "passed": null
+    }
+  },
+  "consumers": {
+    "core": {
+      "byte_idempotent": true,
+      "charset": 202,
+      "declarations": 1268,
+      "deterministic": true,
+      "external_links": 35,
+      "external_links_identical": true,
+      "lang": 202,
+      "links": 4565,
+      "mutations": 13,
+      "mutations_rejected": 13,
+      "native_css_unchanged": true,
+      "only_authorized_metadata": true,
+      "pages": 202,
+      "revision": "c5545eee815431568495c6c76af83df56cf5c3dd",
+      "subtype_files_from_base": [],
+      "subtype_matches_009a_evidence": true,
+      "titled": 202,
+      "titles_added": 196
+    },
+    "geometry": {
+      "byte_idempotent": true,
+      "charset": 9,
+      "declarations": 130,
+      "deterministic": true,
+      "external_links": 106,
+      "external_links_identical": true,
+      "lang": 9,
+      "links": 749,
+      "mutations": 13,
+      "mutations_rejected": 13,
+      "native_css_unchanged": true,
+      "only_authorized_metadata": true,
+      "pages": 9,
+      "revision": "fa81e5140cbebf2aa41397a40c08ba194a5f6f73",
+      "subtype_files_from_base": [],
+      "subtype_matches_009a_evidence": true,
+      "titled": 9,
+      "titles_added": 3
+    },
+    "geometry-current": {
+      "byte_idempotent": true,
+      "charset": 9,
+      "declarations": 130,
+      "deterministic": true,
+      "external_links": 107,
+      "external_links_identical": true,
+      "lang": 9,
+      "links": 750,
+      "mutations": 13,
+      "mutations_rejected": 13,
+      "native_css_unchanged": true,
+      "only_authorized_metadata": true,
+      "pages": 9,
+      "revision": "8690927853ffa74729206d8997b09046ad3d2246",
+      "subtype_files_from_base": null,
+      "subtype_matches_009a_evidence": null,
+      "titled": 9,
+      "titles_added": 3
+    },
+    "imgproc": {
+      "byte_idempotent": true,
+      "charset": 8,
+      "declarations": 314,
+      "deterministic": true,
+      "external_links": 562,
+      "external_links_identical": true,
+      "lang": 8,
+      "links": 1759,
+      "mutations": 13,
+      "mutations_rejected": 13,
+      "native_css_unchanged": true,
+      "only_authorized_metadata": true,
+      "pages": 8,
+      "revision": "9ce22ae5ab70008e1147475a9e6d7baef82f1df0",
+      "subtype_files_from_base": [
+        "api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html",
+        "api/presentation.json"
+      ],
+      "subtype_matches_009a_evidence": true,
+      "titled": 8,
+      "titles_added": 2
+    },
+    "imgproc008": {
+      "byte_idempotent": true,
+      "charset": 8,
+      "declarations": 314,
+      "deterministic": true,
+      "external_links": 562,
+      "external_links_identical": true,
+      "lang": 8,
+      "links": 1759,
+      "mutations": 13,
+      "mutations_rejected": 13,
+      "native_css_unchanged": true,
+      "only_authorized_metadata": true,
+      "pages": 8,
+      "revision": "9ce22ae5ab70008e1147475a9e6d7baef82f1df0",
+      "subtype_files_from_base": [
+        "api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html",
+        "api/presentation.json"
+      ],
+      "subtype_matches_009a_evidence": null,
+      "titled": 8,
+      "titles_added": 2
+    },
+    "mel": {
+      "byte_idempotent": true,
+      "charset": 37,
+      "declarations": 1237,
+      "deterministic": true,
+      "external_links": 0,
+      "external_links_identical": true,
+      "lang": 37,
+      "links": 2966,
+      "mutations": 13,
+      "mutations_rejected": 13,
+      "native_css_unchanged": true,
+      "only_authorized_metadata": true,
+      "pages": 37,
+      "revision": "6065129aba5dee89e70b61e05a9e1c9b2c3061c0",
+      "subtype_files_from_base": [
+        "api/0afc59b2a977edefbce75cba06318530f7d622f6273b796ec530cf7f8723ad28.html",
+        "api/presentation.json"
+      ],
+      "subtype_matches_009a_evidence": true,
+      "titled": 37,
+      "titles_added": 30
+    }
+  },
+  "features": {
+    "only_error": [
+      "api/gnatdoc-navigation.js: JavaScript contains an absolute or root-relative URL literal"
+    ],
+    "publication_ready": false,
+    "titled": 13
+  },
+  "merge": "077cb5e4e52e90159ae05e77d81597739828226c",
+  "original_pr_head": "79f4d2397e36588722eb908ba0ad1674baa13227",
+  "starting_main": "426f38852ef7dfff264f73ad01aab458f5e12b23",
+  "tests": {
+    "installed_wheel": 441,
+    "local_3.13": 441,
+    "page_metadata": 26,
+    "result": "OK",
+    "sdist_rebuilt_wheel": 441,
+    "subtype_bases": 23
+  }
+}

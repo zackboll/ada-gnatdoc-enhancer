@@ -1,0 +1,287 @@
+{
+  "candidate": {
+    "browser": {
+      "pages": {
+        "failed": 0,
+        "passed": 109,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      },
+      "prefix": {
+        "failed": 0,
+        "passed": 64,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      },
+      "root": {
+        "failed": 0,
+        "passed": 64,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      }
+    },
+    "enhancer": "077cb5e4e52e90159ae05e77d81597739828226c",
+    "features_doc_tests": {
+      "failures": [
+        "test_real_site_is_a_qualified_pages_artifact (test_pages_site.RealSiteTests.test_real_site_is_a_qualified_pages_artifact)"
+      ],
+      "modules": {
+        "test_doc_source_integrity": 5,
+        "test_enhanced_site": 12,
+        "test_generated_site": 20,
+        "test_gnatdoc_source": 20,
+        "test_pages_site": 13,
+        "test_strict_qualification": 14
+      },
+      "ran": 84,
+      "result": "FAILED (failures=1)"
+    },
+    "features_revision": "78a07df8bfd4884a9546cee78904fb5ff93aae21",
+    "install": "PASS: installed /tmp/claude-1000/-home-zboll-git-opencv-features/83db9cbd-4392-4244-99da-1c96b6d9750d/scratchpad/gnatdoc010r1/features/venv-cand/bin/gnatdoc-enhancer from 077cb5e4e52e90159ae05e77d81597739828226c; installed files equal Git blobs",
+    "metadata_summary": {
+      "html_pages": 13,
+      "missing_lang": [],
+      "missing_titles": [],
+      "valid_lang": 13,
+      "valid_titles": 13,
+      "with_head_element": 13,
+      "with_utf8_charset": 13
+    },
+    "pages_check": {
+      "blockers": [],
+      "errors": [
+        "api/gnatdoc-navigation.js: JavaScript contains an absolute or root-relative URL literal"
+      ],
+      "pages_without_lang": [],
+      "pages_without_title": [],
+      "publication_ready": false
+    },
+    "steps": {
+      "enhance": "PASS: enhanced copy verified; byte-idempotent; fresh run identical; native identities preserved; 13 pages with resolved links; added ['api/gnatdoc-navigation.js', 'api/gnatdoc-theme.css', 'api/presentation.json', 'assets/gnatdoc-guides.css', 'guides/binary-matching.html', 'guides/candidate-correspondences.html', 'guides/getting-started.html', 'guides/limitations-roadmap.html', 'guides/orb-extraction.html', 'guides/ownership-lifecycle.html', 'guides/platform-compatibility.html', 'index.html']",
+      "enhanced-compare": "",
+      "generate": "PASS coverage: {\"baseline\": 0, \"categories\": {\"field\": {\"documented\": 23, \"elements\": 23, \"rendered\": 23}, \"function\": {\"documented\": 20, \"elements\": 20, \"rendered\": 20}, \"literal\": {\"documented\": 9, \"elements\": 9, \"rendered\": 9}, \"package\": {\"documented\": 4, \"elements\": 4, \"rendered\": 4}, \"parameter\": {\"documented\": 33, \"elements\": 33, \"rendered\": 33}, \"procedure\": {\"documented\": 1, \"elements\": 1, \"rendered\": 1}, \"return\": {\"documented\": 20, \"elements\": 20, \"rendered\": 20}, \"type\": {\"documented\": 17, \"elements\": 17, \"rendered\": 17}}, \"new_gaps\": [], \"packages\": {\"OpenCV.Features\": {\"documented\": 40, \"elements\": 40, \"rendered\": 40}, \"OpenCV.Features.Correspondences\": {\"documented\": 13, \"elements\": 13, \"rendered\": 13}, \"OpenCV.Features.Matching\": {\"documented\": 40, \"elements\": 40, \"rendered\": 40}, \"OpenCV.Features.ORB\": {\"documented\": 34, \"elements\": 34, \"rendered\": 34}}, \"stale_baseline\": [], \"total\": {\"documented\": 127, \"elements\": 127, \"percent\": 100.0, \"rendered\": 127}}",
+      "pages-check": "  api/gnatdoc-navigation.js: JavaScript contains an absolute or root-relative URL literal",
+      "regen-compare": ""
+    },
+    "temporary_configuration": "diff --git a/docs/gnatdoc-enhanced-assets.json b/docs/gnatdoc-enhanced-assets.json\nindex 84c83ef..f034592 100644\n--- a/docs/gnatdoc-enhanced-assets.json\n+++ b/docs/gnatdoc-enhanced-assets.json\n@@ -13,15 +13,15 @@\n     \"guides/platform-compatibility.html\",\n     \"index.html\"\n   ],\n-  \"enhancer_revision\": \"478d0bbff0be1b9141b5ad39f07a71f0386d86e9\",\n+  \"enhancer_revision\": \"077cb5e4e52e90159ae05e77d81597739828226c\",\n   \"enhancer_version\": \"0.1.0.dev0\",\n   \"guide_renderer\": {\n     \"markdown-it-py\": \"3.0.0\",\n     \"mdurl\": \"0.1.2\"\n   },\n   \"packaged_assets\": {\n-    \"api/gnatdoc-navigation.js\": \"61eac070e65b38ac63242a54ed0546a8f4a27b25d8958c2824557860623f40b2\",\n-    \"api/gnatdoc-theme.css\": \"63c1e9c9a6f2e17cbf64287592dcad5d68f2de9064408bd9963b81ae99d17371\",\n+    \"api/gnatdoc-navigation.js\": \"b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd\",\n+    \"api/gnatdoc-theme.css\": \"cf06637732a8b047a7191bfb991a5c3da7cd31a52076876880d5f8a3f63929bc\",\n     \"assets/gnatdoc-guides.css\": \"79f3fc6d5f1e854eb42d225f9bec113b7a41fa833b12d3bd70ca089ba5df0a8c\"\n   },\n   \"public_packages\": [\ndiff --git a/scripts/gnatdoc_enhancer_support.py b/scripts/gnatdoc_enhancer_support.py\nindex 646066d..3ab3ade 100644\n--- a/scripts/gnatdoc_enhancer_support.py\n+++ b/scripts/gnatdoc_enhancer_support.py\n@@ -16,7 +16,7 @@ import venv\n from pathlib import Path\n \n ROOT = Path(__file__).resolve().parent.parent\n-PINNED_REVISION = \"478d0bbff0be1b9141b5ad39f07a71f0386d86e9\"\n+PINNED_REVISION = \"077cb5e4e52e90159ae05e77d81597739828226c\"\n PROVENANCE = \"gnatdoc-enhancer-provenance.json\"\n \n \n"
+  },
+  "features_revision": "78a07df8bfd4884a9546cee78904fb5ff93aae21",
+  "gnatdoc009a_effect_on_features": {
+    "merged_candidate_equals_original_candidate_8768548_output": true,
+    "merged_main_equals_previous_main_53a3219_output": true,
+    "reason": "Features public specifications declare no subtypes, so 009A adds no links"
+  },
+  "javascript_heuristic": {
+    "asset": "api/gnatdoc-navigation.js",
+    "asset_sha256": "b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd",
+    "checker": "scripts/check_pages_site.py: re.search(r\"://|[\\\"'`]/\", text)",
+    "classification": "false positive: a one-character path separator passed to String.prototype.lastIndexOf, not a URL",
+    "identical_on_merged_main": true,
+    "matches": [
+      {
+        "line": 103,
+        "text": "if (!state || link.getAttribute('href')!==state.url.href.slice(state.url.href.lastIndexOf('/')+1)) {"
+      }
+    ],
+    "publication_ready": false,
+    "required_downstream_change": "Features pin-update PR must refine the check without permitting root-relative, protocol-relative or external URL injection; see docs/html-page-metadata.md"
+  },
+  "main": {
+    "browser": {
+      "pages": {
+        "failed": 0,
+        "passed": 109,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      },
+      "prefix": {
+        "failed": 0,
+        "passed": 64,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      },
+      "root": {
+        "failed": 0,
+        "passed": 64,
+        "versions": {
+          "chromium": "156.0.8078.4",
+          "node": "v20.19.2",
+          "playwright": "1.64.1"
+        }
+      }
+    },
+    "enhancer": "426f38852ef7dfff264f73ad01aab458f5e12b23",
+    "features_doc_tests": {
+      "failures": [
+        "test_real_site_is_a_qualified_pages_artifact (test_pages_site.RealSiteTests.test_real_site_is_a_qualified_pages_artifact)"
+      ],
+      "modules": {
+        "test_doc_source_integrity": 5,
+        "test_enhanced_site": 12,
+        "test_generated_site": 20,
+        "test_gnatdoc_source": 20,
+        "test_pages_site": 13,
+        "test_strict_qualification": 14
+      },
+      "ran": 84,
+      "result": "FAILED (failures=1)"
+    },
+    "features_revision": "78a07df8bfd4884a9546cee78904fb5ff93aae21",
+    "install": "PASS: installed /tmp/claude-1000/-home-zboll-git-opencv-features/83db9cbd-4392-4244-99da-1c96b6d9750d/scratchpad/gnatdoc010r1/features/venv-main426/bin/gnatdoc-enhancer from 426f38852ef7dfff264f73ad01aab458f5e12b23; installed files equal Git blobs",
+    "metadata_summary": {
+      "html_pages": 13,
+      "missing_lang": [
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+        "api/index.html"
+      ],
+      "missing_titles": [
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+        "api/index.html",
+        "guides/binary-matching.html",
+        "guides/candidate-correspondences.html",
+        "guides/getting-started.html",
+        "guides/limitations-roadmap.html",
+        "guides/orb-extraction.html",
+        "guides/ownership-lifecycle.html",
+        "guides/platform-compatibility.html"
+      ],
+      "valid_lang": 8,
+      "valid_titles": 1,
+      "with_head_element": 8,
+      "with_utf8_charset": 8
+    },
+    "pages_check": {
+      "blockers": [
+        "12 of 13 HTML pages have no <title>: api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html, api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html, api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html, api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html, api/index.html, guides/binary-matching.html, guides/candidate-correspondences.html, guides/getting-started.html, guides/limitations-roadmap.html, guides/orb-extraction.html, guides/ownership-lifecycle.html, guides/platform-compatibility.html"
+      ],
+      "errors": [
+        "api/gnatdoc-navigation.js: JavaScript contains an absolute or root-relative URL literal"
+      ],
+      "pages_without_lang": [
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+        "api/index.html"
+      ],
+      "pages_without_title": [
+        "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html",
+        "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html",
+        "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html",
+        "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html",
+        "api/index.html",
+        "guides/binary-matching.html",
+        "guides/candidate-correspondences.html",
+        "guides/getting-started.html",
+        "guides/limitations-roadmap.html",
+        "guides/orb-extraction.html",
+        "guides/ownership-lifecycle.html",
+        "guides/platform-compatibility.html"
+      ],
+      "publication_ready": false
+    },
+    "steps": {
+      "enhance": "PASS: enhanced copy verified; byte-idempotent; fresh run identical; native identities preserved; 13 pages with resolved links; added ['api/gnatdoc-navigation.js', 'api/gnatdoc-theme.css', 'api/presentation.json', 'assets/gnatdoc-guides.css', 'guides/binary-matching.html', 'guides/candidate-correspondences.html', 'guides/getting-started.html', 'guides/limitations-roadmap.html', 'guides/orb-extraction.html', 'guides/ownership-lifecycle.html', 'guides/platform-compatibility.html', 'index.html']",
+      "enhanced-compare": "",
+      "generate": "PASS coverage: {\"baseline\": 0, \"categories\": {\"field\": {\"documented\": 23, \"elements\": 23, \"rendered\": 23}, \"function\": {\"documented\": 20, \"elements\": 20, \"rendered\": 20}, \"literal\": {\"documented\": 9, \"elements\": 9, \"rendered\": 9}, \"package\": {\"documented\": 4, \"elements\": 4, \"rendered\": 4}, \"parameter\": {\"documented\": 33, \"elements\": 33, \"rendered\": 33}, \"procedure\": {\"documented\": 1, \"elements\": 1, \"rendered\": 1}, \"return\": {\"documented\": 20, \"elements\": 20, \"rendered\": 20}, \"type\": {\"documented\": 17, \"elements\": 17, \"rendered\": 17}}, \"new_gaps\": [], \"packages\": {\"OpenCV.Features\": {\"documented\": 40, \"elements\": 40, \"rendered\": 40}, \"OpenCV.Features.Correspondences\": {\"documented\": 13, \"elements\": 13, \"rendered\": 13}, \"OpenCV.Features.Matching\": {\"documented\": 40, \"elements\": 40, \"rendered\": 40}, \"OpenCV.Features.ORB\": {\"documented\": 34, \"elements\": 34, \"rendered\": 34}}, \"stale_baseline\": [], \"total\": {\"documented\": 127, \"elements\": 127, \"percent\": 100.0, \"rendered\": 127}}",
+      "pages-check": "  api/gnatdoc-navigation.js: JavaScript contains an absolute or root-relative URL literal",
+      "regen-compare": ""
+    },
+    "temporary_configuration": "diff --git a/docs/gnatdoc-enhanced-assets.json b/docs/gnatdoc-enhanced-assets.json\nindex 84c83ef..b80052a 100644\n--- a/docs/gnatdoc-enhanced-assets.json\n+++ b/docs/gnatdoc-enhanced-assets.json\n@@ -13,15 +13,15 @@\n     \"guides/platform-compatibility.html\",\n     \"index.html\"\n   ],\n-  \"enhancer_revision\": \"478d0bbff0be1b9141b5ad39f07a71f0386d86e9\",\n+  \"enhancer_revision\": \"426f38852ef7dfff264f73ad01aab458f5e12b23\",\n   \"enhancer_version\": \"0.1.0.dev0\",\n   \"guide_renderer\": {\n     \"markdown-it-py\": \"3.0.0\",\n     \"mdurl\": \"0.1.2\"\n   },\n   \"packaged_assets\": {\n-    \"api/gnatdoc-navigation.js\": \"61eac070e65b38ac63242a54ed0546a8f4a27b25d8958c2824557860623f40b2\",\n-    \"api/gnatdoc-theme.css\": \"63c1e9c9a6f2e17cbf64287592dcad5d68f2de9064408bd9963b81ae99d17371\",\n+    \"api/gnatdoc-navigation.js\": \"b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd\",\n+    \"api/gnatdoc-theme.css\": \"cf06637732a8b047a7191bfb991a5c3da7cd31a52076876880d5f8a3f63929bc\",\n     \"assets/gnatdoc-guides.css\": \"79f3fc6d5f1e854eb42d225f9bec113b7a41fa833b12d3bd70ca089ba5df0a8c\"\n   },\n   \"public_packages\": [\ndiff --git a/scripts/gnatdoc_enhancer_support.py b/scripts/gnatdoc_enhancer_support.py\nindex 646066d..8208f45 100644\n--- a/scripts/gnatdoc_enhancer_support.py\n+++ b/scripts/gnatdoc_enhancer_support.py\n@@ -16,7 +16,7 @@ import venv\n from pathlib import Path\n \n ROOT = Path(__file__).resolve().parent.parent\n-PINNED_REVISION = \"478d0bbff0be1b9141b5ad39f07a71f0386d86e9\"\n+PINNED_REVISION = \"426f38852ef7dfff264f73ad01aab458f5e12b23\"\n PROVENANCE = \"gnatdoc-enhancer-provenance.json\"\n \n \n"
+  },
+  "metadata_browser_prefix": {
+    "browser": "Chromium 156.0.8078.4",
+    "checks": 86,
+    "pages": 13,
+    "passed": 86,
+    "prefix": "/opencv_features_ada/",
+    "status": "pass"
+  },
+  "metadata_only_difference": {
+    "changed": {
+      "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": "native metadata only",
+      "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": "native metadata only",
+      "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": "native metadata only",
+      "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": "native metadata only",
+      "api/index.html": "native metadata only",
+      "api/presentation.json": "presentation manifest (output hashes)",
+      "guides/binary-matching.html": "guide title element only",
+      "guides/candidate-correspondences.html": "guide title element only",
+      "guides/getting-started.html": "guide title element only",
+      "guides/limitations-roadmap.html": "guide title element only",
+      "guides/orb-extraction.html": "guide title element only",
+      "guides/ownership-lifecycle.html": "guide title element only",
+      "guides/platform-compatibility.html": "guide title element only"
+    },
+    "titles": {
+      "api/0276ad652f884946c096f409451e99a54a424134b0183a333688d154e443c58b.html": [
+        "OpenCV.Features.Correspondences — OpenCV Features Ada"
+      ],
+      "api/71007168ac326a7bdd4e866a08abe473df533f97af629fa8d55c6ab3677485c7.html": [
+        "OpenCV.Features.ORB — OpenCV Features Ada"
+      ],
+      "api/8aee7d25112f028c5446a96519872c18ad78baa4beac4c4e2a13798d7521472c.html": [
+        "OpenCV.Features — OpenCV Features Ada"
+      ],
+      "api/f8c4f9ff8d48083e265efee6caac04d35ec5fd66029c3db2332e801220bed0dd.html": [
+        "OpenCV.Features.Matching — OpenCV Features Ada"
+      ],
+      "api/index.html": [
+        "API Reference — OpenCV Features Ada"
+      ],
+      "guides/binary-matching.html": [
+        "Binary matching — OpenCV Features Ada"
+      ],
+      "guides/candidate-correspondences.html": [
+        "Candidate correspondences — OpenCV Features Ada"
+      ],
+      "guides/getting-started.html": [
+        "Getting started — OpenCV Features Ada"
+      ],
+      "guides/limitations-roadmap.html": [
+        "Limitations and roadmap — OpenCV Features Ada"
+      ],
+      "guides/orb-extraction.html": [
+        "ORB feature extraction — OpenCV Features Ada"
+      ],
+      "guides/ownership-lifecycle.html": [
+        "Ownership and lifecycle — OpenCV Features Ada"
+      ],
+      "guides/platform-compatibility.html": [
+        "Platform compatibility — OpenCV Features Ada"
+      ],
+      "index.html": [
+        "OpenCV Features for Ada documentation"
+      ]
+    },
+    "unchanged": [
+      "api/gnatdoc-navigation.js",
+      "api/gnatdoc-theme.css",
+      "api/gnatdoc.css",
+      "assets/gnatdoc-guides.css",
+      "index.html"
+    ]
+  },
+  "workspace": "fresh disposable clones; Features repository and production pin (478d0bb) unchanged"
+}

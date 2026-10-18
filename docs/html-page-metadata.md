@@ -14,6 +14,14 @@ compile passing). Implementation: `8768548d30018148643de2fc19c3aa7d132fb7bd`;
 browser/consumer harnesses: `2a42e8520b52ec91896a99a01b25f741d8a2f576`
 (`src/` unchanged). Evidence: [evidence/gnatdoc010](evidence/gnatdoc010/).
 
+GNATDOC-010-R1 reconciled this branch with `main`
+`426f38852ef7dfff264f73ad01aab458f5e12b23` (GNATDOC-009A, PR #11:
+source-verified ordinary subtype-base links) by a normal two-parent merge,
+`077cb5e4e52e90159ae05e77d81597739828226c`, and requalified the combined
+behavior; see [Reconciliation with GNATDOC-009A](#reconciliation-with-gnatdoc-009a)
+and [evidence/gnatdoc010r1](evidence/gnatdoc010r1/). Sections that cite `main`
+`53a3219` record the original PR head `79f4d23` and are kept as history.
+
 ## Failing baseline (OpenCV Features)
 
 Measured on the actual merged Features source
@@ -233,6 +241,17 @@ pipeline, its own `enhance_docs.py` checks and its tests ran end to end:
   must refine that heuristic in review; this task does not change navigation
   code or the Features gate.
 
+The refinement belongs to Features and must not weaken the gate: it may
+exempt only a one-character `'/'` or `"/"` literal that is the sole argument
+of a string search such as `lastIndexOf`, `indexOf` or `split`, and must keep
+rejecting every other `://`, root-relative (`'/x'`), protocol-relative
+(`'//host'`) or template (`` `/${x}` ``) literal, including a bare `'/'` that is
+concatenated or assigned (`'/' + path`, `href = '/'`). It should carry
+negative tests for each of those and keep the pinned asset hash and the
+browser check that every request stays below the project prefix. Until that
+reviewed change passes, `publication_ready` remains false and nothing may be
+described as published.
+
 ## Browser qualification
 
 Chromium 156.0.8078.4 (Playwright 1.64.0 Python, 1.64.1 Node, Node v20.19.2),
@@ -258,6 +277,83 @@ prefix (identical to enhancer `main`). Details:
 [browser-summary.json](evidence/gnatdoc010/browser-summary.json). This is not
 cross-browser, screen-reader or full accessibility certification.
 
+## Reconciliation with GNATDOC-009A
+
+GNATDOC-009A (PR #11, merged as `main` `426f388`) changed only
+`src/ada_gnatdoc_enhancer/syntax.py` among runtime files; this branch changed
+`guides.py`, `metadata.py`, `pipeline.py`, `qualification.py` and
+`validation.py`. No file was changed by both sides, so `origin/main` merged
+normally without conflicts as `077cb5e` (parents `79f4d23` and `426f388`).
+Subtype linking runs inside the existing presentation step, before metadata
+is added, and the metadata checks never look at snippet links; both sets of
+protections are kept unchanged.
+
+**Regressions.** The merged suite runs **441 tests**: the 392 baseline tests,
+the 26 metadata tests in `test_page_metadata.py` and the 23 subtype tests in
+`test_subtype_bases.py`. All pass locally on CPython 3.13, from the installed
+wheel and from a wheel rebuilt from the extracted sdist; four-profile
+conformance, the reduced real Geometry CLI qualification and compilation pass.
+No test or expected value was changed.
+
+**Real consumers.** `qualify_page_metadata.py` now regenerates each
+predecessor publication with the separately installed merged base (`main`
+`426f388`), which must also verify it, and then requires that the combined
+output differs from it only by the authorized metadata. It also requires the
+008B → base delta to be exactly the recorded GNATDOC-009A delta, and the
+current Geometry source to keep its verified Core link:
+
+| Site | Source | Pages with title, `lang` and charset | API titles added | Declarations | Local links (base = combined) | External links (identical) | 009A subtype links kept | Mutations rejected |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | --- | ---: |
+| Core | `c5545ee` | 202/202 | 196 | 1,268 | 4,565 | 35 | none in source | 13/13 |
+| Imgproc | `9ce22ae` | 8/8 | 2 | 314 | 1,759 | 562 | 9, as recorded by 009A | 13/13 |
+| Geometry (historical) | `fa81e51` | 9/9 | 3 | 130 | 749 | 106 | none in source | 13/13 |
+| MEL | `6065129` | 37/37 | 30 | 1,237 | 2,966 | 0 | 1, as recorded by 009A | 13/13 |
+| Imgproc (008 navigation) | `9ce22ae` | 8/8 | 2 | 314 | 1,759 | 562 | same page as Imgproc | 13/13 |
+| Geometry (current) | `8690927` | 9/9 | 3 | 130 | 750 | 107 | `Contour` → Core `OpenCV.Point_Array` | 13/13 |
+
+For every site, two independent enhancements are byte-identical,
+re-enhancement is byte-idempotent, `verify` reconstructs the output from source
+and the pristine originals, native declarations and anchors are preserved, and
+`api/gnatdoc.css` equals the pristine stylesheet. Removing exactly the
+authorized metadata from each API page gives the merged-base page byte for
+byte, so every subtype link, including the current Geometry destination
+`https://core.invalid/f8aef00…/api/ea2ebcbc….html#da696e09…` (offline-test),
+is unchanged. External link inventories are identical, so no unverified
+external link is introduced. Core and historical Geometry outputs are
+byte-identical to the original PR head. Imgproc, Imgproc 008 and MEL differ
+from it only by the 009A subtype page and the manifest.
+
+Each consumer's own checks still pass: GNATdoc warnings 0 added and 0 removed
+(all four); coverage Imgproc 1,512/1,512 (both configurations), Geometry
+452/452 (historical and current), MEL 4,294/4,295 as before; MEL integrity
+1,162 protected files.
+
+**Browsers.** Chromium 156.0.8078.4, local:
+
+| Harness | Passed | Earlier checks missing |
+| --- | ---: | ---: |
+| Core, historical Geometry (outputs unchanged) | 1,500/1,500; 1,486/1,486 | 0 |
+| Imgproc, Imgproc 008 | 1,678/1,678 each | 0 |
+| MEL | 1,192/1,192 | 0 |
+| Geometry (current) | 1,486/1,486 | 0 (same check set as historical Geometry) |
+| Operation navigation and history | 144/144, 160 traces | 0 |
+| `Contour` → hash-verified Core `Point_Array` (009A harness) | 4/4 | — |
+| OpenCV Features below `/opencv_features_ada/` | 86/86 | — |
+
+**Features.** The disposable-clone preflight above was repeated with the merged
+base and the merged candidate. Features declares no subtypes, so GNATDOC-009A
+changes nothing there: the merged-base site equals the previous `main`
+output and the merged candidate equals the original candidate. All 13 pages
+are titled, with `lang`, head and charset. Only API metadata, guide titles and
+the manifest differ from the merged base. The Features suites pass (64, 109
+and 64 Chromium assertions). The only `check_pages_site.py` error is still the
+`lastIndexOf('/')` match on line 103 of the unchanged navigation script, so
+`publication_ready` stays false until the Features change described above.
+
+Evidence: [evidence/gnatdoc010r1](evidence/gnatdoc010r1/). The original
+GNATDOC-010 records in [evidence/gnatdoc010](evidence/gnatdoc010/) are kept
+unchanged.
+
 ## Migration impact
 
 - Every enhanced API page and Markdown guide gains metadata, so their bytes and
@@ -272,13 +368,21 @@ cross-browser, screen-reader or full accessibility certification.
 ## Reproduction
 
 ```sh
-python -m unittest discover -s tests -v          # includes tests/test_page_metadata.py
+python -m unittest discover -s tests -v          # includes test_page_metadata.py and test_subtype_bases.py
+# <base python>: a separate environment with the merged base main installed (not this checkout)
 python scripts/qualify_page_metadata.py --previous <008B final-qualified> \
+  --baseline-python <base python> --geometry-consumer <Geometry clone, read only> \
+  --geometry-inputs <GNATDOC-009 type-gate inputs> --geometry-pristine <GNATDOC-009 pristine> \
   --workspace <new> --output <new>
 python scripts/check_real_browser.py --workspace <new>/core --output core.json --source-sha c5545ee...
+python scripts/qualify_subtype_browser.py --workspace <adapter of <new>/geometry-current> --output subtype.json
 python scripts/check_metadata_browser.py --root <features clone> --config docs/gnatdoc-enhance.toml \
   --site <features clone>/_site-enhanced --output features-browser.json
 ```
+
+The original GNATDOC-010 evidence was produced by the earlier form of
+`qualify_page_metadata.py` (predecessor = the reviewed 008B outputs); R1
+regenerates the predecessor with the merged base CLI instead.
 
 ## Remaining limitations
 
@@ -288,3 +392,6 @@ python scripts/check_metadata_browser.py --root <features clone> --config docs/g
 - Evidence is Chromium-only and local; no hosted deployment is claimed.
 - Features publication additionally needs its reviewed pin update and the
   JavaScript-heuristic refinement noted above.
+- The current Geometry Core destination is `offline-test` (`core.invalid`);
+  production Core hosting is not claimed.
+- Python 3.11 and 3.12 were exercised only by hosted CI; locally only 3.13.

@@ -77,4 +77,8 @@ Generated pages gain a verified title, `lang="en"`, an explicit head and a
 UTF-8 charset; only the exact GNATdoc 26.0.0 page shape is accepted and any
 preexisting native metadata is rejected. Core, Imgproc, Geometry, MEL and
 OpenCV Features were requalified: only API pages and the presentation manifest
-change, by metadata alone. See `docs/html-page-metadata.md`.
+change, by metadata alone. After reconciliation with GNATDOC-009A the combined
+output was requalified against the merged base `main` `426f388` on the same
+sites plus the current Geometry source `8690927`: the metadata is the only
+change, and every source-verified subtype-base link is kept byte for byte.
+See `docs/html-page-metadata.md`.

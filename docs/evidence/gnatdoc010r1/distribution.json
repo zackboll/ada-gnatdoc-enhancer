@@ -1,0 +1,113 @@
+{
+  "artifacts": {
+    "ada_gnatdoc_enhancer-0.1.0.dev0-py3-none-any.whl": "058408757f26a04e06cc040c8463086142fbd5f9406decdb2938bf7ba1e15d55",
+    "ada_gnatdoc_enhancer-0.1.0.dev0.tar.gz": "66422b18948856bda90f7d7f6f2ca94610f283f3957ab38762ae8403fbd0915c",
+    "rebuilt-from-sdist/ada_gnatdoc_enhancer-0.1.0.dev0-py3-none-any.whl": "f0f527179c15b27e9ca1cac6eb8a81aa2f1490887c759abfeaf8f8b141c4d422"
+  },
+  "built_from": "077cb5e4e52e90159ae05e77d81597739828226c (git archive)",
+  "installed_outside_checkout": true,
+  "installed_smoke": {
+    "assets": 3,
+    "conformance": {
+      "fully_pinned_consumer_sites": "not qualified in bootstrap",
+      "profiles": {
+        "core": {
+          "deterministic": true,
+          "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+          "html_pages": 4,
+          "idempotent": true,
+          "linked_types": 4,
+          "packages": 3
+        },
+        "geometry": {
+          "deterministic": true,
+          "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+          "html_pages": 3,
+          "idempotent": true,
+          "linked_types": 5,
+          "packages": 2
+        },
+        "imgproc": {
+          "deterministic": true,
+          "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+          "html_pages": 2,
+          "idempotent": true,
+          "linked_types": 6,
+          "packages": 1
+        },
+        "mel": {
+          "deterministic": true,
+          "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+          "html_pages": 37,
+          "idempotent": true,
+          "linked_types": 7,
+          "packages": 29
+        }
+      }
+    },
+    "enhancement": "passed",
+    "help": "passed",
+    "idempotence": "passed",
+    "symlink_source_root_rejection": "passed",
+    "verification": {
+      "declaration_snippets": 10,
+      "files": 42,
+      "html_pages": 37,
+      "linked_external_types": 0,
+      "linked_local_types": 7,
+      "linked_types": 7,
+      "links": 234,
+      "mode": "verified",
+      "public_packages": 29,
+      "unrendered_renderer_exceptions": 1
+    }
+  },
+  "installed_wheel_tests": {
+    "failures": [],
+    "modules": {
+      "test_authored": 46,
+      "test_bootstrap_regressions": 16,
+      "test_cli": 4,
+      "test_cli_site_paths": 9,
+      "test_config_inventory": 11,
+      "test_declaration_profiles": 44,
+      "test_external_types": 49,
+      "test_generic_instances": 68,
+      "test_mel_profiles": 55,
+      "test_navigation_history": 20,
+      "test_operation_navigation": 20,
+      "test_page_metadata": 26,
+      "test_pipeline": 12,
+      "test_profiles_guides": 10,
+      "test_real_qualification": 20,
+      "test_security_extra": 8,
+      "test_subtype_bases": 23
+    },
+    "ran": 441,
+    "result": "OK"
+  },
+  "sdist_rebuilt_wheel_tests": {
+    "failures": [],
+    "modules": {
+      "test_authored": 46,
+      "test_bootstrap_regressions": 16,
+      "test_cli": 4,
+      "test_cli_site_paths": 9,
+      "test_config_inventory": 11,
+      "test_declaration_profiles": 44,
+      "test_external_types": 49,
+      "test_generic_instances": 68,
+      "test_mel_profiles": 55,
+      "test_navigation_history": 20,
+      "test_operation_navigation": 20,
+      "test_page_metadata": 26,
+      "test_pipeline": 12,
+      "test_profiles_guides": 10,
+      "test_real_qualification": 20,
+      "test_security_extra": 8,
+      "test_subtype_bases": 23
+    },
+    "ran": 441,
+    "result": "OK"
+  }
+}
