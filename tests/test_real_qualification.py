@@ -140,8 +140,13 @@ class PinnedQualification(unittest.TestCase):
 
     def test_independent_identity_check_rejects_text_change(self):
         original=identities(self.site)
-        page=next(p for p in (self.site/'api').glob('*.html') if p.name!='index.html')
-        text=page.read_text();page.write_text(text.replace('<code>','<code>changed ',1))
+        # Match the verifier's deterministic page order. Directory enumeration
+        # differs on tmpfs vs disk; mutating a later page lets an earlier raw
+        # page's missing publication metadata mask the intended signature check.
+        page=next(p for p in sorted((self.site/'api').glob('*.html')) if p.name!='index.html')
+        text=page.read_text();self.assertIn('<code>',text)
+        changed=text.replace('<code>','<code>changed ',1)
+        self.assertNotEqual(text,changed);page.write_text(changed)
         with self.assertRaisesRegex(ValueError,'signatures changed'):preserve_native(original,self.site)
 
     def test_external_authority_rejects_manifest_native_rewrite(self):
