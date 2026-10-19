@@ -1,0 +1,81 @@
+{
+  "default_byte_parity": {
+    "core": 207,
+    "core-symbols": 207,
+    "features": 18,
+    "geometry": 14,
+    "imgproc": 13,
+    "mel": 42
+  },
+  "disposition": "HOSTED_CI_PENDING",
+  "implementation_commit": "7afc5da52a8450103405d4fe04916f51b1001c66",
+  "independent_summary_mutations": 6,
+  "main": "3867c8879a3c832fb6e096d7680a8b739a2cffe1",
+  "mutation_cases": 38,
+  "original_15_repeated": true,
+  "presentation_differences": [
+    "shared Search documentation/status labels",
+    "existing summary instance label and Ada-array assignment clarification",
+    "ASCII multiplication entity serialization",
+    "summary outer history uses verified package plus presentation fragment, not symbol/declaration queries"
+  ],
+  "readiness": "exact-final-head CI must succeed; no merge/deploy authorization",
+  "remaining_link_differences": "three individually source-verified OpenCV.Size improvements per revision; zero losses",
+  "revisions": {
+    "core-050": {
+      "browser": "155.0.8059.84",
+      "byte_idempotent": true,
+      "exhaustive_actual_occurrences_clicked": 242,
+      "extra_Size": 3,
+      "incoming": 242,
+      "incoming_click_traces": 421,
+      "installed_real_site_byte_equal": true,
+      "legacy_references": 2698,
+      "missing": 0,
+      "native_sections": 1268,
+      "packages": 195,
+      "public_symbols": 215,
+      "revision": "f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f",
+      "shared_references": 2701,
+      "summaries": 25,
+      "summary_internal_links_clicked": 102,
+      "summary_links": 102,
+      "two_copy_deterministic": true
+    },
+    "core-current": {
+      "browser": "155.0.8059.84",
+      "byte_idempotent": true,
+      "exhaustive_actual_occurrences_clicked": 242,
+      "extra_Size": 3,
+      "incoming": 242,
+      "incoming_click_traces": 421,
+      "installed_real_site_byte_equal": true,
+      "legacy_references": 2742,
+      "missing": 0,
+      "native_sections": 1282,
+      "packages": 195,
+      "public_symbols": 215,
+      "revision": "26bf5e2e8151cb0545b928b72d3d87677543c1ae",
+      "shared_references": 2745,
+      "summaries": 25,
+      "summary_internal_links_clicked": 102,
+      "summary_links": 102,
+      "two_copy_deterministic": true
+    }
+  },
+  "starting_head": "ddf2e3552e4007d57c3bf2ab8e5072e83de5ac10",
+  "starting_tree": "faac84262de8c520978bbc25f9d1ed3388ee552b",
+  "test_setup_correction": "c26d616a6f2dc1180807fabc37cd1c8118db36bd",
+  "tests": {
+    "added": 24,
+    "extracted_sdist_rebuilt_wheel": 540,
+    "installed_wheel": 540,
+    "python": [
+      "3.11",
+      "3.12",
+      "3.13"
+    ],
+    "retained": 516,
+    "total": 540
+  }
+}

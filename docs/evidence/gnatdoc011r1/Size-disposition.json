@@ -1,0 +1,265 @@
+{
+  "050": [
+    {
+      "classification": "legitimate source-verified improvement: OpenCV.Size is ancestor-visible; Rotated_Rect.Size is a record component, not a package-visible homograph",
+      "complete_source_declaration": "   function Create (Dimensions : Size; Element_Type : Mat_Type) return Mat;",
+      "declaration": "OpenCV.Core.Create",
+      "legacy_blockers": [
+        {
+          "column": 9,
+          "end": 70,
+          "name": "Size",
+          "scope": "OpenCV.Size",
+          "signature": "type Size is record",
+          "start": 67
+        },
+        {
+          "column": 7,
+          "end": 158,
+          "name": "Size",
+          "scope": "OpenCV.Rotated_Rect.Size",
+          "signature": "Size : Float32_Size : = (Width => 0.0, Height => 0.0);",
+          "start": 158
+        }
+      ],
+      "legacy_reason": "legacy Source.members deliberately treats deeper component names as potential blockers; its conservative ambiguity is not an Ada visibility conflict",
+      "legacy_status": "ambiguous",
+      "line": 1134,
+      "link": {
+        "identity": "opencv.size",
+        "label": "Size",
+        "url": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278"
+      },
+      "native_profile": "function Create (Dimensions : Size; Element_Type : Mat_Type) return Mat\n",
+      "native_type_span": [
+        30,
+        34
+      ],
+      "source_anchor": "b0b02d289e610f2746701ab66efd151949a892d235a719dabc74578f5c81363f",
+      "source_package": "opencv.core",
+      "source_page": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "source_type_span": [
+        33,
+        37
+      ]
+    },
+    {
+      "classification": "legitimate source-verified improvement: OpenCV.Size is ancestor-visible; Rotated_Rect.Size is a record component, not a package-visible homograph",
+      "complete_source_declaration": "   function Dimensions (Self : Mat) return Size;",
+      "declaration": "OpenCV.Core.Dimensions",
+      "legacy_blockers": [
+        {
+          "column": 9,
+          "end": 70,
+          "name": "Size",
+          "scope": "OpenCV.Size",
+          "signature": "type Size is record",
+          "start": 67
+        },
+        {
+          "column": 7,
+          "end": 158,
+          "name": "Size",
+          "scope": "OpenCV.Rotated_Rect.Size",
+          "signature": "Size : Float32_Size : = (Width => 0.0, Height => 0.0);",
+          "start": 158
+        }
+      ],
+      "legacy_reason": "legacy Source.members deliberately treats deeper component names as potential blockers; its conservative ambiguity is not an Ada visibility conflict",
+      "legacy_status": "ambiguous",
+      "line": 3552,
+      "link": {
+        "identity": "opencv.size",
+        "label": "Size",
+        "url": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278"
+      },
+      "native_profile": "function Dimensions (Self : Mat) return Size\n",
+      "native_type_span": [
+        40,
+        44
+      ],
+      "source_anchor": "849a6b4dd7df92b9494fc7a28ebaae9ac86428b1becc0852671a3e6e610fd5de",
+      "source_package": "opencv.core",
+      "source_page": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "source_type_span": [
+        43,
+        47
+      ]
+    },
+    {
+      "classification": "legitimate source-verified improvement: OpenCV.Size is ancestor-visible; Rotated_Rect.Size is a record component, not a package-visible homograph",
+      "complete_source_declaration": "   type Region_Location is record\n      Whole_Size : Size;\n      Offset     : Point;\n   end record;",
+      "declaration": "OpenCV.Core.Region_Location",
+      "legacy_blockers": [
+        {
+          "column": 9,
+          "end": 70,
+          "name": "Size",
+          "scope": "OpenCV.Size",
+          "signature": "type Size is record",
+          "start": 67
+        },
+        {
+          "column": 7,
+          "end": 158,
+          "name": "Size",
+          "scope": "OpenCV.Rotated_Rect.Size",
+          "signature": "Size : Float32_Size : = (Width => 0.0, Height => 0.0);",
+          "start": 158
+        }
+      ],
+      "legacy_reason": "legacy Source.members deliberately treats deeper component names as potential blockers; its conservative ambiguity is not an Ada visibility conflict",
+      "legacy_status": "ambiguous",
+      "line": 190,
+      "link": {
+        "identity": "opencv.size",
+        "label": "Size",
+        "url": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278"
+      },
+      "native_profile": "type Region_Location is record\n   Whole_Size : Size;\n   Offset     : Point;\nend record;\n",
+      "native_type_span": [
+        47,
+        51
+      ],
+      "source_anchor": "ef0aa08c4ee454716b25468bc242574d510fd3bc0b0a30d7a32362d4cc9722c6",
+      "source_package": "opencv.core",
+      "source_page": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "source_type_span": [
+        53,
+        57
+      ]
+    }
+  ],
+  "current": [
+    {
+      "classification": "legitimate source-verified improvement: OpenCV.Size is ancestor-visible; Rotated_Rect.Size is a record component, not a package-visible homograph",
+      "complete_source_declaration": "   function Create (Dimensions : Size; Element_Type : Mat_Type) return Mat;",
+      "declaration": "OpenCV.Core.Create",
+      "legacy_blockers": [
+        {
+          "column": 9,
+          "end": 70,
+          "name": "Size",
+          "scope": "OpenCV.Size",
+          "signature": "type Size is record",
+          "start": 67
+        },
+        {
+          "column": 7,
+          "end": 158,
+          "name": "Size",
+          "scope": "OpenCV.Rotated_Rect.Size",
+          "signature": "Size : Float32_Size : = (Width => 0.0, Height => 0.0);",
+          "start": 158
+        }
+      ],
+      "legacy_reason": "legacy Source.members deliberately treats deeper component names as potential blockers; its conservative ambiguity is not an Ada visibility conflict",
+      "legacy_status": "ambiguous",
+      "line": 1134,
+      "link": {
+        "identity": "opencv.size",
+        "label": "Size",
+        "url": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278"
+      },
+      "native_profile": "function Create (Dimensions : Size; Element_Type : Mat_Type) return Mat\n",
+      "native_type_span": [
+        30,
+        34
+      ],
+      "source_anchor": "b0b02d289e610f2746701ab66efd151949a892d235a719dabc74578f5c81363f",
+      "source_package": "opencv.core",
+      "source_page": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "source_type_span": [
+        33,
+        37
+      ]
+    },
+    {
+      "classification": "legitimate source-verified improvement: OpenCV.Size is ancestor-visible; Rotated_Rect.Size is a record component, not a package-visible homograph",
+      "complete_source_declaration": "   function Dimensions (Self : Mat) return Size;",
+      "declaration": "OpenCV.Core.Dimensions",
+      "legacy_blockers": [
+        {
+          "column": 9,
+          "end": 70,
+          "name": "Size",
+          "scope": "OpenCV.Size",
+          "signature": "type Size is record",
+          "start": 67
+        },
+        {
+          "column": 7,
+          "end": 158,
+          "name": "Size",
+          "scope": "OpenCV.Rotated_Rect.Size",
+          "signature": "Size : Float32_Size : = (Width => 0.0, Height => 0.0);",
+          "start": 158
+        }
+      ],
+      "legacy_reason": "legacy Source.members deliberately treats deeper component names as potential blockers; its conservative ambiguity is not an Ada visibility conflict",
+      "legacy_status": "ambiguous",
+      "line": 3693,
+      "link": {
+        "identity": "opencv.size",
+        "label": "Size",
+        "url": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278"
+      },
+      "native_profile": "function Dimensions (Self : Mat) return Size\n",
+      "native_type_span": [
+        40,
+        44
+      ],
+      "source_anchor": "849a6b4dd7df92b9494fc7a28ebaae9ac86428b1becc0852671a3e6e610fd5de",
+      "source_package": "opencv.core",
+      "source_page": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "source_type_span": [
+        43,
+        47
+      ]
+    },
+    {
+      "classification": "legitimate source-verified improvement: OpenCV.Size is ancestor-visible; Rotated_Rect.Size is a record component, not a package-visible homograph",
+      "complete_source_declaration": "   type Region_Location is record\n      Whole_Size : Size;\n      Offset     : Point;\n   end record;",
+      "declaration": "OpenCV.Core.Region_Location",
+      "legacy_blockers": [
+        {
+          "column": 9,
+          "end": 70,
+          "name": "Size",
+          "scope": "OpenCV.Size",
+          "signature": "type Size is record",
+          "start": 67
+        },
+        {
+          "column": 7,
+          "end": 158,
+          "name": "Size",
+          "scope": "OpenCV.Rotated_Rect.Size",
+          "signature": "Size : Float32_Size : = (Width => 0.0, Height => 0.0);",
+          "start": 158
+        }
+      ],
+      "legacy_reason": "legacy Source.members deliberately treats deeper component names as potential blockers; its conservative ambiguity is not an Ada visibility conflict",
+      "legacy_status": "ambiguous",
+      "line": 190,
+      "link": {
+        "identity": "opencv.size",
+        "label": "Size",
+        "url": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278"
+      },
+      "native_profile": "type Region_Location is record\n   Whole_Size : Size;\n   Offset     : Point;\nend record;\n",
+      "native_type_span": [
+        47,
+        51
+      ],
+      "source_anchor": "ef0aa08c4ee454716b25468bc242574d510fd3bc0b0a30d7a32362d4cc9722c6",
+      "source_package": "opencv.core",
+      "source_page": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "source_type_span": [
+        53,
+        57
+      ]
+    }
+  ],
+  "disposition": "preserved legitimate source-verified improvements"
+}

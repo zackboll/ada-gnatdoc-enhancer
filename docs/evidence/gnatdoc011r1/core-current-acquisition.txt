@@ -1,0 +1,9 @@
+Note: Synchronizing workspace...
+Dependencies automatically updated as follows:
+
+   +b opencv     4.10.0 (new,system package)
+   +b pkg_config 1.8.1  (new,system package)
+Warning: Could not completely remove /home/zboll/.local/share/alire/releases/opencv_4.10.0_system/alire/alire.toml.upstream
+ERROR: file "/home/zboll/.local/share/alire/releases/opencv_4.10.0_system/alire/alire.toml.upstream" could not be deleted
+ERROR: alr encountered an unexpected error, re-run with -d for details.
+ERROR: error location: [/usr/local/bin/alr]

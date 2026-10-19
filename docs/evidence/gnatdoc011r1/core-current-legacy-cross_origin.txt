@@ -1,0 +1,2 @@
+PASS 1280px cross-origin declaration history/stale offset/reload/fresh tab
+PASS 390px cross-origin declaration history/stale offset/reload/fresh tab

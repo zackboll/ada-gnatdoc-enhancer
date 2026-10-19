@@ -1,0 +1,864 @@
+{
+  "legacy": {
+    "opencv.angle_unit": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "de966a6db4e74e15e102452acbe5bc993997dbac4c699aa33af780a80d47ad8d"
+    ],
+    "opencv.border_kind": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "22674c34048b13f71b8466ef746aa1b680ebdab2d2da7ff1ee9d13eeef4e926a"
+    ],
+    "opencv.core.batch_distance_kind": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "afb495fc0dc6538c685847265f8be4479bc392dda5894656a7c345af0c4a63f1"
+    ],
+    "opencv.core.border_interpolation_result": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "ecf6d4d7a3d6ea4f5d0cfbd0d06c69ce67638677378d4a69493bbab15563ad59"
+    ],
+    "opencv.core.cartesian_coordinates": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "962bdb1aae6684c89340546a794e28352e3804dbb2b90e1170ab8a5b994ba22e"
+    ],
+    "opencv.core.channel_count": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "cf9336fa0205832fc9681a4d29f1746218ec8d3ca26604ca2ab28281b2964e0e"
+    ],
+    "opencv.core.channel_route": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "a2dcf26932eee83f08c95c0aa583fcdd09d1636f07e31ca0d8d63ae941355db8"
+    ],
+    "opencv.core.channel_route_array": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "be7898ba7e1eaf3b8291dad6016f54e26edefb3f573752d0fc49bf768c94a9fc"
+    ],
+    "opencv.core.channel_source_kind": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "02022478d7c9ebcd70a26e9679e665116647647e167f4c3b118443b2e658edbe"
+    ],
+    "opencv.core.comparison_kind": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "6ef03ca05f1f3f06bbd52d17ed2318eece85409e872d6e47858ee057616ff477"
+    ],
+    "opencv.core.covariance_result": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "f9a0c7c32a62bd8187f58f1f2839c40f500ac552f5550f76f8e42abed7c95cb8"
+    ],
+    "opencv.core.covariance_scaling": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "04da46d591809e6640f9be113a1b26d883bc896d03e0f9f1f598cad89e37bcc7"
+    ],
+    "opencv.core.cubic_root_status": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "bb7af95952d3223a409ec7173c3b5166494d8a8cd4f7c5a3c28f4a7acf6304be"
+    ],
+    "opencv.core.cubic_solution_result": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "64230c024d04baeb0348bd8251b654ff2cbaf7332062466e8c2a25b979bb078d"
+    ],
+    "opencv.core.depth_type": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "95fd22fd3d604ecabe07b79064ba0beb07e9032ac1ac63117f972632675d962e"
+    ],
+    "opencv.core.dimension_array": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "ca4d443bbdbbb830d472792e87308ed1c07af40e4c1938857ccfb528ef4a14bb"
+    ],
+    "opencv.core.dimension_selection": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "23b0f37ac69312c1cea8b2a08097e173564164b732906dea9d475336e1dc4964"
+    ],
+    "opencv.core.dimension_selection_array": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "a28fa16666bcd474df8c0830ca4bd4ddf7eb639ea65a96dc003ca0d95528fa66"
+    ],
+    "opencv.core.dimension_selection_kind": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "6e4a7bf3f49f2dee1d8609d2bf95055bbe010587cd9f341795aee2a7b8f44a60"
+    ],
+    "opencv.core.dimension_stride_array": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "ecc40b59402eac1d6e5c73688b91b65bd186e4bf8b65d2725be77468898332da"
+    ],
+    "opencv.core.eigen_decomposition_result": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "e15bc70d58e93d2cb9a8c25b9b2ba8e98b2f446303ee85eb3945d47a38ac217a"
+    ],
+    "opencv.core.extremum_occurrence": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "f5345ed3fb3fe217ea094598eb7331176b98f9ff101792f88340c5fad181d990"
+    ],
+    "opencv.core.fixed_matrices.column_index": [
+      "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html",
+      "8e11295a1b08b0713992ab0f64fa0661b468ccbddaa4bf832caa9052e6eb02e1"
+    ],
+    "opencv.core.fixed_matrices.matrix": [
+      "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html",
+      "503c405669f71075210f6305aca5e2a908c7f0d6add86c6cd460dd09a87b42c4"
+    ],
+    "opencv.core.fixed_matrices.row_index": [
+      "f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html",
+      "d54f66a5afc01fb7daad3316abcbbc9ef3a81a71610b2f3c8fb9dacd9e766434"
+    ],
+    "opencv.core.flip_kind": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "4ca08239fbc9ef0323a6ec2f3bb42187052ed3c1023e9a183ef89f1effb621c6"
+    ],
+    "opencv.core.float16_buffer_access.buffer_array": [
+      "ac5520a3e1c4f3c1ed6e61ed6ddbab7dc01b5196f2c594be0a9d150e3f1f0804.html",
+      "087c9c5ac8cdc15f928bd1360fbeb2b2db53df21bd3c4cb30767a4b0a31286dc"
+    ],
+    "opencv.core.float16_mat_view.buffer_array": [
+      "46275e434f57bdd2828a6cdc178afcc96c53452f57f588bc833623f7e7179c5d.html",
+      "f682b5ff4ccecf3a5dc9b2e62603c7e85a1e228d0d5ec170b9adb5d311e05559"
+    ],
+    "opencv.core.float16_row_access.column_index": [
+      "6fbc0941ade6e01a4e423a6413fb53c2a1c8ad4e3333d180225a9f40ad7e4cc3.html",
+      "5ae6da3d3ed88e85f8321c2209cd9cbe5723ee97749802a277faec152bfe1209"
+    ],
+    "opencv.core.float16_row_access.row_array": [
+      "6fbc0941ade6e01a4e423a6413fb53c2a1c8ad4e3333d180225a9f40ad7e4cc3.html",
+      "35fc4b3a1533bf80042b652222ea746487e6eb767a961f454c4d98fef02b336b"
+    ],
+    "opencv.core.float16_value": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "8d7064f2629b206599c570addcbccd218d7be8e2c2bd492af3796a687aebd3e3"
+    ],
+    "opencv.core.float16_vec2_buffer_access.buffer_array": [
+      "75f999a5678621e2b4759b8ebe88fb15e3b7f641e256b3f4873c06ee6703da4b.html",
+      "ddf529512744cb9046906ba4bbe676dd5fcc0cd9f4cdb79c6c176a59014812fa"
+    ],
+    "opencv.core.float16_vec2_mat_view.buffer_array": [
+      "dd4785214fc8e8f1d7a81df39e4eeeac82f16e8d918efa9550f6c62c67848eb3.html",
+      "25e44df7a2c02efedd26cf41ad9bf281bfc5ce73a2170a04a0109db6253ef585"
+    ],
+    "opencv.core.float16_vec2_row_access.row_array": [
+      "ddeb3aa4d98d7907414ac85f2ab0290902c5927dcdd1f51815aba523e3fccac0.html",
+      "9dd719239033df3f03117c5dda9ac4c23887da8bd3a95fb7d55b52c5d4d4084f"
+    ],
+    "opencv.core.float16_vec3_buffer_access.buffer_array": [
+      "1955e96a5c1fe57aecb4557ac079a5f611b90ff6f2448d4af6c94069ea96e8a7.html",
+      "51b2cc8246250e31a928f9a5d58e35d731d4f2221aeba333bf78fe7f6ebc5815"
+    ],
+    "opencv.core.float16_vec3_mat_view.buffer_array": [
+      "6457f99f8077ab69cadb35be05b46e83fe610f4b91dd156c579a68a5c681bd0e.html",
+      "6c5774e983be1fbd9c4868259e2554eb432ec68dccb39abd8068ea6a4527526e"
+    ],
+    "opencv.core.float16_vec3_row_access.column_index": [
+      "f44deaed48697fe9fbe2ac2c302b63dab546e9a38a50ff379bfe23506c1ae87f.html",
+      "97a649bca2117899fe0d236c053ff560428812d8640c1d621017cd7d1749367a"
+    ],
+    "opencv.core.float16_vec3_row_access.row_array": [
+      "f44deaed48697fe9fbe2ac2c302b63dab546e9a38a50ff379bfe23506c1ae87f.html",
+      "e0fed492ee24de7b40df95bd6d21c0bbe02ff95307b42e9b8b0380155344bd9a"
+    ],
+    "opencv.core.float16_vec4_buffer_access.buffer_array": [
+      "a35b30a4b05fb8d814c90764bb73e0c6ddebaf82d8a8df2e07d3b5377f4acd06.html",
+      "43dc3e9effa12ff5a76b5b8ff69f7196c6d7748521c1306cd4ec427b25d7ee02"
+    ],
+    "opencv.core.float16_vec4_mat_view.buffer_array": [
+      "3282348d735ff984c516705e752f6259e17ef4a88c99c798d99756788ebd4760.html",
+      "9de9c181a7f3cf1b1d4474e9719fd5b605c8ac1350e9eba8bdcd8b2d31d52815"
+    ],
+    "opencv.core.float16_vec4_row_access.row_array": [
+      "0dc08af61fe7e36d1db5c861231cc1064482561d0e39ec0e3d9c88ca138014f6.html",
+      "362ac95e5fff30a971356c6047a61a940ff79090e7e7ecc94c141b90cf8e1f7a"
+    ],
+    "opencv.core.float32_access.float32_classification": [
+      "e81da0aef96c8f3f23691d5d544d88a9b00715f9dabcf497318f200fc5360e2b.html",
+      "84bc65586af4f98080ce683ef9b871af538fcab0fa84f27b5ec2a2198534263d"
+    ],
+    "opencv.core.float32_buffer_access.buffer_array": [
+      "7faa5d5881f22fa2d6a1333348dd6daf9bc2956236365c62ce7017ddff26825e.html",
+      "68abba20d292fc9fe0270c5afabab8cee2815d36c0958e786a95f1d28a944b2f"
+    ],
+    "opencv.core.float32_mat_view.buffer_array": [
+      "75f80eb15b2f305b801e78042ab7faa2ac7ac646bf998208d7fd93fd27354283.html",
+      "7b4daff1206da013f74a29d474798c002c963c3970a44634938c369b696ca32c"
+    ],
+    "opencv.core.float32_row_access.column_index": [
+      "268a4fd9a7054d83efd4fd2a67e6208382fa824c81da22914e56a98a5c97c94e.html",
+      "870b81789a7c9b3181eeb8186228720580f2a9f6c27e9eaa9ef391bc678d65f7"
+    ],
+    "opencv.core.float32_row_access.row_array": [
+      "268a4fd9a7054d83efd4fd2a67e6208382fa824c81da22914e56a98a5c97c94e.html",
+      "815e54fc296e7bb0b1433b45b56971571d3aa91d63f2614285f88de8c6a7aa03"
+    ],
+    "opencv.core.float32_vec2_buffer_access.buffer_array": [
+      "df54b71974a6882afb13a3ca278a42038d7e5082cc68d7e23ef1e428b9108101.html",
+      "c53c7bbbbb056d861a9313ce5508630fb219774b602452a4035674ca90ae8ccd"
+    ],
+    "opencv.core.float32_vec2_mat_view.buffer_array": [
+      "c7e916dc3412c95c033babc4de72117dd1a95ea3ab143be07b85cca697f8af27.html",
+      "c1a8dd59df40657650d9bb7d4b0a3419d636ddfef2d06c8abd5496576d48c017"
+    ],
+    "opencv.core.float32_vec2_row_access.column_index": [
+      "46c2b4b6386807be90b92a5aed5eefd148ae135336903d008664c45d8a07ed1a.html",
+      "8a2cc89735f729e5ef9fa2b1c77525fd18a5113e21dfb1f3deae50c0a38923b6"
+    ],
+    "opencv.core.float32_vec2_row_access.row_array": [
+      "46c2b4b6386807be90b92a5aed5eefd148ae135336903d008664c45d8a07ed1a.html",
+      "73001092737db62550a5b63dec4239a4bb465ee90964c3ec386f4ba76c1b2ce3"
+    ],
+    "opencv.core.float32_vec3_buffer_access.buffer_array": [
+      "3a58964863eff985027f3ac671a90883e8c5a28b6776634e4c916e4e929cd654.html",
+      "d2ee5a1a2ae07ac0efc17039a8e295496f35e3dae0982ce2abb8b9a1b0785e4b"
+    ],
+    "opencv.core.float32_vec3_mat_view.buffer_array": [
+      "b68790dfdcaacb9b7a25adc5a1a4b852c479cbb8dd4a037e782ee6b5b99eb0b8.html",
+      "40f357126f0e0d89c3e00841869e914a54d650d689503c3d8e291969d922a87d"
+    ],
+    "opencv.core.float32_vec3_row_access.column_index": [
+      "2972d33f067a51c03b7e0f32fe1cc1917d1eda392def3ce5af74b8e1d667c514.html",
+      "2126a1738421bdbdfd14f8592dcf59acdea95d3479a4f5a4311ad92c8daece97"
+    ],
+    "opencv.core.float32_vec3_row_access.row_array": [
+      "2972d33f067a51c03b7e0f32fe1cc1917d1eda392def3ce5af74b8e1d667c514.html",
+      "9cb0d20643d036f92f80aea122e76b63391138b0c54fd83d21d1b174bc50f0e8"
+    ],
+    "opencv.core.float32_vec4_buffer_access.buffer_array": [
+      "d9f3d08c5d92231983002e20d72b99c9ec80c169786fcb2d422f471b862853c7.html",
+      "f5f53de9b755f95742dd7112563a13e620191ed7911bd241db63657b6533cf4b"
+    ],
+    "opencv.core.float32_vec4_mat_view.buffer_array": [
+      "5d272cccd3c68eff033bc6b58c5eb6dbb355ee44955269c85a0d342bf3d8538e.html",
+      "2d1c1ce1352453dce621359d71dee2804e44164cae3130514b099b41416ace77"
+    ],
+    "opencv.core.float32_vec4_row_access.row_array": [
+      "79624cbacd3b722ed5b8858c83ed3f4212bd9be119285a243cc5842c00080517.html",
+      "3f99725db0315de2300f104464785d25d2ffa600f6b38ad07921b4808a00f521"
+    ],
+    "opencv.core.float64_access.float64_classification": [
+      "300db33cb95589251074cbbe1a066a6dfaa538dbba7e2f0bab3e9eca57d8ea5e.html",
+      "d6bf2fec085f561ebeb09593d4ebe14af3ada1df6f2b442e8c2ec34e800035e2"
+    ],
+    "opencv.core.float64_buffer_access.buffer_array": [
+      "0453a2309ced3cca5e30b48e034e323532b3cb93ccbbeaf25275acea27f95774.html",
+      "023cb2846e2f15dfc1b0f89dc048af7cbed67c618a57597ecd3844e75515bccf"
+    ],
+    "opencv.core.float64_mat_view.buffer_array": [
+      "e043b9ce5eb6f6d0c0ca2c8fb4e2c582ed161a8291bc35993b431480338de7e5.html",
+      "8e0a4d9e4d45d04ab1dd89a58d64d91650a38fcd4d562e032e5eb065f656a1a4"
+    ],
+    "opencv.core.float64_row_access.column_index": [
+      "968cbec2d6eb749edf38cb3d5b2f43b71617123ef9cf0bafd6db4062baeccc74.html",
+      "cb5c5bb50e8ac323f035ea45e4466832341a509355d0b8f29e6006b6dff6d20d"
+    ],
+    "opencv.core.float64_row_access.row_array": [
+      "968cbec2d6eb749edf38cb3d5b2f43b71617123ef9cf0bafd6db4062baeccc74.html",
+      "c1fdf45f0cd00231f7d888ed5f3ae0fe099534d77008cb9e983cb47466c5f9ae"
+    ],
+    "opencv.core.float64_vec2_buffer_access.buffer_array": [
+      "fa0a3bfa0d5bd6a61dea5fa82f42cdbc8e33733a6df5925472a7b2e352ee8df1.html",
+      "73cf7c6c72dcde33fc9e2d94d633dd71a75b031143d48887d76c69a9be57f261"
+    ],
+    "opencv.core.float64_vec2_mat_view.buffer_array": [
+      "b880a52681f77aa0b86dd8dfb5aa76a88fdc623bcd53dc9ec8d51f9a2de4e860.html",
+      "4a083e3b909d2c47aa39750af919874e283a2d0eeba718ffe6242a0c64064922"
+    ],
+    "opencv.core.float64_vec2_row_access.column_index": [
+      "1ac31c611ccea2d6f29fd83587e3c0d1b2d37f21afcefbaf1a7bb03716b68e02.html",
+      "00e590fface085c0408a33452c3a751009c4c93485dd97511575547faed2132c"
+    ],
+    "opencv.core.float64_vec2_row_access.row_array": [
+      "1ac31c611ccea2d6f29fd83587e3c0d1b2d37f21afcefbaf1a7bb03716b68e02.html",
+      "b8667600c55055f169e3ec1dd3c6b639be75c56b0437e16b2b7910774ddb3ac2"
+    ],
+    "opencv.core.float64_vec3_buffer_access.buffer_array": [
+      "4036563a1e52b3777c91d247186a24e88e3fe00c924db8cd3ae300b1b0b79369.html",
+      "6a0985419eb320249c5a393cb796afb141f85a53fbe77192c067bb8be1611cfb"
+    ],
+    "opencv.core.float64_vec3_mat_view.buffer_array": [
+      "e265e7fdfa11cae31ce7538fd3562fdeb1befa526b2eb798385d624d6209ed6d.html",
+      "7c7c29df0644816c5b88dd345f443c5f9a406064e4e1a753ec4eaa384223d726"
+    ],
+    "opencv.core.float64_vec3_row_access.row_array": [
+      "1a7d5de2c0a4154ea4068feb57ccb533ae3aa9e4f7cba4aa7673f5a83cc61de1.html",
+      "32ed59b3f6d312136bc9bf4ab339b8f29573b5f6760367b43a3534deaddc7506"
+    ],
+    "opencv.core.float64_vec4_buffer_access.buffer_array": [
+      "fb7516b464685e4c6cab32f520f1635898659bf95260fc9530d7bebf5a986bf7.html",
+      "ccdc5c23070d61f2021a9d20ffa9e8f5f556689e8167512e4e9204ddc353efc6"
+    ],
+    "opencv.core.float64_vec4_mat_view.buffer_array": [
+      "43782b2496730ec3cc3a7259284705efc514c2f4f8cb02c76938bb5574d7d65a.html",
+      "c45d0e523e47d73c126ad20d6802ab91fcff48eec9173a269a7a338a0f463f32"
+    ],
+    "opencv.core.float64_vec4_row_access.row_array": [
+      "98f62a287d6defb6ae2719f2f30f0a68e10cbe45b44e241b2ee106a69c9b3e5d.html",
+      "02e0fc4a510e4611a924c436c0a3903975066e44f193520661e71924049eb581"
+    ],
+    "opencv.core.index_array": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "b6fc11ba3c984c57d59aca4af166fe266b0749523fac9ec52221b56d352be3ec"
+    ],
+    "opencv.core.index_range": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "134a83980413d761eac817f07fb07fe4e93c0e397df40b62247ac5c5f3f6d37e"
+    ],
+    "opencv.core.index_range_array": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "4e89f9f5f463f9f5471cada7e1be30e0d3bb1d4917280088cd917841924c2232"
+    ],
+    "opencv.core.int16_buffer_access.buffer_array": [
+      "d3a86b7833c6a63acc24416f638ee20cfb809b50acd5c8367d2bde8602b28e5c.html",
+      "73768001fe111018a6b8b9662b806fd423e6c157073a5a84e00c4d2d785ab422"
+    ],
+    "opencv.core.int16_mat_view.buffer_array": [
+      "aa196f96f4b637a3ffb92cdd95374b170c3343ebd5e428f87e3677127b739a05.html",
+      "200aaf743d3f5d3bd94dca88f647d488e6d4fa2cad180abed7a18fec0bdbac77"
+    ],
+    "opencv.core.int16_row_access.column_index": [
+      "6370bb083d234b300cd82d8f7cd1fd6ec669b5dfe96dc26094c05a56bfc32bae.html",
+      "bb4d4304f5312ebb7c9d12e12de3bbbbf850832fc45380353d851f9ba67297a3"
+    ],
+    "opencv.core.int16_row_access.row_array": [
+      "6370bb083d234b300cd82d8f7cd1fd6ec669b5dfe96dc26094c05a56bfc32bae.html",
+      "d694ffb2d204d51a6abc6d1af364c2f12c4aae5c3fec08479c1e18cadcc880bc"
+    ],
+    "opencv.core.int16_vec2_buffer_access.buffer_array": [
+      "ae43a39cdb062d25d97aa1611036f0ebfe702802de015d5a70ce9884b27cc3f5.html",
+      "7e837442d3b30a1c0af2b6059eefa103a738c884c484aefd1a64dece5f41c9bb"
+    ],
+    "opencv.core.int16_vec2_mat_view.buffer_array": [
+      "b9b6519259ef341c7e28d0a6377ca07bbc6c457e00877197744baa67f3be8037.html",
+      "15bdb3d615776487cb82997a4b07c6350bb817d8e2d3bc70f4297ecb30e7d7b7"
+    ],
+    "opencv.core.int16_vec2_row_access.row_array": [
+      "90d54083fa387a4471aba19e43f47bb54209a4329ff2f8db9980684645394515.html",
+      "a147318ea751ad11b7f487ae12adcd507b5ef199b78a703b49b313296e9888df"
+    ],
+    "opencv.core.int16_vec3_buffer_access.buffer_array": [
+      "c0f0f1af997c08fea52cdf2ef48c04c6eaa55bfb136948c287a6d3acef9cdaf1.html",
+      "bfb6ce08d5d3f9dd4fecc0e9b1b1ceb0ac79d4c2e32c43dd3c5aba41310f6f59"
+    ],
+    "opencv.core.int16_vec3_mat_view.buffer_array": [
+      "e5f6a304f8b133809878f6d6dc16a562ba4b077449157a0c8600524906fee78a.html",
+      "dfea0f81d96fe65ae8d95d018add1f0f5aeae69e789a7efd3b6c130348efce63"
+    ],
+    "opencv.core.int16_vec3_row_access.row_array": [
+      "78f57dfe3c1c1c729e67bf051e99f8b9ff13d04743714cf95635cf0b928a8223.html",
+      "8593b2a4ff98fda223f95d4b78f7b6a5b31d23f513542bbac2a57e52d4c006a6"
+    ],
+    "opencv.core.int16_vec4_buffer_access.buffer_array": [
+      "8e21cb290db9a1d748c76e08c0b85367a81976bb2957637cb902f53133ad14f5.html",
+      "c757e573423a1ca7deb121c76c20b72f08c22918b506d1699fc7d5050231f75d"
+    ],
+    "opencv.core.int16_vec4_mat_view.buffer_array": [
+      "a5c5a49ade1e652d0fb81838e2542bdd28c804f3729f73c6e71a1148b2127331.html",
+      "36afda3de71599d2775670744e5ab5ba6e3a3c92106ff13b54fa0ed2ad5205c1"
+    ],
+    "opencv.core.int16_vec4_row_access.row_array": [
+      "68640d1dfa446ca695ed5a881e5ef42aff791a8ade251c8e30a3ba68173bf7df.html",
+      "789c7ff711ded4b5403c433622f96b8a6fc3eb6e7c2003310a7dbbdc2774c919"
+    ],
+    "opencv.core.int32_buffer_access.buffer_array": [
+      "0f5862ea388f790c4eabb60f8e65f1cb3e04b3f69eabe194a503233a44cec440.html",
+      "47550300aa74015b8394054df8189e8db065ce461baae129f58a37db50d83641"
+    ],
+    "opencv.core.int32_mat_view.buffer_array": [
+      "d79fffff4b4c360a82464885b45726663e651ff97e4611f771e8e6c27b610a58.html",
+      "1482bd64750c667c9f799fce08847cf8c034b4c691ed0fc71efd624400b3779e"
+    ],
+    "opencv.core.int32_row_access.column_index": [
+      "dda223e573a96b520722d177a1e2a61af6f99419e6efbe1f7b4bc7272424064f.html",
+      "df7960582966ca837c8b157835deec4cbb80d82426d94d68baa770f6ad7881fd"
+    ],
+    "opencv.core.int32_row_access.row_array": [
+      "dda223e573a96b520722d177a1e2a61af6f99419e6efbe1f7b4bc7272424064f.html",
+      "4e7cf67f8ba21644403ced3d4ac29584116e9e35592fd73d2529748b998d0852"
+    ],
+    "opencv.core.int32_vec2_buffer_access.buffer_array": [
+      "94402293bdc9c1082b7226f7ff2ac2a964e51554dc56b46f1cb07329f892f9c1.html",
+      "052a8c155afe4b079f3b7916258c3f300ec5f6d558730258fcca96fbdaa7f61e"
+    ],
+    "opencv.core.int32_vec2_mat_view.buffer_array": [
+      "07c9f557ed5f19292a14a9b53480084cb6244c8f58ac817b12a027a1e605ce0a.html",
+      "de2cada749e775bbe95ee5972b07ac1ff572bade48d2b5281a2823c45d1a565e"
+    ],
+    "opencv.core.int32_vec2_row_access.row_array": [
+      "db0044599129dd8da6834359dea6bf15c5d73ed0c4aefef0476d0ae209d94272.html",
+      "424e9f4e91e84caf76c5515a5b049a0badd439749282d9d131e7842b0babbacd"
+    ],
+    "opencv.core.int32_vec3_buffer_access.buffer_array": [
+      "bed064aaf248cf72e9a0f190fd41f581c87c52d2ea8c5833dbf65d82cd6af217.html",
+      "1e5da649cb5668f8c8d81b749166e74e714e58f92f2ae3a80f769b093da2875b"
+    ],
+    "opencv.core.int32_vec3_mat_view.buffer_array": [
+      "7aca113dfcaf33c6b514ae3a97dbdd46c2044f9f814e5231034284f706d6e941.html",
+      "a57940db17c864f31718310a1da7814545cd2bb53d8db1319a02ef4b16694ba9"
+    ],
+    "opencv.core.int32_vec3_row_access.row_array": [
+      "9ae9ec3c6f126a5f69e463063a1adfa3c010f1d4014c24d0453937f405580f90.html",
+      "07d65879a3842fe7b3e152a51d714503eb86e7ce9df96312b7514425cd55bdb8"
+    ],
+    "opencv.core.int32_vec4_buffer_access.buffer_array": [
+      "7546c11d8fcf45f98328fabbace550c047b120212a6fd5aad4e6a66ab4ce1dfa.html",
+      "1e940d1d9005b2d46a30a8410ad591394cf9c119e352d8e9b9ca6439ffebb78c"
+    ],
+    "opencv.core.int32_vec4_mat_view.buffer_array": [
+      "1a984e563280d020b39eb40f4562e37b1ece81c5c7e2df1a7cac4c1f09b41f0c.html",
+      "c735acbf8242bd7cd106310d5496b098e1f58129ae5ed7c0f297097ac9de7c48"
+    ],
+    "opencv.core.int32_vec4_row_access.row_array": [
+      "f7829464fe4bbc2d3abdfb341730caade9f25e34e74dcf4257e4a2020af7176d.html",
+      "aa6edef47391f4d45b49393505b50753f359d159d7e5ade0f396450139519502"
+    ],
+    "opencv.core.int8_buffer_access.buffer_array": [
+      "e225750230a718798f2c61946b1847f84555eee373ff2c8b2b5a4b36cd6e9176.html",
+      "d70fb66c96996c4e645dc19238ac40cd0306bdb8f044969da6a41b08cb019a37"
+    ],
+    "opencv.core.int8_mat_view.buffer_array": [
+      "562d880efece18059eb86ecc546715aa6aa3fc52af8098f6ab927a134fe27c60.html",
+      "3755849dd34962da46b6258461f8d64ae07baa67ce93b6115fffb4aa2a073d9f"
+    ],
+    "opencv.core.int8_row_access.column_index": [
+      "493bebbfe6497dc46c61af914b443aeb515a4a55c06768a91a0e9ab096de8103.html",
+      "3c54a588295f39331e14881b5ee01fb99308e12254cb466f8473fb1aa7b06805"
+    ],
+    "opencv.core.int8_row_access.row_array": [
+      "493bebbfe6497dc46c61af914b443aeb515a4a55c06768a91a0e9ab096de8103.html",
+      "f1bb55cd8f8303fa47def745aca49a4197a58547003f3e821b1c66db2e98c072"
+    ],
+    "opencv.core.int8_vec2_buffer_access.buffer_array": [
+      "fefe2f64070f0cb1b70d3dd9d235b5d46d16f95b259b1cc3d33a734252189ed7.html",
+      "2fd46f0f05f24d15208efe1dc9cc9a35e89900688f9afc68c0e20ef2e3596f6f"
+    ],
+    "opencv.core.int8_vec2_mat_view.buffer_array": [
+      "0d30d5be324fccecc490256d0373a48fd64fa9009288600bacdd2fc60aeb9b23.html",
+      "d595ef999ce79aab3e4cd8bc7a90088847137e4e7c4348a036352ec7f6c3ec44"
+    ],
+    "opencv.core.int8_vec2_row_access.row_array": [
+      "f65df0f148c692e36a0a6db15cc684fd7dffdb50c771ea928c33a7d853d607d5.html",
+      "83a55055609c147a233eac07c12db93e026df629373cb1bfa787c83ada3499fa"
+    ],
+    "opencv.core.int8_vec3_buffer_access.buffer_array": [
+      "2be7755189c6a8a9abadbe92aa693d9cf1a32902e57199b8c83346ecc22e2078.html",
+      "f2909015b921aa82ef50390b4080f044adf158941fbe83f20d8701490e429e11"
+    ],
+    "opencv.core.int8_vec3_mat_view.buffer_array": [
+      "2374833e7bc4577e7ae119fcc5eada9d9c6331221a8f1722fa3ebdbd0d59e4bb.html",
+      "915b240be96958fc0d9989900d0527ea48bf060d7323471ee6f873403af2e5ca"
+    ],
+    "opencv.core.int8_vec3_row_access.row_array": [
+      "3dd773e07e484440407e7e365f00a5558c2c958500d86c6ba63a18126b606a48.html",
+      "7e78768cd001a1099b07d68a03078c7d00abe885bbdb777dd17a97bc63198472"
+    ],
+    "opencv.core.int8_vec4_buffer_access.buffer_array": [
+      "5322554123c5e29046b42d3dd253dbb6cf01227f0778d1de09106042d685ae55.html",
+      "442ebd34c9e53f1038ffb48f4b7a706041af54358506f8d1da000d7408ef0cc1"
+    ],
+    "opencv.core.int8_vec4_mat_view.buffer_array": [
+      "1ca027d8f88f964ca52dd59eebd472a663dbb18776942c22423f327039c534af.html",
+      "308cbf03c364a854d22de8f158cb64aaecb8ba2a047f2db1ddd7090463f7d863"
+    ],
+    "opencv.core.int8_vec4_row_access.row_array": [
+      "3c3bc43e9a1a417535945f94a6a8c41b7fd76cd3063347b6396bd423a72af9eb.html",
+      "f42a04d735e0e1e186336ce3606933db033d35f6df0e927a235437b06a6f7d64"
+    ],
+    "opencv.core.inversion_result": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "ca446e3b01715a782387b8f94c3627e27c307d5bb318ed989ed9542baecb81ac"
+    ],
+    "opencv.core.k_means_criteria": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "10fe4502066b4c07d26e426dae0252dd6c36a471e070170d01076b0cf25eb6f0"
+    ],
+    "opencv.core.k_means_initialization": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "c3918e6ae0a9f7fac0c4aad423105e3323efe4848c07992e39bcc11189f085ca"
+    ],
+    "opencv.core.k_means_iteration_count": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "24f48d3f86ee252f401ba0c648f12d360856e58c7ba912cc7c1f36aafdd2ba39"
+    ],
+    "opencv.core.k_means_result": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "11f6c37a8eb5be7e43889cf7b6ca8df76762000e26f298fe485b36d250029151"
+    ],
+    "opencv.core.linear_discriminant_analysis_result": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "7e00b754108ecc5c6585e5da05304873c4493a50703fa6030e93da866eb648a4"
+    ],
+    "opencv.core.linear_program_result": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "d89537d3cb2af678e55aafcb9c5abf1683e1b04c7ad5d8d6cb806ad0ce9790c8"
+    ],
+    "opencv.core.linear_program_status": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "22c3795c17007306baf2d82825efcd7eb5f0181f8984bf30e741c528f5dae630"
+    ],
+    "opencv.core.mat": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    ],
+    "opencv.core.mat_array": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "077679952c5194ece019cca747a079f2cf6cd332bb3c959f9bb8d8a4c1d5a54b"
+    ],
+    "opencv.core.mat_size": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "592d16567af5bfc5a5ba8cba768dcdea653e4deed2123b37cfa3338e60dcefd6"
+    ],
+    "opencv.core.mat_type": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "1bb3680b34181e79461634fea38113641efb28912bd76bba69367191eaf593ae"
+    ],
+    "opencv.core.mean_std_dev_result": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "3d8b41fcde6f6defacae37fcd29f75c081c3834ee77e9ea9570f11dbedf86bf6"
+    ],
+    "opencv.core.min_max_result": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "505e67be6e759383b0f26c87d3cecd69b8b87a7cd4bab81b6aa6f6f87ed8260d"
+    ],
+    "opencv.core.module_interop.input_mat_handle": [
+      "9387d1e0578c52db5ca3b68cf755c181555b2e9bb2df6a24d1b5550a758f492f.html",
+      "92cf409accf3f357a3c11584b2619f952f39d3d348cf327e208b48b99bbcf912"
+    ],
+    "opencv.core.module_interop.input_umat_handle": [
+      "9387d1e0578c52db5ca3b68cf755c181555b2e9bb2df6a24d1b5550a758f492f.html",
+      "9b236e8c81286ff697c158b77c83d8d4139aabecedbbf3fb3d324b91edb2cb3f"
+    ],
+    "opencv.core.module_interop.output_mat_handle": [
+      "9387d1e0578c52db5ca3b68cf755c181555b2e9bb2df6a24d1b5550a758f492f.html",
+      "e93160fd219833e1a1eed05ed6d59137bd2efa9a7b09cca11e98955f43fec9b5"
+    ],
+    "opencv.core.module_interop.output_umat_handle": [
+      "9387d1e0578c52db5ca3b68cf755c181555b2e9bb2df6a24d1b5550a758f492f.html",
+      "8e2ca8880aa75d104a30875c1bebd5065ba9b23f14096c839e2a4afbccc03c19"
+    ],
+    "opencv.core.nd_min_max_result": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "6e999f0f3dda10d02b7c7c3bf86f3cfd8ae08e010c29898b5ba8d95067f0869b"
+    ],
+    "opencv.core.nearest_neighbor_result": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "33462878e8c6f4f33c8490683f869880e39089679dda47de4148f4dc229f4912"
+    ],
+    "opencv.core.norm_kind": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "69496e518f3694d1278e777b333106136ddca1470cdde2a6e9520c73fefecc91"
+    ],
+    "opencv.core.normalize_kind": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "2348a871f7ae12b35d158e6145f930427116ba0614cd5ca19b6d4e7372d07b02"
+    ],
+    "opencv.core.persistence.file_storage": [
+      "c0f83ab3d6cc49c455cf6a912c839dff7898cc95131738320f3de7777fe0869c.html",
+      "6b3cdab35923deb0d7777b3b16d4a94b36bd49b34647aaa2236bb2445087b10b"
+    ],
+    "opencv.core.persistence.node_kind": [
+      "c0f83ab3d6cc49c455cf6a912c839dff7898cc95131738320f3de7777fe0869c.html",
+      "c0aee010c43583bb6e6808df2618a72eae55043f9fdcd30e4af65b59ab751f74"
+    ],
+    "opencv.core.persistence.storage_format": [
+      "c0f83ab3d6cc49c455cf6a912c839dff7898cc95131738320f3de7777fe0869c.html",
+      "eadb86af3eb60bd4541f38fa8ee86d8af3049ffa85cfce3102c19484ea5c5ae9"
+    ],
+    "opencv.core.persistence.storage_mode": [
+      "c0f83ab3d6cc49c455cf6a912c839dff7898cc95131738320f3de7777fe0869c.html",
+      "0edd18ef4dab4836f2d7c1325682ea7c7a4fb3cb24c622cfc5bf4e04f4bb7304"
+    ],
+    "opencv.core.polar_coordinates": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "e0535591a780dc3df9c5a4e1a8b14ade2bc6bffff6a3c1be85a0e7a2992765aa"
+    ],
+    "opencv.core.polynomial_solution_result": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "eb2de48dd77c0dcd5c139c04436257a586dbf51383aea1d9760971a95041824c"
+    ],
+    "opencv.core.principal_component_analysis_result": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "77c704bf8131858475628951714e53743dfec204525da4a1666eae5fc65bf69f"
+    ],
+    "opencv.core.random_number_generator": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "616c4cb0e3005974766362a5d64008d989747388f3fd7826b3619cabe12e8c96"
+    ],
+    "opencv.core.range_check_result": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "239866bb4fb26cedb0d9b4ac03fce2013695dd38ed129f26eceb20ae36c32974"
+    ],
+    "opencv.core.reduction_axis": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "17576093af998b6be5a05692450ddeb6482b09c7145943683471a98c74f071d6"
+    ],
+    "opencv.core.reduction_kind": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "e5cc38e8359e4a1970cc822a8a49be06f55b45c4755d77fae247d6b9c8622840"
+    ],
+    "opencv.core.region_adjustment": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "2a11c4984d74e82d92567689d0093afc1c2a16b1c2a5efe091d6709c4e608d25"
+    ],
+    "opencv.core.region_location": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "ef0aa08c4ee454716b25468bc242574d510fd3bc0b0a30d7a32362d4cc9722c6"
+    ],
+    "opencv.core.rotation_kind": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "1747e8fdbcc68cb8f952266e7438149823b0676429e29bb4c573467d2412972f"
+    ],
+    "opencv.core.sample_orientation": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "bf32bb21e0973feb36ddca613b7c7599adbb2026c0c3ae512fb2465801ff9606"
+    ],
+    "opencv.core.singular_value_decomposition_result": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "f0d86075ea8dceb8f35f12c0b6408599f902cd822b003017a6c640c53b6dab1e"
+    ],
+    "opencv.core.solve_result": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "96a03a8ba297e5ce6b8c2d2bd8966e0bd5127ee6fdd3ada8791690c7d39ade77"
+    ],
+    "opencv.core.sort_axis": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "f6b5b646b3e3d1ee5a747becf1e4139ed0ccbd26d95045618eff11c7d883120c"
+    ],
+    "opencv.core.sort_order": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "0c9195b28d19cb1e743063cbeb084e6c9d5c09ec32aece1c1d38c7dcc65d34f7"
+    ],
+    "opencv.core.sparse.module_interop.input_sparse_mat_handle": [
+      "4300d0502784f03a72f45dcc323f9f93b848343a5b23240e73e2a302daf5fa5f.html",
+      "56c728b4142be8647fec53b1edef38671cc990b68a5c358d9bec2f2ffca0a121"
+    ],
+    "opencv.core.sparse.module_interop.output_sparse_mat_handle": [
+      "4300d0502784f03a72f45dcc323f9f93b848343a5b23240e73e2a302daf5fa5f.html",
+      "28e32688ed6f4d05f82c1b63622b8f3e84ad25d72058c0b4bb1169c1591e1443"
+    ],
+    "opencv.core.sparse.sparse_extrema": [
+      "9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html",
+      "50ed9b1c24d936ba95a36f5b28ed075f955ce25335310545c5928c60068c7541"
+    ],
+    "opencv.core.sparse.sparse_mat": [
+      "9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html",
+      "402b8f512153a49639f4226bd78dd8026e0fb927a0d6d369d26dfaf0271b13ac"
+    ],
+    "opencv.core.spectrum_multiplication_kind": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "864bacff8ac841d3ee1e14ab059ba59d62013f633721f69b03aff67d2331c3cf"
+    ],
+    "opencv.core.symmetry_source": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "4d8d13e321367f3eac97d895270d72ade6135933e544e0fba65e35649b8337ad"
+    ],
+    "opencv.core.transposed_product_order": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "6baa0865963c5ba571558f6f230878198fa08ffd64f0f19c9fd5aefcacc219d5"
+    ],
+    "opencv.core.uint16_buffer_access.buffer_array": [
+      "ff827498e32094068d870b50dc7838a17960e48d357ff7c4d5ffae7e73babdb0.html",
+      "8ce83607dad114a18030043518b374de49478916d662659941002186887a3feb"
+    ],
+    "opencv.core.uint16_mat_view.buffer_array": [
+      "a12721a52fff6c6c58bdfd22b16a2cdd8bbb9439dce8dfca6a2c06e05f522e9b.html",
+      "226f91d3ab80963c94d68d8e2fbb5923ae8eabc3488c6f885fb8d09d93edb5b0"
+    ],
+    "opencv.core.uint16_row_access.column_index": [
+      "a5fe4230932d5f471d745737143844b886c950bd237ae83b44c98417c1ded5cc.html",
+      "395a3ad5845e87f8f8cfb8cd67c96bc847f97bf1297ecdedc677578038d2b93d"
+    ],
+    "opencv.core.uint16_row_access.row_array": [
+      "a5fe4230932d5f471d745737143844b886c950bd237ae83b44c98417c1ded5cc.html",
+      "2d6d7554a7c27280f19c8577fff883f5578e75e03e06942a7be246c91241be36"
+    ],
+    "opencv.core.uint16_vec2_buffer_access.buffer_array": [
+      "605b059a8729753444892cee689f0e818fca7909687c80037d3f7ae8278cd661.html",
+      "d6ae90abcb5fcc8b424857442ea23327c4fe20be13f75990bb75ba28b39bcb34"
+    ],
+    "opencv.core.uint16_vec2_mat_view.buffer_array": [
+      "fa9be3a3af72befc8d2c3b27fd2f7bd1ed756c1a2350e391203f39f4863c1a3d.html",
+      "4b2e73ade6c1f9239ccacdf67d4042d482f44717b9675b287967a33077ad3fe9"
+    ],
+    "opencv.core.uint16_vec2_row_access.row_array": [
+      "d7cd46b2142faa6d2adb2aaa4e45b8e64b04b9aebfb5d1c2781a28bbf3069ac3.html",
+      "431238b1419d08032569fa276a35b5fb7b9e09c3912ebec37a2b3ddf66f00625"
+    ],
+    "opencv.core.uint16_vec3_buffer_access.buffer_array": [
+      "80b050dda403c3658cb57f3f5ea5ad289141fadd9c0c4e2a0da53a353ec6518a.html",
+      "f266c07ad0a8965ede0958c3e3a8ac7bbf0b33670ac51933bd12b417a247b11b"
+    ],
+    "opencv.core.uint16_vec3_mat_view.buffer_array": [
+      "a191841c5e087e2b4b334458c05d0576d2245159adb612b3fd764bb63403964e.html",
+      "7387b2a14f621bd9afb21d01f6416bdcf277042014a5873612411d3845474890"
+    ],
+    "opencv.core.uint16_vec3_row_access.row_array": [
+      "655c5d20afaa9df1a6f17cf5b10cfe3799256db8dd3dc31726d1e1a7974d03cb.html",
+      "731e33ad8c630222051807291357cfb07ad4e40f9caba3c74dbefb72666d7162"
+    ],
+    "opencv.core.uint16_vec4_buffer_access.buffer_array": [
+      "389086979f10060bb3f10b188eb459c46e19c7f55c53d094dfe99e262f5f3a44.html",
+      "1fd1d3c0f77b82f3f8d2d94afef687865e77c048e895d6efc51c4e2d3bdca8ea"
+    ],
+    "opencv.core.uint16_vec4_mat_view.buffer_array": [
+      "9461e0cd5d6c38d66d59075eb68f9a3f5d012049de5fdbf175e4a211d74dc978.html",
+      "ebbeb52b657d862080f6709ecc4336a1ae22826e574b1f9f2726476e5d53cfb8"
+    ],
+    "opencv.core.uint16_vec4_row_access.row_array": [
+      "fdbfc897b1b97bbafab91c5deace4f2c5efac078e7378f4dfb6d458687733a88.html",
+      "930b7774af367f27fbc29ed7898a493df7026b93fe2369278882c2b02aaad10a"
+    ],
+    "opencv.core.uint8_buffer_access.buffer_array": [
+      "555a1c30aa270b7446f81431a16f7b45bab7f63c1e0ec448a4487e85d280fb72.html",
+      "160570bcf02c8730877fc9d853b9a5690a093dd4d13819d79913e1db1b7a9468"
+    ],
+    "opencv.core.uint8_mat_view.buffer_array": [
+      "6853da0ebca980e6c7f80e2171f85f62e8ac6f0b83a49780981cfd5923fef613.html",
+      "359a1d6917c0782f594a81aeaec6883c1a6c904e0a0c71a68dfcfc589b7c6aa6"
+    ],
+    "opencv.core.uint8_row_access.column_index": [
+      "62185bd08f2655e8fbb84a4f665ee77944fc545d6b19e24bbb6d2093c1d611c9.html",
+      "7dc74975a7d137ebf98e289d7c8f356c1e43b71761009d6f69cc8ee2bbcf269c"
+    ],
+    "opencv.core.uint8_row_access.row_array": [
+      "62185bd08f2655e8fbb84a4f665ee77944fc545d6b19e24bbb6d2093c1d611c9.html",
+      "8f7aabc36202960367c2ec8aafc68ac529b8485720d5767cec92897d2139caab"
+    ],
+    "opencv.core.uint8_vec2_buffer_access.buffer_array": [
+      "e49a618104b228bcc0a7f8afe2eb5470de0a6a9ab18c3e5dfa08dcc7dcf39c0b.html",
+      "ada240a0c63814b868504e4fc37d7f13d998378b37c1835501af3c4a656a27f7"
+    ],
+    "opencv.core.uint8_vec2_mat_view.buffer_array": [
+      "2dd67ed4ff33fa0a79c5785cca8d6a2da01134d68ec01e514d9d00f383ca58e1.html",
+      "9537830c4d95352da9c010d0832ad7044435434d192ba1668a750a5b7338d0a3"
+    ],
+    "opencv.core.uint8_vec2_row_access.row_array": [
+      "4a352f75c88114a8e1eb2dfe14661039ad88d63d4d84aa95dcfd743929f4759a.html",
+      "f2056b4db056cf9328cd061a405ac82c4fcbf3ae2cde85642002656c02070b30"
+    ],
+    "opencv.core.uint8_vec3_buffer_access.buffer_array": [
+      "c8fb954de41677d0dcddfbfb089972536de1f9929855f5d9f8c018e546f49efb.html",
+      "16ad2e7c165610d96cdeabdfcb1c536541755976ced03fbd41b3943814a2d0c5"
+    ],
+    "opencv.core.uint8_vec3_mat_view.buffer_array": [
+      "abb7c6f967577b28867b03b97466bc505a879f8c85fe46e8093d011a4a5aee29.html",
+      "b4a02883f15d2f4062e4b75643c727cdcbfcb5019e93c332fb60c502de30f88e"
+    ],
+    "opencv.core.uint8_vec3_row_access.column_index": [
+      "a922db26a5673f2b47ab1e1fdf018627cc709124095707421fbfc6d46bbf6e82.html",
+      "f1b578aaf1390ccd3aa679e42b52a7eb8c64cd1197a6e97d6890d222b9d778cc"
+    ],
+    "opencv.core.uint8_vec3_row_access.row_array": [
+      "a922db26a5673f2b47ab1e1fdf018627cc709124095707421fbfc6d46bbf6e82.html",
+      "5f9356c8a083fdd1fdc71e901f8380ab7ec01139ccff98f3151d605fac761411"
+    ],
+    "opencv.core.uint8_vec4_buffer_access.buffer_array": [
+      "56cd46c054be017abdd508aeab39685f16b956e75e3384a7e8826b98436fbeaa.html",
+      "d99914a4ff2c9eed8e1c48995364c79d4e21fd6b3dec4ecbaea0b7929dacce81"
+    ],
+    "opencv.core.uint8_vec4_mat_view.buffer_array": [
+      "2972a78d6dd0005c2a13c35dccee7fff70b58b8555f60f344937efe05f3f7dc2.html",
+      "0667ed89c8c885a790aa90458600e6ebec867ee657571d7223636dbf6872e29e"
+    ],
+    "opencv.core.uint8_vec4_row_access.row_array": [
+      "c7ac646d8adcf22e8ed9b9d6d56566f083cf0d3cc299c9d5162ed17f4550853e.html",
+      "706d7653085a9db918cebd015b66e324a686d8fc97fa97a5d9268f2bcd3c127b"
+    ],
+    "opencv.core.umat": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "317538313e93a643267d769c04f06781cf60002b444c21193c3ee92cae2d94ad"
+    ],
+    "opencv.core.umat_cartesian_coordinates": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "62d39a2d1732d278a4ada8e222359351c5f2de6a8b7ac2fb7340500659b2c388"
+    ],
+    "opencv.core.umat_polar_coordinates": [
+      "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "6de59f3b3f73d9e88576fd3242e30a44d85fc36180067b851ad83efb996dedf3"
+    ],
+    "opencv.core.vectors.component_index": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "dd0fabe7198d1faf7ed2c1c81155937e0dc6614601a79ae676ff608f7ceefeaf"
+    ],
+    "opencv.core.vectors.vector": [
+      "a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html",
+      "9f20d46207603f697eda688fc472aa4a180d429633ecbeee4f0a296029a9b2de"
+    ],
+    "opencv.float32_point": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "3d6364074d584f6286e97dac0bb60e1eb9fd2d52ae631e75a7c16779818db534"
+    ],
+    "opencv.float32_point_3d": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "f890702ae542ea31e9ec11c24ee38dd170ce1af9eb8a40ad281c681f90cc412d"
+    ],
+    "opencv.float32_point_3d_array": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "73c32dbef60e07746ad67f76aa15e8a5e9fd1f19d204e96b18752e96c78407eb"
+    ],
+    "opencv.float32_size": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "66b673873b7ce845d12c782d76bd22d40764d3f2f82dfa81d3499ce65bd47327"
+    ],
+    "opencv.float32_value": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "2a7a1855b17dcb7dc415f3793f59bddac5f5d1ff9d7bf5a6da6a6fcac560fb1e"
+    ],
+    "opencv.float64_value": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "0985f6cd46f42219d78cc5076cd83f338a25b4a40d6f5b77e19423d17fb02f49"
+    ],
+    "opencv.int16_value": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "52161e87bab51a30724241b8ab46c6e7a91868a411e1aee02b4e0b45f3ac5163"
+    ],
+    "opencv.int32_value": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "27729f704e48101607805cd76dc0097b9fe92332d050a4c0f82253e636ab1ade"
+    ],
+    "opencv.int8_value": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "768bdfae5c88e294121e9d66e2f8de8f80172d9ab126f739b02c5a513a640de7"
+    ],
+    "opencv.point": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "75ed1323f07b5213b00ee5c3d7d803f61530fc13c398fbe3f4febe309afec4d1"
+    ],
+    "opencv.point_3d": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "4dfcfc2fd69c3c4d27bb68171e5dfa830be7c0ad8765f730d4f101ddf5d779db"
+    ],
+    "opencv.point_3d_array": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "807c9881fd20e9336b272e7e1319b5fb17bb82a8b75a8179f34cb5fdf3d2d6d3"
+    ],
+    "opencv.point_array": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "da696e09a1f1b297516365244e16533e23cca626f26df4bb3f727a64beb697b0"
+    ],
+    "opencv.point_coordinate": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "66147deb3dc9295d4c919025d6dc4e4d1baf765c554a4810b2434caeee82d4aa"
+    ],
+    "opencv.rect": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786"
+    ],
+    "opencv.rotated_rect": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "998a8afc13ef5c9f3b1601ed43af72a9414c1a3128933accdc3562635bb982eb"
+    ],
+    "opencv.scalar": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "2e5692f79d23524ec3f1c28c4c7d8599fc344ad15b5bf94f41e76529ccde26ed"
+    ],
+    "opencv.size": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278"
+    ],
+    "opencv.size_coordinate": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "4195c55322d0e03ef9c6fb729a7f4c117a344499790aeb0a3076eab2c01cb543"
+    ],
+    "opencv.uint16_value": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "1c39633bd6d8bd56b0ff54b3634b5c39d32589c465a5e3b77f25e30da12761fc"
+    ],
+    "opencv.uint8_value": [
+      "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+      "126c1f5d92cb06b013208cdd3e16f14713f74cc2cf2b63dc4ec9ab2558a5981e"
+    ]
+  }
+}

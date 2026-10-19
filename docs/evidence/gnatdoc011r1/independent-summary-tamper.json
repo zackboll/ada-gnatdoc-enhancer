@@ -1,0 +1,38 @@
+{
+  "changed template member destination": {
+    "layer": "independent source/native occurrence and exact summary reconstruction",
+    "mutation_observed": true,
+    "rejected": "independent occurrence audit: explanatory section differs from independent reconstruction",
+    "restored_complete_hashes_and_independent_audit": true
+  },
+  "duplicate summary anchor": {
+    "layer": "independent source/native occurrence and exact summary reconstruction",
+    "mutation_observed": true,
+    "rejected": "independent occurrence audit: missing/duplicate explanatory section or false native declaration",
+    "restored_complete_hashes_and_independent_audit": true
+  },
+  "forged instance-reference target": {
+    "layer": "independent source/native occurrence and exact summary reconstruction",
+    "mutation_observed": true,
+    "rejected": "independent occurrence audit: forged/missing instance-reference navigation authority",
+    "restored_complete_hashes_and_independent_audit": true
+  },
+  "missing summary section": {
+    "layer": "independent source/native occurrence and exact summary reconstruction",
+    "mutation_observed": true,
+    "rejected": "independent occurrence audit: missing/duplicate explanatory section or false native declaration",
+    "restored_complete_hashes_and_independent_audit": true
+  },
+  "modified summary HTML": {
+    "layer": "independent source/native occurrence and exact summary reconstruction",
+    "mutation_observed": true,
+    "rejected": "independent occurrence audit: explanatory section differs from independent reconstruction",
+    "restored_complete_hashes_and_independent_audit": true
+  },
+  "wrong existing summary destination": {
+    "layer": "independent source/native occurrence and exact summary reconstruction",
+    "mutation_observed": true,
+    "rejected": "independent occurrence audit: forged/missing instance-reference navigation authority",
+    "restored_complete_hashes_and_independent_audit": true
+  }
+}

@@ -1,0 +1,15 @@
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011/scripts/qualify_instance_references.py", line 178, in <module>
+    if __name__ == '__main__':main()
+                              ^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011/scripts/qualify_instance_references.py", line 173, in main
+    result = audit(a.core,a.pristine,a.legacy,a.candidate,a.baseline)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011/scripts/qualify_instance_references.py", line 67, in audit
+    require(found[0] == expected,'explanatory section differs from independent reconstruction')
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011/scripts/qualify_instance_references.py", line 26, in require
+    if not ok:raise ValueError('independent occurrence audit: '+why)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: independent occurrence audit: explanatory section differs from independent reconstruction
