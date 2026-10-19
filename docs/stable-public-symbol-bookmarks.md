@@ -5,6 +5,45 @@ the historical GNATDOC-011 findings below.** It does not replace Core's
 production generator or authorize deployment. Final disposition and exact-head
 CI are recorded on PR #13; original GNATDOC-011 evidence remains immutable.
 
+## Canonical URL sanitization correction (GNATDOC-011R2)
+
+Independent review found that the incoming-reference router rejected unknown
+query keys but its canonical URL writer retained them from `location.href`.
+Thus `?package=OpenCV.Core&unknown=1` fell back without becoming clean, and a
+later legitimate symbol or summary selection could retain the rejected key and
+fail again on reload. Passing GNATDOC-011R1 CI had not exercised this transition.
+
+The incoming-reference router now clears the query before emitting only the
+approved source-spelled package and mutually exclusive native symbol or
+declaration parameters. It continues clearing the hash and emits
+`#instance-members-summary` only for an approved explanatory summary state.
+Input rejection and destination allowlists are unchanged. Unsupported incoming
+fragments do not acquire authority and are removed during canonicalization.
+
+This correction is deliberately limited to
+`src/ada_gnatdoc_enhancer/assets/gnatdoc-instance-navigation.js`. The default
+router **and the symbol-only router are unchanged**. The inherited symbol-only
+canonicalization issue remains technical debt: correcting it requires a
+separately authorized compatibility rebaseline, not an unnoticed byte change
+in this task. Symbol-only and default publication parity remain required.
+
+`tests/instance_canonicalization.cjs` is additive real-Chromium regression
+coverage over independently source/native-qualified current and 0.5.0 Core
+sites. It verifies dirty input to clean fallback to valid native symbol and
+actual vector/matrix incoming hyperlinks, reload and Back/Forward; duplicate,
+unknown, conflicting and encoded query inputs; unsupported fragments; existing
+approved declaration interpretation; package switching, rapid selection and
+JavaScript-disabled native hyperlinks. The reviewed router fails this test
+before the implementation change. Existing browser and Python assertions are
+not removed or weakened.
+
+Fresh corrected output identities and qualification records belong to
+`docs/evidence/gnatdoc011r2/`. No original GNATDOC-011 or GNATDOC-011R1 evidence
+is rewritten. Retained R1 source/pristine native acquisitions are independently
+hash-checked and reused for this JavaScript-only correction; this is not claimed
+as a new Ada/native acquisition. Only the opted-in published JavaScript and its
+presentation-manifest digest may differ from reviewed R1 output.
+
 ## Corrective incoming-instance opt-in (GNATDOC-011R1)
 
 ```toml

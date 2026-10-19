@@ -83,9 +83,10 @@
   }
   function canonicalUrl(state) {
     const u = new URL(location.href);
+    // Rebuild only allowlisted state; rejected incoming query keys must not
+    // survive fallback or poison a later valid bookmark on reload.
+    u.search='';
     u.searchParams.set('package',state.item.name);
-    u.searchParams.delete('declaration');
-    u.searchParams.delete('symbol');
     u.hash='';
     if (state.summary) u.hash=state.summary;
     if (state.symbol) u.searchParams.set('symbol',state.symbol);
