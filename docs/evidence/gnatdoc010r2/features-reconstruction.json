@@ -1,0 +1,24 @@
+{
+  "verify": {
+    "mode": "verified",
+    "files": 18,
+    "html_pages": 13,
+    "links": 248,
+    "linked_types": 47,
+    "declaration_snippets": 38,
+    "public_packages": 4,
+    "linked_local_types": 47,
+    "linked_external_types": 0,
+    "unrendered_renderer_exceptions": 0
+  },
+  "native_preservation": {
+    "pages": 5,
+    "packages": 4,
+    "declarations": 38,
+    "signatures": 38,
+    "status": "preserved"
+  },
+  "dry_run_immutable": true,
+  "byte_idempotent": true,
+  "two_copy_deterministic": true
+}

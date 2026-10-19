@@ -61,7 +61,7 @@ for existing configurations, including dependency inventories. See
 Production consumer migration, public dependency deployments and full accessibility
 certification remain unqualified. GNATDOC-002–005 evidence is unchanged.
 
-## GNATDOC-007 authored-content qualification (current)
+## GNATDOC-007 authored-content qualification (historical)
 
 The opt-in hash-bound authored modes qualify the original five guides each for
 Core, Imgproc and Geometry, plus MEL's six HTML guides and authored portal.
@@ -70,3 +70,15 @@ The original authored stylesheet identity and bytes are retained, including
 unchanged. See the executed proof boundaries and per-guide evidence in
 `/home/zboll/git/ada-gnatdoc-enhancer/docs/authored-guides-portal-compatibility.md`.
 This does not authorize consumer adoption, deployment, or production URLs.
+
+## GNATDOC-010 document metadata (current)
+
+Generated pages gain a verified title, `lang="en"`, an explicit head and a
+UTF-8 charset; only the exact GNATdoc 26.0.0 page shape is accepted and any
+preexisting native metadata is rejected. Core, Imgproc, Geometry, MEL and
+OpenCV Features were requalified: only API pages and the presentation manifest
+change, by metadata alone. After reconciliation with GNATDOC-009A the combined
+output was requalified against the merged base `main` `426f388` on the same
+sites plus the current Geometry source `8690927`: the metadata is the only
+change, and every source-verified subtype-base link is kept byte for byte.
+See `docs/html-page-metadata.md`.

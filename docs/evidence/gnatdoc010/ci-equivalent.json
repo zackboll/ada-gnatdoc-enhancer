@@ -1,0 +1,24 @@
+{
+  "reduced_real_geometry": {
+    "declarations": 130,
+    "packages": 2,
+    "pages": 3,
+    "signatures": 172,
+    "status": "preserved"
+  },
+  "steps": [
+    "tests rc=0",
+    "conformance rc=0",
+    "compile rc=0",
+    "test_authored.py rc=0 OK",
+    "test_declaration_profiles.py rc=0 OK",
+    "test_mel_profiles.py rc=0 OK",
+    "test_external_types.py rc=0 OK",
+    "test_generic_instances.py rc=0 OK",
+    "test_operation_navigation.py rc=0 OK",
+    "test_navigation_history.py rc=0 OK",
+    "test_page_metadata.py rc=0 OK",
+    "reduced-real-geometry rc=0"
+  ],
+  "tested_sha": "2a42e8520b52ec91896a99a01b25f741d8a2f576"
+}

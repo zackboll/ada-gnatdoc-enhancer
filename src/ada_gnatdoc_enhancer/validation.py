@@ -55,8 +55,13 @@ def css_safe(content:bytes):
         'unapproved CSS resource, escaped import or execution expression')
 
 
-def validate_files(site:Path,config:Config,expected:set[str], *, raw=False):
-    """Reject unpublished extra content and independently validate local links."""
+def validate_files(site:Path,config:Config,expected:set[str], *, raw=False, titles=None):
+    """Reject unpublished extra content and independently validate local links.
+
+    Every HTML page needs its document metadata; ``titles`` gives the exact
+    verified titles of generated pages."""
+    from .metadata import check_document
+    titles=titles or {}
     from .external_types import destinations
     external=destinations(config)
     require(site.is_dir() and not site.is_symlink(),'invalid/symlink site root')
@@ -78,6 +83,9 @@ def validate_files(site:Path,config:Config,expected:set[str], *, raw=False):
             require(not re.search(r'/(?:home|tmp|Users)/|file:/{2}|[A-Z]:\\',text),
                     f"machine-local path leak: {relative}")
             require('{{' not in text and '}}' not in text, f"unresolved template in {relative}")
+            check_document(text,relative,title=titles.get(relative),
+                           generated=relative.startswith('api/') or relative in titles,
+                           viewport=config.theme if relative.startswith('api/') else None)
             page=Page(text)
             if config.guides.startswith('authored-') and not relative.startswith('api/'):
                 from .authored import check_html

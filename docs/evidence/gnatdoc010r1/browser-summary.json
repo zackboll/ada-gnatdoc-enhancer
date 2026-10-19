@@ -1,0 +1,196 @@
+{
+  "browser": "Chromium 156.0.8078.4",
+  "enhancer_source": "077cb5e4e52e90159ae05e77d81597739828226c",
+  "features": {
+    "own_suites": {
+      "candidate": {
+        "pages": {
+          "failed": 0,
+          "passed": 109,
+          "versions": {
+            "chromium": "156.0.8078.4",
+            "node": "v20.19.2",
+            "playwright": "1.64.1"
+          }
+        },
+        "prefix": {
+          "failed": 0,
+          "passed": 64,
+          "versions": {
+            "chromium": "156.0.8078.4",
+            "node": "v20.19.2",
+            "playwright": "1.64.1"
+          }
+        },
+        "root": {
+          "failed": 0,
+          "passed": 64,
+          "versions": {
+            "chromium": "156.0.8078.4",
+            "node": "v20.19.2",
+            "playwright": "1.64.1"
+          }
+        }
+      },
+      "main": {
+        "pages": {
+          "failed": 0,
+          "passed": 109,
+          "versions": {
+            "chromium": "156.0.8078.4",
+            "node": "v20.19.2",
+            "playwright": "1.64.1"
+          }
+        },
+        "prefix": {
+          "failed": 0,
+          "passed": 64,
+          "versions": {
+            "chromium": "156.0.8078.4",
+            "node": "v20.19.2",
+            "playwright": "1.64.1"
+          }
+        },
+        "root": {
+          "failed": 0,
+          "passed": 64,
+          "versions": {
+            "chromium": "156.0.8078.4",
+            "node": "v20.19.2",
+            "playwright": "1.64.1"
+          }
+        }
+      }
+    },
+    "prefix_metadata": {
+      "browser": "Chromium 156.0.8078.4",
+      "checks": 86,
+      "pages": 13,
+      "passed": 86,
+      "prefix": "/opencv_features_ada/",
+      "status": "pass"
+    },
+    "report": "../gnatdoc010/features-metadata-browser.json (site unchanged; rerun counts above)",
+    "site_identical_to_original_pr_head": true
+  },
+  "operation_navigation": {
+    "checks": 144,
+    "passed": 144,
+    "predecessor": {
+      "added_check_names": {},
+      "added_checks": 0,
+      "browser": "Chromium 156.0.8078.4",
+      "new_checks": 144,
+      "new_passed": 144,
+      "new_status": "pass",
+      "old_checks": 144,
+      "old_checks_missing": 0,
+      "old_status": "pass"
+    },
+    "report": "operation-browser.json",
+    "traces": 160
+  },
+  "real_sites": {
+    "core": {
+      "added_check_names": {},
+      "added_checks": 0,
+      "browser": "Chromium 156.0.8078.4",
+      "new_checks": 1500,
+      "new_passed": 1500,
+      "new_status": "pass",
+      "old_checks": 1500,
+      "old_checks_missing": 0,
+      "old_status": "pass",
+      "output_identical_to_original_pr_head": true,
+      "predecessor": "gnatdoc010/core-browser.json",
+      "report": "../gnatdoc010/core-browser.json (output unchanged; rerun counts below)"
+    },
+    "geometry": {
+      "added_check_names": {},
+      "added_checks": 0,
+      "browser": "Chromium 156.0.8078.4",
+      "new_checks": 1486,
+      "new_passed": 1486,
+      "new_status": "pass",
+      "old_checks": 1486,
+      "old_checks_missing": 0,
+      "old_status": "pass",
+      "output_identical_to_original_pr_head": true,
+      "predecessor": "gnatdoc010/geometry-browser.json",
+      "report": "../gnatdoc010/geometry-browser.json (output unchanged; rerun counts below)"
+    },
+    "geometry-current": {
+      "checks": 1486,
+      "new_site": true,
+      "passed": 1486,
+      "report": "geometry-current-browser.json",
+      "status": "pass",
+      "versus_historical_geometry_check_names": {
+        "added_check_names": {},
+        "added_checks": 0,
+        "browser": "Chromium 156.0.8078.4",
+        "new_checks": 1486,
+        "new_passed": 1486,
+        "new_status": "pass",
+        "old_checks": 1486,
+        "old_checks_missing": 0,
+        "old_status": "pass"
+      }
+    },
+    "imgproc": {
+      "added_check_names": {},
+      "added_checks": 0,
+      "browser": "Chromium 156.0.8078.4",
+      "new_checks": 1678,
+      "new_passed": 1678,
+      "new_status": "pass",
+      "old_checks": 1678,
+      "old_checks_missing": 0,
+      "old_status": "pass",
+      "output_identical_to_original_pr_head": false,
+      "predecessor": "gnatdoc010/imgproc-browser.json",
+      "report": "imgproc-browser.json"
+    },
+    "imgproc008": {
+      "added_check_names": {},
+      "added_checks": 0,
+      "browser": "Chromium 156.0.8078.4",
+      "new_checks": 1678,
+      "new_passed": 1678,
+      "new_status": "pass",
+      "old_checks": 1678,
+      "old_checks_missing": 0,
+      "old_status": "pass",
+      "output_identical_to_original_pr_head": false,
+      "predecessor": "gnatdoc010/imgproc008-browser.json",
+      "report": "imgproc008-browser.json"
+    },
+    "mel": {
+      "added_check_names": {},
+      "added_checks": 0,
+      "browser": "Chromium 156.0.8078.4",
+      "new_checks": 1192,
+      "new_passed": 1192,
+      "new_status": "pass",
+      "old_checks": 1192,
+      "old_checks_missing": 0,
+      "old_status": "pass",
+      "output_identical_to_original_pr_head": false,
+      "predecessor": "gnatdoc010/mel-browser.json",
+      "report": "mel-browser.json"
+    }
+  },
+  "scope": "local Chromium only; not cross-browser, screen-reader or hosted-deployment certification",
+  "subtype_destination": {
+    "checks": 4,
+    "passed": 4,
+    "predecessor": "gnatdoc009a/browser.json",
+    "production_hosting_verified": false,
+    "report": "subtype-browser.json"
+  },
+  "tools": {
+    "node": "v20.19.2",
+    "node_playwright": "1.64.1",
+    "python_playwright": "1.64.0"
+  }
+}

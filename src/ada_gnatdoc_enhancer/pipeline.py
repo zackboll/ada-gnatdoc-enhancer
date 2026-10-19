@@ -17,10 +17,12 @@ from .config import Config
 from .errors import EnhancementError
 from .guides import render as render_guides
 from .inventory import packages
+from .metadata import (check_native_input, guide_title, index_title, native_document,
+                       package_title)
 from .native_html import NativeSite, snapshot, verified_types
-from .navigation import enhance_index
+from .navigation import SCRIPT, enhance_index
 from .syntax import transform_page
-from .theme import asset, themed
+from .theme import METADATA, NATIVE_LINK, asset, themed
 from .util import digest, require, site_root, sorted_json
 from .validation import validate_files
 
@@ -40,6 +42,22 @@ def _raw(site:Path):
     return files
 
 
+def _head(config:Config,index:bool=False):
+    """The approved head content of an enhanced API page, before document metadata."""
+    return (NATIVE_LINK+(METADATA if config.theme else '')+
+            (SCRIPT if index and config.navigation!='none' else ''))
+
+
+def document_titles(config:Config,native:NativeSite):
+    """Exact titles of generated pages, from verified package and guide identities."""
+    titles={'api/'+p.path.name:package_title(p.package,config.project) for p in native.pages.values()}
+    titles['api/index.html']=index_title(config.project)
+    if config.guides=='markdown':
+        from .guides import manifest
+        titles.update({g['path']:guide_title(g['label'],config.project) for g in manifest(config)['guides']})
+    return titles
+
+
 def expected_output(config:Config,site:Path):
     """Produce expected published bytes without modifying the input site."""
     from .external_types import destinations
@@ -57,6 +75,9 @@ def expected_output(config:Config,site:Path):
             'unrendered_renderer_exceptions':exceptions}
     totals.update(instance_counts)
     for name,page in native.pages.items():
+        check_native_input(page.original,'api/'+page.path.name)
+        require(source[name].name==page.package,
+                f"native package heading differs from its Ada source name: {page.package}")
         text,counts=transform_page(page.original,source[name],source,native,types,config)
         for label,val in counts.items():
             totals['linked_types' if label=='links' else 'declaration_snippets']+=val
@@ -68,10 +89,14 @@ def expected_output(config:Config,site:Path):
         summary=instance_sections.get('api/'+page.path.name)
         if summary is not None:
             text=text.replace('<h2>Description</h2>',summary+'<h2>Description</h2>',1)
-        values[page.path.relative_to(site).as_posix()]=themed(text,config.theme).encode()
+        path=page.path.relative_to(site).as_posix()
+        values[path]=native_document(themed(text,config.theme),_head(config),
+                                     package_title(page.package,config.project),path).encode()
+    check_native_input(native.index,'api/index.html')
     index=themed(native.index,config.theme)
     index=enhance_index(native,index,config)
-    values['api/index.html']=index.encode()
+    values['api/index.html']=native_document(index,_head(config,True),index_title(config.project),
+                                             'api/index.html').encode()
     if config.theme:values['api/gnatdoc-theme.css']=asset('gnatdoc-theme.css')
     if config.navigation!='none':values['api/gnatdoc-navigation.js']=asset('gnatdoc-navigation.js')
     values.update(render_guides(config,native))
@@ -95,7 +120,7 @@ def _presentation(config:Config,site:Path,raw:dict,values:dict,counts:dict):
 
 def _generate(config:Config,site:Path):
     originals=_raw(site)
-    _,values,counts=expected_output(config,site)
+    native,values,counts=expected_output(config,site)
     manifest=_presentation(config,site,originals,values,counts)
     values[MANIFEST]=sorted_json(manifest).encode()
     for name,content in values.items():
@@ -108,7 +133,8 @@ def _generate(config:Config,site:Path):
         target.parent.mkdir(parents=True,exist_ok=True)
         target.write_bytes(content)
     # Validate complete exact inventory, including every GNATdoc native page.
-    return validate_files(site,config,_expected_names(originals,values)),counts
+    return validate_files(site,config,_expected_names(originals,values),
+                          titles=document_titles(config,native)),counts
 
 
 def enhance(config:Config,site:Path,*,dry_run:bool=False):
@@ -163,7 +189,7 @@ def verify(config:Config,site:Path):
             require(not p.exists(),"duplicate native source path")
             p.parent.mkdir(parents=True,exist_ok=True)
             p.write_text(value,encoding='utf-8')
-        _,values,counts=expected_output(config,raw)
+        native,values,counts=expected_output(config,raw)
         require(counts==data['counts'],'presentation counts mismatch')
         require({n:digest(d) for n,d in sorted(values.items())}==data['output_sha256'],
                 'enhanced output does not match source/manifest')
@@ -173,5 +199,5 @@ def verify(config:Config,site:Path):
             target=site/name
             require(target.is_file() and not target.is_symlink() and target.read_bytes()==content,
                     f"published file differs from reconstructed output: {name}")
-        result=validate_files(site,config,expected)
+        result=validate_files(site,config,expected,titles=document_titles(config,native))
     return {'mode':'verified',**result,**counts}

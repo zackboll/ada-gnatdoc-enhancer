@@ -178,8 +178,10 @@ class NativeProfileIntegration(unittest.TestCase):
         self.source=self.root/'src/unit.ads'
         self.source.write_text('package '+item['package']+' is\n'+item['source_signature']+'\nend '+item['package']+';\n')
         self.page=self.root/'site'/item['native_path']
-        self.page.write_text('<html><link rel=stylesheet href=gnatdoc.css><body><h1>'+item['package']+'</h1>'+item['native_excerpt']+'</body></html>')
-        (self.root/'site/api/index.html').write_text('<html><link rel=stylesheet href=gnatdoc.css><body><a href='+self.page.name+' target=document-content>'+item['package']+'</a><iframe name=document-content></iframe></body></html>')
+        # GNATdoc 26.0.0 document prologue; enhancement requires this exact layout.
+        prologue='<!DOCTYPE html>\n<html class=main>\n<link rel=stylesheet href=gnatdoc.css>'
+        self.page.write_text(prologue+'<body class=content><h1>'+item['package']+'</h1>'+item['native_excerpt']+'</body></html>')
+        (self.root/'site/api/index.html').write_text(prologue+'<body class=main><a href='+self.page.name+' target=document-content>'+item['package']+'</a><iframe name=document-content></iframe></body></html>')
         shutil.copyfile(ROOT/'fixtures/core/_site/api/gnatdoc.css',self.root/'site/api/gnatdoc.css')
         (self.root/'project.toml').write_text('schema_version = 1\nproject = "profiles"\n[gnatdoc]\nversion = "26.0.0"\n[sources]\ndirectories = ["src"]\n[navigation]\nmode = "none"\n')
         self.config=load(self.root,'project.toml');self.site=self.root/'site'

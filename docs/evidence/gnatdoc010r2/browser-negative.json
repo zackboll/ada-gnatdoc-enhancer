@@ -1,0 +1,41 @@
+{
+  "browser": "156.0.8078.4",
+  "cases": {
+    "valid": {
+      "actual": [
+        "T",
+        "en",
+        "UTF-8"
+      ],
+      "rejected": false,
+      "expected_rejection": false
+    },
+    "wrong title": {
+      "actual": [
+        "Other",
+        "en",
+        "UTF-8"
+      ],
+      "rejected": true,
+      "expected_rejection": true
+    },
+    "wrong language": {
+      "actual": [
+        "T",
+        "fr",
+        "UTF-8"
+      ],
+      "rejected": true,
+      "expected_rejection": true
+    },
+    "wrong charset": {
+      "actual": [
+        "T",
+        "en",
+        "windows-1252"
+      ],
+      "rejected": true,
+      "expected_rejection": true
+    }
+  }
+}

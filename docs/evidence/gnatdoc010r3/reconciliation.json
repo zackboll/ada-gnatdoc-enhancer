@@ -1,0 +1,176 @@
+{
+  "starting_head": "2941d67de75b918e94b9378c750afe311fddc583",
+  "implementation_commit": "751794863592bb485167fb71ef0e128cfc140154",
+  "failed_workflows": {
+    "push": 39152451585,
+    "pr": 39152454513
+  },
+  "inventory": {
+    "preserved_tests": 464,
+    "additive_tests": 7,
+    "total": 471
+  },
+  "tests": {
+    "3.11.17": {
+      "tests": 471,
+      "result": "OK"
+    },
+    "3.12.15": {
+      "tests": 471,
+      "result": "OK"
+    },
+    "3.13.16": {
+      "tests": 471,
+      "result": "OK"
+    }
+  },
+  "negative_first": {
+    "3.11.17": {
+      "tests": 23,
+      "result": "FAILED (failures=2)"
+    },
+    "3.12.15": {
+      "tests": 23,
+      "result": "FAILED (failures=2)"
+    },
+    "3.13.16": {
+      "tests": 23,
+      "result": "FAILED (failures=2)"
+    }
+  },
+  "wheel": {
+    "tests": 471,
+    "result": "OK"
+  },
+  "rebuilt_sdist": {
+    "tests": 471,
+    "result": "OK"
+  },
+  "browser": {
+    "imgproc008": {
+      "checks": 1678,
+      "passed": 1678,
+      "failures": []
+    },
+    "imgproc": {
+      "checks": 1678,
+      "passed": 1678,
+      "failures": []
+    },
+    "geometry-current": {
+      "checks": 1486,
+      "passed": 1486,
+      "failures": []
+    },
+    "geometry": {
+      "checks": 1486,
+      "passed": 1486,
+      "failures": []
+    },
+    "mel": {
+      "checks": 1192,
+      "passed": 1192,
+      "failures": []
+    },
+    "core": {
+      "checks": 1500,
+      "passed": 1500,
+      "failures": []
+    },
+    "features": {
+      "checks": 100,
+      "passed": 100,
+      "failures": []
+    },
+    "operation": {
+      "checks": 144,
+      "passed": 144,
+      "failures": []
+    },
+    "subtype": {
+      "checks": 4,
+      "passed": 4,
+      "failures": []
+    }
+  },
+  "publication_equivalence": {
+    "core": {
+      "r2_bytes_identical": true,
+      "independent_009a_base_identical": true,
+      "metadata_pages": 202,
+      "native": {
+        "pages": 196,
+        "packages": 195,
+        "declarations": 1268,
+        "signatures": 1268,
+        "status": "preserved"
+      }
+    },
+    "geometry": {
+      "r2_bytes_identical": true,
+      "independent_009a_base_identical": true,
+      "metadata_pages": 9,
+      "native": {
+        "pages": 3,
+        "packages": 2,
+        "declarations": 130,
+        "signatures": 172,
+        "status": "preserved"
+      }
+    },
+    "geometry-current": {
+      "r2_bytes_identical": true,
+      "independent_009a_base_identical": true,
+      "metadata_pages": 9,
+      "native": {
+        "pages": 3,
+        "packages": 2,
+        "declarations": 130,
+        "signatures": 172,
+        "status": "preserved"
+      }
+    },
+    "imgproc": {
+      "r2_bytes_identical": true,
+      "independent_009a_base_identical": true,
+      "metadata_pages": 8,
+      "native": {
+        "pages": 2,
+        "packages": 1,
+        "declarations": 314,
+        "signatures": 467,
+        "status": "preserved"
+      }
+    },
+    "imgproc008": {
+      "r2_bytes_identical": true,
+      "independent_009a_base_identical": true,
+      "metadata_pages": 8,
+      "native": {
+        "pages": 2,
+        "packages": 1,
+        "declarations": 314,
+        "signatures": 467,
+        "status": "preserved"
+      }
+    },
+    "mel": {
+      "r2_bytes_identical": true,
+      "independent_009a_base_identical": true,
+      "metadata_pages": 37,
+      "native": {
+        "pages": 30,
+        "packages": 29,
+        "declarations": 1237,
+        "signatures": 1237,
+        "status": "preserved"
+      }
+    }
+  },
+  "features_pages": [
+    "api/gnatdoc-navigation.js: JavaScript contains an absolute or root-relative URL literal"
+  ],
+  "hosted_final_head": "See PR #10 exact-final-head workflow records; implementation runs alone are not final-head qualification.",
+  "scope": "No consumer source changes, no navigation JS changes, no parser monkey-patching, no release/deployment/history rewrite.",
+  "provenance": "Historical pinned full sites and separately qualified Geometry 8690927; existing R2 acquisition and independent base artifacts retained as comparison authority, not candidate-generated hashes."
+}

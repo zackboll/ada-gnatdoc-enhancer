@@ -1,0 +1,284 @@
+{
+  "push": [
+    {
+      "job": "0_test (3.13).txt",
+      "versions": [
+        "2026-10-18T18:05:38.6979361Z Successfully set up CPython (3.13.16)",
+        "2026-10-18T18:05:38.7529474Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:05:38.7531379Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig",
+        "2026-10-18T18:05:38.7533249Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:05:38.7534943Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:05:38.7536971Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:05:38.7538689Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib",
+        "2026-10-18T18:05:43.8762289Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:05:43.8762767Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig",
+        "2026-10-18T18:05:43.8763218Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:05:43.8763647Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:05:43.8764039Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:05:43.8764429Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib",
+        "2026-10-18T18:06:44.4014810Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:06:44.4015284Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig",
+        "2026-10-18T18:06:44.4015974Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:06:44.4016393Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:06:44.4016803Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:06:44.4017220Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib"
+      ],
+      "failures": [
+        "test_nested_title (test_metadata_contract_corrections.MalformedTitles.test_nested_title)",
+        "test_title_comment_not_misread_as_browser_text (test_metadata_contract_corrections.MalformedTitles.test_title_comment_not_misread_as_browser_text)"
+      ],
+      "ran": [
+        "Ran 46 tests in 59.681s",
+        "Ran 464 tests in 385.430s"
+      ],
+      "failed": [
+        "FAILED (failures=2)"
+      ]
+    },
+    {
+      "job": "1_wheel.txt",
+      "versions": [
+        "2026-10-18T18:05:03.0730264Z Successfully set up CPython (3.12.15)",
+        "2026-10-18T18:05:03.1262725Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:03.1263894Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig",
+        "2026-10-18T18:05:03.1265183Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:03.1266227Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:03.1267289Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:03.1268357Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib",
+        "2026-10-18T18:05:09.3604718Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:09.3604966Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig",
+        "2026-10-18T18:05:09.3605215Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:09.3605438Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:09.3605652Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:09.3605900Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib",
+        "2026-10-18T18:05:12.1881991Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:12.1882236Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig",
+        "2026-10-18T18:05:12.1882475Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:12.1882691Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:12.1882934Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:12.1883151Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib"
+      ],
+      "failures": [
+        "test_nested_title (test_metadata_contract_corrections.MalformedTitles.test_nested_title)",
+        "test_title_comment_not_misread_as_browser_text (test_metadata_contract_corrections.MalformedTitles.test_title_comment_not_misread_as_browser_text)"
+      ],
+      "ran": [
+        "Ran 464 tests in 204.165s"
+      ],
+      "failed": [
+        "FAILED (failures=2)"
+      ]
+    },
+    {
+      "job": "2_test (3.12).txt",
+      "versions": [
+        "2026-10-18T18:04:55.1329882Z Successfully set up CPython (3.12.15)",
+        "2026-10-18T18:04:55.1770772Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:04:55.1772644Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig",
+        "2026-10-18T18:04:55.1774458Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:04:55.1776099Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:04:55.1777781Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:04:55.1779424Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib",
+        "2026-10-18T18:04:59.4251255Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:04:59.4251851Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig",
+        "2026-10-18T18:04:59.4252441Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:04:59.4252981Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:04:59.4253454Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:04:59.4253943Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib",
+        "2026-10-18T18:05:48.7885852Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:48.7886428Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig",
+        "2026-10-18T18:05:48.7886955Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:48.7887423Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:48.7887873Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:48.7888332Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib"
+      ],
+      "failures": [
+        "test_nested_title (test_metadata_contract_corrections.MalformedTitles.test_nested_title)",
+        "test_title_comment_not_misread_as_browser_text (test_metadata_contract_corrections.MalformedTitles.test_title_comment_not_misread_as_browser_text)"
+      ],
+      "ran": [
+        "Ran 46 tests in 48.922s",
+        "Ran 464 tests in 317.136s"
+      ],
+      "failed": [
+        "FAILED (failures=2)"
+      ]
+    },
+    {
+      "job": "3_test (3.11).txt",
+      "versions": [
+        "2026-10-18T18:04:52.9204370Z Successfully set up CPython (3.11.17)",
+        "2026-10-18T18:04:52.9655925Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:04:52.9657426Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig",
+        "2026-10-18T18:04:52.9658888Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:04:52.9660212Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:04:52.9661673Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:04:52.9663012Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib",
+        "2026-10-18T18:04:57.5975296Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:04:57.5975688Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig",
+        "2026-10-18T18:04:57.5976040Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:04:57.5976372Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:04:57.5976673Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:04:57.5976970Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib",
+        "2026-10-18T18:05:40.1946377Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:05:40.1946731Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig",
+        "2026-10-18T18:05:40.1947087Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:05:40.1947389Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:05:40.1947682Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:05:40.1947978Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib"
+      ],
+      "failures": [
+        "test_nested_title (test_metadata_contract_corrections.MalformedTitles.test_nested_title)",
+        "test_title_comment_not_misread_as_browser_text (test_metadata_contract_corrections.MalformedTitles.test_title_comment_not_misread_as_browser_text)"
+      ],
+      "ran": [
+        "Ran 46 tests in 42.169s",
+        "Ran 464 tests in 284.971s"
+      ],
+      "failed": [
+        "FAILED (failures=2)"
+      ]
+    }
+  ],
+  "pr": [
+    {
+      "job": "0_test (3.13).txt",
+      "versions": [
+        "2026-10-18T18:06:14.7535312Z Successfully set up CPython (3.13.16)",
+        "2026-10-18T18:06:14.8096321Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:06:14.8096889Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig",
+        "2026-10-18T18:06:14.8097459Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:06:14.8097941Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:06:14.8098429Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:06:14.8098919Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib",
+        "2026-10-18T18:06:18.9109057Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:06:18.9109527Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig",
+        "2026-10-18T18:06:18.9109972Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:06:18.9110392Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:06:18.9110782Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:06:18.9111174Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib",
+        "2026-10-18T18:07:19.5746214Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:07:19.5746662Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig",
+        "2026-10-18T18:07:19.5747098Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:07:19.5747663Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:07:19.5748042Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64",
+        "2026-10-18T18:07:19.5748427Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib"
+      ],
+      "failures": [
+        "test_nested_title (test_metadata_contract_corrections.MalformedTitles.test_nested_title)",
+        "test_title_comment_not_misread_as_browser_text (test_metadata_contract_corrections.MalformedTitles.test_title_comment_not_misread_as_browser_text)"
+      ],
+      "ran": [
+        "Ran 46 tests in 59.941s",
+        "Ran 464 tests in 383.336s"
+      ],
+      "failed": [
+        "FAILED (failures=2)"
+      ]
+    },
+    {
+      "job": "1_test (3.12).txt",
+      "versions": [
+        "2026-10-18T18:06:03.2964040Z Successfully set up CPython (3.12.15)",
+        "2026-10-18T18:06:03.3412342Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:06:03.3412909Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig",
+        "2026-10-18T18:06:03.3413367Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:06:03.3413707Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:06:03.3414042Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:06:03.3414379Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib",
+        "2026-10-18T18:06:06.3021105Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:06:06.3021468Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig",
+        "2026-10-18T18:06:06.3021821Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:06:06.3022135Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:06:06.3022436Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:06:06.3022739Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib",
+        "2026-10-18T18:06:52.0737824Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:06:52.0738180Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig",
+        "2026-10-18T18:06:52.0738523Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:06:52.0739013Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:06:52.0739321Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:06:52.0739620Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib"
+      ],
+      "failures": [
+        "test_nested_title (test_metadata_contract_corrections.MalformedTitles.test_nested_title)",
+        "test_title_comment_not_misread_as_browser_text (test_metadata_contract_corrections.MalformedTitles.test_title_comment_not_misread_as_browser_text)"
+      ],
+      "ran": [
+        "Ran 46 tests in 45.185s",
+        "Ran 464 tests in 287.915s"
+      ],
+      "failed": [
+        "FAILED (failures=2)"
+      ]
+    },
+    {
+      "job": "2_test (3.11).txt",
+      "versions": [
+        "2026-10-18T18:05:50.8995225Z Successfully set up CPython (3.11.17)",
+        "2026-10-18T18:05:50.9661998Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:05:50.9663871Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig",
+        "2026-10-18T18:05:50.9665724Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:05:50.9667358Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:05:50.9669003Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:05:50.9670802Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib",
+        "2026-10-18T18:05:56.7454337Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:05:56.7454830Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig",
+        "2026-10-18T18:05:56.7455307Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:05:56.7455751Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:05:56.7456185Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:05:56.7456614Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib",
+        "2026-10-18T18:06:50.9625012Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:06:50.9625475Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig",
+        "2026-10-18T18:06:50.9625931Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:06:50.9626534Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:06:50.9626931Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64",
+        "2026-10-18T18:06:50.9627328Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib"
+      ],
+      "failures": [
+        "test_nested_title (test_metadata_contract_corrections.MalformedTitles.test_nested_title)",
+        "test_title_comment_not_misread_as_browser_text (test_metadata_contract_corrections.MalformedTitles.test_title_comment_not_misread_as_browser_text)"
+      ],
+      "ran": [
+        "Ran 46 tests in 53.802s",
+        "Ran 464 tests in 342.479s"
+      ],
+      "failed": [
+        "FAILED (failures=2)"
+      ]
+    },
+    {
+      "job": "3_wheel.txt",
+      "versions": [
+        "2026-10-18T18:05:44.2100490Z Successfully set up CPython (3.12.15)",
+        "2026-10-18T18:05:44.2699863Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:44.2701659Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig",
+        "2026-10-18T18:05:44.2703397Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:44.2705012Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:44.2706843Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:44.2708440Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib",
+        "2026-10-18T18:05:53.2843137Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:53.2843587Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig",
+        "2026-10-18T18:05:53.2844021Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:53.2844435Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:53.2844821Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:53.2845272Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib",
+        "2026-10-18T18:05:57.7556465Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:57.7556915Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig",
+        "2026-10-18T18:05:57.7557361Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:57.7557760Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:57.7558202Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-18T18:05:57.7558593Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib"
+      ],
+      "failures": [
+        "test_nested_title (test_metadata_contract_corrections.MalformedTitles.test_nested_title)",
+        "test_title_comment_not_misread_as_browser_text (test_metadata_contract_corrections.MalformedTitles.test_title_comment_not_misread_as_browser_text)"
+      ],
+      "ran": [
+        "Ran 464 tests in 362.348s"
+      ],
+      "failed": [
+        "FAILED (failures=2)"
+      ]
+    }
+  ]
+}

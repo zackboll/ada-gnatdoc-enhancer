@@ -1,0 +1,78 @@
+{
+  "python": "3.13.16",
+  "inputs": [
+    {
+      "serialized": "<title>T<title>N</title>",
+      "events": [
+        [
+          "start",
+          "title"
+        ],
+        [
+          "data",
+          "T<title>N"
+        ],
+        [
+          "end",
+          "title"
+        ]
+      ],
+      "raw_boundary_accepted": false,
+      "result": "literal markup or unfinished serialized document title: probe"
+    },
+    {
+      "serialized": "<title>T<!--comment--></title>",
+      "events": [
+        [
+          "start",
+          "title"
+        ],
+        [
+          "data",
+          "T<!--comment-->"
+        ],
+        [
+          "end",
+          "title"
+        ]
+      ],
+      "raw_boundary_accepted": false,
+      "result": "literal markup or unfinished serialized document title: probe"
+    },
+    {
+      "serialized": "<title>Документация &amp; &lt;Ada&gt; — 日本語</title>",
+      "events": [
+        [
+          "start",
+          "title"
+        ],
+        [
+          "data",
+          "Документация "
+        ],
+        [
+          "data",
+          " "
+        ],
+        [
+          "data",
+          "Ada"
+        ],
+        [
+          "data",
+          " — 日本語"
+        ],
+        [
+          "end",
+          "title"
+        ]
+      ],
+      "raw_boundary_accepted": true,
+      "result": [
+        "Документация &amp; &lt;Ada&gt; — 日本語",
+        "Документация & <Ada> — 日本語",
+        43
+      ]
+    }
+  ]
+}

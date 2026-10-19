@@ -29,3 +29,9 @@ consumer workflows. Adoption must approve the authoritative input contract,
 preserve original compiled-example and source-integrity gates, and separately
 qualify deployment. See
 `/home/zboll/git/ada-gnatdoc-enhancer/docs/authored-guides-portal-compatibility.md`.
+
+GNATDOC-010 adds document titles, language and charset to generated pages and
+requires them on author pages. Every API page and Markdown guide hash changes;
+the presentation manifest schema does not. Adopting consumers must update their
+pinned revision and recorded evidence in their own reviewed change. See
+`/home/zboll/git/ada-gnatdoc-enhancer/docs/html-page-metadata.md`.

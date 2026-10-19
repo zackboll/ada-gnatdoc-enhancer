@@ -1,0 +1,74 @@
+{
+  "conformance": {
+    "fully_pinned_consumer_sites": "not qualified in bootstrap",
+    "profiles": {
+      "core": {
+        "deterministic": true,
+        "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+        "html_pages": 4,
+        "idempotent": true,
+        "linked_types": 4,
+        "packages": 3
+      },
+      "geometry": {
+        "deterministic": true,
+        "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+        "html_pages": 3,
+        "idempotent": true,
+        "linked_types": 5,
+        "packages": 2
+      },
+      "imgproc": {
+        "deterministic": true,
+        "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+        "html_pages": 2,
+        "idempotent": true,
+        "linked_types": 6,
+        "packages": 1
+      },
+      "mel": {
+        "deterministic": true,
+        "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+        "html_pages": 37,
+        "idempotent": true,
+        "linked_types": 7,
+        "packages": 29
+      }
+    }
+  },
+  "exit_codes": [
+    "focused-test_authored.py rc=0 OK",
+    "focused-test_declaration_profiles.py rc=0 OK",
+    "focused-test_mel_profiles.py rc=0 OK",
+    "focused-test_external_types.py rc=0 OK",
+    "focused-test_generic_instances.py rc=0 OK",
+    "focused-test_operation_navigation.py rc=0 OK",
+    "focused-test_navigation_history.py rc=0 OK",
+    "focused-test_page_metadata.py rc=0 OK",
+    "focused-test_subtype_bases.py rc=0 OK",
+    "conformance rc=0 }",
+    "reduced-real-geometry rc=0 }",
+    "compile rc=0 ",
+    "version rc=0 0.1.0.dev0"
+  ],
+  "reduced_real_geometry": {
+    "structural_result": "pass"
+  },
+  "steps": {
+    "compile": "",
+    "focused-test_authored.py": "OK",
+    "focused-test_declaration_profiles.py": "OK",
+    "focused-test_external_types.py": "OK",
+    "focused-test_generic_instances.py": "OK",
+    "focused-test_mel_profiles.py": "OK",
+    "focused-test_navigation_history.py": "OK",
+    "focused-test_operation_navigation.py": "OK",
+    "focused-test_page_metadata.py": "OK",
+    "focused-test_subtype_bases.py": "OK",
+    "version": "0.1.0.dev0"
+  },
+  "tested_sha": "077cb5e4e52e90159ae05e77d81597739828226c",
+  "tracked_tree_after": [
+    " M scripts/qualify_page_metadata.py"
+  ]
+}
