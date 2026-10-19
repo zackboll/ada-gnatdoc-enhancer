@@ -1,5 +1,11 @@
 # Ada GNATdoc Enhancer
 
+GNATDOC-009B adds the bounded, source-verified current-package form
+`Image.Attitude_Rate` inside `AMS.MEL.IR.Image`. It requires a flat public
+source scope with no possible short-prefix shadow and an existing native type
+destination; no imported short-name or alias inference. See
+`docs/current-package-type-links.md`. MEL adoption remains a separate task.
+
 GNATDOC-002 pinned real-site qualification, authentic regression provenance,
 observed compatibility failures and reproduction commands are documented in
 `/home/zboll/git/ada-gnatdoc-enhancer/docs/real-site-qualification.md`.

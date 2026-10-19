@@ -1,0 +1,228 @@
+{
+  "packages": {
+    "ams.mel.ir.image": {
+      "entries": [
+        {
+          "anchor": "53d1e84a96a7eb1319addfa1cfb9001d3f617a1e6803b83f297c3c2e5b144f04",
+          "declaration": "type Quaternion is record\n      X, Y, Z, W : Long_Float;\n   end record;",
+          "name": "Quaternion",
+          "native": "type Quaternion is record\n   X, Y, Z, W : Long_Float;\nend record;\n",
+          "page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+          "source": "ada/src/ams-mel-ir-image.ads",
+          "source_end": 1956,
+          "source_line": 37,
+          "source_start": 1885
+        },
+        {
+          "anchor": "24815b4bef793edc01c49d06563eaa076acf049581f68d95843b550ab83640bf",
+          "declaration": "type Directional is record\n      X, Y, Z : Long_Float;\n   end record;",
+          "name": "Directional",
+          "native": "type Directional is record\n   X, Y, Z : Long_Float;\nend record;\n",
+          "page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+          "source": "ada/src/ams-mel-ir-image.ads",
+          "source_end": 1500,
+          "source_line": 29,
+          "source_start": 1431
+        },
+        {
+          "anchor": "205414f78f482e232563a0573778e7a0b8ad4f984839380608ff5f9808bd4124",
+          "declaration": "type Nav_Error is record\n      X, Y, Z, W : Long_Float;\n   end record;",
+          "name": "Nav_Error",
+          "native": "type Nav_Error is record\n   X, Y, Z, W : Long_Float;\nend record;\n",
+          "page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+          "source": "ada/src/ams-mel-ir-image.ads",
+          "source_end": 2354,
+          "source_line": 46,
+          "source_start": 2284
+        },
+        {
+          "anchor": "59e8ebabf59654f7610aac8350ba7eaa57e0bfff4c98e4e796cc6e10a38f1d25",
+          "declaration": "type Uncertainty is record\n      Sensor_Uncertainties, Platform_Uncertainties : Interfaces.Unsigned_32;\n   end record;",
+          "name": "Uncertainty",
+          "native": "type Uncertainty is record\n   Sensor_Uncertainties, Platform_Uncertainties : Interfaces.Unsigned_32;\nend record;\n",
+          "page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+          "source": "ada/src/ams-mel-ir-image.ads",
+          "source_end": 3020,
+          "source_line": 57,
+          "source_start": 2902
+        },
+        {
+          "anchor": "54244780007130ca4ca3184b607c4f65c240c6badf366587830bb8618669c227",
+          "declaration": "type Orientation_Kind is (Euler_Orientation, Quaternion_Orientation);",
+          "name": "Orientation_Kind",
+          "native": "type Orientation_Kind is (Euler_Orientation, Quaternion_Orientation);\n",
+          "page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+          "source": "ada/src/ams-mel-ir-image.ads",
+          "source_end": 3891,
+          "source_line": 73,
+          "source_start": 3822
+        },
+        {
+          "anchor": "fb683fbb720d8d9b6bf72fcdae02062df2097ff71b89bed1cc78a5258409d92f",
+          "declaration": "type Orientation (Kind : Orientation_Kind := Euler_Orientation) is record\n      case Kind is\n         when Euler_Orientation =>\n            Euler_Value : AMS.MEL.Status.Euler;\n\n         when Quaternion_Orientation =>\n            Quaternion_Value : Quaternion;\n      end case;\n   end record;",
+          "name": "Orientation",
+          "native": "type Orientation (Kind : Orientation_Kind := Euler_Orientation) is record\n   case Kind is\n      when Euler_Orientation =>\n         Euler_Value : AMS.MEL.Status.Euler;\n      when Quaternion_Orientation =>\n         Quaternion_Value : Quaternion;\n   end case;\nend record;\n",
+          "page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+          "source": "ada/src/ams-mel-ir-image.ads",
+          "source_end": 4437,
+          "source_line": 78,
+          "source_start": 4147
+        },
+        {
+          "anchor": "23c5815e32a4dbf64d85259549a2adc304441741a07751e1cfade4f0139b140c",
+          "declaration": "type Coordinate_System is (LLA, ECEF, NED_Platform, NED_Sensor);",
+          "name": "Coordinate_System",
+          "native": "type Coordinate_System is (LLA, ECEF, NED_Platform, NED_Sensor);\n",
+          "page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+          "source": "ada/src/ams-mel-ir-image.ads",
+          "source_end": 6087,
+          "source_line": 111,
+          "source_start": 6023
+        },
+        {
+          "anchor": "10266a59770c61e47de5be28029da61e77a5a2caab98de11651580c0d003fa5f",
+          "declaration": "type Sensor_Inertial_State is record\n      System_Time_NS                   : Long_Long_Integer;\n      Q_XYZW, Q_ECEF_XYZW              : Quaternion;\n      Sensor_Position, Sensor_Velocity : Directional;\n      Uncertainty                      : Image.Uncertainty;\n   end record;",
+          "name": "Sensor_Inertial_State",
+          "native": "type Sensor_Inertial_State is record\n   System_Time_NS                   : Long_Long_Integer;\n   Q_XYZW, Q_ECEF_XYZW              : Quaternion;\n   Sensor_Position, Sensor_Velocity : Directional;\n   Uncertainty                      : Image.Uncertainty;\nend record;\n",
+          "page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+          "source": "ada/src/ams-mel-ir-image.ads",
+          "source_end": 5208,
+          "source_line": 94,
+          "source_start": 4930
+        },
+        {
+          "anchor": "d32ed78e5002e9ad88102970369fb03c5c9ad5b458be5f96e541d7cb3e9013a9",
+          "declaration": "type Sensor_Nav_State is record\n      Position, Velocity, Acceleration                   : Directional;\n      Position_Error, Velocity_Error, Acceleration_Error : Nav_Error;\n      Orientation                                        : Image.Orientation;\n      Orientation_Error                                  : Nav_Error;\n      Orientation_Velocity                               : Image.Orientation;\n      Orientation_Velocity_Error                         : Nav_Error;\n      Orientation_Acceleration                           : Image.Orientation;\n      Orientation_Acceleration_Error                     : Nav_Error;\n      Coordinate_System                                  : Image.Coordinate_System;\n   end record;",
+          "name": "Sensor_Nav_State",
+          "native": "type Sensor_Nav_State is record\n   Position, Velocity, Acceleration                   : Directional;\n   Position_Error, Velocity_Error, Acceleration_Error : Nav_Error;\n   Orientation                                        : Image.Orientation;\n   Orientation_Error                                  : Nav_Error;\n   Orientation_Velocity                               : Image.Orientation;\n   Orientation_Velocity_Error                         : Nav_Error;\n   Orientation_Acceleration                           : Image.Orientation;\n   Orientation_Acceleration_Error                     : Nav_Error;\n   Coordinate_System                                  : Image.Coordinate_System;\nend record;\n",
+          "page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+          "source": "ada/src/ams-mel-ir-image.ads",
+          "source_end": 7339,
+          "source_line": 119,
+          "source_start": 6623
+        },
+        {
+          "anchor": "546d49226ec41ac4af0bf0d2c50d34ccd8d3e156fd030bf62dc0c5ed0e92a328",
+          "declaration": "type Position_Solution_State is (Not_Set, Aligning, Free_Inertial, GPS, Blended);",
+          "name": "Position_Solution_State",
+          "native": "type Position_Solution_State is (Not_Set, Aligning, Free_Inertial, GPS, Blended);\n",
+          "page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+          "source": "ada/src/ams-mel-ir-image.ads",
+          "source_end": 38616,
+          "source_line": 568,
+          "source_start": 38535
+        },
+        {
+          "anchor": "852a1f8931cb5ba0138d6b12c8904009f34860240eb6360cff60d783cd2fc5e4",
+          "declaration": "type North_East_Down is record\n      North, East, Down : Long_Float;\n   end record;",
+          "name": "North_East_Down",
+          "native": "type North_East_Down is record\n   North, East, Down : Long_Float;\nend record;\n",
+          "page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+          "source": "ada/src/ams-mel-ir-image.ads",
+          "source_end": 39369,
+          "source_line": 579,
+          "source_start": 39286
+        },
+        {
+          "anchor": "000c90c6e32939281ba36b0309023f11111c09b027dfcb5acf7f6fcbde859f17",
+          "declaration": "type Attitude_Rate is record\n      Value          : AMS.MEL.Status.Euler;\n      System_Time_NS : Long_Long_Integer;\n   end record;",
+          "name": "Attitude_Rate",
+          "native": "type Attitude_Rate is record\n   Value          : AMS.MEL.Status.Euler;\n   System_Time_NS : Long_Long_Integer;\nend record;\n",
+          "page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+          "source": "ada/src/ams-mel-ir-image.ads",
+          "source_end": 39797,
+          "source_line": 587,
+          "source_start": 39667
+        },
+        {
+          "anchor": "05b10691e1d32ec5c7b89999581889463e7f301b8a02667d19965f88e7c1b1d6",
+          "declaration": "type Position_Velocity_Covariance is record\n      Position_Position_Pn_Pn : Long_Float;\n      Position_Position_Pn_Pe : Long_Float;\n      Position_Position_Pn_Pd : Long_Float;\n      Position_Position_Pe_Pe : Long_Float;\n      Position_Position_Pe_Pd : Long_Float;\n      Position_Position_Pd_Pd : Long_Float;\n      Position_Velocity_Pn_Vn : Long_Float;\n      Position_Velocity_Pn_Ve : Long_Float;\n      Position_Velocity_Pn_Vd : Long_Float;\n      Position_Velocity_Pe_Ve : Long_Float;\n      Position_Velocity_Pe_Vd : Long_Float;\n      Position_Velocity_Pd_Vd : Long_Float;\n      Velocity_Velocity_Vn_Vn : Long_Float;\n      Velocity_Velocity_Vn_Ve : Long_Float;\n      Velocity_Velocity_Vn_Vd : Long_Float;\n      Velocity_Velocity_Ve_Ve : Long_Float;\n      Velocity_Velocity_Ve_Vd : Long_Float;\n      Velocity_Velocity_Vd_Vd : Long_Float;\n   end record;",
+          "name": "Position_Velocity_Covariance",
+          "native": "type Position_Velocity_Covariance is record\n   Position_Position_Pn_Pn : Long_Float;\n   Position_Position_Pn_Pe : Long_Float;\n   Position_Position_Pn_Pd : Long_Float;\n   Position_Position_Pe_Pe : Long_Float;\n   Position_Position_Pe_Pd : Long_Float;\n   Position_Position_Pd_Pd : Long_Float;\n   Position_Velocity_Pn_Vn : Long_Float;\n   Position_Velocity_Pn_Ve : Long_Float;\n   Position_Velocity_Pn_Vd : Long_Float;\n   Position_Velocity_Pe_Ve : Long_Float;\n   Position_Velocity_Pe_Vd : Long_Float;\n   Position_Velocity_Pd_Vd : Long_Float;\n   Velocity_Velocity_Vn_Vn : Long_Float;\n   Velocity_Velocity_Vn_Ve : Long_Float;\n   Velocity_Velocity_Vn_Vd : Long_Float;\n   Velocity_Velocity_Ve_Ve : Long_Float;\n   Velocity_Velocity_Ve_Vd : Long_Float;\n   Velocity_Velocity_Vd_Vd : Long_Float;\nend record;\n",
+          "page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+          "source": "ada/src/ams-mel-ir-image.ads",
+          "source_end": 41070,
+          "source_line": 598,
+          "source_start": 40220
+        },
+        {
+          "anchor": "8dd14b74126f84d582213f5a58833c155e983b70f86e61d544e786d176cfaf85",
+          "declaration": "type Navigation_Report is record\n      System_Time_NS               : Long_Long_Integer;\n      State                        : Position_Solution_State;\n      Latitude_Rad                 : Long_Float;\n      Longitude_Rad                : Long_Float;\n      Altitude_M                   : Long_Float;\n      Attitude                     : AMS.MEL.Status.Euler;\n      Attitude_Rate                : Image.Attitude_Rate;\n      Speed                        : North_East_Down;\n      Acceleration                 : North_East_Down;\n      Wander_Angle_Rad             : Long_Float;\n      Magnetic_Heading             : Long_Float;\n      Altitude_MSL                 : Long_Float;\n      Position_Velocity_Covariance : Image.Position_Velocity_Covariance;\n   end record;",
+          "name": "Navigation_Report",
+          "native": "type Navigation_Report is record\n   System_Time_NS               : Long_Long_Integer;\n   State                        : Position_Solution_State;\n   Latitude_Rad                 : Long_Float;\n   Longitude_Rad                : Long_Float;\n   Altitude_M                   : Long_Float;\n   Attitude                     : AMS.MEL.Status.Euler;\n   Attitude_Rate                : Image.Attitude_Rate;\n   Speed                        : North_East_Down;\n   Acceleration                 : North_East_Down;\n   Wander_Angle_Rad             : Long_Float;\n   Magnetic_Heading             : Long_Float;\n   Altitude_MSL                 : Long_Float;\n   Position_Velocity_Covariance : Image.Position_Velocity_Covariance;\nend record;\n",
+          "page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+          "source": "ada/src/ams-mel-ir-image.ads",
+          "source_end": 44664,
+          "source_line": 659,
+          "source_start": 43907
+        }
+      ],
+      "git_blob": "a4cee5568cb010f85f4c50e3a217ffd449985459",
+      "reduced_source": "ams-mel-ir-image.ads",
+      "source": "ada/src/ams-mel-ir-image.ads",
+      "source_sha256": "decb360621617d35433cee90cec66c0faf5cd64cc1b18e876d16844406801100"
+    },
+    "ams.mel.ir.instrumentation": {
+      "entries": [
+        {
+          "anchor": "2d8778dc79db6a27e1344591d4a342292be5a998d47d19af9642d1e62d5ca632",
+          "declaration": "type Priority is (Normal, Debug);",
+          "name": "Priority",
+          "native": "type Priority is (Normal, Debug);\n",
+          "page": "09bd8292c9fb6f9b8644595432b39db4e5b39aba955eceb6cbca789ebcb5efc0.html",
+          "source": "ada/src/ams-mel-ir-instrumentation.ads",
+          "source_end": 5267,
+          "source_line": 78,
+          "source_start": 5234
+        },
+        {
+          "anchor": "572300e828747ddd41e14f723d7325fd9c21926be26ec434dd3bcc8fbfe9ca2d",
+          "declaration": "type Instrumentation_Level_Command is record\n      Command_ID : Interfaces.Unsigned_32;\n      Priority   : Instrumentation.Priority;\n   end record;",
+          "name": "Instrumentation_Level_Command",
+          "native": "type Instrumentation_Level_Command is record\n   Command_ID : Interfaces.Unsigned_32;\n   Priority   : Instrumentation.Priority;\nend record;\n",
+          "page": "09bd8292c9fb6f9b8644595432b39db4e5b39aba955eceb6cbca789ebcb5efc0.html",
+          "source": "ada/src/ams-mel-ir-instrumentation.ads",
+          "source_end": 5791,
+          "source_line": 85,
+          "source_start": 5644
+        },
+        {
+          "anchor": "17582c8504b21254cd4d675cdeb808a3086cc74076a02e6acba860acfe9514cf",
+          "declaration": "type Instrumentation_Report is record\n      Command_ID   : Interfaces.Unsigned_32;\n      Size         : Interfaces.Unsigned_32;\n      Timestamp_NS : Long_Long_Integer;\n      Priority     : Instrumentation.Priority;\n   end record;",
+          "name": "Instrumentation_Report",
+          "native": "type Instrumentation_Report is record\n   Command_ID   : Interfaces.Unsigned_32;\n   Size         : Interfaces.Unsigned_32;\n   Timestamp_NS : Long_Long_Integer;\n   Priority     : Instrumentation.Priority;\nend record;\n",
+          "page": "09bd8292c9fb6f9b8644595432b39db4e5b39aba955eceb6cbca789ebcb5efc0.html",
+          "source": "ada/src/ams-mel-ir-instrumentation.ads",
+          "source_end": 6341,
+          "source_line": 94,
+          "source_start": 6112
+        }
+      ],
+      "git_blob": "c1413d5b889d56ff2fa05714efa82978ac200b16",
+      "reduced_source": "ams-mel-ir-instrumentation.ads",
+      "source": "ada/src/ams-mel-ir-instrumentation.ads",
+      "source_sha256": "3a7ddc0f747b05fb0cbd05e86a70c81f2ece97f35c57553145433ed2c1f6bb73"
+    },
+    "ams.mel.status": {
+      "entries": [
+        {
+          "anchor": "33b57c0e76aa9291b0fca560f9a3f240ff93c4f2a6f72e65a52118af806aa837",
+          "declaration": "type Euler is record\n      Roll, Pitch, Yaw : Long_Float := 0.0;\n   end record;",
+          "name": "Euler",
+          "native": "type Euler is record\n   Roll, Pitch, Yaw : Long_Float := 0.0;\nend record;\n",
+          "page": "d04e5b8974a5cfebc85dae0fe57d43c261fd4378e9fe4888d5d2d9b7e2c97573.html",
+          "source": "ada/src/ams-mel-status.ads",
+          "source_end": 34467,
+          "source_line": 617,
+          "source_start": 34388
+        }
+      ],
+      "git_blob": "dbbac97a029b9e6b4edc9f6f022cfbe6659c41c0",
+      "reduced_source": "ams-mel-status.ads",
+      "source": "ada/src/ams-mel-status.ads",
+      "source_sha256": "309b6e11b9979a86661ea65807c534b156da3f42e84e451dfbb3226540127f06"
+    }
+  },
+  "repository": "https://github.com/zackboll/ams-gra-mel-bridge",
+  "revision": "a5484514cfae3b7bccde078118b838fa40ce4d0e"
+}

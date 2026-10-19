@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — GNATDOC-009B
+
+- Link exact two-identifier current-package public type/subtype marks with
+  source-owned native destinations and conservative actual-short-prefix
+  shadowing checks. No external fallback or arbitrary short-owner inference.
+  Add authentic nine-occurrence MEL regressions and independent qualification.
+
 ## Unreleased — GNATDOC-010
 
 - Source-verified document metadata: every generated API page gets `lang="en"`,

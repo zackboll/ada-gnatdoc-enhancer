@@ -1,0 +1,263 @@
+[
+  {
+    "baseline": "plain",
+    "candidate": "linked",
+    "component_or_formal": "priority",
+    "containing_anchor": "17582c8504b21254cd4d675cdeb808a3086cc74076a02e6acba860acfe9514cf",
+    "containing_page": "09bd8292c9fb6f9b8644595432b39db4e5b39aba955eceb6cbca789ebcb5efc0.html",
+    "declaration": "Instrumentation_Report",
+    "destination_anchor": "2d8778dc79db6a27e1344591d4a342292be5a998d47d19af9642d1e62d5ca632",
+    "destination_identity": "ams.mel.ir.instrumentation.priority",
+    "destination_page": "09bd8292c9fb6f9b8644595432b39db4e5b39aba955eceb6cbca789ebcb5efc0.html",
+    "pristine_span": [
+      177,
+      201
+    ],
+    "revision": "a5484514cfae3b7bccde078118b838fa40ce4d0e",
+    "scope": {
+      "actual_short_prefix": "instrumentation",
+      "full_unit_sha256": "3a7ddc0f747b05fb0cbd05e86a70c81f2ece97f35c57553145433ed2c1f6bb73",
+      "ordinary_public_package": "ams.mel.ir.instrumentation",
+      "public_scope": "flat; no bare short-prefix tokens, aliases or nested scopes"
+    },
+    "source": "ada/src/ams-mel-ir-instrumentation.ads",
+    "source_line": 98,
+    "source_span": [
+      192,
+      216
+    ],
+    "spelling": "Instrumentation.Priority"
+  },
+  {
+    "baseline": "plain",
+    "candidate": "linked",
+    "component_or_formal": "priority",
+    "containing_anchor": "572300e828747ddd41e14f723d7325fd9c21926be26ec434dd3bcc8fbfe9ca2d",
+    "containing_page": "09bd8292c9fb6f9b8644595432b39db4e5b39aba955eceb6cbca789ebcb5efc0.html",
+    "declaration": "Instrumentation_Level_Command",
+    "destination_anchor": "2d8778dc79db6a27e1344591d4a342292be5a998d47d19af9642d1e62d5ca632",
+    "destination_identity": "ams.mel.ir.instrumentation.priority",
+    "destination_page": "09bd8292c9fb6f9b8644595432b39db4e5b39aba955eceb6cbca789ebcb5efc0.html",
+    "pristine_span": [
+      101,
+      125
+    ],
+    "revision": "a5484514cfae3b7bccde078118b838fa40ce4d0e",
+    "scope": {
+      "actual_short_prefix": "instrumentation",
+      "full_unit_sha256": "3a7ddc0f747b05fb0cbd05e86a70c81f2ece97f35c57553145433ed2c1f6bb73",
+      "ordinary_public_package": "ams.mel.ir.instrumentation",
+      "public_scope": "flat; no bare short-prefix tokens, aliases or nested scopes"
+    },
+    "source": "ada/src/ams-mel-ir-instrumentation.ads",
+    "source_line": 87,
+    "source_span": [
+      110,
+      134
+    ],
+    "spelling": "Instrumentation.Priority"
+  },
+  {
+    "baseline": "plain",
+    "candidate": "linked",
+    "component_or_formal": "uncertainty",
+    "containing_anchor": "10266a59770c61e47de5be28029da61e77a5a2caab98de11651580c0d003fa5f",
+    "containing_page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+    "declaration": "Sensor_Inertial_State",
+    "destination_anchor": "59e8ebabf59654f7610aac8350ba7eaa57e0bfff4c98e4e796cc6e10a38f1d25",
+    "destination_identity": "ams.mel.ir.image.uncertainty",
+    "destination_page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+    "pristine_span": [
+      233,
+      250
+    ],
+    "revision": "a5484514cfae3b7bccde078118b838fa40ce4d0e",
+    "scope": {
+      "actual_short_prefix": "image",
+      "full_unit_sha256": "decb360621617d35433cee90cec66c0faf5cd64cc1b18e876d16844406801100",
+      "ordinary_public_package": "ams.mel.ir.image",
+      "public_scope": "flat; no bare short-prefix tokens, aliases or nested scopes"
+    },
+    "source": "ada/src/ams-mel-ir-image.ads",
+    "source_line": 98,
+    "source_span": [
+      248,
+      265
+    ],
+    "spelling": "Image.Uncertainty"
+  },
+  {
+    "baseline": "plain",
+    "candidate": "linked",
+    "component_or_formal": "attitude_rate",
+    "containing_anchor": "8dd14b74126f84d582213f5a58833c155e983b70f86e61d544e786d176cfaf85",
+    "containing_page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+    "declaration": "Navigation_Report",
+    "destination_anchor": "000c90c6e32939281ba36b0309023f11111c09b027dfcb5acf7f6fcbde859f17",
+    "destination_identity": "ams.mel.ir.image.attitude_rate",
+    "destination_page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+    "pristine_span": [
+      373,
+      392
+    ],
+    "revision": "a5484514cfae3b7bccde078118b838fa40ce4d0e",
+    "scope": {
+      "actual_short_prefix": "image",
+      "full_unit_sha256": "decb360621617d35433cee90cec66c0faf5cd64cc1b18e876d16844406801100",
+      "ordinary_public_package": "ams.mel.ir.image",
+      "public_scope": "flat; no bare short-prefix tokens, aliases or nested scopes"
+    },
+    "source": "ada/src/ams-mel-ir-image.ads",
+    "source_line": 666,
+    "source_span": [
+      397,
+      416
+    ],
+    "spelling": "Image.Attitude_Rate"
+  },
+  {
+    "baseline": "plain",
+    "candidate": "linked",
+    "component_or_formal": "position_velocity_covariance",
+    "containing_anchor": "8dd14b74126f84d582213f5a58833c155e983b70f86e61d544e786d176cfaf85",
+    "containing_page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+    "declaration": "Navigation_Report",
+    "destination_anchor": "05b10691e1d32ec5c7b89999581889463e7f301b8a02667d19965f88e7c1b1d6",
+    "destination_identity": "ams.mel.ir.image.position_velocity_covariance",
+    "destination_page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+    "pristine_span": [
+      668,
+      702
+    ],
+    "revision": "a5484514cfae3b7bccde078118b838fa40ce4d0e",
+    "scope": {
+      "actual_short_prefix": "image",
+      "full_unit_sha256": "decb360621617d35433cee90cec66c0faf5cd64cc1b18e876d16844406801100",
+      "ordinary_public_package": "ams.mel.ir.image",
+      "public_scope": "flat; no bare short-prefix tokens, aliases or nested scopes"
+    },
+    "source": "ada/src/ams-mel-ir-image.ads",
+    "source_line": 672,
+    "source_span": [
+      710,
+      744
+    ],
+    "spelling": "Image.Position_Velocity_Covariance"
+  },
+  {
+    "baseline": "plain",
+    "candidate": "linked",
+    "component_or_formal": "orientation",
+    "containing_anchor": "d32ed78e5002e9ad88102970369fb03c5c9ad5b458be5f96e541d7cb3e9013a9",
+    "containing_page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+    "declaration": "Sensor_Nav_State",
+    "destination_anchor": "fb683fbb720d8d9b6bf72fcdae02062df2097ff71b89bed1cc78a5258409d92f",
+    "destination_identity": "ams.mel.ir.image.orientation",
+    "destination_page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+    "pristine_span": [
+      224,
+      241
+    ],
+    "revision": "a5484514cfae3b7bccde078118b838fa40ce4d0e",
+    "scope": {
+      "actual_short_prefix": "image",
+      "full_unit_sha256": "decb360621617d35433cee90cec66c0faf5cd64cc1b18e876d16844406801100",
+      "ordinary_public_package": "ams.mel.ir.image",
+      "public_scope": "flat; no bare short-prefix tokens, aliases or nested scopes"
+    },
+    "source": "ada/src/ams-mel-ir-image.ads",
+    "source_line": 122,
+    "source_span": [
+      236,
+      253
+    ],
+    "spelling": "Image.Orientation"
+  },
+  {
+    "baseline": "plain",
+    "candidate": "linked",
+    "component_or_formal": "orientation_velocity",
+    "containing_anchor": "d32ed78e5002e9ad88102970369fb03c5c9ad5b458be5f96e541d7cb3e9013a9",
+    "containing_page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+    "declaration": "Sensor_Nav_State",
+    "destination_anchor": "fb683fbb720d8d9b6bf72fcdae02062df2097ff71b89bed1cc78a5258409d92f",
+    "destination_identity": "ams.mel.ir.image.orientation",
+    "destination_page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+    "pristine_span": [
+      366,
+      383
+    ],
+    "revision": "a5484514cfae3b7bccde078118b838fa40ce4d0e",
+    "scope": {
+      "actual_short_prefix": "image",
+      "full_unit_sha256": "decb360621617d35433cee90cec66c0faf5cd64cc1b18e876d16844406801100",
+      "ordinary_public_package": "ams.mel.ir.image",
+      "public_scope": "flat; no bare short-prefix tokens, aliases or nested scopes"
+    },
+    "source": "ada/src/ams-mel-ir-image.ads",
+    "source_line": 124,
+    "source_span": [
+      384,
+      401
+    ],
+    "spelling": "Image.Orientation"
+  },
+  {
+    "baseline": "plain",
+    "candidate": "linked",
+    "component_or_formal": "orientation_acceleration",
+    "containing_anchor": "d32ed78e5002e9ad88102970369fb03c5c9ad5b458be5f96e541d7cb3e9013a9",
+    "containing_page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+    "declaration": "Sensor_Nav_State",
+    "destination_anchor": "fb683fbb720d8d9b6bf72fcdae02062df2097ff71b89bed1cc78a5258409d92f",
+    "destination_identity": "ams.mel.ir.image.orientation",
+    "destination_page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+    "pristine_span": [
+      508,
+      525
+    ],
+    "revision": "a5484514cfae3b7bccde078118b838fa40ce4d0e",
+    "scope": {
+      "actual_short_prefix": "image",
+      "full_unit_sha256": "decb360621617d35433cee90cec66c0faf5cd64cc1b18e876d16844406801100",
+      "ordinary_public_package": "ams.mel.ir.image",
+      "public_scope": "flat; no bare short-prefix tokens, aliases or nested scopes"
+    },
+    "source": "ada/src/ams-mel-ir-image.ads",
+    "source_line": 126,
+    "source_span": [
+      532,
+      549
+    ],
+    "spelling": "Image.Orientation"
+  },
+  {
+    "baseline": "plain",
+    "candidate": "linked",
+    "component_or_formal": "coordinate_system",
+    "containing_anchor": "d32ed78e5002e9ad88102970369fb03c5c9ad5b458be5f96e541d7cb3e9013a9",
+    "containing_page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+    "declaration": "Sensor_Nav_State",
+    "destination_anchor": "23c5815e32a4dbf64d85259549a2adc304441741a07751e1cfade4f0139b140c",
+    "destination_identity": "ams.mel.ir.image.coordinate_system",
+    "destination_page": "1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html",
+    "pristine_span": [
+      650,
+      673
+    ],
+    "revision": "a5484514cfae3b7bccde078118b838fa40ce4d0e",
+    "scope": {
+      "actual_short_prefix": "image",
+      "full_unit_sha256": "decb360621617d35433cee90cec66c0faf5cd64cc1b18e876d16844406801100",
+      "ordinary_public_package": "ams.mel.ir.image",
+      "public_scope": "flat; no bare short-prefix tokens, aliases or nested scopes"
+    },
+    "source": "ada/src/ams-mel-ir-image.ads",
+    "source_line": 128,
+    "source_span": [
+      680,
+      703
+    ],
+    "spelling": "Image.Coordinate_System"
+  }
+]
