@@ -45,6 +45,8 @@ class Config:
     dependencies: tuple[dict, ...] = ()
     generic_instances: dict = field(default_factory=dict)
     guide_sha256: str | None = None
+    symbol_bookmarks: bool = False
+    default_package: str | None = None
 
 
 def load(root: Path, path: str) -> Config:
@@ -70,10 +72,23 @@ def load(root: Path, path: str) -> Config:
     style = src.get("comment_style", "leading")
     require(style in ("leading", "trailing"), "comment_style must be leading or trailing")
     nav = raw.get("navigation", {})
-    members(nav, {"mode", "categories"}, "navigation")
+    members(nav, {"mode", "categories", "symbol_bookmarks", "default_package"}, "navigation")
     mode = nav.get("mode", "packages")
     require(mode in ("packages", "operations", "none"), "invalid navigation mode")
     categories = nav.get("categories")
+    symbols = nav.get('symbol_bookmarks', False)
+    default_package = nav.get('default_package')
+    require(type(symbols) is bool, 'navigation.symbol_bookmarks must be Boolean')
+    if symbols:
+        from .util import QNAME
+        import re
+        require(mode == 'packages' and categories is None,
+                'symbol bookmarks require uncategorized package navigation')
+        require(isinstance(default_package, str) and
+                re.fullmatch(QNAME, default_package) is not None,
+                'symbol bookmarks require a default_package Ada identity')
+    else:
+        require(default_package is None, 'default_package requires symbol_bookmarks')
     if categories is not None:
         regular(inside(root, categories))
     pres = raw.get("presentation", {})
@@ -145,4 +160,5 @@ def load(root: Path, path: str) -> Config:
     return Config(root, project, version, names, packages, style, mode, categories,
                   pres.get("theme", True), pres.get("syntax_highlighting", True),
                   pres.get("type_links", True), guide_mode, guide_manifest,
-                  ext, frozenset(hosts), exceptions, tuple(dependencies), generic, guide_hash)
+                  ext, frozenset(hosts), exceptions, tuple(dependencies), generic, guide_hash,
+                  symbols, default_package)

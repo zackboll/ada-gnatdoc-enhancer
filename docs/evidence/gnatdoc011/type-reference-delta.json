@@ -1,0 +1,34 @@
+{
+  "legacy_count": 2742,
+  "shared_count": 2503,
+  "legacy_only": {
+    "opencv.core.float64_vec4.vector": 10,
+    "opencv.core.int16_vec3.vector": 10,
+    "opencv.core.float16_vec2.vector": 10,
+    "opencv.core.uint16_vec4.vector": 10,
+    "opencv.core.float16_vec4.vector": 10,
+    "opencv.core.uint8_vec2.vector": 10,
+    "opencv.core.int32_vec2.vector": 10,
+    "opencv.core.float32_vec4.vector": 10,
+    "opencv.core.int32_vec4.vector": 10,
+    "opencv.core.uint8_vec3.vector": 10,
+    "opencv.core.int8_vec4.vector": 10,
+    "opencv.core.int32_vec3.vector": 10,
+    "opencv.core.int8_vec3.vector": 10,
+    "opencv.core.int8_vec2.vector": 10,
+    "opencv.core.uint8_vec4.vector": 10,
+    "opencv.core.float32_vec3.vector": 10,
+    "opencv.core.float64_vec2.vector": 10,
+    "opencv.core.float32_vec2.vector": 10,
+    "opencv.core.int16_vec4.vector": 10,
+    "opencv.core.float16_vec3.vector": 10,
+    "opencv.core.float64_vec3.vector": 10,
+    "opencv.core.uint16_vec3.vector": 10,
+    "opencv.core.int16_vec2.vector": 10,
+    "opencv.core.uint16_vec2.vector": 10,
+    "opencv.core.float32_matx3x3.matrix": 2
+  },
+  "shared_only": {
+    "opencv.size": 3
+  }
+}

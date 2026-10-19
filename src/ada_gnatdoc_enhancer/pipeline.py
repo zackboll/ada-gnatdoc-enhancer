@@ -98,7 +98,9 @@ def expected_output(config:Config,site:Path):
     values['api/index.html']=native_document(index,_head(config,True),index_title(config.project),
                                              'api/index.html').encode()
     if config.theme:values['api/gnatdoc-theme.css']=asset('gnatdoc-theme.css')
-    if config.navigation!='none':values['api/gnatdoc-navigation.js']=asset('gnatdoc-navigation.js')
+    if config.navigation!='none':
+        values['api/gnatdoc-navigation.js']=asset(
+            'gnatdoc-symbol-navigation.js' if config.symbol_bookmarks else 'gnatdoc-navigation.js')
     values.update(render_guides(config,native))
     return native,values,totals
 
