@@ -20,7 +20,9 @@ from ada_gnatdoc_enhancer.util import digest, sorted_json
 
 def output(root, config, pristine):
     setting = load(root, config)
-    assert not getattr(setting, 'symbol_bookmarks', False)
+    # Compare every previously approved profile, including GNATDOC-011 symbol
+    # navigation. Only the new incoming-reference opt-in is excluded here.
+    assert not getattr(setting, 'instance_references', False)
     _, values, counts = expected_output(setting, pristine)
     originals = {p.relative_to(pristine).as_posix():p.read_text() for p in (pristine/'api').glob('*.html')}
     values[MANIFEST] = sorted_json(_presentation(setting, pristine, originals, values, counts)).encode()

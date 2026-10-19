@@ -240,7 +240,8 @@ def _current_type_context(text: str, start: int, end: int) -> bool:
 
 
 def linked(raw: str, pkg: Package, source: dict[str, Package],
-           native: NativeSite, targets: dict[str,tuple[Path,str]], config: Config):
+           native: NativeSite, targets: dict[str,tuple[Path,str]], config: Config,
+           instance_targets=None):
     require('<' not in raw,"type linking requires raw GNATdoc snippets")
     text,starts,ends=escaped_offsets(raw)
     inserts=[]
@@ -256,12 +257,17 @@ def linked(raw: str, pkg: Package, source: dict[str, Package],
             # A snippet alone must not newly authorize a nested/aliased scope.
             if not external_visible(pkg.name.lower(),pkg):continue
         target=resolve(name,pkg,source,targets,config.externals)
-        if target is None:continue
-        identity,kind=target
-        if kind=='external': url=config.externals[identity]
+        if target is None:
+            from .instance_references import resolve as instance_resolve
+            explanation=instance_resolve(name,text,a,b,pkg,source,instance_targets)
+            if explanation is None:continue
+            identity,url=explanation.identity,explanation.href
         else:
-            target_page,anchor=targets[identity]
-            url=target_page.name+'#'+anchor
+            identity,kind=target
+            if kind=='external': url=config.externals[identity]
+            else:
+                target_page,anchor=targets[identity]
+                url=target_page.name+'#'+anchor
         src_a,src_b=starts[a],ends[b-1]
         encoded=raw[src_a:src_b]
         inserts.append((src_a,src_b,
@@ -278,12 +284,12 @@ def linked(raw: str, pkg: Package, source: dict[str, Package],
 
 
 def transform_page(original: str, pkg: Package, source: dict[str,Package],
-                   native: NativeSite, targets, config:Config):
+                   native: NativeSite, targets, config:Config, instance_targets=None):
     counts={'links':0,'snippets':0}
     def render(m):
         raw=m[2];before=plain(raw)
         if config.type_links:
-            raw,linked_count=linked(raw,pkg,source,native,targets,config)
+            raw,linked_count=linked(raw,pkg,source,native,targets,config,instance_targets)
             counts['links']+=linked_count
         if config.highlight:raw=highlighted(raw)
         require(plain(raw)==before,"snippet not text preserving")

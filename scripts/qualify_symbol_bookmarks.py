@@ -60,7 +60,7 @@ class Index(HTMLParser):
         if tag == 'div':self.active = False
 
 
-def audit(core, pristine, candidate, legacy=None):
+def audit(core, pristine, candidate, legacy=None, *, instance_references=False):
     revision = subprocess.check_output(['git', '-C', str(core), 'rev-parse', 'HEAD'], text=True).strip()
     require(revision in PINS, 'unsupported Core revision')
     require(not subprocess.check_output(['git', '-C', str(core), 'diff', 'HEAD', '--', 'src', 'scripts']),
@@ -107,7 +107,8 @@ def audit(core, pristine, candidate, legacy=None):
     require(manifest['original_api_html'] == native_html, 'forged pristine authority in manifest')
     require((candidate/'api/gnatdoc.css').read_bytes() == (pristine/'api/gnatdoc.css').read_bytes(),
             'native CSS changed')
-    asset = Path(__file__).resolve().parents[1]/'src/ada_gnatdoc_enhancer/assets/gnatdoc-symbol-navigation.js'
+    asset = Path(__file__).resolve().parents[1]/'src/ada_gnatdoc_enhancer/assets'/(
+        'gnatdoc-instance-navigation.js' if instance_references else 'gnatdoc-symbol-navigation.js')
     require((candidate/'api/gnatdoc-navigation.js').read_bytes() == asset.read_bytes(),
             'modified opt-in navigation JavaScript')
     result = {'core_revision':revision, 'public_packages':len(pages), 'native_sections':len(sections),

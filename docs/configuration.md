@@ -17,6 +17,12 @@ incompatible. Unknown keys remain errors. See
 rejection rules, authority boundaries, unchanged default bytes, and the current
 **partial Core migration** disposition.
 
+GNATDOC-011R1 separately adds `[generic_instances].incoming_references = true`.
+It requires the hash-qualified generic-instance record, `type_links = true`, and
+symbol-enabled package navigation. It defaults to false and does not expand
+native-symbol bookmark eligibility. See the corrective section of the same
+document for the 25-instance boundary and explanatory history URL contract.
+
 # Authored-content opt-in
 
 `guides.mode = "authored-markdown"` and `"authored-html"` require `manifest`

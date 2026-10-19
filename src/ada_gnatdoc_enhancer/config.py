@@ -47,6 +47,7 @@ class Config:
     guide_sha256: str | None = None
     symbol_bookmarks: bool = False
     default_package: str | None = None
+    instance_references: bool = False
 
 
 def load(root: Path, path: str) -> Config:
@@ -150,15 +151,19 @@ def load(root: Path, path: str) -> Config:
         for key in ('manifest','acquisition','source','site'):
             inside(root,dep[key])
     generic = raw.get('generic_instances', {})
-    members(generic, {'qualification', 'sha256'}, 'generic_instances')
+    members(generic, {'qualification', 'sha256', 'incoming_references'}, 'generic_instances')
+    incoming = generic.get('incoming_references', False)
+    require(type(incoming) is bool, 'generic incoming_references must be Boolean')
     if generic:
-        require(set(generic) == {'qualification', 'sha256'}, 'incomplete generic instance qualification')
+        require({'qualification', 'sha256'} <= set(generic), 'incomplete generic instance qualification')
         require(isinstance(generic['qualification'], str), 'generic qualification must be a path')
         regular(inside(root, generic['qualification']))
         require(isinstance(generic['sha256'], str) and re.fullmatch('[a-f0-9]{64}', generic['sha256']),
                 'invalid generic qualification SHA-256')
+    require(not incoming or (mode == 'packages' and symbols and pres.get('type_links', True)),
+            'incoming instance references require type links and symbol package navigation')
     return Config(root, project, version, names, packages, style, mode, categories,
                   pres.get("theme", True), pres.get("syntax_highlighting", True),
                   pres.get("type_links", True), guide_mode, guide_manifest,
                   ext, frozenset(hosts), exceptions, tuple(dependencies), generic, guide_hash,
-                  symbols, default_package)
+                  symbols, default_package, incoming)

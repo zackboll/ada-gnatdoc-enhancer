@@ -1,10 +1,125 @@
 # Stable public type and subtype bookmarks (GNATDOC-011)
 
-**Disposition: PARTIAL_SYMBOL_COMPATIBILITY. Not a Core production migration
-certificate.** The opt-in router qualifies genuine public bookmarks at two Core
-revisions. Core's legacy generic-instance *incoming type references* are not yet
-preserved by the shared pipeline. Do not replace Core's production generator
-with this candidate. No consumer or hosted documentation is changed here.
+**GNATDOC-011R1 corrects the incoming generic-instance reference gap described in
+the historical GNATDOC-011 findings below.** It does not replace Core's
+production generator or authorize deployment. Final disposition and exact-head
+CI are recorded on PR #13; original GNATDOC-011 evidence remains immutable.
+
+## Corrective incoming-instance opt-in (GNATDOC-011R1)
+
+```toml
+[navigation]
+mode = "packages"
+symbol_bookmarks = true
+default_package = "OpenCV.Core"
+
+[generic_instances]
+qualification = "generic-qualification.json"
+sha256 = "<reviewed qualification file SHA-256>"
+incoming_references = true
+```
+
+`incoming_references` is Boolean and disabled by default. It requires the
+existing complete hash-qualified instance record, type linking, and the
+symbol-enabled package-navigation profile. Symbol routing alone does not grant
+incoming-instance link authority. Unknown keys and incomplete qualifications
+remain errors. The option is deliberately not a general Ada generic resolver.
+
+Three inventories remain distinct:
+
+1. **215 native public types/subtypes:** eligible for stable `?symbol=` URLs;
+   genuine 64-hex anchors observed in pristine native output.
+2. **25 explanatory instance-reference targets:** the reviewed eight depths
+   times vector lengths 2, 3, 4, plus Float32 3×3 matrix. Source instantiations,
+   actuals, templates, native template members, pristine empty instance pages,
+   and exact generated summaries are independently qualified on every run.
+3. **25 presentation-only sections:** each uses `#instance-members-summary`,
+   never a native declaration anchor or additional native declaration.
+
+For example, `UInt8_Vec2.Vector` requires an ordinary exact import of
+`OpenCV.Core.UInt8_Vec2` and its owner in the caller's lexical ancestor chain.
+Fully named `OpenCV.Core.Float32_Matx3x3.Matrix` also requires the exact ordinary
+import. A suffix match, package alias, private/limited import, local shadow,
+generic formal, nested scope, or unsupported visibility cannot grant this new
+authority. Only reconciled complete source/native declarations and existing
+type-mark positions are considered; the new resolver rejects expression,
+default, comment, string and aspect contexts. The final component mark of a
+complete array declaration is supported after balanced index constraints.
+Native type recognition, including GNATDOC-009B, is otherwise unchanged.
+
+The existing default **and symbol-only** JavaScript assets remain byte-identical.
+Only this new opt-in publishes `gnatdoc-instance-navigation.js` under the
+existing `api/gnatdoc-navigation.js` name. Separately labelled hidden
+`data-instance` metadata confers summary navigation authority; it is not added
+to `data-symbol`. A summary click owns one outer history entry, canonically
+`?package=<source-spelled instance>#instance-members-summary`. This presentation
+fragment is accepted only for an allowlisted instance package; it cannot make
+an arbitrary iframe destination. No symbol or declaration query is invented.
+Reload/Back/Forward restore the approved explanatory section. A request such
+as `?symbol=OpenCV.Core.UInt8_Vec2.Vector` still fails to `OpenCV.Core`.
+
+### Revision-specific reconciliation
+
+| Core source | Native sections | Native symbols | Legacy references | Corrected shared | Restored instance references |
+|---|---:|---:|---:|---:|---:|
+| `26bf5e2e8151cb0545b928b72d3d87677543c1ae` | 1,282 | 215 | 2,742 | **2,745** | **242** |
+| `f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f` | 1,268 | 215 | 2,698 | **2,701** | **242** |
+
+Both revisions were freshly built and generated independently. Both retain
+195 public packages, 25 summaries, all 102 summary-internal links, and five
+byte-identical authored guides. All original legacy links are preserved at their
+exact declaration/type-mark positions and observed destinations. The original
+121 grouped current-Core rows reconcile exactly to 242 individual occurrences.
+
+The three additional `OpenCV.Size` references are independently approved, not
+suppressed to force aggregate equality:
+
+* `OpenCV.Core.Create (Dimensions : Size; Element_Type : Mat_Type) return Mat`
+* `OpenCV.Core.Dimensions (Self : Mat) return Size`
+* `OpenCV.Core.Region_Location.Whole_Size : Size`
+
+`OpenCV.Size` is a real public ancestor-visible record type. The legacy
+scanner's deliberately conservative `Source.members` also treats the deeper
+record component `OpenCV.Rotated_Rect.Size` as a package-level blocker. That
+component is not a package-visible homograph. The three actual type marks,
+complete source declarations, lines, offsets, native profiles and destination
+proofs are recorded in `docs/evidence/gnatdoc011r1/Size-disposition.json`.
+
+### Corrective qualification boundaries
+
+The new occurrence oracle uses the unchanged pinned Core source/native scanner
+and genuine legacy publication, not shared target tables or published manifests
+as authority. It records every exact source/native token span, enclosing
+declaration, import, instantiation, actual, dimensions, template, native source
+page, summary destination and historical/new URL. It reconstructs exact summary
+HTML separately from the shared renderer. Existing shared explanatory labels
+(instance name and the Ada-array assignment clarification) and ASCII entity
+serialization are explicitly accounted for, not mistaken for extra links.
+
+The exhaustive Chromium runner clicks every one of the 242 occurrences in each
+revision, then repeats all 25 destinations at desktop/mobile, light/dark, with
+JavaScript enabled and disabled. It checks exact source declarations and
+type-mark spans, destination ownership, table actuals/dimensions, visible summary,
+absence of native declarations and symbol promotion, and all 102 summary-internal
+destinations. History, reload, package switching, foreign frames, rapid selections
+and delayed responses are exercised separately. Symbol and package suites remain
+independent gates.
+
+Original Core browser suites run unchanged against original legacy output. The
+shared equivalent copies change only the documented search label/status text,
+not assertions. Core 0.5.0 predates the standalone symbol and cross-origin test
+files; their current behavioral equivalents run against its candidate rather
+than being misreported as historical 0.5.0 scripts.
+
+All original 516 tests are retained; 24 additive tests bring the suite to **540**.
+Default byte comparison also covers Core with symbol routing but without the
+new incoming-reference option. Mutation runs use a dedicated copy, never the
+browser workspace. Installed code/asset tampering is detected by an external
+hash ledger, not by asking modified code to attest itself. Acquisition hashes
+and enhancement atomicity are checked separately from output reconstruction.
+Fresh evidence, failures/retries, browser traces, distribution and mutation
+results are under `docs/evidence/gnatdoc011r1/`. Passing synthetic or installed
+tests do not stand in for the real-Core ledgers or browser campaigns.
 
 ## Explicit opt-in
 
@@ -89,7 +204,7 @@ rapid selection, stale scroll offsets, and foreign frames are exercised.
 Native package/tagged links remain usable with JavaScript disabled. Stable
 query routing itself requires JavaScript; no fake static query handler is claimed.
 
-## Fresh real-Core findings
+## Original GNATDOC-011 findings (historical, before R1)
 
 | Source revision | Public packages | Native sections | Public symbols |
 |---|---:|---:|---:|
