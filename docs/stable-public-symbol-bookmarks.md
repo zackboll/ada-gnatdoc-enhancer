@@ -5,6 +5,62 @@ the historical GNATDOC-011 findings below.** It does not replace Core's
 production generator or authorize deployment. Final disposition and exact-head
 CI are recorded on PR #13; original GNATDOC-011 evidence remains immutable.
 
+## Symbol-only canonical URL correction (GNATDOC-011R3)
+
+MEL DOC-010 independently reproduced the inherited symbol-only defect against
+merged PR #13 (`697d4ca91dc81812e501e501c9766d9b3ec88924`): an incoming
+`?package=AMS.MEL&unknown=1` fell back to the default package but retained the
+unknown parameter. Clicking a genuine source-qualified `AMS.MEL.Session` type
+reference reached the correct native declaration while writing
+`?package=AMS.MEL&unknown=1&symbol=AMS.MEL.Session`. Reload rejected that URL
+and lost the selected declaration. Unsupported outer fragments also survived.
+
+R2 deliberately corrected only the separately opted-in incoming-instance router;
+its passing CI did not certify this symbol-only transition. R3 changes only
+`canonicalUrl(state)` in `assets/gnatdoc-symbol-navigation.js`: clear the entire
+inherited query and outer fragment, then reconstruct the source-spelled package
+and optional mutually exclusive symbol or approved native declaration parameter.
+The default and generic-instance routers are unchanged. Incoming validation,
+native destinations, public symbol authority and metadata are unchanged.
+
+Input rejection and canonical output reconstruction are separate obligations:
+unknown/duplicate/conflicting/encoded query inputs still fail closed, but fallback
+must now emit a clean package URL so that a later valid selection survives
+reload, fresh-tab restoration and Back/Forward. Valid symbol selections emit
+`?package=AMS.MEL&symbol=AMS.MEL.Session`, never inherited unknown keys or outer
+fragments. Native declaration hashes still require existing approved destinations;
+the correction does not grant arbitrary operations or private declarations stable
+symbol identities. JavaScript-disabled navigation remains native hyperlink
+navigation, not a promise to interpret the outer query string.
+
+The additive real-site regression is `tests/symbol_canonicalization.cjs`; it
+requires `PLAYWRIGHT_MODULE`, `CHROME`, `DOC_URL`, `SYMBOL_ORACLE` and
+`BROWSER_REPORT`. Its oracle comes from independently reconciled source/native
+input, not candidate metadata. It checks the dirty-fallback transition, actual
+type-reference clicks, exact declarations/scrolling, reload/fresh tabs/history,
+malformed parameters, fragments, native declaration bookmarks, package switching,
+delayed child loads, keyboard activation and JavaScript-disabled links across
+desktop/mobile and light/dark. Packaged URL-writer tests are additive to the
+existing Python suite; they do not replace real-browser qualification.
+
+R3 evidence belongs to `docs/evidence/gnatdoc011r3/` and the distinct external
+qualification directory recorded there. Original GNATDOC-011/R1/R2 evidence and
+the historical findings below remain unchanged. Complete publication comparisons
+must preserve disabled/default and incoming-instance bytes; symbol-only output
+may change only its script and dependent presentation-manifest hash. Source,
+native profiles, type-reference occurrences, metadata, CSS and authored content
+remain authoritative. This bounded correction is not a general Ada resolver,
+cross-browser/accessibility certification or authorization to deploy consumers.
+
+Release-preparation PR #14 is separate: its previous candidate/evidence does not
+contain corrected router bytes. After an independently approved R3 merge it must
+incorporate that merge and requalify distributions, assets and compatibility before
+the initial release. In particular, its `tests/test_release.py` still pins the
+old symbol-router digest; that assertion must be deliberately updated to the
+independently reviewed R3 digest, not suppressed. Default and instance digest
+assertions remain unchanged. R3 does not change its version, branch or release
+evidence.
+
 ## Canonical URL sanitization correction (GNATDOC-011R2)
 
 Independent review found that the incoming-reference router rejected unknown

@@ -1,0 +1,12 @@
+{
+  "pr14_unchanged": true,
+  "head": "d8d73eb677952ce83a8188b8c20a7c032580409e",
+  "textual_overlap_on_corrective_paths": [],
+  "required_followup": [
+    "incorporate independently approved corrective merge before release",
+    "update tests/test_release.py old symbol-router digest to reviewed R3 digest; retain default/instance identities",
+    "rerun release source/wheel/sdist Python matrix, browser, mutation and complete publication qualification",
+    "retain old release evidence as historical; record new artifact digests and exact final head"
+  ],
+  "release_tag_or_publication_authorized": false
+}

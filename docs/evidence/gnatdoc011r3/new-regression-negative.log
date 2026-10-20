@@ -1,0 +1,22 @@
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
+  [
+    [
+      'package',
+      'AMS.MEL'
++   ],
++   [
++     'unknown',
++     '1'
+    ]
+  ]
+    at clean (/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/symbol_canonicalization.cjs:12:9)
+    at packageSelected (/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/symbol_canonicalization.cjs:25:60)
+    at async /home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/symbol_canonicalization.cjs:67:4 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [Array],
+  expected: [Array],
+  operator: 'deepStrictEqual'
+}

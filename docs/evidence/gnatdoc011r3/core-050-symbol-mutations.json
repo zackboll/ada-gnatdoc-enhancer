@@ -1,0 +1,95 @@
+{
+  "byte_idempotent": true,
+  "mutations": {
+    "duplicate identity": {
+      "independent_rejected": "independent symbol audit: duplicate symbols",
+      "mutation_observed": true,
+      "restored_hashes_and_independent_audit": true,
+      "shared_rejected": "published file differs from reconstructed output: api/index.html"
+    },
+    "forged presentation manifest": {
+      "independent_rejected": false,
+      "mutation_observed": true,
+      "restored_hashes_and_independent_audit": true,
+      "shared_rejected": "enhanced output does not match source/manifest"
+    },
+    "generic formal": {
+      "independent_rejected": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "mutation_observed": true,
+      "restored_hashes_and_independent_audit": true,
+      "shared_rejected": "published file differs from reconstructed output: api/index.html"
+    },
+    "invented public symbol": {
+      "independent_rejected": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "mutation_observed": true,
+      "restored_hashes_and_independent_audit": true,
+      "shared_rejected": "published file differs from reconstructed output: api/index.html"
+    },
+    "mismatched native declaration": {
+      "independent_rejected": "independent symbol audit: native declaration profile changed",
+      "mutation_observed": true,
+      "restored_hashes_and_independent_audit": true,
+      "shared_rejected": "published file differs from reconstructed output: api/0453a2309ced3cca5e30b48e034e323532b3cb93ccbbeaf25275acea27f95774.html"
+    },
+    "mismatched source declaration": {
+      "independent_rejected": false,
+      "mutation_observed": true,
+      "restored_hashes_and_independent_audit": true,
+      "shared_rejected": "source differs from qualified presentation manifest"
+    },
+    "missing symbol": {
+      "independent_rejected": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "mutation_observed": true,
+      "restored_hashes_and_independent_audit": true,
+      "shared_rejected": "published file differs from reconstructed output: api/index.html"
+    },
+    "modified navigation JavaScript": {
+      "independent_rejected": "independent symbol audit: modified opt-in navigation JavaScript",
+      "mutation_observed": true,
+      "restored_hashes_and_independent_audit": true,
+      "shared_rejected": "published file differs from reconstructed output: api/gnatdoc-navigation.js"
+    },
+    "private ownership confusion": {
+      "independent_rejected": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "mutation_observed": true,
+      "restored_hashes_and_independent_audit": true,
+      "shared_rejected": "published file differs from reconstructed output: api/index.html"
+    },
+    "swapped existing native pages": {
+      "independent_rejected": "independent symbol audit: package owner changed",
+      "mutation_observed": true,
+      "restored_hashes_and_independent_audit": true,
+      "shared_rejected": "published file differs from reconstructed output: api/0453a2309ced3cca5e30b48e034e323532b3cb93ccbbeaf25275acea27f95774.html"
+    },
+    "synthetic summary": {
+      "independent_rejected": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "mutation_observed": true,
+      "restored_hashes_and_independent_audit": true,
+      "shared_rejected": "published file differs from reconstructed output: api/index.html"
+    },
+    "unknown package owner": {
+      "independent_rejected": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "mutation_observed": true,
+      "restored_hashes_and_independent_audit": true,
+      "shared_rejected": "published file differs from reconstructed output: api/index.html"
+    },
+    "unsafe absolute destination": {
+      "independent_rejected": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "mutation_observed": true,
+      "restored_hashes_and_independent_audit": true,
+      "shared_rejected": "published file differs from reconstructed output: api/index.html"
+    },
+    "unsafe root destination": {
+      "independent_rejected": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "mutation_observed": true,
+      "restored_hashes_and_independent_audit": true,
+      "shared_rejected": "published file differs from reconstructed output: api/index.html"
+    },
+    "wrong existing native anchor": {
+      "independent_rejected": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "mutation_observed": true,
+      "restored_hashes_and_independent_audit": true,
+      "shared_rejected": "published file differs from reconstructed output: api/index.html"
+    }
+  }
+}

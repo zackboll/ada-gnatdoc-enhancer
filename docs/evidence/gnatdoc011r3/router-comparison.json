@@ -1,0 +1,17 @@
+{
+  "gnatdoc-navigation.js": {
+    "before": "b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd",
+    "after": "b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd",
+    "unchanged": true
+  },
+  "gnatdoc-instance-navigation.js": {
+    "before": "97dcc75055842e98a6294809b8e8c4e7436a427039d19c8afb6fdd1ca21ea310",
+    "after": "97dcc75055842e98a6294809b8e8c4e7436a427039d19c8afb6fdd1ca21ea310",
+    "unchanged": true
+  },
+  "gnatdoc-symbol-navigation.js": {
+    "before": "7af8dd92f7f31ff9a14fd55a41d81d9bcfe9ae3bce8506f9254a376404ea7ee3",
+    "after": "233cf43211a711d0d64dfba2815bc2d9cc887720faed0ca38f464bc6d29e145f",
+    "unchanged": false
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "starting_head": "697d4ca91dc81812e501e501c9766d9b3ec88924",
+  "branch": "corrective/011r3-symbol-url-canonicalization",
+  "local_gates_passed": true,
+  "hosted_ci": "not claimed until exact committed HEAD is pushed and checked; external final handoff records outcomes",
+  "source_matrix": {
+    "3.11": 558,
+    "3.12": 558,
+    "3.13": 558
+  },
+  "wheel_matrix": {
+    "3.11": 558,
+    "3.12": 558,
+    "3.13": 558
+  },
+  "rebuilt_sdist_matrix": {
+    "3.11": 558,
+    "3.12": 558,
+    "3.13": 558
+  },
+  "original_540_tests_retained": true,
+  "additional_tests": 18,
+  "symbol_router_sha256": "233cf43211a711d0d64dfba2815bc2d9cc887720faed0ca38f464bc6d29e145f",
+  "package_fingerprint": "af5c5fec03ec3fbc41e3a55a55424a3ce65cf1bb5101d97b0c65ff5614e40632",
+  "browser": {
+    "mel-canonicalization-exact-final": {
+      "traces": 416,
+      "requests": 1024,
+      "browser": "156.0.8078.4",
+      "all_eight_contexts_passed": true
+    },
+    "core-current-symbols-symbol_canonicalization-exact-final": {
+      "traces": 416,
+      "requests": 1036,
+      "browser": "156.0.8078.4",
+      "all_eight_contexts_passed": true
+    },
+    "core-050-symbols-symbol_canonicalization": {
+      "traces": 416,
+      "requests": 1036,
+      "browser": "156.0.8078.4",
+      "all_eight_contexts_passed": true
+    }
+  },
+  "mutation_cases": {
+    "core-current": {
+      "symbol_cases": 15,
+      "instance_cases": 38
+    },
+    "core-050": {
+      "symbol_cases": 15,
+      "instance_cases": 38
+    }
+  },
+  "publications": {
+    "mel-default": {
+      "files": 43,
+      "changed": [],
+      "fingerprint": "138e5121f00a00d9eda824ec0330b01f6e08ee688941b83245b8b3165a76d742"
+    },
+    "mel-symbols": {
+      "files": 43,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "fingerprint": "d673d347c9ff603e80c5641e03fd6eb84a5ef2408230b9112ced97a689dd0a9e"
+    },
+    "core-current-symbols": {
+      "files": 207,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "fingerprint": "a73a09333b8d78b8b20b2e88a351a89b5d744719a45056c2a715dcb5457808de"
+    },
+    "core-current-instance": {
+      "files": 207,
+      "changed": [],
+      "fingerprint": "2996a37e5f06ef23d02f5fb01999ba646e5013ca70cd367e4cad1fdeb296307e"
+    },
+    "core-050-symbols": {
+      "files": 207,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "fingerprint": "8e1f4e05527fefe99fe6dca83e3b11a4b1664f573d677121df5ff7731dbeeed6"
+    },
+    "core-050-instance": {
+      "files": 207,
+      "changed": [],
+      "fingerprint": "f89b5d37fa6fde9e566ae6299cd8e906eb509ed6a5680ad68c038da1ef01806d"
+    }
+  },
+  "default_and_instance_assets_unchanged": true,
+  "two_copy_generation": true,
+  "byte_idempotence": true,
+  "core_source_native_symbols_each": 215,
+  "core_source_native_occurrences_each": 242,
+  "core_occurrence_ledgers_equal_R2": true,
+  "mel": {
+    "public_symbols": 238,
+    "types": 231,
+    "subtypes": 7,
+    "owners": 24,
+    "complete_metadata_equal_independent_inventory": true,
+    "files": 43,
+    "html_pages": 38,
+    "references": 3259
+  },
+  "historical_evidence_unchanged": true,
+  "MEL_repository_unchanged": true,
+  "release_pr14_unchanged_head": "d8d73eb677952ce83a8188b8c20a7c032580409e",
+  "external_evidence": "/home/zboll/qualification/gnatdoc011r3"
+}
