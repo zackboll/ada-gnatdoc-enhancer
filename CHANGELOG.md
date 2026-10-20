@@ -13,7 +13,9 @@
   navigation. Preserve default and incoming-instance router bytes and all 18 R3
   regressions. R2 intentionally did not fix the symbol-only defect.
 - Supersede the original 543-test release qualification with a distinct corrective
-  campaign targeting 561 tests; preserve all historical evidence and identities.
+  campaign retaining all 561 tests plus three independently justified malformed
+  wheel controls (564 total). Reject Unix symlink/device/FIFO/socket members in
+  wheel archives; preserve all historical evidence and identities.
 - Synchronize module, distribution and CLI versions; adopt SPDX Apache-2.0
   metadata with LICENSE; preserve Python >=3.11, optional guide pins and the
   dependency-free core.

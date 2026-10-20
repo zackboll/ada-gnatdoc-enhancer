@@ -36,7 +36,8 @@ publishing workflow; ordinary PR CI has read-only repository permissions.
 5. For each Python 3.11, 3.12 and 3.13, create fresh isolated source, wheel and
    rebuilt-wheel qualification environments. Provide Node.js explicitly for the
    packaged JavaScript writer regressions; it is not a core runtime dependency.
-   Require 561 distinct tests with zero failures, errors or unexpected skips.
+   Require 564 distinct tests (561 retained plus three malformed-wheel regression
+   contracts) with zero failures, errors or unexpected skips.
    Install the wheel non-editably in
    one. Extract the sdist, build a new wheel **from that extraction**, and
    install it non-editably in the other. Install the pinned guide extra in both.

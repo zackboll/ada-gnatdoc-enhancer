@@ -34,7 +34,10 @@ source. Do not claim an archive includes evidence written after its build.
   >=3.11; qualified 3.11/3.12/3.13. SPDX Apache-2.0, LICENSE included,
   setuptools >=77 for PEP 639. No core dependencies; pinned optional guide extra.
 * Preserve 540 R2 tests, 18 R3 additions and three release tests: 561 distinct
-  tests, no unexpected skips, failures or errors. Provide Node.js explicitly as
+  tests retained, plus three additive archive-reader tests (564 total). A new
+  negative control demonstrated that the original auditor accepted wheel symlink
+  entries; the audit now rejects nonregular members and unsafe/duplicate paths.
+  No existing test was weakened. Require no skips, failures or errors. Provide Node.js explicitly as
   a test-tool prerequisite, not a core dependency. Qualify source,
   installed wheel and extracted-sdist rebuilt wheel with explicit fixture paths.
 * Wheel/sdist/rebuilt wheel modules and CSS/JS equal source. Check archive paths,

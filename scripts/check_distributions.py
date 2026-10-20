@@ -7,6 +7,7 @@ from email.parser import BytesParser
 import hashlib
 import json
 from pathlib import Path, PurePosixPath
+import stat
 import tarfile
 import tomllib
 import zipfile
@@ -25,6 +26,16 @@ def wheel_files(path):
     with zipfile.ZipFile(path) as archive:
         names = archive.namelist()
         require(len(names) == len(set(names)), 'duplicate wheel members')
+        for member in archive.infolist():
+            parts = PurePosixPath(member.filename).parts
+            require(parts and not PurePosixPath(member.filename).is_absolute()
+                    and '..' not in parts, 'unsafe wheel path')
+            mode = member.external_attr >> 16
+            kind = stat.S_IFMT(mode)
+            # Some ZIP writers omit Unix file-type bits. When present, accept
+            # only regular files/directories, never symlinks or device entries.
+            require(kind in (0, stat.S_IFREG, stat.S_IFDIR), 'nonregular wheel member')
+            require(kind != stat.S_IFDIR or member.is_dir(), 'invalid wheel directory')
         return {name: archive.read(name) for name in names if not name.endswith('/')}
 
 
