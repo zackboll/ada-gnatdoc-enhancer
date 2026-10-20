@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 — release candidate (GNATDOC-012; not yet published)
+## 0.1.0 — release candidate (GNATDOC-012R2; not yet published)
 
 - Consolidate merged GNATDOC-001–011: fail-closed source/native qualification,
   navigation, highlighting, conservative local/external type links, 25 optional
@@ -8,8 +8,12 @@
   page metadata and native-symbol bookmarks.
 - Include R1's separately authorized 242 incoming instance references and R2's
   incoming-router canonical query reconstruction.
-- Preserve default and symbol-only routers, including the documented outstanding
-  symbol-only canonicalization issue; no compatibility rebaseline.
+- Incorporate independently reviewed GNATDOC-011R3: clear inherited query keys
+  and unsupported outer fragments before reconstructing canonical symbol-only
+  navigation. Preserve default and incoming-instance router bytes and all 18 R3
+  regressions. R2 intentionally did not fix the symbol-only defect.
+- Supersede the original 543-test release qualification with a distinct corrective
+  campaign targeting 561 tests; preserve all historical evidence and identities.
 - Synchronize module, distribution and CLI versions; adopt SPDX Apache-2.0
   metadata with LICENSE; preserve Python >=3.11, optional guide pins and the
   dependency-free core.

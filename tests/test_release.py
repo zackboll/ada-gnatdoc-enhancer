@@ -39,7 +39,7 @@ class ReleaseContracts(unittest.TestCase):
 
     def test_default_and_symbol_only_router_byte_contracts(self):
         for symbols, expected in [(False, 'b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd'),
-                                  (True, '7af8dd92f7f31ff9a14fd55a41d81d9bcfe9ae3bce8506f9254a376404ea7ee3')]:
+                                  (True, '233cf43211a711d0d64dfba2815bc2d9cc887720faed0ca38f464bc6d29e145f')]:
             with self.subTest(symbols=symbols):
                 fx = Fixture(); self.addCleanup(fx.cleanup)
                 config = replace(fx.config, symbol_bookmarks=symbols,

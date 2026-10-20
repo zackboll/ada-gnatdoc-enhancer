@@ -1,7 +1,8 @@
 # v0.1.0 consumer compatibility and adoption boundary
 
 Package release is not production-migration certification. Historical campaigns
-remain immutable in `docs/evidence/gnatdoc002` through `gnatdoc011r2`; their
+remain immutable in `docs/evidence/gnatdoc002` through `gnatdoc011r3` and
+`docs/evidence/gnatdoc012`; their
 results apply to their exact pins, not arbitrary current consumer heads.
 GNATDOC-012 changes no consumer repository or consumer-owned generator.
 
@@ -18,7 +19,12 @@ evidence reuse, with identity verification before reuse. Retained native output
 is not a fresh Ada build or GNATdoc acquisition. Full consumer/compiler/deployment
 campaigns are not replaced by reduced fixtures or the four synthetic profiles.
 
-The symbol-only router's unknown-query canonicalization issue remains documented
-and unchanged. GNATDOC-011R2 fixes the separately opted-in incoming-instance
-router, not the symbol-only byte contract. No consumer warning, coverage,
-source-integrity or publication baseline may be silently changed for adoption.
+GNATDOC-011R3 fixes the symbol-only unknown-query/reload defect by clearing
+inherited query parameters and unsupported outer fragments before reconstructing
+canonical navigation state. GNATDOC-011R2 intentionally fixed only the separately
+opted-in incoming-instance router. Default and incoming-instance assets retain
+their approved bytes; symbol-only assets use the independently reviewed R3 bytes.
+The old symbol publication is not byte-identical: its router and dependent
+presentation manifest change. R3 development to corrected release changes only
+the manifest version field. No consumer warning, coverage, source-integrity or
+publication baseline may be silently changed for adoption.

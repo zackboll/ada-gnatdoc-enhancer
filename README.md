@@ -3,7 +3,7 @@
 **Offline, source-verified enhancement of GNATdoc 26.0.0 HTML sites.**
 
 Version **0.1.0** prepares the first stable toolkit release, incorporating
-GNATDOC-001–011 and GNATDOC-011R1/R2. This does not imply artifacts have already
+GNATDOC-001–011 and GNATDOC-011R1/R2/R3. This does not imply artifacts have already
 been published. Python **3.11, 3.12 and 3.13** are qualified on Linux. The core
 has **no runtime dependencies** and needs neither Ada nor GNATdoc at installation.
 
@@ -80,12 +80,12 @@ signed adversarial attestations. The parser is not a complete Ada semantic front
 end. Unsupported scopes, instantiations and renderer shapes are rejected rather
 than acquiring guessed authority. Other GNATdoc versions are unsupported.
 
-**Known symbol-only URL canonicalization debt:** the unchanged symbol-only
-router can retain rejected unknown query keys when writing a canonical URL,
-so a later valid selection may fail again on reload. R2 corrects the separate
-incoming-instance router only. This release does not repair or rebaseline the
-symbol-only/default JavaScript contract. See the detailed
-[R2 boundary](docs/stable-public-symbol-bookmarks.md#canonical-url-sanitization-correction-gnatdoc-011r2).
+**Corrected symbol-only canonical URLs:** GNATDOC-011R3 clears inherited query
+parameters and unsupported outer fragments before reconstructing approved package,
+symbol or declaration state. A valid selection after a rejected dirty query now
+survives reload. R2 intentionally fixed only the incoming-instance router; its
+historical evidence does not qualify R3. Default and incoming-instance router
+bytes remain unchanged. See [symbol routing](docs/stable-public-symbol-bookmarks.md).
 
 The toolkit does **not** replace Ada compilation, GNATdoc generation,
 source-integrity verification, comprehensive member/prose coverage checks,
@@ -106,6 +106,7 @@ not bundled into release archives.
 
 ```sh
 # From an extracted sdist, using a non-editably installed distribution:
+# Provide Node.js explicitly as a test prerequisite (not a core dependency).
 python -m unittest discover -s tests -v
 gnatdoc-enhancer conformance --fixtures tests/fixtures
 python scripts/test_installed.py --fixtures tests/fixtures

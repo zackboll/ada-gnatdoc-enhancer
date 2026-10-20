@@ -9,6 +9,13 @@ routing. See the current [consumer matrix](release-compatibility.md) and
 [release qualification](release-0.1.0-qualification.md). GNATdoc 26.0.0 only;
 Python 3.11/3.12/3.13. Consumer adoption is separately qualified.
 
+GNATDOC-012R2 incorporates reviewed GNATDOC-011R3 symbol-only canonicalization:
+clear inherited query parameters and unsupported outer fragments, then reconstruct
+approved navigation state. Default and incoming-instance assets are unchanged.
+R2 intentionally did not fix symbol-only URLs; its evidence and the original
+release candidate evidence remain historical, not qualification of this router.
+See the distinct `docs/evidence/gnatdoc012r2/` corrective record.
+
 ## Historical bootstrap assessment
 
 | Feature | Bootstrap qualification |

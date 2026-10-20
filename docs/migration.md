@@ -29,9 +29,12 @@ reuse the old presentation manifest: `enhancer_version` is version-bound and
 release verification rejects development manifests.
 
 Compare every native signature/destination, guide, warning, coverage,
-source-integrity and deployment baseline independently. Default and symbol-only
-presentation bytes remain unchanged except the manifest version field; the
-symbol-only URL issue is intentionally not fixed. Review optional symbol/instance
+source-integrity and deployment baseline independently. From corrected R3
+development source, presentation bytes change only in the manifest version field.
+From pre-R3 source, symbol-only output also changes its router and dependent
+manifest: R3 clears inherited query parameters and unsupported outer fragments
+before reconstructing canonical state. R2 intentionally left that defect unfixed.
+Default and incoming-instance router bytes remain unchanged. Review optional symbol/instance
 configuration separately with pinned source/native evidence. Adopt only through
 the consumer's own reviewed PR and rollback policy.
 
