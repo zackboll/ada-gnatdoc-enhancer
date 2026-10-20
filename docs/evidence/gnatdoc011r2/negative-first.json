@@ -1,0 +1,6 @@
+{
+  "revision": "26bf5e2e8151cb0545b928b72d3d87677543c1ae",
+  "browser": "155.0.8059.84",
+  "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    [\n      'package',\n      'OpenCV.Core'\n+   ],\n+   [\n+     'unknown',\n+     '1'\n    ]\n  ]\n    at clean (/home/zboll/git/ada-gnatdoc-enhancer-011/tests/instance_canonicalization.cjs:11:10)\n    at packageSelected (/home/zboll/git/ada-gnatdoc-enhancer-011/tests/instance_canonicalization.cjs:19:3)\n    at runNextTicks (node:internal/process/task_queues:60:5)\n    at process.processImmediate (node:internal/timers:454:9)\n    at process.callbackTrampoline (node:internal/async_hooks:130:17)\n    at async /home/zboll/git/ada-gnatdoc-enhancer-011/tests/instance_canonicalization.cjs:83:59",
+  "traces": []
+}
