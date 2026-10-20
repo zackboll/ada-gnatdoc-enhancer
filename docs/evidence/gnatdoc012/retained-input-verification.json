@@ -1,0 +1,14 @@
+{
+  "core-050": {
+    "fresh_Ada_GNATdoc_acquisition": false,
+    "pristine_files_verified": 197,
+    "revision": "f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f",
+    "source_files_verified": 392
+  },
+  "core-current": {
+    "fresh_Ada_GNATdoc_acquisition": false,
+    "pristine_files_verified": 197,
+    "revision": "26bf5e2e8151cb0545b928b72d3d87677543c1ae",
+    "source_files_verified": 392
+  }
+}

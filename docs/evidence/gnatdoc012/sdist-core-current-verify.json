@@ -1,0 +1,23 @@
+{
+  "declaration_snippets": 1282,
+  "files": 207,
+  "generic_actual_type_links": 25,
+  "generic_conversion_package_links": 1,
+  "generic_member_links": 51,
+  "generic_summary_links": 102,
+  "generic_template_links": 25,
+  "html_pages": 202,
+  "linked_external_types": 0,
+  "linked_local_types": 2745,
+  "linked_types": 2745,
+  "links": 5108,
+  "matrix_summaries": 1,
+  "mode": "verified",
+  "native_instance_member_declarations": 0,
+  "presentation_only_anchors": 25,
+  "public_packages": 195,
+  "qualified_generic_instances": 25,
+  "unrendered_renderer_exceptions": 0,
+  "unsupported_instances": [],
+  "vector_summaries": 24
+}

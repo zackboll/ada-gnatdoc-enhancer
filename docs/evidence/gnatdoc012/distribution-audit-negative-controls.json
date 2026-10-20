@@ -1,0 +1,22 @@
+{
+  "absolute metadata path": {
+    "mutation_observed": true,
+    "rejected": "absolute workstation path in metadata: ada_gnatdoc_enhancer-0.1.0.dist-info/METADATA"
+  },
+  "changed router asset": {
+    "mutation_observed": true,
+    "rejected": "wheel modules/assets differ from source"
+  },
+  "generated file": {
+    "mutation_observed": true,
+    "rejected": "wheel modules/assets differ from source"
+  },
+  "missing asset": {
+    "mutation_observed": true,
+    "rejected": "wheel modules/assets differ from source"
+  },
+  "unexpected runtime dependency": {
+    "mutation_observed": true,
+    "rejected": "unexpected dependency: ['unexpected-runtime', 'markdown-it-py==3.0.0; extra == \"guides\"', 'mdurl==0.1.2; extra == \"guides\"']"
+  }
+}

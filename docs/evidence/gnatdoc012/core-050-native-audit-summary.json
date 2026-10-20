@@ -1,0 +1,33 @@
+{
+  "authored_guide_byte_parity": {
+    "guides/core-operations-guide.html": true,
+    "guides/interop-and-compatibility.html": true,
+    "guides/ownership-and-views.html": true,
+    "guides/sparse-and-persistence-guide.html": true,
+    "guides/typed-access-guide.html": true
+  },
+  "core_revision": "f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f",
+  "migration_parity": false,
+  "native_sections": 1268,
+  "oracle_sha256": {
+    "scripts/compare_gnatdoc_warnings.py": "0981b64cf79fe8fa115009e731eb853af9b077e9327426dc6ad9d330c11d7ecf",
+    "scripts/highlight_gnatdoc_ada.py": "efe5ba0a68fc318d032bb82dbf96b8d893039729a431995f2947f19f13966fc6",
+    "scripts/link_gnatdoc_types.py": "661924b5b39242af2acf4f9d3ae65e2d21b01df4cbbd6a023870c9bd0e0b7a21"
+  },
+  "public_packages": 195,
+  "public_symbols": 215,
+  "symbol_parity": true,
+  "type_references": {
+    "additional": [
+      {
+        "count": 3,
+        "href": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278",
+        "identity": "opencv.size",
+        "page": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+      }
+    ],
+    "legacy": 2698,
+    "missing": [],
+    "shared": 2701
+  }
+}

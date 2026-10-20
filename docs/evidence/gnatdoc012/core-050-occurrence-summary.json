@@ -1,0 +1,447 @@
+{
+  "additional_Size": [
+    {
+      "classification": "legitimate source-verified improvement: OpenCV.Size is ancestor-visible; Rotated_Rect.Size is a record component, not a package-visible homograph",
+      "complete_source_declaration": "   function Create (Dimensions : Size; Element_Type : Mat_Type) return Mat;",
+      "declaration": "OpenCV.Core.Create",
+      "legacy_blockers": [
+        {
+          "column": 9,
+          "end": 70,
+          "name": "Size",
+          "scope": "OpenCV.Size",
+          "signature": "type Size is record",
+          "start": 67
+        },
+        {
+          "column": 7,
+          "end": 158,
+          "name": "Size",
+          "scope": "OpenCV.Rotated_Rect.Size",
+          "signature": "Size : Float32_Size : = (Width => 0.0, Height => 0.0);",
+          "start": 158
+        }
+      ],
+      "legacy_reason": "legacy Source.members deliberately treats deeper component names as potential blockers; its conservative ambiguity is not an Ada visibility conflict",
+      "legacy_status": "ambiguous",
+      "line": 1134,
+      "link": {
+        "identity": "opencv.size",
+        "label": "Size",
+        "url": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278"
+      },
+      "native_profile": "function Create (Dimensions : Size; Element_Type : Mat_Type) return Mat\n",
+      "native_type_span": [
+        30,
+        34
+      ],
+      "source_anchor": "b0b02d289e610f2746701ab66efd151949a892d235a719dabc74578f5c81363f",
+      "source_package": "opencv.core",
+      "source_page": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "source_type_span": [
+        33,
+        37
+      ]
+    },
+    {
+      "classification": "legitimate source-verified improvement: OpenCV.Size is ancestor-visible; Rotated_Rect.Size is a record component, not a package-visible homograph",
+      "complete_source_declaration": "   function Dimensions (Self : Mat) return Size;",
+      "declaration": "OpenCV.Core.Dimensions",
+      "legacy_blockers": [
+        {
+          "column": 9,
+          "end": 70,
+          "name": "Size",
+          "scope": "OpenCV.Size",
+          "signature": "type Size is record",
+          "start": 67
+        },
+        {
+          "column": 7,
+          "end": 158,
+          "name": "Size",
+          "scope": "OpenCV.Rotated_Rect.Size",
+          "signature": "Size : Float32_Size : = (Width => 0.0, Height => 0.0);",
+          "start": 158
+        }
+      ],
+      "legacy_reason": "legacy Source.members deliberately treats deeper component names as potential blockers; its conservative ambiguity is not an Ada visibility conflict",
+      "legacy_status": "ambiguous",
+      "line": 3552,
+      "link": {
+        "identity": "opencv.size",
+        "label": "Size",
+        "url": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278"
+      },
+      "native_profile": "function Dimensions (Self : Mat) return Size\n",
+      "native_type_span": [
+        40,
+        44
+      ],
+      "source_anchor": "849a6b4dd7df92b9494fc7a28ebaae9ac86428b1becc0852671a3e6e610fd5de",
+      "source_package": "opencv.core",
+      "source_page": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "source_type_span": [
+        43,
+        47
+      ]
+    },
+    {
+      "classification": "legitimate source-verified improvement: OpenCV.Size is ancestor-visible; Rotated_Rect.Size is a record component, not a package-visible homograph",
+      "complete_source_declaration": "   type Region_Location is record\n      Whole_Size : Size;\n      Offset     : Point;\n   end record;",
+      "declaration": "OpenCV.Core.Region_Location",
+      "legacy_blockers": [
+        {
+          "column": 9,
+          "end": 70,
+          "name": "Size",
+          "scope": "OpenCV.Size",
+          "signature": "type Size is record",
+          "start": 67
+        },
+        {
+          "column": 7,
+          "end": 158,
+          "name": "Size",
+          "scope": "OpenCV.Rotated_Rect.Size",
+          "signature": "Size : Float32_Size : = (Width => 0.0, Height => 0.0);",
+          "start": 158
+        }
+      ],
+      "legacy_reason": "legacy Source.members deliberately treats deeper component names as potential blockers; its conservative ambiguity is not an Ada visibility conflict",
+      "legacy_status": "ambiguous",
+      "line": 190,
+      "link": {
+        "identity": "opencv.size",
+        "label": "Size",
+        "url": "ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278"
+      },
+      "native_profile": "type Region_Location is record\n   Whole_Size : Size;\n   Offset     : Point;\nend record;\n",
+      "native_type_span": [
+        47,
+        51
+      ],
+      "source_anchor": "ef0aa08c4ee454716b25468bc242574d510fd3bc0b0a30d7a32362d4cc9722c6",
+      "source_package": "opencv.core",
+      "source_page": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+      "source_type_span": [
+        53,
+        57
+      ]
+    }
+  ],
+  "all_approved_incoming_restored": true,
+  "incoming_by_destination": {
+    "opencv.core.float16_vec2.vector": 10,
+    "opencv.core.float16_vec3.vector": 10,
+    "opencv.core.float16_vec4.vector": 10,
+    "opencv.core.float32_matx3x3.matrix": 2,
+    "opencv.core.float32_vec2.vector": 10,
+    "opencv.core.float32_vec3.vector": 10,
+    "opencv.core.float32_vec4.vector": 10,
+    "opencv.core.float64_vec2.vector": 10,
+    "opencv.core.float64_vec3.vector": 10,
+    "opencv.core.float64_vec4.vector": 10,
+    "opencv.core.int16_vec2.vector": 10,
+    "opencv.core.int16_vec3.vector": 10,
+    "opencv.core.int16_vec4.vector": 10,
+    "opencv.core.int32_vec2.vector": 10,
+    "opencv.core.int32_vec3.vector": 10,
+    "opencv.core.int32_vec4.vector": 10,
+    "opencv.core.int8_vec2.vector": 10,
+    "opencv.core.int8_vec3.vector": 10,
+    "opencv.core.int8_vec4.vector": 10,
+    "opencv.core.uint16_vec2.vector": 10,
+    "opencv.core.uint16_vec3.vector": 10,
+    "opencv.core.uint16_vec4.vector": 10,
+    "opencv.core.uint8_vec2.vector": 10,
+    "opencv.core.uint8_vec3.vector": 10,
+    "opencv.core.uint8_vec4.vector": 10
+  },
+  "incoming_occurrences": 242,
+  "legacy_type_references": 2698,
+  "missing": [],
+  "native_sections": 1268,
+  "public_packages": 195,
+  "public_symbols": 215,
+  "revision": "f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f",
+  "shared_type_references": 2701,
+  "targets": {
+    "opencv.core.float16_vec2.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        2
+      ],
+      "element": "Float16_Value",
+      "instance": "opencv.core.float16_vec2",
+      "native_declarations": 0,
+      "page": "1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.float16_vec3.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        3
+      ],
+      "element": "Float16_Value",
+      "instance": "opencv.core.float16_vec3",
+      "native_declarations": 0,
+      "page": "7b926e05c9907ee7865b04d8df79efba40eb39bd03c780ab2f84184b31fd7332.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.float16_vec4.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        4
+      ],
+      "element": "Float16_Value",
+      "instance": "opencv.core.float16_vec4",
+      "native_declarations": 0,
+      "page": "f6750f19a539b254e157bb6293afd5936035ddcedabfdf1d6f327a3ef94a65da.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.float32_matx3x3.matrix": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        3,
+        3
+      ],
+      "element": "Float32_Value",
+      "instance": "opencv.core.float32_matx3x3",
+      "native_declarations": 0,
+      "page": "a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html",
+      "template": "opencv.core.fixed_matrices"
+    },
+    "opencv.core.float32_vec2.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        2
+      ],
+      "element": "Float32_Value",
+      "instance": "opencv.core.float32_vec2",
+      "native_declarations": 0,
+      "page": "4d83fee369e8bd635af43353b4983e985e9bedd27437b6552576c9509c215d81.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.float32_vec3.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        3
+      ],
+      "element": "Float32_Value",
+      "instance": "opencv.core.float32_vec3",
+      "native_declarations": 0,
+      "page": "9aaa6908f09187b0449763dcc87f460999db6bdc88b7c34666fae481d98c91a6.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.float32_vec4.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        4
+      ],
+      "element": "Float32_Value",
+      "instance": "opencv.core.float32_vec4",
+      "native_declarations": 0,
+      "page": "31ff495bceb4792ef0089f519ebb479eb3009f2be680e34034a07c3a4c65e578.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.float64_vec2.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        2
+      ],
+      "element": "Float64_Value",
+      "instance": "opencv.core.float64_vec2",
+      "native_declarations": 0,
+      "page": "d1b2f5cd1eb1397ab175d6abb28c3d6f429390f2f98f513546532da3810d0607.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.float64_vec3.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        3
+      ],
+      "element": "Float64_Value",
+      "instance": "opencv.core.float64_vec3",
+      "native_declarations": 0,
+      "page": "fae0595c101785f242187d2bf1f347bf5f8eb3c4cb1869890af3d9a7af48df89.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.float64_vec4.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        4
+      ],
+      "element": "Float64_Value",
+      "instance": "opencv.core.float64_vec4",
+      "native_declarations": 0,
+      "page": "1b4c2fc0017fd1a296da5292227432e136aa2b56e71536acc618f8228e13e323.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.int16_vec2.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        2
+      ],
+      "element": "Int16_Value",
+      "instance": "opencv.core.int16_vec2",
+      "native_declarations": 0,
+      "page": "ac6dd4cd8f2e6efc44eb164453b6e265a4c2d78018db9747ef8d6abd62c7d074.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.int16_vec3.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        3
+      ],
+      "element": "Int16_Value",
+      "instance": "opencv.core.int16_vec3",
+      "native_declarations": 0,
+      "page": "6e26fcbfdc5ccedc6aa77dd6e34186e484e14c736190d0a0c0d1370e7c67a6cd.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.int16_vec4.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        4
+      ],
+      "element": "Int16_Value",
+      "instance": "opencv.core.int16_vec4",
+      "native_declarations": 0,
+      "page": "205d1ab3b0b0f90302d746f4012c916279d24816120de3b3e14cc4926a04901c.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.int32_vec2.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        2
+      ],
+      "element": "Int32_Value",
+      "instance": "opencv.core.int32_vec2",
+      "native_declarations": 0,
+      "page": "3484eaafdf8291e8cc1d9281281f72f87c5fd7d6bfd01fbe57c5798608cc0b3d.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.int32_vec3.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        3
+      ],
+      "element": "Int32_Value",
+      "instance": "opencv.core.int32_vec3",
+      "native_declarations": 0,
+      "page": "92cd94df8a420b11b7fd15456853222c4572fbd2d04f15863224059ab6d98f4f.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.int32_vec4.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        4
+      ],
+      "element": "Int32_Value",
+      "instance": "opencv.core.int32_vec4",
+      "native_declarations": 0,
+      "page": "d1a4d262635553c2303d440bc0c9b0d5da2013a97fcd6e00610e2d4e2ed80236.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.int8_vec2.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        2
+      ],
+      "element": "Int8_Value",
+      "instance": "opencv.core.int8_vec2",
+      "native_declarations": 0,
+      "page": "2bd29cc1e10dce9656c5e3359956f065274072b163724ad00959221ffe8c89da.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.int8_vec3.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        3
+      ],
+      "element": "Int8_Value",
+      "instance": "opencv.core.int8_vec3",
+      "native_declarations": 0,
+      "page": "a66cc7e7eb428e03ec01ea75275267546255a3203ed1895014cdd2b143a44140.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.int8_vec4.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        4
+      ],
+      "element": "Int8_Value",
+      "instance": "opencv.core.int8_vec4",
+      "native_declarations": 0,
+      "page": "d394ade8721161f64f9c874a76f64d32839e4981ef84e7f248420cef53fd5cf6.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.uint16_vec2.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        2
+      ],
+      "element": "UInt16_Value",
+      "instance": "opencv.core.uint16_vec2",
+      "native_declarations": 0,
+      "page": "b6e8fd9a264861791a430685f5117efab83ff9358a92b674a9605f65553ef195.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.uint16_vec3.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        3
+      ],
+      "element": "UInt16_Value",
+      "instance": "opencv.core.uint16_vec3",
+      "native_declarations": 0,
+      "page": "76ee27a213ea841ef46ca63704dcea0d6361f8338f40556bbda80fecb2560d1f.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.uint16_vec4.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        4
+      ],
+      "element": "UInt16_Value",
+      "instance": "opencv.core.uint16_vec4",
+      "native_declarations": 0,
+      "page": "d07a7be131d8a57fb2dc18e7aad1472801121f4fbcef7605522294e53d54709b.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.uint8_vec2.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        2
+      ],
+      "element": "UInt8_Value",
+      "instance": "opencv.core.uint8_vec2",
+      "native_declarations": 0,
+      "page": "e4a53bc2fadb6312c53f37e2e9893de203c9851744fc0cd8deb7a925633364ee.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.uint8_vec3.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        3
+      ],
+      "element": "UInt8_Value",
+      "instance": "opencv.core.uint8_vec3",
+      "native_declarations": 0,
+      "page": "51805d4ebf800f07b2c5b4f3c69b37bbd0fd19f269a930189bf322400826c140.html",
+      "template": "opencv.core.vectors"
+    },
+    "opencv.core.uint8_vec4.vector": {
+      "anchor": "instance-members-summary",
+      "dimensions": [
+        4
+      ],
+      "element": "UInt8_Value",
+      "instance": "opencv.core.uint8_vec4",
+      "native_declarations": 0,
+      "page": "ac97c1fb444a21ec40bac83783c10d55ab74367fe648ad6edb18c7c5b9dbfe89.html",
+      "template": "opencv.core.vectors"
+    }
+  }
+}

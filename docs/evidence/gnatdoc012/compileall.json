@@ -1,0 +1,14 @@
+{
+  "3.11": {
+    "compileall": "passed",
+    "python": "Python 3.11.17"
+  },
+  "3.12": {
+    "compileall": "passed",
+    "python": "Python 3.12.15"
+  },
+  "3.13": {
+    "compileall": "passed",
+    "python": "Python 3.13.16"
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "additive_release_tests": 3,
+  "all_four_conformance_profiles_passed_each_installation": true,
+  "archive_audit_negative_controls": 5,
+  "artifacts": {
+    "rebuilt_wheel": {
+      "bytes": 94225,
+      "name": "ada_gnatdoc_enhancer-0.1.0-py3-none-any.whl",
+      "sha256": "c2e00177cf9e906001bfdd8babf1c96eeff585a29e187680938db50243380df8"
+    },
+    "sdist": {
+      "bytes": 2157532,
+      "name": "ada_gnatdoc_enhancer-0.1.0.tar.gz",
+      "sha256": "f78a5a010d9a8b2eb7f97019957925186ce81d30ba8cdbb6a570097feb03ae79"
+    },
+    "wheel": {
+      "bytes": 94225,
+      "name": "ada_gnatdoc_enhancer-0.1.0-py3-none-any.whl",
+      "sha256": "1dc02d0caa91853af9dedb4492949c3435ee47b08994507e706b5fa91b8b3eed"
+    }
+  },
+  "baseline_tests": 540,
+  "browser": {
+    "all_passed": true,
+    "chromium": "156.0.8078.4",
+    "per_revision": {
+      "R2_canonicalization_traces": 216,
+      "all_incoming_occurrences_clicked": 242,
+      "incoming_instance_traces": 421,
+      "symbol_traces": 144
+    },
+    "revisions": [
+      "core-current",
+      "core-050"
+    ]
+  },
+  "candidate_artifacts_local_directory": "/tmp/gnatdoc012-candidate/artifacts",
+  "candidate_source_commit": "508c2bf1feb3087242496f0925964f400b551f4c",
+  "candidate_source_tree": "5ca72a7e2f242d9a9f5deec642d45e0f2d2490f6",
+  "consumer_changes": false,
+  "core_only_conformance": true,
+  "core_revisions": {
+    "core-050": {
+      "authority_unchanged": true,
+      "byte_idempotence": true,
+      "counts": {
+        "declaration_snippets": 1268,
+        "files": 207,
+        "generic_actual_type_links": 25,
+        "generic_conversion_package_links": 1,
+        "generic_member_links": 51,
+        "generic_summary_links": 102,
+        "generic_template_links": 25,
+        "html_pages": 202,
+        "linked_external_types": 0,
+        "linked_local_types": 2701,
+        "linked_types": 2701,
+        "links": 5047,
+        "matrix_summaries": 1,
+        "mode": "enhanced",
+        "native_instance_member_declarations": 0,
+        "presentation_only_anchors": 25,
+        "public_packages": 195,
+        "qualified_generic_instances": 25,
+        "unrendered_renderer_exceptions": 0,
+        "unsupported_instances": [],
+        "vector_summaries": 24
+      },
+      "incoming_occurrences": 242,
+      "manifest_single_version_substitution": true,
+      "native_signature_destination_preservation": true,
+      "native_symbols": 215,
+      "occurrence_ledger_equal_reviewed_R1": true,
+      "only_delta_from_R2": [
+        "api/presentation.json"
+      ],
+      "revision": "f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f",
+      "two_copy_determinism": true
+    },
+    "core-current": {
+      "authority_unchanged": true,
+      "byte_idempotence": true,
+      "counts": {
+        "declaration_snippets": 1282,
+        "files": 207,
+        "generic_actual_type_links": 25,
+        "generic_conversion_package_links": 1,
+        "generic_member_links": 51,
+        "generic_summary_links": 102,
+        "generic_template_links": 25,
+        "html_pages": 202,
+        "linked_external_types": 0,
+        "linked_local_types": 2745,
+        "linked_types": 2745,
+        "links": 5108,
+        "matrix_summaries": 1,
+        "mode": "enhanced",
+        "native_instance_member_declarations": 0,
+        "presentation_only_anchors": 25,
+        "public_packages": 195,
+        "qualified_generic_instances": 25,
+        "unrendered_renderer_exceptions": 0,
+        "unsupported_instances": [],
+        "vector_summaries": 24
+      },
+      "incoming_occurrences": 242,
+      "manifest_single_version_substitution": true,
+      "native_signature_destination_preservation": true,
+      "native_symbols": 215,
+      "occurrence_ledger_equal_reviewed_R1": true,
+      "only_delta_from_R2": [
+        "api/presentation.json"
+      ],
+      "revision": "26bf5e2e8151cb0545b928b72d3d87677543c1ae",
+      "two_copy_determinism": true
+    }
+  },
+  "core_runtime_dependencies": [],
+  "default_symbol_only_parity": {
+    "core": {
+      "all_bytes_equal_except_manifest_version": true,
+      "baseline_manifest_version_normalized_only": true,
+      "files": 207
+    },
+    "core-symbols": {
+      "all_bytes_equal_except_manifest_version": true,
+      "baseline_manifest_version_normalized_only": true,
+      "files": 207
+    },
+    "features": {
+      "all_bytes_equal_except_manifest_version": true,
+      "baseline_manifest_version_normalized_only": true,
+      "files": 18
+    },
+    "geometry": {
+      "all_bytes_equal_except_manifest_version": true,
+      "baseline_manifest_version_normalized_only": true,
+      "files": 14
+    },
+    "imgproc": {
+      "all_bytes_equal_except_manifest_version": true,
+      "baseline_manifest_version_normalized_only": true,
+      "files": 13
+    },
+    "mel": {
+      "all_bytes_equal_except_manifest_version": true,
+      "baseline_manifest_version_normalized_only": true,
+      "files": 42
+    }
+  },
+  "disposition_at_evidence_recording": "HOSTED_CI_PENDING",
+  "fresh_Ada_GNATdoc_acquisition": false,
+  "guide_pins": [
+    "markdown-it-py==3.0.0",
+    "mdurl==0.1.2"
+  ],
+  "historical_GNATDOC011_R1_R2_files_verified_unchanged": 154,
+  "hosted_final_head": "Must be recorded in PR #14 after this evidence-only commit; do not infer final-head success from candidate-source CI",
+  "installed_matrix": {
+    "3.11": {
+      "errors": 0,
+      "extracted_sdist_rebuilt_wheel": 543,
+      "failures": 0,
+      "skips": 0,
+      "wheel": 543
+    },
+    "3.12": {
+      "errors": 0,
+      "extracted_sdist_rebuilt_wheel": 543,
+      "failures": 0,
+      "skips": 0,
+      "wheel": 543
+    },
+    "3.13": {
+      "errors": 0,
+      "extracted_sdist_rebuilt_wheel": 543,
+      "failures": 0,
+      "skips": 0,
+      "wheel": 543
+    }
+  },
+  "known_limitations": [
+    "symbol-only URL canonicalization debt unchanged",
+    "retained pinned real acquisitions reused, not fresh consumer compiler/native generation",
+    "no blanket consumer production migration, coverage/source-policy or deployment certificate",
+    "Linux/Chromium only; no cross-browser/full accessibility certificate",
+    "compressed artifact serialization not promised deterministic"
+  ],
+  "modules_assets_identical_source_wheel_sdist_rebuilt_installs": true,
+  "non_editable_outside_checkout": true,
+  "publication_byte_delta": "only api/presentation.json enhancer_version 0.1.0.dev0 -> 0.1.0; all other bytes equal",
+  "real_site_mutations_observed_rejected_restored": 38,
+  "rebuilt_wheel_local_directory": "/tmp/gnatdoc012-candidate/rebuilt",
+  "router_changes": 0,
+  "source_tests": 543,
+  "starting_main": "697d4ca91dc81812e501e501c9766d9b3ec88924",
+  "strict_twine_check": "passed",
+  "tag_release_registry_publication_merge_auto_merge": false,
+  "version": "0.1.0"
+}

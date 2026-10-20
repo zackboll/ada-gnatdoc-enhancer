@@ -1,0 +1,14 @@
+usage: gnatdoc-enhancer [-h] [--version]
+                        {inventory,enhance,verify,warnings,coverage,conformance,qualify}
+                        ...
+
+Command-line interface for already-generated, project-qualified GNATdoc HTML.
+
+positional arguments:
+  {inventory,enhance,verify,warnings,coverage,conformance,qualify}
+    conformance         offline four-profile fixture qualification
+    qualify             isolated pinned real-site qualification (no downloads)
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
