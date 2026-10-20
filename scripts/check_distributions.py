@@ -74,7 +74,11 @@ def audit(source, wheel, sdist, rebuilt):
             require('/__pycache__/' not in name and not name.endswith(('.pyc', '.pyo')),
                     'generated wheel member')
             if '.dist-info/' in name:
-                require(b'/home/' not in data and b'/tmp/' not in data and b'file:///' not in data,
+                # METADATA's README body contains intentional /tmp usage examples,
+                # not build-machine metadata. Inspect its RFC headers separately.
+                metadata_bytes = data.split(b'\n\n', 1)[0] if name.endswith('/METADATA') else data
+                require(b'/home/' not in metadata_bytes and b'/tmp/' not in metadata_bytes
+                        and b'file:///' not in metadata_bytes,
                         'absolute workstation path in metadata: '+name)
     for name, data in expected.items():
         require(packaged.get('src/'+name) == data, 'sdist module/asset mismatch: '+name)
