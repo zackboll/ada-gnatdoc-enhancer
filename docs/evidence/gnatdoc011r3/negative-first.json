@@ -1,0 +1,863 @@
+{
+  "tests": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "states": [
+        {
+          "step": "clean-direct-version",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Version",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html#5c2cdb7e517679bcaf1371943b880289ea52431bcdec5ddde011d797b43760d6"
+        },
+        {
+          "step": "dirty-input-fallback",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html"
+        },
+        {
+          "step": "legitimate-source-verified-session-click",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1&symbol=AMS.MEL.Session",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html#a339d48686eeaf4aa695f783e7dbce229360a910c67adf36ee1c8b7a270a5cb6"
+        },
+        {
+          "step": "reload-loses-valid-session-selection",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html"
+        },
+        {
+          "step": "unsupported-fragment-retained",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Version#unapproved-fragment",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html#5c2cdb7e517679bcaf1371943b880289ea52431bcdec5ddde011d797b43760d6"
+        }
+      ],
+      "cleanReloadPassed": true,
+      "unknownSurvivesValidSelection": true,
+      "bookmarkContractFailed": true,
+      "unapprovedFragmentSurvives": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "states": [],
+      "nativeNavigationPassed": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "states": [
+        {
+          "step": "clean-direct-version",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Version",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html#5c2cdb7e517679bcaf1371943b880289ea52431bcdec5ddde011d797b43760d6"
+        },
+        {
+          "step": "dirty-input-fallback",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html"
+        },
+        {
+          "step": "legitimate-source-verified-session-click",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1&symbol=AMS.MEL.Session",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html#a339d48686eeaf4aa695f783e7dbce229360a910c67adf36ee1c8b7a270a5cb6"
+        },
+        {
+          "step": "reload-loses-valid-session-selection",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html"
+        },
+        {
+          "step": "unsupported-fragment-retained",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Version#unapproved-fragment",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html#5c2cdb7e517679bcaf1371943b880289ea52431bcdec5ddde011d797b43760d6"
+        }
+      ],
+      "cleanReloadPassed": true,
+      "unknownSurvivesValidSelection": true,
+      "bookmarkContractFailed": true,
+      "unapprovedFragmentSurvives": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "states": [],
+      "nativeNavigationPassed": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "states": [
+        {
+          "step": "clean-direct-version",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Version",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html#5c2cdb7e517679bcaf1371943b880289ea52431bcdec5ddde011d797b43760d6"
+        },
+        {
+          "step": "dirty-input-fallback",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html"
+        },
+        {
+          "step": "legitimate-source-verified-session-click",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1&symbol=AMS.MEL.Session",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html#a339d48686eeaf4aa695f783e7dbce229360a910c67adf36ee1c8b7a270a5cb6"
+        },
+        {
+          "step": "reload-loses-valid-session-selection",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html"
+        },
+        {
+          "step": "unsupported-fragment-retained",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Version#unapproved-fragment",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html#5c2cdb7e517679bcaf1371943b880289ea52431bcdec5ddde011d797b43760d6"
+        }
+      ],
+      "cleanReloadPassed": true,
+      "unknownSurvivesValidSelection": true,
+      "bookmarkContractFailed": true,
+      "unapprovedFragmentSurvives": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "states": [],
+      "nativeNavigationPassed": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "states": [
+        {
+          "step": "clean-direct-version",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Version",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html#5c2cdb7e517679bcaf1371943b880289ea52431bcdec5ddde011d797b43760d6"
+        },
+        {
+          "step": "dirty-input-fallback",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html"
+        },
+        {
+          "step": "legitimate-source-verified-session-click",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1&symbol=AMS.MEL.Session",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html#a339d48686eeaf4aa695f783e7dbce229360a910c67adf36ee1c8b7a270a5cb6"
+        },
+        {
+          "step": "reload-loses-valid-session-selection",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html"
+        },
+        {
+          "step": "unsupported-fragment-retained",
+          "outer": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Version#unapproved-fragment",
+          "frame": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html#5c2cdb7e517679bcaf1371943b880289ea52431bcdec5ddde011d797b43760d6"
+        }
+      ],
+      "cleanReloadPassed": true,
+      "unknownSurvivesValidSelection": true,
+      "bookmarkContractFailed": true,
+      "unapprovedFragmentSurvives": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "states": [],
+      "nativeNavigationPassed": true
+    }
+  ],
+  "resources": [
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?symbol=AMS.MEL.Version",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Version",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1&symbol=AMS.MEL.Session",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?symbol=AMS.MEL.Version",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?symbol=AMS.MEL.Version",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?symbol=AMS.MEL.Version",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Version",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1&symbol=AMS.MEL.Session",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?symbol=AMS.MEL.Version",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?symbol=AMS.MEL.Version",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?symbol=AMS.MEL.Version",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Version",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1&symbol=AMS.MEL.Session",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?symbol=AMS.MEL.Version",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?symbol=AMS.MEL.Version",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?symbol=AMS.MEL.Version",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Version",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?package=AMS.MEL&unknown=1&symbol=AMS.MEL.Session",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?symbol=AMS.MEL.Version",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-navigation.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/index.html?symbol=AMS.MEL.Version",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:39893/api/gnatdoc-theme.css",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "base": "http://127.0.0.1:39893/api/index.html",
+  "chromium": "156.0.8078.4",
+  "disposition": "UPSTREAM_CORRECTIVE_REQUIRED"
+}
