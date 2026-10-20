@@ -11,6 +11,7 @@ import subprocess
 import sys
 import tempfile
 from importlib.resources import files
+from importlib.metadata import version
 from pathlib import Path
 
 import ada_gnatdoc_enhancer
@@ -43,6 +44,10 @@ def run(fixtures:Path):
             return result.stdout
 
         require('enhance' in invoke('--help'),'missing CLI help')
+        require(version('ada-gnatdoc-enhancer') == ada_gnatdoc_enhancer.__version__ == '0.1.0',
+                'installed distribution/module version mismatch')
+        require(invoke('--version').strip() == '0.1.0',
+                'installed CLI version mismatch')
         conformance=json.loads(invoke('conformance','--fixtures',fixtures))
         require(set(conformance['profiles'])=={'core','imgproc','geometry','mel'},
                 'incomplete installed conformance')
@@ -78,7 +83,8 @@ def run(fixtures:Path):
         require(verified['html_pages']==37,'wrong installed HTML inventory')
         require(before=={p:h for p,h in hashes(root).items() if not p.startswith('_site/')},
                 'installed enhancement changed files outside the output directory')
-    return {'installed_module':str(installed),'help':'passed','assets':3,
+    return {'installed_module':str(installed),'version':version('ada-gnatdoc-enhancer'),
+            'help':'passed','assets':3,
             'symlink_source_root_rejection':'passed',
             'enhancement':'passed','idempotence':'passed','verification':verified,
             'conformance':conformance}

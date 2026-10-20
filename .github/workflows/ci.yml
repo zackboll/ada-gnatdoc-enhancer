@@ -17,6 +17,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Record qualification source and test-tool identity
+        run: |
+          git rev-parse HEAD HEAD^{tree}
+          node --version
       - name: Install offline-core package in editable mode
         run: python -m pip install -e '.[guides]'
       - name: Authentic source-backed authored guide and portal qualification
@@ -44,16 +51,28 @@ jobs:
           python -m compileall -q src
           gnatdoc-enhancer --version
   wheel:
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.12", "3.13"]
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Record qualification source and test-tool identity
+        run: |
+          git rev-parse HEAD HEAD^{tree}
+          node --version
       - name: Build wheel and source distribution
         run: |
-          python -m pip install build
-          python -m build
+          python -m pip install build twine
+          python -m build --wheel --sdist
+          python -m twine check --strict dist/*
       - name: Install wheel in a clean environment
         run: |
           python -m venv "$RUNNER_TEMP/enhancer-wheel-smoke"
@@ -66,16 +85,29 @@ jobs:
           "$RUNNER_TEMP/enhancer-wheel-smoke/bin/gnatdoc-enhancer" --help
           "$RUNNER_TEMP/enhancer-wheel-smoke/bin/python" "$GITHUB_WORKSPACE/scripts/test_installed.py" --fixtures "$GITHUB_WORKSPACE/tests/fixtures"
           "$RUNNER_TEMP/enhancer-wheel-smoke/bin/python" -m unittest discover -s "$GITHUB_WORKSPACE/tests" -v
-      - name: Build a wheel from the source distribution
+      - name: Extract source distribution and independently build its wheel
         run: |
-          "$RUNNER_TEMP/enhancer-wheel-smoke/bin/python" -m pip wheel --no-deps --wheel-dir "$RUNNER_TEMP/sdist-wheel" dist/*.tar.gz
+          mkdir "$RUNNER_TEMP/sdist-source"
+          tar -xzf dist/*.tar.gz -C "$RUNNER_TEMP/sdist-source"
+          python -m pip wheel --no-deps --wheel-dir "$RUNNER_TEMP/sdist-wheel" "$RUNNER_TEMP"/sdist-source/ada_gnatdoc_enhancer-*
+          python -m venv "$RUNNER_TEMP/enhancer-sdist-smoke"
+          "$RUNNER_TEMP/enhancer-sdist-smoke/bin/python" -m pip install --no-deps "$RUNNER_TEMP"/sdist-wheel/*.whl
+          "$RUNNER_TEMP/enhancer-sdist-smoke/bin/python" -m pip install markdown-it-py==3.0.0 mdurl==0.1.2
+      - name: Audit archive metadata, complete test inputs and source/module/asset identities
+        run: |
+          python scripts/check_distributions.py --source "$GITHUB_WORKSPACE" --wheel dist/*.whl --sdist dist/*.tar.gz --rebuilt "$RUNNER_TEMP"/sdist-wheel/*.whl > dist/content-audit.json
+          sha256sum dist/*.whl dist/*.tar.gz > dist/SHA256SUMS
       - name: Qualify tests and fixtures shipped in the source distribution
         working-directory: ${{ runner.temp }}
         run: |
-          mkdir sdist-source
-          tar -xzf "$GITHUB_WORKSPACE"/dist/*.tar.gz -C sdist-source
           cd sdist-source/ada_gnatdoc_enhancer-*
           unset PYTHONPATH
-          "$RUNNER_TEMP/enhancer-wheel-smoke/bin/python" -m pip install --force-reinstall --no-deps "$RUNNER_TEMP"/sdist-wheel/*.whl
-          "$RUNNER_TEMP/enhancer-wheel-smoke/bin/python" -m unittest discover -s tests -v
-          "$RUNNER_TEMP/enhancer-wheel-smoke/bin/gnatdoc-enhancer" conformance --fixtures tests/fixtures
+          "$RUNNER_TEMP/enhancer-sdist-smoke/bin/python" -m unittest discover -s tests -v
+          "$RUNNER_TEMP/enhancer-sdist-smoke/bin/python" scripts/test_installed.py --fixtures tests/fixtures
+          "$RUNNER_TEMP/enhancer-sdist-smoke/bin/gnatdoc-enhancer" conformance --fixtures tests/fixtures
+      - name: Retain candidate artifacts and content audit (not a release publication)
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-candidate-python-${{ matrix.python }}
+          path: dist/
+          retention-days: 30

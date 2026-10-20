@@ -1,0 +1,14 @@
+{
+  "core-current": {
+    "source_and_oracles_unchanged": true,
+    "native_acquisition_unchanged": true
+  },
+  "core-050": {
+    "source_and_oracles_unchanged": true,
+    "native_acquisition_unchanged": true
+  },
+  "mel": {
+    "clean": true,
+    "revision": "36ecb1e63c24df855d6f6e85f8245e16fc9d8d53"
+  }
+}

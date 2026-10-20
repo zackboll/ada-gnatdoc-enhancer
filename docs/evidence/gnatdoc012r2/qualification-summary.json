@@ -1,0 +1,217 @@
+{
+  "browser": {
+    "core-050-instance-core_navigation_equivalent": {
+      "exit": 0,
+      "report": "assertion log (legacy runner)"
+    },
+    "core-050-instance-instance_canonicalization": {
+      "browser": "156.0.8078.4",
+      "exit": 0,
+      "requests": 0,
+      "traces": 216
+    },
+    "core-050-instance-instance_references": {
+      "browser": "156.0.8078.4",
+      "exit": 0,
+      "requests": 0,
+      "traces": 421
+    },
+    "core-050-instance-symbol_bookmarks": {
+      "browser": "156.0.8078.4",
+      "exit": 0,
+      "requests": 0,
+      "traces": 144
+    },
+    "core-050-symbols-core_symbols_equivalent": {
+      "exit": 0,
+      "report": "assertion log (legacy runner)"
+    },
+    "core-050-symbols-symbol_bookmarks": {
+      "browser": "156.0.8078.4",
+      "exit": 0,
+      "requests": 0,
+      "traces": 144
+    },
+    "core-050-symbols-symbol_canonicalization": {
+      "browser": "156.0.8078.4",
+      "exit": 0,
+      "requests": 1037,
+      "traces": 416
+    },
+    "core-current-instance-core_navigation_equivalent": {
+      "exit": 0,
+      "report": "assertion log (legacy runner)"
+    },
+    "core-current-instance-instance_canonicalization": {
+      "browser": "156.0.8078.4",
+      "exit": 0,
+      "requests": 0,
+      "traces": 216
+    },
+    "core-current-instance-instance_references": {
+      "browser": "156.0.8078.4",
+      "exit": 0,
+      "requests": 0,
+      "traces": 421
+    },
+    "core-current-instance-symbol_bookmarks": {
+      "browser": "156.0.8078.4",
+      "exit": 0,
+      "requests": 0,
+      "traces": 144
+    },
+    "core-current-symbols-core_symbols_equivalent": {
+      "exit": 0,
+      "report": "assertion log (legacy runner)"
+    },
+    "core-current-symbols-symbol_bookmarks": {
+      "browser": "156.0.8078.4",
+      "exit": 0,
+      "requests": 0,
+      "traces": 144
+    },
+    "core-current-symbols-symbol_canonicalization": {
+      "browser": "156.0.8078.4",
+      "exit": 0,
+      "requests": 1037,
+      "traces": 416
+    },
+    "mel-symbols-symbol_canonicalization": {
+      "browser": "156.0.8078.4",
+      "exit": 0,
+      "requests": 1024,
+      "traces": 416
+    }
+  },
+  "exact_final_head_CI": "Recorded after evidence-only commit/push in external FINAL-HANDOFF.md and PR #14; never substitute earlier CI",
+  "external_workspace": "/home/zboll/qualification/gnatdoc012r2",
+  "historical_records_unchanged": 327,
+  "local_gates_passed": true,
+  "matrix": [
+    {
+      "environments": {
+        "sdist": {
+          "distinct": 564,
+          "errors": 0,
+          "failures": 0,
+          "module": "/home/zboll/qualification/gnatdoc012r2/final/python-3.11/sdist-env/lib/python3.11/site-packages/ada_gnatdoc_enhancer/__init__.py",
+          "skips": 0,
+          "tests": 564,
+          "version": "0.1.0"
+        },
+        "source": {
+          "distinct": 564,
+          "errors": 0,
+          "failures": 0,
+          "module": "/home/zboll/qualification/gnatdoc012r2/final-source/src/ada_gnatdoc_enhancer/__init__.py",
+          "skips": 0,
+          "tests": 564,
+          "version": "0.1.0"
+        },
+        "wheel": {
+          "distinct": 564,
+          "errors": 0,
+          "failures": 0,
+          "module": "/home/zboll/qualification/gnatdoc012r2/final/python-3.11/wheel-env/lib/python3.11/site-packages/ada_gnatdoc_enhancer/__init__.py",
+          "skips": 0,
+          "tests": 564,
+          "version": "0.1.0"
+        }
+      },
+      "node": "v20.19.2",
+      "version": "3.11"
+    },
+    {
+      "environments": {
+        "sdist": {
+          "distinct": 564,
+          "errors": 0,
+          "failures": 0,
+          "module": "/home/zboll/qualification/gnatdoc012r2/final/python-3.12/sdist-env/lib/python3.12/site-packages/ada_gnatdoc_enhancer/__init__.py",
+          "skips": 0,
+          "tests": 564,
+          "version": "0.1.0"
+        },
+        "source": {
+          "distinct": 564,
+          "errors": 0,
+          "failures": 0,
+          "module": "/home/zboll/qualification/gnatdoc012r2/final-source/src/ada_gnatdoc_enhancer/__init__.py",
+          "skips": 0,
+          "tests": 564,
+          "version": "0.1.0"
+        },
+        "wheel": {
+          "distinct": 564,
+          "errors": 0,
+          "failures": 0,
+          "module": "/home/zboll/qualification/gnatdoc012r2/final/python-3.12/wheel-env/lib/python3.12/site-packages/ada_gnatdoc_enhancer/__init__.py",
+          "skips": 0,
+          "tests": 564,
+          "version": "0.1.0"
+        }
+      },
+      "node": "v20.19.2",
+      "version": "3.12"
+    },
+    {
+      "environments": {
+        "sdist": {
+          "distinct": 564,
+          "errors": 0,
+          "failures": 0,
+          "module": "/home/zboll/qualification/gnatdoc012r2/final/python-3.13/sdist-env/lib/python3.13/site-packages/ada_gnatdoc_enhancer/__init__.py",
+          "skips": 0,
+          "tests": 564,
+          "version": "0.1.0"
+        },
+        "source": {
+          "distinct": 564,
+          "errors": 0,
+          "failures": 0,
+          "module": "/home/zboll/qualification/gnatdoc012r2/final-source/src/ada_gnatdoc_enhancer/__init__.py",
+          "skips": 0,
+          "tests": 564,
+          "version": "0.1.0"
+        },
+        "wheel": {
+          "distinct": 564,
+          "errors": 0,
+          "failures": 0,
+          "module": "/home/zboll/qualification/gnatdoc012r2/final/python-3.13/wheel-env/lib/python3.13/site-packages/ada_gnatdoc_enhancer/__init__.py",
+          "skips": 0,
+          "tests": 564,
+          "version": "0.1.0"
+        }
+      },
+      "node": "v20.19.2",
+      "version": "3.13"
+    }
+  ],
+  "merge_commit": "76b58917de776564aae3e72c75999e6a0cf309eb",
+  "merged_main": "524b7610e21e9a7b87e8e0761580ed59a3b0295c",
+  "mutations": {
+    "core-050": {
+      "instance": 38,
+      "symbol": 15
+    },
+    "core-current": {
+      "instance": 38,
+      "symbol": 15
+    }
+  },
+  "no_consumer_changes": true,
+  "no_tag_release_publish_or_merge": true,
+  "original_PR14_head": "d8d73eb677952ce83a8188b8c20a7c032580409e",
+  "qualified_source": "7b2d57f12b3618d659e4bfbc910b171206ea1c7e",
+  "qualified_tree": "ead3e2048e6d7b549aac50c35477d3f44c74dd2f",
+  "source_qualification_separate_from_evidence": true,
+  "test_population": {
+    "R2": 540,
+    "R3_additions": 18,
+    "archive_security_additions": 3,
+    "release_additions": 3,
+    "total": 564
+  },
+  "version": "0.1.0"
+}

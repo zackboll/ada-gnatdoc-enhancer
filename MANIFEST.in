@@ -1,7 +1,10 @@
 include LICENSE CHANGELOG.md CONTRIBUTING.md Makefile
 include .gitattributes .gitignore
 recursive-include docs *.md
-recursive-include docs/evidence *.json *.txt
+prune docs/evidence
+# These small provenance records are read by the complete shipped test suite.
+include docs/evidence/gnatdoc003/provenance.json
+include docs/evidence/gnatdoc004/provenance.json
 recursive-include examples *.toml
 recursive-include scripts *.py
 recursive-include tests *.py *.json *.toml *.ads *.html *.css *.txt *.md *.adb *.gpr *.cjs

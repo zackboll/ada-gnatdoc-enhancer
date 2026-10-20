@@ -1,0 +1,6 @@
+Processing /tmp/gnatdoc012-candidate/artifacts/ada_gnatdoc_enhancer-0.1.0-py3-none-any.whl
+Installing collected packages: ada-gnatdoc-enhancer
+Successfully installed ada-gnatdoc-enhancer-0.1.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: /tmp/gnatdoc012-candidate/core-only/bin/python -m pip install --upgrade pip

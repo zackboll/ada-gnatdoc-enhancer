@@ -1,0 +1,13 @@
+Processing /tmp/gnatdoc012-candidate/extracted/ada_gnatdoc_enhancer-0.1.0
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: ada-gnatdoc-enhancer
+  Building wheel for ada-gnatdoc-enhancer (pyproject.toml): started
+  Building wheel for ada-gnatdoc-enhancer (pyproject.toml): finished with status 'done'
+  Created wheel for ada-gnatdoc-enhancer: filename=ada_gnatdoc_enhancer-0.1.0-py3-none-any.whl size=94225 sha256=c2e00177cf9e906001bfdd8babf1c96eeff585a29e187680938db50243380df8
+  Stored in directory: /tmp/pip-ephem-wheel-cache-z8xr7h6n/wheels/47/b5/0c/cd213af931d30d5aa904ccdfa4af24f43e05e643f68750ac5f
+Successfully built ada-gnatdoc-enhancer

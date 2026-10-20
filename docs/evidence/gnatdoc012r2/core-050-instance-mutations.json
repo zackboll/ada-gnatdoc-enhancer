@@ -1,0 +1,258 @@
+{
+  "browser_workspace_untouched": true,
+  "byte_idempotent": true,
+  "mutations": {
+    "011 duplicate identity": {
+      "independent_consumer_rejection": "independent symbol audit: duplicate symbols",
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/index.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "011 forged presentation manifest": {
+      "independent_consumer_rejection": false,
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "enhanced output does not match source/manifest",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "011 generic formal": {
+      "independent_consumer_rejection": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/index.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "011 invented public symbol": {
+      "independent_consumer_rejection": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/index.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "011 mismatched native declaration": {
+      "independent_consumer_rejection": "independent symbol audit: native declaration profile changed",
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/0453a2309ced3cca5e30b48e034e323532b3cb93ccbbeaf25275acea27f95774.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "011 mismatched source declaration": {
+      "layer": "source qualification",
+      "mutation_observed": true,
+      "rejected": "source differs from qualified presentation manifest",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "011 missing symbol": {
+      "independent_consumer_rejection": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/index.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "011 modified navigation JavaScript": {
+      "independent_consumer_rejection": "independent symbol audit: modified opt-in navigation JavaScript",
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/gnatdoc-navigation.js",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "011 private ownership confusion": {
+      "independent_consumer_rejection": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/index.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "011 swapped existing native pages": {
+      "independent_consumer_rejection": "independent symbol audit: package owner changed",
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/0453a2309ced3cca5e30b48e034e323532b3cb93ccbbeaf25275acea27f95774.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "011 synthetic summary promoted": {
+      "independent_consumer_rejection": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/index.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "011 unknown package owner": {
+      "independent_consumer_rejection": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/index.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "011 unsafe absolute destination": {
+      "independent_consumer_rejection": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/index.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "011 unsafe root destination": {
+      "independent_consumer_rejection": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/index.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "011 wrong existing native anchor": {
+      "independent_consumer_rejection": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/index.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "altered actual type": {
+      "layer": "source qualification",
+      "mutation_observed": true,
+      "rejected": "source differs from qualified presentation manifest",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "altered dimensions": {
+      "layer": "source qualification",
+      "mutation_observed": true,
+      "rejected": "source differs from qualified presentation manifest",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "altered installed assets/gnatdoc-instance-navigation.js": {
+      "layer": "external installed module/asset hashes",
+      "mutation_observed": true,
+      "rejected": "installed package differs from trusted wheel module/asset ledger",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "altered installed instance_references.py": {
+      "layer": "external installed module/asset hashes",
+      "mutation_observed": true,
+      "rejected": "installed package differs from trusted wheel module/asset ledger",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "changed template member destination": {
+      "independent_consumer_rejection": false,
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "duplicate summary anchor": {
+      "independent_consumer_rejection": false,
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "forged instance-reference target": {
+      "independent_consumer_rejection": false,
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/index.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "limited context substitution": {
+      "layer": "source qualification",
+      "mutation_observed": true,
+      "rejected": "source differs from qualified presentation manifest",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "local identifier shadowing": {
+      "layer": "source qualification",
+      "mutation_observed": true,
+      "rejected": "source differs from qualified presentation manifest",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "mismatched acquisition evidence": {
+      "layer": "independent acquisition evidence comparison",
+      "mutation_observed": true,
+      "rejected": "source/native acquisition ledger hash mismatch",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "missing summary section": {
+      "independent_consumer_rejection": false,
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "modified instance declaration": {
+      "layer": "source qualification",
+      "mutation_observed": true,
+      "rejected": "source differs from qualified presentation manifest",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "modified pristine native input": {
+      "layer": "source/native qualification and acquisition hash binding",
+      "mutation_observed": true,
+      "partial_output_absent": true,
+      "rejected": "generic pristine native hashes/inventory changed",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "modified summary HTML": {
+      "independent_consumer_rejection": false,
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "package alias substitution": {
+      "layer": "source qualification",
+      "mutation_observed": true,
+      "rejected": "source differs from qualified presentation manifest",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "private context substitution": {
+      "layer": "source qualification",
+      "mutation_observed": true,
+      "rejected": "source differs from qualified presentation manifest",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "swapped existing instance pages": {
+      "independent_consumer_rejection": "independent symbol audit: package owner changed",
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "swapped native instance input": {
+      "layer": "source/native qualification and acquisition hash binding",
+      "mutation_observed": true,
+      "partial_output_absent": true,
+      "rejected": "unrecognized or duplicated native package: OpenCV.Core.Float16_Vec3",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "synthetic member to native symbol": {
+      "independent_consumer_rejection": "independent symbol audit: forged, missing or swapped published symbol destination",
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/index.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "unapproved generic instantiation": {
+      "layer": "source qualification",
+      "mutation_observed": true,
+      "rejected": "generic qualification hash mismatch",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "wrong existing summary destination": {
+      "independent_consumer_rejection": false,
+      "layer": "enhancer reconstruction",
+      "mutation_observed": true,
+      "rejected": "published file differs from reconstructed output: api/index.html",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "wrong generic qualification SHA": {
+      "layer": "source qualification",
+      "mutation_observed": true,
+      "rejected": "generic qualification hash mismatch",
+      "restored_complete_hashes_and_independent_audit": true
+    },
+    "wrong template owner": {
+      "layer": "source qualification",
+      "mutation_observed": true,
+      "rejected": "source differs from qualified presentation manifest",
+      "restored_complete_hashes_and_independent_audit": true
+    }
+  }
+}

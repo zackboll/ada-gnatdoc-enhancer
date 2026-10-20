@@ -1,6 +1,10 @@
-# Bootstrap qualification
+# Qualification history
 
-The bootstrap must pass:
+This document preserves historical campaigns and their limitations. For the
+merged release candidate use [release qualification](release-0.1.0-qualification.md)
+and the [release procedure](releasing.md). Counts below are historical.
+
+The original bootstrap was required to pass:
 
 ```sh
 PYTHONPATH=src python -m unittest discover -s tests -v

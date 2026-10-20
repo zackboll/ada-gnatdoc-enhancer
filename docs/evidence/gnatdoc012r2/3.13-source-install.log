@@ -1,0 +1,17 @@
+Obtaining file:///home/zboll/qualification/gnatdoc012r2/final/source
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: ada-gnatdoc-enhancer
+  Building editable for ada-gnatdoc-enhancer (pyproject.toml): started
+  Building editable for ada-gnatdoc-enhancer (pyproject.toml): finished with status 'done'
+  Created wheel for ada-gnatdoc-enhancer: filename=ada_gnatdoc_enhancer-0.1.0-0.editable-py3-none-any.whl size=9106 sha256=1451173f70a5661f6ab0a32aee51f1ea40c770aed3b016e62c1de3090a988651
+  Stored in directory: /tmp/pip-ephem-wheel-cache-s5bhour2/wheels/72/34/73/726ab4e297c7fb93af6eacd1f43ff9c890f247b767dea7b49e
+Successfully built ada-gnatdoc-enhancer
+Installing collected packages: ada-gnatdoc-enhancer
+Successfully installed ada-gnatdoc-enhancer-0.1.0

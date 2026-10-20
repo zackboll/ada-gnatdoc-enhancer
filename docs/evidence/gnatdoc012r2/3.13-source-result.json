@@ -1,0 +1,9 @@
+{
+  "tests": 564,
+  "distinct": 564,
+  "skips": 0,
+  "failures": 0,
+  "errors": 0,
+  "module": "/home/zboll/qualification/gnatdoc012r2/final-source/src/ada_gnatdoc_enhancer/__init__.py",
+  "version": "0.1.0"
+}

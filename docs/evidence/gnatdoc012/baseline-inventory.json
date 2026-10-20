@@ -1,0 +1,51 @@
+{
+  "PR13": {
+    "mergeCommit": {
+      "oid": "697d4ca91dc81812e501e501c9766d9b3ec88924"
+    },
+    "mergedAt": "2026-10-20T00:45:26Z",
+    "state": "MERGED",
+    "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/pull/13"
+  },
+  "Python": {
+    "3.11": "Python 3.11.17",
+    "3.12": "Python 3.12.15",
+    "3.13": "Python 3.13.16"
+  },
+  "assets": {
+    "gnatdoc-guides.css": "79f3fc6d5f1e854eb42d225f9bec113b7a41fa833b12d3bd70ca089ba5df0a8c",
+    "gnatdoc-instance-navigation.js": "97dcc75055842e98a6294809b8e8c4e7436a427039d19c8afb6fdd1ca21ea310",
+    "gnatdoc-navigation.js": "b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd",
+    "gnatdoc-symbol-navigation.js": "7af8dd92f7f31ff9a14fd55a41d81d9bcfe9ae3bce8506f9254a376404ea7ee3",
+    "gnatdoc-theme.css": "cf06637732a8b047a7191bfb991a5c3da7cd31a52076876880d5f8a3f63929bc"
+  },
+  "baseline_metadata": {
+    "build_backend": "setuptools>=68",
+    "cli": "gnatdoc-enhancer = ada_gnatdoc_enhancer.cli:main",
+    "guides": [
+      "markdown-it-py==3.0.0",
+      "mdurl==0.1.2"
+    ],
+    "license": "legacy text table Apache-2.0",
+    "requires_python": ">=3.11",
+    "runtime_dependencies": [],
+    "version": "0.1.0.dev0"
+  },
+  "baseline_test_result": "540 tests, OK; original source snapshot, Python 3.13",
+  "candidate_source_commit": "508c2bf1feb3087242496f0925964f400b551f4c",
+  "candidate_source_tree": "5ca72a7e2f242d9a9f5deec642d45e0f2d2490f6",
+  "consumer_repository_changes_authorized": false,
+  "distribution_review": {
+    "ignored_build_products": "existing checkout build/, dist/, egg-info and pycache excluded by git archive clean source build",
+    "new_manifest": "complete tests/scripts/fixtures, two mandatory provenance records; historical evidence remains unchanged in Git",
+    "old_manifest": "included all historical evidence (~68 MiB unpacked)"
+  },
+  "fresh_consumer_Ada_GNATdoc_generation_claimed": false,
+  "historical_evidence_paths_unchanged": true,
+  "initial_tracked_working_tree": "clean; initial branch fix/008b-fragment-aware-navigation-history, then created requested branch from fetched origin/main",
+  "platform": "Linux-6.12.113+deb13-amd64-x86_64-with-glibc2.41",
+  "preserved_runtime_except_version": "src/ada_gnatdoc_enhancer/__init__.py",
+  "starting_main": "697d4ca91dc81812e501e501c9766d9b3ec88924",
+  "starting_tree": "89a70b69c6cf3640db500eea9b0a4bd6a6a84d97",
+  "superseding_open_PRs_at_start": []
+}

@@ -1,0 +1,38 @@
+{
+  "3.11-sdist-installed-content.json": {
+    "all_modules_assets_equal_source": true,
+    "fingerprint": "168cb8ac96d948f8fed1416c2094f6c6f5b49563aff0c19fb9b4fb1ae4101415"
+  },
+  "3.11-source-installed-content.json": {
+    "all_modules_assets_equal_source": true,
+    "fingerprint": "168cb8ac96d948f8fed1416c2094f6c6f5b49563aff0c19fb9b4fb1ae4101415"
+  },
+  "3.11-wheel-installed-content.json": {
+    "all_modules_assets_equal_source": true,
+    "fingerprint": "168cb8ac96d948f8fed1416c2094f6c6f5b49563aff0c19fb9b4fb1ae4101415"
+  },
+  "3.12-sdist-installed-content.json": {
+    "all_modules_assets_equal_source": true,
+    "fingerprint": "168cb8ac96d948f8fed1416c2094f6c6f5b49563aff0c19fb9b4fb1ae4101415"
+  },
+  "3.12-source-installed-content.json": {
+    "all_modules_assets_equal_source": true,
+    "fingerprint": "168cb8ac96d948f8fed1416c2094f6c6f5b49563aff0c19fb9b4fb1ae4101415"
+  },
+  "3.12-wheel-installed-content.json": {
+    "all_modules_assets_equal_source": true,
+    "fingerprint": "168cb8ac96d948f8fed1416c2094f6c6f5b49563aff0c19fb9b4fb1ae4101415"
+  },
+  "3.13-sdist-installed-content.json": {
+    "all_modules_assets_equal_source": true,
+    "fingerprint": "168cb8ac96d948f8fed1416c2094f6c6f5b49563aff0c19fb9b4fb1ae4101415"
+  },
+  "3.13-source-installed-content.json": {
+    "all_modules_assets_equal_source": true,
+    "fingerprint": "168cb8ac96d948f8fed1416c2094f6c6f5b49563aff0c19fb9b4fb1ae4101415"
+  },
+  "3.13-wheel-installed-content.json": {
+    "all_modules_assets_equal_source": true,
+    "fingerprint": "168cb8ac96d948f8fed1416c2094f6c6f5b49563aff0c19fb9b4fb1ae4101415"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "all_preexisting_tracked_files_byte_equal_candidate_snapshot": true,
+  "candidate_source_commit": "508c2bf1feb3087242496f0925964f400b551f4c",
+  "candidate_source_tree": "5ca72a7e2f242d9a9f5deec642d45e0f2d2490f6",
+  "evidence_excluded_from_release_archives": true,
+  "files_verified": 1448,
+  "only_added_files": "docs/evidence/gnatdoc012/*",
+  "release_package_and_build_and_test_inputs_unchanged": true
+}

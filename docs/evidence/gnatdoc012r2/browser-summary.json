@@ -1,0 +1,84 @@
+{
+  "core-050-instance-core_navigation_equivalent": {
+    "exit": 0,
+    "report": "assertion log (legacy runner)"
+  },
+  "core-050-instance-instance_canonicalization": {
+    "browser": "156.0.8078.4",
+    "exit": 0,
+    "requests": 0,
+    "traces": 216
+  },
+  "core-050-instance-instance_references": {
+    "browser": "156.0.8078.4",
+    "exit": 0,
+    "requests": 0,
+    "traces": 421
+  },
+  "core-050-instance-symbol_bookmarks": {
+    "browser": "156.0.8078.4",
+    "exit": 0,
+    "requests": 0,
+    "traces": 144
+  },
+  "core-050-symbols-core_symbols_equivalent": {
+    "exit": 0,
+    "report": "assertion log (legacy runner)"
+  },
+  "core-050-symbols-symbol_bookmarks": {
+    "browser": "156.0.8078.4",
+    "exit": 0,
+    "requests": 0,
+    "traces": 144
+  },
+  "core-050-symbols-symbol_canonicalization": {
+    "browser": "156.0.8078.4",
+    "exit": 0,
+    "requests": 1037,
+    "traces": 416
+  },
+  "core-current-instance-core_navigation_equivalent": {
+    "exit": 0,
+    "report": "assertion log (legacy runner)"
+  },
+  "core-current-instance-instance_canonicalization": {
+    "browser": "156.0.8078.4",
+    "exit": 0,
+    "requests": 0,
+    "traces": 216
+  },
+  "core-current-instance-instance_references": {
+    "browser": "156.0.8078.4",
+    "exit": 0,
+    "requests": 0,
+    "traces": 421
+  },
+  "core-current-instance-symbol_bookmarks": {
+    "browser": "156.0.8078.4",
+    "exit": 0,
+    "requests": 0,
+    "traces": 144
+  },
+  "core-current-symbols-core_symbols_equivalent": {
+    "exit": 0,
+    "report": "assertion log (legacy runner)"
+  },
+  "core-current-symbols-symbol_bookmarks": {
+    "browser": "156.0.8078.4",
+    "exit": 0,
+    "requests": 0,
+    "traces": 144
+  },
+  "core-current-symbols-symbol_canonicalization": {
+    "browser": "156.0.8078.4",
+    "exit": 0,
+    "requests": 1037,
+    "traces": 416
+  },
+  "mel-symbols-symbol_canonicalization": {
+    "browser": "156.0.8078.4",
+    "exit": 0,
+    "requests": 1024,
+    "traces": 416
+  }
+}

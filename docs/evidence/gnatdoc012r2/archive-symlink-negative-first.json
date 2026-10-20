@@ -1,0 +1,9 @@
+{
+  "old_auditor_accepted_observed_symlink": true,
+  "final_auditor_rejected_identical_archive": "nonregular wheel member",
+  "archive_sha256": "667b56ea99b4c658104366b5c0d52bda60d82e42d883ec0c01d2e2c94485293a",
+  "source_commit_before": "9227a853f2ef22c7f1168209c0cacf5f1c0e5df3",
+  "source_commit_after": "7b2d57f12b3618d659e4bfbc910b171206ea1c7e",
+  "additive_tests": 3,
+  "expected_total": 564
+}

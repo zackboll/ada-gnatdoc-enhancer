@@ -1,0 +1,6 @@
+{
+  "initial_real_tail_failure": "Running process loaded pre-edit tail with obsolete script-metadata selector; after all generation and independent Core audits completed, current tail re-executed and passed independent MEL mapping/structure. No production changes.",
+  "initial_tail_retry": "First isolated tail retry lacked hashes import; corrected harness namespace and reran successfully.",
+  "fingerprint_comparison_retries": "Initial checks used inconsistent path prefixes; source-root, src-relative and package-relative ledgers normalized explicitly. All 35 bytes match.",
+  "browser_server_BrokenPipe": "Chromium deliberately aborts provisional iframe loads during race/history tests; HTTP server may log BrokenPipe. Browser assertions/results and final navigation are authoritative; no browser page errors accepted."
+}

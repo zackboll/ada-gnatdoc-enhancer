@@ -1,0 +1,7 @@
+/home/zboll/qualification/gnatdoc012r2/final/qualify_distributions.py:52: DeprecationWarning: Python 3.14 will, by default, filter extracted tar archives and reject files or modify their metadata. Use the filter argument to control this behavior.
+  archive.extractall(extracted)
+/home/zboll/qualification/gnatdoc012r2/final/qualify_distributions.py:52: DeprecationWarning: Python 3.14 will, by default, filter extracted tar archives and reject files or modify their metadata. Use the filter argument to control this behavior.
+  archive.extractall(extracted)
+3.12 all source/wheel/rebuilt qualification gates passed
+3.13 all source/wheel/rebuilt qualification gates passed
+3.11 all source/wheel/rebuilt qualification gates passed
