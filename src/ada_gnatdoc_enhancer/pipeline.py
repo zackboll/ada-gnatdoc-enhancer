@@ -69,6 +69,8 @@ def expected_output(config:Config,site:Path):
     types=verified_types(native,source) if config.type_links else {}
     from .generic_instances import summaries
     instance_sections,instance_counts=summaries(config,source,native)
+    from .instance_references import targets as reference_targets, metadata as reference_metadata
+    references=reference_targets(config,source,native,instance_sections)
     values={}
     totals={'linked_types':0,'declaration_snippets':0,'public_packages':len(native.pages),
             'linked_local_types':0,'linked_external_types':0,
@@ -78,7 +80,7 @@ def expected_output(config:Config,site:Path):
         check_native_input(page.original,'api/'+page.path.name)
         require(source[name].name==page.package,
                 f"native package heading differs from its Ada source name: {page.package}")
-        text,counts=transform_page(page.original,source[name],source,native,types,config)
+        text,counts=transform_page(page.original,source[name],source,native,types,config,references)
         for label,val in counts.items():
             totals['linked_types' if label=='links' else 'declaration_snippets']+=val
         from .syntax import TYPE_LINK
@@ -95,10 +97,16 @@ def expected_output(config:Config,site:Path):
     check_native_input(native.index,'api/index.html')
     index=themed(native.index,config.theme)
     index=enhance_index(native,index,config)
+    if references:
+        index=index.replace('<h2 id=compilation-units>',
+                            reference_metadata(references)+'<h2 id=compilation-units>',1)
     values['api/index.html']=native_document(index,_head(config,True),index_title(config.project),
                                              'api/index.html').encode()
     if config.theme:values['api/gnatdoc-theme.css']=asset('gnatdoc-theme.css')
-    if config.navigation!='none':values['api/gnatdoc-navigation.js']=asset('gnatdoc-navigation.js')
+    if config.navigation!='none':
+        values['api/gnatdoc-navigation.js']=asset(
+            'gnatdoc-instance-navigation.js' if config.instance_references else
+            'gnatdoc-symbol-navigation.js' if config.symbol_bookmarks else 'gnatdoc-navigation.js')
     values.update(render_guides(config,native))
     return native,values,totals
 

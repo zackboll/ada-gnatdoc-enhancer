@@ -45,6 +45,9 @@ class Config:
     dependencies: tuple[dict, ...] = ()
     generic_instances: dict = field(default_factory=dict)
     guide_sha256: str | None = None
+    symbol_bookmarks: bool = False
+    default_package: str | None = None
+    instance_references: bool = False
 
 
 def load(root: Path, path: str) -> Config:
@@ -70,10 +73,23 @@ def load(root: Path, path: str) -> Config:
     style = src.get("comment_style", "leading")
     require(style in ("leading", "trailing"), "comment_style must be leading or trailing")
     nav = raw.get("navigation", {})
-    members(nav, {"mode", "categories"}, "navigation")
+    members(nav, {"mode", "categories", "symbol_bookmarks", "default_package"}, "navigation")
     mode = nav.get("mode", "packages")
     require(mode in ("packages", "operations", "none"), "invalid navigation mode")
     categories = nav.get("categories")
+    symbols = nav.get('symbol_bookmarks', False)
+    default_package = nav.get('default_package')
+    require(type(symbols) is bool, 'navigation.symbol_bookmarks must be Boolean')
+    if symbols:
+        from .util import QNAME
+        import re
+        require(mode == 'packages' and categories is None,
+                'symbol bookmarks require uncategorized package navigation')
+        require(isinstance(default_package, str) and
+                re.fullmatch(QNAME, default_package) is not None,
+                'symbol bookmarks require a default_package Ada identity')
+    else:
+        require(default_package is None, 'default_package requires symbol_bookmarks')
     if categories is not None:
         regular(inside(root, categories))
     pres = raw.get("presentation", {})
@@ -135,14 +151,19 @@ def load(root: Path, path: str) -> Config:
         for key in ('manifest','acquisition','source','site'):
             inside(root,dep[key])
     generic = raw.get('generic_instances', {})
-    members(generic, {'qualification', 'sha256'}, 'generic_instances')
+    members(generic, {'qualification', 'sha256', 'incoming_references'}, 'generic_instances')
+    incoming = generic.get('incoming_references', False)
+    require(type(incoming) is bool, 'generic incoming_references must be Boolean')
     if generic:
-        require(set(generic) == {'qualification', 'sha256'}, 'incomplete generic instance qualification')
+        require({'qualification', 'sha256'} <= set(generic), 'incomplete generic instance qualification')
         require(isinstance(generic['qualification'], str), 'generic qualification must be a path')
         regular(inside(root, generic['qualification']))
         require(isinstance(generic['sha256'], str) and re.fullmatch('[a-f0-9]{64}', generic['sha256']),
                 'invalid generic qualification SHA-256')
+    require(not incoming or (mode == 'packages' and symbols and pres.get('type_links', True)),
+            'incoming instance references require type links and symbol package navigation')
     return Config(root, project, version, names, packages, style, mode, categories,
                   pres.get("theme", True), pres.get("syntax_highlighting", True),
                   pres.get("type_links", True), guide_mode, guide_manifest,
-                  ext, frozenset(hosts), exceptions, tuple(dependencies), generic, guide_hash)
+                  ext, frozenset(hosts), exceptions, tuple(dependencies), generic, guide_hash,
+                  symbols, default_package, incoming)

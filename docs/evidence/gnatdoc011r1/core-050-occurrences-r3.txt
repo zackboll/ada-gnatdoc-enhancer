@@ -1,0 +1,3 @@
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+{'revision': 'f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f', 'legacy_type_references': 2698, 'shared_type_references': 2701, 'incoming_occurrences': 242, 'all_approved_incoming_restored': True}

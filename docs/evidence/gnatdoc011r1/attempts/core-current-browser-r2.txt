@@ -1,0 +1,12 @@
+PASS 1280px light JS=true: 242 incoming clicks; 25 separate summaries/native-symbol exclusions
+locator.click: Timeout 20000ms exceeded.
+Call log:
+  - waiting for getByRole('link', { name: /^opencv\.core\.sparse\.float16_vec2_access$/ })
+
+    at incoming (/home/zboll/git/ada-gnatdoc-enhancer-011/tests/instance_references.cjs:26:78)
+    at async /home/zboll/git/ada-gnatdoc-enhancer-011/tests/instance_references.cjs:56:5 {
+  log: [
+    "  - waiting for getByRole('link', { name: /^opencv\\.core\\.sparse\\.float16_vec2_access$/ })"
+  ],
+  name: 'TimeoutError'
+}

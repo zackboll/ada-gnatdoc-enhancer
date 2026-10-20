@@ -98,5 +98,7 @@ def enhance_index(native:NativeSite, original:str, config:Config) -> str:
             blocks.append('<section class="operation-group" data-category="'+cid+'"><h3>'+html.escape(title)+
                           '</h3><ul>'+items+'</ul></section>')
         extra='<div id="operation-navigation"><h2>Browse operations</h2>'+''.join(blocks)+'</div>'
+    from .symbols import metadata
+    extra += metadata(config, native)
     value=original.replace('<h2 id=compilation-units>',CONTROL+extra+'<h2 id=compilation-units>',1)
     return value.replace('<body class=main>',SCRIPT+'<body class=main>',1)

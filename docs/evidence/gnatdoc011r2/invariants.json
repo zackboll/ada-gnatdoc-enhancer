@@ -1,0 +1,32 @@
+{
+  "core-050": {
+    "canonicalization_traces": 216,
+    "changed_from_R1": [
+      "api/gnatdoc-navigation.js",
+      "api/presentation.json"
+    ],
+    "incoming": 242,
+    "missing": 0,
+    "native_sections": 1268,
+    "revision": "f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f",
+    "source_native_occurrence_ledger_byte_equal": true,
+    "symbols": 215,
+    "targets": 25,
+    "type_links": 2701
+  },
+  "core-current": {
+    "canonicalization_traces": 216,
+    "changed_from_R1": [
+      "api/gnatdoc-navigation.js",
+      "api/presentation.json"
+    ],
+    "incoming": 242,
+    "missing": 0,
+    "native_sections": 1282,
+    "revision": "26bf5e2e8151cb0545b928b72d3d87677543c1ae",
+    "source_native_occurrence_ledger_byte_equal": true,
+    "symbols": 215,
+    "targets": 25,
+    "type_links": 2745
+  }
+}

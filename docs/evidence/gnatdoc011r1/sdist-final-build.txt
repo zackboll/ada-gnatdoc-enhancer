@@ -1,0 +1,16 @@
+Processing ./dist-final/ada_gnatdoc_enhancer-0.1.0.dev0.tar.gz
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: ada-gnatdoc-enhancer
+  Building wheel for ada-gnatdoc-enhancer (pyproject.toml): started
+  Building wheel for ada-gnatdoc-enhancer (pyproject.toml): finished with status 'done'
+  Created wheel for ada-gnatdoc-enhancer: filename=ada_gnatdoc_enhancer-0.1.0.dev0-py3-none-any.whl size=95597 sha256=e8ce7e2e8362232ab833f4c9dd30a2a33177ab6ff00a2a3b8fc0a6efdcdd224d
+  Stored in directory: /home/zboll/.cache/pip/wheels/bf/ba/4e/4800a4e0887089073c999fa999e38fc93131a94ded76348c92
+Successfully built ada-gnatdoc-enhancer
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: /home/zboll/git/ada-gnatdoc-enhancer-011r1-work/sdist-env/bin/python -m pip install --upgrade pip

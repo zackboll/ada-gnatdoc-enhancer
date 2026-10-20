@@ -1,0 +1,99 @@
+{
+  "additional_router_removal_browser_static_mutation": true,
+  "all_incoming_occurrences_actually_clicked_per_revision": 242,
+  "authored_guide_changes": 0,
+  "byte_idempotence": true,
+  "canonicalization_negative_first": "reviewed router fails retaining unknown=1",
+  "canonicalization_scenarios": [
+    "A invalid query/fallback to native symbol/reload/history",
+    "B actual vector/matrix incoming hyperlinks/reload/history/ownership/actuals/dimensions",
+    "C duplicate/unknown/conflicting/encoded queries and unsupported fragments",
+    "D approved native declaration interpretation/packages/rapid selections/JS-disabled native links"
+  ],
+  "canonicalization_traces_per_revision": 216,
+  "default_asset_changes": 0,
+  "default_parity": {
+    "core": {
+      "byte_identical": true,
+      "files": 207
+    },
+    "core-symbols": {
+      "byte_identical": true,
+      "files": 207
+    },
+    "features": {
+      "byte_identical": true,
+      "files": 18
+    },
+    "geometry": {
+      "byte_identical": true,
+      "files": 14
+    },
+    "imgproc": {
+      "byte_identical": true,
+      "files": 13
+    },
+    "mel": {
+      "byte_identical": true,
+      "files": 42
+    }
+  },
+  "disposition_at_recording": "HOSTED_CI_PENDING",
+  "existing_instance_traces_per_revision": 421,
+  "explanatory_targets": 25,
+  "extracted_sdist_rebuilt_wheel_tests": 540,
+  "fix": "clear search before emitting only approved package and mutually exclusive symbol/declaration; approved summary hash only",
+  "hosted_ci": "exact-final-head status and SHA/tree recorded on PR after evidence commit; not claimed by precommit evidence",
+  "implementation_head": "22eaeb928dedd72e5972db41b63f7f1dfbd432af",
+  "installed_wheel_tests": 540,
+  "mutation_cases_observed_rejected_restored": 38,
+  "native_symbols": 215,
+  "python_matrix": {
+    "3.11": 540,
+    "3.12": 540,
+    "3.13": 540
+  },
+  "retained_acquisition": "reviewed independently acquired R1 source/pristine hash equality rechecked; no new Ada generation claimed",
+  "retained_python_tests": 540,
+  "revisions": {
+    "core-050": {
+      "canonicalization_traces": 216,
+      "changed_from_R1": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "incoming": 242,
+      "missing": 0,
+      "native_sections": 1268,
+      "revision": "f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f",
+      "source_native_occurrence_ledger_byte_equal": true,
+      "symbols": 215,
+      "targets": 25,
+      "type_links": 2701
+    },
+    "core-current": {
+      "canonicalization_traces": 216,
+      "changed_from_R1": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "incoming": 242,
+      "missing": 0,
+      "native_sections": 1282,
+      "revision": "26bf5e2e8151cb0545b928b72d3d87677543c1ae",
+      "source_native_occurrence_ledger_byte_equal": true,
+      "symbols": 215,
+      "targets": 25,
+      "type_links": 2745
+    }
+  },
+  "root_cause": "canonical URL writer retained unknown query keys that targetFromUrl rejects",
+  "source_native_authority_changes": 0,
+  "starting_head": "8804e49f3d84b5c4892848d5b7cbe49038338a9b",
+  "starting_tree": "0968d52a8aa5a4ce165585eff71228f816d77061",
+  "summary_internal_links": 102,
+  "symbol_only_asset_changes": 0,
+  "symbol_only_debt": "same inherited pattern intentionally unchanged pending separate authorized compatibility rebaseline",
+  "two_copy_determinism": true,
+  "unapproved_native_bookmarks": 0
+}

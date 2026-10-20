@@ -1,0 +1,20 @@
+locator.waitFor: SyntaxError: Failed to execute 'matches' on 'Element': '#0f63313177e139e67e8268e25c891657b9f17cb85f5e50ec2ed2a6c025866a62' is not a valid selector.
+    at SelectorEvaluatorImpl._matchesCSS (<anonymous>:5811:20)
+    at <anonymous>:5683:31
+    at SelectorEvaluatorImpl._cached (<anonymous>:5604:20)
+    at SelectorEvaluatorImpl._matchesSimple (<anonymous>:5680:17)
+    at <anonymous>:5740:39
+    at SelectorEvaluatorImpl._cached (<anonymous>:5604:20)
+    at SelectorEvaluatorImpl._matchesParents (<anonymous>:5730:17)
+    at <anonymous>:5643:54
+    at Array.filter (<anonymous>)
+    at <anonymous>:5643:29
+Call log:
+  - waiting for locator('#0f63313177e139e67e8268e25c891657b9f17cb85f5e50ec2ed2a6c025866a62 + pre') to be visible
+
+    at incoming (/home/zboll/git/ada-gnatdoc-enhancer-011/tests/instance_references.cjs:28:55)
+    at async /home/zboll/git/ada-gnatdoc-enhancer-011/tests/instance_references.cjs:56:5 {
+  log: [
+    "  - waiting for locator('#0f63313177e139e67e8268e25c891657b9f17cb85f5e50ec2ed2a6c025866a62 + pre') to be visible"
+  ]
+}

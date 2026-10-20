@@ -1,3 +1,28 @@
+# Opt-in stable public symbol bookmarks
+
+Package navigation may explicitly enable source/native-verified type/subtype
+bookmarks:
+
+```toml
+[navigation]
+mode = "packages"
+symbol_bookmarks = true
+default_package = "OpenCV.Core"
+```
+
+Disabled by default. A verified default package is mandatory with this option;
+it is rejected without the option. Categories and other navigation modes are
+incompatible. Unknown keys remain errors. See
+[stable public symbol bookmarks](stable-public-symbol-bookmarks.md) for query
+rejection rules, authority boundaries, unchanged default bytes, and the current
+**partial Core migration** disposition.
+
+GNATDOC-011R1 separately adds `[generic_instances].incoming_references = true`.
+It requires the hash-qualified generic-instance record, `type_links = true`, and
+symbol-enabled package navigation. It defaults to false and does not expand
+native-symbol bookmark eligibility. See the corrective section of the same
+document for the 25-instance boundary and explanatory history URL contract.
+
 # Authored-content opt-in
 
 `guides.mode = "authored-markdown"` and `"authored-html"` require `manifest`

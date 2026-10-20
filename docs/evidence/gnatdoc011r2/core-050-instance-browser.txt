@@ -1,0 +1,8 @@
+PASS 1280px light JS=true: 242 incoming clicks; 25 separate summaries/native-symbol exclusions
+PASS 1280px light JS=false: 25 incoming clicks; 25 separate summaries/native-symbol exclusions
+PASS 1280px dark JS=true: 25 incoming clicks; 25 separate summaries/native-symbol exclusions
+PASS 1280px dark JS=false: 25 incoming clicks; 25 separate summaries/native-symbol exclusions
+PASS 390px light JS=true: 25 incoming clicks; 25 separate summaries/native-symbol exclusions
+PASS 390px light JS=false: 25 incoming clicks; 25 separate summaries/native-symbol exclusions
+PASS 390px dark JS=true: 25 incoming clicks; 25 separate summaries/native-symbol exclusions
+PASS 390px dark JS=false: 25 incoming clicks; 25 separate summaries/native-symbol exclusions

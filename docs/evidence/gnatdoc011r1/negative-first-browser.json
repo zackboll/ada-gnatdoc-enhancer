@@ -1,0 +1,17 @@
+{
+  "browser": "155.0.8059.84",
+  "records": [
+    {
+      "site": "core-current-disabled",
+      "identity": "opencv.core.float16_vec2.vector",
+      "source_anchor": "0f63313177e139e67e8268e25c891657b9f17cb85f5e50ec2ed2a6c025866a62",
+      "links": 0
+    },
+    {
+      "site": "core-current-candidate",
+      "identity": "opencv.core.float16_vec2.vector",
+      "source_anchor": "0f63313177e139e67e8268e25c891657b9f17cb85f5e50ec2ed2a6c025866a62",
+      "links": 1
+    }
+  ]
+}

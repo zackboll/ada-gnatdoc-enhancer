@@ -1,0 +1,25 @@
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
+  [
+    [
+      'package',
+      'OpenCV.Core'
++   ],
++   [
++     'unknown',
++     '1'
+    ]
+  ]
+    at clean (/home/zboll/git/ada-gnatdoc-enhancer-011/tests/instance_canonicalization.cjs:11:10)
+    at packageSelected (/home/zboll/git/ada-gnatdoc-enhancer-011/tests/instance_canonicalization.cjs:19:3)
+    at runNextTicks (node:internal/process/task_queues:60:5)
+    at process.processImmediate (node:internal/timers:454:9)
+    at process.callbackTrampoline (node:internal/async_hooks:130:17)
+    at async /home/zboll/git/ada-gnatdoc-enhancer-011/tests/instance_canonicalization.cjs:83:59 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [Array],
+  expected: [Array],
+  operator: 'deepStrictEqual'
+}

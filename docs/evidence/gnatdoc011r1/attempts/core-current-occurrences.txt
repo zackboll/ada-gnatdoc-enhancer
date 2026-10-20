@@ -1,0 +1,16 @@
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011/scripts/qualify_instance_references.py", line 156, in <module>
+    if __name__ == '__main__':main()
+                              ^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011/scripts/qualify_instance_references.py", line 151, in main
+    result = audit(a.core,a.pristine,a.legacy,a.candidate,a.baseline)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011/scripts/qualify_instance_references.py", line 50, in audit
+    oracle.instance_targets(legacy/'api',core/'src',source,pages,explanatory)
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r1-work/core-current/scripts/link_gnatdoc_types.py", line 251, in instance_targets
+    require(text.count('id="' + SUMMARY_ANCHOR + '"') == 1,
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r1-work/core-current/scripts/link_gnatdoc_types.py", line 44, in require
+    raise CrossReferenceError(message)
+link_gnatdoc_types.CrossReferenceError: missing/duplicate instance summary anchor: opencv.core.float16_vec2

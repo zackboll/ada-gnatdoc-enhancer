@@ -1,0 +1,1263 @@
+{
+  "revision": "f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f",
+  "browser": "155.0.8059.84",
+  "failure": null,
+  "traces": [
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Sparse",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float16_vec2.vector",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float16_Vec2#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Core.Float16_Value",
+        "Length": "2"
+      }
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float16_vec2.vector",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float16_Vec2#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Core.Float16_Value",
+        "Length": "2"
+      }
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float16_vec2.vector",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float16_Vec2#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Core.Float16_Value",
+        "Length": "2"
+      }
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float16_vec2.vector",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float16_Vec2#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Core.Float16_Value",
+        "Length": "2"
+      }
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float32_matx3x3.matrix",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float32_Matx3x3#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Float32_Value",
+        "Row_Count": "3",
+        "Column_Count": "3"
+      }
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float32_matx3x3.matrix",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float32_Matx3x3#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Float32_Value",
+        "Row_Count": "3",
+        "Column_Count": "3"
+      }
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float32_matx3x3.matrix",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float32_Matx3x3#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Float32_Value",
+        "Row_Count": "3",
+        "Column_Count": "3"
+      }
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float32_matx3x3.matrix",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float32_Matx3x3#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Float32_Value",
+        "Row_Count": "3",
+        "Column_Count": "3"
+      }
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Sparse",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float16_vec2.vector",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float16_Vec2#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Core.Float16_Value",
+        "Length": "2"
+      }
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float16_vec2.vector",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float16_Vec2#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Core.Float16_Value",
+        "Length": "2"
+      }
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float16_vec2.vector",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float16_Vec2#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Core.Float16_Value",
+        "Length": "2"
+      }
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float16_vec2.vector",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float16_Vec2#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Core.Float16_Value",
+        "Length": "2"
+      }
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float32_matx3x3.matrix",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float32_Matx3x3#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Float32_Value",
+        "Row_Count": "3",
+        "Column_Count": "3"
+      }
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float32_matx3x3.matrix",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float32_Matx3x3#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Float32_Value",
+        "Row_Count": "3",
+        "Column_Count": "3"
+      }
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float32_matx3x3.matrix",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float32_Matx3x3#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Float32_Value",
+        "Row_Count": "3",
+        "Column_Count": "3"
+      }
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float32_matx3x3.matrix",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float32_Matx3x3#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Float32_Value",
+        "Row_Count": "3",
+        "Column_Count": "3"
+      }
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Sparse",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float16_vec2.vector",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float16_Vec2#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Core.Float16_Value",
+        "Length": "2"
+      }
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float16_vec2.vector",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float16_Vec2#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Core.Float16_Value",
+        "Length": "2"
+      }
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float16_vec2.vector",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float16_Vec2#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Core.Float16_Value",
+        "Length": "2"
+      }
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float16_vec2.vector",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float16_Vec2#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Core.Float16_Value",
+        "Length": "2"
+      }
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float32_matx3x3.matrix",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float32_Matx3x3#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Float32_Value",
+        "Row_Count": "3",
+        "Column_Count": "3"
+      }
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float32_matx3x3.matrix",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float32_Matx3x3#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Float32_Value",
+        "Row_Count": "3",
+        "Column_Count": "3"
+      }
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float32_matx3x3.matrix",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float32_Matx3x3#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Float32_Value",
+        "Row_Count": "3",
+        "Column_Count": "3"
+      }
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float32_matx3x3.matrix",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float32_Matx3x3#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Float32_Value",
+        "Row_Count": "3",
+        "Column_Count": "3"
+      }
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Sparse",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float16_vec2.vector",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float16_Vec2#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Core.Float16_Value",
+        "Length": "2"
+      }
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float16_vec2.vector",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float16_Vec2#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Core.Float16_Value",
+        "Length": "2"
+      }
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float16_vec2.vector",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float16_Vec2#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Core.Float16_Value",
+        "Length": "2"
+      }
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float16_vec2.vector",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float16_Vec2#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Core.Float16_Value",
+        "Length": "2"
+      }
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float32_matx3x3.matrix",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float32_Matx3x3#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Float32_Value",
+        "Row_Count": "3",
+        "Column_Count": "3"
+      }
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float32_matx3x3.matrix",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float32_Matx3x3#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Float32_Value",
+        "Row_Count": "3",
+        "Column_Count": "3"
+      }
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float32_matx3x3.matrix",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float32_Matx3x3#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Float32_Value",
+        "Row_Count": "3",
+        "Column_Count": "3"
+      }
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "summary",
+      "identity": "opencv.core.float32_matx3x3.matrix",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core.Float32_Matx3x3#instance-members-summary",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html#instance-members-summary",
+      "arguments": {
+        "Element_Type": "OpenCV.Float32_Value",
+        "Row_Count": "3",
+        "Column_Count": "3"
+      }
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:8113/core-050-candidate/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:8113/core-050-candidate/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    }
+  ]
+}

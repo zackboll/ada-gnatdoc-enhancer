@@ -1,0 +1,62 @@
+{
+  "artifacts": {
+    "ada_gnatdoc_enhancer-0.1.0.dev0-py3-none-any.whl": "fd717863152dbeeea9aae91838f43caeaabf32d5be928e82dc92192a57d4a374",
+    "ada_gnatdoc_enhancer-0.1.0.dev0.tar.gz": "2aa36f02dab064625e455bebdefe0b04a8d2907eae551c030312e10bffece62a"
+  },
+  "browser": "original unchanged suites pass; independent candidate both revisions desktop/mobile light/dark JS-on/off pass",
+  "core_050": "f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f",
+  "core_main": "26bf5e2e8151cb0545b928b72d3d87677543c1ae",
+  "default_byte_parity": [
+    "features",
+    "imgproc",
+    "geometry",
+    "mel",
+    "core"
+  ],
+  "disposition": "PARTIAL_SYMBOL_COMPATIBILITY",
+  "generic_summaries": 25,
+  "generic_summary_links": 102,
+  "guides": 5,
+  "hosted_ci": "exact-final-head status must be checked on PR; not implied by local qualification",
+  "limitations": [
+    "Full legacy generic-reference click parity is not met",
+    "Full original package-browser equivalent coverage including missing instance references is blocked",
+    "No hosted version-pinned publication authorized",
+    "Retained non-Core consumer inputs used for byte comparison, not fresh acquisitions"
+  ],
+  "merged_009b": "3867c8879a3c832fb6e096d7680a8b739a2cffe1",
+  "merged_010": "23cf51d3765e7b3f68411e25a57f52f4c0efc7e1",
+  "migration_blocker": {
+    "additional_Size_links": 3,
+    "legacy_type_links": 2742,
+    "missing_incoming_generic_summary_links": 242,
+    "shared_type_links": 2503
+  },
+  "native_sections": {
+    "050": 1268,
+    "current": 1282
+  },
+  "overlapping_open_prs_at_start": [],
+  "packages": 195,
+  "starting_main": "3867c8879a3c832fb6e096d7680a8b739a2cffe1",
+  "symbols": {
+    "050": 215,
+    "current": 215
+  },
+  "tamper": {
+    "observed_rejected_restored": 15,
+    "scope": "real-site static mutations; not exhaustive completion of every requested adversarial acquisition/browser control"
+  },
+  "tests": {
+    "baseline": 506,
+    "current": 516,
+    "new": 10,
+    "python": [
+      "3.11",
+      "3.12",
+      "3.13"
+    ],
+    "sdist": 516,
+    "wheel": 516
+  }
+}

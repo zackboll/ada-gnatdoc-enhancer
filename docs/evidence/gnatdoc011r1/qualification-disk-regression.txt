@@ -1,0 +1,25 @@
+test_expression_function_remains_explicit_gap (test_real_qualification.AuthenticExcerpts.test_expression_function_remains_explicit_gap) ... ok
+test_immutable_excerpt_provenance (test_real_qualification.AuthenticExcerpts.test_immutable_excerpt_provenance) ... ok
+test_known_abbreviated_enumerations_remain_gaps (test_real_qualification.AuthenticExcerpts.test_known_abbreviated_enumerations_remain_gaps) ... ok
+test_literal_greater_than_does_not_authorize_html (test_real_qualification.AuthenticExcerpts.test_literal_greater_than_does_not_authorize_html) ... ok
+test_native_greater_than_round_trip (test_real_qualification.AuthenticExcerpts.test_native_greater_than_round_trip) ... ok
+test_trailing_record_aspect (test_real_qualification.AuthenticExcerpts.test_trailing_record_aspect) ... ok
+test_authentic_geometry_structural_regression (test_real_qualification.PinnedQualification.test_authentic_geometry_structural_regression) ... ok
+test_existing_workspace_rejected (test_real_qualification.PinnedQualification.test_existing_workspace_rejected) ... ok
+test_external_authority_rejects_manifest_native_rewrite (test_real_qualification.PinnedQualification.test_external_authority_rejects_manifest_native_rewrite) ... ok
+test_extra_ada_source_rejected (test_real_qualification.PinnedQualification.test_extra_ada_source_rejected) ... ok
+test_independent_identity_check_rejects_text_change (test_real_qualification.PinnedQualification.test_independent_identity_check_rejects_text_change) ... ok
+test_inventory_failure_is_machine_readable (test_real_qualification.PinnedQualification.test_inventory_failure_is_machine_readable) ... ok
+test_nested_workspace_symlink_rejected (test_real_qualification.PinnedQualification.test_nested_workspace_symlink_rejected) ... ok
+test_overlap_rejected (test_real_qualification.PinnedQualification.test_overlap_rejected) ... ok
+test_qualification_cli_relative_site_belongs_to_source_root (test_real_qualification.PinnedQualification.test_qualification_cli_relative_site_belongs_to_source_root) ... ok
+test_source_directory_symlink_rejected (test_real_qualification.PinnedQualification.test_source_directory_symlink_rejected) ... ok
+test_symlink_input_rejected (test_real_qualification.PinnedQualification.test_symlink_input_rejected) ... ok
+test_tampered_pristine_rejected (test_real_qualification.PinnedQualification.test_tampered_pristine_rejected) ... ok
+test_tampered_source_rejected (test_real_qualification.PinnedQualification.test_tampered_source_rejected) ... ok
+test_wrong_revision_rejected (test_real_qualification.PinnedQualification.test_wrong_revision_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 13.116s
+
+OK

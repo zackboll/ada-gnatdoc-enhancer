@@ -1,0 +1,9 @@
+{
+  "packaged_assets": {
+    "gnatdoc-guides.css": "79f3fc6d5f1e854eb42d225f9bec113b7a41fa833b12d3bd70ca089ba5df0a8c",
+    "gnatdoc-navigation.js": "b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd",
+    "gnatdoc-symbol-navigation.js": "7af8dd92f7f31ff9a14fd55a41d81d9bcfe9ae3bce8506f9254a376404ea7ee3",
+    "gnatdoc-theme.css": "cf06637732a8b047a7191bfb991a5c3da7cd31a52076876880d5f8a3f63929bc"
+  },
+  "source_equal": true
+}
