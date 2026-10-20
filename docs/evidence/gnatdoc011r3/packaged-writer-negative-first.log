@@ -1,0 +1,455 @@
+test_conflicting_declaration (test_symbol_canonicalization.SymbolCanonicalization.test_conflicting_declaration) ... ok
+test_conflicting_package (test_symbol_canonicalization.SymbolCanonicalization.test_conflicting_package) ... ok
+test_conflicting_symbol (test_symbol_canonicalization.SymbolCanonicalization.test_conflicting_symbol) ... ok
+test_duplicate_declaration (test_symbol_canonicalization.SymbolCanonicalization.test_duplicate_declaration) ... ok
+test_duplicate_package (test_symbol_canonicalization.SymbolCanonicalization.test_duplicate_package) ... ok
+test_duplicate_symbol (test_symbol_canonicalization.SymbolCanonicalization.test_duplicate_symbol) ... ok
+test_encoded_declaration (test_symbol_canonicalization.SymbolCanonicalization.test_encoded_declaration) ... FAIL
+test_encoded_package (test_symbol_canonicalization.SymbolCanonicalization.test_encoded_package) ... FAIL
+test_encoded_symbol (test_symbol_canonicalization.SymbolCanonicalization.test_encoded_symbol) ... FAIL
+test_foreign_fragment_declaration (test_symbol_canonicalization.SymbolCanonicalization.test_foreign_fragment_declaration) ... FAIL
+test_foreign_fragment_package (test_symbol_canonicalization.SymbolCanonicalization.test_foreign_fragment_package) ... FAIL
+test_foreign_fragment_symbol (test_symbol_canonicalization.SymbolCanonicalization.test_foreign_fragment_symbol) ... FAIL
+test_fragment_declaration (test_symbol_canonicalization.SymbolCanonicalization.test_fragment_declaration) ... FAIL
+test_fragment_package (test_symbol_canonicalization.SymbolCanonicalization.test_fragment_package) ... FAIL
+test_fragment_symbol (test_symbol_canonicalization.SymbolCanonicalization.test_fragment_symbol) ... FAIL
+test_unknown_declaration (test_symbol_canonicalization.SymbolCanonicalization.test_unknown_declaration) ... FAIL
+test_unknown_package (test_symbol_canonicalization.SymbolCanonicalization.test_unknown_package) ... FAIL
+test_unknown_symbol (test_symbol_canonicalization.SymbolCanonicalization.test_unknown_symbol) ... FAIL
+
+======================================================================
+FAIL: test_encoded_declaration (test_symbol_canonicalization.SymbolCanonicalization.test_encoded_declaration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 34, in test
+    self.check_writer(query, state, expected)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 21, in check_writer
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:assert:90
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'https://docs.invalid/api/index.html?package=AMS.MEL&unknown=%26symbol%3DInjected&declaration=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+- 'https://docs.invalid/api/index.html?package=AMS.MEL&declaration=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+    at [eval]:10:8
+    at runScriptInThisContext (node:internal/vm:209:10)
+    at node:internal/process/execution:118:14
+    at [eval]-wrapper:6:24
+    at runScript (node:internal/process/execution:101:62)
+    at evalScript (node:internal/process/execution:133:3)
+    at node:internal/main/eval_string:51:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'https://docs.invalid/api/index.html?package=AMS.MEL&unknown=%26symbol%3DInjected&declaration=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+  expected: 'https://docs.invalid/api/index.html?package=AMS.MEL&declaration=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+  operator: 'strictEqual'
+}
+
+Node.js v20.19.2
+
+
+======================================================================
+FAIL: test_encoded_package (test_symbol_canonicalization.SymbolCanonicalization.test_encoded_package)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 34, in test
+    self.check_writer(query, state, expected)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 21, in check_writer
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:assert:90
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'https://docs.invalid/api/index.html?package=AMS.MEL&unknown=%26symbol%3DInjected'
+- 'https://docs.invalid/api/index.html?package=AMS.MEL'
+    at [eval]:10:8
+    at runScriptInThisContext (node:internal/vm:209:10)
+    at node:internal/process/execution:118:14
+    at [eval]-wrapper:6:24
+    at runScript (node:internal/process/execution:101:62)
+    at evalScript (node:internal/process/execution:133:3)
+    at node:internal/main/eval_string:51:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'https://docs.invalid/api/index.html?package=AMS.MEL&unknown=%26symbol%3DInjected',
+  expected: 'https://docs.invalid/api/index.html?package=AMS.MEL',
+  operator: 'strictEqual'
+}
+
+Node.js v20.19.2
+
+
+======================================================================
+FAIL: test_encoded_symbol (test_symbol_canonicalization.SymbolCanonicalization.test_encoded_symbol)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 34, in test
+    self.check_writer(query, state, expected)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 21, in check_writer
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:assert:90
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'https://docs.invalid/api/index.html?package=AMS.MEL&unknown=%26symbol%3DInjected&symbol=AMS.MEL.Session'
+- 'https://docs.invalid/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Session'
+    at [eval]:10:8
+    at runScriptInThisContext (node:internal/vm:209:10)
+    at node:internal/process/execution:118:14
+    at [eval]-wrapper:6:24
+    at runScript (node:internal/process/execution:101:62)
+    at evalScript (node:internal/process/execution:133:3)
+    at node:internal/main/eval_string:51:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'https://docs.invalid/api/index.html?package=AMS.MEL&unknown=%26symbol%3DInjected&symbol=AMS.MEL.Session',
+  expected: 'https://docs.invalid/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Session',
+  operator: 'strictEqual'
+}
+
+Node.js v20.19.2
+
+
+======================================================================
+FAIL: test_foreign_fragment_declaration (test_symbol_canonicalization.SymbolCanonicalization.test_foreign_fragment_declaration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 34, in test
+    self.check_writer(query, state, expected)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 21, in check_writer
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:assert:90
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'https://docs.invalid/api/index.html?unknown=1&package=AMS.MEL&declaration=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#https://example.invalid/'
+- 'https://docs.invalid/api/index.html?package=AMS.MEL&declaration=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+    at [eval]:10:8
+    at runScriptInThisContext (node:internal/vm:209:10)
+    at node:internal/process/execution:118:14
+    at [eval]-wrapper:6:24
+    at runScript (node:internal/process/execution:101:62)
+    at evalScript (node:internal/process/execution:133:3)
+    at node:internal/main/eval_string:51:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'https://docs.invalid/api/index.html?unknown=1&package=AMS.MEL&declaration=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#https://example.invalid/',
+  expected: 'https://docs.invalid/api/index.html?package=AMS.MEL&declaration=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+  operator: 'strictEqual'
+}
+
+Node.js v20.19.2
+
+
+======================================================================
+FAIL: test_foreign_fragment_package (test_symbol_canonicalization.SymbolCanonicalization.test_foreign_fragment_package)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 34, in test
+    self.check_writer(query, state, expected)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 21, in check_writer
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:assert:90
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'https://docs.invalid/api/index.html?unknown=1&package=AMS.MEL#https://example.invalid/'
+- 'https://docs.invalid/api/index.html?package=AMS.MEL'
+    at [eval]:10:8
+    at runScriptInThisContext (node:internal/vm:209:10)
+    at node:internal/process/execution:118:14
+    at [eval]-wrapper:6:24
+    at runScript (node:internal/process/execution:101:62)
+    at evalScript (node:internal/process/execution:133:3)
+    at node:internal/main/eval_string:51:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'https://docs.invalid/api/index.html?unknown=1&package=AMS.MEL#https://example.invalid/',
+  expected: 'https://docs.invalid/api/index.html?package=AMS.MEL',
+  operator: 'strictEqual'
+}
+
+Node.js v20.19.2
+
+
+======================================================================
+FAIL: test_foreign_fragment_symbol (test_symbol_canonicalization.SymbolCanonicalization.test_foreign_fragment_symbol)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 34, in test
+    self.check_writer(query, state, expected)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 21, in check_writer
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:assert:90
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'https://docs.invalid/api/index.html?unknown=1&package=AMS.MEL&symbol=AMS.MEL.Session#https://example.invalid/'
+- 'https://docs.invalid/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Session'
+    at [eval]:10:8
+    at runScriptInThisContext (node:internal/vm:209:10)
+    at node:internal/process/execution:118:14
+    at [eval]-wrapper:6:24
+    at runScript (node:internal/process/execution:101:62)
+    at evalScript (node:internal/process/execution:133:3)
+    at node:internal/main/eval_string:51:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'https://docs.invalid/api/index.html?unknown=1&package=AMS.MEL&symbol=AMS.MEL.Session#https://example.invalid/',
+  expected: 'https://docs.invalid/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Session',
+  operator: 'strictEqual'
+}
+
+Node.js v20.19.2
+
+
+======================================================================
+FAIL: test_fragment_declaration (test_symbol_canonicalization.SymbolCanonicalization.test_fragment_declaration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 34, in test
+    self.check_writer(query, state, expected)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 21, in check_writer
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:assert:90
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'https://docs.invalid/api/index.html?package=AMS.MEL&declaration=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#instance-members-summary'
+- 'https://docs.invalid/api/index.html?package=AMS.MEL&declaration=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+    at [eval]:10:8
+    at runScriptInThisContext (node:internal/vm:209:10)
+    at node:internal/process/execution:118:14
+    at [eval]-wrapper:6:24
+    at runScript (node:internal/process/execution:101:62)
+    at evalScript (node:internal/process/execution:133:3)
+    at node:internal/main/eval_string:51:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'https://docs.invalid/api/index.html?package=AMS.MEL&declaration=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#instance-members-summary',
+  expected: 'https://docs.invalid/api/index.html?package=AMS.MEL&declaration=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+  operator: 'strictEqual'
+}
+
+Node.js v20.19.2
+
+
+======================================================================
+FAIL: test_fragment_package (test_symbol_canonicalization.SymbolCanonicalization.test_fragment_package)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 34, in test
+    self.check_writer(query, state, expected)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 21, in check_writer
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:assert:90
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'https://docs.invalid/api/index.html?package=AMS.MEL#instance-members-summary'
+- 'https://docs.invalid/api/index.html?package=AMS.MEL'
+    at [eval]:10:8
+    at runScriptInThisContext (node:internal/vm:209:10)
+    at node:internal/process/execution:118:14
+    at [eval]-wrapper:6:24
+    at runScript (node:internal/process/execution:101:62)
+    at evalScript (node:internal/process/execution:133:3)
+    at node:internal/main/eval_string:51:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'https://docs.invalid/api/index.html?package=AMS.MEL#instance-members-summary',
+  expected: 'https://docs.invalid/api/index.html?package=AMS.MEL',
+  operator: 'strictEqual'
+}
+
+Node.js v20.19.2
+
+
+======================================================================
+FAIL: test_fragment_symbol (test_symbol_canonicalization.SymbolCanonicalization.test_fragment_symbol)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 34, in test
+    self.check_writer(query, state, expected)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 21, in check_writer
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:assert:90
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'https://docs.invalid/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Session#instance-members-summary'
+- 'https://docs.invalid/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Session'
+    at [eval]:10:8
+    at runScriptInThisContext (node:internal/vm:209:10)
+    at node:internal/process/execution:118:14
+    at [eval]-wrapper:6:24
+    at runScript (node:internal/process/execution:101:62)
+    at evalScript (node:internal/process/execution:133:3)
+    at node:internal/main/eval_string:51:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'https://docs.invalid/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Session#instance-members-summary',
+  expected: 'https://docs.invalid/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Session',
+  operator: 'strictEqual'
+}
+
+Node.js v20.19.2
+
+
+======================================================================
+FAIL: test_unknown_declaration (test_symbol_canonicalization.SymbolCanonicalization.test_unknown_declaration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 34, in test
+    self.check_writer(query, state, expected)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 21, in check_writer
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:assert:90
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'https://docs.invalid/api/index.html?package=AMS.MEL&unknown=1&declaration=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+- 'https://docs.invalid/api/index.html?package=AMS.MEL&declaration=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+    at [eval]:10:8
+    at runScriptInThisContext (node:internal/vm:209:10)
+    at node:internal/process/execution:118:14
+    at [eval]-wrapper:6:24
+    at runScript (node:internal/process/execution:101:62)
+    at evalScript (node:internal/process/execution:133:3)
+    at node:internal/main/eval_string:51:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'https://docs.invalid/api/index.html?package=AMS.MEL&unknown=1&declaration=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+  expected: 'https://docs.invalid/api/index.html?package=AMS.MEL&declaration=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+  operator: 'strictEqual'
+}
+
+Node.js v20.19.2
+
+
+======================================================================
+FAIL: test_unknown_package (test_symbol_canonicalization.SymbolCanonicalization.test_unknown_package)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 34, in test
+    self.check_writer(query, state, expected)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 21, in check_writer
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:assert:90
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'https://docs.invalid/api/index.html?package=AMS.MEL&unknown=1'
+- 'https://docs.invalid/api/index.html?package=AMS.MEL'
+    at [eval]:10:8
+    at runScriptInThisContext (node:internal/vm:209:10)
+    at node:internal/process/execution:118:14
+    at [eval]-wrapper:6:24
+    at runScript (node:internal/process/execution:101:62)
+    at evalScript (node:internal/process/execution:133:3)
+    at node:internal/main/eval_string:51:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'https://docs.invalid/api/index.html?package=AMS.MEL&unknown=1',
+  expected: 'https://docs.invalid/api/index.html?package=AMS.MEL',
+  operator: 'strictEqual'
+}
+
+Node.js v20.19.2
+
+
+======================================================================
+FAIL: test_unknown_symbol (test_symbol_canonicalization.SymbolCanonicalization.test_unknown_symbol)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 34, in test
+    self.check_writer(query, state, expected)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/test_symbol_canonicalization.py", line 21, in check_writer
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:assert:90
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'https://docs.invalid/api/index.html?package=AMS.MEL&unknown=1&symbol=AMS.MEL.Session'
+- 'https://docs.invalid/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Session'
+    at [eval]:10:8
+    at runScriptInThisContext (node:internal/vm:209:10)
+    at node:internal/process/execution:118:14
+    at [eval]-wrapper:6:24
+    at runScript (node:internal/process/execution:101:62)
+    at evalScript (node:internal/process/execution:133:3)
+    at node:internal/main/eval_string:51:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'https://docs.invalid/api/index.html?package=AMS.MEL&unknown=1&symbol=AMS.MEL.Session',
+  expected: 'https://docs.invalid/api/index.html?package=AMS.MEL&symbol=AMS.MEL.Session',
+  operator: 'strictEqual'
+}
+
+Node.js v20.19.2
+
+
+----------------------------------------------------------------------
+Ran 18 tests in 1.361s
+
+FAILED (failures=12)

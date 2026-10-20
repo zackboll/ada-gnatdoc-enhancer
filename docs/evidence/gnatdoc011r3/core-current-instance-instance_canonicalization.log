@@ -1,0 +1,6 @@
+PASS 1280px light: A symbol B vector/matrix C malformed D existing declarations/packages/rapid selection
+PASS 1280px dark: A symbol B vector/matrix C malformed D existing declarations/packages/rapid selection
+PASS 390px light: A symbol B vector/matrix C malformed D existing declarations/packages/rapid selection
+PASS 390px dark: A symbol B vector/matrix C malformed D existing declarations/packages/rapid selection
+PASS 1280px JavaScript disabled native incoming reference
+PASS 390px JavaScript disabled native incoming reference

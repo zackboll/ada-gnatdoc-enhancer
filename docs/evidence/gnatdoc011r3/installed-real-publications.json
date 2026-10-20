@@ -1,0 +1,48 @@
+{
+  "wheel": {
+    "implementation_assets_equal_source": true,
+    "package_fingerprint": "af5c5fec03ec3fbc41e3a55a55424a3ce65cf1bb5101d97b0c65ff5614e40632",
+    "core-current-symbols": {
+      "files": 207,
+      "exact_source_publication_equal": true
+    },
+    "core-current-instance": {
+      "files": 207,
+      "exact_source_publication_equal": true
+    },
+    "core-050-symbols": {
+      "files": 207,
+      "exact_source_publication_equal": true
+    },
+    "core-050-instance": {
+      "files": 207,
+      "exact_source_publication_equal": true
+    },
+    "mel": {
+      "exact_source_publication_equal": true
+    }
+  },
+  "sdist": {
+    "implementation_assets_equal_source": true,
+    "package_fingerprint": "af5c5fec03ec3fbc41e3a55a55424a3ce65cf1bb5101d97b0c65ff5614e40632",
+    "core-current-symbols": {
+      "files": 207,
+      "exact_source_publication_equal": true
+    },
+    "core-current-instance": {
+      "files": 207,
+      "exact_source_publication_equal": true
+    },
+    "core-050-symbols": {
+      "files": 207,
+      "exact_source_publication_equal": true
+    },
+    "core-050-instance": {
+      "files": 207,
+      "exact_source_publication_equal": true
+    },
+    "mel": {
+      "exact_source_publication_equal": true
+    }
+  }
+}

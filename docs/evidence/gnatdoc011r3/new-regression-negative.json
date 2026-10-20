@@ -1,0 +1,20 @@
+{
+  "revision": "36ecb1e63c24df855d6f6e85f8245e16fc9d8d53",
+  "browser": "156.0.8078.4",
+  "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    [\n      'package',\n      'AMS.MEL'\n+   ],\n+   [\n+     'unknown',\n+     '1'\n    ]\n  ]\n    at clean (/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/symbol_canonicalization.cjs:12:9)\n    at packageSelected (/home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/symbol_canonicalization.cjs:25:60)\n    at async /home/zboll/git/ada-gnatdoc-enhancer-011r3/tests/symbol_canonicalization.cjs:67:4",
+  "traces": [
+    {
+      "kind": "dirty-fallback-before-clean-assertion",
+      "outer": "http://127.0.0.1:39373/api/index.html?package=AMS.MEL&unknown=1",
+      "frame": "http://127.0.0.1:39373/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html"
+    }
+  ],
+  "requests": [
+    "http://127.0.0.1:39373/api/index.html?package=AMS.MEL&unknown=1",
+    "http://127.0.0.1:39373/api/gnatdoc.css",
+    "http://127.0.0.1:39373/api/gnatdoc-theme.css",
+    "http://127.0.0.1:39373/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:39373/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html"
+  ],
+  "errors": []
+}

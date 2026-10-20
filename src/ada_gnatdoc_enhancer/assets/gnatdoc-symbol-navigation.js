@@ -69,9 +69,9 @@
   }
   function canonicalUrl(state) {
     const u = new URL(location.href);
+    u.search = '';
+    u.hash = '';
     u.searchParams.set('package',state.item.name);
-    u.searchParams.delete('declaration');
-    u.searchParams.delete('symbol');
     if (state.symbol) u.searchParams.set('symbol',state.symbol);
     else if (state.declaration) u.searchParams.set('declaration',state.declaration);
     return u;

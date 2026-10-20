@@ -1,0 +1,3 @@
+PASS 1280px: direct symbols/subtype/reload/fresh/history/native click
+PASS 390px: direct symbols/subtype/reload/fresh/history/native click
+PASS invalid/ambiguous/conflicting symbol requests rejected
