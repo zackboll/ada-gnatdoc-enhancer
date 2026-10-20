@@ -1,0 +1,67 @@
+observe: 011 invented public symbol
+restored: 011 invented public symbol
+observe: 011 private ownership confusion
+restored: 011 private ownership confusion
+observe: 011 unknown package owner
+restored: 011 unknown package owner
+observe: 011 wrong existing native anchor
+restored: 011 wrong existing native anchor
+observe: 011 duplicate identity
+restored: 011 duplicate identity
+observe: 011 missing symbol
+restored: 011 missing symbol
+observe: 011 generic formal
+restored: 011 generic formal
+observe: 011 synthetic summary promoted
+restored: 011 synthetic summary promoted
+observe: 011 unsafe absolute destination
+restored: 011 unsafe absolute destination
+observe: 011 unsafe root destination
+restored: 011 unsafe root destination
+observe: 011 forged presentation manifest
+restored: 011 forged presentation manifest
+observe: 011 modified navigation JavaScript
+restored: 011 modified navigation JavaScript
+observe: 011 swapped existing native pages
+restored: 011 swapped existing native pages
+observe: 011 mismatched native declaration
+restored: 011 mismatched native declaration
+observe: 011 mismatched source declaration
+restored: 011 mismatched source declaration
+observe: wrong generic qualification SHA
+restored: wrong generic qualification SHA
+observe: modified instance declaration
+restored: modified instance declaration
+observe: altered actual type
+restored: altered actual type
+observe: altered dimensions
+restored: altered dimensions
+observe: wrong template owner
+restored: wrong template owner
+observe: wrong existing summary destination
+restored: wrong existing summary destination
+observe: missing summary section
+restored: missing summary section
+observe: duplicate summary anchor
+restored: duplicate summary anchor
+observe: modified summary HTML
+restored: modified summary HTML
+observe: forged instance-reference target
+restored: forged instance-reference target
+observe: package alias substitution
+restored: package alias substitution
+observe: local identifier shadowing
+restored: local identifier shadowing
+observe: private context substitution
+restored: private context substitution
+observe: limited context substitution
+restored: limited context substitution
+observe: unapproved generic instantiation
+restored: unapproved generic instantiation
+observe: synthetic member to native symbol
+restored: synthetic member to native symbol
+observe: swapped existing instance pages
+restored: swapped existing instance pages
+observe: changed template member destination
+restored: changed template member destination
+38 observed/rejected/restored attacks
