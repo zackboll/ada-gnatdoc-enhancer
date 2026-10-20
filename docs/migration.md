@@ -1,6 +1,6 @@
-# Planned migration sequence
+# Consumer migration and toolkit upgrades
 
-1. Qualify the bootstrap against **real** GNATdoc 26 output, not only the four
+1. Qualify the installed release against **real** GNATdoc 26.0.0 output, not only the four
    synthetic fixtures. Save pristine API pages and compare all original native
    source signatures and anchors to independent snapshots.
 2. Adopt Imgproc and Geometry first: convert their operation category manifests
@@ -16,7 +16,24 @@
    JavaScript disabled, Back/Forward and direct bookmarks in a real browser.
 
 No consumer migrations, source-policy changes, deployment or publication are
-performed by this bootstrap archive.
+performed by release preparation. Shared-package release is not consumer approval.
+See [release compatibility](release-compatibility.md).
+
+## Upgrade from 0.1.0.dev0
+
+Install the reviewed non-editable wheel in a fresh environment; verify module,
+distribution and CLI versions all read `0.1.0`. Keep the old environment and
+published site for rollback. Regenerate pristine native output using the same
+consumer-owned compiler/GNATdoc pipeline, then enhance a disposable copy. Do not
+reuse the old presentation manifest: `enhancer_version` is version-bound and
+release verification rejects development manifests.
+
+Compare every native signature/destination, guide, warning, coverage,
+source-integrity and deployment baseline independently. Default and symbol-only
+presentation bytes remain unchanged except the manifest version field; the
+symbol-only URL issue is intentionally not fixed. Review optional symbol/instance
+configuration separately with pinned source/native evidence. Adopt only through
+the consumer's own reviewed PR and rollback policy.
 
 GNATDOC-006 demonstrates the 25 Core summaries using an explicit trusted
 qualification record, separate from native declarations and dependency anchors.

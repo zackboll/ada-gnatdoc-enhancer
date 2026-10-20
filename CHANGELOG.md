@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0 — release candidate (GNATDOC-012; not yet published)
+
+- Consolidate merged GNATDOC-001–011: fail-closed source/native qualification,
+  navigation, highlighting, conservative local/external type links, 25 optional
+  generic summaries, authored guides/portals, subtype/current-package links,
+  page metadata and native-symbol bookmarks.
+- Include R1's separately authorized 242 incoming instance references and R2's
+  incoming-router canonical query reconstruction.
+- Preserve default and symbol-only routers, including the documented outstanding
+  symbol-only canonicalization issue; no compatibility rebaseline.
+- Synchronize module, distribution and CLI versions; adopt SPDX Apache-2.0
+  metadata with LICENSE; preserve Python >=3.11, optional guide pins and the
+  dependency-free core.
+- Independently qualify wheel and extracted-sdist rebuilt wheel; keep complete
+  test inputs without bundling large historical evidence.
+- Document consumer boundaries, upgrades, release stop conditions and the later
+  GNATDOC-013 procedure. No tagging, publication or consumer adoption.
+
+## Historical pre-release entries
+
 ## Unreleased — GNATDOC-009B
 
 - Link exact two-identifier current-package public type/subtype marks with

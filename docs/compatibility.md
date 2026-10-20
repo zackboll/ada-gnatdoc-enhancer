@@ -1,5 +1,16 @@
 # Compatibility and evidence levels
 
+## Current 0.1.0 release boundary
+
+The table below is historical, not the current feature inventory. The merged
+implementation includes summaries, authored content, external/current-package
+links, source-order/history navigation, metadata, symbols and incoming-instance
+routing. See the current [consumer matrix](release-compatibility.md) and
+[release qualification](release-0.1.0-qualification.md). GNATdoc 26.0.0 only;
+Python 3.11/3.12/3.13. Consumer adoption is separately qualified.
+
+## Historical bootstrap assessment
+
 | Feature | Bootstrap qualification |
 | --- | --- |
 | Installable Python CLI, theme, local CSS/JS | Implemented; offline synthetic fixtures |

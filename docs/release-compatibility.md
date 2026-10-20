@@ -1,0 +1,24 @@
+# v0.1.0 consumer compatibility and adoption boundary
+
+Package release is not production-migration certification. Historical campaigns
+remain immutable in `docs/evidence/gnatdoc002` through `gnatdoc011r2`; their
+results apply to their exact pins, not arbitrary current consumer heads.
+GNATDOC-012 changes no consumer repository or consumer-owned generator.
+
+| Consumer | Previously completed qualification | Release assessment / first-adoption prerequisites |
+| --- | --- | --- |
+| OpenCV Core Ada | Native structural profiles, authored guides, 25 Vector/Matrix summaries; GNATDOC-011R1/R2 qualify current `26bf5e2e8151cb0545b928b72d3d87677543c1ae` and 0.5.0 `f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f`: 195 packages, 215 native symbols, 242 incoming references, 102 internal summary links; 1,282/1,268 native sections and 2,745/2,701 candidate type links respectively | Recheck retained acquisition identities and both complete publications, independent source/native audits, incoming occurrence oracle and browser routing. Preserve native symbols separately from explanatory anchors. Consumer must separately approve generator replacement, three legitimate shared `OpenCV.Size` links, guide/compiler/warning/coverage/deployment gates and rollback. |
+| OpenCV Imgproc Ada | Pinned API structural qualification, source-order overload navigation/history, local and pinned external Core links, authored guides and metadata campaigns | Preserve overload ordering, exact native anchors, dependency pins, zero-warning/coverage ratchets and compiled examples. Default publication parity does not certify a new consumer head or deployment. |
+| OpenCV Geometry Ada | Pinned multi-package structural and browser qualification, native declaration/type links, external Core dependencies, authored guides, subtype-base/metadata reconciliation | Keep multi-package/history behavior, external native declaration ownership and current `Contour` base link; independently qualify dependency and deployment URLs. |
+| OpenCV Features Ada | Historical metadata/default-output and browser evidence only; not an established shared-package production migration | Independently pin/build source and GNATdoc 26.0.0 native output, inventory packages/declarations/overloads, review config/dependency maps and guides, establish warning/coverage/source-integrity gates, run full browser and deployment qualification before first adoption. |
+| AMS GRA MEL Bridge | 29 packages, 1,238 source / 1,237 native sections; narrowly qualified Health metadata renaming exception, direct renamings/Convention omissions, 1,418 local links at the original profile pin, six HTML guides/portal; later metadata/current-package link campaigns | Preserve exact source-integrity policy and known renderer exceptions; no broad omission waiver. Revalidate guides, titles, native destinations, warning/member-coverage gates and publication policy in a separate consumer PR. |
+
+The release campaign report distinguishes newly executed tests from historical
+evidence reuse, with identity verification before reuse. Retained native output
+is not a fresh Ada build or GNATdoc acquisition. Full consumer/compiler/deployment
+campaigns are not replaced by reduced fixtures or the four synthetic profiles.
+
+The symbol-only router's unknown-query canonicalization issue remains documented
+and unchanged. GNATDOC-011R2 fixes the separately opted-in incoming-instance
+router, not the symbol-only byte contract. No consumer warning, coverage,
+source-integrity or publication baseline may be silently changed for adoption.

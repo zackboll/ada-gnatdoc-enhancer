@@ -27,7 +27,7 @@ document for the 25-instance boundary and explanatory history URL contract.
 
 `guides.mode = "authored-markdown"` and `"authored-html"` require `manifest`
 and its reviewed `sha256`. They do not change `mode = "none"` or the original
-bootstrap guide modes. The schema-2 contract binds explicit sources, canonical
+original guide modes. The schema-2 contract binds explicit sources, canonical
 output paths, guide identities/order, stylesheet bytes, verified native input
 hashes, example ownership/build projects, and approved portal inputs.
 Unknown/duplicate keys and unlisted publication inputs are rejected.
@@ -133,7 +133,7 @@ allowlist policy, but do not acquire manifest-level proof automatically.
 See `/home/zboll/git/ada-gnatdoc-enhancer/docs/external-core-type-links.md` for
 acquisition, replay commands, evidence, counts and publication limitations.
 
-The only supported `renderer_exceptions` entry in the bootstrap is the known
+The only supported `renderer_exceptions` entry is the known
 MEL `AMS.MEL.IR.Health_Status.Metadata.Status` package renaming. It remains a
 **gap**, not documentation credit; the consumer's full coverage checker still
 owns its evidence and approval.

@@ -1,215 +1,127 @@
 # Ada GNATdoc Enhancer
 
-GNATDOC-009B adds the bounded, source-verified current-package form
-`Image.Attitude_Rate` inside `AMS.MEL.IR.Image`. It requires a flat public
-source scope with no possible short-prefix shadow and an existing native type
-destination; no imported short-name or alias inference. See
-`docs/current-package-type-links.md`. MEL adoption remains a separate task.
+**Offline, source-verified enhancement of GNATdoc 26.0.0 HTML sites.**
 
-GNATDOC-002 pinned real-site qualification, authentic regression provenance,
-observed compatibility failures and reproduction commands are documented in
-`/home/zboll/git/ada-gnatdoc-enhancer/docs/real-site-qualification.md`.
-No consumer is currently certified fully adoption-ready.
+Version **0.1.0** prepares the first stable toolkit release, incorporating
+GNATDOC-001–011 and GNATDOC-011R1/R2. This does not imply artifacts have already
+been published. Python **3.11, 3.12 and 3.13** are qualified on Linux. The core
+has **no runtime dependencies** and needs neither Ada nor GNATdoc at installation.
 
-GNATDOC-006 adds **opt-in source-verified summaries for all 25 pinned Core
-Vector/Matrix instances**, with 102 explanatory links counted separately from
-the preserved 2,459 native local type links. No instance-member declarations or
-anchors are fabricated. See
-`/home/zboll/git/ada-gnatdoc-enhancer/docs/generic-instance-summaries.md`
-for grammar, trusted input configuration, four-site results and proof boundaries.
+## Install a standalone distribution
 
-GNATDOC-004 now passes structural qualification for **all four pinned native API
-sites**, including MEL's source-verified renaming and two record Convention
-omissions. See
-`/home/zboll/git/ada-gnatdoc-enhancer/docs/mel-profile-compatibility.md`
-for exact proof boundaries, unchanged consumer gates and independent evidence.
-
-**Offline, source-backed GNATdoc HTML enhancement for Ada documentation websites.**
-
-A development-stage Python CLI that adds an accessible light/dark theme, Ada
-syntax highlighting, conservatively linked type references, searchable package
-navigation, declaration/category browsing, and optional guide pages to a
-**previously generated GNATdoc 26.0.0 site**. It also validates exact site file
-inventories, source/public-package identities, local destinations, publication
-safety and determinism. The original GNATdoc CSS is preserved.
-
-This is a **0.1.0.dev0 bootstrap**, not a published Python/Alire package or a
-claim of four complete production-site migrations. The checked-in four
-conformance profiles contain **explicitly synthetic GNATdoc HTML fixtures**.
-They exercise distinct source structures; production integration is a later task.
-
-## Quick start
-
-Requires Python 3.11 or newer; CI qualifies Python 3.11, 3.12 and 3.13 on Linux.
-From a local checkout (no published release is required):
+Obtain reviewed artifacts and their SHA-256 inventory from the eventual GitHub
+v0.1.0 release (GNATDOC-013); verify hashes before installation. Until then,
+build the candidate from the exact reviewed source commit with `python -m build`.
 
 ```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install -e .
-.venv/bin/gnatdoc-enhancer --version
-.venv/bin/gnatdoc-enhancer conformance --fixtures tests/fixtures
+python3 -m venv /tmp/enhancer-env
+/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.0-py3-none-any.whl
+/tmp/enhancer-env/bin/gnatdoc-enhancer --version
+/tmp/enhancer-env/bin/gnatdoc-enhancer --help
+# Alternative: standalone sdist (requires the build backend).
+/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.0.tar.gz
 ```
 
-For a non-editable installation, use `python -m pip install .`, or install a
-locally built wheel as described under **Validation and distributions** below.
-The core package has no runtime dependencies. Optional Markdown guides require
-`python -m pip install '.[guides]'`.
+Optional Markdown guides require the `guides` extra: install the wheel as
+`'/path/to/ada_gnatdoc_enhancer-0.1.0-py3-none-any.whl[guides]'` or preinstall
+`markdown-it-py==3.0.0` and `mdurl==0.1.2`. For offline use, provision those
+wheels and the sdist build requirements in advance, then use `--no-index` and
+`--find-links`. The renderer is optional; it is not bundled into the wheel.
 
-Given a consumer repository that has already generated `_site/api/index.html`,
-`_site/api/gnatdoc.css` and GNATdoc's SHA-256-named package pages:
+## Configure and run
+
+First build the consumer with its approved Ada toolchain and generate native
+HTML with **GNATdoc 26.0.0**. Configure source directories, site layout,
+navigation and security in reviewed TOML; see the four example profiles and
+[configuration contract](docs/configuration.md).
 
 ```sh
-gnatdoc-enhancer inventory --source-root . --config docs/gnatdoc-enhance.toml --site _site
-gnatdoc-enhancer enhance --source-root . --config docs/gnatdoc-enhance.toml --site _site
-gnatdoc-enhancer verify --source-root . --config docs/gnatdoc-enhance.toml --site _site
+gnatdoc-enhancer inventory --source-root /path/to/consumer --config docs/gnatdoc-enhance.toml --site /path/to/output
+gnatdoc-enhancer enhance --dry-run --source-root /path/to/consumer --config docs/gnatdoc-enhance.toml --site /path/to/output
+gnatdoc-enhancer enhance --source-root /path/to/consumer --config docs/gnatdoc-enhance.toml --site /path/to/output
+gnatdoc-enhancer verify --source-root /path/to/consumer --config docs/gnatdoc-enhance.toml --site /path/to/output
 ```
 
-`enhance --dry-run` builds and verifies a temporary site without changing the
-consumer. Enhancement of an already qualified site is byte-idempotent.
+`--config` is relative to `--source-root`. Absolute site paths are independent;
+relative site paths are rooted at the supplied project path. Symlink roots,
+aliases and descendants are rejected. Dry-run stages and verifies output without
+changing the consumer. Qualified enhancement is deterministic and byte-idempotent.
 
-`--source-root` names the project containing Ada sources and configuration;
-`--config` is relative to that root. `--site` defaults to `_site` under the
-source root (an absolute path is also accepted). It is an **existing output
-directory**, modified in place, not a separate input/output pair: keep a copy
-of pristine GNATdoc output if needed. Native pages must be directly under
-`api/`, even when the site itself is deeply nested. Arbitrarily nested package
-page layouts are not supported. Symlinks in the site path or output tree are
-rejected. Unapproved files fail qualification rather than being deleted.
-For relative `--site` paths this includes symlinks in the supplied
-`--source-root`; canonicalizing the project for source/configuration identity
-does not bypass output-path validation. An explicitly supplied absolute site
-is checked on its own path, independently of how the sources were located.
+## Capabilities
 
-Try the bundled synthetic input without changing the checked-in fixture:
+* Light/dark presentation, preserved native CSS, Ada highlighting, searchable
+  packages, source-order operation/overload navigation, declaration/category
+  browsing, direct links and browser history.
+* Conservative source/native-qualified local, subtype-base, current-package
+  and explicitly pinned external Core type links; no guessed destinations.
+* Optional hash-bound authored Markdown/HTML guides and portals, with verified
+  titles, language and charset metadata.
+* Optional source-qualified summaries of the 25 supported Core Vector/Matrix
+  instances. Explanatory summaries never become fabricated native members.
+* Optional stable native type/subtype bookmarks and separately opted-in incoming
+  generic-instance routing: 215 native symbols and 242 references to 25 summaries
+  in each independently pinned Core qualification.
+* Exact inventories, source signatures, native destination preservation, local
+  link checks, publication reconstruction, mutation rejection and conformance.
 
-```sh
-cp -R tests/fixtures/core /tmp/gnatdoc-core-example
-gnatdoc-enhancer enhance --source-root /tmp/gnatdoc-core-example --config project.toml
-gnatdoc-enhancer verify --source-root /tmp/gnatdoc-core-example --config project.toml
-```
+See [symbol and instance routing](docs/stable-public-symbol-bookmarks.md),
+[generic summaries](docs/generic-instance-summaries.md),
+[authored content](docs/authored-guides-portal-compatibility.md),
+[type links](docs/current-package-type-links.md), and
+[metadata](docs/html-page-metadata.md) for opt-ins and bounded grammars.
 
-The tool **does not compile Ada, execute GNATdoc, fetch dependencies, publish to
-GitHub Pages or modify a Git repository**. Keep each consumer's compiler,
-GNATdoc version, warnings, native source-integrity and coverage gates in its
-own CI workflow. The publication checker is a supplement, not a substitute.
+## Security, limitations and release boundaries
 
-## Shared features
+Unknown GNATdoc shapes, ambiguous source/native identities, unapproved paths,
+unsafe HTML/URLs, unexpected files and modified publication bytes fail closed.
+Core enhancement makes no network requests. Source/configuration and pinned
+qualification inputs need independent review; presentation manifests are not
+signed adversarial attestations. The parser is not a complete Ada semantic front
+end. Unsupported scopes, instantiations and renderer shapes are rejected rather
+than acquiring guessed authority. Other GNATdoc versions are unsupported.
 
-- Responsive local CSS with light/dark palettes, accessible focus and scrolling code.
-- Source-backed type positions and conservative visibility/shadowing resolution.
-  Ambiguous and unsupported references remain unlinked.
-- Syntax highlighting that preserves escaped declaration text and type anchors.
-- Ordinary package sidebar, optional operation categories, local searchable
-  navigation and query-parameter package bookmarks. Native links still work
-  with JavaScript disabled; no code scripts run in declaration pages.
-- Source-verified document titles, language and UTF-8 charset on every
-  generated page; author pages must carry their own (see
-  [document metadata](docs/html-page-metadata.md)).
-- Strict authored HTML portal with verified package links; optional Markdown
-  guides via pinned `markdown-it-py==3.0.0` / `mdurl==0.1.2`.
-- Original native HTML captured and protected by deterministic, independently
-  reconstructed presentation expectations; no guesses about hashed page names.
-- Source inventory, stable-warning comparison, and declaration-level coverage
-  reporting (not a full replacement for the consumer's member-level ratchet).
+**Known symbol-only URL canonicalization debt:** the unchanged symbol-only
+router can retain rejected unknown query keys when writing a canonical URL,
+so a later valid selection may fail again on reload. R2 corrects the separate
+incoming-instance router only. This release does not repair or rebaseline the
+symbol-only/default JavaScript contract. See the detailed
+[R2 boundary](docs/stable-public-symbol-bookmarks.md#canonical-url-sanitization-correction-gnatdoc-011r2).
 
-## Project configuration
+The toolkit does **not** replace Ada compilation, GNATdoc generation,
+source-integrity verification, comprehensive member/prose coverage checks,
+warning ratchets, compiled guide examples or deployment qualification.
+`coverage` is declaration-level reporting, not a substitute for consumer gates.
+MEL's approved renderer exceptions remain narrowly source-verified, not waived.
+Linux/Chromium evidence is not cross-browser, cross-platform or complete
+accessibility certification. Shared-package releasability is **not** a blanket
+production-migration certificate for any consumer.
 
-See [configuration](docs/configuration.md) and four commented starting profiles
-in `examples/profiles/`. Profiles are **examples** and must be reconciled with
-actual consumer sources/anchors before use. A profile cannot authorize
-unrecognized GNATdoc HTML, missing declarations or invalid links.
+## Qualification and upgrading
 
-For a working end-to-end example (including raw input HTML), see
-`tests/fixtures/core`, `tests/fixtures/imgproc`, `tests/fixtures/geometry`
-and `tests/fixtures/mel`.
-
-## Source projects and attribution
-
-The package consolidates design and selected implementation patterns from:
-
-- [OpenCV Core Ada](https://github.com/zackboll/opencv_core_ada)
-- [OpenCV Imgproc Ada](https://github.com/zackboll/opencv_imgproc_ada)
-- [OpenCV Geometry Ada](https://github.com/zackboll/opencv_geometry_ada)
-- [AMS GRA MEL Bridge](https://github.com/zackboll/ams-gra-mel-bridge)
-
-All are Apache-2.0. See the [pinned source matrix](docs/source-implementation-matrix.md)
-for exact reviewed commits, script roles, reusable parts, and known divergences.
-Original Ada interfaces, native libraries and generated sites are **not vendored**.
-
-## Safety and limitations
-
-For GNATdoc 26.0.0 expression-function and abbreviated-enumeration support,
-see [source-verified declaration profiles](docs/declaration-profile-compatibility.md).
-Core/Imgproc/Geometry pass pinned full native API structural qualification;
-MEL advances beyond its enum blocker but retains other inventory mismatches.
-These results are not full production-adoption certification.
-
-This tool expects the verified GNATdoc 26.0.0 native HTML shape. Unknown output
-fails; it does not attempt permissive best-effort conversion. It is not a full
-Ada semantic front end. In particular, complex nested scopes, arbitrary generic
-instantiations and imported dependency type identities need explicit adapters
-and conformance qualification. `coverage` currently reports declaration-level
-presence, **not** the comprehensive member/prose coverage gates in MEL or Imgproc.
-
-Published presentation manifests are not adversarial signed attestations; branch
-CI and project-owned configuration still require independent code review.
-The exact-source baselines remain in their owning repositories.
-
-## Validation and distributions
-
-After installing the package, run the same core checks as GitHub Actions:
+The sdist includes the complete Python tests, four synthetic profiles, authentic
+reduced fixtures, browser runners and the small provenance records required by
+tests. The wheel contains implementation modules, CSS/JS, license and metadata,
+not consumer sites or tests. Large historical evidence remains unchanged in Git,
+not bundled into release archives.
 
 ```sh
+# From an extracted sdist, using a non-editably installed distribution:
 python -m unittest discover -s tests -v
 gnatdoc-enhancer conformance --fixtures tests/fixtures
-python -m compileall -q src
-gnatdoc-enhancer --help
-python -m pip install build
-python -m build
+python scripts/test_installed.py --fixtures tests/fixtures
 ```
 
-`python -m build` creates a wheel and source distribution in `dist/`. Verify
-wheel execution in a fresh environment, without an editable install:
+Synthetic conformance never substitutes for independently pinned real sites.
+Historical campaigns remain under `docs/evidence/`; current release results and
+source/artifact identities are described in
+[release qualification](docs/release-0.1.0-qualification.md).
 
-```sh
-python -m venv /tmp/gnatdoc-wheel-env
-/tmp/gnatdoc-wheel-env/bin/python -m pip install --no-deps dist/*.whl
-env -u PYTHONPATH /tmp/gnatdoc-wheel-env/bin/python scripts/test_installed.py --fixtures tests/fixtures
-```
+For upgrades, regenerate from pristine native output: the version-bound
+presentation manifest changes from `0.1.0.dev0` to `0.1.0`, so do not carry a
+development manifest into release verification. Recheck source, native, warning,
+coverage, guide and browser baselines in a separate consumer PR. See
+[migration](docs/migration.md), the [consumer matrix](docs/release-compatibility.md),
+and the [auditable release procedure](docs/releasing.md).
 
-The smoke check runs the installed CLI from a temporary working directory,
-qualifies all four profiles, checks bundled CSS/JavaScript, enhances and verifies
-the MEL synthetic site twice, and compares output hashes. Fixtures are test
-inputs, not installed wheel resources: always provide `--fixtures` when running
-installed conformance outside a source checkout. The source distribution includes
-the fixtures and test helpers for repeatable source qualification.
-
-Optional Chromium checks (not a cross-browser or accessibility certification):
-
-```sh
-python -m pip install playwright
-python -m playwright install chromium
-python scripts/test_browser.py
-```
-
-Automated browser coverage currently exercises the Core synthetic profile only.
-Other browsers and complete real-site parity remain unqualified.
-
-See [compatibility](docs/compatibility.md), [architecture](docs/architecture.md),
-[contributing](CONTRIBUTING.md), [migration](docs/migration.md), and
-[qualification](docs/qualification.md).
-
-## Roadmap
-
-- GDE-001: Source-aware shared toolkit and four offline profiles (**this bootstrap**).
-- GDE-002: Full pinned-site conformance and production-independent semantic linking.
-- GDE-003: First consumer migrations with exact snapshot parity.
-- GDE-004: Optional expanded GNATdoc versions and generic-instance adapters.
-
-No tags, releases, package publication, consumer repository changes or
-production-site assertions are included in this bootstrap.
-
-## Import into GitHub
-
-See [repository import instructions](docs/repository-import.md) for the original
-archive procedure. Never reinitialize or replace history in an existing repository.
+Historical bootstrap provenance remains in [qualification](docs/qualification.md)
+and [repository import](docs/repository-import.md). Do not reinitialize history.

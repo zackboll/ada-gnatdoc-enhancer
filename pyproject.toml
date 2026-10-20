@@ -1,26 +1,31 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "ada-gnatdoc-enhancer"
-version = "0.1.0.dev0"
+version = "0.1.0"
 description = "Offline source-verified GNATdoc 26 HTML enhancement and validation"
 readme = "README.md"
 requires-python = ">=3.11"
-license = {text = "Apache-2.0"}
+license = "Apache-2.0"
+license-files = ["LICENSE"]
 authors = [{name = "Ada GNATdoc Enhancer contributors"}]
 keywords = ["ada", "gnatdoc", "documentation", "html", "static-site"]
 classifiers = [
-  "Development Status :: 3 - Alpha",
+  "Development Status :: 5 - Production/Stable",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
-  "License :: OSI Approved :: Apache Software License",
   "Operating System :: OS Independent",
 ]
 dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/zackboll/ada-gnatdoc-enhancer"
+Repository = "https://github.com/zackboll/ada-gnatdoc-enhancer"
+Issues = "https://github.com/zackboll/ada-gnatdoc-enhancer/issues"
 
 [project.optional-dependencies]
 guides = ["markdown-it-py==3.0.0", "mdurl==0.1.2"]
