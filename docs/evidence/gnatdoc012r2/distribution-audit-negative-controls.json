@@ -1,0 +1,70 @@
+{
+  "changed-router": {
+    "mutation_observed": true,
+    "rejected": "wheel modules/assets differ from source"
+  },
+  "missing-asset": {
+    "mutation_observed": true,
+    "rejected": "wheel modules/assets differ from source"
+  },
+  "runtime-dependency": {
+    "mutation_observed": true,
+    "rejected": "unexpected dependency: ['unexpected-runtime', 'markdown-it-py==3.0.0; extra == \"guides\"', 'mdurl==0.1.2; extra == \"guides\"']"
+  },
+  "absolute-metadata": {
+    "mutation_observed": true,
+    "rejected": "absolute workstation path in metadata: ada_gnatdoc_enhancer-0.1.0.dist-info/METADATA"
+  },
+  "generated-file": {
+    "mutation_observed": true,
+    "rejected": "wheel modules/assets differ from source"
+  },
+  "absolute-wheel-path": {
+    "mutation_observed": true,
+    "rejected": "unsafe wheel path"
+  },
+  "traversal-wheel-path": {
+    "mutation_observed": true,
+    "rejected": "unsafe wheel path"
+  },
+  "wheel-symlink": {
+    "mutation_observed": true,
+    "rejected": "nonregular wheel member"
+  },
+  "wheel-fifo": {
+    "mutation_observed": true,
+    "rejected": "nonregular wheel member"
+  },
+  "wheel-device": {
+    "mutation_observed": true,
+    "rejected": "nonregular wheel member"
+  },
+  "duplicate-wheel": {
+    "mutation_observed": true,
+    "rejected": "duplicate wheel members"
+  },
+  "sdist-symlink": {
+    "mutation_observed": true,
+    "rejected": "nonregular sdist member"
+  },
+  "sdist-hardlink": {
+    "mutation_observed": true,
+    "rejected": "nonregular sdist member"
+  },
+  "sdist-fifo": {
+    "mutation_observed": true,
+    "rejected": "nonregular sdist member"
+  },
+  "sdist-traversal": {
+    "mutation_observed": true,
+    "rejected": "unsafe sdist path"
+  },
+  "sdist-absolute": {
+    "mutation_observed": true,
+    "rejected": "unsafe sdist path"
+  },
+  "sdist-duplicate": {
+    "mutation_observed": true,
+    "rejected": "duplicate sdist members"
+  }
+}

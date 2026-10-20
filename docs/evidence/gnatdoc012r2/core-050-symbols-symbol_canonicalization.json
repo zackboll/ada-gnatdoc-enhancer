@@ -1,0 +1,3127 @@
+{
+  "revision": "f8aef00c5366b4275ccd3d934f9c73ea5b83cd4f",
+  "browser": "156.0.8078.4",
+  "failure": null,
+  "traces": [
+    {
+      "kind": "dirty-fallback-before-clean-assertion",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Rect",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Rect",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core.Sparse",
+      "frame": "http://127.0.0.1:38189/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Rect",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core.Sparse",
+      "frame": "http://127.0.0.1:38189/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core&unknown=1",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core&package=OpenCV.Core.Sparse",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat&symbol=OpenCV.Rect",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2&declaration=f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat&declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core.Sparse&symbol=OpenCV.Core.Mat",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?%70ackage=OpenCV.Core",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=%4fpenCV.Core.Mat",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat+",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat\\",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=Unknown.Owner.Type",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Internal.Owner",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Session.Raw_Handle",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=../Type",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat&unknown=%26symbol%3DOpenCV.Rect",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=https://example.invalid/",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core#unapproved",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core#instance-members-summary",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core#%69njected",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core#https://example.invalid/",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Rect",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "native-declaration",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Angle_Unit",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#de966a6db4e74e15e102452acbe5bc993997dbac4c699aa33af780a80d47ad8d"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "dirty-fallback-before-clean-assertion",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Rect",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Rect",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core.Sparse",
+      "frame": "http://127.0.0.1:38189/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Rect",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core.Sparse",
+      "frame": "http://127.0.0.1:38189/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core&unknown=1",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core&package=OpenCV.Core.Sparse",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat&symbol=OpenCV.Rect",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2&declaration=f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat&declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core.Sparse&symbol=OpenCV.Core.Mat",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?%70ackage=OpenCV.Core",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=%4fpenCV.Core.Mat",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat+",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat\\",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=Unknown.Owner.Type",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Internal.Owner",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Session.Raw_Handle",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=../Type",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat&unknown=%26symbol%3DOpenCV.Rect",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=https://example.invalid/",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core#unapproved",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core#instance-members-summary",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core#%69njected",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core#https://example.invalid/",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Rect",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "native-declaration",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Angle_Unit",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#de966a6db4e74e15e102452acbe5bc993997dbac4c699aa33af780a80d47ad8d"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "dirty-fallback-before-clean-assertion",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Rect",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Rect",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core.Sparse",
+      "frame": "http://127.0.0.1:38189/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Rect",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core.Sparse",
+      "frame": "http://127.0.0.1:38189/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core&unknown=1",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core&package=OpenCV.Core.Sparse",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat&symbol=OpenCV.Rect",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2&declaration=f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat&declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core.Sparse&symbol=OpenCV.Core.Mat",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?%70ackage=OpenCV.Core",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=%4fpenCV.Core.Mat",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat+",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat\\",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=Unknown.Owner.Type",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Internal.Owner",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Session.Raw_Handle",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=../Type",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat&unknown=%26symbol%3DOpenCV.Rect",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=https://example.invalid/",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core#unapproved",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core#instance-members-summary",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core#%69njected",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core#https://example.invalid/",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Rect",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "native-declaration",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Angle_Unit",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#de966a6db4e74e15e102452acbe5bc993997dbac4c699aa33af780a80d47ad8d"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "dirty-fallback-before-clean-assertion",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Rect",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Rect",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core.Sparse",
+      "frame": "http://127.0.0.1:38189/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Rect",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core.Sparse",
+      "frame": "http://127.0.0.1:38189/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core&unknown=1",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core&package=OpenCV.Core.Sparse",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat&symbol=OpenCV.Rect",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2&declaration=f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat&declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core.Sparse&symbol=OpenCV.Core.Mat",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?%70ackage=OpenCV.Core",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=%4fpenCV.Core.Mat",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat+",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat\\",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=Unknown.Owner.Type",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Internal.Owner",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Session.Raw_Handle",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=../Type",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?symbol=OpenCV.Core.Mat&unknown=%26symbol%3DOpenCV.Rect",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=https://example.invalid/",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core#unapproved",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core#instance-members-summary",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core#%69njected",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "malformed-input ?package=OpenCV.Core#https://example.invalid/",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Rect",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "native-declaration",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Angle_Unit",
+      "frame": "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#de966a6db4e74e15e102452acbe5bc993997dbac4c699aa33af780a80d47ad8d"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "package",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "symbol",
+      "outer": "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "javascript-disabled-native-type-reference",
+      "outer": "http://127.0.0.1:38189/api/index.html",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "javascript-disabled-native-type-reference",
+      "outer": "http://127.0.0.1:38189/api/index.html",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "javascript-disabled-native-type-reference",
+      "outer": "http://127.0.0.1:38189/api/index.html",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    },
+    {
+      "kind": "javascript-disabled-native-type-reference",
+      "outer": "http://127.0.0.1:38189/api/index.html",
+      "frame": "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2"
+    }
+  ],
+  "requests": [
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&unknown=1",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&unknown=1",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&package=OpenCV.Core.Sparse",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat&symbol=OpenCV.Rect",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2&declaration=f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat&declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core.Sparse&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?%70ackage=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=%4fpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat+",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat\\",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=Unknown.Owner.Type",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Internal.Owner",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Session.Raw_Handle",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=../Type",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat&unknown=%26symbol%3DOpenCV.Rect",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=https://example.invalid/",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Rect",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=opencv.core.mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV&declaration=de966a6db4e74e15e102452acbe5bc993997dbac4c699aa33af780a80d47ad8d",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Angle_Unit",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&declaration=0000000000000000000000000000000000000000000000000000000000000000",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&unknown=1",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&unknown=1",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&package=OpenCV.Core.Sparse",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat&symbol=OpenCV.Rect",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2&declaration=f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat&declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core.Sparse&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?%70ackage=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=%4fpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat+",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat\\",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=Unknown.Owner.Type",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Internal.Owner",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Session.Raw_Handle",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=../Type",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat&unknown=%26symbol%3DOpenCV.Rect",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=https://example.invalid/",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Rect",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=opencv.core.mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV&declaration=de966a6db4e74e15e102452acbe5bc993997dbac4c699aa33af780a80d47ad8d",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Angle_Unit",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&declaration=0000000000000000000000000000000000000000000000000000000000000000",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&unknown=1",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&unknown=1",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&package=OpenCV.Core.Sparse",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat&symbol=OpenCV.Rect",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2&declaration=f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat&declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core.Sparse&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?%70ackage=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=%4fpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat+",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat\\",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=Unknown.Owner.Type",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Internal.Owner",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Session.Raw_Handle",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=../Type",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat&unknown=%26symbol%3DOpenCV.Rect",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=https://example.invalid/",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Rect",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=opencv.core.mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV&declaration=de966a6db4e74e15e102452acbe5bc993997dbac4c699aa33af780a80d47ad8d",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Angle_Unit",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&declaration=0000000000000000000000000000000000000000000000000000000000000000",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&unknown=1",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&unknown=1",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&package=OpenCV.Core.Sparse",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat&symbol=OpenCV.Rect",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2&declaration=f30f290ea232c7e470884adf6d6264130071cb9222114c245b16529dbb204786",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat&declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core.Sparse&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?%70ackage=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=%4fpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat+",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat\\",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=Unknown.Owner.Type",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Internal.Owner",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Session.Raw_Handle",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=../Type",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Core.Mat&unknown=%26symbol%3DOpenCV.Rect",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=https://example.invalid/",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=OpenCV.Rect",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/index.html?symbol=opencv.core.mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&declaration=292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV&declaration=de966a6db4e74e15e102452acbe5bc993997dbac4c699aa33af780a80d47ad8d",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV&symbol=OpenCV.Angle_Unit",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&declaration=0000000000000000000000000000000000000000000000000000000000000000",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat",
+    "http://127.0.0.1:38189/api/gnatdoc.css",
+    "http://127.0.0.1:38189/api/gnatdoc-theme.css",
+    "http://127.0.0.1:38189/api/gnatdoc-navigation.js",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html",
+    "http://127.0.0.1:38189/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html"
+  ],
+  "errors": []
+}

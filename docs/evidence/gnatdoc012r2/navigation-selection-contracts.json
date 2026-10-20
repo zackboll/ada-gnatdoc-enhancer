@@ -1,0 +1,7 @@
+{
+  "navigation.py": "R3 byte-identical",
+  "pipeline.py": "R3 byte-identical",
+  "__init__.py": "R3 identical except release version",
+  "symbol_writer_only_delta": true,
+  "targetFromUrl_and_remaining_router_unchanged": true
+}

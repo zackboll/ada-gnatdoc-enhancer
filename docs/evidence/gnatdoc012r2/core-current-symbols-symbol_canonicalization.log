@@ -1,0 +1,8 @@
+PASS 1440px light: canonical queries, source clicks, reload/fresh tab/history, malformed input, delayed loads, keyboard
+PASS 1440px dark: canonical queries, source clicks, reload/fresh tab/history, malformed input, delayed loads, keyboard
+PASS 390px light: canonical queries, source clicks, reload/fresh tab/history, malformed input, delayed loads, keyboard
+PASS 390px dark: canonical queries, source clicks, reload/fresh tab/history, malformed input, delayed loads, keyboard
+PASS 1440px light: JavaScript-disabled native navigation
+PASS 1440px dark: JavaScript-disabled native navigation
+PASS 390px light: JavaScript-disabled native navigation
+PASS 390px dark: JavaScript-disabled native navigation

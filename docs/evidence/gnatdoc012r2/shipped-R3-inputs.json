@@ -1,0 +1,50 @@
+{
+  "3.11": {
+    "R3_and_archive_test_inputs_shipped": [
+      "tests/symbol_canonicalization.cjs",
+      "tests/test_symbol_canonicalization.py",
+      "tests/test_distribution_archives.py"
+    ],
+    "all_cjs_assets": [
+      "ada_gnatdoc_enhancer-0.1.0/tests/core_navigation_equivalent.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/core_symbols_equivalent.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/instance_canonicalization.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/instance_references.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/navigation_history.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/symbol_bookmarks.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/symbol_canonicalization.cjs"
+    ]
+  },
+  "3.12": {
+    "R3_and_archive_test_inputs_shipped": [
+      "tests/symbol_canonicalization.cjs",
+      "tests/test_symbol_canonicalization.py",
+      "tests/test_distribution_archives.py"
+    ],
+    "all_cjs_assets": [
+      "ada_gnatdoc_enhancer-0.1.0/tests/core_navigation_equivalent.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/core_symbols_equivalent.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/instance_canonicalization.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/instance_references.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/navigation_history.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/symbol_bookmarks.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/symbol_canonicalization.cjs"
+    ]
+  },
+  "3.13": {
+    "R3_and_archive_test_inputs_shipped": [
+      "tests/symbol_canonicalization.cjs",
+      "tests/test_symbol_canonicalization.py",
+      "tests/test_distribution_archives.py"
+    ],
+    "all_cjs_assets": [
+      "ada_gnatdoc_enhancer-0.1.0/tests/core_navigation_equivalent.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/core_symbols_equivalent.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/instance_canonicalization.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/instance_references.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/navigation_history.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/symbol_bookmarks.cjs",
+      "ada_gnatdoc_enhancer-0.1.0/tests/symbol_canonicalization.cjs"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+Obtaining file:///home/zboll/qualification/gnatdoc012r2/final/source
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: ada-gnatdoc-enhancer
+  Building editable for ada-gnatdoc-enhancer (pyproject.toml): started
+  Building editable for ada-gnatdoc-enhancer (pyproject.toml): finished with status 'done'
+  Created wheel for ada-gnatdoc-enhancer: filename=ada_gnatdoc_enhancer-0.1.0-0.editable-py3-none-any.whl size=9106 sha256=dc86a0b1efd86923df25439017fd22c192d0a278eb5e494fc6f8f023288b9a88
+  Stored in directory: /tmp/pip-ephem-wheel-cache-bmpqv1fn/wheels/cb/4d/d2/55337841b7d63357e3e841568208e1b39cb1450237073a0be4
+Successfully built ada-gnatdoc-enhancer
+Installing collected packages: ada-gnatdoc-enhancer
+Successfully installed ada-gnatdoc-enhancer-0.1.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: /home/zboll/qualification/gnatdoc012r2/final/python-3.12/source-env/bin/python -m pip install --upgrade pip

@@ -1,0 +1,6 @@
+PASS 1280px light: exact symbols/fragments/scroll/history/reload/fresh/search/invalid/race/foreign frame
+PASS 1280px dark: exact symbols/fragments/scroll/history/reload/fresh/search/invalid/race/foreign frame
+PASS 390px light: exact symbols/fragments/scroll/history/reload/fresh/search/invalid/race/foreign frame
+PASS 390px dark: exact symbols/fragments/scroll/history/reload/fresh/search/invalid/race/foreign frame
+PASS 1280px JavaScript disabled: native packages/tagged declaration
+PASS 390px JavaScript disabled: native packages/tagged declaration

@@ -1,0 +1,1146 @@
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - setuptools>=77
+* Getting build dependencies for wheel...
+running egg_info
+writing src/ada_gnatdoc_enhancer.egg-info/PKG-INFO
+writing dependency_links to src/ada_gnatdoc_enhancer.egg-info/dependency_links.txt
+writing entry points to src/ada_gnatdoc_enhancer.egg-info/entry_points.txt
+writing requirements to src/ada_gnatdoc_enhancer.egg-info/requires.txt
+writing top-level names to src/ada_gnatdoc_enhancer.egg-info/top_level.txt
+reading manifest file 'src/ada_gnatdoc_enhancer.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no files found matching '*.txt' under directory 'tests'
+warning: no previously-included files matching '__pycache__' found anywhere in distribution
+warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+adding license file 'LICENSE'
+writing manifest file 'src/ada_gnatdoc_enhancer.egg-info/SOURCES.txt'
+* Installed build dependency versions:
+  - setuptools==84.2.0
+* Building wheel...
+running bdist_wheel
+running build
+running build_py
+creating build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/destinations.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/errors.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/native_html.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/theme.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/__init__.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/symbols.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/cli.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/conformance.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/external_types.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/guides.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/authored.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/__main__.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/pipeline.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/profiles.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/validation.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/inventory.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/navigation.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/qualification.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/metadata.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/generic_instances.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/warnings.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/browser_metadata.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/coverage.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/util.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/config.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/syntax.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/instance_references.py -> build/lib/ada_gnatdoc_enhancer
+creating build/lib/ada_gnatdoc_enhancer/adapters
+copying src/ada_gnatdoc_enhancer/adapters/__init__.py -> build/lib/ada_gnatdoc_enhancer/adapters
+copying src/ada_gnatdoc_enhancer/adapters/mel.py -> build/lib/ada_gnatdoc_enhancer/adapters
+copying src/ada_gnatdoc_enhancer/adapters/opencv.py -> build/lib/ada_gnatdoc_enhancer/adapters
+running egg_info
+writing src/ada_gnatdoc_enhancer.egg-info/PKG-INFO
+writing dependency_links to src/ada_gnatdoc_enhancer.egg-info/dependency_links.txt
+writing entry points to src/ada_gnatdoc_enhancer.egg-info/entry_points.txt
+writing requirements to src/ada_gnatdoc_enhancer.egg-info/requires.txt
+writing top-level names to src/ada_gnatdoc_enhancer.egg-info/top_level.txt
+reading manifest file 'src/ada_gnatdoc_enhancer.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no files found matching '*.txt' under directory 'tests'
+warning: no previously-included files matching '__pycache__' found anywhere in distribution
+warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+adding license file 'LICENSE'
+writing manifest file 'src/ada_gnatdoc_enhancer.egg-info/SOURCES.txt'
+creating build/lib/ada_gnatdoc_enhancer/assets
+copying src/ada_gnatdoc_enhancer/assets/gnatdoc-guides.css -> build/lib/ada_gnatdoc_enhancer/assets
+copying src/ada_gnatdoc_enhancer/assets/gnatdoc-theme.css -> build/lib/ada_gnatdoc_enhancer/assets
+copying src/ada_gnatdoc_enhancer/assets/gnatdoc-navigation.js -> build/lib/ada_gnatdoc_enhancer/assets
+copying src/ada_gnatdoc_enhancer/assets/gnatdoc-instance-navigation.js -> build/lib/ada_gnatdoc_enhancer/assets
+copying src/ada_gnatdoc_enhancer/assets/gnatdoc-symbol-navigation.js -> build/lib/ada_gnatdoc_enhancer/assets
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.linux-x86_64/wheel
+creating build/bdist.linux-x86_64/wheel/ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/destinations.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/errors.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/native_html.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/theme.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/__init__.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/symbols.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/cli.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/conformance.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/external_types.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/guides.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/authored.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/__main__.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/pipeline.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/profiles.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/validation.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+creating build/bdist.linux-x86_64/wheel/ada_gnatdoc_enhancer/adapters
+copying build/lib/ada_gnatdoc_enhancer/adapters/__init__.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer/adapters
+copying build/lib/ada_gnatdoc_enhancer/adapters/mel.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer/adapters
+copying build/lib/ada_gnatdoc_enhancer/adapters/opencv.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer/adapters
+copying build/lib/ada_gnatdoc_enhancer/inventory.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/navigation.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/qualification.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/metadata.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/generic_instances.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/warnings.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/browser_metadata.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+creating build/bdist.linux-x86_64/wheel/ada_gnatdoc_enhancer/assets
+copying build/lib/ada_gnatdoc_enhancer/assets/gnatdoc-guides.css -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer/assets
+copying build/lib/ada_gnatdoc_enhancer/assets/gnatdoc-navigation.js -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer/assets
+copying build/lib/ada_gnatdoc_enhancer/assets/gnatdoc-instance-navigation.js -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer/assets
+copying build/lib/ada_gnatdoc_enhancer/assets/gnatdoc-symbol-navigation.js -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer/assets
+copying build/lib/ada_gnatdoc_enhancer/assets/gnatdoc-theme.css -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer/assets
+copying build/lib/ada_gnatdoc_enhancer/coverage.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/util.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/config.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/syntax.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/instance_references.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+running install_egg_info
+Copying src/ada_gnatdoc_enhancer.egg-info to build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer-0.1.0-py3.13.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/ada_gnatdoc_enhancer-0.1.0.dist-info/WHEEL
+creating '/home/zboll/qualification/gnatdoc012r2/final/python-3.13/artifacts/.tmp-5dxxll2p/ada_gnatdoc_enhancer-0.1.0-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+adding 'ada_gnatdoc_enhancer/__init__.py'
+adding 'ada_gnatdoc_enhancer/__main__.py'
+adding 'ada_gnatdoc_enhancer/authored.py'
+adding 'ada_gnatdoc_enhancer/browser_metadata.py'
+adding 'ada_gnatdoc_enhancer/cli.py'
+adding 'ada_gnatdoc_enhancer/config.py'
+adding 'ada_gnatdoc_enhancer/conformance.py'
+adding 'ada_gnatdoc_enhancer/coverage.py'
+adding 'ada_gnatdoc_enhancer/destinations.py'
+adding 'ada_gnatdoc_enhancer/errors.py'
+adding 'ada_gnatdoc_enhancer/external_types.py'
+adding 'ada_gnatdoc_enhancer/generic_instances.py'
+adding 'ada_gnatdoc_enhancer/guides.py'
+adding 'ada_gnatdoc_enhancer/instance_references.py'
+adding 'ada_gnatdoc_enhancer/inventory.py'
+adding 'ada_gnatdoc_enhancer/metadata.py'
+adding 'ada_gnatdoc_enhancer/native_html.py'
+adding 'ada_gnatdoc_enhancer/navigation.py'
+adding 'ada_gnatdoc_enhancer/pipeline.py'
+adding 'ada_gnatdoc_enhancer/profiles.py'
+adding 'ada_gnatdoc_enhancer/qualification.py'
+adding 'ada_gnatdoc_enhancer/symbols.py'
+adding 'ada_gnatdoc_enhancer/syntax.py'
+adding 'ada_gnatdoc_enhancer/theme.py'
+adding 'ada_gnatdoc_enhancer/util.py'
+adding 'ada_gnatdoc_enhancer/validation.py'
+adding 'ada_gnatdoc_enhancer/warnings.py'
+adding 'ada_gnatdoc_enhancer/adapters/__init__.py'
+adding 'ada_gnatdoc_enhancer/adapters/mel.py'
+adding 'ada_gnatdoc_enhancer/adapters/opencv.py'
+adding 'ada_gnatdoc_enhancer/assets/gnatdoc-guides.css'
+adding 'ada_gnatdoc_enhancer/assets/gnatdoc-instance-navigation.js'
+adding 'ada_gnatdoc_enhancer/assets/gnatdoc-navigation.js'
+adding 'ada_gnatdoc_enhancer/assets/gnatdoc-symbol-navigation.js'
+adding 'ada_gnatdoc_enhancer/assets/gnatdoc-theme.css'
+adding 'ada_gnatdoc_enhancer-0.1.0.dist-info/licenses/LICENSE'
+adding 'ada_gnatdoc_enhancer-0.1.0.dist-info/METADATA'
+adding 'ada_gnatdoc_enhancer-0.1.0.dist-info/WHEEL'
+adding 'ada_gnatdoc_enhancer-0.1.0.dist-info/entry_points.txt'
+adding 'ada_gnatdoc_enhancer-0.1.0.dist-info/top_level.txt'
+adding 'ada_gnatdoc_enhancer-0.1.0.dist-info/RECORD'
+removing build/bdist.linux-x86_64/wheel
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - setuptools>=77
+* Getting build dependencies for sdist...
+running egg_info
+writing src/ada_gnatdoc_enhancer.egg-info/PKG-INFO
+writing dependency_links to src/ada_gnatdoc_enhancer.egg-info/dependency_links.txt
+writing entry points to src/ada_gnatdoc_enhancer.egg-info/entry_points.txt
+writing requirements to src/ada_gnatdoc_enhancer.egg-info/requires.txt
+writing top-level names to src/ada_gnatdoc_enhancer.egg-info/top_level.txt
+reading manifest file 'src/ada_gnatdoc_enhancer.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no files found matching '*.txt' under directory 'tests'
+warning: no previously-included files matching '__pycache__' found anywhere in distribution
+warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+adding license file 'LICENSE'
+writing manifest file 'src/ada_gnatdoc_enhancer.egg-info/SOURCES.txt'
+* Installed build dependency versions:
+  - setuptools==84.2.0
+* Building sdist...
+running sdist
+running egg_info
+writing src/ada_gnatdoc_enhancer.egg-info/PKG-INFO
+writing dependency_links to src/ada_gnatdoc_enhancer.egg-info/dependency_links.txt
+writing entry points to src/ada_gnatdoc_enhancer.egg-info/entry_points.txt
+writing requirements to src/ada_gnatdoc_enhancer.egg-info/requires.txt
+writing top-level names to src/ada_gnatdoc_enhancer.egg-info/top_level.txt
+reading manifest file 'src/ada_gnatdoc_enhancer.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no files found matching '*.txt' under directory 'tests'
+warning: no previously-included files matching '__pycache__' found anywhere in distribution
+warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+adding license file 'LICENSE'
+writing manifest file 'src/ada_gnatdoc_enhancer.egg-info/SOURCES.txt'
+running check
+creating ada_gnatdoc_enhancer-0.1.0
+creating ada_gnatdoc_enhancer-0.1.0/.github/workflows
+creating ada_gnatdoc_enhancer-0.1.0/docs
+creating ada_gnatdoc_enhancer-0.1.0/docs/evidence/gnatdoc003
+creating ada_gnatdoc_enhancer-0.1.0/docs/evidence/gnatdoc004
+creating ada_gnatdoc_enhancer-0.1.0/examples/profiles
+creating ada_gnatdoc_enhancer-0.1.0/scripts
+creating ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+creating ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer.egg-info
+creating ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer/adapters
+creating ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer/assets
+creating ada_gnatdoc_enhancer-0.1.0/tests
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/docs
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/docs/assets
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/reference
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/reference/guides
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/tests/probes
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs/assets
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs/examples
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs/guides
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/native/api
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/reference
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/reference/guides
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/source/src
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs/assets
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs/examples
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs/guides
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/native/api
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/reference
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/reference/guides
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/source/src
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/docs
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/docs/assets
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/docs/guides
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/reference
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/reference/assets
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/reference/guides
+creating ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+creating ada_gnatdoc_enhancer-0.1.0/tests/fixtures/core
+creating ada_gnatdoc_enhancer-0.1.0/tests/fixtures/core/_site/api
+creating ada_gnatdoc_enhancer-0.1.0/tests/fixtures/core/src
+creating ada_gnatdoc_enhancer-0.1.0/tests/fixtures/geometry
+creating ada_gnatdoc_enhancer-0.1.0/tests/fixtures/geometry/_site/api
+creating ada_gnatdoc_enhancer-0.1.0/tests/fixtures/geometry/docs
+creating ada_gnatdoc_enhancer-0.1.0/tests/fixtures/geometry/src
+creating ada_gnatdoc_enhancer-0.1.0/tests/fixtures/imgproc
+creating ada_gnatdoc_enhancer-0.1.0/tests/fixtures/imgproc/_site/api
+creating ada_gnatdoc_enhancer-0.1.0/tests/fixtures/imgproc/docs
+creating ada_gnatdoc_enhancer-0.1.0/tests/fixtures/imgproc/src
+creating ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel
+creating ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+creating ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/docs
+creating ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/docs/guides
+creating ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+creating ada_gnatdoc_enhancer-0.1.0/tests/operation-fixtures/imgproc
+creating ada_gnatdoc_enhancer-0.1.0/tests/operation-fixtures/imgproc/native/api
+creating ada_gnatdoc_enhancer-0.1.0/tests/operation-fixtures/imgproc/source
+creating ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures
+creating ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/current-package-types
+creating ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.4.1
+creating ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.4.1/native/api
+creating ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.4.1/source/src
+creating ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.5.0
+creating ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.5.0/native/api
+creating ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.5.0/source/src
+creating ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core
+creating ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/pristine/api
+creating ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/source
+creating ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/geometry
+creating ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/geometry/pristine/api
+creating ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/geometry/source/docs
+creating ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/geometry/source/src
+copying files to ada_gnatdoc_enhancer-0.1.0...
+copying .gitattributes -> ada_gnatdoc_enhancer-0.1.0
+copying .gitignore -> ada_gnatdoc_enhancer-0.1.0
+copying CHANGELOG.md -> ada_gnatdoc_enhancer-0.1.0
+copying CONTRIBUTING.md -> ada_gnatdoc_enhancer-0.1.0
+copying LICENSE -> ada_gnatdoc_enhancer-0.1.0
+copying MANIFEST.in -> ada_gnatdoc_enhancer-0.1.0
+copying Makefile -> ada_gnatdoc_enhancer-0.1.0
+copying README.md -> ada_gnatdoc_enhancer-0.1.0
+copying pyproject.toml -> ada_gnatdoc_enhancer-0.1.0
+copying .github/workflows/ci.yml -> ada_gnatdoc_enhancer-0.1.0/.github/workflows
+copying docs/api-navigation-history.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/architecture.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/authored-guides-portal-compatibility.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/compatibility.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/configuration.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/current-package-type-links.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/declaration-profile-compatibility.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/external-core-type-links.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/generic-instance-summaries.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/html-page-metadata.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/mel-profile-compatibility.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/migration.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/operation-navigation-source-order.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/ordinary-subtype-base-type-links.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/qualification.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/real-site-qualification.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/release-0.1.0-qualification.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/release-compatibility.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/releasing.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/repository-import.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/source-implementation-matrix.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/stable-public-symbol-bookmarks.md -> ada_gnatdoc_enhancer-0.1.0/docs
+copying docs/evidence/gnatdoc003/provenance.json -> ada_gnatdoc_enhancer-0.1.0/docs/evidence/gnatdoc003
+copying docs/evidence/gnatdoc004/provenance.json -> ada_gnatdoc_enhancer-0.1.0/docs/evidence/gnatdoc004
+copying examples/profiles/ams-mel.toml -> ada_gnatdoc_enhancer-0.1.0/examples/profiles
+copying examples/profiles/opencv-core.toml -> ada_gnatdoc_enhancer-0.1.0/examples/profiles
+copying examples/profiles/opencv-geometry.toml -> ada_gnatdoc_enhancer-0.1.0/examples/profiles
+copying examples/profiles/opencv-imgproc.toml -> ada_gnatdoc_enhancer-0.1.0/examples/profiles
+copying scripts/acquire_real_sites.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/check_distributions.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/check_metadata_browser.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/check_operation_browser.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/check_real_browser.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/compare_default_symbol_outputs.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/make_synthetic_fixtures.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/qualify_authored.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/qualify_current_package_browser.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/qualify_current_package_type_links.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/qualify_external_types.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/qualify_generic_instances.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/qualify_instance_references.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/qualify_navigation_history.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/qualify_operation_navigation.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/qualify_page_metadata.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/qualify_profile_sites.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/qualify_subtype_bases.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/qualify_subtype_browser.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/qualify_subtype_tampering.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/qualify_symbol_bookmarks.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/record_real_site.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/tamper_instance_references.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/tamper_symbol_bookmarks.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/test_browser.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying scripts/test_installed.py -> ada_gnatdoc_enhancer-0.1.0/scripts
+copying src/ada_gnatdoc_enhancer/__init__.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/__main__.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/authored.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/browser_metadata.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/cli.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/config.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/conformance.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/coverage.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/destinations.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/errors.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/external_types.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/generic_instances.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/guides.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/instance_references.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/inventory.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/metadata.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/native_html.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/navigation.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/pipeline.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/profiles.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/qualification.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/symbols.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/syntax.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/theme.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/util.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/validation.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/warnings.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer.egg-info/PKG-INFO -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer.egg-info
+copying src/ada_gnatdoc_enhancer.egg-info/SOURCES.txt -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer.egg-info
+copying src/ada_gnatdoc_enhancer.egg-info/dependency_links.txt -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer.egg-info
+copying src/ada_gnatdoc_enhancer.egg-info/entry_points.txt -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer.egg-info
+copying src/ada_gnatdoc_enhancer.egg-info/requires.txt -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer.egg-info
+copying src/ada_gnatdoc_enhancer.egg-info/top_level.txt -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer.egg-info
+copying src/ada_gnatdoc_enhancer/adapters/__init__.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer/adapters
+copying src/ada_gnatdoc_enhancer/adapters/mel.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer/adapters
+copying src/ada_gnatdoc_enhancer/adapters/opencv.py -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer/adapters
+copying src/ada_gnatdoc_enhancer/assets/gnatdoc-guides.css -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer/assets
+copying src/ada_gnatdoc_enhancer/assets/gnatdoc-instance-navigation.js -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer/assets
+copying src/ada_gnatdoc_enhancer/assets/gnatdoc-navigation.js -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer/assets
+copying src/ada_gnatdoc_enhancer/assets/gnatdoc-symbol-navigation.js -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer/assets
+copying src/ada_gnatdoc_enhancer/assets/gnatdoc-theme.css -> ada_gnatdoc_enhancer-0.1.0/src/ada_gnatdoc_enhancer/assets
+copying tests/_helper.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/core_navigation_equivalent.cjs -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/core_symbols_equivalent.cjs -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/instance_canonicalization.cjs -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/instance_references.cjs -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/navigation_history.cjs -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/symbol_bookmarks.cjs -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/symbol_canonicalization.cjs -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_authored.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_bootstrap_regressions.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_cli.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_cli_site_paths.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_config_inventory.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_current_package_type_links.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_declaration_profiles.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_distribution_archives.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_external_types.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_generic_instances.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_instance_references.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_mel_profiles.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_metadata_contract_corrections.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_navigation_history.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_operation_navigation.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_page_metadata.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_pipeline.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_profiles_guides.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_real_qualification.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_release.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_security_extra.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_subtype_bases.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_symbol_bookmarks.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_symbol_canonicalization.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/test_title_rcdata.py -> ada_gnatdoc_enhancer-0.1.0/tests
+copying tests/authored-fixtures/README.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures
+copying tests/authored-fixtures/core/README.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core
+copying tests/authored-fixtures/core/authored.json -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core
+copying tests/authored-fixtures/core/project.toml -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core
+copying tests/authored-fixtures/core/provenance.json -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core
+copying tests/authored-fixtures/core/docs/core-operations-guide.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/docs
+copying tests/authored-fixtures/core/docs/documentation.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/docs
+copying tests/authored-fixtures/core/docs/example.adb -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/docs
+copying tests/authored-fixtures/core/docs/example.gpr -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/docs
+copying tests/authored-fixtures/core/docs/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/docs
+copying tests/authored-fixtures/core/docs/interop-and-compatibility.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/docs
+copying tests/authored-fixtures/core/docs/ownership-and-views.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/docs
+copying tests/authored-fixtures/core/docs/sparse-and-persistence-guide.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/docs
+copying tests/authored-fixtures/core/docs/typed-access-guide.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/docs
+copying tests/authored-fixtures/core/docs/windows-external-shim-install.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/docs
+copying tests/authored-fixtures/core/docs/assets/gnatdoc-guides.css -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/docs/assets
+copying tests/authored-fixtures/core/native/api/01c07be3428a1bba358b97bdf4367ae9b2e94df74b30dafa875791bf61762239.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/021fdbf8c6482084b88e66d27a1bea80cb10ae15fd38dcc774b96e30f885da5d.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/0453a2309ced3cca5e30b48e034e323532b3cb93ccbbeaf25275acea27f95774.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/06f86e826bd7f4ef7ecee368fd5fab74b17cf85696ec27ee4db414e1a0632621.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/07c9f557ed5f19292a14a9b53480084cb6244c8f58ac817b12a027a1e605ce0a.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/07f4ed4619511f2d1b68bba5e6f2ff887412e95edaa67f77983042c37e2f677f.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/0d30d5be324fccecc490256d0373a48fd64fa9009288600bacdd2fc60aeb9b23.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/0d972a5ccad58935c666ecb6a27c979c790a42fee51a8793c3dfbbbbb4408ff2.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/0dc08af61fe7e36d1db5c861231cc1064482561d0e39ec0e3d9c88ca138014f6.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/0f5862ea388f790c4eabb60f8e65f1cb3e04b3f69eabe194a503233a44cec440.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/13e499045b593732d3821efa7843116e11a5506572b1a39130ad0e4355d970b5.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/1405123f6767370ff4bd2cfe51230adfd3a925d50490793526cbe086d7897064.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/14f5ed0e27250c2498155330631765f54ff02f6170cf934a4b13addd52369c76.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/1955e96a5c1fe57aecb4557ac079a5f611b90ff6f2448d4af6c94069ea96e8a7.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/1a7d5de2c0a4154ea4068feb57ccb533ae3aa9e4f7cba4aa7673f5a83cc61de1.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/1a984e563280d020b39eb40f4562e37b1ece81c5c7e2df1a7cac4c1f09b41f0c.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/1ac1f08004d184a6ae74b5bb5f3f369c93dd147713fffe4555fb79d024f55cf2.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/1ac31c611ccea2d6f29fd83587e3c0d1b2d37f21afcefbaf1a7bb03716b68e02.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/1b4c2fc0017fd1a296da5292227432e136aa2b56e71536acc618f8228e13e323.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/1ca027d8f88f964ca52dd59eebd472a663dbb18776942c22423f327039c534af.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/1dcac623677b8aaa0f23219ea9f1bf585db43c78b2c6b9dab6584c56d46432a6.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/205d1ab3b0b0f90302d746f4012c916279d24816120de3b3e14cc4926a04901c.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/2374833e7bc4577e7ae119fcc5eada9d9c6331221a8f1722fa3ebdbd0d59e4bb.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/25b0f21d80d3dd8c7655bc131efd05d2b940a0b0e37b4f392b98e78004f2df67.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/268a4fd9a7054d83efd4fd2a67e6208382fa824c81da22914e56a98a5c97c94e.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/2695a8141caecbd04795670448e45ebd65849c134defea474a3c47bd7c75c289.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/2972a78d6dd0005c2a13c35dccee7fff70b58b8555f60f344937efe05f3f7dc2.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/2972d33f067a51c03b7e0f32fe1cc1917d1eda392def3ce5af74b8e1d667c514.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/2b43d0178f53f4ecc6affd4defc480eb8241b4b0866a4810f31c42704c2cdbff.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/2bd29cc1e10dce9656c5e3359956f065274072b163724ad00959221ffe8c89da.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/2be7755189c6a8a9abadbe92aa693d9cf1a32902e57199b8c83346ecc22e2078.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/2d86182472e52999cd348943d9a15718c9c1470b1e79c7c0bf761da77485a2e6.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/2dd67ed4ff33fa0a79c5785cca8d6a2da01134d68ec01e514d9d00f383ca58e1.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/2f4464cc5f30f6124b3ef4cb1b549f3edc32e8fa3b7ed7fbdcbed18361ff92b8.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/300db33cb95589251074cbbe1a066a6dfaa538dbba7e2f0bab3e9eca57d8ea5e.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/31ff495bceb4792ef0089f519ebb479eb3009f2be680e34034a07c3a4c65e578.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/3282348d735ff984c516705e752f6259e17ef4a88c99c798d99756788ebd4760.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/3484eaafdf8291e8cc1d9281281f72f87c5fd7d6bfd01fbe57c5798608cc0b3d.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/34b7a1027236ebfb9f45b386cc9cde7c4b6dfe140714fd4ed8c7d612aaf9d192.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/354cee2e240f8285c9965dbd416955ff5207cee1261c84f281333d6c0a531aba.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/36746aa6ccb8b9c98fa863d7da0272bf08cfccb819aa601e87e7a36c14e77077.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/37e6868ad982c7afa865fd92434335b7d3cfcce60e1de9fe7b71fa048d1c3f22.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/389086979f10060bb3f10b188eb459c46e19c7f55c53d094dfe99e262f5f3a44.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/39d49abe12e7b20fd3f7ab0da23fe5cab7c419a979f7307aab2e35d9e85c17f1.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/3a58964863eff985027f3ac671a90883e8c5a28b6776634e4c916e4e929cd654.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/3c3bc43e9a1a417535945f94a6a8c41b7fd76cd3063347b6396bd423a72af9eb.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/3dd773e07e484440407e7e365f00a5558c2c958500d86c6ba63a18126b606a48.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/4036563a1e52b3777c91d247186a24e88e3fe00c924db8cd3ae300b1b0b79369.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/41eeca4c7074e75c9d64871dabdbeb81d1c3fef139a78dd85b3cc6c4f06796d7.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/4300d0502784f03a72f45dcc323f9f93b848343a5b23240e73e2a302daf5fa5f.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/43782b2496730ec3cc3a7259284705efc514c2f4f8cb02c76938bb5574d7d65a.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/46275e434f57bdd2828a6cdc178afcc96c53452f57f588bc833623f7e7179c5d.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/46c2b4b6386807be90b92a5aed5eefd148ae135336903d008664c45d8a07ed1a.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/493bebbfe6497dc46c61af914b443aeb515a4a55c06768a91a0e9ab096de8103.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/4a352f75c88114a8e1eb2dfe14661039ad88d63d4d84aa95dcfd743929f4759a.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/4d83fee369e8bd635af43353b4983e985e9bedd27437b6552576c9509c215d81.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/51805d4ebf800f07b2c5b4f3c69b37bbd0fd19f269a930189bf322400826c140.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/5322554123c5e29046b42d3dd253dbb6cf01227f0778d1de09106042d685ae55.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/55301e34f2db04b20c2b3b86b78e9467afaa2563cb5f8702d306652b92d4315c.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/555a1c30aa270b7446f81431a16f7b45bab7f63c1e0ec448a4487e85d280fb72.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/562d880efece18059eb86ecc546715aa6aa3fc52af8098f6ab927a134fe27c60.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/56cd46c054be017abdd508aeab39685f16b956e75e3384a7e8826b98436fbeaa.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/574b184e9a154551e9a2492c31aa64dbd56cf48ae4842539e81c4e6739bd3a23.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/5a3b1140f5151bbdde90e901d4fd560acb9c9bc96ab4ded40a4a988820a6c097.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/5b0a522eb6233561b7a3c6bfcd3ae557b75bab139452e05481af2bed58639bb1.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/5d272cccd3c68eff033bc6b58c5eb6dbb355ee44955269c85a0d342bf3d8538e.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/5df3f2cbe04fcbdb508c7ef52321401cadf7bd1ae7052c2b4ceabee1e527050f.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/605b059a8729753444892cee689f0e818fca7909687c80037d3f7ae8278cd661.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/62185bd08f2655e8fbb84a4f665ee77944fc545d6b19e24bbb6d2093c1d611c9.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/629d3aee6537910038c612341e159bca60e6f77d46eadbbdab2769c857772c7c.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/6370bb083d234b300cd82d8f7cd1fd6ec669b5dfe96dc26094c05a56bfc32bae.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/6457f99f8077ab69cadb35be05b46e83fe610f4b91dd156c579a68a5c681bd0e.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/655c5d20afaa9df1a6f17cf5b10cfe3799256db8dd3dc31726d1e1a7974d03cb.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/6853da0ebca980e6c7f80e2171f85f62e8ac6f0b83a49780981cfd5923fef613.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/68640d1dfa446ca695ed5a881e5ef42aff791a8ade251c8e30a3ba68173bf7df.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/68d43a5181b1ffe225f9514e0b580fca078d4118bbda58509e5eed089dd2ba5b.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/69c5fd441cdcb5e2d4bd4c960831075e387b513a602bef0b5b55bfdd37139a30.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/6c6a0281d24012c881efaef4a618e32b189eda09a32b149eec9a8c212e8d4a32.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/6e26fcbfdc5ccedc6aa77dd6e34186e484e14c736190d0a0c0d1370e7c67a6cd.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/6efa0960ff6d215ab4d65793c2f5ab713485f8ee8b2eeed4254c6a5c93c10d25.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/6fbc0941ade6e01a4e423a6413fb53c2a1c8ad4e3333d180225a9f40ad7e4cc3.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/6fe781029ea3c964b6226af7b05002361897ba5748b26718605e6d580e01676c.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/7546c11d8fcf45f98328fabbace550c047b120212a6fd5aad4e6a66ab4ce1dfa.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/75f80eb15b2f305b801e78042ab7faa2ac7ac646bf998208d7fd93fd27354283.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/75f999a5678621e2b4759b8ebe88fb15e3b7f641e256b3f4873c06ee6703da4b.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/76dbfb92b08cf276e40aba3003f27a4eb926b0f18a593213b94904e097dd73dc.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/76ee27a213ea841ef46ca63704dcea0d6361f8338f40556bbda80fecb2560d1f.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/786cb35347c351b5e5b437ed89032cfa0b0ffd0491ab8b012e1e3197e93bb48a.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/78f57dfe3c1c1c729e67bf051e99f8b9ff13d04743714cf95635cf0b928a8223.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/79624cbacd3b722ed5b8858c83ed3f4212bd9be119285a243cc5842c00080517.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/7aca113dfcaf33c6b514ae3a97dbdd46c2044f9f814e5231034284f706d6e941.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/7b926e05c9907ee7865b04d8df79efba40eb39bd03c780ab2f84184b31fd7332.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/7faa5d5881f22fa2d6a1333348dd6daf9bc2956236365c62ce7017ddff26825e.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/80b050dda403c3658cb57f3f5ea5ad289141fadd9c0c4e2a0da53a353ec6518a.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/8b1b70c335e7cb0d913085e89f39b5a5afede0758ca12468cd43715567117fa9.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/8e21cb290db9a1d748c76e08c0b85367a81976bb2957637cb902f53133ad14f5.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/9012f43d4265062cd255837baad367c5763672cc2d3b8c30aa997b71b8739fb4.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/90d54083fa387a4471aba19e43f47bb54209a4329ff2f8db9980684645394515.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/92cd94df8a420b11b7fd15456853222c4572fbd2d04f15863224059ab6d98f4f.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/9387d1e0578c52db5ca3b68cf755c181555b2e9bb2df6a24d1b5550a758f492f.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/93d218ec79933680e620df0a5f7944a4c95c1d0465df6810b028f743634a8691.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/94402293bdc9c1082b7226f7ff2ac2a964e51554dc56b46f1cb07329f892f9c1.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/9461e0cd5d6c38d66d59075eb68f9a3f5d012049de5fdbf175e4a211d74dc978.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/95669bcd36486c970254de205b04dc08bf3208f5642e85fe01aaf0a0610827da.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/968cbec2d6eb749edf38cb3d5b2f43b71617123ef9cf0bafd6db4062baeccc74.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/987e5d2512328d3cebe48be0359fe29f4339b08a0bf667edf91eefffa44f81ec.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/98f62a287d6defb6ae2719f2f30f0a68e10cbe45b44e241b2ee106a69c9b3e5d.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/99fb8a71b957273b5cdc35cc695a14c10c41c113b6aeaebdecb71cd52420053b.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/9aa6811813f30d654470eef73b91572dcee60c7f3e24f078f934520bf9e82dc8.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/9aaa6908f09187b0449763dcc87f460999db6bdc88b7c34666fae481d98c91a6.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/9ae9ec3c6f126a5f69e463063a1adfa3c010f1d4014c24d0453937f405580f90.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/9aeca1ff4a0abc55d2729f8a8be90a04cf2da1d95eb0ca6d06f026c2d0b0ce95.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/9dedb2c942da7a4ddd5e9edf614b855a3d9cf15f2d11d898db95c7c5623a174e.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/a12721a52fff6c6c58bdfd22b16a2cdd8bbb9439dce8dfca6a2c06e05f522e9b.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/a191841c5e087e2b4b334458c05d0576d2245159adb612b3fd764bb63403964e.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/a35b30a4b05fb8d814c90764bb73e0c6ddebaf82d8a8df2e07d3b5377f4acd06.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/a5c5a49ade1e652d0fb81838e2542bdd28c804f3729f73c6e71a1148b2127331.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/a5fe4230932d5f471d745737143844b886c950bd237ae83b44c98417c1ded5cc.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/a66cc7e7eb428e03ec01ea75275267546255a3203ed1895014cdd2b143a44140.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/a922db26a5673f2b47ab1e1fdf018627cc709124095707421fbfc6d46bbf6e82.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/aa196f96f4b637a3ffb92cdd95374b170c3343ebd5e428f87e3677127b739a05.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/ab7f42b87f5659a06c60ec3b8858611c40598215d41c50551a1b7223dbd3cbf8.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/abb7c6f967577b28867b03b97466bc505a879f8c85fe46e8093d011a4a5aee29.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/ac5520a3e1c4f3c1ed6e61ed6ddbab7dc01b5196f2c594be0a9d150e3f1f0804.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/ac6dd4cd8f2e6efc44eb164453b6e265a4c2d78018db9747ef8d6abd62c7d074.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/ac97c1fb444a21ec40bac83783c10d55ab74367fe648ad6edb18c7c5b9dbfe89.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/ae1e845ece8f88d7a008781f85cf2250c6b5f6357f3c48d33be16cd24d0f29a7.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/ae43a39cdb062d25d97aa1611036f0ebfe702802de015d5a70ce9884b27cc3f5.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/aee5cf201eae2d3e159ef21127ceca994800ba0e880501d2e250e3bff463edb7.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/b2739ccff06da58d490af2c53fd575adfaddfae3ffb6e51e4b4da72bb28e9425.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/b35d0ea7dc8325046b18d11846b5017996751f949cb478a7a8d31afdd5376164.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/b68790dfdcaacb9b7a25adc5a1a4b852c479cbb8dd4a037e782ee6b5b99eb0b8.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/b6e8fd9a264861791a430685f5117efab83ff9358a92b674a9605f65553ef195.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/b880a52681f77aa0b86dd8dfb5aa76a88fdc623bcd53dc9ec8d51f9a2de4e860.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/b9400102ee7d7099d0d5e88f1e0f2021b80ecde01299f35da1a65063a1d395b2.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/b9b6519259ef341c7e28d0a6377ca07bbc6c457e00877197744baa67f3be8037.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/bd567c3fc95b0263b005c6e28f8f5d5917f126ef39397b622ad51a40db3ba3a7.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/bed064aaf248cf72e9a0f190fd41f581c87c52d2ea8c5833dbf65d82cd6af217.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/c0f0f1af997c08fea52cdf2ef48c04c6eaa55bfb136948c287a6d3acef9cdaf1.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/c0f83ab3d6cc49c455cf6a912c839dff7898cc95131738320f3de7777fe0869c.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/c76f1e8ccd4ee06a36eb0d6e4114707f266815c75842a1789f3777f2873bd9e1.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/c7ac646d8adcf22e8ed9b9d6d56566f083cf0d3cc299c9d5162ed17f4550853e.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/c7e916dc3412c95c033babc4de72117dd1a95ea3ab143be07b85cca697f8af27.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/c8fb954de41677d0dcddfbfb089972536de1f9929855f5d9f8c018e546f49efb.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/d07a7be131d8a57fb2dc18e7aad1472801121f4fbcef7605522294e53d54709b.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/d1a4d262635553c2303d440bc0c9b0d5da2013a97fcd6e00610e2d4e2ed80236.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/d1b2f5cd1eb1397ab175d6abb28c3d6f429390f2f98f513546532da3810d0607.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/d1e66ff3ca08735aec04c6c07ae98e17e39017b3ac8209415449cf08b2979f2e.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/d394ade8721161f64f9c874a76f64d32839e4981ef84e7f248420cef53fd5cf6.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/d3a86b7833c6a63acc24416f638ee20cfb809b50acd5c8367d2bde8602b28e5c.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/d475e7feb65d03dcf74a5f4526da467a0934c117021532b1b127048b97ef15e6.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/d570af5a39d0224928fa793ad445d1cb38539773893be929fa72644c2968e621.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/d7113452311769e1b10167686a6a4360eaf0560e9d7444fdd2874f1106691494.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/d79fffff4b4c360a82464885b45726663e651ff97e4611f771e8e6c27b610a58.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/d7cd46b2142faa6d2adb2aaa4e45b8e64b04b9aebfb5d1c2781a28bbf3069ac3.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/d9f3d08c5d92231983002e20d72b99c9ec80c169786fcb2d422f471b862853c7.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/db0044599129dd8da6834359dea6bf15c5d73ed0c4aefef0476d0ae209d94272.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/dd4785214fc8e8f1d7a81df39e4eeeac82f16e8d918efa9550f6c62c67848eb3.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/dda223e573a96b520722d177a1e2a61af6f99419e6efbe1f7b4bc7272424064f.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/ddeb3aa4d98d7907414ac85f2ab0290902c5927dcdd1f51815aba523e3fccac0.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/df54b71974a6882afb13a3ca278a42038d7e5082cc68d7e23ef1e428b9108101.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/e043b9ce5eb6f6d0c0ca2c8fb4e2c582ed161a8291bc35993b431480338de7e5.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/e225750230a718798f2c61946b1847f84555eee373ff2c8b2b5a4b36cd6e9176.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/e265e7fdfa11cae31ce7538fd3562fdeb1befa526b2eb798385d624d6209ed6d.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/e283f6ede43e8ccc6b1db60e6519fd4afa95cdda4a83ec14940d0ec230588af9.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/e3ec402f7546891c806b38eff23e7aa9b58565aaf7ff4ddc55c1d9130006e6e1.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/e49a618104b228bcc0a7f8afe2eb5470de0a6a9ab18c3e5dfa08dcc7dcf39c0b.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/e4a53bc2fadb6312c53f37e2e9893de203c9851744fc0cd8deb7a925633364ee.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/e5f6a304f8b133809878f6d6dc16a562ba4b077449157a0c8600524906fee78a.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/e79f6905007cd3d08a57961144ff4ba8c8b4922855c1a58fec3d9bedf80d8283.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/e803ea03322ea6b96dcf8d1245359f10e0ae8a1e63373490b042479a201a1ea7.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/e81da0aef96c8f3f23691d5d544d88a9b00715f9dabcf497318f200fc5360e2b.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/ea87e2c078e293599451758534de5c77d541890a291b98fe048927d3ea41dbd4.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/eac74e98492be9281160ef92408a57668af1f24c3a198974b87ef628f54d7ae8.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/eb5fdb22860ebfa953f3fa91d1c7e24e320349364733a2e3ebdd6b6d8e90f401.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/ef687cb5a75f6628a659a879d44e3512df097800acc0b9e7506943f769d832cd.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/f44deaed48697fe9fbe2ac2c302b63dab546e9a38a50ff379bfe23506c1ae87f.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/f65df0f148c692e36a0a6db15cc684fd7dffdb50c771ea928c33a7d853d607d5.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/f6750f19a539b254e157bb6293afd5936035ddcedabfdf1d6f327a3ef94a65da.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/f7829464fe4bbc2d3abdfb341730caade9f25e34e74dcf4257e4a2020af7176d.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/fa0a3bfa0d5bd6a61dea5fa82f42cdbc8e33733a6df5925472a7b2e352ee8df1.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/fa9be3a3af72befc8d2c3b27fd2f7bd1ed756c1a2350e391203f39f4863c1a3d.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/fae0595c101785f242187d2bf1f347bf5f8eb3c4cb1869890af3d9a7af48df89.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/fb1ae8ec768d2095e878eff799a4ee7fcab519f7dd649dff9fad8af7bdb38b65.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/fb7516b464685e4c6cab32f520f1635898659bf95260fc9530d7bebf5a986bf7.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/fbd9ced653f38a4c30648b8b2d3822b57ea5529e261c03d3d98a61d8cf986914.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/fdbfc897b1b97bbafab91c5deace4f2c5efac078e7378f4dfb6d458687733a88.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/feedd333399c7c6087ea4e4cc5f620a4fbde0be74681046ceffdf8f630597695.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/fefe2f64070f0cb1b70d3dd9d235b5d46d16f95b259b1cc3d33a734252189ed7.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/ff827498e32094068d870b50dc7838a17960e48d357ff7c4d5ffae7e73babdb0.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/gnatdoc.css -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/native/api/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/native/api
+copying tests/authored-fixtures/core/reference/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/reference
+copying tests/authored-fixtures/core/reference/guides/core-operations-guide.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/reference/guides
+copying tests/authored-fixtures/core/reference/guides/gnatdoc-guides.css -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/reference/guides
+copying tests/authored-fixtures/core/reference/guides/interop-and-compatibility.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/reference/guides
+copying tests/authored-fixtures/core/reference/guides/ownership-and-views.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/reference/guides
+copying tests/authored-fixtures/core/reference/guides/sparse-and-persistence-guide.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/reference/guides
+copying tests/authored-fixtures/core/reference/guides/typed-access-guide.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/reference/guides
+copying tests/authored-fixtures/core/source/src/opencv-core-fixed_matrices.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_vec2.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_vec2_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_vec2_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_vec2_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_vec2_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_vec3.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_vec3_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_vec3_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_vec3_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_vec3_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_vec4.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_vec4_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_vec4_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_vec4_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float16_vec4_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_matx3x3.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_matx3x3_conversions.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_vec2.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_vec2_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_vec2_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_vec2_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_vec2_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_vec3.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_vec3_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_vec3_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_vec3_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_vec3_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_vec4.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_vec4_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_vec4_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_vec4_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float32_vec4_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_vec2.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_vec2_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_vec2_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_vec2_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_vec2_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_vec3.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_vec3_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_vec3_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_vec3_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_vec3_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_vec4.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_vec4_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_vec4_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_vec4_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-float64_vec4_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_vec2.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_vec2_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_vec2_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_vec2_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_vec2_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_vec3.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_vec3_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_vec3_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_vec3_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_vec3_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_vec4.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_vec4_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_vec4_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_vec4_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int16_vec4_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_vec2.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_vec2_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_vec2_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_vec2_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_vec2_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_vec3.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_vec3_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_vec3_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_vec3_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_vec3_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_vec4.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_vec4_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_vec4_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_vec4_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int32_vec4_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_vec2.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_vec2_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_vec2_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_vec2_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_vec2_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_vec3.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_vec3_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_vec3_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_vec3_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_vec3_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_vec4.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_vec4_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_vec4_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_vec4_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-int8_vec4_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-module_interop.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-persistence.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-float16_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-float16_vec2_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-float16_vec3_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-float16_vec4_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-float32_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-float32_vec2_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-float32_vec3_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-float32_vec4_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-float64_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-float64_vec2_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-float64_vec3_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-float64_vec4_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-int16_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-int16_vec2_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-int16_vec3_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-int16_vec4_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-int32_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-int32_vec2_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-int32_vec3_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-int32_vec4_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-int8_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-int8_vec2_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-int8_vec3_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-int8_vec4_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-module_interop.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-uint16_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-uint16_vec2_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-uint16_vec3_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-uint16_vec4_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-uint8_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-uint8_vec2_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-uint8_vec3_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse-uint8_vec4_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-sparse.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-transfers.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_vec2.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_vec2_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_vec2_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_vec2_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_vec2_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_vec3.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_vec3_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_vec3_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_vec3_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_vec3_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_vec4.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_vec4_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_vec4_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_vec4_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint16_vec4_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_vec2.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_vec2_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_vec2_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_vec2_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_vec2_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_vec3.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_vec3_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_vec3_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_vec3_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_vec3_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_vec4.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_vec4_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_vec4_buffer_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_vec4_mat_view.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-uint8_vec4_row_access.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core-vectors.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv-core.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/source/src/opencv.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/source/src
+copying tests/authored-fixtures/core/tests/probes/abs_diff_destination_source_findings.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/tests/probes
+copying tests/authored-fixtures/core/tests/probes/add_subtract_destination_source_findings.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/tests/probes
+copying tests/authored-fixtures/core/tests/probes/bitwise_destination_source_findings.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/tests/probes
+copying tests/authored-fixtures/core/tests/probes/convert_destination_source_findings.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/tests/probes
+copying tests/authored-fixtures/core/tests/probes/divide_destination_source_findings.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/tests/probes
+copying tests/authored-fixtures/core/tests/probes/mask_destination_source_findings.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/tests/probes
+copying tests/authored-fixtures/core/tests/probes/min_max_destination_source_findings.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/tests/probes
+copying tests/authored-fixtures/core/tests/probes/multiply_destination_source_findings.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/tests/probes
+copying tests/authored-fixtures/core/tests/probes/nd_min_max_source_findings.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/tests/probes
+copying tests/authored-fixtures/core/tests/probes/weighted_destination_source_findings.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/core/tests/probes
+copying tests/authored-fixtures/geometry/authored.json -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry
+copying tests/authored-fixtures/geometry/project.toml -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry
+copying tests/authored-fixtures/geometry/provenance.json -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry
+copying tests/authored-fixtures/geometry/docs/example.adb -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs
+copying tests/authored-fixtures/geometry/docs/example.gpr -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs
+copying tests/authored-fixtures/geometry/docs/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs
+copying tests/authored-fixtures/geometry/docs/assets/gnatdoc-guides.css -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs/assets
+copying tests/authored-fixtures/geometry/docs/examples/affine_and_perspective.adb -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs/examples
+copying tests/authored-fixtures/geometry/docs/examples/compatibility_and_safety.adb -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs/examples
+copying tests/authored-fixtures/geometry/docs/examples/contours_and_moments.adb -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs/examples
+copying tests/authored-fixtures/geometry/docs/examples/delaunay_and_voronoi.adb -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs/examples
+copying tests/authored-fixtures/geometry/docs/examples/examples.gpr -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs/examples
+copying tests/authored-fixtures/geometry/docs/examples/fitting_and_intersections.adb -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs/examples
+copying tests/authored-fixtures/geometry/docs/guides/affine-and-perspective-geometry.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs/guides
+copying tests/authored-fixtures/geometry/docs/guides/compatibility-ownership-and-safety.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs/guides
+copying tests/authored-fixtures/geometry/docs/guides/delaunay-and-voronoi.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs/guides
+copying tests/authored-fixtures/geometry/docs/guides/geometry-fundamentals-and-contours.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs/guides
+copying tests/authored-fixtures/geometry/docs/guides/shape-fitting-and-intersections.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/docs/guides
+copying tests/authored-fixtures/geometry/native/api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/native/api
+copying tests/authored-fixtures/geometry/native/api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/native/api
+copying tests/authored-fixtures/geometry/native/api/gnatdoc.css -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/native/api
+copying tests/authored-fixtures/geometry/native/api/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/native/api
+copying tests/authored-fixtures/geometry/reference/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/reference
+copying tests/authored-fixtures/geometry/reference/guides/affine-and-perspective-geometry.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/reference/guides
+copying tests/authored-fixtures/geometry/reference/guides/compatibility-ownership-and-safety.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/reference/guides
+copying tests/authored-fixtures/geometry/reference/guides/delaunay-and-voronoi.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/reference/guides
+copying tests/authored-fixtures/geometry/reference/guides/geometry-fundamentals-and-contours.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/reference/guides
+copying tests/authored-fixtures/geometry/reference/guides/gnatdoc-guides.css -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/reference/guides
+copying tests/authored-fixtures/geometry/reference/guides/shape-fitting-and-intersections.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/reference/guides
+copying tests/authored-fixtures/geometry/source/src/opencv-geometry-subdiv2d.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/source/src
+copying tests/authored-fixtures/geometry/source/src/opencv-geometry.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/geometry/source/src
+copying tests/authored-fixtures/imgproc/authored.json -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc
+copying tests/authored-fixtures/imgproc/project.toml -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc
+copying tests/authored-fixtures/imgproc/provenance.json -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc
+copying tests/authored-fixtures/imgproc/docs/example.adb -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs
+copying tests/authored-fixtures/imgproc/docs/example.gpr -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs
+copying tests/authored-fixtures/imgproc/docs/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs
+copying tests/authored-fixtures/imgproc/docs/assets/gnatdoc-guides.css -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs/assets
+copying tests/authored-fixtures/imgproc/docs/examples/color_and_representation.adb -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs/examples
+copying tests/authored-fixtures/imgproc/docs/examples/examples.gpr -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs/examples
+copying tests/authored-fixtures/imgproc/docs/examples/features_and_analysis.adb -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs/examples
+copying tests/authored-fixtures/imgproc/docs/examples/filtering_and_transforms.adb -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs/examples
+copying tests/authored-fixtures/imgproc/docs/examples/matching_and_registration.adb -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs/examples
+copying tests/authored-fixtures/imgproc/docs/examples/segmentation_and_contours.adb -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs/examples
+copying tests/authored-fixtures/imgproc/docs/guides/color-and-image-representation.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs/guides
+copying tests/authored-fixtures/imgproc/docs/guides/features-and-structural-analysis.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs/guides
+copying tests/authored-fixtures/imgproc/docs/guides/filtering-and-transforms.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs/guides
+copying tests/authored-fixtures/imgproc/docs/guides/segmentation-contours-and-morphology.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs/guides
+copying tests/authored-fixtures/imgproc/docs/guides/template-matching-and-registration.md -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/docs/guides
+copying tests/authored-fixtures/imgproc/native/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/native/api
+copying tests/authored-fixtures/imgproc/native/api/gnatdoc.css -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/native/api
+copying tests/authored-fixtures/imgproc/native/api/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/native/api
+copying tests/authored-fixtures/imgproc/reference/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/reference
+copying tests/authored-fixtures/imgproc/reference/guides/color-and-image-representation.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/reference/guides
+copying tests/authored-fixtures/imgproc/reference/guides/features-and-structural-analysis.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/reference/guides
+copying tests/authored-fixtures/imgproc/reference/guides/filtering-and-transforms.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/reference/guides
+copying tests/authored-fixtures/imgproc/reference/guides/gnatdoc-guides.css -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/reference/guides
+copying tests/authored-fixtures/imgproc/reference/guides/segmentation-contours-and-morphology.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/reference/guides
+copying tests/authored-fixtures/imgproc/reference/guides/template-matching-and-registration.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/reference/guides
+copying tests/authored-fixtures/imgproc/source/src/opencv-image_processing.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/imgproc/source/src
+copying tests/authored-fixtures/mel/authored.json -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel
+copying tests/authored-fixtures/mel/project.toml -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel
+copying tests/authored-fixtures/mel/provenance.json -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel
+copying tests/authored-fixtures/mel/docs/gnatdoc-native-anchors.json -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/docs
+copying tests/authored-fixtures/mel/docs/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/docs
+copying tests/authored-fixtures/mel/docs/site-map.json -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/docs
+copying tests/authored-fixtures/mel/docs/assets/portal.css -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/docs/assets
+copying tests/authored-fixtures/mel/docs/guides/api-map.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/docs/guides
+copying tests/authored-fixtures/mel/docs/guides/architecture.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/docs/guides
+copying tests/authored-fixtures/mel/docs/guides/getting-started.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/docs/guides
+copying tests/authored-fixtures/mel/docs/guides/ir-workflows.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/docs/guides
+copying tests/authored-fixtures/mel/docs/guides/ownership-and-errors.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/docs/guides
+copying tests/authored-fixtures/mel/docs/guides/rf-workflows.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/docs/guides
+copying tests/authored-fixtures/mel/native/api/09bd8292c9fb6f9b8644595432b39db4e5b39aba955eceb6cbca789ebcb5efc0.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/0afc59b2a977edefbce75cba06318530f7d622f6273b796ec530cf7f8723ad28.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/0ff6525dd9614d1e27b8f0d9b9c03244b2c65f09aa4c7882626726fec858593c.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/1227ecb7e9dafa3f2bb5afc47ffd547c851f2fc8202385479135994de7b16763.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/2f3cf70b1a4a9d3f35d9c382618b99d148712c509d54b4040fe14ab85d443432.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/381c51f1d2b5b0b57eaf854b4764e225f91403aeb7de49d6d6aef5849b28b04d.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/38765e13248ea3978f2c83e61df9b0482eeb463a4193380d90135352522acdc9.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/40bb9105550e6e6d6acf30301f0bf248ccb1f8319e052bc72539c966bb2dc3f0.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/41caa696ab8ac14c61e60cfcb837f9d0e8c3da62ec8bcf5c8f54807afef1b12b.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/493eaffef5bc1fc3300a1b2e1cc93b9500c778c188650055e07aae6e186bd3cd.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/49716cde96dfb37b08623621b4ec9240bb8457a7b549940b7c66717a451676a5.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/59d1d16681a33bb92bcbcf5ecd353b88ae39d53f1a7f54abb05220d33d73b853.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/5f9de8789b28ed02de7bf3d4f6aa6447445b50a3c927e5e3bb132a2c8efb1779.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/6ed8ea2a1a59f5d24924546adaf2f81b35ead370e48aebb921cc771ad72242c5.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/85bdf131eee4421967de0570d64d4ce3b86c679c2f8077c21fa184ea09305b0d.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/87b9fd33a70c836f29680781683801c72ff5392e04bdaeff9590a7778e1646ea.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/8dafffc917553edb77fadf90c468b603cc65f7475b8fc26a51b6791c7de36e27.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/8e994e9d0ee1b26dc9372dc224232c81687fcb7febf90e5b042c540c72ee3952.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/9ea9d529c5725b00f7032b894ed31fe3965cb17434fb39283354ced27a01e17b.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/a46df8f589745583d3030d17f329e6337a12bb0f0235a8fed8fc64a4be7381bb.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/afa2a7d66a8831aea67c28ef6e4fce9338315f26b7e71c6ca86b80ad8a6fbf65.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/b81d2f3019580a411fe075fabb6e46b4269b9373582fe8115c44b9345169b822.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/bd0851d244bd7ccb677a1b650fd78e3d339b22084195d0b40d23eab5b6c9e63c.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/d001b131a049a05fb41b1844290535623d551d12ebc04e08c797110c9cf7296c.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/d04e5b8974a5cfebc85dae0fe57d43c261fd4378e9fe4888d5d2d9b7e2c97573.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/e7b780bb57a9c00197c32b4d8eb8d454397e23c7839d1390bb96d934b41d8225.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/ec990b43f1efbfd2bfe04f7434f0bf147f1bb30ab32a5643d2f00f9273a5a383.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/f7a1784bbad6593c9c9c2adb28dbc76c31189f41b5e1e136f1ca3fcdb8f44d63.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/fcc2aff5e67a49dbd4266c4d14c896260883e1cde02a978e467f1747f5236656.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/gnatdoc.css -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/native/api/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/native/api
+copying tests/authored-fixtures/mel/reference/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/reference
+copying tests/authored-fixtures/mel/reference/assets/portal.css -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/reference/assets
+copying tests/authored-fixtures/mel/reference/guides/api-map.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/reference/guides
+copying tests/authored-fixtures/mel/reference/guides/architecture.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/reference/guides
+copying tests/authored-fixtures/mel/reference/guides/getting-started.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/reference/guides
+copying tests/authored-fixtures/mel/reference/guides/ir-workflows.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/reference/guides
+copying tests/authored-fixtures/mel/reference/guides/ownership-and-errors.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/reference/guides
+copying tests/authored-fixtures/mel/reference/guides/rf-workflows.html -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/reference/guides
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-ir-c2-common.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-ir-c2-metadata.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-ir-c2.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-ir-channel.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-ir-health_status-metadata.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-ir-health_status.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-ir-image-metadata.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-ir-image.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-ir-instrumentation-metadata.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-ir-instrumentation.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-ir-track-metadata.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-ir-track-system_data.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-ir-track-updates.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-ir-track.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-ir.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-rf-admin.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-rf-c2-data_pipes.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-rf-c2-element_groups.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-rf-c2-interval_status.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-rf-c2-local_functions.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-rf-c2-transmit_power.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-rf-c2-virtual_aperture_notifications.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-rf-c2-virtual_aperture_queries.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-rf-c2.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-rf-product_rx.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-rf.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel-status.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams-mel.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/authored-fixtures/mel/source/ada/src/ams.ads -> ada_gnatdoc_enhancer-0.1.0/tests/authored-fixtures/mel/source/ada/src
+copying tests/fixtures/core/PROVENANCE.md -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/core
+copying tests/fixtures/core/project.toml -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/core
+copying tests/fixtures/core/_site/api/37aaec822284cca4d1105450cbc9a8ff0728b315542fe09fcd4bb68c35a0891c.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/core/_site/api
+copying tests/fixtures/core/_site/api/751438fd28fb06697086dc74d40e0128b45eb0bd25d35cd6bb8aef148ad7906f.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/core/_site/api
+copying tests/fixtures/core/_site/api/89946457aea6fd2a583112ddb5c3f2f3d273c6cab1f155c8b40d6bf362352db5.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/core/_site/api
+copying tests/fixtures/core/_site/api/gnatdoc.css -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/core/_site/api
+copying tests/fixtures/core/_site/api/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/core/_site/api
+copying tests/fixtures/core/src/opencv-core-sparse.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/core/src
+copying tests/fixtures/core/src/opencv-core-vectors.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/core/src
+copying tests/fixtures/core/src/opencv-core.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/core/src
+copying tests/fixtures/geometry/PROVENANCE.md -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/geometry
+copying tests/fixtures/geometry/project.toml -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/geometry
+copying tests/fixtures/geometry/_site/api/4f88f9a69a752c4f421ce312e02814e23f49cd3ca4a88576bb1978fa3d89f97d.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/geometry/_site/api
+copying tests/fixtures/geometry/_site/api/8630b8577f464edf70979a0ac7ba5e7d28bccfc8ed33ababf900c0720dca7f54.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/geometry/_site/api
+copying tests/fixtures/geometry/_site/api/gnatdoc.css -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/geometry/_site/api
+copying tests/fixtures/geometry/_site/api/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/geometry/_site/api
+copying tests/fixtures/geometry/docs/api-categories.json -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/geometry/docs
+copying tests/fixtures/geometry/src/opencv-geometry-subdiv2d.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/geometry/src
+copying tests/fixtures/geometry/src/opencv-geometry.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/geometry/src
+copying tests/fixtures/imgproc/PROVENANCE.md -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/imgproc
+copying tests/fixtures/imgproc/project.toml -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/imgproc
+copying tests/fixtures/imgproc/_site/api/4664cb94e30818e36ab4df7b22001dc275c84ff2f9cd8e0d3027757cae70a28a.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/imgproc/_site/api
+copying tests/fixtures/imgproc/_site/api/gnatdoc.css -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/imgproc/_site/api
+copying tests/fixtures/imgproc/_site/api/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/imgproc/_site/api
+copying tests/fixtures/imgproc/docs/api-categories.json -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/imgproc/docs
+copying tests/fixtures/imgproc/src/opencv-image_processing.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/imgproc/src
+copying tests/fixtures/mel/PROVENANCE.md -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel
+copying tests/fixtures/mel/project.toml -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel
+copying tests/fixtures/mel/_site/api/010e315bee42077e48d7d2d20d94b78f97dd93f2bc37a3cc2759fb87739796f6.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/014f8c3525c05a6def30c777e3327db7472c338b19f2814674af31031f8a9feb.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/026648c00948cfaea35cfd5457bef81ffb2ed8e5bf98888f366950adb29ad2b4.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/04aca8ec2a0307aafd66f0c4b07451356c0a85b7c5ba3283eb3ba73f23ccd3f8.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/08db679f262c64343bdbda96a50f8f615c15446afd3601a66c67132c8809673d.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/10b5efbf45969581af5974bcc183541cd9143ad9d64d7179d28f3767adbad37e.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/13ea84fe3f242b232f96d50fb8afd271b81ba615950cbf9744d63222f7fafb76.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/16ff1099af4a6c8f66144a72e29263d59ac69edf41acbd921ba97e1f1dc16052.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/1879ba76fffafd43a1f30f8adb391f92b54971338b3b38f04fd66f381efb7cb8.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/405bb2d94736e61504a960ba725cd0ed81a0122e8b109d997af842a0670f1662.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/4439fb170ce26dc3c9bf9dace7b9745aeea8432b92664ba0361ae37b99ea3561.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/4d52febfe1fff65c9a05b6fd5ddc5663c7194fa9f1a49ef6c41324afedc954bf.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/4d8b4c97eacba56c6eb1f6691c353ee4605026c6b81bab443c50efc492cc44d7.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/78bcc1246708d60d9c4f097f0213c1803d5cceb2e4b5239d658b34ad7c5b9ae8.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/89b8117a8ed4e57b519086254571142a9a02c994f22aec9dd22fd3b61a2dfdf9.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/991f05357d26a682298b58d353f78239bc08bd27e0695e655675f8e38165f3dd.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/a4678c64df01fc35ca453f0f0ee3c9b26f5e13efb5678088d0482f720227fae1.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/a5c02cfc1de743a54fb07a908e84ead583ceb1a61e9401ddf7afe249ddc82c5e.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/a8b3d246cfd569ebe6a7c3de4367341ac3a9f45b48705707635d05a80ba26194.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/a98847208eb7a50ec4ed7d9f72556cfaa89d4a56cb6c657e1a402a61cfc65636.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/b94cb28a6062d0041ff53f2b908868fe2cd62068d5ca8cf5c14c4ce9e6f866f8.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/bc1f5338c27450faa2b2a52e8c087decc80ff6e5269ee91b0928e5d3c89cb1e7.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/cffbab2655f3e6d0c11e9642c42552b4665a758de1cb8c66944c45d09943f10e.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/d1cf875cb1b092df43460bf7baa17841e3a5e67acd1e4efcf826793a9d989be1.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/d3fd647a5c5454a864af726c19c8013d1d6be1cfe1df89f4fb795af127266984.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/e24a7da7e402fb5e9784b4378934e656621ed0988d8df06f12039bba2ae565db.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/ed3e4d8c63d76ba35766b9f405a1ca82d3a9242a111c2cec8f6976632aa0521a.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/f3a793ec4d7870f277d1b5f9ed2ab69efb439d91e1b7e56d249a469710e41027.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/fceb6399b9a7ad4085be277f01c4cf0136cd3a518524cf9962235765231794b0.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/gnatdoc.css -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/_site/api/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/_site/api
+copying tests/fixtures/mel/docs/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/docs
+copying tests/fixtures/mel/docs/site-map.json -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/docs
+copying tests/fixtures/mel/docs/guides/api-map.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/docs/guides
+copying tests/fixtures/mel/docs/guides/architecture.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/docs/guides
+copying tests/fixtures/mel/docs/guides/getting-started.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/docs/guides
+copying tests/fixtures/mel/docs/guides/ir-workflows.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/docs/guides
+copying tests/fixtures/mel/docs/guides/ownership-and-errors.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/docs/guides
+copying tests/fixtures/mel/docs/guides/rf-workflows.html -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/docs/guides
+copying tests/fixtures/mel/src/ams-mel-ir-c2-common.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-ir-c2-metadata.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-ir-c2.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-ir-channel.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-ir-health_status-metadata.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-ir-health_status.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-ir-image-metadata.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-ir-image.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-ir-instrumentation-metadata.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-ir-instrumentation.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-ir-track-metadata.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-ir-track-system_data.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-ir-track-updates.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-ir-track.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-ir.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-rf-admin.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-rf-c2-data_pipes.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-rf-c2-element_groups.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-rf-c2-interval_status.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-rf-c2-local_functions.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-rf-c2-transmit_power.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-rf-c2-virtual_aperture_notifications.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-rf-c2-virtual_aperture_queries.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-rf-c2.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-rf-product_rx.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-rf.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel-status.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams-mel.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/fixtures/mel/src/ams.ads -> ada_gnatdoc_enhancer-0.1.0/tests/fixtures/mel/src
+copying tests/operation-fixtures/imgproc/categories.json -> ada_gnatdoc_enhancer-0.1.0/tests/operation-fixtures/imgproc
+copying tests/operation-fixtures/imgproc/expected.json -> ada_gnatdoc_enhancer-0.1.0/tests/operation-fixtures/imgproc
+copying tests/operation-fixtures/imgproc/project.toml -> ada_gnatdoc_enhancer-0.1.0/tests/operation-fixtures/imgproc
+copying tests/operation-fixtures/imgproc/provenance.json -> ada_gnatdoc_enhancer-0.1.0/tests/operation-fixtures/imgproc
+copying tests/operation-fixtures/imgproc/native/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html -> ada_gnatdoc_enhancer-0.1.0/tests/operation-fixtures/imgproc/native/api
+copying tests/operation-fixtures/imgproc/native/api/gnatdoc.css -> ada_gnatdoc_enhancer-0.1.0/tests/operation-fixtures/imgproc/native/api
+copying tests/operation-fixtures/imgproc/native/api/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/operation-fixtures/imgproc/native/api
+copying tests/operation-fixtures/imgproc/source/opencv-image_processing.ads -> ada_gnatdoc_enhancer-0.1.0/tests/operation-fixtures/imgproc/source
+copying tests/real-fixtures/PROVENANCE.md -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures
+copying tests/real-fixtures/excerpts.json -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures
+copying tests/real-fixtures/mel-excerpts.json -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures
+copying tests/real-fixtures/current-package-types/README.md -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/current-package-types
+copying tests/real-fixtures/current-package-types/ams-mel-ir-image.ads -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/current-package-types
+copying tests/real-fixtures/current-package-types/ams-mel-ir-instrumentation.ads -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/current-package-types
+copying tests/real-fixtures/current-package-types/ams-mel-status.ads -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/current-package-types
+copying tests/real-fixtures/current-package-types/provenance.json -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/current-package-types
+copying tests/real-fixtures/external-core/0.4.1/input.json -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.4.1
+copying tests/real-fixtures/external-core/0.4.1/types.json -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.4.1
+copying tests/real-fixtures/external-core/0.4.1/native/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.4.1/native/api
+copying tests/real-fixtures/external-core/0.4.1/native/api/gnatdoc.css -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.4.1/native/api
+copying tests/real-fixtures/external-core/0.4.1/native/api/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.4.1/native/api
+copying tests/real-fixtures/external-core/0.4.1/source/src/opencv.ads -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.4.1/source/src
+copying tests/real-fixtures/external-core/0.5.0/input.json -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.5.0
+copying tests/real-fixtures/external-core/0.5.0/types.json -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.5.0
+copying tests/real-fixtures/external-core/0.5.0/native/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.5.0/native/api
+copying tests/real-fixtures/external-core/0.5.0/native/api/gnatdoc.css -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.5.0/native/api
+copying tests/real-fixtures/external-core/0.5.0/native/api/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.5.0/native/api
+copying tests/real-fixtures/external-core/0.5.0/source/src/opencv.ads -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/external-core/0.5.0/source/src
+copying tests/real-fixtures/generic-core/enhancer.toml -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core
+copying tests/real-fixtures/generic-core/provenance.json -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core
+copying tests/real-fixtures/generic-core/qualification.json -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core
+copying tests/real-fixtures/generic-core/pristine/api/31ff495bceb4792ef0089f519ebb479eb3009f2be680e34034a07c3a4c65e578.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/pristine/api
+copying tests/real-fixtures/generic-core/pristine/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/pristine/api
+copying tests/real-fixtures/generic-core/pristine/api/7b926e05c9907ee7865b04d8df79efba40eb39bd03c780ab2f84184b31fd7332.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/pristine/api
+copying tests/real-fixtures/generic-core/pristine/api/95669bcd36486c970254de205b04dc08bf3208f5642e85fe01aaf0a0610827da.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/pristine/api
+copying tests/real-fixtures/generic-core/pristine/api/a12b7296b4eafe1ed8c89451a6ef71906eab442aa78b7ce85f0dfa1f54a8f40f.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/pristine/api
+copying tests/real-fixtures/generic-core/pristine/api/a611e64021df940a12b402bafba0357f4752c504b859a2cc9eb73cd108b89593.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/pristine/api
+copying tests/real-fixtures/generic-core/pristine/api/d1b2f5cd1eb1397ab175d6abb28c3d6f429390f2f98f513546532da3810d0607.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/pristine/api
+copying tests/real-fixtures/generic-core/pristine/api/e4a53bc2fadb6312c53f37e2e9893de203c9851744fc0cd8deb7a925633364ee.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/pristine/api
+copying tests/real-fixtures/generic-core/pristine/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/pristine/api
+copying tests/real-fixtures/generic-core/pristine/api/f2702342760eb891042c92acc6eb68a9e424a9a7826d37187e6e90e9e527b4b6.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/pristine/api
+copying tests/real-fixtures/generic-core/pristine/api/gnatdoc.css -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/pristine/api
+copying tests/real-fixtures/generic-core/pristine/api/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/pristine/api
+copying tests/real-fixtures/generic-core/source/opencv-core-fixed_matrices.ads -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/source
+copying tests/real-fixtures/generic-core/source/opencv-core-float16_vec3.ads -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/source
+copying tests/real-fixtures/generic-core/source/opencv-core-float32_matx3x3.ads -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/source
+copying tests/real-fixtures/generic-core/source/opencv-core-float32_matx3x3_conversions.ads -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/source
+copying tests/real-fixtures/generic-core/source/opencv-core-float32_vec4.ads -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/source
+copying tests/real-fixtures/generic-core/source/opencv-core-float64_vec2.ads -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/source
+copying tests/real-fixtures/generic-core/source/opencv-core-uint8_vec2.ads -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/source
+copying tests/real-fixtures/generic-core/source/opencv-core-vectors.ads -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/source
+copying tests/real-fixtures/generic-core/source/opencv-core.ads -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/source
+copying tests/real-fixtures/generic-core/source/opencv.ads -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/generic-core/source
+copying tests/real-fixtures/geometry/input.json -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/geometry
+copying tests/real-fixtures/geometry/pristine/api/4f90dae6ae3d13b7eca2073a4084d7aafc29ca4b1a5df10de478124a1cd77135.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/geometry/pristine/api
+copying tests/real-fixtures/geometry/pristine/api/6321b5997b10c36deb354676b6e21d46f8606071335cecd36f62445f6e701534.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/geometry/pristine/api
+copying tests/real-fixtures/geometry/pristine/api/gnatdoc.css -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/geometry/pristine/api
+copying tests/real-fixtures/geometry/pristine/api/index.html -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/geometry/pristine/api
+copying tests/real-fixtures/geometry/source/docs/api-categories.json -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/geometry/source/docs
+copying tests/real-fixtures/geometry/source/src/opencv-geometry-subdiv2d.ads -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/geometry/source/src
+copying tests/real-fixtures/geometry/source/src/opencv-geometry.ads -> ada_gnatdoc_enhancer-0.1.0/tests/real-fixtures/geometry/source/src
+Writing ada_gnatdoc_enhancer-0.1.0/setup.cfg
+Creating tar archive
+removing 'ada_gnatdoc_enhancer-0.1.0' (and everything under it)
+Successfully built ada_gnatdoc_enhancer-0.1.0-py3-none-any.whl and ada_gnatdoc_enhancer-0.1.0.tar.gz
