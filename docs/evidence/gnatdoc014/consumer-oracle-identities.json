@@ -1,0 +1,6 @@
+{
+  "scripts/qualify_production_core_links.py": "9efce57401f8e6eacf31c32af61aba7fb3cc093bcd413669d0ab06c4e107b30d",
+  "scripts/probe_core_candidate.py": "32dc1605917da0113147a253de59c5af9716516ab09055eaf9947f7706e3b136",
+  "scripts/link_gnatdoc_types.py": "5bb023f7042ecd399ce5c4e15c105082f41540d2c3ef27d18570ae67d8f4243b",
+  "docs/evidence/gnatdoc009/r1/core-destination-proposal.json": "04aeb19845dd50890690ea6ec721f74443f305af5e949ea70195a31a462828f4"
+}

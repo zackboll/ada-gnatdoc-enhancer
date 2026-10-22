@@ -1,0 +1,8 @@
+{
+  "python": "3.13",
+  "installation": "clean non-editable wheel",
+  "complete_qualification_report_equal": true,
+  "default_and_top_site_hashes_equal": true,
+  "source_report_sha256": "c18d334094f48c73ebf70bbe1cf46a47e0a08042d5745abb4137375605f0383c",
+  "installed_module": "/home/zboll/qualification/gnatdoc014/distributions-final/python-3.13/wheel-env/lib/python3.13/site-packages/ada_gnatdoc_enhancer/__init__.py"
+}

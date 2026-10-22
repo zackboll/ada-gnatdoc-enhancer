@@ -1,0 +1,2321 @@
+{
+  "requestInterception": false,
+  "migrationApproved": false,
+  "assertions": [
+    {
+      "campaign": "1280-light-jstrue",
+      "defaultIframePreserved": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.angle_unit",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.angle_unit",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.border_kind",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.border_kind",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.core.mat",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.core.mat",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.core.mat_array",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.core.mat_array",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.float32_point",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.float32_point",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.float32_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.float32_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.float64_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.float64_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.point",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.point",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.point_array",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.point_array",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.rect",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.rect",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.scalar",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.scalar",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.size",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.size",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.size_coordinate",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.size_coordinate",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.uint8_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "identity": "opencv.uint8_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jstrue",
+      "networkErrorsObserved": [],
+      "unexpectedConsoleErrors": []
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "defaultIframePreserved": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.angle_unit",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.angle_unit",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.border_kind",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.border_kind",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.core.mat",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.core.mat",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.core.mat_array",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.core.mat_array",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.float32_point",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.float32_point",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.float32_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.float32_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.float64_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.float64_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.point",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.point",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.point_array",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.point_array",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.rect",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.rect",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.scalar",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.scalar",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.size",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.size",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.size_coordinate",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.size_coordinate",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.uint8_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "identity": "opencv.uint8_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-light-jsfalse",
+      "networkErrorsObserved": [],
+      "unexpectedConsoleErrors": []
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "defaultIframePreserved": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.angle_unit",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.angle_unit",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.border_kind",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.border_kind",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.core.mat",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.core.mat",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.core.mat_array",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.core.mat_array",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.float32_point",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.float32_point",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.float32_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.float32_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.float64_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.float64_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.point",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.point",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.point_array",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.point_array",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.rect",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.rect",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.scalar",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.scalar",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.size",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.size",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.size_coordinate",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.size_coordinate",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.uint8_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "identity": "opencv.uint8_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jstrue",
+      "networkErrorsObserved": [],
+      "unexpectedConsoleErrors": []
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "defaultIframePreserved": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.angle_unit",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.angle_unit",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.border_kind",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.border_kind",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.core.mat",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.core.mat",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.core.mat_array",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.core.mat_array",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.float32_point",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.float32_point",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.float32_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.float32_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.float64_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.float64_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.point",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.point",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.point_array",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.point_array",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.rect",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.rect",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.scalar",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.scalar",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.size",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.size",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.size_coordinate",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.size_coordinate",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.uint8_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "identity": "opencv.uint8_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "1280-dark-jsfalse",
+      "networkErrorsObserved": [],
+      "unexpectedConsoleErrors": []
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "defaultIframePreserved": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.angle_unit",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.angle_unit",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.border_kind",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.border_kind",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.core.mat",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.core.mat",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.core.mat_array",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.core.mat_array",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.float32_point",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.float32_point",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.float32_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.float32_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.float64_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.float64_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.point",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.point",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.point_array",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.point_array",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.rect",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.rect",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.scalar",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.scalar",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.size",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.size",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.size_coordinate",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.size_coordinate",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.uint8_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "identity": "opencv.uint8_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jstrue",
+      "networkErrorsObserved": [],
+      "unexpectedConsoleErrors": []
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "defaultIframePreserved": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.angle_unit",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.angle_unit",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.border_kind",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.border_kind",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.core.mat",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.core.mat",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.core.mat_array",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.core.mat_array",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.float32_point",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.float32_point",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.float32_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.float32_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.float64_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.float64_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.point",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.point",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.point_array",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.point_array",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.rect",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.rect",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.scalar",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.scalar",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.size",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.size",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.size_coordinate",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.size_coordinate",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.uint8_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "identity": "opencv.uint8_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-light-jsfalse",
+      "networkErrorsObserved": [],
+      "unexpectedConsoleErrors": []
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "defaultIframePreserved": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.angle_unit",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.angle_unit",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.border_kind",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.border_kind",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.core.mat",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.core.mat",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.core.mat_array",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.core.mat_array",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.float32_point",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.float32_point",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.float32_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.float32_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.float64_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.float64_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.point",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.point",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.point_array",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.point_array",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.rect",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.rect",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.scalar",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.scalar",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.size",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.size",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.size_coordinate",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.size_coordinate",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.uint8_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "identity": "opencv.uint8_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jstrue",
+      "networkErrorsObserved": [],
+      "unexpectedConsoleErrors": []
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "defaultIframePreserved": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.angle_unit",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.angle_unit",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.border_kind",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.border_kind",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.core.mat",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.core.mat",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.core.mat_array",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.core.mat_array",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.float32_point",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.float32_point",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.float32_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.float32_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.float64_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.float64_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.point",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.point",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.point_array",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.point_array",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.rect",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.rect",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.scalar",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.scalar",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.size",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.size",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.size_coordinate",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.size_coordinate",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.uint8_value",
+      "activation": "click",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "identity": "opencv.uint8_value",
+      "activation": "keyboard",
+      "topLevel": true,
+      "exactFragment": true,
+      "artifactBytesEqual": true,
+      "backForward": true,
+      "declarationVisible": true
+    },
+    {
+      "campaign": "390-dark-jsfalse",
+      "networkErrorsObserved": [],
+      "unexpectedConsoleErrors": []
+    }
+  ],
+  "failures": [],
+  "browser": "156.0.8078.47",
+  "status": "pass"
+}

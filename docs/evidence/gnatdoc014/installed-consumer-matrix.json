@@ -1,0 +1,32 @@
+[
+  {
+    "python": "3.11",
+    "archive": "wheel",
+    "full_consumer_qualification_equal": true
+  },
+  {
+    "python": "3.11",
+    "archive": "sdist",
+    "full_consumer_qualification_equal": true
+  },
+  {
+    "python": "3.12",
+    "archive": "wheel",
+    "full_consumer_qualification_equal": true
+  },
+  {
+    "python": "3.12",
+    "archive": "sdist",
+    "full_consumer_qualification_equal": true
+  },
+  {
+    "python": "3.13",
+    "archive": "wheel",
+    "full_consumer_qualification_equal": true
+  },
+  {
+    "python": "3.13",
+    "archive": "sdist",
+    "full_consumer_qualification_equal": true
+  }
+]

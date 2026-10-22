@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased — GNATDOC-014
+
+- Add opt-in `[presentation].external_type_target = "_top"` for already
+  source-verified external type links. Omitted configuration preserves v0.1.0
+  output exactly; local, generic-instance, guide and native navigation is unchanged.
+- Extend strict canonical snippet reconstruction and adversarial publication
+  tests; qualify exact top-level browser navigation against Imgproc PR #81's
+  independent 586-occurrence / 14-type evidence without changing that consumer.
+- No version bump or release publication in this change.
+
 ## 0.1.0 — release candidate (GNATDOC-012R2; not yet published)
 
 - Consolidate merged GNATDOC-001–011: fail-closed source/native qualification,

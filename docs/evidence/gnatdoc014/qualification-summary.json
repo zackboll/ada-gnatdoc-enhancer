@@ -1,0 +1,31 @@
+{
+  "disposition": "READY_FOR_INDEPENDENT_REVIEW",
+  "baseline_commit": "4ee95e8c95b8c7f54397a07e3e1c507783c115aa",
+  "version": "0.1.0",
+  "version_changed": false,
+  "release_published": false,
+  "consumer_pr_modified": false,
+  "total_tests_per_environment": 576,
+  "environments": 9,
+  "total_test_executions": 5184,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "default_parity_profiles": 12,
+  "external_occurrences": 586,
+  "external_types": 14,
+  "local_links_preserved": 350,
+  "browser_top_traces_per_campaign": 224,
+  "browser_campaigns": [
+    "source",
+    "installed-python3.13-wheel"
+  ],
+  "six_installed_consumer_replays_equal": true,
+  "qualified_source_snapshot_sha256": "9bd8d5611af428ae90befb25c732d321f9ccc5733d7f0959cf2e2dde6c94e834",
+  "limitations": [
+    "Retained GNATdoc native inputs hash-verified; no fresh Ada compilation/native generation",
+    "Live Pages mutable; exact reviewed target bytes verified at browser test time",
+    "Local archives precede evidence-only files; final-head CI rebuilds submitted source",
+    "No consumer migration/policy approval; Imgproc PR #81 remains unchanged"
+  ]
+}

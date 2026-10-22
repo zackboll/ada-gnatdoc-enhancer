@@ -1,0 +1,26 @@
+{
+  "missing-target": {
+    "rejected": true,
+    "returncode": 1,
+    "source_substitution": [
+      "if config.external_type_target == '_top':target_attribute=' target=\"_top\"'",
+      "if False:target_attribute=' target=\"_top\"'"
+    ]
+  },
+  "default-also-top": {
+    "rejected": true,
+    "returncode": 1,
+    "source_substitution": [
+      "if config.external_type_target == '_top':target_attribute=' target=\"_top\"'",
+      "if True:target_attribute=' target=\"_top\"'"
+    ]
+  },
+  "local-target-leak": {
+    "rejected": true,
+    "returncode": 1,
+    "source_substitution": [
+      "target_attribute=''",
+      "target_attribute=' target=\"_top\"'"
+    ]
+  }
+}

@@ -30,7 +30,7 @@ LEXEME = re.compile(
     r'(?:[Ee][+-]?[0-9][0-9_]*)?)|'
     r'(?P<identifier>[A-Za-z][A-Za-z0-9_]*)|'
     r'(?P<operator>:=|=>|\.\.|\*\*|/=|<=|>=|<>|[&+*/=<>:;,.()|\-])')
-TYPE_LINK = re.compile(r'<a class="type-reference" href="([^"<>]+)" data-type="([A-Za-z0-9_.]+)">([^<>]+)</a>')
+TYPE_LINK = re.compile(r'<a class="type-reference" href="([^"<>]+)" data-type="([A-Za-z0-9_.]+)"(?: target="_top")?>([^<>]+)</a>')
 SPAN = re.compile(r'<span class="ada-(?:keyword|number|string|character|attribute|comment|operator)">([^<]*)</span>')
 CODE = re.compile(r'(<pre class=ada-code-snippet><code>)(.*?)(</code></pre>)', re.S)
 SIMPLE_TYPE = re.compile(r'^'+QNAME+'$', re.I)
@@ -248,6 +248,7 @@ def linked(raw: str, pkg: Package, source: dict[str, Package],
     from .inventory import mask_ada
     base=SUBTYPE_BASE.match(mask_ada(text))
     for a,b,name in type_positions(text):
+        target_attribute=''
         relative=(name.count('.')==1 and
                   name.split('.')[0].lower()==pkg.name.rsplit('.',1)[-1].lower() and
                   name.rsplit('.',1)[0].lower()!=pkg.name.lower())
@@ -264,7 +265,9 @@ def linked(raw: str, pkg: Package, source: dict[str, Package],
             identity,url=explanation.identity,explanation.href
         else:
             identity,kind=target
-            if kind=='external': url=config.externals[identity]
+            if kind=='external':
+                url=config.externals[identity]
+                if config.external_type_target == '_top':target_attribute=' target="_top"'
             else:
                 target_page,anchor=targets[identity]
                 url=target_page.name+'#'+anchor
@@ -272,7 +275,7 @@ def linked(raw: str, pkg: Package, source: dict[str, Package],
         encoded=raw[src_a:src_b]
         inserts.append((src_a,src_b,
                         f'<a class="type-reference" href="{html.escape(url,quote=True)}" '
-                        f'data-type="{identity}">{encoded}</a>'))
+                        f'data-type="{identity}"{target_attribute}>{encoded}</a>'))
     # Only accept nonoverlapping type-mark spans.
     used=set()
     for start,end,_ in inserts:

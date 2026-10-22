@@ -1,0 +1,30 @@
+{
+  "src/ada_gnatdoc_enhancer/assets": {
+    "files": 5,
+    "unchanged": true
+  },
+  "docs/evidence/gnatdoc011": {
+    "files": 36,
+    "unchanged": true
+  },
+  "docs/evidence/gnatdoc011r1": {
+    "files": 74,
+    "unchanged": true
+  },
+  "docs/evidence/gnatdoc011r2": {
+    "files": 44,
+    "unchanged": true
+  },
+  "docs/evidence/gnatdoc011r3": {
+    "files": 88,
+    "unchanged": true
+  },
+  "docs/evidence/gnatdoc012": {
+    "files": 85,
+    "unchanged": true
+  },
+  "docs/evidence/gnatdoc012r2": {
+    "files": 225,
+    "unchanged": true
+  }
+}

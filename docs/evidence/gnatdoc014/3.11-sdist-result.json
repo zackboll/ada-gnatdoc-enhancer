@@ -1,0 +1,9 @@
+{
+  "tests": 576,
+  "distinct": 576,
+  "skips": 0,
+  "failures": 0,
+  "errors": 0,
+  "module": "/home/zboll/qualification/gnatdoc014/distributions-final/python-3.11/sdist-env/lib/python3.11/site-packages/ada_gnatdoc_enhancer/__init__.py",
+  "version": "0.1.0"
+}
