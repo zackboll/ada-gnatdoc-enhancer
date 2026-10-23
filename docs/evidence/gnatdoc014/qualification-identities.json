@@ -1,0 +1,15 @@
+{
+  "src/ada_gnatdoc_enhancer/config.py": "3b09437abb299b13a7dc5642c185c5c5b9e61a3e9ae8f247ca81ba76e04d373f",
+  "src/ada_gnatdoc_enhancer/syntax.py": "1a50bac20ed193d5e03ef305dc249b9b3b15ba546b0dd9818daceaefaa795a53",
+  "tests/test_external_type_target.py": "645af0735891e1a1805cf8af581d30199973f2b2c11aa40887d2df1a65c4a68a",
+  "tests/external_type_target_browser.cjs": "a1435fe7ee99140fcbca9027ff609f17e2f1a2f238e7d917b0c81913f49393c7",
+  "baseline_commit": "4ee95e8c95b8c7f54397a07e3e1c507783c115aa",
+  "baseline_tag_commit": "4ee95e8c95b8c7f54397a07e3e1c507783c115aa",
+  "python_versions": {
+    "3.11": "Python 3.11.17",
+    "3.12": "Python 3.12.15",
+    "3.13": "Python 3.13.16"
+  },
+  "node": "v20.19.2",
+  "snapshot_inventory_sha256": "9bd8d5611af428ae90befb25c732d321f9ccc5733d7f0959cf2e2dde6c94e834"
+}

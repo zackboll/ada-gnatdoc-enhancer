@@ -1,0 +1,14 @@
+{
+  "imgproc_pr": "https://github.com/zackboll/opencv_imgproc_ada/pull/81",
+  "starting_and_current_head": "a4d4a2edbc7cae49cf07a6d1e9f753f8d833d569",
+  "title_body_unchanged": true,
+  "consumer_working_tree_clean": true,
+  "consumer_pr_state": "OPEN",
+  "existing_release_observed_not_modified": {
+    "publishedAt": "2026-10-21T03:08:12Z",
+    "tagName": "v0.1.0",
+    "targetCommitish": "4ee95e8c95b8c7f54397a07e3e1c507783c115aa",
+    "url": "https://github.com/zackboll/ada-gnatdoc-enhancer/releases/tag/v0.1.0"
+  },
+  "enhancer_version_unchanged": true
+}

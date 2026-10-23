@@ -58,6 +58,7 @@ mode = "packages"          # packages | operations | none
 theme = true
 syntax_highlighting = true
 type_links = true
+# external_type_target = "_top"  # opt in to leaving the API iframe
 [guides]
 mode = "none"              # html | markdown | none
 # manifest = "docs/site-map.json"
@@ -92,6 +93,36 @@ complete, already independently verified HTTPS URLs including native fragment
 anchors, and `security.external_hosts`. Do not guess an OpenCV Core HTML hash.
 An explicit external URL is not proof of its target unless the consuming CI
 qualifies that external site's exact revision independently.
+
+### Opt-in top-level external type navigation (GNATDOC-014)
+
+`[presentation].external_type_target = "_top"` adds the literal
+`target="_top"` only to source-verified external type-reference anchors. This
+applies equally to explicit `external_types` and qualified dependency mappings.
+It does not add eligible type marks, bypass import/ownership checks, authorize a
+host, verify external hosting, or enable production dependency manifests.
+
+Omit the key to preserve v0.1.0 output **byte-for-byte**: no target attribute,
+and external links clicked within the native API iframe stay in that iframe.
+The only accepted explicit value is the string `"_top"`; empty strings,
+`"_self"`, `"_blank"`, `"_parent"`, named frames, nonstrings and unknown keys fail.
+Local links, native navigation, generic-instance explanation links, guides and
+assets are unaffected. With `type_links = false` the setting has no output
+effect. No JavaScript is required for top-level activation.
+
+The opt-in exits the embedding frame and navigates the top document to the exact
+allowlisted HTTPS page-plus-fragment URL. It intentionally does not convert that
+destination into a package query or symbol bookmark. Browser Back returns to the
+consumer shell; Forward returns to the external declaration. This is a consumer
+navigation-policy choice, not blanket migration approval. Changing the setting
+requires regeneration from pristine native output: an already enhanced tree is
+verified against its original settings and is not silently rewritten.
+
+The strict snippet grammar recognizes only the canonical optional literal
+` target="_top"` after `data-type`. Independent publication reconstruction still
+requires the exact source/config-derived bytes; valid grammar alone cannot
+authorize a target on a local link or in a default publication. See
+[qualification and evidence](external-type-target-navigation.md).
 
 ### Version-pinned dependency manifests (GNATDOC-005)
 

@@ -48,6 +48,7 @@ class Config:
     symbol_bookmarks: bool = False
     default_package: str | None = None
     instance_references: bool = False
+    external_type_target: str | None = None
 
 
 def load(root: Path, path: str) -> Config:
@@ -93,9 +94,12 @@ def load(root: Path, path: str) -> Config:
     if categories is not None:
         regular(inside(root, categories))
     pres = raw.get("presentation", {})
-    members(pres, {"theme", "syntax_highlighting", "type_links"}, "presentation")
-    for k in pres:
+    members(pres, {"theme", "syntax_highlighting", "type_links", "external_type_target"}, "presentation")
+    for k in pres.keys() - {"external_type_target"}:
         require(type(pres[k]) is bool, f"presentation.{k} must be Boolean")
+    external_target = pres.get('external_type_target')
+    require(external_target is None or external_target == '_top',
+            'presentation.external_type_target must be "_top" when specified')
     guide = raw.get("guides", {})
     members(guide, {"mode", "manifest", "sha256"}, "guides")
     guide_mode = guide.get("mode", "none")
@@ -166,4 +170,4 @@ def load(root: Path, path: str) -> Config:
                   pres.get("theme", True), pres.get("syntax_highlighting", True),
                   pres.get("type_links", True), guide_mode, guide_manifest,
                   ext, frozenset(hosts), exceptions, tuple(dependencies), generic, guide_hash,
-                  symbols, default_package, incoming)
+                  symbols, default_package, incoming, external_target)
