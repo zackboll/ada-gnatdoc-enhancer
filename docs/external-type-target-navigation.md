@@ -1,5 +1,18 @@
 # GNATDOC-014 — opt-in top-level external type navigation
 
+## v0.1.1 preparation
+
+GNATDOC-015 packages this independently reviewed implementation as planned
+maintenance release 0.1.1. The contract below is retained from GNATDOC-014;
+cross-version comparisons permit only `enhancer_version` changing from 0.1.0 to
+0.1.1 in presentation metadata. No default navigation script or stylesheet changes.
+Fresh candidate-wheel and rebuilt-sdist qualification is recorded separately in
+`docs/evidence/gnatdoc015/`; do not count the historical browser runs below as
+fresh distribution qualification. The historical replay command uses matching
+0.1.0 source versions. For cross-version release reproduction use GNATDOC-015's
+`qualify_consumer.py` and `qualify_default_outputs.py` with the independently
+downloaded official v0.1.0 environment and verified merged-main source.
+
 ## Scope and contract
 
 Starting point: freshly fetched `origin/main`,

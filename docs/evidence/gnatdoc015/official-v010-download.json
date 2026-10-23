@@ -1,0 +1,26 @@
+{
+  "assets": {
+    "SHA256SUMS": {
+      "sha256": "c50969e74325f641c28ff8929c4a8b056c3de6d74d7f243cd0651429d7eb7d2c",
+      "bytes": 210
+    },
+    "ada_gnatdoc_enhancer-0.1.0-py3-none-any.whl": {
+      "sha256": "b0949aba6736515bf2ebe14fc7cc30c816a176257fc4524564285397b8aaf97d",
+      "bytes": 94237
+    },
+    "ada_gnatdoc_enhancer-0.1.0.tar.gz": {
+      "sha256": "b5114c9d186dc6d230f1d48c139739b32e83a037d7fe7e7516c46755916e854a",
+      "bytes": 2163965
+    },
+    "release-provenance.json": {
+      "sha256": "7d08f56d7566416009bcd0595ecaa186cc7701e1aa1c5e9d8349d6e601c1a269",
+      "bytes": 707651
+    }
+  },
+  "wheel_expected_sha256": "b0949aba6736515bf2ebe14fc7cc30c816a176257fc4524564285397b8aaf97d",
+  "sdist_expected_sha256": "b5114c9d186dc6d230f1d48c139739b32e83a037d7fe7e7516c46755916e854a",
+  "source_commit": "4ee95e8c95b8c7f54397a07e3e1c507783c115aa",
+  "tree": "c5cff2cff52e595f71202bf97c513b7e0f46c918",
+  "downloaded_from_official_release": true,
+  "noneditable_module_bytes_match": true
+}

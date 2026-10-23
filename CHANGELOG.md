@@ -1,14 +1,24 @@
 # Changelog
 
-## Unreleased — GNATDOC-014
+## 0.1.1 — planned maintenance release (GNATDOC-015; not yet published)
 
 - Add opt-in `[presentation].external_type_target = "_top"` for already
   source-verified external type links. Omitted configuration preserves v0.1.0
-  output exactly; local, generic-instance, guide and native navigation is unchanged.
+  navigation and output exactly except for version-bound presentation metadata;
+  local, generic-instance, guide and native navigation is unchanged.
 - Extend strict canonical snippet reconstruction and adversarial publication
   tests; qualify exact top-level browser navigation against Imgproc PR #81's
   independent 586-occurrence / 14-type evidence without changing that consumer.
-- No version bump or release publication in this change.
+- Keep strict source/config-derived link reconstruction, external-host authorization
+  and source/native declaration identity restrictions. No default script or asset
+  changes, new dependency or Python-version requirement.
+- Include the independently reviewed GNATDOC-014 browser/security qualification.
+  Imgproc's migration motivates top-level navigation; its Core policy approval,
+  authored-site parity, full production browser/security checks and Pages deployment
+  remain separate consumer requirements. PR #81 is not modified or approved here.
+- Synchronize active version authorities to 0.1.1 and prepare independent archive,
+  installed-package, compatibility and browser requalification. Publication requires
+  a later independently authorized task; the published v0.1.0 tag/assets stay intact.
 
 ## 0.1.0 — release candidate (GNATDOC-012R2; not yet published)
 

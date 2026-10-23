@@ -1,0 +1,13 @@
+{
+  "node": "v20.19.2",
+  "playwright": "1.62.0",
+  "chrome": "Google Chrome 156.0.8078.47",
+  "python": {
+    "3.11": "Python 3.11.17",
+    "3.12": "Python 3.12.15",
+    "3.13": "Python 3.13.16"
+  },
+  "isolated_build_setuptools": "84.2.1",
+  "build": "1.6.1",
+  "twine": "7.0.0"
+}

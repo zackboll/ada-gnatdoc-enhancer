@@ -1,0 +1,12 @@
+{
+  "issue": "Path.resolve followed venv Python symlink and bypassed installed packages",
+  "actual_error": "ModuleNotFoundError: No module named ada_gnatdoc_enhancer",
+  "correction": "Use absolute venv interpreter path without resolving its symlink",
+  "attempts": [
+    "consumer-wheel",
+    "consumer-sdist",
+    "default-parity"
+  ],
+  "passing_attempts_not_claimed": true,
+  "runtime_modified": false
+}

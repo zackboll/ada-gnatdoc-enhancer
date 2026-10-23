@@ -1,4 +1,89 @@
-# Auditable v0.1.0 release procedure (GNATDOC-013 only)
+# Auditable v0.1.1 publication procedure
+
+GNATDOC-015 authorizes release preparation only. Leave its PR open, non-draft,
+unmerged and with auto-merge disabled. The following publication steps require a
+**subsequent explicitly authorized task**. No PyPI or Alire publication is
+authorized. Never add publishing credentials to a PR workflow.
+
+1. Require independent approval and merge of GNATDOC-015. Record the reviewed
+   final PR head/tree and the actual merged-main commit/tree. Reconcile changes
+   since starting main `5ac7be66d23169dba7f9d13187a3eec5c8caee3c`, tree
+   `fd6c94ed68e0e9e70e48e0b8ac6e26952e9d4f10`.
+2. Require all six Python 3.11–3.13 source/wheel jobs on the **exact merged-main
+   commit**, not a previous PR run. Retain run URLs, SHA, jobs and conclusions;
+   download CI artifacts and inspect actual content/digests.
+3. Build official distributions from a clean checkout or `git archive` of that
+   exact approved merged source. Inventory source bytes against its Git tree.
+   Record Python patch versions, pip, build, setuptools (including isolated build
+   backends), twine, Node.js, Playwright and browser versions and complete logs.
+   Run `python -m build --wheel --sdist --outdir /absolute/candidate`, producing
+   exactly `ada_gnatdoc_enhancer-0.1.1-py3-none-any.whl` and
+   `ada_gnatdoc_enhancer-0.1.1.tar.gz`; run `python -m twine check --strict` on both.
+4. Independently audit complete archive membership and paths before extraction:
+   reject symlinks, hardlinks, devices, FIFOs, sockets, duplicates and traversal.
+   Extract the sdist, rebuild its wheel and run `scripts/check_distributions.py`
+   with `--source`, `--wheel`, `--sdist` and `--rebuilt` absolute paths. Require
+   exact source/module/CSS/JavaScript identity, complete tests/fixtures including
+   GNATDOC-014, and exclusion of generated products/large historical evidence.
+   Keep Python `>=3.11`, Apache-2.0, dependency-free core and the optional guides
+   pins unchanged. Compare complete content, not compressed archive bytes.
+5. Independently requalify all nine Python 3.11/3.12/3.13 × source/canonical
+   wheel/rebuilt-sdist environments. Require all 576 retained tests plus added
+   release tests, zero failures/errors/skips, security/mutation, native identity,
+   generic-instance and authored-guide controls. Install both wheels non-editably;
+   run outside the source checkout with `PYTHONPATH` unset. Run installed smoke,
+   CLI help/version, bundled assets, dependency checks and four-profile conformance.
+   Independently require source, wheel/sdist/rebuilt metadata, sdist directory,
+   installed module/distribution, CLI and manifest versions all equal `0.1.1`.
+6. Reconstruct default output using the **original official v0.1.0 installation**
+   and equivalent pristine native inputs. Permit only `enhancer_version` changing
+   to 0.1.1 in presentation metadata; no other output, native declaration, anchor,
+   link, rendered source, default navigation or asset drift. Compare opt-in output
+   with verified merged GNATDOC-014: exactly 586 `_top` attributes and unchanged
+   destinations, apart from that same manifest-version transition.
+7. Recheck read-only Imgproc PR #81 source/native/Core identities. Qualify both
+   actual installed official and rebuilt wheels: 329 declarations and source-owned
+   operation destinations, 586 external occurrences / 14 types, 350 local links,
+   1,596/1,596 documented elements, two-copy determinism, idempotence and installed
+   CLI `verify`. Execute fresh live Core HTTPS browser campaigns, 224 top-level
+   traces each: exact visible declaration, direct fragments, mouse/keyboard,
+   Back/Forward, JS on/off, desktop/mobile and light/dark. Recheck hosted bytes and
+   deployment identity; Pages is mutable. Explicitly distinguish historical
+   native evidence reuse from freshly executed checks. Do not modify PR #81;
+   Core policy approval, authored-site parity, full consumer production browser/
+   security qualification and deployment remain separate consumer gates.
+8. Prepare `release-provenance.json` with approved source commit/tree, full source
+   inventory, archive SHA-256 hashes/sizes, content inventories, toolchains,
+   qualification results and hosted links. Authorize identities from approved
+   source/review records, not an archive's own claims. Rebuild and requalify after
+   any final source/evidence change; preparation hashes do not authorize merged
+   release artifacts. Avoid self-referential commit/hash claims. Hash the exact
+   wheel, sdist and provenance JSON in `SHA256SUMS`; record the checksum file's
+   digest independently in the handoff.
+9. Only after explicit release authorization and all gates, create **one annotated
+   `v0.1.1` tag** at the approved source commit. Verify annotation/tag-object SHA,
+   peeled commit and tree with `git cat-file -t v0.1.1` and
+   `git rev-parse v0.1.1 v0.1.1^{commit} v0.1.1^{tree}`; verify signatures if policy
+   requires them. Stop on a conflicting existing tag; never move/force-push tags.
+10. Publish exactly the qualified wheel, sdist, `release-provenance.json` and
+    `SHA256SUMS` on the GitHub release for that tag, not the rebuilt test wheel.
+    Notes must explain opt-in/default behavior and consumer/publication boundaries.
+11. Download all four public assets into a fresh directory. Independently verify
+    hashes, sizes, tag/source identities and content inventories. Smoke-test public
+    wheel and public sdist installations non-editably outside the checkout with
+    `PYTHONPATH` unset: CLI/version, assets, verify and conformance. Record URLs/logs.
+12. Preserve existing v0.1.0 tag/assets unchanged and recheck their identities.
+    Never silently replace published bits; use the approved incident procedure.
+
+Stop on dirty/unreviewed/superseded source, failed or missing exact-SHA CI,
+archive/content/version drift, unexpected dependencies/assets, any failed
+test/parity/source/native/browser gate, unavailable fresh execution represented as
+completed, or unauthorized consumer/publication changes. Report
+`HOSTED_CI_PENDING` if only CI remains; otherwise `CORRECTIVE_WORK_REQUIRED` with
+the actual blocker. `READY_FOR_INDEPENDENT_REVIEW` requires every preparation
+gate, not permission to publish.
+
+## Historical v0.1.0 procedure (GNATDOC-013; retained, not current instructions)
 
 GNATDOC-012 prepares a PR, not a tag, release, merge or registry publication.
 This procedure requires independent approval after review. There is no automatic
