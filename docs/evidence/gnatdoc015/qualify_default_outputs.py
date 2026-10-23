@@ -61,7 +61,7 @@ for label, root, config in entries:
     for kind, python in [('official', args.official_python), ('candidate', args.candidate_python)]:
         site = E/label/kind; shutil.copytree(pristine, site)
         results[kind] = json.loads(subprocess.check_output(
-            [python.resolve(), '-c', program, root, config, site], cwd=E,
+            [python.absolute(), '-c', program, root, config, site], cwd=E,
             env=environment, text=True))
         assert 'site-packages' in results[kind]['module'], 'not an installed module'
     a = results['official']['sha256']; b = results['candidate']['sha256']

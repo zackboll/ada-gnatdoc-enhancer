@@ -38,12 +38,12 @@ def qualify(version):
     py = source/'bin/python'
     run([py, '-m', 'pip', 'install', 'build', 'twine', 'setuptools>=77',
          'markdown-it-py==3.0.0', 'mdurl==0.1.2'], version+'-tools.log')
-    run([py, '-m', 'pip', 'install', '-e', S], version+'-source-install.log')
     run([py, '-m', 'pip', 'list', '--format=json'], version+'-toolchain.json')
     # Independent clean build trees prevent shared backend products.
     import shutil
     build_source = base/'build-source'
-    shutil.copytree(S, build_source)
+    shutil.copytree(S, build_source, ignore=shutil.ignore_patterns('__pycache__', '*.egg-info'))
+    run([py, '-m', 'pip', 'install', '-e', S], version+'-source-install.log')
     artifacts = base/'artifacts'
     run([py, '-m', 'build', '--wheel', '--sdist', '--outdir', artifacts],
         version+'-build.log', cwd=build_source)

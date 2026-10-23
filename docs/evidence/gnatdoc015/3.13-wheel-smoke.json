@@ -1,0 +1,58 @@
+{
+  "assets": 3,
+  "conformance": {
+    "fully_pinned_consumer_sites": "not qualified in bootstrap",
+    "profiles": {
+      "core": {
+        "deterministic": true,
+        "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+        "html_pages": 4,
+        "idempotent": true,
+        "linked_types": 4,
+        "packages": 3
+      },
+      "geometry": {
+        "deterministic": true,
+        "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+        "html_pages": 3,
+        "idempotent": true,
+        "linked_types": 5,
+        "packages": 2
+      },
+      "imgproc": {
+        "deterministic": true,
+        "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+        "html_pages": 2,
+        "idempotent": true,
+        "linked_types": 6,
+        "packages": 1
+      },
+      "mel": {
+        "deterministic": true,
+        "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+        "html_pages": 37,
+        "idempotent": true,
+        "linked_types": 7,
+        "packages": 29
+      }
+    }
+  },
+  "enhancement": "passed",
+  "help": "passed",
+  "idempotence": "passed",
+  "installed_module": "/home/zboll/qualification/gnatdoc015/distributions/python-3.13/wheel-env/lib/python3.13/site-packages/ada_gnatdoc_enhancer/__init__.py",
+  "symlink_source_root_rejection": "passed",
+  "verification": {
+    "declaration_snippets": 10,
+    "files": 42,
+    "html_pages": 37,
+    "linked_external_types": 0,
+    "linked_local_types": 7,
+    "linked_types": 7,
+    "links": 234,
+    "mode": "verified",
+    "public_packages": 29,
+    "unrendered_renderer_exceptions": 1
+  },
+  "version": "0.1.1"
+}

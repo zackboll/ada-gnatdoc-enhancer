@@ -113,7 +113,8 @@ from ada_gnatdoc_enhancer.pipeline import enhance,verify
 c=load(Path(sys.argv[1]),'candidate.toml');p=Path(sys.argv[2]);enhance(c,p);verify(c,p)
 '''
     environment = dict(os.environ); environment.pop('PYTHONPATH', None)
-    official = args.official_python.resolve()
+    # Resolving a venv interpreter symlink would bypass the venv's site-packages.
+    official = args.official_python.absolute()
     subprocess.run([official, '-c', program, str(source), str(baseline)], check=True,
                    cwd=output, env=environment)
     default_comparison = compare_release(baseline, output/'default')
