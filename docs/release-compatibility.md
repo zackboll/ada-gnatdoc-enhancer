@@ -1,4 +1,15 @@
-# v0.1.0 consumer compatibility and adoption boundary
+# v0.1.1 consumer compatibility and adoption boundary
+
+The planned patch retains the v0.1.0 boundaries below and adds only opt-in
+top-level external type navigation. Omission preserves output except for
+version-bound manifest metadata. GNATDOC-014's Imgproc PR #81 evidence covers
+329 declarations, 586 external occurrences / 14 Core types, 350 local links and
+329 source-owned operation destinations; GNATDOC-015 must requalify the actual
+installed candidate and rebuilt wheel. Historical coverage is 1,596/1,596;
+retained evidence is not a fresh native generation or deployment.
+See [fresh release-preparation results](evidence/gnatdoc015/README.md).
+Core policy approval, authored-site parity, full consumer production browser and
+security qualification, and Pages deployment remain separate. PR #81 is untouched.
 
 Package release is not production-migration certification. Historical campaigns
 remain immutable in `docs/evidence/gnatdoc002` through `gnatdoc011r3` and

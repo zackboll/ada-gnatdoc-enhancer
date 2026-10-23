@@ -19,7 +19,23 @@ No consumer migrations, source-policy changes, deployment or publication are
 performed by release preparation. Shared-package release is not consumer approval.
 See [release compatibility](release-compatibility.md).
 
-## Upgrade from 0.1.0.dev0
+## Upgrade from 0.1.0 to 0.1.1
+
+Install the independently reviewed non-editable 0.1.1 wheel or rebuilt sdist wheel
+in a new environment. Require module, distribution, CLI and regenerated manifest
+versions to equal `0.1.1`. Regenerate from equivalent pristine native input; old
+version-bound presentation manifests are intentionally rejected. With the new
+option omitted, only the manifest version may differ from the official v0.1.0
+output. Keep the old installation/site for rollback.
+
+To opt in, add `external_type_target = "_top"` under `[presentation]`. Only
+already source-verified, host-authorized external type links receive the target;
+local and generic-instance links do not. No script or asset migration is needed.
+Imgproc must separately approve Core policy, authored-site parity, its full
+production browser/security campaign and Pages deployment in its own PR #81.
+Toolkit preparation neither modifies that PR nor authorizes publication.
+
+## Historical upgrade from 0.1.0.dev0 to 0.1.0
 
 Install the reviewed non-editable wheel in a fresh environment; verify module,
 distribution and CLI versions all read `0.1.0`. Keep the old environment and
