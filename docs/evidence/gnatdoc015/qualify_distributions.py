@@ -24,6 +24,15 @@ def run(args, log, cwd=E, env=ENV):
     with (E/log).open('w') as output:
         subprocess.run(list(map(str, args)), cwd=cwd, env=env, stdout=output,
                        stderr=subprocess.STDOUT, check=True)
+    path = E/log
+    if path.suffix == '.json':
+        # pip may append an upgrade notice even with --format=json. Preserve
+        # that notice separately without turning JSON evidence into mixed text.
+        text = path.read_text()
+        value, end = json.JSONDecoder().raw_decode(text)
+        if text[end:].strip():
+            path.with_suffix('.notice.txt').write_text(text[end:].strip()+'\n')
+        path.write_text(json.dumps(value, indent=2)+'\n')
 
 
 def sha(data):
