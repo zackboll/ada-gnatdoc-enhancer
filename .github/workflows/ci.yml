@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
@@ -58,6 +60,8 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
@@ -96,7 +100,8 @@ jobs:
       - name: Audit archive metadata, complete test inputs and source/module/asset identities
         run: |
           python scripts/check_distributions.py --source "$GITHUB_WORKSPACE" --wheel dist/*.whl --sdist dist/*.tar.gz --rebuilt "$RUNNER_TEMP"/sdist-wheel/*.whl > dist/content-audit.json
-          sha256sum dist/*.whl dist/*.tar.gz > dist/SHA256SUMS
+          python scripts/record_candidate_provenance.py --repository "$GITHUB_WORKSPACE" --source "$GITHUB_WORKSPACE" --expected-source-commit "$(git rev-parse HEAD)" --expected-source-tree "$(git rev-parse HEAD^{tree})" --wheel dist/*.whl --sdist dist/*.tar.gz --rebuilt "$RUNNER_TEMP"/sdist-wheel/*.whl > dist/candidate-provenance.json
+          sha256sum dist/*.whl dist/*.tar.gz dist/candidate-provenance.json > dist/SHA256SUMS
       - name: Qualify tests and fixtures shipped in the source distribution
         working-directory: ${{ runner.temp }}
         run: |

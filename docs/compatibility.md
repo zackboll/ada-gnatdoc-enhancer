@@ -1,12 +1,19 @@
 # Compatibility and evidence levels
 
-## Current 0.1.0 release boundary
+## Current 0.1.1 preparation boundary
+
+The planned patch adds only opt-in `[presentation].external_type_target = "_top"`.
+Default navigation, native declarations/destinations and bundled CSS/JavaScript
+remain unchanged; only `enhancer_version` changes in default presentation metadata.
+External host and source/native identity restrictions remain mandatory. See
+[GNATDOC-015 evidence](evidence/gnatdoc015/README.md) for actual executed gates,
+not a blanket consumer adoption certificate.
 
 The table below is historical, not the current feature inventory. The merged
 implementation includes summaries, authored content, external/current-package
 links, source-order/history navigation, metadata, symbols and incoming-instance
 routing. See the current [consumer matrix](release-compatibility.md) and
-[release qualification](release-0.1.0-qualification.md). GNATdoc 26.0.0 only;
+[historical v0.1.0 qualification](release-0.1.0-qualification.md). GNATdoc 26.0.0 only;
 Python 3.11/3.12/3.13. Consumer adoption is separately qualified.
 
 GNATDOC-012R2 incorporates reviewed GNATDOC-011R3 symbol-only canonicalization:

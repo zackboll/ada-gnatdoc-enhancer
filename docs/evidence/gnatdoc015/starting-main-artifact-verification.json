@@ -1,0 +1,68 @@
+[
+  {
+    "artifact": "release-candidate-python-3.11",
+    "files": {
+      "ada_gnatdoc_enhancer-0.1.0.tar.gz": {
+        "sha256": "aa34448aac6e16ff02f7c6f161f1f655598f55cae30d64498ef098bfa07d9a61",
+        "bytes": 2175519
+      },
+      "SHA256SUMS": {
+        "sha256": "b30f6189dccf3eb989d2f2d8f8521082a28a5b10a36510ef0ea322eaa6e75486",
+        "bytes": 220
+      },
+      "content-audit.json": {
+        "sha256": "1044f200ea3123e8abfc96473a2b7b3cabbb37659444a2b00adee84177560e2d",
+        "bytes": 4908
+      },
+      "ada_gnatdoc_enhancer-0.1.0-py3-none-any.whl": {
+        "sha256": "7bc5294cfceed28b596e8652cba4c58536e634022961f5265a19e4177426a3e9",
+        "bytes": 94366
+      }
+    },
+    "downloaded_archive_hashes_match": true
+  },
+  {
+    "artifact": "release-candidate-python-3.12",
+    "files": {
+      "ada_gnatdoc_enhancer-0.1.0.tar.gz": {
+        "sha256": "3e55f273dc482f14d09b6aabb3af5a7cef67d591da4f3d8bfa8992ae240b4a89",
+        "bytes": 2175350
+      },
+      "SHA256SUMS": {
+        "sha256": "480869dcf124eec5d291c3083951e59f8ac61ea924f1efc627a33b7f36de3001",
+        "bytes": 220
+      },
+      "content-audit.json": {
+        "sha256": "0a6016b2a9618e5c10976c97ed66fe914e3891b7293550374c1c638f86379aed",
+        "bytes": 4908
+      },
+      "ada_gnatdoc_enhancer-0.1.0-py3-none-any.whl": {
+        "sha256": "e04181e99c3d6cbfafd0b49cdb0188ef2f9b26d9de4fc865e7da8071de288069",
+        "bytes": 94366
+      }
+    },
+    "downloaded_archive_hashes_match": true
+  },
+  {
+    "artifact": "release-candidate-python-3.13",
+    "files": {
+      "ada_gnatdoc_enhancer-0.1.0.tar.gz": {
+        "sha256": "a63c41417f75185340b70d711ae950f88cb87e103e2a3b62dae828595bc26e64",
+        "bytes": 2175308
+      },
+      "SHA256SUMS": {
+        "sha256": "ffdd128aeaa9ab0bf205de29be1f6c891f39b235085e6267b0506b79593d3e39",
+        "bytes": 220
+      },
+      "content-audit.json": {
+        "sha256": "9aedd3ec47f27eda5c2ea26a9c3c273417f3c3897966f8a3688547793ccc1475",
+        "bytes": 4908
+      },
+      "ada_gnatdoc_enhancer-0.1.0-py3-none-any.whl": {
+        "sha256": "0eaaaaf0dad2269826e03d471c0b9ad82be10ec289147ccb856e9a446f7a56ba",
+        "bytes": 94366
+      }
+    },
+    "downloaded_archive_hashes_match": true
+  }
+]

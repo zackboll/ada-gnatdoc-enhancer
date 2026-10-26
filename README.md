@@ -2,28 +2,28 @@
 
 **Offline, source-verified enhancement of GNATdoc 26.0.0 HTML sites.**
 
-Version **0.1.0** prepares the first stable toolkit release, incorporating
-GNATDOC-001–011 and GNATDOC-011R1/R2/R3. This does not imply artifacts have already
-been published. Python **3.11, 3.12 and 3.13** are qualified on Linux. The core
+Version **0.1.1** is the planned maintenance release adding GNATDOC-014's opt-in
+top-level external type navigation to the published v0.1.0 toolkit. Release
+preparation does not publish v0.1.1. Python **3.11, 3.12 and 3.13** are supported on Linux. The core
 has **no runtime dependencies** and needs neither Ada nor GNATdoc at installation.
 
 ## Install a standalone distribution
 
 Obtain reviewed artifacts and their SHA-256 inventory from the eventual GitHub
-v0.1.0 release (GNATDOC-013); verify hashes before installation. Until then,
+v0.1.1 release; verify hashes before installation. Until then,
 build the candidate from the exact reviewed source commit with `python -m build`.
 
 ```sh
 python3 -m venv /tmp/enhancer-env
-/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.0-py3-none-any.whl
+/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.1-py3-none-any.whl
 /tmp/enhancer-env/bin/gnatdoc-enhancer --version
 /tmp/enhancer-env/bin/gnatdoc-enhancer --help
 # Alternative: standalone sdist (requires the build backend).
-/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.0.tar.gz
+/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.1.tar.gz
 ```
 
 Optional Markdown guides require the `guides` extra: install the wheel as
-`'/path/to/ada_gnatdoc_enhancer-0.1.0-py3-none-any.whl[guides]'` or preinstall
+`'/path/to/ada_gnatdoc_enhancer-0.1.1-py3-none-any.whl[guides]'` or preinstall
 `markdown-it-py==3.0.0` and `mdurl==0.1.2`. For offline use, provision those
 wheels and the sdist build requirements in advance, then use `--no-index` and
 `--find-links`. The renderer is optional; it is not bundled into the wheel.
@@ -54,6 +54,10 @@ changing the consumer. Qualified enhancement is deterministic and byte-idempoten
   browsing, direct links and browser history.
 * Conservative source/native-qualified local, subtype-base, current-package
   and explicitly pinned external Core type links; no guessed destinations.
+* Opt-in `[presentation] external_type_target = "_top"` lets authorized external
+  type links leave the iframe. Omission preserves default navigation; local and
+  generic-instance links, JavaScript and CSS are unchanged. See
+  [the navigation contract](docs/external-type-target-navigation.md).
 * Optional hash-bound authored Markdown/HTML guides and portals, with verified
   titles, language and charset metadata.
 * Optional source-qualified summaries of the 25 supported Core Vector/Matrix
@@ -115,11 +119,12 @@ python scripts/test_installed.py --fixtures tests/fixtures
 Synthetic conformance never substitutes for independently pinned real sites.
 Historical campaigns remain under `docs/evidence/`; current release results and
 source/artifact identities are described in
-[release qualification](docs/release-0.1.0-qualification.md).
+[v0.1.1 preparation evidence](docs/evidence/gnatdoc015/README.md). The original
+[v0.1.0 qualification](docs/release-0.1.0-qualification.md) remains historical.
 
 For upgrades, regenerate from pristine native output: the version-bound
-presentation manifest changes from `0.1.0.dev0` to `0.1.0`, so do not carry a
-development manifest into release verification. Recheck source, native, warning,
+presentation manifest changes from `0.1.0` to `0.1.1`, so do not carry an
+old manifest into release verification. Recheck source, native, warning,
 coverage, guide and browser baselines in a separate consumer PR. See
 [migration](docs/migration.md), the [consumer matrix](docs/release-compatibility.md),
 and the [auditable release procedure](docs/releasing.md).
