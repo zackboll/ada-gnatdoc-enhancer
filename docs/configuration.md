@@ -1,3 +1,54 @@
+# Source-verified consumer theme (GNATDOC-017, development opt-in)
+
+Omitting both options retains the bundled default theme and the exact v0.1.1
+publication/manifest bytes. To preserve an established consumer presentation,
+add both fields to the existing presentation table. Real Core example, pinned
+to source `33a2a4f3b83606a5c779b8a93abeb6c91fa49a21`:
+
+```toml
+[presentation]
+theme = true
+theme_css_source = "docs/assets/gnatdoc-theme.css"
+theme_css_sha256 = "fa265d63e73436a6a449fd16011c3db68a5430e7fa6a98ea8eb0fd6821dca9b2"
+```
+
+The source path is relative to `--source-root`, **not** to the TOML directory.
+It must name a regular file through canonical relative path components: no
+absolute/drive paths, traversal, encoding, symlinks (including ancestors/root)
+or outside-root resources. Both fields are mandatory together; `theme = false`
+is incompatible. SHA-256 must be exactly 64 lower-case hexadecimal characters,
+independently reviewed against the complete original source bytes. Never copy
+an output-manifest hash into configuration as an approval procedure.
+
+Enhancement and `verify` independently read source/configuration, check identity,
+validate CSS and reconstruct the original approved bytes at `api/gnatdoc-theme.css`.
+The existing relative HTML links are unchanged. No sanitizer, substitution or
+newline normalization is applied. UTF-8 only (no BOM or encoding directives);
+imports, URL/resource functions (including string-form image sets), local font
+loading, executable constructs, escapes and unsupported controls are rejected.
+Variables, media queries, pseudo-classes and Core's target/card rules are allowed.
+There are no new runtime dependencies, remote downloads, scripts or inline styles.
+
+Only opt-in publications add `theme_source` identity metadata (source path/hash
+and loaded configuration path/hash); this is an audit/check value, not authority.
+Any CSS byte change, source-path substitution or configuration byte change after
+enhancement requires a **new pristine build**, reviewed approval and fresh
+verification. Retain independently approved configuration/source identities;
+the manifest is not a signed attestation against an attacker replacing *all*
+trusted inputs and output metadata together.
+
+Do not confuse the theme with native `api/gnatdoc.css` (always preserved), the
+separately hash-approved authored guide stylesheet (e.g. Core's
+`guides/gnatdoc-guides.css`), or source-owned landing HTML. Custom CSS changes none
+of their bytes, nor navigation, native declarations, anchors or summary routing.
+It does not enable authored guides or generic summaries; configure those existing
+features independently. Consumer CSS is not bundled in the toolkit wheel.
+
+**Rollback:** remove both custom fields, keep `theme = true`, regenerate from
+pristine GNATdoc inputs, then run `verify` and consumer/browser gates. Do not edit
+published CSS or rehash presentation metadata to migrate an existing output tree.
+Version remains 0.1.1 during development; adoption/release requires later review.
+
 # Opt-in stable public symbol bookmarks
 
 Package navigation may explicitly enable source/native-verified type/subtype

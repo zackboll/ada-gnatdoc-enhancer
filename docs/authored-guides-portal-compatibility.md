@@ -1,5 +1,19 @@
 # GNATDOC-007: source-verified authored content
 
+## GNATDOC-017 presentation opt-in
+
+Authored guide/portal permissions remain separate from theme approval. A
+consumer can select its original `gnatdoc-theme.css` using the paired
+`[presentation] theme_css_source` and `theme_css_sha256` fields described in
+[configuration](configuration.md). Core's landing already links
+`api/gnatdoc-theme.css`; it needs no HTML rewrite. Its five guides retain the
+separately approved `gnatdoc-guides.css`, source text and destinations. Native
+GNATdoc CSS remains untouched. Other consumers need their own CSS approval and
+DOM/browser qualification: a successful Core pilot does not authorize arbitrary
+stylesheets or consumer adoption. Roll back by removing both options and building
+fresh, not by rewriting landing HTML or presentation metadata. Defaults and
+existing authored contracts remain unchanged.
+
 This is shared-tool qualification, **not consumer adoption or publication**.
 The starting main revision is `4c75e86524648bd84fad17f112ea2f56f24ebffa`.
 The clean baseline passed all 306 original tests and four synthetic profiles.
