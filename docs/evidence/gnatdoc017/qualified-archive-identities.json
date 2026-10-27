@@ -1,0 +1,53 @@
+{
+  "3.11": {
+    "rebuilt_wheel": {
+      "bytes": 95961,
+      "name": "ada_gnatdoc_enhancer-0.1.1-py3-none-any.whl",
+      "sha256": "6b91a8572e7b7c70a46d92137069da2f6a4f2c8f59a7f40d720baaabc46f50b5"
+    },
+    "sdist": {
+      "bytes": 2185969,
+      "name": "ada_gnatdoc_enhancer-0.1.1.tar.gz",
+      "sha256": "03ae3572a1037c2d848d8540d8f7f6d5790846671d9c21ab658080bee2f09ce7"
+    },
+    "wheel": {
+      "bytes": 95961,
+      "name": "ada_gnatdoc_enhancer-0.1.1-py3-none-any.whl",
+      "sha256": "8ce281728167c6bc6273198cd7e3b5462b4143f9ed3d595a915655242b27173d"
+    }
+  },
+  "3.12": {
+    "rebuilt_wheel": {
+      "bytes": 95961,
+      "name": "ada_gnatdoc_enhancer-0.1.1-py3-none-any.whl",
+      "sha256": "8ce281728167c6bc6273198cd7e3b5462b4143f9ed3d595a915655242b27173d"
+    },
+    "sdist": {
+      "bytes": 2186010,
+      "name": "ada_gnatdoc_enhancer-0.1.1.tar.gz",
+      "sha256": "236534af7561332221d6321109d68d561465ad44f91a598c213e0768835f57f2"
+    },
+    "wheel": {
+      "bytes": 95961,
+      "name": "ada_gnatdoc_enhancer-0.1.1-py3-none-any.whl",
+      "sha256": "47a2570e57b2d3767ca6f58eb2c96a3b44c2087e68c262a79fe630a6d6113402"
+    }
+  },
+  "3.13": {
+    "rebuilt_wheel": {
+      "bytes": 95961,
+      "name": "ada_gnatdoc_enhancer-0.1.1-py3-none-any.whl",
+      "sha256": "830cf94d407bc0b16453b994fbbb1b3852fbb03f2cc1333cd275c92f575b6bca"
+    },
+    "sdist": {
+      "bytes": 2186000,
+      "name": "ada_gnatdoc_enhancer-0.1.1.tar.gz",
+      "sha256": "da0a00c3360159776668cb5f575db31de13f4a278362b4cd9ffa0c62dc2d093b"
+    },
+    "wheel": {
+      "bytes": 95961,
+      "name": "ada_gnatdoc_enhancer-0.1.1-py3-none-any.whl",
+      "sha256": "47a2570e57b2d3767ca6f58eb2c96a3b44c2087e68c262a79fe630a6d6113402"
+    }
+  }
+}

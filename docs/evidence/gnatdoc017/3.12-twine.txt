@@ -1,0 +1,9 @@
+Checking
+/home/zboll/gnatdoc-017-evidence/distributions-final/python-3.12/artifacts/ada_g
+natdoc_enhancer-0.1.1-py3-none-any.whl: [32mPASSED[0m
+Checking
+/home/zboll/gnatdoc-017-evidence/distributions-final/python-3.12/rebuilt/ada_gna
+tdoc_enhancer-0.1.1-py3-none-any.whl: [32mPASSED[0m
+Checking
+/home/zboll/gnatdoc-017-evidence/distributions-final/python-3.12/artifacts/ada_g
+natdoc_enhancer-0.1.1.tar.gz: [32mPASSED[0m

@@ -1,0 +1,164 @@
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - setuptools>=77
+* Getting build dependencies for wheel...
+running egg_info
+writing src/ada_gnatdoc_enhancer.egg-info/PKG-INFO
+writing dependency_links to src/ada_gnatdoc_enhancer.egg-info/dependency_links.txt
+writing entry points to src/ada_gnatdoc_enhancer.egg-info/entry_points.txt
+writing requirements to src/ada_gnatdoc_enhancer.egg-info/requires.txt
+writing top-level names to src/ada_gnatdoc_enhancer.egg-info/top_level.txt
+reading manifest file 'src/ada_gnatdoc_enhancer.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no files found matching '*.txt' under directory 'tests'
+warning: no previously-included files matching '__pycache__' found anywhere in distribution
+warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+adding license file 'LICENSE'
+writing manifest file 'src/ada_gnatdoc_enhancer.egg-info/SOURCES.txt'
+* Installed build dependency versions:
+  - setuptools==84.2.1
+* Building wheel...
+running bdist_wheel
+running build
+running build_py
+creating build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/destinations.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/errors.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/native_html.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/theme.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/__init__.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/symbols.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/cli.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/conformance.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/external_types.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/guides.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/authored.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/__main__.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/pipeline.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/profiles.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/validation.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/inventory.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/navigation.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/qualification.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/metadata.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/generic_instances.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/warnings.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/browser_metadata.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/coverage.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/util.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/config.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/syntax.py -> build/lib/ada_gnatdoc_enhancer
+copying src/ada_gnatdoc_enhancer/instance_references.py -> build/lib/ada_gnatdoc_enhancer
+creating build/lib/ada_gnatdoc_enhancer/adapters
+copying src/ada_gnatdoc_enhancer/adapters/__init__.py -> build/lib/ada_gnatdoc_enhancer/adapters
+copying src/ada_gnatdoc_enhancer/adapters/mel.py -> build/lib/ada_gnatdoc_enhancer/adapters
+copying src/ada_gnatdoc_enhancer/adapters/opencv.py -> build/lib/ada_gnatdoc_enhancer/adapters
+running egg_info
+writing src/ada_gnatdoc_enhancer.egg-info/PKG-INFO
+writing dependency_links to src/ada_gnatdoc_enhancer.egg-info/dependency_links.txt
+writing entry points to src/ada_gnatdoc_enhancer.egg-info/entry_points.txt
+writing requirements to src/ada_gnatdoc_enhancer.egg-info/requires.txt
+writing top-level names to src/ada_gnatdoc_enhancer.egg-info/top_level.txt
+reading manifest file 'src/ada_gnatdoc_enhancer.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no files found matching '*.txt' under directory 'tests'
+warning: no previously-included files matching '__pycache__' found anywhere in distribution
+warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+adding license file 'LICENSE'
+writing manifest file 'src/ada_gnatdoc_enhancer.egg-info/SOURCES.txt'
+creating build/lib/ada_gnatdoc_enhancer/assets
+copying src/ada_gnatdoc_enhancer/assets/gnatdoc-guides.css -> build/lib/ada_gnatdoc_enhancer/assets
+copying src/ada_gnatdoc_enhancer/assets/gnatdoc-theme.css -> build/lib/ada_gnatdoc_enhancer/assets
+copying src/ada_gnatdoc_enhancer/assets/gnatdoc-navigation.js -> build/lib/ada_gnatdoc_enhancer/assets
+copying src/ada_gnatdoc_enhancer/assets/gnatdoc-instance-navigation.js -> build/lib/ada_gnatdoc_enhancer/assets
+copying src/ada_gnatdoc_enhancer/assets/gnatdoc-symbol-navigation.js -> build/lib/ada_gnatdoc_enhancer/assets
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.linux-x86_64/wheel
+creating build/bdist.linux-x86_64/wheel/ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/destinations.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/errors.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/native_html.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/theme.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/__init__.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/symbols.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/cli.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/conformance.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/external_types.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/guides.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/authored.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/__main__.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/pipeline.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/profiles.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/validation.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+creating build/bdist.linux-x86_64/wheel/ada_gnatdoc_enhancer/adapters
+copying build/lib/ada_gnatdoc_enhancer/adapters/__init__.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer/adapters
+copying build/lib/ada_gnatdoc_enhancer/adapters/mel.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer/adapters
+copying build/lib/ada_gnatdoc_enhancer/adapters/opencv.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer/adapters
+copying build/lib/ada_gnatdoc_enhancer/inventory.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/navigation.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/qualification.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/metadata.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/generic_instances.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/warnings.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/browser_metadata.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+creating build/bdist.linux-x86_64/wheel/ada_gnatdoc_enhancer/assets
+copying build/lib/ada_gnatdoc_enhancer/assets/gnatdoc-guides.css -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer/assets
+copying build/lib/ada_gnatdoc_enhancer/assets/gnatdoc-navigation.js -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer/assets
+copying build/lib/ada_gnatdoc_enhancer/assets/gnatdoc-instance-navigation.js -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer/assets
+copying build/lib/ada_gnatdoc_enhancer/assets/gnatdoc-symbol-navigation.js -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer/assets
+copying build/lib/ada_gnatdoc_enhancer/assets/gnatdoc-theme.css -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer/assets
+copying build/lib/ada_gnatdoc_enhancer/coverage.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/util.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/config.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/syntax.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+copying build/lib/ada_gnatdoc_enhancer/instance_references.py -> build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer
+running install_egg_info
+Copying src/ada_gnatdoc_enhancer.egg-info to build/bdist.linux-x86_64/wheel/./ada_gnatdoc_enhancer-0.1.1-py3.11.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/ada_gnatdoc_enhancer-0.1.1.dist-info/WHEEL
+creating '/home/zboll/gnatdoc-017-evidence/distributions-final/python-3.11/rebuilt/.tmp-hgxt0s8f/ada_gnatdoc_enhancer-0.1.1-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+adding 'ada_gnatdoc_enhancer/__init__.py'
+adding 'ada_gnatdoc_enhancer/__main__.py'
+adding 'ada_gnatdoc_enhancer/authored.py'
+adding 'ada_gnatdoc_enhancer/browser_metadata.py'
+adding 'ada_gnatdoc_enhancer/cli.py'
+adding 'ada_gnatdoc_enhancer/config.py'
+adding 'ada_gnatdoc_enhancer/conformance.py'
+adding 'ada_gnatdoc_enhancer/coverage.py'
+adding 'ada_gnatdoc_enhancer/destinations.py'
+adding 'ada_gnatdoc_enhancer/errors.py'
+adding 'ada_gnatdoc_enhancer/external_types.py'
+adding 'ada_gnatdoc_enhancer/generic_instances.py'
+adding 'ada_gnatdoc_enhancer/guides.py'
+adding 'ada_gnatdoc_enhancer/instance_references.py'
+adding 'ada_gnatdoc_enhancer/inventory.py'
+adding 'ada_gnatdoc_enhancer/metadata.py'
+adding 'ada_gnatdoc_enhancer/native_html.py'
+adding 'ada_gnatdoc_enhancer/navigation.py'
+adding 'ada_gnatdoc_enhancer/pipeline.py'
+adding 'ada_gnatdoc_enhancer/profiles.py'
+adding 'ada_gnatdoc_enhancer/qualification.py'
+adding 'ada_gnatdoc_enhancer/symbols.py'
+adding 'ada_gnatdoc_enhancer/syntax.py'
+adding 'ada_gnatdoc_enhancer/theme.py'
+adding 'ada_gnatdoc_enhancer/util.py'
+adding 'ada_gnatdoc_enhancer/validation.py'
+adding 'ada_gnatdoc_enhancer/warnings.py'
+adding 'ada_gnatdoc_enhancer/adapters/__init__.py'
+adding 'ada_gnatdoc_enhancer/adapters/mel.py'
+adding 'ada_gnatdoc_enhancer/adapters/opencv.py'
+adding 'ada_gnatdoc_enhancer/assets/gnatdoc-guides.css'
+adding 'ada_gnatdoc_enhancer/assets/gnatdoc-instance-navigation.js'
+adding 'ada_gnatdoc_enhancer/assets/gnatdoc-navigation.js'
+adding 'ada_gnatdoc_enhancer/assets/gnatdoc-symbol-navigation.js'
+adding 'ada_gnatdoc_enhancer/assets/gnatdoc-theme.css'
+adding 'ada_gnatdoc_enhancer-0.1.1.dist-info/licenses/LICENSE'
+adding 'ada_gnatdoc_enhancer-0.1.1.dist-info/METADATA'
+adding 'ada_gnatdoc_enhancer-0.1.1.dist-info/WHEEL'
+adding 'ada_gnatdoc_enhancer-0.1.1.dist-info/entry_points.txt'
+adding 'ada_gnatdoc_enhancer-0.1.1.dist-info/top_level.txt'
+adding 'ada_gnatdoc_enhancer-0.1.1.dist-info/RECORD'
+removing build/bdist.linux-x86_64/wheel
+Successfully built ada_gnatdoc_enhancer-0.1.1-py3-none-any.whl

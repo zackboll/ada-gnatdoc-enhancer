@@ -1,0 +1,35 @@
+test_config_changed_after_load (test_custom_theme.CustomTheme.test_config_changed_after_load) ... ok
+test_dataclass_override_cannot_bypass_approved_config (test_custom_theme.CustomTheme.test_dataclass_override_cannot_bypass_approved_config) ... ok
+test_default_ignores_unconfigured_consumer_css (test_custom_theme.CustomTheme.test_default_ignores_unconfigured_consumer_css) ... ok
+test_default_selection_cannot_verify_custom_publication (test_custom_theme.CustomTheme.test_default_selection_cannot_verify_custom_publication) ... ok
+test_determinism_and_idempotence (test_custom_theme.CustomTheme.test_determinism_and_idempotence) ... ok
+test_direct_config_requires_loaded_identity (test_custom_theme.CustomTheme.test_direct_config_requires_loaded_identity) ... ok
+test_exact_bytes_html_contract_and_default_delta (test_custom_theme.CustomTheme.test_exact_bytes_html_contract_and_default_delta) ... ok
+test_extra_output_asset (test_custom_theme.CustomTheme.test_extra_output_asset) ... ok
+test_invalid_encoding (test_custom_theme.CustomTheme.test_invalid_encoding) ... ok
+test_invalid_hash (test_custom_theme.CustomTheme.test_invalid_hash) ... ok
+test_missing_hash (test_custom_theme.CustomTheme.test_missing_hash) ... ok
+test_missing_source (test_custom_theme.CustomTheme.test_missing_source) ... ok
+test_missing_source_field (test_custom_theme.CustomTheme.test_missing_source_field) ... ok
+test_output_mutation (test_custom_theme.CustomTheme.test_output_mutation) ... ok
+test_positive_core_rule_shapes (test_custom_theme.CustomTheme.test_positive_core_rule_shapes) ... ok
+test_rehashed_output_manifest_cannot_approve_theme (test_custom_theme.CustomTheme.test_rehashed_output_manifest_cannot_approve_theme) ... ok
+test_reloaded_config_identity_changed_after_enhancement (test_custom_theme.CustomTheme.test_reloaded_config_identity_changed_after_enhancement) ... ok
+test_same_bytes_different_source_identity (test_custom_theme.CustomTheme.test_same_bytes_different_source_identity) ... ok
+test_source_changed_after_enhancement (test_custom_theme.CustomTheme.test_source_changed_after_enhancement) ... ok
+test_source_changed_after_load_atomic_failure (test_custom_theme.CustomTheme.test_source_changed_after_load_atomic_failure) ... ok
+test_source_hash_mismatch (test_custom_theme.CustomTheme.test_source_hash_mismatch) ... ok
+test_symlink_ancestor_within_root (test_custom_theme.CustomTheme.test_symlink_ancestor_within_root) ... ok
+test_symlink_config (test_custom_theme.CustomTheme.test_symlink_config) ... ok
+test_symlink_file (test_custom_theme.CustomTheme.test_symlink_file) ... ok
+test_symlink_root (test_custom_theme.CustomTheme.test_symlink_root) ... ok
+test_symlink_substitution_after_enhancement (test_custom_theme.CustomTheme.test_symlink_substitution_after_enhancement) ... ok
+test_theme_disabled (test_custom_theme.CustomTheme.test_theme_disabled) ... ok
+test_unsafe_paths (test_custom_theme.CustomTheme.test_unsafe_paths) ... ok
+test_unsafe_resources_and_execution (test_custom_theme.CustomTheme.test_unsafe_resources_and_execution) ... ok
+test_wrong_existing_source (test_custom_theme.CustomTheme.test_wrong_existing_source) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.156s
+
+OK

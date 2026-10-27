@@ -45,8 +45,12 @@ not claimed product failures or successful qualifications.
 
 ## Disposition
 
-Implementation and remaining gates pending. No release, tag, deployment or
-consumer edit is authorized. This record is not a readiness claim.
+`HOSTED_CI_PENDING`: local mandatory gates described below passed; exact-final-head
+hosted CI must still finish successfully before independent-review readiness.
+No release, tag, deployment or consumer edit is authorized. This record is not
+a `READY_FOR_INDEPENDENT_REVIEW` claim. Three additional pre-existing qualified
+Size links and shared navigation/prose differences require independent review,
+not silent consumer adoption approval.
 
 ## Implementation qualification in progress
 
@@ -89,3 +93,90 @@ and three pre-existing extra qualified links, **not a theme capability gap**.
 Both incoming-default/custom builds again differ only in CSS and presentation
 metadata. Current symbol/reload/history browser regressions also passed at both
 widths. This does not claim identical legacy/shared navigation markup or prose.
+
+## Completed final-source local gates
+
+Implementation commit `cef6010701de0ef9e3e7001c72bec8fc53de98e4`, tree
+`7f3bfe28f3ffaa7600867aaf37b094b9d458c2bb`. The qualification source was a clean
+`git archive` of that identity, **not** a build from a changing worktree.
+Subsequent evidence-only commits must retain identical modules, assets, tests,
+documentation and archive inputs; evidence is excluded from distributions.
+`candidate-provenance.json` binds complete source and distribution identities.
+
+All **nine** Python 3.11/3.12/3.13 × source/non-editable wheel/extracted-sdist
+rebuilt-wheel environments passed **609 distinct tests each**, zero failures,
+errors or skips. All 579 baseline test IDs remain (`test-retention.json`).
+Four-profile conformance, installed CLI/assets smoke, dependency checks,
+`twine check --strict`, complete archive membership/path/metadata audits and
+source/wheel/sdist/rebuilt module and asset equality passed. No consumer CSS is
+packaged; core runtime dependencies remain empty. Both genuine current Core
+custom profiles also passed all nine installed CLI `verify` reconstructions
+(`installed-core-verification.json`). An earlier worktree matrix also passed,
+but final claims use the repeated clean committed-source matrix.
+
+Official v0.1.1 / final installed candidate default publications are **exactly
+byte-identical including presentation manifests**, with no version normalization.
+Twenty profiles: current Core symbol/incoming; historical Core current/0.5.0
+package/symbol/incoming; MEL package/symbol; authentic authored Core, Imgproc,
+Geometry and MEL; four synthetic conformance profiles; authentic four-package
+Features Markdown site; read-only Imgproc PR #81 operation profile (329 snippets,
+350 local / 586 external links). Full per-file hashes/module identities are in
+`default-parity.json`, `extra-default-parity.json` and final replay records.
+The retained historical fixtures are replay evidence, not fresh Ada compilation
+of all consumers. Only current Core was freshly compiled/generated here.
+
+Fresh native generation repeated with exact byte identity; the complete legacy
+production build also repeated with exact identity. Core warnings: zero, no
+baseline delta. Shared custom two-copy determinism and enhancement idempotence
+passed. Source/native/anchor/summary inventories are unchanged by theme selection.
+
+`browser-full.json` records **16** real Chromium combinations, **5,492** observed
+page requests, all 25 summaries and 102 summary destinations in every combination,
+all five guides and independently fetched approved CSS bytes. No request
+interception, stylesheet/resource failures, unexpected requests or page errors.
+Computed properties match for all required supported design elements. Landing
+eyebrow/lead/button contrast exceeds 4.5:1 in both palettes; focus is visible,
+tables scroll in their own containers and no page overflows horizontally.
+Representative legacy/candidate PNG pairs are committed; `screenshots.json`
+indexes all 176 full first/final-campaign PNGs retained externally (about 202 MiB).
+Mobile identifiers wrap inside their card cells as Core's original CSS specifies;
+no patch to source-owned CSS or HTML was made. Source declaration overflow stays
+inside scrollable code blocks. Screenshots are review aids, not the parity oracle.
+
+`occurrences.json` independently reconciles all 242 incoming instance links at
+decoded native type-mark offsets, reconstructs every summary and all template
+destinations, and explains the three qualified Size additions through source
+scope rather than comparing aggregate counters alone. Supplementary incoming
+browser evidence records 421 real clicks across eight width/palette/JS profiles,
+including all 242 source-owned occurrences in the desktop/light/JS campaign,
+all 25 targets elsewhere, reload/Back/Forward and native-symbol exclusions.
+An inherited favicon-intercepting first
+attempt was explicitly discarded, followed by a console-classification harness
+failure; neither is used as live-site proof. The accepted rerun makes no intercepted
+requests (only ignores Chromium's automatic, non-publication favicon 404 console
+message by its exact URL). Delayed-request synthetic race checks were excluded.
+
+## Review/reproduction boundaries
+
+PR: https://github.com/zackboll/ada-gnatdoc-enhancer/pull/18, non-draft, open,
+unmerged, auto-merge disabled. No Core, Imgproc PR #81 or other consumer writes.
+Official v0.1.1 tag/release assets preserved. Version is still 0.1.1; future
+maintenance release consideration requires separate review/authorization.
+
+Reproduce the source/distribution matrix with the retained
+`qualify_distributions.py --workspace /absolute/new-workspace --source
+/absolute/clean-source`. It requires the three supported Python executables,
+Node.js and build tools, and fetches build/test dependencies (not runtime theme
+resources). Reproduce browser qualification with the committed
+`tests/custom_theme_browser.cjs`, `PLAYWRIGHT_MODULE`, `CHROME`,
+`THEME_SITE_ROOT=http://127.0.0.1:8170`, `THEME_CANDIDATE=incoming-custom` and a new
+`THEME_EVIDENCE` directory serving qualified legacy/candidate output directories.
+Acquisition/pilot scripts retain their original absolute evidence paths; adapt
+only workspace paths and independently recheck pins/hashes before replay.
+
+No screen-reader, cross-platform or non-Chromium certification is claimed.
+Source-hash equality is not evidence of compiled guide-fence examples. No live
+production deployment was changed or authorized. Publication metadata remains
+an unsigned check, not protection against simultaneous replacement of every
+independently trusted source/configuration input. See the configuration security
+and fresh-build rollback contract before consumer approval.

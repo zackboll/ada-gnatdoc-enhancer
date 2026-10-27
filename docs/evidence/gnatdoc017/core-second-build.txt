@@ -1,0 +1,49 @@
+GNATdoc 26.0.0 (20260415)
+Note: Running pre-build actions for opencv_core=0.5.2...
+Note: Building opencv_core=0.5.2/opencv_core.gpr...
+Success: Build finished successfully in 0.45 seconds.
+GNATdoc: 0 documentation warnings (see obj/docs/gnatdoc.log)
+GNATdoc warning delta: 0 added, 0 removed
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Theme: 196 API pages verified; asset/metadata errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Type cross-references:
+  Public package pages inspected: 195
+  Declaration snippets inspected: 1293
+  Resolved type links: 2755
+  Package pages enhanced: 168
+  Ambiguous references skipped: 3
+  Unsupported references skipped: 592
+  Invalid targets: 0
+  Structural errors: 0
+  Links by type family: angle_unit=22, batch_distance_kind=1, binary_norm_kind=2, border_interpolation_result=1, border_kind=2, buffer_array=320, cartesian_coordinates=4, channel_count=7, channel_route=1, channel_route_array=1, channel_source_kind=1, comparison_kind=6, covariance_result=1, covariance_scaling=1, cubic_root_status=1, cubic_solution_result=1, depth_type=13, dimension_array=136, dimension_selection=1, dimension_selection_array=1, dimension_selection_kind=1, dimension_stride_array=64, eigen_decomposition_result=2, extremum_occurrence=2, file_storage=35, flip_kind=1, float16_value=20, float32_classification=1, float32_point=1, float32_point_3d=1, float32_size=1, float32_value=21, float64_classification=1, float64_value=12, index_array=166, index_range=4, index_range_array=2, input_mat_handle=1, input_sparse_mat_handle=1, input_umat_handle=1, int16_value=10, int32_value=10, int8_value=10, inversion_result=1, k_means_criteria=2, k_means_initialization=2, k_means_iteration_count=1, k_means_result=2, linear_discriminant_analysis_result=4, linear_program_result=1, linear_program_status=1, mat=1006, mat_array=6, mat_size=10, mat_type=7, matrix=2, mean_std_dev_result=2, min_max_result=2, nd_min_max_result=2, nearest_neighbor_result=1, node_kind=2, norm_kind=6, normalize_kind=4, output_mat_handle=1, output_sparse_mat_handle=1, output_umat_handle=1, point=5, point_3d=1, point_array=1, point_coordinate=9, polar_coordinates=2, polynomial_solution_result=1, principal_component_analysis_result=5, random_number_generator=7, range_check_result=2, rect=2, reduction_axis=4, reduction_kind=2, region_adjustment=2, region_location=2, rotation_kind=1, row_array=128, sample_orientation=6, scalar=37, singular_value_decomposition_result=2, size_coordinate=15, solve_result=1, sort_axis=2, sort_order=2, sparse_extrema=1, sparse_mat=122, spectrum_multiplication_kind=3, storage_format=1, storage_mode=1, symmetry_source=1, transposed_product_order=4, uint16_value=10, uint8_value=10, umat=159, umat_cartesian_coordinates=4, umat_polar_coordinates=2, vector=240
+Theme: 196 API pages verified; asset/metadata errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Type cross-references:
+  Public package pages inspected: 195
+  Declaration snippets inspected: 1293
+  Resolved type links: 2755
+  Package pages enhanced: 168
+  Ambiguous references skipped: 3
+  Unsupported references skipped: 592
+  Invalid targets: 0
+  Structural errors: 0
+  Links by type family: angle_unit=22, batch_distance_kind=1, binary_norm_kind=2, border_interpolation_result=1, border_kind=2, buffer_array=320, cartesian_coordinates=4, channel_count=7, channel_route=1, channel_route_array=1, channel_source_kind=1, comparison_kind=6, covariance_result=1, covariance_scaling=1, cubic_root_status=1, cubic_solution_result=1, depth_type=13, dimension_array=136, dimension_selection=1, dimension_selection_array=1, dimension_selection_kind=1, dimension_stride_array=64, eigen_decomposition_result=2, extremum_occurrence=2, file_storage=35, flip_kind=1, float16_value=20, float32_classification=1, float32_point=1, float32_point_3d=1, float32_size=1, float32_value=21, float64_classification=1, float64_value=12, index_array=166, index_range=4, index_range_array=2, input_mat_handle=1, input_sparse_mat_handle=1, input_umat_handle=1, int16_value=10, int32_value=10, int8_value=10, inversion_result=1, k_means_criteria=2, k_means_initialization=2, k_means_iteration_count=1, k_means_result=2, linear_discriminant_analysis_result=4, linear_program_result=1, linear_program_status=1, mat=1006, mat_array=6, mat_size=10, mat_type=7, matrix=2, mean_std_dev_result=2, min_max_result=2, nd_min_max_result=2, nearest_neighbor_result=1, node_kind=2, norm_kind=6, normalize_kind=4, output_mat_handle=1, output_sparse_mat_handle=1, output_umat_handle=1, point=5, point_3d=1, point_array=1, point_coordinate=9, polar_coordinates=2, polynomial_solution_result=1, principal_component_analysis_result=5, random_number_generator=7, range_check_result=2, rect=2, reduction_axis=4, reduction_kind=2, region_adjustment=2, region_location=2, rotation_kind=1, row_array=128, sample_orientation=6, scalar=37, singular_value_decomposition_result=2, size_coordinate=15, solve_result=1, sort_axis=2, sort_order=2, sparse_extrema=1, sparse_mat=122, spectrum_multiplication_kind=3, storage_format=1, storage_mode=1, symmetry_source=1, transposed_product_order=4, uint16_value=10, uint8_value=10, umat=159, umat_cartesian_coordinates=4, umat_polar_coordinates=2, vector=240
+  Highlighted snippets verified: 1293; Ada text/markup errors: 0
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Theme: 196 API pages verified; asset/metadata errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Type cross-references:
+  Public package pages inspected: 195
+  Declaration snippets inspected: 1293
+  Resolved type links: 2755
+  Package pages enhanced: 168
+  Ambiguous references skipped: 3
+  Unsupported references skipped: 592
+  Invalid targets: 0
+  Structural errors: 0
+  Links by type family: angle_unit=22, batch_distance_kind=1, binary_norm_kind=2, border_interpolation_result=1, border_kind=2, buffer_array=320, cartesian_coordinates=4, channel_count=7, channel_route=1, channel_route_array=1, channel_source_kind=1, comparison_kind=6, covariance_result=1, covariance_scaling=1, cubic_root_status=1, cubic_solution_result=1, depth_type=13, dimension_array=136, dimension_selection=1, dimension_selection_array=1, dimension_selection_kind=1, dimension_stride_array=64, eigen_decomposition_result=2, extremum_occurrence=2, file_storage=35, flip_kind=1, float16_value=20, float32_classification=1, float32_point=1, float32_point_3d=1, float32_size=1, float32_value=21, float64_classification=1, float64_value=12, index_array=166, index_range=4, index_range_array=2, input_mat_handle=1, input_sparse_mat_handle=1, input_umat_handle=1, int16_value=10, int32_value=10, int8_value=10, inversion_result=1, k_means_criteria=2, k_means_initialization=2, k_means_iteration_count=1, k_means_result=2, linear_discriminant_analysis_result=4, linear_program_result=1, linear_program_status=1, mat=1006, mat_array=6, mat_size=10, mat_type=7, matrix=2, mean_std_dev_result=2, min_max_result=2, nd_min_max_result=2, nearest_neighbor_result=1, node_kind=2, norm_kind=6, normalize_kind=4, output_mat_handle=1, output_sparse_mat_handle=1, output_umat_handle=1, point=5, point_3d=1, point_array=1, point_coordinate=9, polar_coordinates=2, polynomial_solution_result=1, principal_component_analysis_result=5, random_number_generator=7, range_check_result=2, rect=2, reduction_axis=4, reduction_kind=2, region_adjustment=2, region_location=2, rotation_kind=1, row_array=128, sample_orientation=6, scalar=37, singular_value_decomposition_result=2, size_coordinate=15, solve_result=1, sort_axis=2, sort_order=2, sparse_extrema=1, sparse_mat=122, spectrum_multiplication_kind=3, storage_format=1, storage_mode=1, symmetry_source=1, transposed_product_order=4, uint16_value=10, uint8_value=10, umat=159, umat_cartesian_coordinates=4, umat_polar_coordinates=2, vector=240
+  Highlighted snippets verified: 1293; Ada text/markup errors: 0
+Validated 195 public packages, 202 HTML pages; all local links, anchors and assets resolve under /opencv_core_ada/.
