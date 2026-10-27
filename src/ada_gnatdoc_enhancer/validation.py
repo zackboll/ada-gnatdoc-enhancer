@@ -48,10 +48,16 @@ class Page(HTMLParser):
 
 
 def css_safe(content:bytes):
-    text=content.decode('utf-8')
+    try:
+        text=content.decode('utf-8')
+    except UnicodeDecodeError as error:
+        raise EnhancementError('CSS must be valid UTF-8') from error
+    require(not re.search(r'[\x00-\x08\x0b\x0e-\x1f\x7f\ufeff]', text),
+            'unsupported CSS encoding/control character')
     value=re.sub(r'/\*.*?\*/','',text,flags=re.S)
     require('\\' not in value and not re.search(
-        r'@import|url\s*\(|expression\s*\(|-moz-binding|behavior\s*:',value,re.I),
+        r'@import|@charset|@document|url\s*\(|expression\s*\(|-moz-binding|behavior\s*:|'
+        r'(?:-webkit-)?image-set\s*\(|image\s*\(|src\s*[:(]|progid\s*:',value,re.I),
         'unapproved CSS resource, escaped import or execution expression')
 
 

@@ -1,0 +1,14 @@
+{
+  "CHANGELOG.md": "ac9ba58c02f93c01a6e94a536dd566a23e4faf493225146ef3f7213db14cddc9",
+  "README.md": "5f89840a42d27bcdacecf4da46853ee0b2caa8933a249497c03d0749ffe83119",
+  "docs/authored-guides-portal-compatibility.md": "16ddc5dd7dac8fbbfc0a251358ef582de7051f16c9b238368a3ad091eca9d6a3",
+  "docs/compatibility.md": "8781b20ee698a8e56e51ff0000c9f4fed9477782f2cfdcdfafdc27e1a4f0ba19",
+  "docs/configuration.md": "1ae02d31c4564261a57d69ca6383dc12731a5f4bffca3a43f9427acc2d8d0cc9",
+  "docs/evidence/gnatdoc017/README.md": "a9ccfd8501cb7662a570df5e5089ecde79ec582c322af49823350cd6aac04303",
+  "src/ada_gnatdoc_enhancer/config.py": "9413c79a5ae360f1d7eb23beaa27a3edd45bc155aec5b280a92fc102e3d2d832",
+  "src/ada_gnatdoc_enhancer/pipeline.py": "d3431b996e47218f4d02e2a9407580916aaeeae9d098e12498e1a96335558dbc",
+  "src/ada_gnatdoc_enhancer/theme.py": "7457d481f6c501d45ab8828b3f8b2e331763f8c4ac2d5c9243d658916672cd2e",
+  "src/ada_gnatdoc_enhancer/validation.py": "3cb0f06082f423a20bda5c121c5b7e90c9408db83534e1d860ea7808ece708bf",
+  "tests/custom_theme_browser.cjs": "1281a2c19e889eedeabcd21cbbfcc1d7b2af6fe7b607ca67b6cee1e3bba775f7",
+  "tests/test_custom_theme.py": "20016b55e00d9d5f7cb4af5c3be84686a59352d7b82e1ce23dc6ab617700cc36"
+}

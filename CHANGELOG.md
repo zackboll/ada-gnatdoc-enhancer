@@ -1,5 +1,18 @@
 # Changelog
 
+## Unreleased — GNATDOC-017 (version remains 0.1.1)
+
+- Add paired opt-in `presentation.theme_css_source` / `theme_css_sha256` for
+  exact, independently approved consumer CSS bytes at the existing theme path.
+  Keep default assets, HTML, navigation and presentation manifest bytes unchanged.
+- Verify source/hash/configuration identity during enhancement and independent
+  reconstruction; reject symlinks, traversal, unsafe CSS resources/execution,
+  unsupported encoding and changed output. Strengthen the shared CSS rejection
+  policy for string-form resource functions without rewriting approved bytes.
+- Add focused mutation/compatibility regressions and a pinned Core presentation
+  pilot. Existing authored/summary functionality is reused, not reimplemented.
+  This development work does not publish a release or approve consumer deployment.
+
 ## 0.1.1 — planned maintenance release (GNATDOC-015; not yet published)
 
 - Add opt-in `[presentation].external_type_target = "_top"` for already

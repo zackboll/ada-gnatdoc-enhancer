@@ -1,0 +1,286 @@
+Note: Computing solutions...
+Success: Installation targets fully solved
+Note: Deploying gnatdoc_bin=26.0.0...
+#=#=#                                                                                                                                                     0.2%####                                                                       5.6%#########                                                                 13.6%##################                                                        25.4%###########################                                               38.0%####################################                                      50.5%#############################################                             62.9%#####################################################                     74.6%##############################################################            87.2%#####################################################################     97.0%######################################################################## 100.0%
+Note: Installing gnatdoc_bin=26.0.0...
+Success: Install to /home/zboll/gnatdoc-017-evidence/core-build/.doc-tools/gnatdoc-26.0.0 finished successfully in 2.07 seconds.
+GNATdoc 26.0.0 (20260415)
+Note: Synchronizing workspace...
+Dependencies automatically updated as follows:
+
+   +b opencv     4.10.0 (new,system package)
+   +b pkg_config 1.8.1  (new,system package)
+
+Note: Running pre-build actions for opencv_core=0.5.2...
+Note: Building opencv_core=0.5.2/opencv_core.gpr...
+Setup
+   [mkdir]        object directory for project OpenCV_Core_Shim
+   [mkdir]        library directory for project OpenCV_Core_Shim
+   [mkdir]        object directory for project OpenCV_Core
+Compile
+   [C++]          opencv_core_shim.cpp
+   [Ada]          opencv_core_config.ads
+   [Ada]          opencv-core-internal-external_view_alignment.adb
+   [Ada]          opencv-core-internal.ads
+   [Ada]          opencv-internal-safe_arithmetic.adb
+   [Ada]          opencv-core-internal-typed_row_borrowing.adb
+   [Ada]          opencv-core-sparse-typed_vector_impl.adb
+   [Ada]          opencv-core-internal-typed_access.adb
+   [Ada]          opencv-core-sparse-typed_vector_iteration_impl.adb
+   [Ada]          opencv-core-internal-continuous_data.adb
+   [Ada]          opencv-core-internal-typed_external_mat_view.adb
+   [Ada]          opencv-core-internal-object_storage.adb
+   [Ada]          opencv-internal.ads
+   [Ada]          opencv-core-sparse-typed_iteration_impl.adb
+   [Ada]          opencv-core-sparse-typed_impl.adb
+   [Ada]          opencv-core-internal-row_data.adb
+   [Ada]          opencv-internal-c_api.adb
+   [Ada]          opencv-core-internal-typed_continuous_borrowing.adb
+   [Ada]          opencv-core-float16_vec2_access.adb
+   [Ada]          opencv-core-float64_vec4_mat_view.adb
+   [Ada]          opencv-core-float64_vec3_mat_view.adb
+   [Ada]          opencv-core-int8_vec2_mat_view.adb
+   [Ada]          opencv-core-uint16_vec3_buffer_access.adb
+   [Ada]          opencv-core-float32_vec2.ads
+   [Ada]          opencv-core-sparse-int16_access.adb
+   [Ada]          opencv-core-sparse-int32_vec2_access.adb
+   [Ada]          opencv-core-int32_vec3_access.adb
+   [Ada]          opencv-core-float16_vec3_row_access.adb
+   [Ada]          opencv-core-sparse-int8_access.adb
+   [Ada]          opencv-core-int16_vec3_access.adb
+   [Ada]          opencv-core-float64_vec4_access.adb
+   [Ada]          opencv-core-float16_vec4_row_access.adb
+   [Ada]          opencv-core-float64_row_access.adb
+   [Ada]          opencv-core-int16_vec2_buffer_access.adb
+   [Ada]          opencv-core-float32_mat_view.adb
+   [Ada]          opencv-core-float32_access.adb
+   [Ada]          opencv-core-float32_vec4_access.adb
+   [Ada]          opencv-core-float16_vec3_mat_view.adb
+   [Ada]          opencv-core-int16_mat_view.adb
+   [Ada]          opencv-core-sparse-float32_access.adb
+   [Ada]          opencv-core-uint8_mat_view.adb
+   [Ada]          opencv-core-int8_vec2.ads
+   [Ada]          opencv-core-uint16_access.adb
+   [Ada]          opencv-core-uint16_vec3_access.adb
+   [Ada]          opencv-core-float64_vec2_access.adb
+   [Ada]          opencv-core-float16_vec3_buffer_access.adb
+   [Ada]          opencv-core-sparse-int32_vec4_access.adb
+   [Ada]          opencv-core-int8_vec2_access.adb
+   [Ada]          opencv-core-sparse-float16_vec4_access.adb
+   [Ada]          opencv-core-float32_buffer_access.adb
+   [Ada]          opencv-core-int16_vec4.ads
+   [Ada]          opencv-core-uint16_vec2_row_access.adb
+   [Ada]          opencv-core-float32_vec2_mat_view.adb
+   [Ada]          opencv-core-sparse-int16_vec2_access.adb
+   [Ada]          opencv-core-float32_matx3x3_conversions.adb
+   [Ada]          opencv-core-float64_vec2_mat_view.adb
+   [Ada]          opencv-core-sparse-float32_vec3_access.adb
+   [Ada]          opencv-core-int32_vec2_buffer_access.adb
+   [Ada]          opencv-core-transfers.adb
+   [Ada]          opencv-core-sparse-float16_access.adb
+   [Ada]          opencv-core-sparse-uint16_vec3_access.adb
+   [Ada]          opencv-core-int32_vec3_buffer_access.adb
+   [Ada]          opencv-core-int8_vec4_mat_view.adb
+   [Ada]          opencv-core-float64_vec3.ads
+   [Ada]          opencv-core-uint8_vec3.ads
+   [Ada]          opencv-core-float64_vec3_access.adb
+   [Ada]          opencv-core-float16_vec3_access.adb
+   [Ada]          opencv-core-uint16_vec3_mat_view.adb
+   [Ada]          opencv-core-float32_vec2_access.adb
+   [Ada]          opencv-core-int8_vec4_row_access.adb
+   [Ada]          opencv-core-uint8_vec4.ads
+   [Ada]          opencv-core.adb
+   [Ada]          opencv-core-uint8_vec2.ads
+   [Ada]          opencv-core-module_interop.adb
+   [Ada]          opencv-core-float32_vec2_buffer_access.adb
+   [Ada]          opencv-core-float32_vec3_mat_view.adb
+   [Ada]          opencv-core-sparse-float64_vec4_access.adb
+   [Ada]          opencv-core-int8_vec3.ads
+   [Ada]          opencv-core-uint8_vec4_access.adb
+   [Ada]          opencv-core-uint16_vec2_access.adb
+   [Ada]          opencv-core-int8_vec2_buffer_access.adb
+   [Ada]          opencv-core-int32_row_access.adb
+   [Ada]          opencv-core-float64_buffer_access.adb
+   [Ada]          opencv-core-uint8_vec3_access.adb
+   [Ada]          opencv-core-float64_mat_view.adb
+   [Ada]          opencv-core-float16_row_access.adb
+   [Ada]          opencv-core-uint8_row_access.adb
+   [Ada]          opencv-core-float64_access.adb
+   [Ada]          opencv-core-float16_vec4_access.adb
+   [Ada]          opencv-core-sparse-float64_vec3_access.adb
+   [Ada]          opencv-core-float16_vec4_buffer_access.adb
+   [Ada]          opencv-core-int32_vec3_mat_view.adb
+   [Ada]          opencv-core-uint8_vec2_mat_view.adb
+   [Ada]          opencv-core-float32_vec4_row_access.adb
+   [Ada]          opencv-core-int8_row_access.adb
+   [Ada]          opencv-core-float16_vec4.ads
+   [Ada]          opencv-core-float32_row_access.adb
+   [Ada]          opencv-core-uint16_vec2.ads
+   [Ada]          opencv-core-float16_vec2_buffer_access.adb
+   [Ada]          opencv-core-float64_vec3_buffer_access.adb
+   [Ada]          opencv.ads
+   [Ada]          opencv-core-float16_vec2.ads
+   [Ada]          opencv-core-sparse-uint16_vec2_access.adb
+   [Ada]          opencv-core-uint16_vec2_mat_view.adb
+   [Ada]          opencv-core-int16_access.adb
+   [Ada]          opencv-core-uint8_vec3_row_access.adb
+   [Ada]          opencv-core-float16_vec3.ads
+   [Ada]          opencv-core-uint16_buffer_access.adb
+   [Ada]          opencv-core-float32_matx3x3.ads
+   [Ada]          opencv-core-uint16_vec3_row_access.adb
+   [Ada]          opencv-core-uint8_buffer_access.adb
+   [Ada]          opencv-core-int8_vec3_access.adb
+   [Ada]          opencv-core-float64_vec4.ads
+   [Ada]          opencv-core-float16_vec2_row_access.adb
+   [Ada]          opencv-core-int8_access.adb
+   [Ada]          opencv-core-int32_vec4_row_access.adb
+   [Ada]          opencv-core-float32_vec3.ads
+   [Ada]          opencv-core-uint8_vec2_row_access.adb
+   [Ada]          opencv-core-float16_buffer_access.adb
+   [Ada]          opencv-core-int32_vec4_access.adb
+   [Ada]          opencv-core-sparse-float32_vec4_access.adb
+   [Ada]          opencv-core-float32_vec2_row_access.adb
+   [Ada]          opencv-core-int8_vec4_buffer_access.adb
+   [Ada]          opencv-core-int16_vec3_row_access.adb
+   [Ada]          opencv-core-int16_vec2.ads
+   [Ada]          opencv-core-uint8_vec3_buffer_access.adb
+   [Ada]          opencv-core-uint16_vec4_access.adb
+   [Ada]          opencv-core-int16_vec3.ads
+   [Ada]          opencv-core-int32_vec2_access.adb
+   [Ada]          opencv-core-float64_vec3_row_access.adb
+   [Ada]          opencv-core-sparse-int32_access.adb
+   [Ada]          opencv-core-int16_vec2_mat_view.adb
+   [Ada]          opencv-core-sparse-int16_vec3_access.adb
+   [Ada]          opencv-core-float32_vec3_row_access.adb
+   [Ada]          opencv-core-fixed_matrices.ads
+   [Ada]          opencv-core-float64_vec4_row_access.adb
+   [Ada]          opencv-core-float32_vec4.ads
+   [Ada]          opencv-core-uint16_row_access.adb
+   [Ada]          opencv-core-float32_vec4_buffer_access.adb
+   [Ada]          opencv-core-sparse-uint16_vec4_access.adb
+   [Ada]          opencv-core-int16_vec4_access.adb
+   [Ada]          opencv-core-int32_vec4_buffer_access.adb
+   [Ada]          opencv-core-int16_vec4_row_access.adb
+   [Ada]          opencv-core-sparse-float64_access.adb
+   [Ada]          opencv-core-uint8_vec3_mat_view.adb
+   [Ada]          opencv-core-uint8_vec4_mat_view.adb
+   [Ada]          opencv-core-sparse-module_interop.adb
+   [Ada]          opencv-core-int16_buffer_access.adb
+   [Ada]          opencv-core-float16_access.adb
+   [Ada]          opencv-core-float64_vec4_buffer_access.adb
+   [Ada]          opencv-core-int8_mat_view.adb
+   [Ada]          opencv-core-int32_vec3_row_access.adb
+   [Ada]          opencv-core-float64_vec2_buffer_access.adb
+   [Ada]          opencv-core-uint8_vec4_buffer_access.adb
+   [Ada]          opencv-core-int32_vec2.ads
+   [Ada]          opencv-core-sparse-float32_vec2_access.adb
+   [Ada]          opencv-core-uint16_vec4_row_access.adb
+   [Ada]          opencv-core-float16_vec2_mat_view.adb
+   [Ada]          opencv-core-float16_vec4_mat_view.adb
+   [Ada]          opencv-core-int8_vec4.ads
+   [Ada]          opencv-core-int32_buffer_access.adb
+   [Ada]          opencv-core-sparse-int16_vec4_access.adb
+   [Ada]          opencv-core-int8_vec3_buffer_access.adb
+   [Ada]          opencv-core-uint16_vec4_buffer_access.adb
+   [Ada]          opencv-core-int32_mat_view.adb
+   [Ada]          opencv-core-float64_vec2_row_access.adb
+   [Ada]          opencv-core-int8_buffer_access.adb
+   [Ada]          opencv-core-sparse-uint8_access.adb
+   [Ada]          opencv-core-int32_vec3.ads
+   [Ada]          opencv-core-int16_vec3_buffer_access.adb
+   [Ada]          opencv-core-uint8_vec4_row_access.adb
+   [Ada]          opencv-core-int16_row_access.adb
+   [Ada]          opencv-core-int8_vec2_row_access.adb
+   [Ada]          opencv-core-sparse-uint8_vec3_access.adb
+   [Ada]          opencv-core-uint8_vec2_buffer_access.adb
+   [Ada]          opencv-core-int16_vec4_mat_view.adb
+   [Ada]          opencv-core-uint8_vec2_access.adb
+   [Ada]          opencv-core-sparse-float16_vec3_access.adb
+   [Ada]          opencv-core-float64_vec2.ads
+   [Ada]          opencv-core-int16_vec2_access.adb
+   [Ada]          opencv-core-int32_vec2_mat_view.adb
+   [Ada]          opencv-core-vectors.ads
+   [Ada]          opencv-core-int8_vec4_access.adb
+   [Ada]          opencv-core-uint16_vec4.ads
+   [Ada]          opencv-core-int8_vec3_row_access.adb
+   [Ada]          opencv-core-sparse-uint8_vec4_access.adb
+   [Ada]          opencv-core-sparse.adb
+   [Ada]          opencv-core-int16_vec4_buffer_access.adb
+   [Ada]          opencv-core-float32_vec3_access.adb
+   [Ada]          opencv-core-sparse-float64_vec2_access.adb
+   [Ada]          opencv-core-int32_vec2_row_access.adb
+   [Ada]          opencv-core-int32_vec4.ads
+   [Ada]          opencv-core-sparse-int8_vec3_access.adb
+   [Ada]          opencv-core-int32_vec4_mat_view.adb
+   [Ada]          opencv-core-int32_access.adb
+   [Ada]          opencv-core-float16_mat_view.adb
+   [Ada]          opencv-core-persistence.adb
+   [Ada]          opencv-core-int8_vec3_mat_view.adb
+   [Ada]          opencv-core-float32_vec3_buffer_access.adb
+   [Ada]          opencv-core-sparse-float16_vec2_access.adb
+   [Ada]          opencv-core-sparse-uint16_access.adb
+   [Ada]          opencv-core-uint8_access.adb
+   [Ada]          opencv-core-sparse-uint8_vec2_access.adb
+   [Ada]          opencv-core-sparse-int8_vec4_access.adb
+   [Ada]          opencv-core-sparse-int8_vec2_access.adb
+   [Ada]          opencv-core-float32_vec4_mat_view.adb
+   [Ada]          opencv-core-uint16_mat_view.adb
+   [Ada]          opencv-core-int16_vec3_mat_view.adb
+   [Ada]          opencv-core-uint16_vec4_mat_view.adb
+   [Ada]          opencv-core-uint16_vec2_buffer_access.adb
+   [Ada]          opencv-core-uint16_vec3.ads
+   [Ada]          opencv-core-int16_vec2_row_access.adb
+   [Ada]          opencv-core-sparse-int32_vec3_access.adb
+Build Libraries
+   [gprlib]       opencv_core_shim.lexch
+   [gprlib]       opencv_core_ada.lexch
+   [archive]      libopencv_core_shim.a
+   [index]        libopencv_core_shim.a
+   [archive]      libopencv_core_ada.a
+   [index]        libopencv_core_ada.a
+Success: Build finished successfully in 4.18 seconds.
+GNATdoc: 0 documentation warnings (see obj/docs/gnatdoc.log)
+GNATdoc warning delta: 0 added, 0 removed
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Theme: 196 API pages verified; asset/metadata errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Type cross-references:
+  Public package pages inspected: 195
+  Declaration snippets inspected: 1293
+  Resolved type links: 2755
+  Package pages enhanced: 168
+  Ambiguous references skipped: 3
+  Unsupported references skipped: 592
+  Invalid targets: 0
+  Structural errors: 0
+  Links by type family: angle_unit=22, batch_distance_kind=1, binary_norm_kind=2, border_interpolation_result=1, border_kind=2, buffer_array=320, cartesian_coordinates=4, channel_count=7, channel_route=1, channel_route_array=1, channel_source_kind=1, comparison_kind=6, covariance_result=1, covariance_scaling=1, cubic_root_status=1, cubic_solution_result=1, depth_type=13, dimension_array=136, dimension_selection=1, dimension_selection_array=1, dimension_selection_kind=1, dimension_stride_array=64, eigen_decomposition_result=2, extremum_occurrence=2, file_storage=35, flip_kind=1, float16_value=20, float32_classification=1, float32_point=1, float32_point_3d=1, float32_size=1, float32_value=21, float64_classification=1, float64_value=12, index_array=166, index_range=4, index_range_array=2, input_mat_handle=1, input_sparse_mat_handle=1, input_umat_handle=1, int16_value=10, int32_value=10, int8_value=10, inversion_result=1, k_means_criteria=2, k_means_initialization=2, k_means_iteration_count=1, k_means_result=2, linear_discriminant_analysis_result=4, linear_program_result=1, linear_program_status=1, mat=1006, mat_array=6, mat_size=10, mat_type=7, matrix=2, mean_std_dev_result=2, min_max_result=2, nd_min_max_result=2, nearest_neighbor_result=1, node_kind=2, norm_kind=6, normalize_kind=4, output_mat_handle=1, output_sparse_mat_handle=1, output_umat_handle=1, point=5, point_3d=1, point_array=1, point_coordinate=9, polar_coordinates=2, polynomial_solution_result=1, principal_component_analysis_result=5, random_number_generator=7, range_check_result=2, rect=2, reduction_axis=4, reduction_kind=2, region_adjustment=2, region_location=2, rotation_kind=1, row_array=128, sample_orientation=6, scalar=37, singular_value_decomposition_result=2, size_coordinate=15, solve_result=1, sort_axis=2, sort_order=2, sparse_extrema=1, sparse_mat=122, spectrum_multiplication_kind=3, storage_format=1, storage_mode=1, symmetry_source=1, transposed_product_order=4, uint16_value=10, uint8_value=10, umat=159, umat_cartesian_coordinates=4, umat_polar_coordinates=2, vector=240
+Theme: 196 API pages verified; asset/metadata errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Type cross-references:
+  Public package pages inspected: 195
+  Declaration snippets inspected: 1293
+  Resolved type links: 2755
+  Package pages enhanced: 168
+  Ambiguous references skipped: 3
+  Unsupported references skipped: 592
+  Invalid targets: 0
+  Structural errors: 0
+  Links by type family: angle_unit=22, batch_distance_kind=1, binary_norm_kind=2, border_interpolation_result=1, border_kind=2, buffer_array=320, cartesian_coordinates=4, channel_count=7, channel_route=1, channel_route_array=1, channel_source_kind=1, comparison_kind=6, covariance_result=1, covariance_scaling=1, cubic_root_status=1, cubic_solution_result=1, depth_type=13, dimension_array=136, dimension_selection=1, dimension_selection_array=1, dimension_selection_kind=1, dimension_stride_array=64, eigen_decomposition_result=2, extremum_occurrence=2, file_storage=35, flip_kind=1, float16_value=20, float32_classification=1, float32_point=1, float32_point_3d=1, float32_size=1, float32_value=21, float64_classification=1, float64_value=12, index_array=166, index_range=4, index_range_array=2, input_mat_handle=1, input_sparse_mat_handle=1, input_umat_handle=1, int16_value=10, int32_value=10, int8_value=10, inversion_result=1, k_means_criteria=2, k_means_initialization=2, k_means_iteration_count=1, k_means_result=2, linear_discriminant_analysis_result=4, linear_program_result=1, linear_program_status=1, mat=1006, mat_array=6, mat_size=10, mat_type=7, matrix=2, mean_std_dev_result=2, min_max_result=2, nd_min_max_result=2, nearest_neighbor_result=1, node_kind=2, norm_kind=6, normalize_kind=4, output_mat_handle=1, output_sparse_mat_handle=1, output_umat_handle=1, point=5, point_3d=1, point_array=1, point_coordinate=9, polar_coordinates=2, polynomial_solution_result=1, principal_component_analysis_result=5, random_number_generator=7, range_check_result=2, rect=2, reduction_axis=4, reduction_kind=2, region_adjustment=2, region_location=2, rotation_kind=1, row_array=128, sample_orientation=6, scalar=37, singular_value_decomposition_result=2, size_coordinate=15, solve_result=1, sort_axis=2, sort_order=2, sparse_extrema=1, sparse_mat=122, spectrum_multiplication_kind=3, storage_format=1, storage_mode=1, symmetry_source=1, transposed_product_order=4, uint16_value=10, uint8_value=10, umat=159, umat_cartesian_coordinates=4, umat_polar_coordinates=2, vector=240
+  Highlighted snippets verified: 1293; Ada text/markup errors: 0
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Guides: 5 authoritative pages; exact content, links and stylesheet verified
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Theme: 196 API pages verified; asset/metadata errors: 0
+Generic instances: 25 pages; 102 template/member/type links; integrity errors: 0
+Type cross-references:
+  Public package pages inspected: 195
+  Declaration snippets inspected: 1293
+  Resolved type links: 2755
+  Package pages enhanced: 168
+  Ambiguous references skipped: 3
+  Unsupported references skipped: 592
+  Invalid targets: 0
+  Structural errors: 0
+  Links by type family: angle_unit=22, batch_distance_kind=1, binary_norm_kind=2, border_interpolation_result=1, border_kind=2, buffer_array=320, cartesian_coordinates=4, channel_count=7, channel_route=1, channel_route_array=1, channel_source_kind=1, comparison_kind=6, covariance_result=1, covariance_scaling=1, cubic_root_status=1, cubic_solution_result=1, depth_type=13, dimension_array=136, dimension_selection=1, dimension_selection_array=1, dimension_selection_kind=1, dimension_stride_array=64, eigen_decomposition_result=2, extremum_occurrence=2, file_storage=35, flip_kind=1, float16_value=20, float32_classification=1, float32_point=1, float32_point_3d=1, float32_size=1, float32_value=21, float64_classification=1, float64_value=12, index_array=166, index_range=4, index_range_array=2, input_mat_handle=1, input_sparse_mat_handle=1, input_umat_handle=1, int16_value=10, int32_value=10, int8_value=10, inversion_result=1, k_means_criteria=2, k_means_initialization=2, k_means_iteration_count=1, k_means_result=2, linear_discriminant_analysis_result=4, linear_program_result=1, linear_program_status=1, mat=1006, mat_array=6, mat_size=10, mat_type=7, matrix=2, mean_std_dev_result=2, min_max_result=2, nd_min_max_result=2, nearest_neighbor_result=1, node_kind=2, norm_kind=6, normalize_kind=4, output_mat_handle=1, output_sparse_mat_handle=1, output_umat_handle=1, point=5, point_3d=1, point_array=1, point_coordinate=9, polar_coordinates=2, polynomial_solution_result=1, principal_component_analysis_result=5, random_number_generator=7, range_check_result=2, rect=2, reduction_axis=4, reduction_kind=2, region_adjustment=2, region_location=2, rotation_kind=1, row_array=128, sample_orientation=6, scalar=37, singular_value_decomposition_result=2, size_coordinate=15, solve_result=1, sort_axis=2, sort_order=2, sparse_extrema=1, sparse_mat=122, spectrum_multiplication_kind=3, storage_format=1, storage_mode=1, symmetry_source=1, transposed_product_order=4, uint16_value=10, uint8_value=10, umat=159, umat_cartesian_coordinates=4, umat_polar_coordinates=2, vector=240
+  Highlighted snippets verified: 1293; Ada text/markup errors: 0
+Validated 195 public packages, 202 HTML pages; all local links, anchors and assets resolve under /opencv_core_ada/.

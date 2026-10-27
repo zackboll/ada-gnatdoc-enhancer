@@ -49,12 +49,18 @@ class Config:
     default_package: str | None = None
     instance_references: bool = False
     external_type_target: str | None = None
+    theme_css_source: str | None = None
+    theme_css_sha256: str | None = None
+    theme_config_path: str | None = None
+    theme_config_sha256: str | None = None
 
 
 def load(root: Path, path: str) -> Config:
+    lexical_root = root.absolute()
     root = root.resolve()
     config_path = regular(inside(root, path))
-    raw = tomllib.loads(config_path.read_text(encoding="utf-8"))
+    config_bytes = config_path.read_bytes()
+    raw = tomllib.loads(config_bytes.decode('utf-8'))
     members(raw, TOP, "root")
     require(raw.get("schema_version") == 1, "unsupported configuration schema version")
     project = raw.get("project")
@@ -94,9 +100,22 @@ def load(root: Path, path: str) -> Config:
     if categories is not None:
         regular(inside(root, categories))
     pres = raw.get("presentation", {})
-    members(pres, {"theme", "syntax_highlighting", "type_links", "external_type_target"}, "presentation")
-    for k in pres.keys() - {"external_type_target"}:
+    members(pres, {"theme", "syntax_highlighting", "type_links", "external_type_target",
+                   "theme_css_source", "theme_css_sha256"}, "presentation")
+    for k in pres.keys() - {"external_type_target", "theme_css_source", "theme_css_sha256"}:
         require(type(pres[k]) is bool, f"presentation.{k} must be Boolean")
+    custom_theme = bool({'theme_css_source', 'theme_css_sha256'} & pres.keys())
+    if custom_theme:
+        import re
+        require(all(not p.is_symlink() for p in (lexical_root, *lexical_root.parents)),
+                'symlink custom theme source root')
+        require({'theme_css_source', 'theme_css_sha256'} <= pres.keys(),
+                'theme CSS source and SHA-256 must be configured together')
+        require(pres.get('theme', True), 'custom theme CSS requires theme = true')
+        regular(inside(root, pres['theme_css_source']))
+        require(isinstance(pres['theme_css_sha256'], str) and
+                re.fullmatch('[a-f0-9]{64}', pres['theme_css_sha256']),
+                'custom theme CSS requires a lower-case SHA-256')
     external_target = pres.get('external_type_target')
     require(external_target is None or external_target == '_top',
             'presentation.external_type_target must be "_top" when specified')
@@ -166,8 +185,16 @@ def load(root: Path, path: str) -> Config:
                 'invalid generic qualification SHA-256')
     require(not incoming or (mode == 'packages' and symbols and pres.get('type_links', True)),
             'incoming instance references require type links and symbol package navigation')
-    return Config(root, project, version, names, packages, style, mode, categories,
+    from .util import digest
+    config = Config(root, project, version, names, packages, style, mode, categories,
                   pres.get("theme", True), pres.get("syntax_highlighting", True),
                   pres.get("type_links", True), guide_mode, guide_manifest,
                   ext, frozenset(hosts), exceptions, tuple(dependencies), generic, guide_hash,
-                  symbols, default_package, incoming, external_target)
+                  symbols, default_package, incoming, external_target,
+                  pres.get('theme_css_source'), pres.get('theme_css_sha256'),
+                  config_path.relative_to(root).as_posix() if custom_theme else None,
+                  digest(config_bytes) if custom_theme else None)
+    if custom_theme:
+        from .theme import theme_asset
+        theme_asset(config)
+    return config

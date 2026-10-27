@@ -2,16 +2,17 @@
 
 **Offline, source-verified enhancement of GNATdoc 26.0.0 HTML sites.**
 
-Version **0.1.1** is the planned maintenance release adding GNATDOC-014's opt-in
-top-level external type navigation to the published v0.1.0 toolkit. Release
-preparation does not publish v0.1.1. Python **3.11, 3.12 and 3.13** are supported on Linux. The core
+The published baseline is **0.1.1**. GNATDOC-017 development retains that version
+and adds an opt-in source-verified consumer theme; this PR does not assign or
+publish a subsequent release. Python **3.11, 3.12 and 3.13** are supported on Linux. The core
 has **no runtime dependencies** and needs neither Ada nor GNATdoc at installation.
 
 ## Install a standalone distribution
 
-Obtain reviewed artifacts and their SHA-256 inventory from the eventual GitHub
-v0.1.1 release; verify hashes before installation. Until then,
-build the candidate from the exact reviewed source commit with `python -m build`.
+Obtain reviewed artifacts and their SHA-256 inventory from the official GitHub
+v0.1.1 release; verify hashes before installation. The new optional theme is a
+development capability: build its candidate from the exact reviewed source
+commit with `python -m build`, without replacing official release artifacts.
 
 ```sh
 python3 -m venv /tmp/enhancer-env
@@ -48,6 +49,13 @@ aliases and descendants are rejected. Dry-run stages and verifies output without
 changing the consumer. Qualified enhancement is deterministic and byte-idempotent.
 
 ## Capabilities
+
+* Development opt-in: paired `[presentation].theme_css_source` and
+  `theme_css_sha256` publish an independently approved consumer stylesheet at
+  the existing theme path. Source/configuration are rechecked by `verify`;
+  unsafe resources and encoding fail closed, never sanitized. Omission preserves
+  all v0.1.1 default bytes. No landing HTML, guide CSS, native CSS or navigation
+  rewrite is needed. See [syntax, real Core example and rollback](docs/configuration.md).
 
 * Light/dark presentation, preserved native CSS, Ada highlighting, searchable
   packages, source-order operation/overload navigation, declaration/category

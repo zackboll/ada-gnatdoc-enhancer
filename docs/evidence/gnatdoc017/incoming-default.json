@@ -1,0 +1,23 @@
+{
+  "mode": "enhanced",
+  "files": 207,
+  "html_pages": 202,
+  "links": 5134,
+  "linked_types": 2758,
+  "declaration_snippets": 1293,
+  "public_packages": 195,
+  "linked_local_types": 2758,
+  "linked_external_types": 0,
+  "unrendered_renderer_exceptions": 0,
+  "qualified_generic_instances": 25,
+  "vector_summaries": 24,
+  "matrix_summaries": 1,
+  "generic_summary_links": 102,
+  "presentation_only_anchors": 25,
+  "unsupported_instances": [],
+  "native_instance_member_declarations": 0,
+  "generic_template_links": 25,
+  "generic_member_links": 51,
+  "generic_actual_type_links": 25,
+  "generic_conversion_package_links": 1
+}

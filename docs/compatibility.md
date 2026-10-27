@@ -1,5 +1,25 @@
 # Compatibility and evidence levels
 
+## GNATDOC-017 development: approved consumer presentation
+
+Optional paired `presentation.theme_css_source` / `theme_css_sha256` select
+consumer-owned exact CSS bytes at the existing authorized theme path. Default
+mode retains v0.1.1 bytes, manifest schema, assets and behavior. No default CSS,
+JavaScript, authored renderer, native declaration or navigation changes are
+authorized. See the [configuration contract](configuration.md) and
+[executed qualification record](evidence/gnatdoc017/README.md).
+
+Core's current legacy/shared baseline already has identical authored landing,
+five guides and guide CSS, and both support 25 summary cards. Missing landing
+rules and card treatments are CSS differences. Pre-existing type-link policy
+differences are not repaired or concealed by this feature. In the pinned pilot,
+legacy has 2,755 type links; shared has 2,516 without the separately supported
+incoming-instance opt-in, or 2,758 with it (242 restored instance references,
+no missing legacy destinations, three additional source-qualified `OpenCV.Size`
+links). Custom CSS is not a full consumer migration approval.
+Browser results, distribution and default-byte gates must be recorded separately;
+historical green evidence alone does not qualify the new source.
+
 ## Current 0.1.1 preparation boundary
 
 The planned patch adds only opt-in `[presentation].external_type_target = "_top"`.

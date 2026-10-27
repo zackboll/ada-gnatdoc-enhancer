@@ -22,7 +22,7 @@ from .metadata import (check_native_input, guide_title, index_title, native_docu
 from .native_html import NativeSite, snapshot, verified_types
 from .navigation import SCRIPT, enhance_index
 from .syntax import transform_page
-from .theme import METADATA, NATIVE_LINK, asset, themed
+from .theme import METADATA, NATIVE_LINK, asset, themed, theme_asset, theme_identity
 from .util import digest, require, site_root, sorted_json
 from .validation import validate_files
 
@@ -102,7 +102,7 @@ def expected_output(config:Config,site:Path):
                             reference_metadata(references)+'<h2 id=compilation-units>',1)
     values['api/index.html']=native_document(index,_head(config,True),index_title(config.project),
                                              'api/index.html').encode()
-    if config.theme:values['api/gnatdoc-theme.css']=asset('gnatdoc-theme.css')
+    if config.theme:values['api/gnatdoc-theme.css']=theme_asset(config)
     if config.navigation!='none':
         values['api/gnatdoc-navigation.js']=asset(
             'gnatdoc-instance-navigation.js' if config.instance_references else
@@ -117,13 +117,17 @@ def _expected_names(originals:dict,values:dict):
 
 def _presentation(config:Config,site:Path,raw:dict,values:dict,counts:dict):
     source=packages(config)
-    return {'schema_version':1,'enhancer_version':__version__,
+    result = {'schema_version':1,'enhancer_version':__version__,
             'gnatdoc_version':config.gnatdoc,'project':config.project,
             'original_api_html':raw,
             'native_css_sha256':digest((site/'api/gnatdoc.css').read_bytes()),
             'source_sha256':canonical_fingerprints(source,config),
             'output_sha256':{path:digest(data) for path,data in sorted(values.items())},
             'counts':counts}
+    identity = theme_identity(config)
+    if identity is not None:
+        result['theme_source'] = identity
+    return result
 
 
 def _generate(config:Config,site:Path):
@@ -174,9 +178,13 @@ def verify(config:Config,site:Path):
     require(path.is_file() and not path.is_symlink(),'missing or symlink presentation manifest')
     data=json.loads(path.read_text(encoding='utf-8'))
     require(isinstance(data,dict),'malformed presentation manifest: expected object')
+    identity = theme_identity(config)
     require(set(data)=={'schema_version','enhancer_version','gnatdoc_version','project',
-                        'original_api_html','native_css_sha256','source_sha256','output_sha256','counts'},
+                        'original_api_html','native_css_sha256','source_sha256','output_sha256','counts'} |
+                        ({'theme_source'} if identity is not None else set()),
             'unexpected presentation manifest fields')
+    if identity is not None:
+        require(data['theme_source'] == identity, 'custom theme source/configuration identity changed')
     require(data['schema_version']==1 and data['gnatdoc_version']==config.gnatdoc
             and data['project']==config.project and data['enhancer_version']==__version__,
             'presentation schema/tool/project mismatch')

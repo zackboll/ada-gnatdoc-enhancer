@@ -1,0 +1,59 @@
+{
+  "status": "HOSTED_CI_PENDING",
+  "implementation_commit": "cef6010701de0ef9e3e7001c72bec8fc53de98e4",
+  "implementation_tree": "7f3bfe28f3ffaa7600867aaf37b094b9d458c2bb",
+  "starting_main": "dd100f026e13cdd9e97b283d50130241d71bdb9d",
+  "core_revision": "33a2a4f3b83606a5c779b8a93abeb6c91fa49a21",
+  "core_theme_sha256": "fa265d63e73436a6a449fd16011c3db68a5430e7fa6a98ea8eb0fd6821dca9b2",
+  "core": {
+    "packages": 195,
+    "declaration_profiles": 1293,
+    "public_native_symbols": 216,
+    "generic_summaries": 25,
+    "summary_links": 102,
+    "incoming_references": 242,
+    "legacy_type_links": 2755,
+    "shared_type_links": 2758,
+    "missing_legacy_type_destinations": 0,
+    "additional_qualified_Size_links": 3,
+    "warnings": 0
+  },
+  "distribution": {
+    "environments": 9,
+    "tests_each": 609,
+    "retained_baseline_tests": 579,
+    "new_tests": 30,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "version": "0.1.1",
+    "new_runtime_dependencies": []
+  },
+  "defaults": {
+    "profiles": 20,
+    "exact_file_bytes": true,
+    "manifest_normalization": false
+  },
+  "browser": {
+    "chromium": "156.0.8078.47",
+    "site_profile_combinations": 16,
+    "requests": 5492,
+    "request_interception": false,
+    "all_25_summaries_each": true,
+    "all_102_destinations_each": true,
+    "styles_equal": true,
+    "overflow": false,
+    "unexpected_requests": false,
+    "supplemental_unintercepted_incoming_clicks": 421
+  },
+  "production_deployment_changed": false,
+  "consumer_modified": false,
+  "official_release_modified": false,
+  "limitations": [
+    "Hosted exact-final-head CI pending",
+    "Three pre-existing extra qualified Size links retained for independent review",
+    "Shared navigation labels/metadata and summary prose intentionally differ from legacy",
+    "No full accessibility/cross-browser/platform certification",
+    "Historical non-Core fixtures replayed, not freshly Ada compiled"
+  ]
+}
