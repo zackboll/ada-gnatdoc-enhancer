@@ -1,5 +1,25 @@
 # Compatibility and evidence levels
 
+## GNATDOC-019 development: default declaration visibility
+
+The default router can retain the correct approved declaration URL while its
+heading is outside the iframe viewport. A controlled stale-scroll reproduction
+on authentic GNATdoc 26 Imgproc output demonstrates this after real Chromium Back
+traversal; a synthetic `pageshow` probe separately demonstrates the lifecycle gap,
+not BFCache support. See [history semantics](api-navigation-history.md#gnatdoc-019-default-declaration-visibility)
+and [executed gates](evidence/gnatdoc019/README.md).
+
+Only the default runtime changes. Its complete generated-publication comparison
+allows exactly `api/gnatdoc-navigation.js` and that asset's hash in
+`api/presentation.json`; no unrelated manifest difference is permitted. Stable
+symbol, incoming-instance and navigation-disabled profiles must remain completely
+byte-identical. No native declaration/profile, order, anchor, external URL,
+`external_type_target`, custom CSS authority or authored content changes are
+authorized. The three routers remain separately qualified, with default query
+compatibility deliberately distinct from symbol-router canonicalization.
+Corrected default-router publication bytes require consumer requalification.
+The version remains 0.1.1; the official released assets are not modified.
+
 ## GNATDOC-018R1 development: external stable bookmarks
 
 Default direct links and all bundled assets are unchanged. Explicit per-type

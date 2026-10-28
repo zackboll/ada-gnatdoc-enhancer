@@ -1,5 +1,19 @@
 # Changelog
 
+## Unreleased — GNATDOC-019 (version remains 0.1.1)
+
+- Restore default-router approved declaration visibility after matching iframe
+  load/hash completion, already-loaded URL navigation, Back/Forward and `pageshow`.
+  Use bounded animation-frame callbacks, rechecking current selection generation,
+  pending navigation, exact document URL and complete document readiness.
+- Preserve default URL/query/outer-fragment and History API semantics. Package-only
+  selections do not scroll; unrelated user scroll does not trigger restoration.
+  Stable-symbol and incoming-instance runtime assets remain byte-identical.
+- Add negative-first authentic Chromium evidence and deterministic event-double
+  regressions, including superseded callbacks and same-URL persisted scroll.
+  Default publication JavaScript and its manifest hash change; consumers need
+  independent requalification. Official v0.1.1 release assets remain unchanged.
+
 ## Unreleased — GNATDOC-018R1 (version remains 0.1.1)
 
 - Add explicit hash-bound per-type external stable bookmarks for the independently

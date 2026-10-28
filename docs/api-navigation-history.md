@@ -159,3 +159,51 @@ HEAD hosted CI must pass before a merge-ready disposition. Imgproc PR #72 stays
 unchanged at `f2989da6c6a593f6196d1d989be0b2d126743dc6`; a separately reviewed
 consumer integration using an immutable enhancer revision remains outside scope.
 Stop at independent review: no merge, auto-merge, release, tag, or deployment.
+
+## GNATDOC-019 default declaration visibility
+
+This additive correction does not rewrite the GNATDOC-008B results above. Starting
+merged main is `036bdd6587b93e8f6108d8b960c8c9ba8d747e78`, tree
+`8901bc53f046932730c03e76b6c168d293d20394`. Its 630-test suite passes, but
+URL/profile checks alone do not prove a declaration is visible.
+
+Against unchanged merged-main runtime bytes, authentic historical Imgproc
+`9ce22ae5ab70008e1147475a9e6d7baef82f1df0` and current independently pinned
+Imgproc `d4c30f12353ac8e7f70709ff12843445ad0de563` reproduce a same-URL gap.
+Select genuine `Filter_2D` overload sidebar links, retain the exact native URL,
+scroll the iframe away from the declaration, activate the genuine outer
+Compilation Units fragment link, then traverse Back in Chromium. The outer
+package/declaration and iframe page/fragment are correct, as are the unique native
+heading and complete profile, but the heading stays off-screen. A separate
+deterministic `pageshow` event probe also fails; it is **not BFCache evidence**.
+Ordinary overload Back/Forward and reload passed in this negative campaign.
+
+### Bounded restoration
+
+The default router now schedules an animation-frame reveal for an approved
+declaration after a matching iframe load, acknowledged same-document hash
+transition, already-loaded exact destination, `popstate`, or `pageshow`.
+The callback revalidates the selection generation (including A → B → A), selected
+state, absence of pending navigation, exact approved URL, captured document
+identity, document URL and `readyState === 'complete'`. Missing targets and
+foreign/incomplete documents do not scroll. A newer selection invalidates older
+callbacks. There are no timers, polling/retry loops, or global/manual scroll
+restoration policy. Package-only selection never schedules a reveal. Ordinary
+scrolling and search do not reset the user's scroll position.
+
+The outer browser entry owns the approved selection. Only explicit approved
+activation can push an entry; repeated selection cannot add another one.
+Restoration never pushes. The iframe continues using `location.replace`, retaining
+the existing stale/superseded-load protections rather than adding joint-history
+entries. Default unrelated query parameters and outer fragments remain compatible;
+symbol-router canonicalization is deliberately not imported. Invalid historical
+state falls back under the existing authorization rules and gains no new authority.
+Native links outside the approved set remain native. JavaScript-disabled behavior
+is genuine native-anchor navigation, not script-based restoration.
+
+Only the default JavaScript asset and its presentation-manifest hash are intended
+publication differences. Stable-symbol and incoming-instance assets remain
+byte-identical and independently qualified; the official v0.1.1 release is
+unchanged. Regenerate and requalify consumer publications separately. Exact
+executed results, raw-evidence bindings, limitations and disposition live in
+[GNATDOC-019 evidence](evidence/gnatdoc019/README.md).

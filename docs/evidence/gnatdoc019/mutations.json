@@ -1,0 +1,39 @@
+{
+  "forged-runtime-hash": {
+    "rejected": true,
+    "reason": "enhanced output does not match source/manifest",
+    "output_hash_forged": true
+  },
+  "wrong-existing-anchor": {
+    "rejected": true,
+    "reason": "enhanced output does not match source/manifest",
+    "output_hash_forged": true
+  },
+  "changed-profile": {
+    "rejected": true,
+    "reason": "enhanced output does not match source/manifest",
+    "output_hash_forged": true
+  },
+  "unauthorized-script": {
+    "rejected": true,
+    "reason": "enhanced output does not match source/manifest",
+    "output_hash_forged": true
+  },
+  "inline-handler": {
+    "rejected": true,
+    "reason": "enhanced output does not match source/manifest",
+    "output_hash_forged": true
+  },
+  "changed-original-native-html": {
+    "rejected": true,
+    "reason": "native declaration profile unmatched or swapped: OpenCV.Image_Processing.Filter_2D at 3747; requires unique exact or supported source-verified profile (unsupported/ambiguous projection rejected)"
+  },
+  "extra-file": {
+    "rejected": true,
+    "reason": "unapproved output file: api/extra.js"
+  },
+  "source-change": {
+    "rejected": true,
+    "reason": "source differs from qualified presentation manifest"
+  }
+}

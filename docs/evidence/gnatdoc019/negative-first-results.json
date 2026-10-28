@@ -1,0 +1,1067 @@
+{
+  "browser": "156.0.8078.47",
+  "checks": [
+    {
+      "colorScheme": "light",
+      "event": "sidebar-first-overload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "sidebar-second-overload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-forward",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "reload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "fresh-tab-bookmark",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back-same-url-stale-scroll",
+      "label": "historical-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "label": "historical-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "sidebar-first-overload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "sidebar-second-overload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-forward",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "reload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "fresh-tab-bookmark",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back-same-url-stale-scroll",
+      "label": "historical-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "label": "historical-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "sidebar-first-overload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "sidebar-second-overload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-forward",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "reload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "fresh-tab-bookmark",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back-same-url-stale-scroll",
+      "label": "historical-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "label": "historical-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "sidebar-first-overload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "sidebar-second-overload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-forward",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "reload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "fresh-tab-bookmark",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back-same-url-stale-scroll",
+      "label": "historical-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "label": "historical-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "sidebar-first-overload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "sidebar-second-overload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-forward",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "reload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "fresh-tab-bookmark",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back-same-url-stale-scroll",
+      "label": "current-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "label": "current-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "sidebar-first-overload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "sidebar-second-overload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-forward",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "reload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "fresh-tab-bookmark",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back-same-url-stale-scroll",
+      "label": "current-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "label": "current-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "sidebar-first-overload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "sidebar-second-overload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-forward",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "reload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "fresh-tab-bookmark",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back-same-url-stale-scroll",
+      "label": "current-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "label": "current-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "sidebar-first-overload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "sidebar-second-overload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-forward",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "reload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "fresh-tab-bookmark",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back-same-url-stale-scroll",
+      "label": "current-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "label": "current-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 390
+    }
+  ],
+  "failures": [
+    {
+      "colorScheme": "light",
+      "event": "real-back-same-url-stale-scroll",
+      "historyLength": 5,
+      "iframeUrl": "http://127.0.0.1:8199/historical-imgproc/site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "label": "historical-imgproc",
+      "outerUrl": "http://127.0.0.1:8199/historical-imgproc/site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "rectangle": {
+        "bottom": 142321.3125,
+        "height": 41.578125,
+        "left": 36.46875,
+        "right": 875.53125,
+        "top": 142279.734375,
+        "width": 839.0625,
+        "x": 36.46875,
+        "y": 142279.734375
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "target": {
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+        "name": "Filter_2D",
+        "native_profile": "procedure Filter_2D\n  (Source            : OpenCV.Core.Mat;\n   Destination       : in out OpenCV.Core.Mat;\n   Kernel            : OpenCV.Core.Mat;\n   Anchor            : OpenCV.Point;\n   Destination_Depth : Filter_Depth := Same_Depth;\n   Offset            : OpenCV.Float64_Value := 0.0;\n   Border            : OpenCV.Border_Kind := OpenCV.Reflect_101)\n",
+        "ordinal": 2,
+        "overloads": 2,
+        "package": "OpenCV.Image_Processing",
+        "source_line": 3615,
+        "source_profile": "--  This overload is the same Filter_2D correlation with an explicit Kernel\n   --  Anchor. Anchor must lie inside Kernel: X and Y are nonnegative and\n   --  strictly less than Kernel's columns and rows. There is no public mixed\n   --  or centered (-1, -1) sentinel in this overload. Source, Kernel, depth,\n   --  Offset, border, and direct native Destination rules match the\n   --  centered overload. Direct in-place operation is supported when the\n   --  requested destination depth matches Source.\n   --  @param Source Image to filter.\n   --  @param Destination Receives the filtered image.\n   --  @param Kernel Non-empty two-dimensional single-channel Float32 or\n   --  Float64 correlation coefficients; must not share Destination's\n   --  storage.\n   --  @param Anchor Kernel position aligned with each output pixel:\n   --  column X and row Y within Kernel.\n   --  @param Destination_Depth Output depth, Same_Depth by default; see\n   --  Derivative_Depth for the supported combinations.\n   --  @param Offset Value added to each filtered value; must be finite.\n   --  @param Border Extrapolation outside Source: Constant_Border,\n   --  Replicate, Reflect, or Reflect_101 (default). Wrap is rejected.\n   --  @exception OpenCV_Error Raised for an Anchor outside Kernel,\n   --  any input rejected by the centered overload, or a failure reported by\n   --  OpenCV.\n   procedure Filter_2D\n     (Source            : OpenCV.Core.Mat;\n      Destination       : in out OpenCV.Core.Mat;\n      Kernel            : OpenCV.Core.Mat;\n      Anchor            : OpenCV.Point;\n      Destination_Depth : Filter_Depth := Same_Depth;\n      Offset            : OpenCV.Float64_Value := 0.0;\n      Border            : OpenCV.Border_Kind := OpenCV.Reflect_101);"
+      },
+      "viewport": {
+        "height": 900,
+        "width": 912
+      },
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "historyLength": 5,
+      "iframeUrl": "http://127.0.0.1:8199/historical-imgproc/site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "label": "historical-imgproc",
+      "outerUrl": "http://127.0.0.1:8199/historical-imgproc/site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "rectangle": {
+        "bottom": 142321.3125,
+        "height": 41.578125,
+        "left": 36.46875,
+        "right": 875.53125,
+        "top": 142279.734375,
+        "width": 839.0625,
+        "x": 36.46875,
+        "y": 142279.734375
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "target": {
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+        "name": "Filter_2D",
+        "native_profile": "procedure Filter_2D\n  (Source            : OpenCV.Core.Mat;\n   Destination       : in out OpenCV.Core.Mat;\n   Kernel            : OpenCV.Core.Mat;\n   Anchor            : OpenCV.Point;\n   Destination_Depth : Filter_Depth := Same_Depth;\n   Offset            : OpenCV.Float64_Value := 0.0;\n   Border            : OpenCV.Border_Kind := OpenCV.Reflect_101)\n",
+        "ordinal": 2,
+        "overloads": 2,
+        "package": "OpenCV.Image_Processing",
+        "source_line": 3615,
+        "source_profile": "--  This overload is the same Filter_2D correlation with an explicit Kernel\n   --  Anchor. Anchor must lie inside Kernel: X and Y are nonnegative and\n   --  strictly less than Kernel's columns and rows. There is no public mixed\n   --  or centered (-1, -1) sentinel in this overload. Source, Kernel, depth,\n   --  Offset, border, and direct native Destination rules match the\n   --  centered overload. Direct in-place operation is supported when the\n   --  requested destination depth matches Source.\n   --  @param Source Image to filter.\n   --  @param Destination Receives the filtered image.\n   --  @param Kernel Non-empty two-dimensional single-channel Float32 or\n   --  Float64 correlation coefficients; must not share Destination's\n   --  storage.\n   --  @param Anchor Kernel position aligned with each output pixel:\n   --  column X and row Y within Kernel.\n   --  @param Destination_Depth Output depth, Same_Depth by default; see\n   --  Derivative_Depth for the supported combinations.\n   --  @param Offset Value added to each filtered value; must be finite.\n   --  @param Border Extrapolation outside Source: Constant_Border,\n   --  Replicate, Reflect, or Reflect_101 (default). Wrap is rejected.\n   --  @exception OpenCV_Error Raised for an Anchor outside Kernel,\n   --  any input rejected by the centered overload, or a failure reported by\n   --  OpenCV.\n   procedure Filter_2D\n     (Source            : OpenCV.Core.Mat;\n      Destination       : in out OpenCV.Core.Mat;\n      Kernel            : OpenCV.Core.Mat;\n      Anchor            : OpenCV.Point;\n      Destination_Depth : Filter_Depth := Same_Depth;\n      Offset            : OpenCV.Float64_Value := 0.0;\n      Border            : OpenCV.Border_Kind := OpenCV.Reflect_101);"
+      },
+      "viewport": {
+        "height": 900,
+        "width": 912
+      },
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back-same-url-stale-scroll",
+      "historyLength": 5,
+      "iframeUrl": "http://127.0.0.1:8199/historical-imgproc/site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "label": "historical-imgproc",
+      "outerUrl": "http://127.0.0.1:8199/historical-imgproc/site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "rectangle": {
+        "bottom": 142321.3125,
+        "height": 41.578125,
+        "left": 36.46875,
+        "right": 875.53125,
+        "top": 142279.734375,
+        "width": 839.0625,
+        "x": 36.46875,
+        "y": 142279.734375
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "target": {
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+        "name": "Filter_2D",
+        "native_profile": "procedure Filter_2D\n  (Source            : OpenCV.Core.Mat;\n   Destination       : in out OpenCV.Core.Mat;\n   Kernel            : OpenCV.Core.Mat;\n   Anchor            : OpenCV.Point;\n   Destination_Depth : Filter_Depth := Same_Depth;\n   Offset            : OpenCV.Float64_Value := 0.0;\n   Border            : OpenCV.Border_Kind := OpenCV.Reflect_101)\n",
+        "ordinal": 2,
+        "overloads": 2,
+        "package": "OpenCV.Image_Processing",
+        "source_line": 3615,
+        "source_profile": "--  This overload is the same Filter_2D correlation with an explicit Kernel\n   --  Anchor. Anchor must lie inside Kernel: X and Y are nonnegative and\n   --  strictly less than Kernel's columns and rows. There is no public mixed\n   --  or centered (-1, -1) sentinel in this overload. Source, Kernel, depth,\n   --  Offset, border, and direct native Destination rules match the\n   --  centered overload. Direct in-place operation is supported when the\n   --  requested destination depth matches Source.\n   --  @param Source Image to filter.\n   --  @param Destination Receives the filtered image.\n   --  @param Kernel Non-empty two-dimensional single-channel Float32 or\n   --  Float64 correlation coefficients; must not share Destination's\n   --  storage.\n   --  @param Anchor Kernel position aligned with each output pixel:\n   --  column X and row Y within Kernel.\n   --  @param Destination_Depth Output depth, Same_Depth by default; see\n   --  Derivative_Depth for the supported combinations.\n   --  @param Offset Value added to each filtered value; must be finite.\n   --  @param Border Extrapolation outside Source: Constant_Border,\n   --  Replicate, Reflect, or Reflect_101 (default). Wrap is rejected.\n   --  @exception OpenCV_Error Raised for an Anchor outside Kernel,\n   --  any input rejected by the centered overload, or a failure reported by\n   --  OpenCV.\n   procedure Filter_2D\n     (Source            : OpenCV.Core.Mat;\n      Destination       : in out OpenCV.Core.Mat;\n      Kernel            : OpenCV.Core.Mat;\n      Anchor            : OpenCV.Point;\n      Destination_Depth : Filter_Depth := Same_Depth;\n      Offset            : OpenCV.Float64_Value := 0.0;\n      Border            : OpenCV.Border_Kind := OpenCV.Reflect_101);"
+      },
+      "viewport": {
+        "height": 900,
+        "width": 912
+      },
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "historyLength": 5,
+      "iframeUrl": "http://127.0.0.1:8199/historical-imgproc/site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "label": "historical-imgproc",
+      "outerUrl": "http://127.0.0.1:8199/historical-imgproc/site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "rectangle": {
+        "bottom": 142321.3125,
+        "height": 41.578125,
+        "left": 36.46875,
+        "right": 875.53125,
+        "top": 142279.734375,
+        "width": 839.0625,
+        "x": 36.46875,
+        "y": 142279.734375
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "target": {
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+        "name": "Filter_2D",
+        "native_profile": "procedure Filter_2D\n  (Source            : OpenCV.Core.Mat;\n   Destination       : in out OpenCV.Core.Mat;\n   Kernel            : OpenCV.Core.Mat;\n   Anchor            : OpenCV.Point;\n   Destination_Depth : Filter_Depth := Same_Depth;\n   Offset            : OpenCV.Float64_Value := 0.0;\n   Border            : OpenCV.Border_Kind := OpenCV.Reflect_101)\n",
+        "ordinal": 2,
+        "overloads": 2,
+        "package": "OpenCV.Image_Processing",
+        "source_line": 3615,
+        "source_profile": "--  This overload is the same Filter_2D correlation with an explicit Kernel\n   --  Anchor. Anchor must lie inside Kernel: X and Y are nonnegative and\n   --  strictly less than Kernel's columns and rows. There is no public mixed\n   --  or centered (-1, -1) sentinel in this overload. Source, Kernel, depth,\n   --  Offset, border, and direct native Destination rules match the\n   --  centered overload. Direct in-place operation is supported when the\n   --  requested destination depth matches Source.\n   --  @param Source Image to filter.\n   --  @param Destination Receives the filtered image.\n   --  @param Kernel Non-empty two-dimensional single-channel Float32 or\n   --  Float64 correlation coefficients; must not share Destination's\n   --  storage.\n   --  @param Anchor Kernel position aligned with each output pixel:\n   --  column X and row Y within Kernel.\n   --  @param Destination_Depth Output depth, Same_Depth by default; see\n   --  Derivative_Depth for the supported combinations.\n   --  @param Offset Value added to each filtered value; must be finite.\n   --  @param Border Extrapolation outside Source: Constant_Border,\n   --  Replicate, Reflect, or Reflect_101 (default). Wrap is rejected.\n   --  @exception OpenCV_Error Raised for an Anchor outside Kernel,\n   --  any input rejected by the centered overload, or a failure reported by\n   --  OpenCV.\n   procedure Filter_2D\n     (Source            : OpenCV.Core.Mat;\n      Destination       : in out OpenCV.Core.Mat;\n      Kernel            : OpenCV.Core.Mat;\n      Anchor            : OpenCV.Point;\n      Destination_Depth : Filter_Depth := Same_Depth;\n      Offset            : OpenCV.Float64_Value := 0.0;\n      Border            : OpenCV.Border_Kind := OpenCV.Reflect_101);"
+      },
+      "viewport": {
+        "height": 900,
+        "width": 912
+      },
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back-same-url-stale-scroll",
+      "historyLength": 5,
+      "iframeUrl": "http://127.0.0.1:8199/historical-imgproc/site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "label": "historical-imgproc",
+      "outerUrl": "http://127.0.0.1:8199/historical-imgproc/site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "rectangle": {
+        "bottom": 198629.1875,
+        "height": 41.578125,
+        "left": 16,
+        "right": 374,
+        "top": 198587.609375,
+        "width": 358,
+        "x": 16,
+        "y": 198587.609375
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "target": {
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+        "name": "Filter_2D",
+        "native_profile": "procedure Filter_2D\n  (Source            : OpenCV.Core.Mat;\n   Destination       : in out OpenCV.Core.Mat;\n   Kernel            : OpenCV.Core.Mat;\n   Anchor            : OpenCV.Point;\n   Destination_Depth : Filter_Depth := Same_Depth;\n   Offset            : OpenCV.Float64_Value := 0.0;\n   Border            : OpenCV.Border_Kind := OpenCV.Reflect_101)\n",
+        "ordinal": 2,
+        "overloads": 2,
+        "package": "OpenCV.Image_Processing",
+        "source_line": 3615,
+        "source_profile": "--  This overload is the same Filter_2D correlation with an explicit Kernel\n   --  Anchor. Anchor must lie inside Kernel: X and Y are nonnegative and\n   --  strictly less than Kernel's columns and rows. There is no public mixed\n   --  or centered (-1, -1) sentinel in this overload. Source, Kernel, depth,\n   --  Offset, border, and direct native Destination rules match the\n   --  centered overload. Direct in-place operation is supported when the\n   --  requested destination depth matches Source.\n   --  @param Source Image to filter.\n   --  @param Destination Receives the filtered image.\n   --  @param Kernel Non-empty two-dimensional single-channel Float32 or\n   --  Float64 correlation coefficients; must not share Destination's\n   --  storage.\n   --  @param Anchor Kernel position aligned with each output pixel:\n   --  column X and row Y within Kernel.\n   --  @param Destination_Depth Output depth, Same_Depth by default; see\n   --  Derivative_Depth for the supported combinations.\n   --  @param Offset Value added to each filtered value; must be finite.\n   --  @param Border Extrapolation outside Source: Constant_Border,\n   --  Replicate, Reflect, or Reflect_101 (default). Wrap is rejected.\n   --  @exception OpenCV_Error Raised for an Anchor outside Kernel,\n   --  any input rejected by the centered overload, or a failure reported by\n   --  OpenCV.\n   procedure Filter_2D\n     (Source            : OpenCV.Core.Mat;\n      Destination       : in out OpenCV.Core.Mat;\n      Kernel            : OpenCV.Core.Mat;\n      Anchor            : OpenCV.Point;\n      Destination_Depth : Filter_Depth := Same_Depth;\n      Offset            : OpenCV.Float64_Value := 0.0;\n      Border            : OpenCV.Border_Kind := OpenCV.Reflect_101);"
+      },
+      "viewport": {
+        "height": 513,
+        "width": 390
+      },
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "historyLength": 5,
+      "iframeUrl": "http://127.0.0.1:8199/historical-imgproc/site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "label": "historical-imgproc",
+      "outerUrl": "http://127.0.0.1:8199/historical-imgproc/site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "rectangle": {
+        "bottom": 198629.1875,
+        "height": 41.578125,
+        "left": 16,
+        "right": 374,
+        "top": 198587.609375,
+        "width": 358,
+        "x": 16,
+        "y": 198587.609375
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "target": {
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+        "name": "Filter_2D",
+        "native_profile": "procedure Filter_2D\n  (Source            : OpenCV.Core.Mat;\n   Destination       : in out OpenCV.Core.Mat;\n   Kernel            : OpenCV.Core.Mat;\n   Anchor            : OpenCV.Point;\n   Destination_Depth : Filter_Depth := Same_Depth;\n   Offset            : OpenCV.Float64_Value := 0.0;\n   Border            : OpenCV.Border_Kind := OpenCV.Reflect_101)\n",
+        "ordinal": 2,
+        "overloads": 2,
+        "package": "OpenCV.Image_Processing",
+        "source_line": 3615,
+        "source_profile": "--  This overload is the same Filter_2D correlation with an explicit Kernel\n   --  Anchor. Anchor must lie inside Kernel: X and Y are nonnegative and\n   --  strictly less than Kernel's columns and rows. There is no public mixed\n   --  or centered (-1, -1) sentinel in this overload. Source, Kernel, depth,\n   --  Offset, border, and direct native Destination rules match the\n   --  centered overload. Direct in-place operation is supported when the\n   --  requested destination depth matches Source.\n   --  @param Source Image to filter.\n   --  @param Destination Receives the filtered image.\n   --  @param Kernel Non-empty two-dimensional single-channel Float32 or\n   --  Float64 correlation coefficients; must not share Destination's\n   --  storage.\n   --  @param Anchor Kernel position aligned with each output pixel:\n   --  column X and row Y within Kernel.\n   --  @param Destination_Depth Output depth, Same_Depth by default; see\n   --  Derivative_Depth for the supported combinations.\n   --  @param Offset Value added to each filtered value; must be finite.\n   --  @param Border Extrapolation outside Source: Constant_Border,\n   --  Replicate, Reflect, or Reflect_101 (default). Wrap is rejected.\n   --  @exception OpenCV_Error Raised for an Anchor outside Kernel,\n   --  any input rejected by the centered overload, or a failure reported by\n   --  OpenCV.\n   procedure Filter_2D\n     (Source            : OpenCV.Core.Mat;\n      Destination       : in out OpenCV.Core.Mat;\n      Kernel            : OpenCV.Core.Mat;\n      Anchor            : OpenCV.Point;\n      Destination_Depth : Filter_Depth := Same_Depth;\n      Offset            : OpenCV.Float64_Value := 0.0;\n      Border            : OpenCV.Border_Kind := OpenCV.Reflect_101);"
+      },
+      "viewport": {
+        "height": 513,
+        "width": 390
+      },
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back-same-url-stale-scroll",
+      "historyLength": 5,
+      "iframeUrl": "http://127.0.0.1:8199/historical-imgproc/site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "label": "historical-imgproc",
+      "outerUrl": "http://127.0.0.1:8199/historical-imgproc/site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "rectangle": {
+        "bottom": 198629.1875,
+        "height": 41.578125,
+        "left": 16,
+        "right": 374,
+        "top": 198587.609375,
+        "width": 358,
+        "x": 16,
+        "y": 198587.609375
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "target": {
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+        "name": "Filter_2D",
+        "native_profile": "procedure Filter_2D\n  (Source            : OpenCV.Core.Mat;\n   Destination       : in out OpenCV.Core.Mat;\n   Kernel            : OpenCV.Core.Mat;\n   Anchor            : OpenCV.Point;\n   Destination_Depth : Filter_Depth := Same_Depth;\n   Offset            : OpenCV.Float64_Value := 0.0;\n   Border            : OpenCV.Border_Kind := OpenCV.Reflect_101)\n",
+        "ordinal": 2,
+        "overloads": 2,
+        "package": "OpenCV.Image_Processing",
+        "source_line": 3615,
+        "source_profile": "--  This overload is the same Filter_2D correlation with an explicit Kernel\n   --  Anchor. Anchor must lie inside Kernel: X and Y are nonnegative and\n   --  strictly less than Kernel's columns and rows. There is no public mixed\n   --  or centered (-1, -1) sentinel in this overload. Source, Kernel, depth,\n   --  Offset, border, and direct native Destination rules match the\n   --  centered overload. Direct in-place operation is supported when the\n   --  requested destination depth matches Source.\n   --  @param Source Image to filter.\n   --  @param Destination Receives the filtered image.\n   --  @param Kernel Non-empty two-dimensional single-channel Float32 or\n   --  Float64 correlation coefficients; must not share Destination's\n   --  storage.\n   --  @param Anchor Kernel position aligned with each output pixel:\n   --  column X and row Y within Kernel.\n   --  @param Destination_Depth Output depth, Same_Depth by default; see\n   --  Derivative_Depth for the supported combinations.\n   --  @param Offset Value added to each filtered value; must be finite.\n   --  @param Border Extrapolation outside Source: Constant_Border,\n   --  Replicate, Reflect, or Reflect_101 (default). Wrap is rejected.\n   --  @exception OpenCV_Error Raised for an Anchor outside Kernel,\n   --  any input rejected by the centered overload, or a failure reported by\n   --  OpenCV.\n   procedure Filter_2D\n     (Source            : OpenCV.Core.Mat;\n      Destination       : in out OpenCV.Core.Mat;\n      Kernel            : OpenCV.Core.Mat;\n      Anchor            : OpenCV.Point;\n      Destination_Depth : Filter_Depth := Same_Depth;\n      Offset            : OpenCV.Float64_Value := 0.0;\n      Border            : OpenCV.Border_Kind := OpenCV.Reflect_101);"
+      },
+      "viewport": {
+        "height": 513,
+        "width": 390
+      },
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "historyLength": 5,
+      "iframeUrl": "http://127.0.0.1:8199/historical-imgproc/site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "label": "historical-imgproc",
+      "outerUrl": "http://127.0.0.1:8199/historical-imgproc/site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "rectangle": {
+        "bottom": 198629.1875,
+        "height": 41.578125,
+        "left": 16,
+        "right": 374,
+        "top": 198587.609375,
+        "width": 358,
+        "x": 16,
+        "y": 198587.609375
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "target": {
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+        "name": "Filter_2D",
+        "native_profile": "procedure Filter_2D\n  (Source            : OpenCV.Core.Mat;\n   Destination       : in out OpenCV.Core.Mat;\n   Kernel            : OpenCV.Core.Mat;\n   Anchor            : OpenCV.Point;\n   Destination_Depth : Filter_Depth := Same_Depth;\n   Offset            : OpenCV.Float64_Value := 0.0;\n   Border            : OpenCV.Border_Kind := OpenCV.Reflect_101)\n",
+        "ordinal": 2,
+        "overloads": 2,
+        "package": "OpenCV.Image_Processing",
+        "source_line": 3615,
+        "source_profile": "--  This overload is the same Filter_2D correlation with an explicit Kernel\n   --  Anchor. Anchor must lie inside Kernel: X and Y are nonnegative and\n   --  strictly less than Kernel's columns and rows. There is no public mixed\n   --  or centered (-1, -1) sentinel in this overload. Source, Kernel, depth,\n   --  Offset, border, and direct native Destination rules match the\n   --  centered overload. Direct in-place operation is supported when the\n   --  requested destination depth matches Source.\n   --  @param Source Image to filter.\n   --  @param Destination Receives the filtered image.\n   --  @param Kernel Non-empty two-dimensional single-channel Float32 or\n   --  Float64 correlation coefficients; must not share Destination's\n   --  storage.\n   --  @param Anchor Kernel position aligned with each output pixel:\n   --  column X and row Y within Kernel.\n   --  @param Destination_Depth Output depth, Same_Depth by default; see\n   --  Derivative_Depth for the supported combinations.\n   --  @param Offset Value added to each filtered value; must be finite.\n   --  @param Border Extrapolation outside Source: Constant_Border,\n   --  Replicate, Reflect, or Reflect_101 (default). Wrap is rejected.\n   --  @exception OpenCV_Error Raised for an Anchor outside Kernel,\n   --  any input rejected by the centered overload, or a failure reported by\n   --  OpenCV.\n   procedure Filter_2D\n     (Source            : OpenCV.Core.Mat;\n      Destination       : in out OpenCV.Core.Mat;\n      Kernel            : OpenCV.Core.Mat;\n      Anchor            : OpenCV.Point;\n      Destination_Depth : Filter_Depth := Same_Depth;\n      Offset            : OpenCV.Float64_Value := 0.0;\n      Border            : OpenCV.Border_Kind := OpenCV.Reflect_101);"
+      },
+      "viewport": {
+        "height": 513,
+        "width": 390
+      },
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back-same-url-stale-scroll",
+      "historyLength": 5,
+      "iframeUrl": "http://127.0.0.1:8199/current-imgproc/site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "label": "current-imgproc",
+      "outerUrl": "http://127.0.0.1:8199/current-imgproc/site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "rectangle": {
+        "bottom": 152725.5625,
+        "height": 41.578125,
+        "left": 36.46875,
+        "right": 875.53125,
+        "top": 152683.984375,
+        "width": 839.0625,
+        "x": 36.46875,
+        "y": 152683.984375
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "target": {
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+        "name": "Filter_2D",
+        "native_profile": "procedure Filter_2D\n  (Source            : OpenCV.Core.Mat;\n   Destination       : in out OpenCV.Core.Mat;\n   Kernel            : OpenCV.Core.Mat;\n   Anchor            : OpenCV.Point;\n   Destination_Depth : Filter_Depth := Same_Depth;\n   Offset            : OpenCV.Float64_Value := 0.0;\n   Border            : OpenCV.Border_Kind := OpenCV.Reflect_101)\n",
+        "ordinal": 2,
+        "overloads": 2,
+        "package": "OpenCV.Image_Processing",
+        "source_line": 3794,
+        "source_profile": "--  This overload is the same Filter_2D correlation with an explicit Kernel\n   --  Anchor. Anchor must lie inside Kernel: X and Y are nonnegative and\n   --  strictly less than Kernel's columns and rows. There is no public mixed\n   --  or centered (-1, -1) sentinel in this overload. Source, Kernel, depth,\n   --  Offset, border, and direct native Destination rules match the\n   --  centered overload. Direct in-place operation is supported when the\n   --  requested destination depth matches Source.\n   --  @param Source Image to filter.\n   --  @param Destination Receives the filtered image.\n   --  @param Kernel Non-empty two-dimensional single-channel Float32 or\n   --  Float64 correlation coefficients; must not share Destination's\n   --  storage.\n   --  @param Anchor Kernel position aligned with each output pixel:\n   --  column X and row Y within Kernel.\n   --  @param Destination_Depth Output depth, Same_Depth by default; see\n   --  Derivative_Depth for the supported combinations.\n   --  @param Offset Value added to each filtered value; must be finite.\n   --  @param Border Extrapolation outside Source: Constant_Border,\n   --  Replicate, Reflect, or Reflect_101 (default). Wrap is rejected.\n   --  @exception OpenCV_Error Raised for an Anchor outside Kernel,\n   --  any input rejected by the centered overload, or a failure reported by\n   --  OpenCV.\n   procedure Filter_2D\n     (Source            : OpenCV.Core.Mat;\n      Destination       : in out OpenCV.Core.Mat;\n      Kernel            : OpenCV.Core.Mat;\n      Anchor            : OpenCV.Point;\n      Destination_Depth : Filter_Depth := Same_Depth;\n      Offset            : OpenCV.Float64_Value := 0.0;\n      Border            : OpenCV.Border_Kind := OpenCV.Reflect_101);"
+      },
+      "viewport": {
+        "height": 900,
+        "width": 912
+      },
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "historyLength": 5,
+      "iframeUrl": "http://127.0.0.1:8199/current-imgproc/site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "label": "current-imgproc",
+      "outerUrl": "http://127.0.0.1:8199/current-imgproc/site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "rectangle": {
+        "bottom": 152725.5625,
+        "height": 41.578125,
+        "left": 36.46875,
+        "right": 875.53125,
+        "top": 152683.984375,
+        "width": 839.0625,
+        "x": 36.46875,
+        "y": 152683.984375
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "target": {
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+        "name": "Filter_2D",
+        "native_profile": "procedure Filter_2D\n  (Source            : OpenCV.Core.Mat;\n   Destination       : in out OpenCV.Core.Mat;\n   Kernel            : OpenCV.Core.Mat;\n   Anchor            : OpenCV.Point;\n   Destination_Depth : Filter_Depth := Same_Depth;\n   Offset            : OpenCV.Float64_Value := 0.0;\n   Border            : OpenCV.Border_Kind := OpenCV.Reflect_101)\n",
+        "ordinal": 2,
+        "overloads": 2,
+        "package": "OpenCV.Image_Processing",
+        "source_line": 3794,
+        "source_profile": "--  This overload is the same Filter_2D correlation with an explicit Kernel\n   --  Anchor. Anchor must lie inside Kernel: X and Y are nonnegative and\n   --  strictly less than Kernel's columns and rows. There is no public mixed\n   --  or centered (-1, -1) sentinel in this overload. Source, Kernel, depth,\n   --  Offset, border, and direct native Destination rules match the\n   --  centered overload. Direct in-place operation is supported when the\n   --  requested destination depth matches Source.\n   --  @param Source Image to filter.\n   --  @param Destination Receives the filtered image.\n   --  @param Kernel Non-empty two-dimensional single-channel Float32 or\n   --  Float64 correlation coefficients; must not share Destination's\n   --  storage.\n   --  @param Anchor Kernel position aligned with each output pixel:\n   --  column X and row Y within Kernel.\n   --  @param Destination_Depth Output depth, Same_Depth by default; see\n   --  Derivative_Depth for the supported combinations.\n   --  @param Offset Value added to each filtered value; must be finite.\n   --  @param Border Extrapolation outside Source: Constant_Border,\n   --  Replicate, Reflect, or Reflect_101 (default). Wrap is rejected.\n   --  @exception OpenCV_Error Raised for an Anchor outside Kernel,\n   --  any input rejected by the centered overload, or a failure reported by\n   --  OpenCV.\n   procedure Filter_2D\n     (Source            : OpenCV.Core.Mat;\n      Destination       : in out OpenCV.Core.Mat;\n      Kernel            : OpenCV.Core.Mat;\n      Anchor            : OpenCV.Point;\n      Destination_Depth : Filter_Depth := Same_Depth;\n      Offset            : OpenCV.Float64_Value := 0.0;\n      Border            : OpenCV.Border_Kind := OpenCV.Reflect_101);"
+      },
+      "viewport": {
+        "height": 900,
+        "width": 912
+      },
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back-same-url-stale-scroll",
+      "historyLength": 5,
+      "iframeUrl": "http://127.0.0.1:8199/current-imgproc/site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "label": "current-imgproc",
+      "outerUrl": "http://127.0.0.1:8199/current-imgproc/site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "rectangle": {
+        "bottom": 152725.5625,
+        "height": 41.578125,
+        "left": 36.46875,
+        "right": 875.53125,
+        "top": 152683.984375,
+        "width": 839.0625,
+        "x": 36.46875,
+        "y": 152683.984375
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "target": {
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+        "name": "Filter_2D",
+        "native_profile": "procedure Filter_2D\n  (Source            : OpenCV.Core.Mat;\n   Destination       : in out OpenCV.Core.Mat;\n   Kernel            : OpenCV.Core.Mat;\n   Anchor            : OpenCV.Point;\n   Destination_Depth : Filter_Depth := Same_Depth;\n   Offset            : OpenCV.Float64_Value := 0.0;\n   Border            : OpenCV.Border_Kind := OpenCV.Reflect_101)\n",
+        "ordinal": 2,
+        "overloads": 2,
+        "package": "OpenCV.Image_Processing",
+        "source_line": 3794,
+        "source_profile": "--  This overload is the same Filter_2D correlation with an explicit Kernel\n   --  Anchor. Anchor must lie inside Kernel: X and Y are nonnegative and\n   --  strictly less than Kernel's columns and rows. There is no public mixed\n   --  or centered (-1, -1) sentinel in this overload. Source, Kernel, depth,\n   --  Offset, border, and direct native Destination rules match the\n   --  centered overload. Direct in-place operation is supported when the\n   --  requested destination depth matches Source.\n   --  @param Source Image to filter.\n   --  @param Destination Receives the filtered image.\n   --  @param Kernel Non-empty two-dimensional single-channel Float32 or\n   --  Float64 correlation coefficients; must not share Destination's\n   --  storage.\n   --  @param Anchor Kernel position aligned with each output pixel:\n   --  column X and row Y within Kernel.\n   --  @param Destination_Depth Output depth, Same_Depth by default; see\n   --  Derivative_Depth for the supported combinations.\n   --  @param Offset Value added to each filtered value; must be finite.\n   --  @param Border Extrapolation outside Source: Constant_Border,\n   --  Replicate, Reflect, or Reflect_101 (default). Wrap is rejected.\n   --  @exception OpenCV_Error Raised for an Anchor outside Kernel,\n   --  any input rejected by the centered overload, or a failure reported by\n   --  OpenCV.\n   procedure Filter_2D\n     (Source            : OpenCV.Core.Mat;\n      Destination       : in out OpenCV.Core.Mat;\n      Kernel            : OpenCV.Core.Mat;\n      Anchor            : OpenCV.Point;\n      Destination_Depth : Filter_Depth := Same_Depth;\n      Offset            : OpenCV.Float64_Value := 0.0;\n      Border            : OpenCV.Border_Kind := OpenCV.Reflect_101);"
+      },
+      "viewport": {
+        "height": 900,
+        "width": 912
+      },
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "historyLength": 5,
+      "iframeUrl": "http://127.0.0.1:8199/current-imgproc/site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "label": "current-imgproc",
+      "outerUrl": "http://127.0.0.1:8199/current-imgproc/site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "rectangle": {
+        "bottom": 152725.5625,
+        "height": 41.578125,
+        "left": 36.46875,
+        "right": 875.53125,
+        "top": 152683.984375,
+        "width": 839.0625,
+        "x": 36.46875,
+        "y": 152683.984375
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "target": {
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+        "name": "Filter_2D",
+        "native_profile": "procedure Filter_2D\n  (Source            : OpenCV.Core.Mat;\n   Destination       : in out OpenCV.Core.Mat;\n   Kernel            : OpenCV.Core.Mat;\n   Anchor            : OpenCV.Point;\n   Destination_Depth : Filter_Depth := Same_Depth;\n   Offset            : OpenCV.Float64_Value := 0.0;\n   Border            : OpenCV.Border_Kind := OpenCV.Reflect_101)\n",
+        "ordinal": 2,
+        "overloads": 2,
+        "package": "OpenCV.Image_Processing",
+        "source_line": 3794,
+        "source_profile": "--  This overload is the same Filter_2D correlation with an explicit Kernel\n   --  Anchor. Anchor must lie inside Kernel: X and Y are nonnegative and\n   --  strictly less than Kernel's columns and rows. There is no public mixed\n   --  or centered (-1, -1) sentinel in this overload. Source, Kernel, depth,\n   --  Offset, border, and direct native Destination rules match the\n   --  centered overload. Direct in-place operation is supported when the\n   --  requested destination depth matches Source.\n   --  @param Source Image to filter.\n   --  @param Destination Receives the filtered image.\n   --  @param Kernel Non-empty two-dimensional single-channel Float32 or\n   --  Float64 correlation coefficients; must not share Destination's\n   --  storage.\n   --  @param Anchor Kernel position aligned with each output pixel:\n   --  column X and row Y within Kernel.\n   --  @param Destination_Depth Output depth, Same_Depth by default; see\n   --  Derivative_Depth for the supported combinations.\n   --  @param Offset Value added to each filtered value; must be finite.\n   --  @param Border Extrapolation outside Source: Constant_Border,\n   --  Replicate, Reflect, or Reflect_101 (default). Wrap is rejected.\n   --  @exception OpenCV_Error Raised for an Anchor outside Kernel,\n   --  any input rejected by the centered overload, or a failure reported by\n   --  OpenCV.\n   procedure Filter_2D\n     (Source            : OpenCV.Core.Mat;\n      Destination       : in out OpenCV.Core.Mat;\n      Kernel            : OpenCV.Core.Mat;\n      Anchor            : OpenCV.Point;\n      Destination_Depth : Filter_Depth := Same_Depth;\n      Offset            : OpenCV.Float64_Value := 0.0;\n      Border            : OpenCV.Border_Kind := OpenCV.Reflect_101);"
+      },
+      "viewport": {
+        "height": 900,
+        "width": 912
+      },
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back-same-url-stale-scroll",
+      "historyLength": 5,
+      "iframeUrl": "http://127.0.0.1:8199/current-imgproc/site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "label": "current-imgproc",
+      "outerUrl": "http://127.0.0.1:8199/current-imgproc/site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "rectangle": {
+        "bottom": 212590.578125,
+        "height": 41.578125,
+        "left": 16,
+        "right": 374,
+        "top": 212549,
+        "width": 358,
+        "x": 16,
+        "y": 212549
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "target": {
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+        "name": "Filter_2D",
+        "native_profile": "procedure Filter_2D\n  (Source            : OpenCV.Core.Mat;\n   Destination       : in out OpenCV.Core.Mat;\n   Kernel            : OpenCV.Core.Mat;\n   Anchor            : OpenCV.Point;\n   Destination_Depth : Filter_Depth := Same_Depth;\n   Offset            : OpenCV.Float64_Value := 0.0;\n   Border            : OpenCV.Border_Kind := OpenCV.Reflect_101)\n",
+        "ordinal": 2,
+        "overloads": 2,
+        "package": "OpenCV.Image_Processing",
+        "source_line": 3794,
+        "source_profile": "--  This overload is the same Filter_2D correlation with an explicit Kernel\n   --  Anchor. Anchor must lie inside Kernel: X and Y are nonnegative and\n   --  strictly less than Kernel's columns and rows. There is no public mixed\n   --  or centered (-1, -1) sentinel in this overload. Source, Kernel, depth,\n   --  Offset, border, and direct native Destination rules match the\n   --  centered overload. Direct in-place operation is supported when the\n   --  requested destination depth matches Source.\n   --  @param Source Image to filter.\n   --  @param Destination Receives the filtered image.\n   --  @param Kernel Non-empty two-dimensional single-channel Float32 or\n   --  Float64 correlation coefficients; must not share Destination's\n   --  storage.\n   --  @param Anchor Kernel position aligned with each output pixel:\n   --  column X and row Y within Kernel.\n   --  @param Destination_Depth Output depth, Same_Depth by default; see\n   --  Derivative_Depth for the supported combinations.\n   --  @param Offset Value added to each filtered value; must be finite.\n   --  @param Border Extrapolation outside Source: Constant_Border,\n   --  Replicate, Reflect, or Reflect_101 (default). Wrap is rejected.\n   --  @exception OpenCV_Error Raised for an Anchor outside Kernel,\n   --  any input rejected by the centered overload, or a failure reported by\n   --  OpenCV.\n   procedure Filter_2D\n     (Source            : OpenCV.Core.Mat;\n      Destination       : in out OpenCV.Core.Mat;\n      Kernel            : OpenCV.Core.Mat;\n      Anchor            : OpenCV.Point;\n      Destination_Depth : Filter_Depth := Same_Depth;\n      Offset            : OpenCV.Float64_Value := 0.0;\n      Border            : OpenCV.Border_Kind := OpenCV.Reflect_101);"
+      },
+      "viewport": {
+        "height": 513,
+        "width": 390
+      },
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "historyLength": 5,
+      "iframeUrl": "http://127.0.0.1:8199/current-imgproc/site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "label": "current-imgproc",
+      "outerUrl": "http://127.0.0.1:8199/current-imgproc/site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "rectangle": {
+        "bottom": 212590.578125,
+        "height": 41.578125,
+        "left": 16,
+        "right": 374,
+        "top": 212549,
+        "width": 358,
+        "x": 16,
+        "y": 212549
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "target": {
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+        "name": "Filter_2D",
+        "native_profile": "procedure Filter_2D\n  (Source            : OpenCV.Core.Mat;\n   Destination       : in out OpenCV.Core.Mat;\n   Kernel            : OpenCV.Core.Mat;\n   Anchor            : OpenCV.Point;\n   Destination_Depth : Filter_Depth := Same_Depth;\n   Offset            : OpenCV.Float64_Value := 0.0;\n   Border            : OpenCV.Border_Kind := OpenCV.Reflect_101)\n",
+        "ordinal": 2,
+        "overloads": 2,
+        "package": "OpenCV.Image_Processing",
+        "source_line": 3794,
+        "source_profile": "--  This overload is the same Filter_2D correlation with an explicit Kernel\n   --  Anchor. Anchor must lie inside Kernel: X and Y are nonnegative and\n   --  strictly less than Kernel's columns and rows. There is no public mixed\n   --  or centered (-1, -1) sentinel in this overload. Source, Kernel, depth,\n   --  Offset, border, and direct native Destination rules match the\n   --  centered overload. Direct in-place operation is supported when the\n   --  requested destination depth matches Source.\n   --  @param Source Image to filter.\n   --  @param Destination Receives the filtered image.\n   --  @param Kernel Non-empty two-dimensional single-channel Float32 or\n   --  Float64 correlation coefficients; must not share Destination's\n   --  storage.\n   --  @param Anchor Kernel position aligned with each output pixel:\n   --  column X and row Y within Kernel.\n   --  @param Destination_Depth Output depth, Same_Depth by default; see\n   --  Derivative_Depth for the supported combinations.\n   --  @param Offset Value added to each filtered value; must be finite.\n   --  @param Border Extrapolation outside Source: Constant_Border,\n   --  Replicate, Reflect, or Reflect_101 (default). Wrap is rejected.\n   --  @exception OpenCV_Error Raised for an Anchor outside Kernel,\n   --  any input rejected by the centered overload, or a failure reported by\n   --  OpenCV.\n   procedure Filter_2D\n     (Source            : OpenCV.Core.Mat;\n      Destination       : in out OpenCV.Core.Mat;\n      Kernel            : OpenCV.Core.Mat;\n      Anchor            : OpenCV.Point;\n      Destination_Depth : Filter_Depth := Same_Depth;\n      Offset            : OpenCV.Float64_Value := 0.0;\n      Border            : OpenCV.Border_Kind := OpenCV.Reflect_101);"
+      },
+      "viewport": {
+        "height": 513,
+        "width": 390
+      },
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back-same-url-stale-scroll",
+      "historyLength": 5,
+      "iframeUrl": "http://127.0.0.1:8199/current-imgproc/site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "label": "current-imgproc",
+      "outerUrl": "http://127.0.0.1:8199/current-imgproc/site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "rectangle": {
+        "bottom": 212590.578125,
+        "height": 41.578125,
+        "left": 16,
+        "right": 374,
+        "top": 212549,
+        "width": 358,
+        "x": 16,
+        "y": 212549
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "target": {
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+        "name": "Filter_2D",
+        "native_profile": "procedure Filter_2D\n  (Source            : OpenCV.Core.Mat;\n   Destination       : in out OpenCV.Core.Mat;\n   Kernel            : OpenCV.Core.Mat;\n   Anchor            : OpenCV.Point;\n   Destination_Depth : Filter_Depth := Same_Depth;\n   Offset            : OpenCV.Float64_Value := 0.0;\n   Border            : OpenCV.Border_Kind := OpenCV.Reflect_101)\n",
+        "ordinal": 2,
+        "overloads": 2,
+        "package": "OpenCV.Image_Processing",
+        "source_line": 3794,
+        "source_profile": "--  This overload is the same Filter_2D correlation with an explicit Kernel\n   --  Anchor. Anchor must lie inside Kernel: X and Y are nonnegative and\n   --  strictly less than Kernel's columns and rows. There is no public mixed\n   --  or centered (-1, -1) sentinel in this overload. Source, Kernel, depth,\n   --  Offset, border, and direct native Destination rules match the\n   --  centered overload. Direct in-place operation is supported when the\n   --  requested destination depth matches Source.\n   --  @param Source Image to filter.\n   --  @param Destination Receives the filtered image.\n   --  @param Kernel Non-empty two-dimensional single-channel Float32 or\n   --  Float64 correlation coefficients; must not share Destination's\n   --  storage.\n   --  @param Anchor Kernel position aligned with each output pixel:\n   --  column X and row Y within Kernel.\n   --  @param Destination_Depth Output depth, Same_Depth by default; see\n   --  Derivative_Depth for the supported combinations.\n   --  @param Offset Value added to each filtered value; must be finite.\n   --  @param Border Extrapolation outside Source: Constant_Border,\n   --  Replicate, Reflect, or Reflect_101 (default). Wrap is rejected.\n   --  @exception OpenCV_Error Raised for an Anchor outside Kernel,\n   --  any input rejected by the centered overload, or a failure reported by\n   --  OpenCV.\n   procedure Filter_2D\n     (Source            : OpenCV.Core.Mat;\n      Destination       : in out OpenCV.Core.Mat;\n      Kernel            : OpenCV.Core.Mat;\n      Anchor            : OpenCV.Point;\n      Destination_Depth : Filter_Depth := Same_Depth;\n      Offset            : OpenCV.Float64_Value := 0.0;\n      Border            : OpenCV.Border_Kind := OpenCV.Reflect_101);"
+      },
+      "viewport": {
+        "height": 513,
+        "width": 390
+      },
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "historyLength": 5,
+      "iframeUrl": "http://127.0.0.1:8199/current-imgproc/site/api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "label": "current-imgproc",
+      "outerUrl": "http://127.0.0.1:8199/current-imgproc/site/api/index.html?package=OpenCV.Image_Processing&declaration=9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+      "rectangle": {
+        "bottom": 212590.578125,
+        "height": 41.578125,
+        "left": 16,
+        "right": 374,
+        "top": 212549,
+        "width": 358,
+        "x": 16,
+        "y": 212549
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "target": {
+        "href": "ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html#9ab947c2183dce1b2192b9c136df6cc69e3ff7240d3ba5c6b14437d855d9257f",
+        "name": "Filter_2D",
+        "native_profile": "procedure Filter_2D\n  (Source            : OpenCV.Core.Mat;\n   Destination       : in out OpenCV.Core.Mat;\n   Kernel            : OpenCV.Core.Mat;\n   Anchor            : OpenCV.Point;\n   Destination_Depth : Filter_Depth := Same_Depth;\n   Offset            : OpenCV.Float64_Value := 0.0;\n   Border            : OpenCV.Border_Kind := OpenCV.Reflect_101)\n",
+        "ordinal": 2,
+        "overloads": 2,
+        "package": "OpenCV.Image_Processing",
+        "source_line": 3794,
+        "source_profile": "--  This overload is the same Filter_2D correlation with an explicit Kernel\n   --  Anchor. Anchor must lie inside Kernel: X and Y are nonnegative and\n   --  strictly less than Kernel's columns and rows. There is no public mixed\n   --  or centered (-1, -1) sentinel in this overload. Source, Kernel, depth,\n   --  Offset, border, and direct native Destination rules match the\n   --  centered overload. Direct in-place operation is supported when the\n   --  requested destination depth matches Source.\n   --  @param Source Image to filter.\n   --  @param Destination Receives the filtered image.\n   --  @param Kernel Non-empty two-dimensional single-channel Float32 or\n   --  Float64 correlation coefficients; must not share Destination's\n   --  storage.\n   --  @param Anchor Kernel position aligned with each output pixel:\n   --  column X and row Y within Kernel.\n   --  @param Destination_Depth Output depth, Same_Depth by default; see\n   --  Derivative_Depth for the supported combinations.\n   --  @param Offset Value added to each filtered value; must be finite.\n   --  @param Border Extrapolation outside Source: Constant_Border,\n   --  Replicate, Reflect, or Reflect_101 (default). Wrap is rejected.\n   --  @exception OpenCV_Error Raised for an Anchor outside Kernel,\n   --  any input rejected by the centered overload, or a failure reported by\n   --  OpenCV.\n   procedure Filter_2D\n     (Source            : OpenCV.Core.Mat;\n      Destination       : in out OpenCV.Core.Mat;\n      Kernel            : OpenCV.Core.Mat;\n      Anchor            : OpenCV.Point;\n      Destination_Depth : Filter_Depth := Same_Depth;\n      Offset            : OpenCV.Float64_Value := 0.0;\n      Border            : OpenCV.Border_Kind := OpenCV.Reflect_101);"
+      },
+      "viewport": {
+        "height": 513,
+        "width": 390
+      },
+      "width": 390
+    }
+  ],
+  "totals": {
+    "fail": 16,
+    "pass": 48
+  }
+}
