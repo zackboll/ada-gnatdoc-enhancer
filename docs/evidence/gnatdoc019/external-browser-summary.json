@@ -1,0 +1,23 @@
+{
+  "status": "pass",
+  "assertions": 560,
+  "responses": 5915,
+  "response_evidence": {
+    "browser-response-body": 5824,
+    "separate-live-HTTPS-audit-CDP-body-unavailable": 91
+  },
+  "failures": [],
+  "campaigns": [
+    "1280-dark-jsfalse",
+    "1280-dark-jstrue",
+    "1280-light-jsfalse",
+    "1280-light-jstrue",
+    "390-dark-jsfalse",
+    "390-dark-jstrue",
+    "390-light-jsfalse",
+    "390-light-jstrue"
+  ],
+  "raw_report_sha256": "fc266211079db8017d7a55f47497019113f1e28ab850f512329c2353084a6fbf",
+  "raw_report": "/home/zboll/qualifications/gnatdoc019/external-browser.json",
+  "live_inventory_members": 209
+}

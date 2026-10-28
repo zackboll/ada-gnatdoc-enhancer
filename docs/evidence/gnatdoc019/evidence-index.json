@@ -1092,6 +1092,10 @@
       "bytes": 715,
       "sha256": "9f8a688f07283c7fe534d09cf01c4b2800682c6560f1214103ba19a36dd0b67a"
     },
+    "external-browser.json": {
+      "bytes": 1524334,
+      "sha256": "fc266211079db8017d7a55f47497019113f1e28ab850f512329c2353084a6fbf"
+    },
     "external-browser.log": {
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -1115,6 +1119,10 @@
     "final-distributions.log": {
       "bytes": 544,
       "sha256": "8664a3b0049da014932143b7ce7aece714bcab23075769b58ed07b52b69537fe"
+    },
+    "final-source-identity.json": {
+      "bytes": 300,
+      "sha256": "891b29ccf4bd8c6bf01cc13ddaba08a45f27ebdd9b0d79fbc4d06fc2f90af1d4"
     },
     "four-site.exit": {
       "bytes": 2,
@@ -1207,6 +1215,10 @@
     "independent-core-audit.log": {
       "bytes": 61,
       "sha256": "684f120b3c7d215ea682e417d200aad1194769a5c66c968116a715d2829c066d"
+    },
+    "live-core-recheck.json": {
+      "bytes": 72892,
+      "sha256": "f6a425185ab96c2a76a53fe1bc461c3399f696ae3f19748e70bff5bee3d17198"
     },
     "main-initial.json": {
       "bytes": 2796,

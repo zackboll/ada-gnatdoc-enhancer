@@ -17,6 +17,29 @@
   },
   "custom_symbol_browser": "pass",
   "disposition": "HOSTED_CI_PENDING",
+  "external_browser": {
+    "assertions": 560,
+    "campaigns": [
+      "1280-dark-jsfalse",
+      "1280-dark-jstrue",
+      "1280-light-jsfalse",
+      "1280-light-jstrue",
+      "390-dark-jsfalse",
+      "390-dark-jstrue",
+      "390-light-jsfalse",
+      "390-light-jstrue"
+    ],
+    "failures": [],
+    "live_inventory_members": 209,
+    "raw_report": "/home/zboll/qualifications/gnatdoc019/external-browser.json",
+    "raw_report_sha256": "fc266211079db8017d7a55f47497019113f1e28ab850f512329c2353084a6fbf",
+    "response_evidence": {
+      "browser-response-body": 5824,
+      "separate-live-HTTPS-audit-CDP-body-unavailable": 91
+    },
+    "responses": 5915,
+    "status": "pass"
+  },
   "four_site_browser": {
     "core": {
       "checks": 48,
@@ -106,6 +129,12 @@
   "independent_core": {
     "native_sections": 1293,
     "public_symbols": 216
+  },
+  "latest_default_driver": {
+    "fail_count": 0,
+    "pass_count": 244,
+    "process_exit": 0,
+    "report_sha256": "14b1188306b7919b792e7ae1f9a527c0b2771dcb4998623d4ef0ee5474c8767c"
   },
   "local_distribution": {
     "3.11-sdist-result": {
