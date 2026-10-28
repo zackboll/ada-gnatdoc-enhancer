@@ -1,5 +1,16 @@
 # GNATDOC-020 — v0.1.2 release preparation
 
+## GNATDOC-020R1 follow-up
+
+See [R1.md](R1.md) for verified one-day publisher-artifact retention expiry,
+read-only HTTP/provenance evidence, completed original exact-head local-suite
+reconciliation and the **unapproved** replacement-evidence proposal. The original
+record below is retained. Final R1 pushed SHA/tree, exact-head results and
+independent outstanding gates are recorded additively in PR #21 and
+`/home/zboll/qualifications/gnatdoc020/r1/final-disposition.json`.
+**PUBLISHER_COMPATIBILITY_BLOCKED** remains; hosted qualification is independently
+pending until the final R1 SHA's six jobs and three candidate audits complete.
+
 Preparation only; no publication or consumer approval. Current disposition:
 **PUBLISHER_COMPATIBILITY_BLOCKED**. This is not a readiness claim. Additional
 campaigns and exact-final-evidence-head hosted qualification remain pending.

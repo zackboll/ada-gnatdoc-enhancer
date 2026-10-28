@@ -1,0 +1,97 @@
+{
+  "baseline_executions": 5877,
+  "complete_rebuilt_members_equal": true,
+  "conformance_scope": "four synthetic profiles, not full consumer sites",
+  "environments": {
+    "3.11-sdist": {
+      "archive_sha256": "e87720c713df67cf52c357614801759814d37f22cc913eaef8aa7214739489f1",
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/review-distributions/python-3.11/sdist-env/lib/python3.11/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "retained_baseline_ids": 653,
+      "skips": 0,
+      "tests": 661
+    },
+    "3.11-source": {
+      "archive_sha256": null,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/review-source/src/ada_gnatdoc_enhancer/__init__.py",
+      "retained_baseline_ids": 653,
+      "skips": 0,
+      "tests": 661
+    },
+    "3.11-wheel": {
+      "archive_sha256": "633ef930c219c2d5bd9c2771b8373e7c2348ada477789ffc457aa608dea8f0b1",
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/review-distributions/python-3.11/wheel-env/lib/python3.11/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "retained_baseline_ids": 653,
+      "skips": 0,
+      "tests": 661
+    },
+    "3.12-sdist": {
+      "archive_sha256": "105253caa8cfafebaecfeb8d3ace92890bcb41d69ecf690c4bebb5b7fb2f4261",
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/review-distributions/python-3.12/sdist-env/lib/python3.12/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "retained_baseline_ids": 653,
+      "skips": 0,
+      "tests": 661
+    },
+    "3.12-source": {
+      "archive_sha256": null,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/review-source/src/ada_gnatdoc_enhancer/__init__.py",
+      "retained_baseline_ids": 653,
+      "skips": 0,
+      "tests": 661
+    },
+    "3.12-wheel": {
+      "archive_sha256": "633ef930c219c2d5bd9c2771b8373e7c2348ada477789ffc457aa608dea8f0b1",
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/review-distributions/python-3.12/wheel-env/lib/python3.12/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "retained_baseline_ids": 653,
+      "skips": 0,
+      "tests": 661
+    },
+    "3.13-sdist": {
+      "archive_sha256": "633ef930c219c2d5bd9c2771b8373e7c2348ada477789ffc457aa608dea8f0b1",
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/review-distributions/python-3.13/sdist-env/lib/python3.13/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "retained_baseline_ids": 653,
+      "skips": 0,
+      "tests": 661
+    },
+    "3.13-source": {
+      "archive_sha256": null,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/review-source/src/ada_gnatdoc_enhancer/__init__.py",
+      "retained_baseline_ids": 653,
+      "skips": 0,
+      "tests": 661
+    },
+    "3.13-wheel": {
+      "archive_sha256": "633ef930c219c2d5bd9c2771b8373e7c2348ada477789ffc457aa608dea8f0b1",
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/review-distributions/python-3.13/wheel-env/lib/python3.13/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "retained_baseline_ids": 653,
+      "skips": 0,
+      "tests": 661
+    }
+  },
+  "full_report_sha256": "72e8f19304aed129cb5c2ac28cee141dbd73e8646fab21b640e98cd8026a9ff4",
+  "head": "0f3c184be299aa74921aada4d8fdfc0efcf4626a",
+  "installed_modules_assets_equal": true,
+  "publication_authorized": false,
+  "source_files": 2318,
+  "status": "pass",
+  "strict_archive_record_metadata_provenance": "pass",
+  "tests": 5949,
+  "tree": "5e1527e119c9155dd06df8e9b865c76f7a2f113b"
+}

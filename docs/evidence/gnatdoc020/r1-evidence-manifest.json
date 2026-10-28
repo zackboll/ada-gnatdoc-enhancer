@@ -1,0 +1,54 @@
+{
+  "R1.md": {
+    "bytes": 10571,
+    "sha256": "e6edba2f0d8b146e5bdfe740aedb19b5f1cf4215aaec1a5500a5e4fdc47c1eb2"
+  },
+  "README.md": {
+    "bytes": 13144,
+    "sha256": "0f0d4ae86d069f55919bd92670521d46e54d17dca6f1dc7687801ed30aecb2b2"
+  },
+  "r1-historical-publisher-artifacts.json": {
+    "bytes": 2179,
+    "sha256": "7af9ccf18998d3c72e7c4a276f28049a3d38f56df3596f9ee3b07fb5e0d3b963"
+  },
+  "r1-pages-download.body": {
+    "bytes": 139,
+    "sha256": "3e2733c709f586f8124ba4eb545a3cb65221dec818acc5b6942738a4aa70d7c6"
+  },
+  "r1-pages-download.json": {
+    "bytes": 2091,
+    "sha256": "bc8b3e2c50ae5b811703cfed9e5152a79d14ef4669b22601ececd4f3c097034c"
+  },
+  "r1-pages-metadata.body": {
+    "bytes": 123,
+    "sha256": "706afc3b2c7b96e18bb0e38cba9855b65a4d7417718585377e793912fe51b1a2"
+  },
+  "r1-pages-metadata.json": {
+    "bytes": 2086,
+    "sha256": "bd6580fc5ca563fd6c4675ae2f435442e3b62bf5e15fef58103fe81df096caf8"
+  },
+  "r1-previous-head-local.json": {
+    "bytes": 3769,
+    "sha256": "4ac8de9cf18e5ddb2bcbcafe3a27cc6b279e839cd32df7dcf97fada356da97f7"
+  },
+  "r1-publisher-capture-manifest.json": {
+    "bytes": 4613,
+    "sha256": "2b2445293d69ec47439292648177e6dd4b6d805412aea731df725b808922d39e"
+  },
+  "r1-publisher-provenance-excerpts.txt": {
+    "bytes": 2639,
+    "sha256": "6dfbf4f3be09b09b9c3e12b72648c8bb7fe3348450227f0a3cc13ac9e1c8829e"
+  },
+  "r1-upload-pages-action-exact.yml": {
+    "bytes": 2389,
+    "sha256": "7c93bf9e88f1d495ffdbaf860fd9d6a5e75db9550a38ecbd44c6b53dfb2dbf22"
+  },
+  "r1_collect_publisher.py": {
+    "bytes": 3835,
+    "sha256": "cf6503133c48c11232b2700c69cb50c2950b6fef42cacab3966fea870a05a6ef"
+  },
+  "r1_reconcile_local.py": {
+    "bytes": 7514,
+    "sha256": "55a14d3932eeb322ce5c0e4e34b3cf641aae6c77e86b7fead6a7e78edf254691"
+  }
+}
