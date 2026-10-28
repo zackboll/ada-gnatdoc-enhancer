@@ -1,0 +1,17 @@
+{
+  "3.11": {
+    "wheel_members_equal": true,
+    "sdist_members_equal": true,
+    "sdist_files": 880
+  },
+  "3.12": {
+    "wheel_members_equal": true,
+    "sdist_members_equal": true,
+    "sdist_files": 880
+  },
+  "3.13": {
+    "wheel_members_equal": true,
+    "sdist_members_equal": true,
+    "sdist_files": 880
+  }
+}

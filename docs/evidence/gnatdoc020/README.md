@@ -88,15 +88,24 @@ source-integrity/index contract passes. Current Imgproc PR #81 independently
 repeats fresh build/examples/native and warning/coverage checks. The installed
 direct/stable/mixed pilot preserves 329 declarations, 586 external occurrences,
 14 Core types, 350 local links and 1,596 documented elements. Four complete
-source/native structural campaigns pass. Additional browser gates remain separate.
 source/native structural campaigns pass. All four complete pinned-site Chromium
 campaigns also pass **48 checks each**; their scope is local authentic API sites,
 not public deployment approval. Stable-symbol desktop/mobile direct/reload/fresh/
 history checks pass. The full incoming-reference browser campaign passes all
 242 source-qualified occurrences and 25 destinations, eight matrix combinations,
-with 421 traces. See `incoming-browser.json`; source occurrence reconstruction is
-recorded separately. Live external-link browser profiles and post-browser publisher
-inventory remain independent gates, with unique reports in the raw workspace.
+with 421 traces. See `incoming-browser.json`; independent source occurrence
+reconstruction also passes all 242 references and 25 summaries/102 links
+(`incoming-source-audit.json`). The eight live external-link profiles pass
+**560 assertions**, including direct/stable `_top`, mouse/keyboard, exact native
+profiles, reload/fresh entry, Back/Forward, canonical package-plus-symbol and
+symbol-only publisher alias. Of **5,924 response checks**, 5,824 use actual browser
+bodies and 100 are explicitly labeled separate exact-URL HTTPS audits after CDP
+discarded the response body. No interception, substituted publisher bytes or
+BFCache certification is claimed. See `external-browser-summary.json` and the
+eight unique raw profile reports. Final post-browser live checks match all
+**209** approved members (`publisher-post-browser.json`). This is an inventory
+audit, not a claim to enumerate arbitrary unlinked server paths.
+
 Implementation-head hosted run `40630917479` passed all six jobs. Its three
 candidates were independently downloaded by immutable IDs and GitHub ZIP digest,
 internal SHA256SUMS, expected commit/tree provenance, complete source/member,
@@ -123,6 +132,12 @@ An initial progress note attributed the chained download failure to the review
 artifact; independent retries corrected that attribution to Pages, without deleting
 the earlier observation. See `publisher-acquisition.json` and raw error logs.
 
+The exact deployed source was additionally downloaded independently by immutable
+commit, and every qualified source file plus the approved router bytes matches
+(`publisher-source-identity.json`). All externally referenced native profiles,
+source identities and approved router/index reconstruction pass offline in the
+installed pilot. No unrelated publisher revision was substituted.
+
 Retained harness failures: Core browser preparation exceeded a foreground timeout;
 copying pristine files over its partially enhanced directory correctly failed
 reconstruction, then clean independent regeneration passed. Fresh snapshot GNATdoc
@@ -134,6 +149,25 @@ shared a report path; one was terminated and its interrupted report preserved.
 Separate-profile processes with unique reports are the authoritative rerun. None
 of these failed attempts is silently relabeled a success. Historical evidence is
 unchanged and no consumer repository was modified.
+
+## Evidence-only source identities and final-head gate
+
+The first evidence-only commit `1659c2a416bdaaacbef159aca6ec297e81069721`, tree
+`563bd329b9e29253af35f0b3e858abc0acc47f0b`, changes only 42 excluded evidence
+paths. Independently built wheel and sdist complete member contents on all three
+Pythons are identical to the qualified implementation archives (880 sdist files).
+See `evidence-head-input-identity.json` and `evidence-head-archive-parity.json`.
+Its fresh nine-environment rerun and hosted workflows were started; these are not
+silently counted as completed final-head gates before results exist.
+
+This final additive evidence update is likewise confined to the excluded
+GNATDOC-020 evidence directory. Its final commit/tree and exact-head hosted run,
+artifact IDs/digests and independently executed archive/provenance audits are
+recorded in the PR and raw workspace after committing. This avoids asserting a
+commit's own identity inside itself. No earlier-head success substitutes for those
+gates. **PUBLISHER_COMPATIBILITY_BLOCKED** remains the disposition even if all
+remaining final-head jobs pass; a fresh deployed Pages artifact acquisition or
+separately approved compatibility resolution is still required.
 
 ## Security and adoption boundaries
 
