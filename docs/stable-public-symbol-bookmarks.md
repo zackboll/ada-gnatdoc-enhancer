@@ -1,5 +1,42 @@
 # Stable public type and subtype bookmarks (GNATDOC-011)
 
+## External publisher bookmarks (GNATDOC-018R1)
+
+External bookmarks are a separate opt-in from local symbol navigation. For the
+qualified Core-v1 publisher, the emitted canonical URL is:
+
+```text
+https://zackboll.github.io/opencv_core_ada/api/index.html?package=OpenCV.Core&symbol=OpenCV.Core.Mat
+```
+
+The complete URL is constructed directly from approved source spelling, with
+exactly one package then one symbol and no fragment or encoding. Symbol-only
+input remains a Core publisher alias, not an emitted enhancer destination.
+R1 explicitly supersedes the original symbol-only final-URL acceptance criterion:
+Core's independently observed router intentionally adds the source-owned package
+when given the alias. Original blocker observations are preserved, not relabeled
+as passing evidence. Canonical input returns early from the router's `outer()`
+function and needs no History API canonicalization.
+
+Existing native page/fragment mappings remain authority and default behavior;
+selected stable mappings must resolve to the same independently reconciled public
+declarations. The hash-bound record also binds complete publication bytes, source,
+genuine native artifacts, Pages deployment/workflow/artifacts, symbol index and
+router. Stable identity does not imply immutable hosting bytes. Legitimate updates
+need independent semantic comparison and requalification against a new immutable
+artifact, including full-inventory live checks, before a consumer approves new
+evidence hashes. Enhancement/verification remain offline and fail closed on changed
+local evidence. An explicit audit is available as
+`ada_gnatdoc_enhancer.external_symbols.verify_publication(config, fetch)`.
+
+`external_type_target = "_top"` is mandatory. With JavaScript, the top document
+routes to the exact native declaration, supporting reload/fresh-tab/history.
+Without JavaScript, native package navigation remains accessible but precise
+automatic declaration selection is **not** supported; retain direct-fragment
+mode if that is required. Toolkit support is not consumer migration approval.
+See [configuration](configuration.md) for per-type selection and pristine-input
+rollback. Existing local stable bookmark and generic-instance behavior is unchanged.
+
 **GNATDOC-011R1 corrects the incoming generic-instance reference gap described in
 the historical GNATDOC-011 findings below.** It does not replace Core's
 production generator or authorize deployment. Final disposition and exact-head

@@ -1,5 +1,17 @@
 # GNATDOC-005 — version-pinned external Core type links
 
+## GNATDOC-018R1 additive stable destination policy
+
+The historical dependency-manifest offline-test restriction below is unchanged.
+A separate explicit external-symbol qualification can select canonical Core
+package-plus-symbol URLs only after matching existing direct native destinations
+to independently approved source/native and publisher evidence. Ordinary
+`[external_types]` still rejects query URLs. See [configuration](configuration.md)
+and [external bookmarks](stable-public-symbol-bookmarks.md#external-publisher-bookmarks-gnatdoc-018r1).
+This does not approve Imgproc PR #81 or turn mutable Pages into an immutable
+service. Source revision, actual Pages deployment/artifacts and complete live
+inventory must be independently requalified when the publisher changes.
+
 ## Disposition and trust boundary
 
 **READY_FOR_INDEPENDENT_REVIEW**, **PUBLISHED_URL_PENDING**.

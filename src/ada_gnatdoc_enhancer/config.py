@@ -8,7 +8,7 @@ from pathlib import Path
 from .errors import EnhancementError
 from .util import inside, regular, require
 
-TOP = frozenset({"schema_version", "project", "gnatdoc", "sources", "navigation", "presentation", "guides", "security", "external_types", "external_dependencies", "renderer_exceptions", "generic_instances"})
+TOP = frozenset({"schema_version", "project", "gnatdoc", "sources", "navigation", "presentation", "guides", "security", "external_types", "external_dependencies", "external_symbol_bookmarks", "renderer_exceptions", "generic_instances"})
 
 
 def members(data, allowed, at):
@@ -53,6 +53,7 @@ class Config:
     theme_css_sha256: str | None = None
     theme_config_path: str | None = None
     theme_config_sha256: str | None = None
+    external_symbol_bookmarks: dict = field(default_factory=dict)
 
 
 def load(root: Path, path: str) -> Config:
@@ -185,6 +186,19 @@ def load(root: Path, path: str) -> Config:
                 'invalid generic qualification SHA-256')
     require(not incoming or (mode == 'packages' and symbols and pres.get('type_links', True)),
             'incoming instance references require type links and symbol package navigation')
+    bookmarks = raw.get('external_symbol_bookmarks', {})
+    if 'external_symbol_bookmarks' in raw:
+        members(bookmarks, {'qualification', 'sha256', 'types'}, 'external_symbol_bookmarks')
+        require(set(bookmarks) == {'qualification', 'sha256', 'types'},
+                'incomplete external symbol bookmark qualification')
+        regular(inside(root, bookmarks['qualification']))
+        require(isinstance(bookmarks['sha256'], str) and
+                re.fullmatch('[a-f0-9]{64}', bookmarks['sha256']),
+                'invalid external symbol bookmark SHA-256')
+        selected = words(bookmarks['types'], 'external symbol bookmark types')
+        require(selected and len({n.lower() for n in selected}) == len(selected),
+                'empty/duplicate external symbol bookmark types')
+        require(external_target == '_top', 'external symbol bookmarks require external_type_target = "_top"')
     from .util import digest
     config = Config(root, project, version, names, packages, style, mode, categories,
                   pres.get("theme", True), pres.get("syntax_highlighting", True),
@@ -193,7 +207,7 @@ def load(root: Path, path: str) -> Config:
                   symbols, default_package, incoming, external_target,
                   pres.get('theme_css_source'), pres.get('theme_css_sha256'),
                   config_path.relative_to(root).as_posix() if custom_theme else None,
-                  digest(config_bytes) if custom_theme else None)
+                  digest(config_bytes) if custom_theme else None, bookmarks)
     if custom_theme:
         from .theme import theme_asset
         theme_asset(config)

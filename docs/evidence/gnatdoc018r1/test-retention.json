@@ -1,0 +1,28 @@
+{
+  "retained": 609,
+  "total": 630,
+  "added": [
+    "test_external_symbols.ExternalSymbols.test_base_url_security",
+    "test_external_symbols.ExternalSymbols.test_canonical_url_rejects_injection_and_owner_substitution",
+    "test_external_symbols.ExternalSymbols.test_changed_native_fragment",
+    "test_external_symbols.ExternalSymbols.test_changed_router_even_when_source_and_publication_rehashed",
+    "test_external_symbols.ExternalSymbols.test_changed_source_hash",
+    "test_external_symbols.ExternalSymbols.test_exact_source_canonical_url_and_mixed_selection",
+    "test_external_symbols.ExternalSymbols.test_explicit_network_audit_all_files_and_redirect_drift",
+    "test_external_symbols.ExternalSymbols.test_forged_symbol_index_even_when_publication_rehashed",
+    "test_external_symbols.ExternalSymbols.test_missing_and_changed_qualification",
+    "test_external_symbols.ExternalSymbols.test_missing_direct_authority",
+    "test_external_symbols.ExternalSymbols.test_missing_source_hash",
+    "test_external_symbols.ExternalSymbols.test_no_implicit_network_and_no_default_output_change",
+    "test_external_symbols.ExternalSymbols.test_only_exact_qualified_queries_pass_link_validation",
+    "test_external_symbols.ExternalSymbols.test_opt_in_configuration_and_top_requirement",
+    "test_external_symbols.ExternalSymbols.test_ordinary_external_query_grammar_unchanged",
+    "test_external_symbols.ExternalSymbols.test_provenance_source_deployment_artifact_mismatch",
+    "test_external_symbols.ExternalSymbols.test_rendering_idempotence_and_rehashed_wrong_output",
+    "test_external_symbols.ExternalSymbols.test_unqualified_private_generic_wrong_package_and_case",
+    "test_external_symbols.ExternalSymbols.test_unsupported_layout",
+    "test_external_symbols.ExternalSymbols.test_wrong_but_existing_native_destination",
+    "test_external_symbols.ExternalSymbols.test_wrong_valid_symbol_mapping_even_when_rehashed"
+  ],
+  "removed": []
+}

@@ -2,8 +2,8 @@
 
 **Offline, source-verified enhancement of GNATdoc 26.0.0 HTML sites.**
 
-The published baseline is **0.1.1**. GNATDOC-017 development retains that version
-and adds an opt-in source-verified consumer theme; this PR does not assign or
+The published baseline is **0.1.1**. GNATDOC-018 development retains that version
+and adds opt-in source-verified external bookmarks alongside custom themes; this PR does not assign or
 publish a subsequent release. Python **3.11, 3.12 and 3.13** are supported on Linux. The core
 has **no runtime dependencies** and needs neither Ada nor GNATdoc at installation.
 
@@ -30,6 +30,15 @@ wheels and the sdist build requirements in advance, then use `--no-index` and
 `--find-links`. The renderer is optional; it is not bundled into the wheel.
 
 ## Configure and run
+
+External type links remain exact native page/fragment URLs by default, including
+precise JavaScript-disabled selection. An independently approved Core publisher
+record can opt selected types into canonical package-plus-symbol bookmarks,
+requiring `external_type_target = "_top"`. Stable routing needs publisher
+JavaScript; without it, genuine native navigation remains available but automatic
+declaration selection is not promised. See
+[external bookmarks](docs/stable-public-symbol-bookmarks.md#external-publisher-bookmarks-gnatdoc-018r1).
+This capability is not approval to migrate any consumer.
 
 First build the consumer with its approved Ada toolchain and generate native
 HTML with **GNATdoc 26.0.0**. Configure source directories, site layout,

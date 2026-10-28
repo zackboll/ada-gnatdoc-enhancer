@@ -127,6 +127,8 @@ def _presentation(config:Config,site:Path,raw:dict,values:dict,counts:dict):
     identity = theme_identity(config)
     if identity is not None:
         result['theme_source'] = identity
+    if config.external_symbol_bookmarks:
+        result['external_symbol_bookmarks'] = config.external_symbol_bookmarks
     return result
 
 
@@ -181,10 +183,14 @@ def verify(config:Config,site:Path):
     identity = theme_identity(config)
     require(set(data)=={'schema_version','enhancer_version','gnatdoc_version','project',
                         'original_api_html','native_css_sha256','source_sha256','output_sha256','counts'} |
-                        ({'theme_source'} if identity is not None else set()),
+                        ({'theme_source'} if identity is not None else set()) |
+                        ({'external_symbol_bookmarks'} if config.external_symbol_bookmarks else set()),
             'unexpected presentation manifest fields')
     if identity is not None:
         require(data['theme_source'] == identity, 'custom theme source/configuration identity changed')
+    if config.external_symbol_bookmarks:
+        require(data['external_symbol_bookmarks'] == config.external_symbol_bookmarks,
+                'external bookmark qualification/selection changed')
     require(data['schema_version']==1 and data['gnatdoc_version']==config.gnatdoc
             and data['project']==config.project and data['enhancer_version']==__version__,
             'presentation schema/tool/project mismatch')

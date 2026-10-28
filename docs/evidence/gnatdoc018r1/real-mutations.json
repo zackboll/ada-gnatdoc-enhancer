@@ -1,0 +1,28 @@
+{
+  "attribute-injection": {
+    "manifest_rehashed": true,
+    "reason": "enhanced output does not match source/manifest",
+    "rejected": true
+  },
+  "duplicate-key": {
+    "manifest_rehashed": true,
+    "reason": "enhanced output does not match source/manifest",
+    "rejected": true
+  },
+  "fragment": {
+    "manifest_rehashed": true,
+    "reason": "enhanced output does not match source/manifest",
+    "rejected": true
+  },
+  "restored_publication_exact": true,
+  "wrong-existing-symbol": {
+    "manifest_rehashed": true,
+    "reason": "enhanced output does not match source/manifest",
+    "rejected": true
+  },
+  "wrong-owner": {
+    "manifest_rehashed": true,
+    "reason": "enhanced output does not match source/manifest",
+    "rejected": true
+  }
+}

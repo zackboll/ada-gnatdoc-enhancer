@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased — GNATDOC-018R1 (version remains 0.1.1)
+
+- Add explicit hash-bound per-type external stable bookmarks for the independently
+  qualified Core-v1 router. Emit canonical source-spelled package-plus-symbol
+  URLs directly; retain ordinary external URL/query restrictions and default bytes.
+- Reconstruct public source/native identities, the complete publisher symbol
+  index, router identity and deployment/artifact evidence offline. Require `_top`;
+  reject changed evidence, wrong-valid destinations and rehashed output mutations.
+- Preserve direct-fragment JavaScript-disabled selection and document stable
+  routing's native-navigation-only fallback without JavaScript. No publisher or
+  consumer migration, release, tag, or runtime dependency change is authorized.
+
 ## Unreleased — GNATDOC-017 (version remains 0.1.1)
 
 - Add paired opt-in `presentation.theme_css_source` / `theme_css_sha256` for

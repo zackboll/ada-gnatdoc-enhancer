@@ -7,6 +7,6 @@ include docs/evidence/gnatdoc003/provenance.json
 include docs/evidence/gnatdoc004/provenance.json
 recursive-include examples *.toml
 recursive-include scripts *.py
-recursive-include tests *.py *.json *.toml *.ads *.html *.css *.txt *.md *.adb *.gpr *.cjs
+recursive-include tests *.py *.json *.toml *.ads *.html *.css *.js *.txt *.md *.adb *.gpr *.cjs
 recursive-include .github/workflows *.yml
 global-exclude __pycache__ *.py[cod]

@@ -58,13 +58,23 @@ def sorted_json(value) -> str:
 
 
 def local_link(page: Path, site: Path, link: str, *, external: frozenset[str] = frozenset(),
-               exact_external_fragments: frozenset[str] = frozenset()):
+               exact_external_fragments: frozenset[str] = frozenset(),
+               exact_external_symbols: frozenset[str] = frozenset()):
     require(isinstance(link, str) and bool(link), "empty URL")
     require(not re.search(r"[\x00-\x20\\]", link), f"unsafe URL whitespace/backslash: {link}")
     require(not re.search(r'%(?![0-9a-fA-F]{2})|%25', link, re.I),
             f"malformed/double-encoded URL: {link}")
     uri = urlsplit(link)
     if uri.scheme or uri.netloc:
+        if link in exact_external_symbols:
+            query = re.fullmatch('package=(' + QNAME + ')&symbol=(' + QNAME + ')', uri.query)
+            require(uri.scheme == 'https' and uri.netloc in external and uri.hostname == uri.netloc and
+                    not uri.fragment and query is not None and
+                    query[2].rpartition('.')[0] == query[1] and
+                    uri.path.endswith('/index.html') and '%' not in link and
+                    all(p not in ('.', '..') for p in uri.path.split('/')),
+                    f'unapproved external symbol URL: {link}')
+            return None, ''
         require(uri.scheme == "https" and uri.netloc in external and not uri.username and not uri.password
                 and not uri.query and (not uri.fragment or link in exact_external_fragments),
                 f"unapproved external URL: {link}")
