@@ -1,4 +1,108 @@
-# Auditable v0.1.1 publication procedure
+# Auditable v0.1.2 preparation and later publication
+
+## GNATDOC-020: preparation only
+
+Leave exactly one non-draft GNATDOC-020 PR open, unmerged, with auto-merge
+disabled. No tag (including a draft release), GitHub release, PyPI upload,
+Alire submission, deployment or consumer migration is authorized. Never add
+publishing credentials to a PR workflow. Current evidence and blockers live in
+[`docs/evidence/gnatdoc020/`](evidence/gnatdoc020/README.md).
+
+Require the freshly fetched starting main commit
+`8527052b43af06a5fefd74428a07342022469ff3`, tree
+`6a63cef9f131e08069d8a4a01329e80e2cf7f634`, the three feature merge ancestors,
+and successful merged-main workflow `40628001480`, all six mandatory jobs.
+If main advances, merge normally and repeat relevant gates; never rebase or
+force-push published preparation history. Preserve historical feature evidence.
+
+All active authorities must say `0.1.2`: project/module/distribution/CLI,
+wheel METADATA and dist-info, sdist root/PKG-INFO/egg-info, generated manifests,
+auditor and provenance. Keep Python >=3.11 (3.11/3.12/3.13), GNATdoc HTML 26.0.0,
+Apache-2.0, dependency-free core, `py3-none-any`, optional
+`markdown-it-py==3.0.0` and `mdurl==0.1.2`. Node is a test prerequisite only.
+
+Retain all 653 predecessor test identities and run the complete suite in all
+nine Python × source/canonical-wheel/rebuilt-sdist-wheel environments, zero
+failures/errors/unexpected skips. Installed campaigns use isolated non-editable
+environments outside the checkout, unset `PYTHONPATH`, verify imports and versions,
+all bundled bytes, four conformance profiles, source/native and mutation controls.
+Build from a clean immutable Git snapshot, audit archive safety before extraction,
+rebuild from that independently extracted sdist, verify full member identities,
+wheel RECORD hashes/sizes, license/entry point/dependencies and Git source inventory.
+Keep original/rebuilt archives, logs, tool versions, SHA-256 and provenance.
+
+Independently compare at least 26 complete profiles and relevant opt-ins against
+both merged GNATDOC-019 and actual publicly downloaded v0.1.1. Use
+`scripts/compare_release_outputs.py`: merged-main permits only `enhancer_version`;
+official default-router profiles additionally permit the approved navigation
+asset and its manifest hash. Other official profiles permit only the version.
+Custom themes and external stable bookmarks are merged-source comparisons, not
+official-v0.1.1 capabilities. Unclassified differences block preparation.
+
+Requalify pinned authentic consumer inputs, refreshed Imgproc PR #81, source/native
+declarations, exact external destinations, 25 Core summaries/102 links/242 incoming
+references, guides, compiled examples, warning/coverage ratchets, determinism,
+idempotence and Chromium matrix. Custom-theme computed style parity, stable/direct/
+mixed/_top external policies and default-router real Back/Forward are independent
+gates. Synthetic `pageshow` is not BFCache certification. Freshly determine actual
+Core deployment, not main: source/workflow/review/Pages artifact identity, complete
+209-member authority reconciliation, approved Core-v1 router, source/native profiles,
+symbol index, HTTPS bodies/origin/redirect policy before and after browsers.
+Changed referenced contracts require separately approved publisher compatibility.
+
+The exact final pushed head must pass all six source/wheel hosted jobs. Download
+all three candidates by immutable artifact ID; verify GitHub ZIP digest, internal
+SHA256SUMS, head/tree provenance, archive members, RECORD, installed modules/assets
+and independently rebuilt-sdist contents. Evidence-only commits require proving
+distribution inputs unchanged **and** exact-final-head hosted/archive reruns.
+Report `READY_FOR_INDEPENDENT_REVIEW` only when every gate passes; otherwise record
+the precise pending/blocked disposition and unexecuted gates honestly.
+
+## Subsequent explicitly authorized v0.1.2 publication task
+
+1. Require independent approval and merge of GNATDOC-020; record final reviewed PR
+   head/tree and actual approved merged source commit/tree.
+2. Require successful exact-merged-main hosted CI, all six jobs, and independently
+   inspect its artifacts. Earlier PR-head success is not merged-main success.
+3. Rebuild from a clean immutable snapshot of that exact approved merged source:
+   `python -m build --wheel --sdist`, then `python -m twine check --strict dist/*`.
+   Produce `ada_gnatdoc_enhancer-0.1.2-py3-none-any.whl` and
+   `ada_gnatdoc_enhancer-0.1.2.tar.gz` and retain the full regular-file Git inventory.
+4. Complete archive, nine-environment installed-package, two-baseline compatibility,
+   authentic consumer/security and real-browser qualification again. Rebuild the
+   wheel from audited extracted sdist and compare complete members, not compressed
+   archive hashes. No unclassified difference or missing gate is permitted.
+5. Run `scripts/record_candidate_provenance.py` with independently authorized
+   `--expected-source-commit` and `--expected-source-tree`, explicit repository,
+   source, wheel, sdist and rebuilt paths. Prepare final `release-provenance.json`;
+   its `publication_authorized: false` records that the audit itself is not approval.
+   Keep the subsequent publication authorization separately. Do not infer source
+   approval from candidate contents or self-assert final identities inside a commit.
+6. Prepare exactly four public assets: wheel, sdist, `release-provenance.json`,
+   and `SHA256SUMS` covering the other three. Generate **new** hashes for the exact
+   final bytes. Never carry preparation hashes forward if merged source identity
+   changes. Retain rebuilt archives and audit logs separately as qualification inputs.
+7. Obtain independent approval of final source, qualification, four asset identities
+   and publication before creating an annotated `v0.1.2` tag. Stop on an existing
+   conflicting tag; never move or replace tags or v0.1.1 assets.
+8. Verify annotation, tag-object SHA, peeled commit and source tree with
+   `git cat-file -t v0.1.2` and
+   `git rev-parse v0.1.2 v0.1.2^{commit} v0.1.2^{tree}`; verify signatures if required.
+9. Only then publish the GitHub release with **exactly** the four qualified assets.
+   Release notes must explain opt-ins, default-router change, pristine regeneration,
+   version-bound manifests, JS-disabled stable limitations and adoption boundaries.
+10. Independently download all four public assets, verify checksums and tag/source,
+    and freshly install wheel and sdist non-editably in isolated environments outside
+    source. Verify CLI/module/distribution, bundled content, complete tests and
+    conformance. Record URLs and logs. Do not silently replace defective release bits.
+
+PyPI and Alire remain explicitly out of scope. Toolkit release does not approve
+consumer production adoption or Pages deployment. Missing exact-source CI,
+source/archive drift, changed publisher contract, failed tests or browsers,
+unapproved differences, credentials in PR workflows or incomplete evidence are
+mandatory stop conditions, not waivers.
+
+## Historical v0.1.1 publication procedure (GNATDOC-015)
 
 GNATDOC-015 authorizes release preparation only. Leave its PR open, non-draft,
 unmerged and with auto-merge disabled. The following publication steps require a

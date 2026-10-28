@@ -1,5 +1,25 @@
 # Compatibility and evidence levels
 
+## Current v0.1.2 preparation boundary
+
+GNATDOC-020 changes release identities, not the merged feature implementation.
+The two independent output authorities and every allowed difference are specified
+in [release compatibility](release-compatibility.md). All 653 predecessor test
+identities must be retained across Python 3.11–3.13 source, canonical-wheel and
+rebuilt-sdist-wheel environments (at least 5,877 predecessor executions).
+Custom themes and stable external bookmarks remain opt-in; direct fragments
+remain supported. Default-router restoration is an intentional asset/behavior
+change from official v0.1.1, not from the merged development baseline.
+
+Source/native reconstruction, strict CSS and URL trust boundaries, the approved
+Core-v1 fingerprint and offline ordinary verification remain mandatory. Upgrades
+require pristine native regeneration, not v0.1.1 manifest reuse. Real Back/Forward
+evidence is distinct from synthetic `pageshow`; no BFCache certification is implied.
+See [executed gates and blockers](evidence/gnatdoc020/README.md), not historical
+feature records, for current release status. No consumer adoption is authorized.
+
+## Historical merged-feature assessments
+
 ## GNATDOC-019 development: default declaration visibility
 
 The default router can retain the correct approved declaration URL while its
@@ -18,7 +38,8 @@ byte-identical. No native declaration/profile, order, anchor, external URL,
 authorized. The three routers remain separately qualified, with default query
 compatibility deliberately distinct from symbol-router canonicalization.
 Corrected default-router publication bytes require consumer requalification.
-The version remains 0.1.1; the official released assets are not modified.
+At that development stage the version remained 0.1.1; official released assets
+were not modified. v0.1.2 now assigns the new release identity.
 
 ## GNATDOC-018R1 development: external stable bookmarks
 
@@ -52,7 +73,7 @@ links). Custom CSS is not a full consumer migration approval.
 Browser results, distribution and default-byte gates must be recorded separately;
 historical green evidence alone does not qualify the new source.
 
-## Current 0.1.1 preparation boundary
+## Historical 0.1.1 preparation boundary
 
 The planned patch adds only opt-in `[presentation].external_type_target = "_top"`.
 Default navigation, native declarations/destinations and bundled CSS/JavaScript

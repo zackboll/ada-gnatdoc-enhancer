@@ -23,6 +23,7 @@ from ada_gnatdoc_enhancer.external_symbols import qualified
 from ada_gnatdoc_enhancer.pipeline import enhance, verify
 from ada_gnatdoc_enhancer.qualification import hashes
 from ada_gnatdoc_enhancer.util import digest, require, sorted_json
+from compare_release_outputs import compare
 
 
 def qualify(args):
@@ -74,7 +75,7 @@ c=load(Path(sys.argv[1]),'direct.toml');s=Path(sys.argv[2]);enhance(c,s);verify(
     subprocess.run([str(args.official_python), '-c', program, str(authority), str(site)],
                    check=True, cwd=output, env=env)
     outputs['official'] = hashes(site)
-    require(outputs['official'] == outputs['disabled'], 'official v0.1.1 default bytes changed')
+    official_comparison = compare(site, output/'disabled', official=True, default_router=True)
     for mode in ('stable', 'mixed'):
         changes = sorted(n for n in outputs[mode] if outputs[mode][n] != outputs['disabled'][n])
         require(len(changes) == 2 and 'api/presentation.json' in changes,
@@ -108,7 +109,7 @@ c=load(Path(sys.argv[1]),'direct.toml');s=Path(sys.argv[2]);enhance(c,s);verify(
     (output/'browser-oracle.json').write_text(sorted_json(dict(types=ledger, occurrences=occurrences['stable'],
         publication_sha256=publisher['publication_sha256'], publisher_base=publisher['base_url'].removesuffix('api/'))))
     report = dict(status='pass', source_revision=args.consumer_revision, consumer_modified=False,
-                  migration_approved=False, official_default_byte_identical=True,
+                  migration_approved=False, official_comparison=official_comparison,
                   only_approved_href_and_integrity_changes=True, deterministic=True, byte_idempotent=True,
                   native_sha256=hashes(args.native), source_sha256=hashes(authority/'qualification-public'),
                   results=results, outputs=outputs)

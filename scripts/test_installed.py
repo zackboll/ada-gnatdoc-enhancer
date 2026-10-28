@@ -44,9 +44,9 @@ def run(fixtures:Path):
             return result.stdout
 
         require('enhance' in invoke('--help'),'missing CLI help')
-        require(version('ada-gnatdoc-enhancer') == ada_gnatdoc_enhancer.__version__ == '0.1.1',
+        require(version('ada-gnatdoc-enhancer') == ada_gnatdoc_enhancer.__version__ == '0.1.2',
                 'installed distribution/module version mismatch')
-        require(invoke('--version').strip() == '0.1.1',
+        require(invoke('--version').strip() == '0.1.2',
                 'installed CLI version mismatch')
         conformance=json.loads(invoke('conformance','--fixtures',fixtures))
         require(set(conformance['profiles'])=={'core','imgproc','geometry','mel'},
@@ -66,7 +66,7 @@ def run(fixtures:Path):
         result=json.loads(invoke('enhance',*arguments))
         require(result['public_packages']==29,'wrong installed package inventory')
         output=root/'_site'
-        require(json.loads((output/'api/presentation.json').read_text())['enhancer_version'] == '0.1.1',
+        require(json.loads((output/'api/presentation.json').read_text())['enhancer_version'] == '0.1.2',
                 'installed presentation manifest version mismatch')
         for destination in ('api/gnatdoc-theme.css','api/gnatdoc-navigation.js',
                             'assets/gnatdoc-guides.css'):
