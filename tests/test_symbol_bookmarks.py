@@ -21,8 +21,10 @@ class SymbolBookmarks(unittest.TestCase):
 
     def test_disabled_asset_identity(self):
         enhance(self.fx.config, self.fx.site)
+        # GNATDOC-019 deliberately requalifies the default runtime only. This
+        # is the new asset identity, not a change to symbol-router selection.
         self.assertEqual(digest((self.fx.site/'api/gnatdoc-navigation.js').read_bytes()),
-                         'b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd')
+                         'e32e0a9fcbccffbe94268ff933905e5616a52d4d89969c52e7d539acdb102522')
         self.assertNotIn('type-navigation', (self.fx.site/'api/index.html').read_text())
 
     def test_explicit_false_retains_every_byte(self):

@@ -1,0 +1,18 @@
+{
+  "core": {
+    "native_matches_historical": true,
+    "revision": "c5545eee815431568495c6c76af83df56cf5c3dd"
+  },
+  "imgproc": {
+    "native_matches_historical": true,
+    "revision": "9ce22ae5ab70008e1147475a9e6d7baef82f1df0"
+  },
+  "geometry": {
+    "native_matches_historical": true,
+    "revision": "fa81e5140cbebf2aa41397a40c08ba194a5f6f73"
+  },
+  "mel": {
+    "native_matches_historical": true,
+    "revision": "6065129aba5dee89e70b61e05a9e1c9b2c3061c0"
+  }
+}

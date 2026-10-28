@@ -38,7 +38,9 @@ class ReleaseContracts(unittest.TestCase):
         self.assertEqual(before, hashes(fx.site))
 
     def test_default_and_symbol_only_router_byte_contracts(self):
-        for symbols, expected in [(False, 'b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd'),
+        # GNATDOC-019 changes the default runtime, not the released artifacts or
+        # the independently qualified symbol router.
+        for symbols, expected in [(False, 'e32e0a9fcbccffbe94268ff933905e5616a52d4d89969c52e7d539acdb102522'),
                                   (True, '233cf43211a711d0d64dfba2815bc2d9cc887720faed0ca38f464bc6d29e145f')]:
             with self.subTest(symbols=symbols):
                 fx = Fixture(); self.addCleanup(fx.cleanup)

@@ -1,0 +1,97 @@
+[
+  {
+    "site": "core",
+    "project": "docs/example.gpr",
+    "argv": [
+      "alr",
+      "-n",
+      "-s",
+      "/home/zboll/qualifications/gnatdoc019/acquisition/settings",
+      "exec",
+      "--",
+      "gprbuild",
+      "-p",
+      "-P",
+      "docs/example.gpr"
+    ],
+    "returncode": 0,
+    "stdout": "gprbuild: \"example\" up to date\n",
+    "stderr": ""
+  },
+  {
+    "site": "imgproc",
+    "project": "docs/example.gpr",
+    "argv": [
+      "alr",
+      "-n",
+      "-s",
+      "/home/zboll/qualifications/gnatdoc019/acquisition/settings",
+      "exec",
+      "--",
+      "gprbuild",
+      "-p",
+      "-P",
+      "docs/example.gpr"
+    ],
+    "returncode": 0,
+    "stdout": "gprbuild: \"example\" up to date\n",
+    "stderr": ""
+  },
+  {
+    "site": "imgproc",
+    "project": "docs/examples/examples.gpr",
+    "argv": [
+      "alr",
+      "-n",
+      "-s",
+      "/home/zboll/qualifications/gnatdoc019/acquisition/settings",
+      "exec",
+      "--",
+      "gprbuild",
+      "-p",
+      "-P",
+      "docs/examples/examples.gpr"
+    ],
+    "returncode": 0,
+    "stdout": "gprbuild: \"filtering_and_transforms\" up to date\ngprbuild: \"color_and_representation\" up to date\ngprbuild: \"features_and_analysis\" up to date\ngprbuild: \"segmentation_and_contours\" up to date\ngprbuild: \"matching_and_registration\" up to date\n",
+    "stderr": ""
+  },
+  {
+    "site": "geometry",
+    "project": "docs/example.gpr",
+    "argv": [
+      "alr",
+      "-n",
+      "-s",
+      "/home/zboll/qualifications/gnatdoc019/acquisition/settings",
+      "exec",
+      "--",
+      "gprbuild",
+      "-p",
+      "-P",
+      "docs/example.gpr"
+    ],
+    "returncode": 0,
+    "stdout": "gprbuild: \"example\" up to date\n",
+    "stderr": ""
+  },
+  {
+    "site": "geometry",
+    "project": "docs/examples/examples.gpr",
+    "argv": [
+      "alr",
+      "-n",
+      "-s",
+      "/home/zboll/qualifications/gnatdoc019/acquisition/settings",
+      "exec",
+      "--",
+      "gprbuild",
+      "-p",
+      "-P",
+      "docs/examples/examples.gpr"
+    ],
+    "returncode": 0,
+    "stdout": "gprbuild: \"contours_and_moments\" up to date\ngprbuild: \"fitting_and_intersections\" up to date\ngprbuild: \"affine_and_perspective\" up to date\ngprbuild: \"delaunay_and_voronoi\" up to date\ngprbuild: \"compatibility_and_safety\" up to date\n",
+    "stderr": ""
+  }
+]

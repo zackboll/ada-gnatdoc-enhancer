@@ -1,0 +1,46 @@
+{
+  "historical-imgproc": {
+    "native_sha256": {
+      "api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html": "b1ace2e8cbf9821e929afaf9bcad80b5a14b34c05376cfe307a30654180152f4",
+      "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+      "api/index.html": "5a3e975118ff3eb4c2a9d407ecff16dcab1208986bf18bb76948583ca9b3134e"
+    },
+    "source_sha256": "03b369760efd81af8c550abd5c9cb6439b4f24b88c62e4b31c7fad4c04824563",
+    "declarations": 314,
+    "publication": {
+      "mode": "enhanced",
+      "files": 6,
+      "html_pages": 2,
+      "links": 969,
+      "linked_types": 333,
+      "declaration_snippets": 314,
+      "public_packages": 1,
+      "linked_local_types": 333,
+      "linked_external_types": 0,
+      "unrendered_renderer_exceptions": 0
+    },
+    "freshly_generated": false
+  },
+  "current-imgproc": {
+    "native_sha256": {
+      "api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html": "d7b8fbf01d935c2cd9dfe42ad4dd845c2e609013a4fcc01888b536421dec72ba",
+      "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+      "api/index.html": "5a3e975118ff3eb4c2a9d407ecff16dcab1208986bf18bb76948583ca9b3134e"
+    },
+    "source_sha256": "bcbae1a5aa3fe0cabfcf09086a9923cc87c7c43e07cbc7ceb348e7246f9b67fb",
+    "declarations": 329,
+    "publication": {
+      "mode": "enhanced",
+      "files": 6,
+      "html_pages": 2,
+      "links": 1602,
+      "linked_types": 936,
+      "declaration_snippets": 329,
+      "public_packages": 1,
+      "linked_local_types": 350,
+      "linked_external_types": 586,
+      "unrendered_renderer_exceptions": 0
+    },
+    "freshly_generated": false
+  }
+}

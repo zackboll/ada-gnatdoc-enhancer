@@ -2,8 +2,9 @@
 
 **Offline, source-verified enhancement of GNATdoc 26.0.0 HTML sites.**
 
-The published baseline is **0.1.1**. GNATDOC-018 development retains that version
-and adds opt-in source-verified external bookmarks alongside custom themes; this PR does not assign or
+The published baseline is **0.1.1**. GNATDOC-019 development retains that version
+and restores approved default-router declaration visibility after history navigation;
+the earlier opt-in external bookmarks and custom themes remain available. This work does not assign or
 publish a subsequent release. Python **3.11, 3.12 and 3.13** are supported on Linux. The core
 has **no runtime dependencies** and needs neither Ada nor GNATdoc at installation.
 
@@ -58,6 +59,15 @@ aliases and descendants are rejected. Dry-run stages and verifies output without
 changing the consumer. Qualified enhancement is deterministic and byte-idempotent.
 
 ## Capabilities
+
+* Development default-router restoration: an exact URL/fragment can select a
+  declaration that is outside the iframe viewport. Matching load/hash completion,
+  Back/Forward and `pageshow` now reveal only the source/native-approved target,
+  with deferred callbacks invalidated by newer selections. No global scroll policy,
+  package-only scroll reset, or URL-policy redesign is introduced. See
+  [declaration history](docs/api-navigation-history.md#gnatdoc-019-default-declaration-visibility).
+  The default JavaScript publication hash changes and requires consumer
+  requalification; no released v0.1.1 asset is replaced.
 
 * Development opt-in: paired `[presentation].theme_css_source` and
   `theme_css_sha256` publish an independently approved consumer stylesheet at

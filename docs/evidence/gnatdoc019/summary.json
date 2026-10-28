@@ -1,0 +1,477 @@
+{
+  "baseline_tests": 630,
+  "bfcache_certification": false,
+  "browser_errors": [],
+  "browser_matrix": {
+    "fail": 0,
+    "pass": 244
+  },
+  "compiled_example_invocations": 5,
+  "consumers_modified": false,
+  "core_equivalent_legacy_runner": "same first-package assumption failure on baseline/candidate; separate authentic Core matrix passes",
+  "custom_incoming_browser": {
+    "occurrences": 242,
+    "status": "pass",
+    "targets": 25,
+    "traces": 421
+  },
+  "custom_symbol_browser": "pass",
+  "disposition": "HOSTED_CI_PENDING",
+  "external_browser": {
+    "assertions": 560,
+    "campaigns": [
+      "1280-dark-jsfalse",
+      "1280-dark-jstrue",
+      "1280-light-jsfalse",
+      "1280-light-jstrue",
+      "390-dark-jsfalse",
+      "390-dark-jstrue",
+      "390-light-jsfalse",
+      "390-light-jstrue"
+    ],
+    "failures": [],
+    "live_inventory_members": 209,
+    "raw_report": "/home/zboll/qualifications/gnatdoc019/external-browser.json",
+    "raw_report_sha256": "fc266211079db8017d7a55f47497019113f1e28ab850f512329c2353084a6fbf",
+    "response_evidence": {
+      "browser-response-body": 5824,
+      "separate-live-HTTPS-audit-CDP-body-unavailable": 91
+    },
+    "responses": 5915,
+    "status": "pass"
+  },
+  "four_site_browser": {
+    "core": {
+      "checks": 48,
+      "failures": 0,
+      "status": "pass"
+    },
+    "geometry": {
+      "checks": 48,
+      "failures": 0,
+      "status": "pass"
+    },
+    "imgproc": {
+      "checks": 48,
+      "failures": 0,
+      "status": "pass"
+    },
+    "mel": {
+      "checks": 48,
+      "failures": 0,
+      "status": "pass"
+    }
+  },
+  "four_site_structural": {
+    "core": {
+      "determinism": true,
+      "native_integrity": {
+        "declarations": 1268,
+        "packages": 195,
+        "pages": 196,
+        "signatures": 1268,
+        "status": "preserved"
+      },
+      "original_inputs_preserved": true,
+      "result": "pass",
+      "revision": "c5545eee815431568495c6c76af83df56cf5c3dd"
+    },
+    "geometry": {
+      "determinism": true,
+      "native_integrity": {
+        "declarations": 130,
+        "packages": 2,
+        "pages": 3,
+        "signatures": 172,
+        "status": "preserved"
+      },
+      "original_inputs_preserved": true,
+      "result": "pass",
+      "revision": "fa81e5140cbebf2aa41397a40c08ba194a5f6f73"
+    },
+    "imgproc": {
+      "determinism": true,
+      "native_integrity": {
+        "declarations": 314,
+        "packages": 1,
+        "pages": 2,
+        "signatures": 467,
+        "status": "preserved"
+      },
+      "original_inputs_preserved": true,
+      "result": "pass",
+      "revision": "9ce22ae5ab70008e1147475a9e6d7baef82f1df0"
+    },
+    "mel": {
+      "determinism": true,
+      "native_integrity": {
+        "declarations": 1237,
+        "packages": 29,
+        "pages": 30,
+        "signatures": 1237,
+        "status": "preserved"
+      },
+      "original_inputs_preserved": true,
+      "result": "pass",
+      "revision": "6065129aba5dee89e70b61e05a9e1c9b2c3061c0"
+    }
+  },
+  "historical_operation_checks": {
+    "foreign_frame_intercepted_simulations": 4,
+    "live_site_claim": false,
+    "pass_count": 140
+  },
+  "incoming": {
+    "occurrences": 242,
+    "targets": 25,
+    "traces": 421
+  },
+  "independent_core": {
+    "native_sections": 1293,
+    "public_symbols": 216
+  },
+  "latest_default_driver": {
+    "fail_count": 0,
+    "pass_count": 244,
+    "process_exit": 0,
+    "report_sha256": "14b1188306b7919b792e7ae1f9a527c0b2771dcb4998623d4ef0ee5474c8767c"
+  },
+  "local_distribution": {
+    "3.11-sdist-result": {
+      "distinct": 653,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc019/distributions/python-3.11/sdist-env/lib/python3.11/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.11.17 (main, Oct 14 2026, 01:05:33) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 653,
+      "version": "0.1.1"
+    },
+    "3.11-source-result": {
+      "distinct": 653,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc019/frozen-source/src/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.11.17 (main, Oct 14 2026, 01:05:33) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 653,
+      "version": "0.1.1"
+    },
+    "3.11-wheel-result": {
+      "distinct": 653,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc019/distributions/python-3.11/wheel-env/lib/python3.11/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.11.17 (main, Oct 14 2026, 01:05:33) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 653,
+      "version": "0.1.1"
+    },
+    "3.12-sdist-result": {
+      "distinct": 653,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc019/distributions/python-3.12/sdist-env/lib/python3.12/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.12.15 (main, Oct 14 2026, 01:05:27) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 653,
+      "version": "0.1.1"
+    },
+    "3.12-source-result": {
+      "distinct": 653,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc019/frozen-source/src/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.12.15 (main, Oct 14 2026, 01:05:27) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 653,
+      "version": "0.1.1"
+    },
+    "3.12-wheel-result": {
+      "distinct": 653,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc019/distributions/python-3.12/wheel-env/lib/python3.12/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.12.15 (main, Oct 14 2026, 01:05:27) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 653,
+      "version": "0.1.1"
+    },
+    "3.13-sdist-result": {
+      "distinct": 653,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc019/distributions/python-3.13/sdist-env/lib/python3.13/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.13.16 (main, Oct 14 2026, 01:04:01) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 653,
+      "version": "0.1.1"
+    },
+    "3.13-source-result": {
+      "distinct": 653,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc019/frozen-source/src/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.13.16 (main, Oct 14 2026, 01:04:01) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 653,
+      "version": "0.1.1"
+    },
+    "3.13-wheel-result": {
+      "distinct": 653,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc019/distributions/python-3.13/wheel-env/lib/python3.13/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.13.16 (main, Oct 14 2026, 01:04:01) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 653,
+      "version": "0.1.1"
+    }
+  },
+  "mutations": {
+    "changed-original-native-html": {
+      "reason": "native declaration profile unmatched or swapped: OpenCV.Image_Processing.Filter_2D at 3747; requires unique exact or supported source-verified profile (unsupported/ambiguous projection rejected)",
+      "rejected": true
+    },
+    "changed-profile": {
+      "output_hash_forged": true,
+      "reason": "enhanced output does not match source/manifest",
+      "rejected": true
+    },
+    "extra-file": {
+      "reason": "unapproved output file: api/extra.js",
+      "rejected": true
+    },
+    "forged-runtime-hash": {
+      "output_hash_forged": true,
+      "reason": "enhanced output does not match source/manifest",
+      "rejected": true
+    },
+    "inline-handler": {
+      "output_hash_forged": true,
+      "reason": "enhanced output does not match source/manifest",
+      "rejected": true
+    },
+    "source-change": {
+      "reason": "source differs from qualified presentation manifest",
+      "rejected": true
+    },
+    "unauthorized-script": {
+      "output_hash_forged": true,
+      "reason": "enhanced output does not match source/manifest",
+      "rejected": true
+    },
+    "wrong-existing-anchor": {
+      "output_hash_forged": true,
+      "reason": "enhanced output does not match source/manifest",
+      "rejected": true
+    }
+  },
+  "navigation_disabled_profiles": 2,
+  "negative_first": {
+    "fail": 16,
+    "pass": 48
+  },
+  "publication_differences": {
+    "authored-core": {
+      "byte_idempotent": true,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "deterministic": true,
+      "files": 207
+    },
+    "authored-geometry": {
+      "byte_idempotent": true,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "deterministic": true,
+      "files": 14
+    },
+    "authored-imgproc": {
+      "byte_idempotent": true,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "deterministic": true,
+      "files": 13
+    },
+    "authored-mel": {
+      "byte_idempotent": true,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "deterministic": true,
+      "files": 42
+    },
+    "core-050-incoming": {
+      "byte_idempotent": true,
+      "changed": [],
+      "deterministic": true,
+      "files": 207
+    },
+    "core-050-packages": {
+      "byte_idempotent": true,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "deterministic": true,
+      "files": 207
+    },
+    "core-050-symbols": {
+      "byte_idempotent": true,
+      "changed": [],
+      "deterministic": true,
+      "files": 207
+    },
+    "core-current-incoming": {
+      "byte_idempotent": true,
+      "changed": [],
+      "deterministic": true,
+      "files": 207
+    },
+    "core-current-packages": {
+      "byte_idempotent": true,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "deterministic": true,
+      "files": 207
+    },
+    "core-current-symbols": {
+      "byte_idempotent": true,
+      "changed": [],
+      "deterministic": true,
+      "files": 207
+    },
+    "current-core-custom-incoming": {
+      "byte_idempotent": true,
+      "changed": [],
+      "deterministic": true,
+      "files": 207
+    },
+    "current-core-custom-symbols": {
+      "byte_idempotent": true,
+      "changed": [],
+      "deterministic": true,
+      "files": 207
+    },
+    "current-core-incoming": {
+      "byte_idempotent": true,
+      "changed": [],
+      "deterministic": true,
+      "files": 207
+    },
+    "current-core-symbols": {
+      "byte_idempotent": true,
+      "changed": [],
+      "deterministic": true,
+      "files": 207
+    },
+    "current-imgproc": {
+      "byte_idempotent": true,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "deterministic": true,
+      "files": 6
+    },
+    "features": {
+      "byte_idempotent": true,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "deterministic": true,
+      "files": 18
+    },
+    "historical-imgproc": {
+      "byte_idempotent": true,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "deterministic": true,
+      "files": 6
+    },
+    "imgproc81": {
+      "byte_idempotent": true,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "deterministic": true,
+      "files": 6
+    },
+    "mel-packages": {
+      "byte_idempotent": true,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "deterministic": true,
+      "files": 34
+    },
+    "mel-symbols": {
+      "byte_idempotent": true,
+      "changed": [],
+      "deterministic": true,
+      "files": 34
+    },
+    "synthetic-core": {
+      "byte_idempotent": true,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "deterministic": true,
+      "files": 8
+    },
+    "synthetic-geometry": {
+      "byte_idempotent": true,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "deterministic": true,
+      "files": 7
+    },
+    "synthetic-imgproc": {
+      "byte_idempotent": true,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "deterministic": true,
+      "files": 6
+    },
+    "synthetic-mel": {
+      "byte_idempotent": true,
+      "changed": [
+        "api/gnatdoc-navigation.js",
+        "api/presentation.json"
+      ],
+      "deterministic": true,
+      "files": 42
+    }
+  },
+  "publication_profiles": 24,
+  "publication_profiles_pending": 0,
+  "raw_workspace": "/home/zboll/qualifications/gnatdoc019",
+  "release_modified": false,
+  "same_driver_corrected": {
+    "fail": 0,
+    "pass": 64
+  },
+  "starting_commit": "036bdd6587b93e8f6108d8b960c8c9ba8d747e78",
+  "starting_tree": "8901bc53f046932730c03e76b6c168d293d20394",
+  "total_publication_profiles": 26
+}
