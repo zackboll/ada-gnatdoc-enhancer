@@ -1,0 +1,56 @@
+{
+  "candidates": {
+    "3.11": {
+      "artifact_id": 12792440460,
+      "installed": {
+        "assets": {
+          "gnatdoc-instance-navigation.js": "97dcc75055842e98a6294809b8e8c4e7436a427039d19c8afb6fdd1ca21ea310",
+          "gnatdoc-navigation.js": "e32e0a9fcbccffbe94268ff933905e5616a52d4d89969c52e7d539acdb102522",
+          "gnatdoc-symbol-navigation.js": "233cf43211a711d0d64dfba2815bc2d9cc887720faed0ca38f464bc6d29e145f"
+        },
+        "module": "/home/zboll/qualifications/gnatdoc020/hosted-initial/3.11/installed/lib/python3.11/site-packages/ada_gnatdoc_enhancer/__init__.py",
+        "version": "0.1.2"
+      },
+      "rebuilt_sha256": "675afdbb5ad51d5a138b4170d792d96a542b7ac99096328043156e0984fb67f2",
+      "sdist_sha256": "d13e6d8efba4ee319c8aa91c3ee7425ab71d07fab92ab0d7623e7b280f90bff8",
+      "wheel_sha256": "9a8946307aaa390a0942f81563e6da9e3afcb3c9c8bb99ee4d1a68d9b18ea7bd",
+      "zip_sha256": "62c58c3d8ddb5ac5a5e78dfb82574b8ce55c409502bccc256eabc949f0fa6987"
+    },
+    "3.12": {
+      "artifact_id": 12792101984,
+      "installed": {
+        "assets": {
+          "gnatdoc-instance-navigation.js": "97dcc75055842e98a6294809b8e8c4e7436a427039d19c8afb6fdd1ca21ea310",
+          "gnatdoc-navigation.js": "e32e0a9fcbccffbe94268ff933905e5616a52d4d89969c52e7d539acdb102522",
+          "gnatdoc-symbol-navigation.js": "233cf43211a711d0d64dfba2815bc2d9cc887720faed0ca38f464bc6d29e145f"
+        },
+        "module": "/home/zboll/qualifications/gnatdoc020/hosted-initial/3.12/installed/lib/python3.12/site-packages/ada_gnatdoc_enhancer/__init__.py",
+        "version": "0.1.2"
+      },
+      "rebuilt_sha256": "5090138be84724516429f5c38fec7ba7bf1e46742b66267e7aa71bc46d419cd6",
+      "sdist_sha256": "8844decdba87071c64e6a1b873b829e98f20fec1e89cf546e81a5b2c7e02705f",
+      "wheel_sha256": "7dfac3b78e72c94fdf9784ab283e01f855c487d39f6e164126b621d179d77980",
+      "zip_sha256": "33eb5f7ef991de8a0234941ebe747e05d882b8fa3f54d018f9d1670ce4202dd5"
+    },
+    "3.13": {
+      "artifact_id": 12792770105,
+      "installed": {
+        "assets": {
+          "gnatdoc-instance-navigation.js": "97dcc75055842e98a6294809b8e8c4e7436a427039d19c8afb6fdd1ca21ea310",
+          "gnatdoc-navigation.js": "e32e0a9fcbccffbe94268ff933905e5616a52d4d89969c52e7d539acdb102522",
+          "gnatdoc-symbol-navigation.js": "233cf43211a711d0d64dfba2815bc2d9cc887720faed0ca38f464bc6d29e145f"
+        },
+        "module": "/home/zboll/qualifications/gnatdoc020/hosted-initial/3.13/installed/lib/python3.13/site-packages/ada_gnatdoc_enhancer/__init__.py",
+        "version": "0.1.2"
+      },
+      "rebuilt_sha256": "601f44feac46c41e6c0a834e90c71141d44673e06d09fdbb32d2c6ae72d9f3b5",
+      "sdist_sha256": "62db058b248f445e0beb599155800bfc5ca14023b77214b1d504c91c0cc7a402",
+      "wheel_sha256": "135b0973b8e5aee42ef2e816e02fe68f55999d6d3fc809f37df85179754d32aa",
+      "zip_sha256": "6e1cdfd4aab09d740ecfdae02b2bf1e1e0553e6578942a0f10d013a0fb6e4874"
+    }
+  },
+  "head": "8eb83100bc16b0a1e0344d6d3e9fe3b97247def9",
+  "run": "40630917479",
+  "status": "pass",
+  "tree": "5ece32d2b8b12d8807bb42e73bd2e1fb4b6aff8f"
+}
