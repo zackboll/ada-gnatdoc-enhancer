@@ -105,12 +105,68 @@ Fresh stable generation is deterministic and enhancement is byte-idempotent.
 Pilot source: `scripts/qualify_external_symbols.py`; complete records:
 `/home/zboll/gnatdoc-018-evidence/r1/pilot-final/`.
 
+## Completed additive qualification
+
+Implementation commit `e31315122e8d6462591312728fa1f903733b6fed`, tree
+`06fcc68a31e91c274b53c08255f0408ddd20520d`. A frozen source copy matched all
+implementation modules, assets, tests and scripts. All nine Python 3.11–3.13
+source/canonical-wheel/rebuilt-sdist environments passed 630 distinct tests each:
+**5,670 executions**, zero failures/errors/skips. Four-profile conformance,
+installed CLI/assets, dependency checks, strict Twine, complete archive inventories
+and source/member audits pass. Fresh independently built wheel member bytes match
+across Python versions. The one canonical wheel hash installed on all versions is
+`6c8c9d3e9f7b89748e07306a519132c1d70b6c3a961f5fc5ad42621117914ba5`.
+Distribution results and complete inventories accompany this record. These are
+candidate qualification artifacts, not official v0.1.1 release replacements.
+
+All **20** GNATDOC-017 default profiles were freshly generated in separate
+official-v0.1.1, exact merged-main and candidate processes. Every output byte
+matches, including presentation manifests and bundled assets, without version or
+hash normalization. Profiles include authentic current/0.5.0 Core package/symbol/
+incoming modes, MEL, all four authored and synthetic profiles, Features and
+refreshed Imgproc. `default-parity.json` retains complete inventories.
+
+Installed canonical-wheel Imgproc output matches every source-pilot mode byte.
+The complete compact occurrence ledger retains identity, label, decoded span,
+source/native profile hashes and approved URL per occurrence. Five real Imgproc
+output mutations (wrong-existing symbol, owner, duplicate key, fragment and HTML
+attribute injection) are rejected even after rehashing the output manifest;
+restored publication bytes exactly match and independently verify.
+
+Fresh Core custom-theme/incoming output exactly matches the qualified GNATDOC-017
+publication: 195 packages, 1,293 native snippets, 25 summaries/102 summary links,
+2,758 linked types. The real custom-theme browser campaign passes all 16 paired
+legacy/candidate width/palette/JS combinations with no reported problems.
+The exhaustive incoming campaign records 421 real clicks, all 242 occurrences
+in desktop/light/JS and all 25 summary targets throughout all eight profiles.
+Fresh local symbol canonicalization/negative/history/keyboard/JS-disabled browser
+regressions also pass. Their resource-delay interception is confined to the
+existing local-only regression, not used as live publisher evidence.
+
 ## Qualification limitations and remaining gates
 
-Full 20-profile default comparison, Python 3.11–3.13 source/canonical-wheel/
-rebuilt-sdist-wheel matrix, complete browser campaign and final-head hosted CI/
-independently downloaded candidate audit are in progress. No readiness is claimed
-from earlier baseline results. Initial pilot substring rollback compared a `Mat`
+The complete live external campaign now passes all eight width/palette/JS
+profiles and 14 types: **560 checks**, mouse/keyboard direct+stable activation,
+top-level exact canonical URL, independently owned complete native profiles,
+declaration visibility/scrolling, reload/fresh tabs, Back/Forward, symbol-only
+alias, JS-disabled fallback and unchanged native fragments. CDP top-frame
+same-document events confirm canonical entry requires no History API rewrite.
+The browser uses no interception or patched publisher code. BFCache is disabled
+for this campaign, so this is history restoration qualification, not a BFCache
+certification. Of **5,921** response checks, **5,824** hashes came from browser
+bodies; **97** discarded CDP bodies were independently re-fetched from exact live
+HTTPS URLs without redirects and explicitly labeled as separate audits, not
+misrepresented as browser response bytes. No 304-body substitution is counted
+as browser bytes. Final per-profile runs all pass; failed earlier attempts remain
+recorded as failed. Full-inventory checks before and after the campaign match
+all 209 approved publication members. A repeated final inventory/deployment check
+detects drift separately from navigation. Immutable inventories do not claim to
+enumerate arbitrary extra server paths.
+
+The rebuilt-sdist wheel also repeats the complete Imgproc pilot with all output
+bytes equal to source/canonical wheel. Final-head hosted CI and independently
+downloaded candidate auditing remain pending. No readiness is claimed from
+earlier baseline results. Initial pilot substring rollback compared a `Mat`
 URL prefix inside `Mat_Array`; this harness bug was fixed by matching complete
 href attributes. Failed pilot records remain retained.
 
@@ -121,7 +177,25 @@ provide an obsolete response body; it may not claim those bytes came from the
 browser response. No interception, synthetic publisher response, or patched
 publisher JavaScript is allowed. An early distribution campaign mixed changing
 source tests with an earlier wheel; it is superseded by an isolated frozen-source
-campaign, not normalized into passing results.
+campaign, not normalized into passing results. Failed local-symbol harness attempts
+used an incomplete oracle and a non-sidebar callable as an approved native query;
+the passing rerun uses an independently verified public symbol destination, as the
+existing local router contract requires.
+
+## PR and reproduction
+
+PR **#19**: https://github.com/zackboll/ada-gnatdoc-enhancer/pull/19, non-draft,
+open, unmerged, auto-merge disabled. Implementation qualification is distinct from
+final-head hosted CI and candidate artifacts. No review approval is granted here.
+
+Retained qualification procedures use absolute paths in
+`/home/zboll/gnatdoc-018-evidence/r1/`; adapt workspace paths only and recheck pins
+before replay. `scripts/qualify_external_symbols.py` accepts explicit source,
+authority/native, official interpreter and fresh output arguments.
+`tests/external_symbols_browser.cjs` accepts `PLAYWRIGHT_MODULE`, `CHROME`,
+`GNATDOC018_WORKSPACE`, `GNATDOC018_REPORT` and optional `GNATDOC018_PROFILE`
+(`1280-light-jstrue`, etc.) for independent profile processes. Its oracle is the
+source/native-qualified pilot ledger, not generated presentation metadata.
 
 JavaScript-disabled stable mode promises genuine native navigation only; exact
 selection stays a direct-fragment capability. No Core/Imgproc repository, PR #81,

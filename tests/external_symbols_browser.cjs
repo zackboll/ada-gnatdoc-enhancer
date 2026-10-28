@@ -38,6 +38,8 @@ const crypto = require('node:crypto');
   try {
     for (const width of [1280, 390]) for (const colorScheme of ['light', 'dark'])
       for (const javaScriptEnabled of [true, false]) {
+        const campaign = `${width}-${colorScheme}-js${javaScriptEnabled}`;
+        if (process.env.GNATDOC018_PROFILE && process.env.GNATDOC018_PROFILE !== campaign) continue;
         const context = await browser.newContext({viewport: {width, height: 900}, colorScheme, javaScriptEnabled});
         const pending = [], errors = [];
         context.on('page', page => page.on('pageerror', e => errors.push(e.stack)));
@@ -46,18 +48,22 @@ const crypto = require('node:crypto');
           pending.push((async () => {
             const name = new URL(response.url()).pathname.slice(new URL(oracle.publisher_base).pathname.length);
             assert.ok(oracle.publication_sha256[name], 'uninventoried publisher response');
-            assert.equal(response.status(), 200);
+            assert.ok([200, 304].includes(response.status()), 'unsuccessful publisher response');
             assert.equal(response.request().redirectedFrom(), null);
             let bytes, evidence = 'browser-response-body';
-            try { bytes = await response.body(); }
+            try {
+              if (response.status() === 304) throw new Error('304 conditional response has no entity body');
+              bytes = await response.body();
+            }
             catch (error) {
               // Chromium history/frame replacement can discard an obsolete
               // response's CDP buffer. Do not invent its bytes or suppress the
               // observation: audit that exact live URL separately and label it.
-              if (!error.message.includes('No resource with given identifier')) throw error;
+              if (!error.message.includes('No resource with given identifier') && response.status() !== 304) throw error;
               const audit = await context.request.get(response.url(), {maxRedirects: 0});
               assert.equal(audit.status(), 200); assert.equal(audit.url(), response.url());
-              bytes = await audit.body(); evidence = 'separate-live-HTTPS-audit-CDP-body-unavailable';
+              bytes = await audit.body(); evidence = response.status() === 304
+                ? 'separate-live-HTTPS-audit-304-no-entity-body' : 'separate-live-HTTPS-audit-CDP-body-unavailable';
             }
             const sha256 = hash(bytes);
             assert.equal(sha256, oracle.publication_sha256[name], response.url());
@@ -68,7 +74,6 @@ const crypto = require('node:crypto');
         const networkSession = await context.newCDPSession(page);
         await networkSession.send('Network.enable');
         await networkSession.send('Network.setCacheDisabled', {cacheDisabled: true});
-        const campaign = `${width}-${colorScheme}-js${javaScriptEnabled}`;
         async function settled(p) {
           await p.waitForLoadState('networkidle');
           await Promise.all(pending);
