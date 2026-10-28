@@ -168,6 +168,9 @@ def destinations(config):
             owners[owner]=authority
             require(key not in result,'conflicting external types or aliases')
             result[key]=base+item['page']+'#'+item['anchor']
+    if config.external_symbol_bookmarks:
+        from .external_symbols import select
+        result = select(config, result)
     return result
 
 

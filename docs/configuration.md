@@ -1,3 +1,61 @@
+# External symbol bookmarks (GNATDOC-018R1, development opt-in)
+
+Ordinary `[external_types]` still requires explicit HTTPS native page/fragment
+destinations without queries. Selected destinations can additionally use a
+separately reviewed, hash-bound publisher record:
+
+```toml
+[presentation]
+external_type_target = "_top"
+
+[external_types]
+# Keep the existing independently verified native page/fragment mappings here.
+
+[external_symbol_bookmarks]
+qualification = "docs/qualified-core-symbol-bookmarks.json"
+sha256 = "<SHA-256 of independently approved qualification record>"
+types = ["OpenCV.Core.Mat"]
+```
+
+The illustrative digest must be replaced by the approved record's actual hash.
+The type list is nonempty, unique ignoring case, and requires exact source
+spelling. A record cannot introduce a selected type without its matching direct
+native destination. Unselected mappings remain direct: mixed policies are valid.
+The only supported protocol is `core-symbol-router-v1`, not arbitrary queries.
+
+The strict JSON record contains `schema_version=1`, `profile`, allowlisted HTTPS
+`base_url` ending `/api/`, `acquisition={path,sha256}`, `source`, `native`,
+`publication`, complete `publication_sha256`, `router_source`, `provenance` and
+`artifacts`. Paths are relative to the source root. `acquisition` uses the existing
+source/native dependency input specification. `provenance` has hash-bound JSON
+`{path,sha256}` references for `run`, `deployment`, `statuses`, and `artifacts`:
+archived GitHub workflow, Pages deployment, statuses wrapped as `{"statuses": [...]}`,
+and artifact-list API observations. `artifacts` identifies `review` and `pages`,
+each with exact `id` and GitHub `sha256:...` digest. Source/revision, successful
+workflow/deployment and artifact membership must cross-check. These unsigned
+records need independent approval; they cannot authenticate their own origin.
+
+Enhancement and verification recheck all local evidence without network access.
+The complete symbol index is rebuilt from source/native authority, not accepted
+from HTML or presentation metadata. Router bytes must match the qualified protocol
+fingerprint and approved source. A new router implementation requires separate
+toolkit qualification, even if it preserves symbol names. Acquisition may not
+import further bookmarks. No new Ada resolver or consumer-specific identity is
+introduced. Generic-formal/private/unsupported identities cannot become targets.
+
+Canonical URLs are constructed as `index.html?package=<source owner>&symbol=<source
+qualified name>`, exactly that order with no encoding, extra key or fragment.
+Only reconstructed exact URLs receive query permission; malformed, duplicate,
+encoded, conflicting or substituted URLs fail verification. A rehashed output
+manifest does not authorize a changed destination.
+
+Remove the entire opt-in table and regenerate from independently retained pristine
+native input to roll back to direct mode. Do not edit an existing enhanced site's
+manifest to change policy. JavaScript-disabled precise selection requires direct
+mode. A mutable publisher update requires new independent source/native,
+artifact/deployment/router and full-inventory live qualification before approving
+new record hashes. The library never silently fetches or accepts live changes.
+
 # Source-verified consumer theme (GNATDOC-017, development opt-in)
 
 Omitting both options retains the bundled default theme and the exact v0.1.1

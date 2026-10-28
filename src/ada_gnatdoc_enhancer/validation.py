@@ -127,7 +127,10 @@ def validate_files(site:Path,config:Config,expected:set[str], *, raw=False, titl
             else:
                 exact = frozenset()
             target,fragment=local_link(path,site,link,external=config.allowed_hosts,
-                                       exact_external_fragments=frozenset(external.values()) | exact)
+                                       exact_external_fragments=frozenset(external.values()) | exact,
+                                       exact_external_symbols=frozenset(
+                                           external[name.lower()] for name in
+                                           config.external_symbol_bookmarks.get('types', [])))
             if target is None:continue
             if fragment:
                 require(target.resolve() in pages and fragment in pages[target.resolve()].ids,

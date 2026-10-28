@@ -1,5 +1,16 @@
 # GNATDOC-014 — opt-in top-level external type navigation
 
+## GNATDOC-018 external stable bookmarks
+
+The new separate stable-bookmark opt-in requires the existing `_top` policy.
+It changes only selected external hrefs and their qualification/integrity metadata;
+local and generic-instance links remain target-free. Unselected external native
+fragments retain exact JavaScript-disabled behavior. Stable bookmarks instead
+open the publisher's top-level package/symbol router; JavaScript selects the
+declaration. Without JavaScript, the genuine native navigation is accessible,
+but automatic declaration selection is not claimed. No publisher script injection
+or consumer navigation asset change is introduced. See [configuration](configuration.md).
+
 ## v0.1.1 preparation
 
 GNATDOC-015 packages this independently reviewed implementation as planned

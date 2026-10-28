@@ -1,5 +1,17 @@
 # Compatibility and evidence levels
 
+## GNATDOC-018R1 development: external stable bookmarks
+
+Default direct links and all bundled assets are unchanged. Explicit per-type
+stable selection is confined to the qualified Core-v1 protocol, hash-bound
+source/native/publisher evidence, and `_top`. Mixed direct/stable policies share
+the existing source-visible typed-context resolver. No local or generic-instance
+target promotion, declaration text change, theme change, or runtime dependency
+is intended. Qualification is recorded separately from this contract; see
+`docs/evidence/gnatdoc018r1/README.md` for executed gates and limitations. Historical
+GNATDOC-018 symbol-only observations remain immutable. No consumer adoption or
+production deployment is approved by this feature.
+
 ## GNATDOC-017 development: approved consumer presentation
 
 Optional paired `presentation.theme_css_source` / `theme_css_sha256` select
