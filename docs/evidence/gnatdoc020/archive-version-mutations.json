@@ -1,0 +1,17 @@
+{
+  "wheel": {
+    "rejected": true,
+    "reason": "metadata version mismatch",
+    "mutation": "Version: 0.1.1 under correctly named 0.1.2 archive"
+  },
+  "sdist": {
+    "rejected": true,
+    "reason": "sdist/wheel metadata differ",
+    "mutation": "Version: 0.1.1 under correctly named 0.1.2 archive"
+  },
+  "egg-info": {
+    "rejected": true,
+    "reason": "sdist egg-info metadata differ",
+    "mutation": "Version: 0.1.1 under correctly named 0.1.2 archive"
+  }
+}

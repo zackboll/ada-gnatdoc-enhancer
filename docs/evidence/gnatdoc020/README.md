@@ -66,7 +66,7 @@ See `distribution-matrix.json`, `test-retention.json` and per-Python inventories
 All **26 complete compatibility profiles** passed exact file/field classification
 and fresh two-copy determinism/idempotence. Twenty-four existing-feature profiles
 also use actual independently downloaded official v0.1.1; two custom-theme opt-ins
-Additional direct/top/stable/mixed
+correctly use merged development source only. Additional direct/top/stable/mixed
 external profiles also pass (`external-output-compatibility.json`): stable/mixed
 use merged source only; direct/top additionally use official v0.1.1. No universal official
 v0.1.1 byte parity is claimed. See `output-compatibility.json` and replay drivers.
