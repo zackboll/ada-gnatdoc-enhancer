@@ -6,7 +6,16 @@
     "fail": 0,
     "pass": 244
   },
+  "compiled_example_invocations": 5,
   "consumers_modified": false,
+  "core_equivalent_legacy_runner": "same first-package assumption failure on baseline/candidate; separate authentic Core matrix passes",
+  "custom_incoming_browser": {
+    "occurrences": 242,
+    "status": "pass",
+    "targets": 25,
+    "traces": 421
+  },
+  "custom_symbol_browser": "pass",
   "disposition": "HOSTED_CI_PENDING",
   "four_site_browser": {
     "core": {
@@ -84,10 +93,19 @@
       "revision": "6065129aba5dee89e70b61e05a9e1c9b2c3061c0"
     }
   },
+  "historical_operation_checks": {
+    "foreign_frame_intercepted_simulations": 4,
+    "live_site_claim": false,
+    "pass_count": 140
+  },
   "incoming": {
     "occurrences": 242,
     "targets": 25,
     "traces": 421
+  },
+  "independent_core": {
+    "native_sections": 1293,
+    "public_symbols": 216
   },
   "local_distribution": {
     "3.11-sdist-result": {
@@ -220,6 +238,7 @@
       "rejected": true
     }
   },
+  "navigation_disabled_profiles": 2,
   "negative_first": {
     "fail": 16,
     "pass": 48
@@ -424,5 +443,6 @@
     "pass": 64
   },
   "starting_commit": "036bdd6587b93e8f6108d8b960c8c9ba8d747e78",
-  "starting_tree": "8901bc53f046932730c03e76b6c168d293d20394"
+  "starting_tree": "8901bc53f046932730c03e76b6c168d293d20394",
+  "total_publication_profiles": 26
 }

@@ -1,0 +1,24 @@
+{
+  "historical-imgproc": {
+    "byte_identical": true,
+    "files": 5,
+    "hashes": {
+      "api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html": "a8ee81f46c752bf173ff9630c10359cc3f672e0d45069b215d222b82bddbac2c",
+      "api/gnatdoc-theme.css": "cf06637732a8b047a7191bfb991a5c3da7cd31a52076876880d5f8a3f63929bc",
+      "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+      "api/index.html": "a6726eae0e28e236959fc0573e889a5ef764c5d3f9a740c5ec4d94c4896ce781",
+      "api/presentation.json": "82698d67d48fec5518548b7eb18c09c2a05cc90c8c0e8f8d2e022f806b050de0"
+    }
+  },
+  "current-imgproc": {
+    "byte_identical": true,
+    "files": 5,
+    "hashes": {
+      "api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html": "3721f88ae70e6ec774af729155ba22c9f7860a48c5b2dd242a9079a5c21bf13a",
+      "api/gnatdoc-theme.css": "cf06637732a8b047a7191bfb991a5c3da7cd31a52076876880d5f8a3f63929bc",
+      "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+      "api/index.html": "a6726eae0e28e236959fc0573e889a5ef764c5d3f9a740c5ec4d94c4896ce781",
+      "api/presentation.json": "cba10cc089a8523dbe811bbed66f8dddb993d6cd098b56d319c1230ce35e57ce"
+    }
+  }
+}

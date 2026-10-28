@@ -166,5 +166,6 @@ const save=()=>fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n');
     }
   } finally {
     await browser.close();server.close();report.totals={pass:report.checks.filter(c=>c.status==='pass').length,fail:report.checks.filter(c=>c.status==='fail').length};save();console.log(report.totals);
+    if(report.totals.fail)process.exitCode=1;
   }
 })().catch(e=>{console.error(e);server.close();process.exitCode=1;});

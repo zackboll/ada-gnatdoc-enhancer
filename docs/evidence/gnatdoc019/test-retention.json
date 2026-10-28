@@ -1,0 +1,31 @@
+{
+  "baseline": 630,
+  "candidate": 653,
+  "retained": 630,
+  "missing": [],
+  "added": [
+    "test_default_restoration.DefaultRestoration.test_default_manifest_binds_exact_shipped_runtime",
+    "test_default_restoration.DefaultRestoration.test_default_output_mutations_remain_rejected",
+    "test_default_restoration.DefaultRestoration.test_independent_router_assets_unchanged",
+    "test_default_restoration.DefaultRestoration.test_navigation_disabled_does_not_publish_runtime",
+    "test_default_restoration.DefaultRestoration.test_rehashed_runtime_forgery_is_rejected",
+    "test_navigation_history.NavigationHistory.test_already_loaded_initial",
+    "test_navigation_history.NavigationHistory.test_deferred_document",
+    "test_navigation_history.NavigationHistory.test_deferred_round_trip",
+    "test_navigation_history.NavigationHistory.test_deferred_selection",
+    "test_navigation_history.NavigationHistory.test_foreign_reveal",
+    "test_navigation_history.NavigationHistory.test_incomplete_document",
+    "test_navigation_history.NavigationHistory.test_invalid_reveal",
+    "test_navigation_history.NavigationHistory.test_listeners_bounded",
+    "test_navigation_history.NavigationHistory.test_missing_target",
+    "test_navigation_history.NavigationHistory.test_query_compatibility",
+    "test_navigation_history.NavigationHistory.test_repeated_visible_history",
+    "test_navigation_history.NavigationHistory.test_restore_pageshow",
+    "test_navigation_history.NavigationHistory.test_restore_same_url",
+    "test_navigation_history.NavigationHistory.test_reveal_hash",
+    "test_navigation_history.NavigationHistory.test_reveal_load",
+    "test_navigation_history.NavigationHistory.test_reveal_stale_load",
+    "test_navigation_history.NavigationHistory.test_user_scroll_preserved",
+    "test_navigation_history.NavigationHistory.test_wrong_document_url"
+  ]
+}

@@ -88,7 +88,7 @@ source/member auditing, pip checks and strict Twine validation. The frozen local
 snapshot differs from the later expanded browser driver only; final-head hosted
 archive auditing must qualify that exact later source before readiness.
 
-Complete publication regeneration repeats the 20 earlier compatibility profiles,
+Complete publication regeneration passes all **24 profiles**: the 20 earlier compatibility profiles,
 plus explicit historical/current Imgproc and custom-theme symbol/incoming
 profiles. For default profiles only the JavaScript file and its exact manifest
 hash may differ. Every other manifest field and output byte must match merged
@@ -97,11 +97,26 @@ normalization is allowed. Two fresh generations, enhancement byte-idempotence an
 independent native preservation are checked per profile. Final completion counts
 are in the additive summary; incomplete gates are not inferred from this contract.
 
+Two additional explicit navigation-disabled historical/current Imgproc profiles
+are also completely byte-identical, including their manifests, for **26 total**
+publication comparisons. Five independently executed Core/Imgproc/Geometry
+guide-example build invocations pass. The unchanged historical operation runner
+passes 140 checks; four of those are its explicitly intercepted foreign-frame
+simulation, not live-site evidence. The new 244-check matrix uses real separate
+origins instead and performs no interception. The older Core-equivalent browser
+runner assumes the first default package is OpenCV.Core; this fixture's genuine
+first native package is OpenCV. It times out on the same assertion against both
+unchanged merged-main and candidate. It is retained as a harness incompatibility,
+not waived into a pass; the separately source-bound Core matrix asserts explicit
+genuine package/declaration selections and visible positions.
+
 Stable-symbol browser checks, all 242 source-qualified incoming occurrences and
 25 summary destinations are separately re-executed. Direct/stable external links
 are reconstructed using GNATDOC-018 source/native/publisher authority, preserving
 all 586 Core occurrences, 14 types, `_top` and 1,596 coverage items. An external
 live Chromium campaign and custom-theme browser checks remain distinct gates.
+Custom-theme stable-symbol and exhaustive incoming-reference browser reruns pass,
+including all 242 occurrences/25 destinations (421 recorded incoming traces).
 
 Eight isolated authentic output/source mutations are rejected: forged script
 hash, wrong existing anchor, changed profile, unauthorized script, inline handler,
@@ -133,3 +148,11 @@ consumer migration, version bump or release is claimed. Stop at one open,
 non-draft, unmerged PR with auto-merge disabled, or a documented qualification
 blocker. Exact-final-head hosted CI and independent immutable candidate-artifact
 auditing are mandatory before `READY_FOR_INDEPENDENT_REVIEW`.
+
+PR [#20](https://github.com/zackboll/ada-gnatdoc-enhancer/pull/20) is non-draft,
+open and unmerged, with auto-merge disabled. Exact-final-head CI/artifact results
+are recorded in the PR and separate raw workspace to avoid self-referential Git
+commit/tree claims inside a commit. The original implementation commit is
+`0eeeadbb8e1964c7fbe45e307b5c9c88a8d7b42b`, tree
+`f05a8e3b0c12de77112ac65116ad9bacc11d107f`; later additive evidence and the
+browser driver's failure exit-status enforcement do not change runtime bytes.
