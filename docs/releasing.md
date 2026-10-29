@@ -1,19 +1,68 @@
 # Auditable v0.1.2 preparation and later publication
 
+## Maintainer-led release governance (current repository policy)
+
+This is a maintainer-operated project. The repository maintainer makes PR merge,
+qualification-exception and release decisions, subject to actual GitHub branch
+rules and any applicable external obligations. A PR comment or maintainer merge
+action is a sufficient decision record; separate release-authority appointments,
+signed declarations, approval dossiers, repeated permission requests, and a
+mandatory independent human reviewer are **not** repository requirements.
+Technical peer review is welcome, but is not an additional gate unless required
+by an applicable external commitment or GitHub rule. An agent's report is
+evidence, not a human review or an assertion that the maintainer approved it.
+
+**Do not remove objective technical gates:** required CI, regression/security
+checks, version/source provenance, archive and installed-content audits, browser
+compatibility where applicable, and checksums remain mandatory. Failed or
+unexplained tests or content mismatches block the change. For documentation-only
+edits, record source/runtime input identity and run required exact-head CI;
+repeat expensive functional campaigns only if relevant inputs or contracts changed.
+A maintainer may merge after these requirements and applicable GitHub rules pass;
+no extra READY_FOR_INDEPENDENT_REVIEW or multi-role approval ceremony is needed.
+
+### Expired hosted publisher artifact policy
+
+A GitHub Actions artifact can expire under retention settings. Expiration is an
+evidence-availability issue, not proof of a compatibility defect. If an expired
+published-site artifact cannot be freshly retrieved, a maintainer may accept
+**documented alternative evidence** for that acquisition requirement, provided
+it includes all of the following:
+
+1. Source/build/artifact/deploy provenance from original authenticated run logs
+   and deployment records, with immutable revision and recorded digest identities.
+2. Fresh verification of available original-run corroborating artifacts (keeping
+   each artifact's identity distinct); never relabel a review ZIP as a Pages ZIP.
+3. Fresh live HTTPS body/hash verification of the complete approved published-file
+   inventory, before and after applicable browser checks, plus source/router/native
+   contract and deployment identity verification.
+4. A complete record of missing historical evidence, observed limitations and
+   any unclassified differences. Cached bytes are not a fresh GitHub download.
+
+If the provenance or published-content parity cannot be established, **stop**.
+The maintainer records a concise, scope-specific acceptance or rejection in the
+PR; no reconstruction of an unattested historical runner, special release-authority
+appointment, or second approval dossier is required. This alternative **does not**
+establish reacquisition of the expired artifact. It does not waive any other
+technical gate or imply permission to publish.
+
 ## GNATDOC-020: preparation only
 
-Leave exactly one non-draft GNATDOC-020 PR open, unmerged, with auto-merge
-disabled. No tag (including a draft release), GitHub release, PyPI upload,
-Alire submission, deployment or consumer migration is authorized. Never add
-publishing credentials to a PR workflow. Current evidence and blockers live in
+GNATDOC-020 is a preparation PR, not a publication event. While it remains
+under review, do not tag, publish, deploy, or migrate consumers. The maintainer
+may merge it when the technical gates above, applicable GitHub requirements and
+any documented publisher-alternative review are satisfied. Never add publishing
+credentials to a PR workflow. Historical evidence and prior blocker reports
+remain preserved under
 [`docs/evidence/gnatdoc020/`](evidence/gnatdoc020/README.md).
 
 Require the freshly fetched starting main commit
 `8527052b43af06a5fefd74428a07342022469ff3`, tree
 `6a63cef9f131e08069d8a4a01329e80e2cf7f634`, the three feature merge ancestors,
 and successful merged-main workflow `40628001480`, all six mandatory jobs.
-If main advances, merge normally and repeat relevant gates; never rebase or
-force-push published preparation history. Preserve historical feature evidence.
+If main advances, reconcile without rewriting published preparation history.
+Run exact-head CI and repeat affected qualification when relevant technical
+inputs change. Preserve historical feature evidence.
 
 All active authorities must say `0.1.2`: project/module/distribution/CLI,
 wheel METADATA and dist-info, sdist root/PKG-INFO/egg-info, generated manifests,
@@ -44,24 +93,29 @@ declarations, exact external destinations, 25 Core summaries/102 links/242 incom
 references, guides, compiled examples, warning/coverage ratchets, determinism,
 idempotence and Chromium matrix. Custom-theme computed style parity, stable/direct/
 mixed/_top external policies and default-router real Back/Forward are independent
-gates. Synthetic `pageshow` is not BFCache certification. Freshly determine actual
-Core deployment, not main: source/workflow/review/Pages artifact identity, complete
-209-member authority reconciliation, approved Core-v1 router, source/native profiles,
-symbol index, HTTPS bodies/origin/redirect policy before and after browsers.
-Changed referenced contracts require separately approved publisher compatibility.
+gates. Synthetic `pageshow` is not BFCache certification. Freshly determine the actual Core deployment, not main: source/workflow,
+available original-run artifact identities, complete 209-member authority
+reconciliation, approved Core-v1 router, source/native profiles, symbol index,
+and HTTPS bodies/origin/redirect policy before and after browsers. An expired
+Pages artifact may use the documented alternative-evidence policy above.
+Changed referenced contracts require explicit technical reconciliation and a
+maintainer disposition; they are not cleared by a policy exception.
 
 The exact final pushed head must pass all six source/wheel hosted jobs. Download
 all three candidates by immutable artifact ID; verify GitHub ZIP digest, internal
 SHA256SUMS, head/tree provenance, archive members, RECORD, installed modules/assets
 and independently rebuilt-sdist contents. Evidence-only commits require proving
 distribution inputs unchanged **and** exact-final-head hosted/archive reruns.
-Report `READY_FOR_INDEPENDENT_REVIEW` only when every gate passes; otherwise record
-the precise pending/blocked disposition and unexecuted gates honestly.
+Report `READY_FOR_MAINTAINER_REVIEW` when the applicable technical gates pass;
+otherwise record the precise pending/blocked disposition and unexecuted gates
+honestly. Independent human approval is optional unless independently required
+by a GitHub rule or external obligation.
 
-## Subsequent explicitly authorized v0.1.2 publication task
+## Post-merge v0.1.2 GitHub release (maintainer-initiated)
 
-1. Require independent approval and merge of GNATDOC-020; record final reviewed PR
-   head/tree and actual approved merged source commit/tree.
+1. Require maintainer review and merge of GNATDOC-020, respecting GitHub-required
+   checks and approvals. Record the reviewed PR head/tree and actual merged source
+   commit/tree. Merging alone does not authorize publication.
 2. Require successful exact-merged-main hosted CI, all six jobs, and independently
    inspect its artifacts. Earlier PR-head success is not merged-main success.
 3. Rebuild from a clean immutable snapshot of that exact approved merged source:
@@ -72,7 +126,7 @@ the precise pending/blocked disposition and unexecuted gates honestly.
    authentic consumer/security and real-browser qualification again. Rebuild the
    wheel from audited extracted sdist and compare complete members, not compressed
    archive hashes. No unclassified difference or missing gate is permitted.
-5. Run `scripts/record_candidate_provenance.py` with independently authorized
+5. Run `scripts/record_candidate_provenance.py` with maintainer-confirmed
    `--expected-source-commit` and `--expected-source-tree`, explicit repository,
    source, wheel, sdist and rebuilt paths. Prepare final `release-provenance.json`;
    its `publication_authorized: false` records that the audit itself is not approval.
@@ -82,8 +136,9 @@ the precise pending/blocked disposition and unexecuted gates honestly.
    and `SHA256SUMS` covering the other three. Generate **new** hashes for the exact
    final bytes. Never carry preparation hashes forward if merged source identity
    changes. Retain rebuilt archives and audit logs separately as qualification inputs.
-7. Obtain independent approval of final source, qualification, four asset identities
-   and publication before creating an annotated `v0.1.2` tag. Stop on an existing
+7. The maintainer verifies final source, qualification and all four asset identities
+   and explicitly authorizes publication before creating an annotated `v0.1.2`
+   tag. No separate approval-role ceremony is required. Stop on an existing
    conflicting tag; never move or replace tags or v0.1.1 assets.
 8. Verify annotation, tag-object SHA, peeled commit and source tree with
    `git cat-file -t v0.1.2` and
@@ -103,6 +158,10 @@ unapproved differences, credentials in PR workflows or incomplete evidence are
 mandatory stop conditions, not waivers.
 
 ## Historical v0.1.1 publication procedure (GNATDOC-015)
+
+The historical steps below describe earlier release tasks, not additional
+current-repository approval roles. The maintainer-led governance above applies
+to current and future release decisions; historic published evidence is unchanged.
 
 GNATDOC-015 authorizes release preparation only. Leave its PR open, non-draft,
 unmerged and with auto-merge disabled. The following publication steps require a
