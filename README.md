@@ -2,30 +2,31 @@
 
 **Offline, source-verified enhancement of GNATdoc 26.0.0 HTML sites.**
 
-The published baseline is **0.1.1**. GNATDOC-019 development retains that version
-and restores approved default-router declaration visibility after history navigation;
-the earlier opt-in external bookmarks and custom themes remain available. This work does not assign or
-publish a subsequent release. Python **3.11, 3.12 and 3.13** are supported on Linux. The core
+The **0.1.2 release candidate** incorporates opt-in consumer-owned custom themes
+(GNATDOC-017), opt-in stable external symbol bookmarks (GNATDOC-018), and default
+declaration visibility restoration after browser history traversal (GNATDOC-019).
+Release preparation does not publish v0.1.2; the official published baseline
+remains v0.1.1. Python **3.11, 3.12 and 3.13** are supported on Linux. The core
 has **no runtime dependencies** and needs neither Ada nor GNATdoc at installation.
 
 ## Install a standalone distribution
 
-Obtain reviewed artifacts and their SHA-256 inventory from the official GitHub
-v0.1.1 release; verify hashes before installation. The new optional theme is a
-development capability: build its candidate from the exact reviewed source
-commit with `python -m build`, without replacing official release artifacts.
+For candidate qualification, build from the exact reviewed source commit with
+`python -m build` and verify its archive audit and SHA-256 inventory. The examples
+below name candidate artifacts, not an already published v0.1.2 release. Never
+replace official v0.1.1 assets. See the [publication gates](docs/releasing.md).
 
 ```sh
 python3 -m venv /tmp/enhancer-env
-/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.1-py3-none-any.whl
+/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.2-py3-none-any.whl
 /tmp/enhancer-env/bin/gnatdoc-enhancer --version
 /tmp/enhancer-env/bin/gnatdoc-enhancer --help
 # Alternative: standalone sdist (requires the build backend).
-/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.1.tar.gz
+/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.2.tar.gz
 ```
 
 Optional Markdown guides require the `guides` extra: install the wheel as
-`'/path/to/ada_gnatdoc_enhancer-0.1.1-py3-none-any.whl[guides]'` or preinstall
+`'/path/to/ada_gnatdoc_enhancer-0.1.2-py3-none-any.whl[guides]'` or preinstall
 `markdown-it-py==3.0.0` and `mdurl==0.1.2`. For offline use, provision those
 wheels and the sdist build requirements in advance, then use `--no-index` and
 `--find-links`. The renderer is optional; it is not bundled into the wheel.
@@ -60,7 +61,7 @@ changing the consumer. Qualified enhancement is deterministic and byte-idempoten
 
 ## Capabilities
 
-* Development default-router restoration: an exact URL/fragment can select a
+* Default-router restoration: an exact URL/fragment can select a
   declaration that is outside the iframe viewport. Matching load/hash completion,
   Back/Forward and `pageshow` now reveal only the source/native-approved target,
   with deferred callbacks invalidated by newer selections. No global scroll policy,
@@ -69,11 +70,11 @@ changing the consumer. Qualified enhancement is deterministic and byte-idempoten
   The default JavaScript publication hash changes and requires consumer
   requalification; no released v0.1.1 asset is replaced.
 
-* Development opt-in: paired `[presentation].theme_css_source` and
+* Opt-in custom themes: paired `[presentation].theme_css_source` and
   `theme_css_sha256` publish an independently approved consumer stylesheet at
   the existing theme path. Source/configuration are rechecked by `verify`;
   unsafe resources and encoding fail closed, never sanitized. Omission preserves
-  all v0.1.1 default bytes. No landing HTML, guide CSS, native CSS or navigation
+  the bundled theme bytes. No landing HTML, guide CSS, native CSS or navigation
   rewrite is needed. See [syntax, real Core example and rollback](docs/configuration.md).
 
 * Light/dark presentation, preserved native CSS, Ada highlighting, searchable
@@ -116,7 +117,8 @@ parameters and unsupported outer fragments before reconstructing approved packag
 symbol or declaration state. A valid selection after a rejected dirty query now
 survives reload. R2 intentionally fixed only the incoming-instance router; its
 historical evidence does not qualify R3. Default and incoming-instance router
-bytes remain unchanged. See [symbol routing](docs/stable-public-symbol-bookmarks.md).
+bytes were unchanged by R3; v0.1.2 intentionally changes the default router for
+GNATDOC-019. See [symbol routing](docs/stable-public-symbol-bookmarks.md).
 
 The toolkit does **not** replace Ada compilation, GNATdoc generation,
 source-integrity verification, comprehensive member/prose coverage checks,
@@ -146,11 +148,12 @@ python scripts/test_installed.py --fixtures tests/fixtures
 Synthetic conformance never substitutes for independently pinned real sites.
 Historical campaigns remain under `docs/evidence/`; current release results and
 source/artifact identities are described in
-[v0.1.1 preparation evidence](docs/evidence/gnatdoc015/README.md). The original
+[v0.1.2 preparation evidence](docs/evidence/gnatdoc020/README.md). Historical
+[v0.1.1 evidence](docs/evidence/gnatdoc015/README.md) and the original
 [v0.1.0 qualification](docs/release-0.1.0-qualification.md) remains historical.
 
 For upgrades, regenerate from pristine native output: the version-bound
-presentation manifest changes from `0.1.0` to `0.1.1`, so do not carry an
+presentation manifest changes from `0.1.1` to `0.1.2`, so do not carry an
 old manifest into release verification. Recheck source, native, warning,
 coverage, guide and browser baselines in a separate consumer PR. See
 [migration](docs/migration.md), the [consumer matrix](docs/release-compatibility.md),

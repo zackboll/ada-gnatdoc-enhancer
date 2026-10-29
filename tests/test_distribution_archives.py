@@ -1,11 +1,14 @@
 """Additive malformed-wheel controls for the release archive reader."""
 import importlib.util
+import base64
+import hashlib
 from pathlib import Path
 import stat
 import io
 import tarfile
 import tempfile
 import unittest
+from unittest.mock import patch
 import zipfile
 
 
@@ -73,14 +76,15 @@ class ReleaseArchiveIdentity(unittest.TestCase):
 
     def test_sdist_rejects_unauthorized_versions_and_paths(self):
         for name in ('ada_gnatdoc_enhancer-0.1.0/module.py', '/absolute',
-                     'ada_gnatdoc_enhancer-0.1.1/../escape'):
+                     'ada_gnatdoc_enhancer-0.1.1/module.py',
+                     'ada_gnatdoc_enhancer-0.1.2/../escape'):
             with self.subTest(name=name), self.assertRaisesRegex(ValueError, 'unsafe sdist path'):
                 audit.sdist_files(self.sdist([name]))
-        name = 'ada_gnatdoc_enhancer-0.1.1/module.py'
+        name = 'ada_gnatdoc_enhancer-0.1.2/module.py'
         self.assertEqual(audit.sdist_files(self.sdist([name])), {'module.py': b'content'})
 
     def test_sdist_rejects_nonregular_and_duplicate_members(self):
-        name = 'ada_gnatdoc_enhancer-0.1.1/module.py'
+        name = 'ada_gnatdoc_enhancer-0.1.2/module.py'
         for kind in (tarfile.SYMTYPE, tarfile.LNKTYPE, tarfile.FIFOTYPE,
                      tarfile.CHRTYPE, tarfile.BLKTYPE):
             with self.subTest(kind=kind), self.assertRaisesRegex(ValueError, 'nonregular sdist member'):
@@ -94,3 +98,46 @@ class ReleaseArchiveIdentity(unittest.TestCase):
             (source/'pyproject.toml').write_text('[project]\nversion = "0.1.0"\n')
             with self.assertRaisesRegex(ValueError, 'wrong source version'):
                 audit.audit(source, source/'absent.whl', source/'absent.tar.gz', source/'rebuilt.whl')
+
+    def test_previous_release_source_version_is_rejected(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            source = Path(temporary)
+            (source/'pyproject.toml').write_text('[project]\nversion = "0.1.1"\n')
+            with self.assertRaisesRegex(ValueError, 'wrong source version'):
+                audit.audit(source, source/'absent.whl', source/'absent.tar.gz', source/'rebuilt.whl')
+
+    def test_previous_release_wheel_metadata_is_rejected_even_when_renamed(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            source = Path(temporary)
+            (source/'pyproject.toml').write_text('[project]\nversion = "0.1.2"\n')
+            wheel = source/'ada_gnatdoc_enhancer-0.1.2-py3-none-any.whl'
+            sdist = source/'ada_gnatdoc_enhancer-0.1.2.tar.gz'
+            content = {'ada_gnatdoc_enhancer-0.1.2.dist-info/METADATA':
+                       b'Name: ada-gnatdoc-enhancer\nVersion: 0.1.1\n'}
+            with patch.object(audit, 'wheel_files', return_value=content), \
+                 patch.object(audit, 'sdist_files', return_value={}):
+                with self.assertRaisesRegex(ValueError, 'metadata version mismatch'):
+                    audit.audit(source, wheel, sdist, wheel)
+
+
+class WheelRecordContracts(unittest.TestCase):
+    def content(self):
+        digest = base64.urlsafe_b64encode(hashlib.sha256(b'content').digest()).rstrip(b'=').decode()
+        return {'module.py': b'content', 'package.dist-info/RECORD':
+                ('module.py,sha256='+digest+',7\npackage.dist-info/RECORD,,\n').encode()}
+
+    def test_complete_record_hashes_and_sizes_are_verified(self):
+        audit.verify_record(self.content(), 'package.dist-info/')
+
+    def test_changed_content_or_record_is_rejected(self):
+        for mutation in ('bytes', 'size', 'missing', 'duplicate', 'self', 'malformed'):
+            with self.subTest(mutation=mutation):
+                content = self.content()
+                key = 'package.dist-info/RECORD'
+                if mutation == 'bytes':content['module.py'] = b'changed'
+                if mutation == 'size':content[key] = content[key].replace(b',7\n', b',8\n')
+                if mutation == 'missing':content[key] = b'package.dist-info/RECORD,,\n'
+                if mutation == 'duplicate':content[key] += b'module.py,,\n'
+                if mutation == 'self':content[key] = content[key].replace(b'RECORD,,', b'RECORD,sha256=bad,0')
+                if mutation == 'malformed':content[key] = b'module.py\n'
+                with self.assertRaises(ValueError):audit.verify_record(content, 'package.dist-info/')

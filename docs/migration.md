@@ -19,7 +19,35 @@ No consumer migrations, source-policy changes, deployment or publication are
 performed by release preparation. Shared-package release is not consumer approval.
 See [release compatibility](release-compatibility.md).
 
-## Upgrade from 0.1.0 to 0.1.1
+## Upgrade from 0.1.1 to the 0.1.2 candidate
+
+Use a fresh isolated environment and the non-editable candidate wheel or a wheel
+rebuilt from its independently audited sdist. Require project, module, installed
+distribution, CLI and generated manifest versions to agree on `0.1.2`.
+
+Regenerate from **pristine native GNATdoc 26.0.0 input**. Previously enhanced
+v0.1.1 sites and their version-bound presentation manifests cannot be silently
+reused. Keep the old environment and publication for rollback. Relative to
+official v0.1.1, default navigation intentionally changes its JavaScript and
+manifest runtime hash as well as `enhancer_version`; symbol, incoming-instance
+and navigation-disabled profiles change only the version field. Relative to
+merged GNATDOC-019 development source, only that field may differ in any profile.
+
+Custom themes require paired source-root-relative `theme_css_source` and exact
+`theme_css_sha256`, with the existing CSS/resource restrictions. Omission keeps
+the bundled theme. Stable external bookmarks require explicit hash-bound
+`[external_symbol_bookmarks]`, source/native/publisher approval and `_top`.
+Direct-fragment mappings remain authority and remain available. Stable URLs use
+canonical package-plus-symbol queries; without publisher JavaScript, automatic
+declaration selection is not guaranteed. No network is used by ordinary enhancement
+or verification. Do not relax the Core-v1 router fingerprint to accept HTTP success.
+
+Requalify native declarations, guides, compiled examples, source integrity,
+warning/coverage ratchets, custom styles and real browser/history behavior in a
+separately reviewed consumer change. Toolkit installation is not production or
+Pages approval. Synthetic `pageshow` checks are not BFCache certification.
+
+## Historical upgrade from 0.1.0 to 0.1.1
 
 Install the independently reviewed non-editable 0.1.1 wheel or rebuilt sdist wheel
 in a new environment. Require module, distribution, CLI and regenerated manifest

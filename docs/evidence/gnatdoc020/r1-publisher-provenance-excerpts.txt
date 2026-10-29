@@ -1,0 +1,22 @@
+0_deploy.txt: 2026-10-27T01:47:17.3935215Z Creating Pages deployment with payload:
+0_deploy.txt: 2026-10-27T01:47:17.3936260Z 	"artifact_id": 12703258126,
+0_deploy.txt: 2026-10-27T01:47:17.3937020Z 	"pages_build_version": "33a2a4f3b83606a5c779b8a93abeb6c91fa49a21",
+1_build.txt: 2026-10-27T01:40:51.5528820Z Download action repository 'actions/upload-pages-artifact@v3' (SHA:56afc609e74202658d3ffba0e8f6dda462b719fa)
+1_build.txt: 2026-10-27T01:41:43.4874877Z Collecting markdown-it-py==3.0.0 (from -r docs/requirements.txt (line 2))
+1_build.txt: 2026-10-27T01:41:44.4970218Z Installing collected packages: mdurl, markdown-it-py
+1_build.txt: 2026-10-27T01:41:44.8212038Z Successfully installed markdown-it-py-3.0.0 mdurl-0.1.2
+1_build.txt: 2026-10-27T01:42:06.4435047Z GNATdoc 26.0.0 (20260415)
+1_build.txt: 2026-10-27T01:43:17.7290562Z GNATdoc 26.0.0 (20260415)
+1_build.txt: 2026-10-27T01:46:38.2982848Z SHA256 digest of uploaded artifact zip is 4995abbfed1ef594f8d1b31e8941cb0edfca3402a7b952f53683b1db524ddec4
+1_build.txt: 2026-10-27T01:46:38.8547900Z Artifact ada-api-33a2a4f3b83606a5c779b8a93abeb6c91fa49a21 has been successfully uploaded! Final size is 955590 bytes. Artifact ID is 12702919800
+1_build.txt: 2026-10-27T01:46:38.8553440Z Artifact download URL: https://github.com/zackboll/opencv_core_ada/actions/runs/40433988181/artifacts/12702919800
+1_build.txt: 2026-10-27T01:46:39.3531512Z SHA256 digest of uploaded artifact zip is c513a37715348c6953595ae277600e2a55db242e8495d1bc6392aeabba183b1a
+1_build.txt: 2026-10-27T01:46:40.1268471Z Artifact gnatdoc-diagnostics-33a2a4f3b83606a5c779b8a93abeb6c91fa49a21 has been successfully uploaded! Final size is 138 bytes. Artifact ID is 12702934731
+1_build.txt: 2026-10-27T01:46:40.1274094Z Artifact download URL: https://github.com/zackboll/opencv_core_ada/actions/runs/40433988181/artifacts/12702934731
+1_build.txt: 2026-10-27T01:46:40.4625185Z ##[group]Run actions/upload-pages-artifact@v3
+1_build.txt: 2026-10-27T01:46:40.4625989Z   retention-days: 1
+1_build.txt: 2026-10-27T01:46:40.4938219Z   retention-days: 1
+1_build.txt: 2026-10-27T01:46:41.7776195Z SHA256 digest of uploaded artifact zip is 9c79d54f4db56b841da0f29814c87fec563ff8bb8d8991f4b4ea5e2580581c80
+1_build.txt: 2026-10-27T01:46:42.7104192Z Artifact github-pages.zip successfully finalized. Artifact ID 12703258126
+1_build.txt: 2026-10-27T01:46:42.7105130Z Artifact github-pages has been successfully uploaded! Final size is 717511 bytes. Artifact ID is 12703258126
+1_build.txt: 2026-10-27T01:46:42.7110895Z Artifact download URL: https://github.com/zackboll/opencv_core_ada/actions/runs/40433988181/artifacts/12703258126

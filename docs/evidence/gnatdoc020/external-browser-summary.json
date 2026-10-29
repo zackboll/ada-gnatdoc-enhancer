@@ -1,0 +1,101 @@
+{
+  "profiles": [
+    {
+      "profile": "1280-light-jstrue",
+      "sha256": "b67071a46331aca93713d31313a17d9c40457adf25cf7cf2e138ef46fc097950",
+      "assertions": 70,
+      "responses": 978,
+      "evidence_types": {
+        "browser-response-body": 952,
+        "separate-live-HTTPS-audit-CDP-body-unavailable": 26
+      },
+      "browser": "156.0.8078.47",
+      "failures": []
+    },
+    {
+      "profile": "1280-light-jsfalse",
+      "sha256": "cc89ab3e1d713b3c698b1a5869dab9bd1ded4dedfc2a8ee49aaa10a8299c6dfd",
+      "assertions": 70,
+      "responses": 504,
+      "evidence_types": {
+        "browser-response-body": 504
+      },
+      "browser": "156.0.8078.47",
+      "failures": []
+    },
+    {
+      "profile": "1280-dark-jstrue",
+      "sha256": "71df8f763744ebd768c5f1efbf3deed4bd683daaad9cb2420479db5d39498130",
+      "assertions": 70,
+      "responses": 978,
+      "evidence_types": {
+        "browser-response-body": 952,
+        "separate-live-HTTPS-audit-CDP-body-unavailable": 26
+      },
+      "browser": "156.0.8078.47",
+      "failures": []
+    },
+    {
+      "profile": "1280-dark-jsfalse",
+      "sha256": "9401ca59508950930b21d02c385ec74a8f9394b740db5673febe43a6b70e9176",
+      "assertions": 70,
+      "responses": 504,
+      "evidence_types": {
+        "browser-response-body": 504
+      },
+      "browser": "156.0.8078.47",
+      "failures": []
+    },
+    {
+      "profile": "390-light-jstrue",
+      "sha256": "2b381616d0b753dd7359e2545e030056e4b24fd035f99c9d43f1f411ae8e37fe",
+      "assertions": 70,
+      "responses": 976,
+      "evidence_types": {
+        "browser-response-body": 952,
+        "separate-live-HTTPS-audit-CDP-body-unavailable": 24
+      },
+      "browser": "156.0.8078.47",
+      "failures": []
+    },
+    {
+      "profile": "390-light-jsfalse",
+      "sha256": "f44333a7b0eb4559197c2fe2d867e934c4a01ceef85ba2b5d5bd19369e4c1ff1",
+      "assertions": 70,
+      "responses": 504,
+      "evidence_types": {
+        "browser-response-body": 504
+      },
+      "browser": "156.0.8078.47",
+      "failures": []
+    },
+    {
+      "profile": "390-dark-jstrue",
+      "sha256": "26665472bde544cd64151e429c4f06d1a0a90a73b22238e3c8fe70c9761e2d16",
+      "assertions": 70,
+      "responses": 976,
+      "evidence_types": {
+        "browser-response-body": 952,
+        "separate-live-HTTPS-audit-CDP-body-unavailable": 24
+      },
+      "browser": "156.0.8078.47",
+      "failures": []
+    },
+    {
+      "profile": "390-dark-jsfalse",
+      "sha256": "5beab0b3f70a133977eaacf12a4242f40aba49ea3b80891a6a35cd60832a8cc8",
+      "assertions": 70,
+      "responses": 504,
+      "evidence_types": {
+        "browser-response-body": 504
+      },
+      "browser": "156.0.8078.47",
+      "failures": []
+    }
+  ],
+  "assertions": 560,
+  "responses": 5924,
+  "browser_bodies": 5824,
+  "separate_https_audits": 100,
+  "failures": []
+}

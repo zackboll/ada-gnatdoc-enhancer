@@ -1,4 +1,24 @@
-# v0.1.1 consumer compatibility and adoption boundary
+# v0.1.2 consumer compatibility and adoption boundary
+
+GNATDOC-020 prepares, but does not publish, v0.1.2. The release retains the exact
+merged GNATDOC-017/018/019 implementation. Against merged main `8527052b43af06a5fefd74428a07342022469ff3`,
+only `api/presentation.json`'s `enhancer_version` may differ. Against the actual
+official v0.1.1 distribution, default-router profiles additionally change
+`api/gnatdoc-navigation.js` and its `output_sha256` entry. Symbol, incoming-instance
+and navigation-disabled profiles permit only the version field. There is no
+universal v0.1.1 byte-parity claim. New custom themes and stable external bookmarks
+are compared with merged development source, not invented v0.1.1 capabilities.
+
+Custom themes and stable external bookmarks remain opt-in, hash-bound and
+source-verified. Direct fragments remain available. Without publisher JavaScript,
+stable bookmarks do not promise automatic declaration selection. All upgrades
+must start with pristine native GNATdoc 26.0.0 input; old v0.1.1 manifests are
+version-bound and cannot be silently reused. Python 3.11–3.13, non-editable
+wheel/sdist installs, Node as a test prerequisite and optional guide pins remain
+unchanged. An installed toolkit does not authorize any consumer production or
+Pages deployment. See [current executed gates](evidence/gnatdoc020/README.md).
+
+## Historical v0.1.1 preparation assessment
 
 The planned patch retains the v0.1.0 boundaries below and adds only opt-in
 top-level external type navigation. Omission preserves output except for

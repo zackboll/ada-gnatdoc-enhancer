@@ -13,7 +13,7 @@ class CLI(unittest.TestCase):
     def test_version(self):
         r=self.call('--version')
         self.assertEqual(r.returncode,0)
-        self.assertEqual(r.stdout.strip(),'0.1.1')
+        self.assertEqual(r.stdout.strip(),'0.1.2')
     def test_inventory(self):
         r=self.call('inventory','--config','project.toml','--source-root',str(self.fx.root))
         self.assertEqual(r.returncode,0,r.stderr)

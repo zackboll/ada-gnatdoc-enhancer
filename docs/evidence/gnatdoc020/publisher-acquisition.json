@@ -1,0 +1,15 @@
+{
+  "status": "PUBLISHER_COMPATIBILITY_BLOCKED",
+  "fresh_review_artifact_id": 12702919800,
+  "fresh_review_zip_sha256": "4995abbfed1ef594f8d1b31e8941cb0edfca3402a7b952f53683b1db524ddec4",
+  "fresh_review_inventory_equal": true,
+  "pages_artifact_id": 12703258126,
+  "fresh_pages_download": "HTTP 410 Artifact has expired; metadata endpoint HTTP 404",
+  "cached_pages_zip_sha256": "9c79d54f4db56b841da0f29814c87fec563ff8bb8d8991f4b4ea5e2580581c80",
+  "cached_pages_inventory_equal": true,
+  "cache_is_not_fresh_download": true,
+  "files": 209,
+  "deployment_id": 7348179998,
+  "source_revision": "33a2a4f3b83606a5c779b8a93abeb6c91fa49a21",
+  "workflow": 40433988181
+}

@@ -1,0 +1,100 @@
+{
+  "environments": {
+    "3.11-sdist-result": {
+      "distinct": 661,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/distributions/python-3.11/sdist-env/lib/python3.11/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.11.17 (main, Oct 14 2026, 01:05:33) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 661,
+      "version": "0.1.2"
+    },
+    "3.11-source-result": {
+      "distinct": 661,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/candidate-source/src/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.11.17 (main, Oct 14 2026, 01:05:33) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 661,
+      "version": "0.1.2"
+    },
+    "3.11-wheel-result": {
+      "distinct": 661,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/distributions/python-3.11/wheel-env/lib/python3.11/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.11.17 (main, Oct 14 2026, 01:05:33) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 661,
+      "version": "0.1.2"
+    },
+    "3.12-sdist-result": {
+      "distinct": 661,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/distributions/python-3.12/sdist-env/lib/python3.12/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.12.15 (main, Oct 14 2026, 01:05:27) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 661,
+      "version": "0.1.2"
+    },
+    "3.12-source-result": {
+      "distinct": 661,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/candidate-source/src/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.12.15 (main, Oct 14 2026, 01:05:27) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 661,
+      "version": "0.1.2"
+    },
+    "3.12-wheel-result": {
+      "distinct": 661,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/distributions/python-3.12/wheel-env/lib/python3.12/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.12.15 (main, Oct 14 2026, 01:05:27) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 661,
+      "version": "0.1.2"
+    },
+    "3.13-sdist-result": {
+      "distinct": 661,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/distributions/python-3.13/sdist-env/lib/python3.13/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.13.16 (main, Oct 14 2026, 01:04:01) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 661,
+      "version": "0.1.2"
+    },
+    "3.13-source-result": {
+      "distinct": 661,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/candidate-source/src/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.13.16 (main, Oct 14 2026, 01:04:01) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 661,
+      "version": "0.1.2"
+    },
+    "3.13-wheel-result": {
+      "distinct": 661,
+      "errors": 0,
+      "failures": 0,
+      "module": "/home/zboll/qualifications/gnatdoc020/distributions/python-3.13/wheel-env/lib/python3.13/site-packages/ada_gnatdoc_enhancer/__init__.py",
+      "python": "3.13.16 (main, Oct 14 2026, 01:04:01) [Clang 23.1.3 ]",
+      "skips": 0,
+      "tests": 661,
+      "version": "0.1.2"
+    }
+  },
+  "implementation_commit": "8eb83100bc16b0a1e0344d6d3e9fe3b97247def9",
+  "implementation_tree": "5ece32d2b8b12d8807bb42e73bd2e1fb4b6aff8f",
+  "predecessor_test_executions": 5877,
+  "status": "pass",
+  "tests_per_environment": 661,
+  "total": 5949
+}

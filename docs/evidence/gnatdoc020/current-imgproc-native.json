@@ -1,0 +1,9 @@
+{
+  "revision": "d4c30f12353ac8e7f70709ff12843445ad0de563",
+  "fresh_native_matches_approved": true,
+  "native_sha256": {
+    "api/ad8b3be9bb56aa3f11561f0f1cb2bee4bf63f69bb56f01ea00bdc4a8c048172f.html": "d7b8fbf01d935c2cd9dfe42ad4dd845c2e609013a4fcc01888b536421dec72ba",
+    "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+    "api/index.html": "5a3e975118ff3eb4c2a9d407ecff16dcab1208986bf18bb76948583ca9b3134e"
+  }
+}

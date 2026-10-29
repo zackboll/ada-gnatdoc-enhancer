@@ -1,0 +1,738 @@
+{
+  "authored-core": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/gnatdoc-navigation.js",
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version",
+          "output_sha256.api/gnatdoc-navigation.js"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "authored-geometry": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 14,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/gnatdoc-navigation.js",
+          "api/presentation.json"
+        ],
+        "files": 14,
+        "permitted_manifest_fields": [
+          "enhancer_version",
+          "output_sha256.api/gnatdoc-navigation.js"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "authored-imgproc": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 13,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/gnatdoc-navigation.js",
+          "api/presentation.json"
+        ],
+        "files": 13,
+        "permitted_manifest_fields": [
+          "enhancer_version",
+          "output_sha256.api/gnatdoc-navigation.js"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "authored-mel": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 42,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/gnatdoc-navigation.js",
+          "api/presentation.json"
+        ],
+        "files": 42,
+        "permitted_manifest_fields": [
+          "enhancer_version",
+          "output_sha256.api/gnatdoc-navigation.js"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "core-050-incoming": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "core-050-packages": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/gnatdoc-navigation.js",
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version",
+          "output_sha256.api/gnatdoc-navigation.js"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "core-050-symbols": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "core-current-incoming": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "core-current-packages": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/gnatdoc-navigation.js",
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version",
+          "output_sha256.api/gnatdoc-navigation.js"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "core-current-symbols": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "current-core-custom-incoming": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "current-core-custom-symbols": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "current-core-incoming": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "current-core-symbols": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 207,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "current-imgproc": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 6,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/gnatdoc-navigation.js",
+          "api/presentation.json"
+        ],
+        "files": 6,
+        "permitted_manifest_fields": [
+          "enhancer_version",
+          "output_sha256.api/gnatdoc-navigation.js"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "current-imgproc-disabled": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 5,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 5,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "features": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 18,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/gnatdoc-navigation.js",
+          "api/presentation.json"
+        ],
+        "files": 18,
+        "permitted_manifest_fields": [
+          "enhancer_version",
+          "output_sha256.api/gnatdoc-navigation.js"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "historical-imgproc": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 6,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/gnatdoc-navigation.js",
+          "api/presentation.json"
+        ],
+        "files": 6,
+        "permitted_manifest_fields": [
+          "enhancer_version",
+          "output_sha256.api/gnatdoc-navigation.js"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "historical-imgproc-disabled": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 5,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 5,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "imgproc81": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 6,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/gnatdoc-navigation.js",
+          "api/presentation.json"
+        ],
+        "files": 6,
+        "permitted_manifest_fields": [
+          "enhancer_version",
+          "output_sha256.api/gnatdoc-navigation.js"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "mel-packages": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 34,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/gnatdoc-navigation.js",
+          "api/presentation.json"
+        ],
+        "files": 34,
+        "permitted_manifest_fields": [
+          "enhancer_version",
+          "output_sha256.api/gnatdoc-navigation.js"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "mel-symbols": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 34,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 34,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "synthetic-core": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 8,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/gnatdoc-navigation.js",
+          "api/presentation.json"
+        ],
+        "files": 8,
+        "permitted_manifest_fields": [
+          "enhancer_version",
+          "output_sha256.api/gnatdoc-navigation.js"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "synthetic-geometry": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 7,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/gnatdoc-navigation.js",
+          "api/presentation.json"
+        ],
+        "files": 7,
+        "permitted_manifest_fields": [
+          "enhancer_version",
+          "output_sha256.api/gnatdoc-navigation.js"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "synthetic-imgproc": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 6,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/gnatdoc-navigation.js",
+          "api/presentation.json"
+        ],
+        "files": 6,
+        "permitted_manifest_fields": [
+          "enhancer_version",
+          "output_sha256.api/gnatdoc-navigation.js"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  },
+  "synthetic-mel": {
+    "comparisons": {
+      "merged": {
+        "all_other_bytes_equal": true,
+        "baseline": "merged-main-GNATDOC-019",
+        "changed_files": [
+          "api/presentation.json"
+        ],
+        "files": 42,
+        "permitted_manifest_fields": [
+          "enhancer_version"
+        ]
+      },
+      "official": {
+        "all_other_bytes_equal": true,
+        "baseline": "official-v0.1.1",
+        "changed_files": [
+          "api/gnatdoc-navigation.js",
+          "api/presentation.json"
+        ],
+        "files": 42,
+        "permitted_manifest_fields": [
+          "enhancer_version",
+          "output_sha256.api/gnatdoc-navigation.js"
+        ]
+      }
+    },
+    "deterministic": true,
+    "idempotent": true
+  }
+}

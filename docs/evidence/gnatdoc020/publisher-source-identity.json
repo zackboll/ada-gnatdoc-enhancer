@@ -1,0 +1,8 @@
+{
+  "source_revision": "33a2a4f3b83606a5c779b8a93abeb6c91fa49a21",
+  "archive_sha256": "4adf5c60e9e9a3a6e1791509186cbf70986536e6b7a2a50b3a313d88678d19c1",
+  "qualified_source_files": 878,
+  "all_qualified_source_bytes_match": true,
+  "router_sha256": "cba37439fa02e5b00e1f9de6648aca86ca3aaac61f2b8e01a45b8d99bf9ec497",
+  "deployed_source_not_current_main": true
+}

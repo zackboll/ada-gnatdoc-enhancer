@@ -1,0 +1,136 @@
+{
+  "browser": "156.0.8078.47",
+  "computed_style_parity": true,
+  "matrix": [
+    {
+      "colorScheme": "light",
+      "errors": [],
+      "javaScriptEnabled": true,
+      "site": "legacy",
+      "summaryLinks": 102,
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "errors": [],
+      "javaScriptEnabled": true,
+      "site": "candidate",
+      "summaryLinks": 102,
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "errors": [],
+      "javaScriptEnabled": false,
+      "site": "legacy",
+      "summaryLinks": 102,
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "errors": [],
+      "javaScriptEnabled": false,
+      "site": "candidate",
+      "summaryLinks": 102,
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "errors": [],
+      "javaScriptEnabled": true,
+      "site": "legacy",
+      "summaryLinks": 102,
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "errors": [],
+      "javaScriptEnabled": true,
+      "site": "candidate",
+      "summaryLinks": 102,
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "errors": [],
+      "javaScriptEnabled": false,
+      "site": "legacy",
+      "summaryLinks": 102,
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "errors": [],
+      "javaScriptEnabled": false,
+      "site": "candidate",
+      "summaryLinks": 102,
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "errors": [],
+      "javaScriptEnabled": true,
+      "site": "legacy",
+      "summaryLinks": 102,
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "errors": [],
+      "javaScriptEnabled": true,
+      "site": "candidate",
+      "summaryLinks": 102,
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "errors": [],
+      "javaScriptEnabled": false,
+      "site": "legacy",
+      "summaryLinks": 102,
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "errors": [],
+      "javaScriptEnabled": false,
+      "site": "candidate",
+      "summaryLinks": 102,
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "errors": [],
+      "javaScriptEnabled": true,
+      "site": "legacy",
+      "summaryLinks": 102,
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "errors": [],
+      "javaScriptEnabled": true,
+      "site": "candidate",
+      "summaryLinks": 102,
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "errors": [],
+      "javaScriptEnabled": false,
+      "site": "legacy",
+      "summaryLinks": 102,
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "errors": [],
+      "javaScriptEnabled": false,
+      "site": "candidate",
+      "summaryLinks": 102,
+      "width": 390
+    }
+  ],
+  "problems": [],
+  "records": 16
+}

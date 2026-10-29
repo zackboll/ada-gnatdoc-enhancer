@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.1.2 — release candidate (GNATDOC-020; not published)
+
+- Include the reviewed GNATDOC-017 custom-theme, GNATDOC-018 stable external
+  bookmark and GNATDOC-019 default-router restoration features described below.
+  Themes and external stable bookmarks remain explicit hash-bound opt-ins;
+  direct-fragment external links remain available, including without JavaScript.
+- Default-router JavaScript intentionally changes relative to official v0.1.1,
+  together with its presentation-manifest asset hash. Other profiles retain
+  their output bytes except for `enhancer_version`. Against merged GNATDOC-019,
+  only that version field may change in any profile.
+- Synchronize active metadata, CLI, archive audits and manifest expectations to
+  0.1.2. Retain the complete 653-test predecessor suite and add release controls,
+  including previous-version rejection and wheel RECORD hash/size verification.
+- Regenerate enhanced sites from pristine GNATdoc 26.0.0 native input; do not
+  silently reuse v0.1.1 manifests. Stable links without publisher JavaScript
+  provide native navigation, not guaranteed automatic declaration selection.
+- Preserve Python 3.11–3.13, Apache-2.0, dependency-free core, optional renderer
+  pins and all reviewed runtime bytes. No consumer migration or Pages approval,
+  tag, GitHub release, PyPI upload or Alire submission is authorized.
+
+## Historical merged development notes
+
 ## Unreleased — GNATDOC-019 (version remains 0.1.1)
 
 - Restore default-router approved declaration visibility after matching iframe

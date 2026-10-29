@@ -1,0 +1,529 @@
+{
+  "browser": "156.0.8078.47",
+  "checks": [
+    {
+      "colorScheme": "light",
+      "event": "sidebar-first-overload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "sidebar-second-overload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-forward",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "reload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "fresh-tab-bookmark",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back-same-url-stale-scroll",
+      "label": "historical-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "label": "historical-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "sidebar-first-overload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "sidebar-second-overload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-forward",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "reload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "fresh-tab-bookmark",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back-same-url-stale-scroll",
+      "label": "historical-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "label": "historical-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "sidebar-first-overload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "sidebar-second-overload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-forward",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "reload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "fresh-tab-bookmark",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back-same-url-stale-scroll",
+      "label": "historical-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "label": "historical-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "sidebar-first-overload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "sidebar-second-overload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-forward",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "reload",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "fresh-tab-bookmark",
+      "label": "historical-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back-same-url-stale-scroll",
+      "label": "historical-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "label": "historical-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "sidebar-first-overload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "sidebar-second-overload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-forward",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "reload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "fresh-tab-bookmark",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back-same-url-stale-scroll",
+      "label": "current-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "label": "current-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "sidebar-first-overload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "sidebar-second-overload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-forward",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "reload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "fresh-tab-bookmark",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back-same-url-stale-scroll",
+      "label": "current-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "label": "current-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "event": "sidebar-first-overload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "sidebar-second-overload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-forward",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "reload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "fresh-tab-bookmark",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "real-back-same-url-stale-scroll",
+      "label": "current-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "label": "current-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "sidebar-first-overload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "sidebar-second-overload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-forward",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "reload",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "fresh-tab-bookmark",
+      "label": "current-imgproc",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "real-back-same-url-stale-scroll",
+      "label": "current-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "event": "synthetic-pageshow-probe-not-bfcache",
+      "label": "current-imgproc",
+      "reason": "AssertionError [ERR_ASSERTION]: correct approved URL/profile but heading outside iframe viewport",
+      "status": "fail",
+      "width": 390
+    }
+  ],
+  "errors": [
+    {
+      "colorScheme": "light",
+      "errors": [
+        {
+          "kind": "console",
+          "message": "Failed to load resource: the server responded with a status of 404 (File not found)"
+        }
+      ],
+      "label": "historical-imgproc",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "errors": [],
+      "label": "historical-imgproc",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "errors": [],
+      "label": "historical-imgproc",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "errors": [],
+      "label": "historical-imgproc",
+      "width": 390
+    },
+    {
+      "colorScheme": "light",
+      "errors": [],
+      "label": "current-imgproc",
+      "width": 1280
+    },
+    {
+      "colorScheme": "dark",
+      "errors": [],
+      "label": "current-imgproc",
+      "width": 1280
+    },
+    {
+      "colorScheme": "light",
+      "errors": [],
+      "label": "current-imgproc",
+      "width": 390
+    },
+    {
+      "colorScheme": "dark",
+      "errors": [],
+      "label": "current-imgproc",
+      "width": 390
+    }
+  ],
+  "synthetic_pageshow_is_not_bfcache": true,
+  "totals": {
+    "fail": 16,
+    "pass": 48
+  }
+}
