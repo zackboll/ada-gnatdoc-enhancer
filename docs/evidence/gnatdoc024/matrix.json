@@ -1,0 +1,74 @@
+[
+  {
+    "environment": "source-3.11",
+    "status": "passed",
+    "seconds": 235.74,
+    "python_tests": 676,
+    "unittest_seconds": 230.19,
+    "skipped": 0
+  },
+  {
+    "environment": "wheel-3.11",
+    "status": "passed",
+    "seconds": 235.64,
+    "python_tests": 676,
+    "unittest_seconds": 231.242,
+    "skipped": 0
+  },
+  {
+    "environment": "sdist-3.11",
+    "status": "passed",
+    "seconds": 236.24,
+    "python_tests": 676,
+    "unittest_seconds": 232.048,
+    "skipped": 0
+  },
+  {
+    "environment": "source-3.12",
+    "status": "passed",
+    "seconds": 228.95,
+    "python_tests": 676,
+    "unittest_seconds": 224.126,
+    "skipped": 0
+  },
+  {
+    "environment": "wheel-3.12",
+    "status": "passed",
+    "seconds": 222.95,
+    "python_tests": 676,
+    "unittest_seconds": 219.489,
+    "skipped": 0
+  },
+  {
+    "environment": "sdist-3.12",
+    "status": "passed",
+    "seconds": 220.38,
+    "python_tests": 676,
+    "unittest_seconds": 216.881,
+    "skipped": 0
+  },
+  {
+    "environment": "source-3.13",
+    "status": "passed",
+    "seconds": 227.21,
+    "python_tests": 676,
+    "unittest_seconds": 223.263,
+    "skipped": 0
+  },
+  {
+    "environment": "wheel-3.13",
+    "status": "passed",
+    "seconds": 226.57,
+    "python_tests": 676,
+    "unittest_seconds": 223.524,
+    "skipped": 0
+  },
+  {
+    "environment": "sdist-3.13",
+    "status": "passed",
+    "seconds": 226.15,
+    "python_tests": 676,
+    "unittest_seconds": 223.025,
+    "skipped": 0
+  }
+]

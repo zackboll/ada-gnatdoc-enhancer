@@ -1,0 +1,18 @@
+{
+  "wheel": {
+    "name": "ada_gnatdoc_enhancer-0.1.2-py3-none-any.whl",
+    "sha256": "cb227554bc0c8f1906ba15875306b5fefac103a50d84a876d0fdbd2754e1657e",
+    "bytes": 101138,
+    "member_hashes_verified": 42
+  },
+  "sdist": {
+    "name": "ada_gnatdoc_enhancer-0.1.2.tar.gz",
+    "sha256": "80417a598d5998fd917a0c91d904fb80d242bce0c0e3fd728dfad561e49c1703",
+    "bytes": 2219935,
+    "member_hashes_verified": 880
+  },
+  "source_commit": "d7636cc50154ebb5535c699d2bed6406ebc92e62",
+  "source_tree": "ca7d4d70f2fc556eafe6b222facacadb16fa272a",
+  "fresh_download": true,
+  "release_url": "https://github.com/zackboll/ada-gnatdoc-enhancer/releases/tag/v0.1.2"
+}

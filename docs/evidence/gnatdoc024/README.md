@@ -21,6 +21,16 @@ SHA-256 checks verified. Historical v0.1.2 records and assets remain unchanged.
 
 ## Executed qualification records
 
+**Local qualification: passed. Disposition at evidence commit:
+`HOSTED_CI_PENDING` until final-head hosted CI completes.** The PR is the final
+exact-head status record; this evidence cannot include its own commit hash.
+
+The merged-main run completed successfully: all seven jobs and all their steps
+passed. Complete main logs are retained as `main-hosted.log.gz`, with API job,
+check-run and status records beside this file. No unexplained failures,
+cancellations or incomplete main checks remain. Main was freshly re-fetched
+without advancement; no v0.1.3 tag or release existed during qualification.
+
 Machine-readable records alongside this document report actual completed
 results, immutable build commit/tree and artifact hashes. Local raw logs and
 disposable environments are rooted at `/tmp/gnatdoc024`; retained summaries are
@@ -34,6 +44,41 @@ Python 3.11/3.12/3.13 × source/canonical wheel/rebuilt-sdist wheel. Mandatory
 gates include no skipped tests, installed metadata/CLI/module/presentation
 identity, complete shipped fixtures/tests, strict Twine, wheel RECORD hashes and
 sizes, archive inventories/path/symlink safety and source/module/asset parity.
+
+All nine environments passed **676/676 tests**, totaling **6,084**, with no
+skips. `matrix.json` records results; compressed full logs retain individual
+test outcomes, installed CLI/module versions and conformance/smoke results.
+`content-audit.json` verifies strict archive inventories, metadata, bundled
+JavaScript/CSS, wheel RECORD hashes/sizes and rebuilt-wheel content equality.
+`candidate-provenance.json` binds every tracked source blob and archive member
+to build commit `0439319c4dc21e17e313cf86a9a95657ae3a90f4`, tree
+`8a5209bedc8bb5d7b25a5b038aa4d7063766832b`. Strict Twine passed for both archives.
+
+`baseline-acquisition.json` records fresh official v0.1.2 acquisition, published
+SHA256SUMS verification and verification of every wheel/sdist member against
+the independently downloaded public provenance. `compatibility.json` records
+eight complete old/new comparisons: three authentic Core router variants,
+four real native sites and navigation-disabled output. `real-input-identities.json`
+records revalidated original acquisition source/native hashes and consumer pins.
+
+`search-publication.json` records independent regenerated search inventories,
+native oracle/preservation, custom theme hashes and idempotence for all three
+routers. `browser-search.json` passes all required queries and interactions,
+seven corrupt/forged/missing index cases, three rehashed cases, no-JavaScript
+fallback, zero external requests and zero runtime errors. Fresh retained desktop
+light/mobile dark/guide screenshots were inspected for legibility and layout.
+The four `*-real-browser.json` files each pass 48 checks (192 total).
+`legacy-history-browser.json` passes 244 checks and retains 268 scrolling/history
+traces. `operation-browser-with-geometry.json` passes all 144 operation/history
+checks, including the multi-package Geometry extension. The synthetic browser
+suite also passes both widths/themes and JavaScript-disabled fallback.
+
+Two harness invocations initially stopped before browser checks because their
+Git identity collection ran in an archive-only directory. Both were rerun
+unchanged from a detached worktree at the immutable build commit and passed.
+This was a working-directory correction, not a waived gate or product fix.
+An in-progress GitHub log download returned 404; completed main logs were later
+downloaded successfully. `qualification.json` records these resolved attempts.
 
 ## Output compatibility classification
 
