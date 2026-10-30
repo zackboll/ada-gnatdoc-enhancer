@@ -1,0 +1,136 @@
+{
+  "released_wheel": "v0.1.2 public downloaded wheel",
+  "rows": [
+    {
+      "query": "Sparse",
+      "status": "35 results",
+      "visible_links": [
+        "Compilation Units",
+        "Tagged Types",
+        "OpenCV.Core.Sparse",
+        "OpenCV.Core.Sparse.Float16_Access",
+        "OpenCV.Core.Sparse.Float16_Vec2_Access",
+        "OpenCV.Core.Sparse.Float16_Vec3_Access",
+        "OpenCV.Core.Sparse.Float16_Vec4_Access",
+        "OpenCV.Core.Sparse.Float32_Access",
+        "OpenCV.Core.Sparse.Float32_Vec2_Access",
+        "OpenCV.Core.Sparse.Float32_Vec3_Access",
+        "OpenCV.Core.Sparse.Float32_Vec4_Access",
+        "OpenCV.Core.Sparse.Float64_Access",
+        "OpenCV.Core.Sparse.Float64_Vec2_Access",
+        "OpenCV.Core.Sparse.Float64_Vec3_Access",
+        "OpenCV.Core.Sparse.Float64_Vec4_Access",
+        "OpenCV.Core.Sparse.Int16_Access",
+        "OpenCV.Core.Sparse.Int16_Vec2_Access",
+        "OpenCV.Core.Sparse.Int16_Vec3_Access",
+        "OpenCV.Core.Sparse.Int16_Vec4_Access",
+        "OpenCV.Core.Sparse.Int32_Access",
+        "OpenCV.Core.Sparse.Int32_Vec2_Access",
+        "OpenCV.Core.Sparse.Int32_Vec3_Access",
+        "OpenCV.Core.Sparse.Int32_Vec4_Access",
+        "OpenCV.Core.Sparse.Int8_Access",
+        "OpenCV.Core.Sparse.Int8_Vec2_Access",
+        "OpenCV.Core.Sparse.Int8_Vec3_Access",
+        "OpenCV.Core.Sparse.Int8_Vec4_Access",
+        "OpenCV.Core.Sparse.Module_Interop",
+        "OpenCV.Core.Sparse.UInt16_Access",
+        "OpenCV.Core.Sparse.UInt16_Vec2_Access",
+        "OpenCV.Core.Sparse.UInt16_Vec3_Access",
+        "OpenCV.Core.Sparse.UInt16_Vec4_Access",
+        "OpenCV.Core.Sparse.UInt8_Access",
+        "OpenCV.Core.Sparse.UInt8_Vec2_Access",
+        "OpenCV.Core.Sparse.UInt8_Vec3_Access",
+        "OpenCV.Core.Sparse.UInt8_Vec4_Access",
+        "OpenCV.Core.Sparse.Sparse_Mat"
+      ]
+    },
+    {
+      "query": "Mat",
+      "status": "38 results",
+      "visible_links": [
+        "Compilation Units",
+        "Tagged Types",
+        "OpenCV.Core.Fixed_Matrices",
+        "OpenCV.Core.Float16_Mat_View",
+        "OpenCV.Core.Float16_Vec2_Mat_View",
+        "OpenCV.Core.Float16_Vec3_Mat_View",
+        "OpenCV.Core.Float16_Vec4_Mat_View",
+        "OpenCV.Core.Float32_Mat_View",
+        "OpenCV.Core.Float32_Matx3x3",
+        "OpenCV.Core.Float32_Matx3x3_Conversions",
+        "OpenCV.Core.Float32_Vec2_Mat_View",
+        "OpenCV.Core.Float32_Vec3_Mat_View",
+        "OpenCV.Core.Float32_Vec4_Mat_View",
+        "OpenCV.Core.Float64_Mat_View",
+        "OpenCV.Core.Float64_Vec2_Mat_View",
+        "OpenCV.Core.Float64_Vec3_Mat_View",
+        "OpenCV.Core.Float64_Vec4_Mat_View",
+        "OpenCV.Core.Int16_Mat_View",
+        "OpenCV.Core.Int16_Vec2_Mat_View",
+        "OpenCV.Core.Int16_Vec3_Mat_View",
+        "OpenCV.Core.Int16_Vec4_Mat_View",
+        "OpenCV.Core.Int32_Mat_View",
+        "OpenCV.Core.Int32_Vec2_Mat_View",
+        "OpenCV.Core.Int32_Vec3_Mat_View",
+        "OpenCV.Core.Int32_Vec4_Mat_View",
+        "OpenCV.Core.Int8_Mat_View",
+        "OpenCV.Core.Int8_Vec2_Mat_View",
+        "OpenCV.Core.Int8_Vec3_Mat_View",
+        "OpenCV.Core.Int8_Vec4_Mat_View",
+        "OpenCV.Core.UInt16_Mat_View",
+        "OpenCV.Core.UInt16_Vec2_Mat_View",
+        "OpenCV.Core.UInt16_Vec3_Mat_View",
+        "OpenCV.Core.UInt16_Vec4_Mat_View",
+        "OpenCV.Core.UInt8_Mat_View",
+        "OpenCV.Core.UInt8_Vec2_Mat_View",
+        "OpenCV.Core.UInt8_Vec3_Mat_View",
+        "OpenCV.Core.UInt8_Vec4_Mat_View",
+        "OpenCV.Core.Mat",
+        "OpenCV.Core.Sparse.Sparse_Mat",
+        "OpenCV.Core.UMat"
+      ]
+    },
+    {
+      "query": "Create",
+      "status": "No matching documentation.",
+      "visible_links": [
+        "Compilation Units",
+        "Tagged Types"
+      ]
+    },
+    {
+      "query": "Clone",
+      "status": "No matching documentation.",
+      "visible_links": [
+        "Compilation Units",
+        "Tagged Types"
+      ]
+    },
+    {
+      "query": "OpenCV.Core.Mat",
+      "status": "1 results",
+      "visible_links": [
+        "Compilation Units",
+        "Tagged Types",
+        "OpenCV.Core.Mat"
+      ]
+    },
+    {
+      "query": "ownership",
+      "status": "No matching documentation.",
+      "visible_links": [
+        "Compilation Units",
+        "Tagged Types"
+      ]
+    },
+    {
+      "query": "unknown-gnatdoc023",
+      "status": "No matching documentation.",
+      "visible_links": [
+        "Compilation Units",
+        "Tagged Types"
+      ]
+    }
+  ],
+  "runtime_errors": []
+}

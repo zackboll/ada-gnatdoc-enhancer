@@ -1,0 +1,50 @@
+[
+  {
+    "width": 1280,
+    "theme": "light",
+    "query": "Create",
+    "status": "No matching documentation."
+  },
+  {
+    "width": 1280,
+    "theme": "light",
+    "query": "ownership",
+    "status": "No matching documentation."
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "query": "Create",
+    "status": "No matching documentation."
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "query": "ownership",
+    "status": "No matching documentation."
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "query": "Create",
+    "status": "No matching documentation."
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "query": "ownership",
+    "status": "No matching documentation."
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "query": "Create",
+    "status": "No matching documentation."
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "query": "ownership",
+    "status": "No matching documentation."
+  }
+]

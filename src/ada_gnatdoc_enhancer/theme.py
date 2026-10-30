@@ -22,7 +22,8 @@ def themed(original: str, enabled: bool=True) -> str:
 
 def asset(name: str) -> bytes:
     require(name in {'gnatdoc-theme.css','gnatdoc-guides.css','gnatdoc-navigation.js',
-                     'gnatdoc-symbol-navigation.js','gnatdoc-instance-navigation.js'},
+                     'gnatdoc-symbol-navigation.js','gnatdoc-instance-navigation.js',
+                     'gnatdoc-search.js','gnatdoc-search.css'},
             "unapproved bundled asset")
     return files('ada_gnatdoc_enhancer').joinpath('assets',name).read_bytes()
 

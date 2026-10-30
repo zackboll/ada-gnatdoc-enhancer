@@ -13,7 +13,7 @@ from .theme import asset
 from .util import inside, require
 
 CONTROL = ('<div id="package-navigation" hidden><label for="package-search">'
-           'Search documentation</label><input id="package-search" type="search" '
+           'Filter navigation links</label><input id="package-search" type="search" '
            'autocomplete="off" spellcheck="false">'
            '<button id="package-clear" type="button">Clear</button>'
            '<p id="package-results" role="status" aria-live="polite"></p></div>')

@@ -1,0 +1,16 @@
+/* Deliberately scoped: do not redesign the native API or consumer homepage. */
+#package-navigation, #documentation-search-results { min-width: 0; max-width: 100%; }
+#package-search { box-sizing: border-box; max-width: 100%; }
+#documentation-search-results { padding: 0; list-style: none; }
+#documentation-search-results[hidden] { display: none; }
+#documentation-search-results li { margin: .5rem 0; padding: .6rem; border: 1px solid currentColor; border-radius: .25rem; }
+#documentation-search-results a { display: block; overflow-wrap: anywhere; }
+#documentation-search-results small { display: block; margin-top: .3rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+#documentation-search-results .search-kind { font-weight: bold; text-transform: capitalize; }
+#documentation-search-results a:focus-visible, #package-navigation :focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+@media (max-width: 600px) {
+  body.main.documentation-search-active { grid-template-rows: minmax(16rem, 55dvh) minmax(0, 1fr); }
+  #documentation-search-results li { padding: .5rem; }
+  #documentation-search-results a { padding: .25rem 0; }
+  #documentation-search-results small { max-height: 4.95em; overflow: auto; }
+}

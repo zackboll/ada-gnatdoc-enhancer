@@ -1,4 +1,19 @@
-# External symbol bookmarks (GNATDOC-018R1, development opt-in)
+# Configuration
+
+## Documentation search (GNATDOC-023, unreleased opt-in)
+
+```toml
+[search]
+schema_version = 1
+mode = "documentation"
+```
+
+Requires enabled navigation. Adds a version-one deterministic index and scoped
+results stylesheet; no existing consumer is opted in automatically. See
+[documentation search](documentation-search.md) for source/native authorization,
+coverage, static hosting, keyboard controls, limits and verification contracts.
+
+## External symbol bookmarks (GNATDOC-018R1, development opt-in)
 
 Ordinary `[external_types]` still requires explicit HTTPS native page/fragment
 destinations without queries. Selected destinations can additionally use a

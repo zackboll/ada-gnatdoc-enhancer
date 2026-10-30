@@ -1,0 +1,301 @@
+{
+  "browser": "Chromium 156.0.8078.4",
+  "checks": [
+    {
+      "check": "theme assets and color scheme",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "search and clear",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "package bookmark direct link Back Forward",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "package-only policy has no operation categories",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "syntax and local type links",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "follow local type link to unique native anchor",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "keyboard focus and visible outline",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "responsive outer viewport",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "document title language charset and frame titles",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "document title Back Forward restoration",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "no JavaScript errors",
+      "status": "pass",
+      "theme": "light",
+      "width": 1280
+    },
+    {
+      "check": "theme assets and color scheme",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "search and clear",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "package bookmark direct link Back Forward",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "package-only policy has no operation categories",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "syntax and local type links",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "follow local type link to unique native anchor",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "keyboard focus and visible outline",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "responsive outer viewport",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "document title language charset and frame titles",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "document title Back Forward restoration",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "no JavaScript errors",
+      "status": "pass",
+      "theme": "dark",
+      "width": 1280
+    },
+    {
+      "check": "theme assets and color scheme",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "search and clear",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "package bookmark direct link Back Forward",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "package-only policy has no operation categories",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "syntax and local type links",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "follow local type link to unique native anchor",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "keyboard focus and visible outline",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "responsive outer viewport",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "document title language charset and frame titles",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "document title Back Forward restoration",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "no JavaScript errors",
+      "status": "pass",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "check": "theme assets and color scheme",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "search and clear",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "package bookmark direct link Back Forward",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "package-only policy has no operation categories",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "syntax and local type links",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "follow local type link to unique native anchor",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "keyboard focus and visible outline",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "responsive outer viewport",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "document title language charset and frame titles",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "document title Back Forward restoration",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "no JavaScript errors",
+      "status": "pass",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "check": "JavaScript-disabled native navigation",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "check": "JavaScript-disabled document titles",
+      "status": "pass",
+      "width": 1280
+    },
+    {
+      "check": "JavaScript-disabled native navigation",
+      "status": "pass",
+      "width": 390
+    },
+    {
+      "check": "JavaScript-disabled document titles",
+      "status": "pass",
+      "width": 390
+    }
+  ],
+  "consumer_source": null,
+  "enhancer_source": "d7636cc50154ebb5535c699d2bed6406ebc92e62",
+  "navigation_asset_sha256": "e32e0a9fcbccffbe94268ff933905e5616a52d4d89969c52e7d539acdb102522",
+  "navigation_mode": "packages",
+  "not_qualified": [
+    "screen-reader audit",
+    "touch-device interaction",
+    "real external HTTPS hosting",
+    "visual design review"
+  ],
+  "scope": "isolated real native API site; not consumer portal",
+  "status": "pass"
+}

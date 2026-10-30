@@ -1,0 +1,118 @@
+{
+  "core": {
+    "publication": {
+      "mode": "enhanced",
+      "files": 200,
+      "html_pages": 196,
+      "links": 4321,
+      "linked_types": 2459,
+      "declaration_snippets": 1268,
+      "public_packages": 195,
+      "linked_local_types": 2459,
+      "linked_external_types": 0,
+      "unrendered_renderer_exceptions": 0
+    },
+    "preservation": {
+      "pages": 196,
+      "packages": 195,
+      "declarations": 1268,
+      "signatures": 1268,
+      "status": "preserved"
+    },
+    "changed_files": [
+      "api/index.html",
+      "api/presentation.json"
+    ],
+    "only_change": "accurate legacy filter label and corresponding manifest hash",
+    "deterministic": true,
+    "idempotent": true,
+    "search_opt_in": false
+  },
+  "geometry": {
+    "publication": {
+      "mode": "enhanced",
+      "files": 7,
+      "html_pages": 3,
+      "links": 442,
+      "linked_types": 171,
+      "declaration_snippets": 130,
+      "public_packages": 2,
+      "linked_local_types": 171,
+      "linked_external_types": 0,
+      "unrendered_renderer_exceptions": 0
+    },
+    "preservation": {
+      "pages": 3,
+      "packages": 2,
+      "declarations": 130,
+      "signatures": 172,
+      "status": "preserved"
+    },
+    "changed_files": [
+      "api/index.html",
+      "api/presentation.json"
+    ],
+    "only_change": "accurate legacy filter label and corresponding manifest hash",
+    "deterministic": true,
+    "idempotent": true,
+    "search_opt_in": false
+  },
+  "imgproc": {
+    "publication": {
+      "mode": "enhanced",
+      "files": 6,
+      "html_pages": 2,
+      "links": 969,
+      "linked_types": 333,
+      "declaration_snippets": 314,
+      "public_packages": 1,
+      "linked_local_types": 333,
+      "linked_external_types": 0,
+      "unrendered_renderer_exceptions": 0
+    },
+    "preservation": {
+      "pages": 2,
+      "packages": 1,
+      "declarations": 314,
+      "signatures": 467,
+      "status": "preserved"
+    },
+    "changed_files": [
+      "api/index.html",
+      "api/presentation.json"
+    ],
+    "only_change": "accurate legacy filter label and corresponding manifest hash",
+    "deterministic": true,
+    "idempotent": true,
+    "search_opt_in": false
+  },
+  "mel": {
+    "publication": {
+      "mode": "enhanced",
+      "files": 34,
+      "html_pages": 30,
+      "links": 2765,
+      "linked_types": 1428,
+      "declaration_snippets": 1237,
+      "public_packages": 29,
+      "linked_local_types": 1428,
+      "linked_external_types": 0,
+      "unrendered_renderer_exceptions": 1
+    },
+    "preservation": {
+      "pages": 30,
+      "packages": 29,
+      "declarations": 1237,
+      "signatures": 1237,
+      "status": "preserved"
+    },
+    "changed_files": [
+      "api/index.html",
+      "api/presentation.json"
+    ],
+    "only_change": "accurate legacy filter label and corresponding manifest hash",
+    "deterministic": true,
+    "idempotent": true,
+    "search_opt_in": false
+  }
+}

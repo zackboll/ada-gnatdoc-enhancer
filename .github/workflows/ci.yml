@@ -116,3 +116,26 @@ jobs:
           name: release-candidate-python-${{ matrix.python }}
           path: dist/
           retention-days: 30
+  search-browser:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install enhancer and optional browser test tool
+        run: |
+          python -m pip install -e '.[guides]' playwright==1.64.0
+          python -m playwright install --with-deps chromium
+      - name: Real Core documentation search in Chromium
+        run: |
+          python scripts/check_search_browser.py --workspace "$RUNNER_TEMP/search-sites" --output "$RUNNER_TEMP/search-evidence"
+      - name: Retain real Core query demonstrations and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentation-search-browser
+          path: ${{ runner.temp }}/search-evidence/
+          retention-days: 30

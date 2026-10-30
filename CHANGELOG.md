@@ -1,5 +1,20 @@
 # Changelog
 
+## Unreleased — GNATDOC-023
+
+- Add version-one opt-in offline documentation search over public, reconciled
+  package/type/subtype/operation identities, source signatures/descriptions,
+  distinct overloads, and approved published developer guide text.
+- Share one search implementation across all three unchanged legacy routers;
+  preserve canonical native declaration and authorized symbol routing.
+- Validate the cache digest and separate destination allowlist at runtime;
+  reconstruct all search output from approved inputs during verification.
+- Add keyboard-accessible, bounded results and search-only mobile sizing with
+  existing Core custom-theme compatibility. Label legacy filtering accurately.
+- Retain the released-wheel failing reproduction, full actual Core fixture,
+  Python mutation tests, Chromium qualification and hosted browser evidence.
+- No published v0.1.2 asset, consumer configuration, tag or deployment changes.
+
 ## 0.1.2 — release candidate (GNATDOC-020; not published)
 
 - Include the reviewed GNATDOC-017 custom-theme, GNATDOC-018 stable external
