@@ -1,0 +1,21 @@
+schema_version = 1
+project = "opencv_core_ada"
+[sources]
+directories = ["public"]
+[navigation]
+mode = "packages"
+
+[generic_instances]
+qualification = "generic.json"
+sha256 = "748a0d61de9874de8c2b45a81035fa8204f40108d4d59717763d8e083ebf977b"
+
+[security]
+external_hosts = ["github.com", "zackboll.github.io"]
+[guides]
+mode = "authored-markdown"
+manifest = "authored.json"
+sha256 = "08d1e2568eb58ab3bfbafaf9d1383ec9bad5985efc534c0611c17bdbc6047c17"
+
+[presentation]
+theme_css_source = "docs/assets/gnatdoc-theme.css"
+theme_css_sha256 = "fa265d63e73436a6a449fd16011c3db68a5430e7fa6a98ea8eb0fd6821dca9b2"

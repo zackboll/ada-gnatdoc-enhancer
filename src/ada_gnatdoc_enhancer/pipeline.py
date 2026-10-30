@@ -45,7 +45,8 @@ def _raw(site:Path):
 def _head(config:Config,index:bool=False):
     """The approved head content of an enhanced API page, before document metadata."""
     return (NATIVE_LINK+(METADATA if config.theme else '')+
-            (SCRIPT if index and config.navigation!='none' else ''))
+            (SCRIPT if index and config.navigation!='none' else '')+
+            ('<link rel="stylesheet" href="gnatdoc-search.css">' if index and config.search else ''))
 
 
 def document_titles(config:Config,native:NativeSite):
@@ -100,6 +101,11 @@ def expected_output(config:Config,site:Path):
     if references:
         index=index.replace('<h2 id=compilation-units>',
                             reference_metadata(references)+'<h2 id=compilation-units>',1)
+    guides = render_guides(config,native)
+    if config.search:
+        from .search import enhance as search_index
+        index, search_values = search_index(config,native,index,guides)
+        values.update(search_values)
     values['api/index.html']=native_document(index,_head(config,True),index_title(config.project),
                                              'api/index.html').encode()
     if config.theme:values['api/gnatdoc-theme.css']=theme_asset(config)
@@ -107,7 +113,10 @@ def expected_output(config:Config,site:Path):
         values['api/gnatdoc-navigation.js']=asset(
             'gnatdoc-instance-navigation.js' if config.instance_references else
             'gnatdoc-symbol-navigation.js' if config.symbol_bookmarks else 'gnatdoc-navigation.js')
-    values.update(render_guides(config,native))
+        if config.search:
+            from .search import runtime
+            values['api/gnatdoc-navigation.js']=runtime(values['api/gnatdoc-navigation.js'])
+    values.update(guides)
     return native,values,totals
 
 

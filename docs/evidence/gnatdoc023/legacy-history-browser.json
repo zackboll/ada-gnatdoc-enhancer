@@ -1,0 +1,1963 @@
+{
+  "browser": "156.0.8078.47",
+  "totals": {
+    "pass": 244,
+    "fail": 0
+  },
+  "checks": [
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "non-overloaded-operation",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "real-repeated-back-forward-no-extra-entries",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "reload-visible",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "fresh-tab-exact-bookmark-visible",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "same-url-back-stale-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "pageshow-probe-not-bfcache-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "same-selection-reveal-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "cross-origin-frame-cannot-grant-authority",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "iframe-native-approved-link",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "wrong-owner-existing-native-fragment-falls-back-package",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "delayed-authentic-iframe-superseded-selection",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "repeated-initialization-and-user-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "non-overloaded-operation",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "native-back-forward",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "native-direct-fragment",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "non-overloaded-operation",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "real-repeated-back-forward-no-extra-entries",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "reload-visible",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "fresh-tab-exact-bookmark-visible",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "same-url-back-stale-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "pageshow-probe-not-bfcache-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "same-selection-reveal-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "cross-origin-frame-cannot-grant-authority",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "iframe-native-approved-link",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "wrong-owner-existing-native-fragment-falls-back-package",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "delayed-authentic-iframe-superseded-selection",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "repeated-initialization-and-user-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "non-overloaded-operation",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "native-back-forward",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "native-direct-fragment",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "non-overloaded-operation",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "real-repeated-back-forward-no-extra-entries",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "reload-visible",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "fresh-tab-exact-bookmark-visible",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "same-url-back-stale-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "pageshow-probe-not-bfcache-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "same-selection-reveal-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "cross-origin-frame-cannot-grant-authority",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "iframe-native-approved-link",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "wrong-owner-existing-native-fragment-falls-back-package",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "delayed-authentic-iframe-superseded-selection",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "repeated-initialization-and-user-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "non-overloaded-operation",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "native-back-forward",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "native-direct-fragment",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "non-overloaded-operation",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "real-repeated-back-forward-no-extra-entries",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "reload-visible",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "fresh-tab-exact-bookmark-visible",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "same-url-back-stale-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "pageshow-probe-not-bfcache-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "same-selection-reveal-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "cross-origin-frame-cannot-grant-authority",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "iframe-native-approved-link",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "wrong-owner-existing-native-fragment-falls-back-package",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "delayed-authentic-iframe-superseded-selection",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "repeated-initialization-and-user-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "non-overloaded-operation",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "native-back-forward",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "native-direct-fragment",
+      "status": "pass"
+    },
+    {
+      "label": "historical-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "non-overloaded-operation",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "real-repeated-back-forward-no-extra-entries",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "reload-visible",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "fresh-tab-exact-bookmark-visible",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "same-url-back-stale-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "pageshow-probe-not-bfcache-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "same-selection-reveal-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "cross-origin-frame-cannot-grant-authority",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "iframe-native-approved-link",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "wrong-owner-existing-native-fragment-falls-back-package",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "delayed-authentic-iframe-superseded-selection",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "repeated-initialization-and-user-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "non-overloaded-operation",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "native-back-forward",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "native-direct-fragment",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "non-overloaded-operation",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "real-repeated-back-forward-no-extra-entries",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "reload-visible",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "fresh-tab-exact-bookmark-visible",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "same-url-back-stale-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "pageshow-probe-not-bfcache-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "same-selection-reveal-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "cross-origin-frame-cannot-grant-authority",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "iframe-native-approved-link",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "wrong-owner-existing-native-fragment-falls-back-package",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "delayed-authentic-iframe-superseded-selection",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "repeated-initialization-and-user-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "non-overloaded-operation",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "native-back-forward",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "native-direct-fragment",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "non-overloaded-operation",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "real-repeated-back-forward-no-extra-entries",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "reload-visible",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "fresh-tab-exact-bookmark-visible",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "same-url-back-stale-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "pageshow-probe-not-bfcache-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "same-selection-reveal-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "cross-origin-frame-cannot-grant-authority",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "iframe-native-approved-link",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "wrong-owner-existing-native-fragment-falls-back-package",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "delayed-authentic-iframe-superseded-selection",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "repeated-initialization-and-user-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "non-overloaded-operation",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "native-back-forward",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "native-direct-fragment",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "non-overloaded-operation",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "real-repeated-back-forward-no-extra-entries",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "reload-visible",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "fresh-tab-exact-bookmark-visible",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "same-url-back-stale-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "pageshow-probe-not-bfcache-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "same-selection-reveal-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "cross-origin-frame-cannot-grant-authority",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "iframe-native-approved-link",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "wrong-owner-existing-native-fragment-falls-back-package",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "delayed-authentic-iframe-superseded-selection",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "repeated-initialization-and-user-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "non-overloaded-operation",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "native-back-forward",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "native-direct-fragment",
+      "status": "pass"
+    },
+    {
+      "label": "current-imgproc",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "real-repeated-back-forward-no-extra-entries",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "reload-visible",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "fresh-tab-exact-bookmark-visible",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "same-url-back-stale-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "pageshow-probe-not-bfcache-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "same-selection-reveal-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "cross-origin-frame-cannot-grant-authority",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "iframe-native-approved-link",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "wrong-owner-existing-native-fragment-falls-back-package",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "delayed-authentic-iframe-superseded-selection",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "repeated-initialization-and-user-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "native-back-forward",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "native-direct-fragment",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "real-repeated-back-forward-no-extra-entries",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "reload-visible",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "fresh-tab-exact-bookmark-visible",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "same-url-back-stale-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "pageshow-probe-not-bfcache-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "same-selection-reveal-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "cross-origin-frame-cannot-grant-authority",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "iframe-native-approved-link",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "wrong-owner-existing-native-fragment-falls-back-package",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "delayed-authentic-iframe-superseded-selection",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "repeated-initialization-and-user-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "native-back-forward",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "native-direct-fragment",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 1280,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "real-repeated-back-forward-no-extra-entries",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "reload-visible",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "fresh-tab-exact-bookmark-visible",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "same-url-back-stale-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "pageshow-probe-not-bfcache-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "same-selection-reveal-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "cross-origin-frame-cannot-grant-authority",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "iframe-native-approved-link",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "wrong-owner-existing-native-fragment-falls-back-package",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "delayed-authentic-iframe-superseded-selection",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "repeated-initialization-and-user-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": true,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "native-back-forward",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "native-direct-fragment",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "light",
+      "javaScriptEnabled": false,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "real-repeated-back-forward-no-extra-entries",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "reload-visible",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "fresh-tab-exact-bookmark-visible",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "same-url-back-stale-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "pageshow-probe-not-bfcache-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "same-selection-reveal-no-history",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "cross-origin-frame-cannot-grant-authority",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "iframe-native-approved-link",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "wrong-owner-existing-native-fragment-falls-back-package",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "delayed-authentic-iframe-superseded-selection",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "repeated-initialization-and-user-scroll",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": true,
+      "name": "no-browser-errors",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-normal-or-overload-1",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "genuine-sidebar-other-package-or-overload-2",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "native-back-forward",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "native-direct-fragment",
+      "status": "pass"
+    },
+    {
+      "label": "core",
+      "width": 390,
+      "colorScheme": "dark",
+      "javaScriptEnabled": false,
+      "name": "no-browser-errors",
+      "status": "pass"
+    }
+  ],
+  "trace_count": 268,
+  "raw_evidence": "/home/zboll/qualifications/gnatdoc023/legacy-history-browser.json"
+}

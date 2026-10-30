@@ -1,12 +1,17 @@
 # Ada GNATdoc Enhancer
 
+Offline full-documentation search is available through the versioned opt-in
+`[search]` configuration. See [documentation search](docs/documentation-search.md)
+for coverage, authority, bounds, and qualification. Existing consumers retain
+navigation-link filtering unless explicitly opted in.
+
 **Offline, source-verified enhancement of GNATdoc 26.0.0 HTML sites.**
 
-The **0.1.2 release candidate** incorporates opt-in consumer-owned custom themes
+The published **v0.1.2 baseline** incorporates opt-in consumer-owned custom themes
 (GNATDOC-017), opt-in stable external symbol bookmarks (GNATDOC-018), and default
 declaration visibility restoration after browser history traversal (GNATDOC-019).
-Release preparation does not publish v0.1.2; the official published baseline
-remains v0.1.1. Python **3.11, 3.12 and 3.13** are supported on Linux. The core
+GNATDOC-023 adds unreleased, opt-in documentation search; it does not modify
+the published release. Python **3.11, 3.12 and 3.13** are supported on Linux. The core
 has **no runtime dependencies** and needs neither Ada nor GNATdoc at installation.
 
 ## Install a standalone distribution
