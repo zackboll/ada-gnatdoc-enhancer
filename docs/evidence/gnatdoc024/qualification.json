@@ -1,0 +1,191 @@
+{
+  "task": "GNATDOC-024",
+  "release_version": "0.1.3",
+  "publication_authorized": false,
+  "local_qualification": "passed",
+  "hosted_final_head": "PENDING; record exact final head in PR",
+  "disposition": "HOSTED_CI_PENDING",
+  "immutable_build_source_commit": "0439319c4dc21e17e313cf86a9a95657ae3a90f4",
+  "immutable_build_source_tree": "8a5209bedc8bb5d7b25a5b038aa4d7063766832b",
+  "merged_main_commit": "60e871fd4362c5fc66de5cd02a5a2bc5cc2b3e32",
+  "merged_main_tree": "ca9c3b0194dd55b673b31681e0701e7cf1d3ff24",
+  "merged_main_ci": {
+    "run": 40995880331,
+    "jobs": 7,
+    "status": "success"
+  },
+  "python_tests": 6084,
+  "environments": 9,
+  "tests_per_environment": 676,
+  "mandatory_skips": 0,
+  "real_browser_checks": 192,
+  "legacy_history_checks": 244,
+  "operation_browser_checks": 144,
+  "search": {
+    "variants": [
+      "default",
+      "symbol",
+      "instance"
+    ],
+    "records_per_variant": 1462,
+    "packages": 195,
+    "types_subtypes": 215,
+    "operations": 1047,
+    "guides": 5,
+    "corrupted_index_cases": 7,
+    "rehashed_index_cases": 3,
+    "external_requests": 0,
+    "runtime_errors": 0
+  },
+  "resolved_harness_attempts": [
+    {
+      "commands": [
+        "check_real_browser.py",
+        "check_operation_browser.py"
+      ],
+      "cause": "Harness records git rev-parse HEAD; original working directory was a plain archive extraction without Git metadata.",
+      "resolution": "Rerun unchanged harness and installed candidate from detached worktree at exact immutable build commit.",
+      "product_changes": false,
+      "assertions_changed": false,
+      "final_status": "passed"
+    },
+    {
+      "command": "gh api actions/jobs/123868769839/logs",
+      "cause": "GitHub did not expose in-progress logs (BlobNotFound/404).",
+      "resolution": "Completed run logs freshly downloaded after all seven main jobs succeeded.",
+      "final_status": "passed"
+    }
+  ],
+  "toolchains": {
+    "node": "v20.19.2",
+    "chrome": "Google Chrome 156.0.8078.47",
+    "playwright": "1.64.0 (separate test tool; not a package dependency)"
+  },
+  "limitations": [
+    "Linux Chromium, not cross-browser or accessibility certification",
+    "Retained pinned native/source fixtures revalidated against acquisition hashes; no fresh consumer compilation/native acquisition/deployment",
+    "Public release assets must be regenerated and audited from eventual approved merged-main source"
+  ],
+  "raw_logs": {
+    "baseline-install.log": {
+      "sha256": "523321afdab8b2a727b555dc93699d6b07eb1be359ba5dd6faa85aeb1212bf42",
+      "bytes": 863
+    },
+    "browser-driver.log": {
+      "sha256": "5ba126eb529190297c11ea8ba73cb42854e4c1b3698c6137a09d394a4148dd36",
+      "bytes": 1243
+    },
+    "browser-tool-install.log": {
+      "sha256": "c89049e0e4e590a77d6b7fc8a36d5b10443bb2fd714a90481409696776bb05e6",
+      "bytes": 1148
+    },
+    "build.log": {
+      "sha256": "d6639600041414370f09db26e53ff7e6735285c81f91951ea82df1274fe2a892",
+      "bytes": 228923
+    },
+    "compatibility.log": {
+      "sha256": "4cbabc550532065eadf6128d068bb852f462feeb7ea6a33bf52f26992ae776c7",
+      "bytes": 130
+    },
+    "core-real-browser-retry.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "core-real-browser.log": {
+      "sha256": "2dfa0b17f384bc6d7494bc69130ae5683ec25aa1a470c75a5e9f30d07466a573",
+      "bytes": 1232
+    },
+    "geometry-real-browser-retry.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "imgproc-real-browser-retry.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "legacy-campaign.log": {
+      "sha256": "821deaba475f42b4f24fb23759af6b0967829308c4813f723b18d37b4efbbd60",
+      "bytes": 2622
+    },
+    "legacy-synthetic-browser.log": {
+      "sha256": "b7695095379b919a045cfb2d956cbbd7a0a2b0aed1d86f592bb6c2b743c7c2ac",
+      "bytes": 149
+    },
+    "main-hosted.log": {
+      "sha256": "bb9c54ba673edcfbf0f3ac44dbc5a9f5d22c7f60f2ec3070afe9c1e0f485fe5e",
+      "bytes": 4283417
+    },
+    "main-wheel313-live.log": {
+      "sha256": "856890a39bd3775e2e4b0f7da1355ed2092618447aca544ec6f4c55ffcaf89ef",
+      "bytes": 228
+    },
+    "matrix-driver.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "mel-real-browser-retry.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "operation-browser-geometry.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "operation-browser-retry.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "provenance.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "real-browser-driver.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "sdist-3.11.log": {
+      "sha256": "6365be60ff6a60f4f636c370efc1bc5da0d0cc031adc8c935884b904bedd6d14",
+      "bytes": 84867
+    },
+    "sdist-3.12.log": {
+      "sha256": "f39f10a899cd295cac5f371ecd47306613f40bfb5c57fd92069fe0844231cb78",
+      "bytes": 84869
+    },
+    "sdist-3.13.log": {
+      "sha256": "fa6b6de3ccb7014c932b35ee04526c5ce8ddd44cab440778befaf15f18e255f1",
+      "bytes": 84870
+    },
+    "search-browser.log": {
+      "sha256": "95112428cf841135edcc28758e2d3aba4d7345cc80aa1e00e5fad79bba0b54cf",
+      "bytes": 90
+    },
+    "search-publication.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "source-3.11.log": {
+      "sha256": "9912501007dae3ee8e1b4af982c4bc4e195c16e859b8775bc2b443c5a994ea33",
+      "bytes": 85130
+    },
+    "source-3.12.log": {
+      "sha256": "a19ce50b7e33b7b9538edc9f954723eaf563521a8420b4ab5fcf7dbb557a11fb",
+      "bytes": 84994
+    },
+    "source-3.13.log": {
+      "sha256": "4f832d32a3ad8a251f0f3b3f9576c567f28f9c24d4583465946c507bb469dc12",
+      "bytes": 84995
+    },
+    "wheel-3.11.log": {
+      "sha256": "7190bee383e544a15af40cc9a592da7dea227dc1de31f309f84f3e00f21a2b4d",
+      "bytes": 84748
+    },
+    "wheel-3.12.log": {
+      "sha256": "27e0ce8b29ed81fb18b938f60a7c69f586ad309a5bb37e1f67e330ef3c1ff725",
+      "bytes": 84750
+    },
+    "wheel-3.13.log": {
+      "sha256": "512bfba251eec5d9b0c44d1e866193b57935af67b512ecfd6e33e3b5db8189e7",
+      "bytes": 84751
+    }
+  }
+}

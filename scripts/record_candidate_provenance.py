@@ -52,7 +52,7 @@ def record(args):
         archives[label] = dict(content['archives'][label], members={
             n: dict(sha256=hashlib.sha256(data).hexdigest(), bytes=len(data))
             for n, data in sorted(members.items())})
-    return dict(schema_version=1, release_version='0.1.2', publication_authorized=False,
+    return dict(schema_version=1, release_version='0.1.3', publication_authorized=False,
                 expected_source_commit=commit, expected_source_tree=tree,
                 source_files=inventory, archives=archives, distribution_content_audit=content,
                 authorization='Expected source commit/tree supplied independently of archives',

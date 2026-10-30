@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
-"""Classify complete v0.1.2 output against independently selected release inputs."""
+"""Fail-closed v0.1.2 to v0.1.3 comparison without search opt-in.
+
+Only the version and the exact legacy filter label (with its manifest hash)
+may change. Search-enabled output requires separate source/native qualification.
+"""
 import argparse
 import hashlib
 import json
 from pathlib import Path
 
 
-DEFAULT_ROUTER = 'e32e0a9fcbccffbe94268ff933905e5616a52d4d89969c52e7d539acdb102522'
-OFFICIAL_DEFAULT_ROUTER = 'b3fb428b507844d6be76fb40156058d39a5b5f57004bde04e33b0411f68504cd'
+OLD_LABEL = b'<label for="package-search">Search documentation</label>'
+NEW_LABEL = b'<label for="package-search">Filter navigation links</label>'
 
 
 def compare(baseline, candidate, *, official=False, default_router=False):
@@ -20,31 +24,35 @@ def compare(baseline, candidate, *, official=False, default_router=False):
 
     old, new = files(baseline), files(candidate)
     if old.keys() != new.keys():raise ValueError('publication file inventory changed')
+    if {'api/gnatdoc-search-index.json', 'api/gnatdoc-search.css'}.intersection(new):
+        raise ValueError('search opt-in requires separate qualification')
     changed = sorted(name for name in old if old[name] != new[name])
     manifest = 'api/presentation.json'
-    router = 'api/gnatdoc-navigation.js'
+    index = 'api/index.html'
     expected = [manifest]
     fields = ['enhancer_version']
     a, b = json.loads(old[manifest]), json.loads(new[manifest])
-    if a['enhancer_version'] != '0.1.1' or b['enhancer_version'] != '0.1.2':
+    if a['enhancer_version'] != '0.1.2' or b['enhancer_version'] != '0.1.3':
         raise ValueError('unexpected baseline/candidate version')
     b['enhancer_version'] = a['enhancer_version']
-    if official and default_router:
-        if hashlib.sha256(old[router]).hexdigest() != OFFICIAL_DEFAULT_ROUTER:
-            raise ValueError('unapproved official default router')
-        if hashlib.sha256(new[router]).hexdigest() != DEFAULT_ROUTER:
-            raise ValueError('unapproved candidate default router')
-        if a['output_sha256'][router] != hashlib.sha256(old[router]).hexdigest() or \
-           b['output_sha256'][router] != DEFAULT_ROUTER:
-            raise ValueError('router manifest hash mismatch')
-        b['output_sha256'][router] = a['output_sha256'][router]
-        expected.append(router)
-        fields.append('output_sha256.api/gnatdoc-navigation.js')
+    hash_changes = {}
+    if OLD_LABEL in old.get(index, b''):
+        if old[index].count(OLD_LABEL) != 1 or new[index] != old[index].replace(OLD_LABEL, NEW_LABEL):
+            raise ValueError('unclassified navigation-filter label difference')
+        hashes = [hashlib.sha256(content[index]).hexdigest() for content in (old, new)]
+        if [data['output_sha256'].get(index) for data in (a, b)] != hashes:
+            raise ValueError('navigation-filter manifest hash mismatch')
+        b['output_sha256'][index] = a['output_sha256'][index]
+        hash_changes[index] = dict(zip(('baseline', 'candidate'), hashes))
+        expected.append(index)
+        fields.append('output_sha256.api/index.html')
     if changed != sorted(expected) or a != b:
         raise ValueError('unclassified publication difference: '+repr(changed))
     return dict(files=len(old), changed_files=changed, permitted_manifest_fields=fields,
+                changed_output_hashes=hash_changes,
+                classification='version and intentional navigation-filter label' if hash_changes else 'version only',
                 all_other_bytes_equal=True,
-                baseline='official-v0.1.1' if official else 'merged-main-GNATDOC-019')
+                baseline='official-v0.1.2' if official else 'independently-generated-v0.1.2')
 
 
 if __name__ == '__main__':
