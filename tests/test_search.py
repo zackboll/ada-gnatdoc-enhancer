@@ -175,4 +175,7 @@ class RealCoreSearch(unittest.TestCase):
         self.assertEqual((self.site/'api/gnatdoc-theme.css').read_bytes(),
                          (self.authority/'docs/assets/gnatdoc-theme.css').read_bytes())
         self.assertEqual((self.site/'api/gnatdoc.css').read_bytes(), (REAL/'pristine/api/gnatdoc.css').read_bytes())
-        self.assertEqual(len([r for r in self.records if r['kind'] == 'guide']), 5)
+        self.assertEqual({kind:sum(r['kind'] == kind for r in self.records)
+                          for kind in ('package', 'symbol', 'operation', 'guide')},
+                         dict(package=195, symbol=215, operation=1047, guide=5))
+        self.assertEqual(len(self.records), 1462)

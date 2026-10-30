@@ -153,16 +153,23 @@ python scripts/test_installed.py --fixtures tests/fixtures
 Synthetic conformance never substitutes for independently pinned real sites.
 Historical campaigns remain under `docs/evidence/`; current release results and
 source/artifact identities are described in
-[v0.1.2 preparation evidence](docs/evidence/gnatdoc020/README.md). Historical
+[v0.1.3 preparation evidence](docs/evidence/gnatdoc024/README.md). Historical
+[v0.1.2 preparation evidence](docs/evidence/gnatdoc020/README.md),
 [v0.1.1 evidence](docs/evidence/gnatdoc015/README.md) and the original
 [v0.1.0 qualification](docs/release-0.1.0-qualification.md) remains historical.
 
 For upgrades, regenerate from pristine native output: the version-bound
-presentation manifest changes from `0.1.1` to `0.1.2`, so do not carry an
+presentation manifest changes from `0.1.2` to `0.1.3`, so do not carry an
 old manifest into release verification. Recheck source, native, warning,
 coverage, guide and browser baselines in a separate consumer PR. See
 [migration](docs/migration.md), the [consumer matrix](docs/release-compatibility.md),
 and the [auditable release procedure](docs/releasing.md).
+
+Full offline documentation search remains an explicit opt-in. Without `[search]`,
+the existing navigation-link filter and native routing remain; its label now
+accurately reads **Filter navigation links**, changing index HTML and its manifest
+hash, not only version metadata. See [search configuration, browser requirements
+and scope](docs/documentation-search.md). No consumer migration is automatic.
 
 Historical bootstrap provenance remains in [qualification](docs/qualification.md)
 and [repository import](docs/repository-import.md). Do not reinitialize history.

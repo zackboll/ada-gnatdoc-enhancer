@@ -1,4 +1,34 @@
-# Auditable v0.1.2 preparation and later publication
+# Auditable release preparation and later publication
+
+## GNATDOC-024: v0.1.3 preparation only
+
+Start from freshly fetched `main`; record commit/tree, PR #22 tree parity and
+all seven successful exact-main CI jobs, including `search-browser`. Incomplete
+required CI means `HOSTED_CI_PENDING`, not readiness. Confirm no v0.1.3 tag or
+release exists. Prepare one non-draft PR on `release/024-v0.1.3-preparation`, with
+auto-merge disabled. Do not merge, tag, publish, deploy or migrate consumers.
+
+Version authorities, CLI/module/distribution/archive/presentation metadata and
+negative previous-release tests must agree on 0.1.3. Independently download and
+hash official v0.1.2 artifacts. Compare complete generated publications: without
+search, permit only version and the exact legacy filter label plus its dependent
+hash, preserving legacy router bytes; with search, reconstruct native-approved
+declarations/guides, inventory and custom themes. Reject unclassified changes.
+
+Build clean wheel/sdist archives from an immutable commit/tree snapshot. Run the
+complete suite under Python 3.11/3.12/3.13 for source, installed canonical wheel
+and independently rebuilt-sdist wheel (nine environments); strict Twine, RECORD,
+archive/path/symlink/content/metadata audits, installed CLI/module checks,
+conformance, real-consumer and Chromium search suites remain mandatory. Report
+the actual test count, not a fixed target if tests are added. Preserve historical
+evidence and dependency pins. Record exact-head hosted CI and remaining limits
+in the PR; only complete qualification warrants `READY_FOR_MAINTAINER_REVIEW`.
+
+Current results: [GNATDOC-024 evidence](evidence/gnatdoc024/README.md). The older
+procedures below are historical release records, not current version identities.
+Final public assets must be freshly regenerated and audited from the eventual
+approved **merged-main** source; PR-head preparation archives are not assumed
+identical. The maintainer-led policy below applies without extra approval roles.
 
 ## Maintainer-led release governance (current repository policy)
 

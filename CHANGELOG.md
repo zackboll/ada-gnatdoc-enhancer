@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased — GNATDOC-023
+## 0.1.3 — release candidate (GNATDOC-024; not published)
 
 - Add version-one opt-in offline documentation search over public, reconciled
   package/type/subtype/operation identities, source signatures/descriptions,
@@ -14,6 +14,23 @@
 - Retain the released-wheel failing reproduction, full actual Core fixture,
   Python mutation tests, Chromium qualification and hosted browser evidence.
 - No published v0.1.2 asset, consumer configuration, tag or deployment changes.
+- Without `[search]`, preserve the legacy navigation-link filter and all three
+  native routers byte-for-byte. The intentional label change from "Search
+  documentation" to "Filter navigation links" changes the API index HTML and
+  its presentation-manifest hash; the manifest version also becomes `0.1.3`.
+- Full search requires explicit `[search]` schema version 1, documentation mode,
+  enabled navigation, static HTTP(S), JavaScript and SHA-256 Web Crypto (HTTPS
+  or localhost). No remote search service, CDN or runtime dependency is needed.
+  Native navigation remains usable without JavaScript or if index checks fail.
+- Exclude private/internal and unsupported nested declarations, constants,
+  quoted operators, unanchored instantiated members, arbitrary repository files
+  and external dependency APIs. Source/native reconstruction and a separate
+  browser destination allowlist authorize results, not a rehashed cache.
+- Consumers must regenerate from pristine GNATdoc HTML 26.0.0 and independently
+  qualify adoption; v0.1.2 manifests are not accepted as v0.1.3 manifests. Preserve
+  Python 3.11–3.13, Apache-2.0, dependency-free core and exact optional guide pins.
+- Preparation builds are not public release assets. Regenerate and audit final
+  assets from the eventual approved merged-main commit; no publication authorized.
 
 ## 0.1.2 — release candidate (GNATDOC-020; not published)
 

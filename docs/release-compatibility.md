@@ -1,4 +1,30 @@
-# v0.1.2 consumer compatibility and adoption boundary
+# Consumer compatibility and adoption boundary
+
+## v0.1.2 → v0.1.3 (GNATDOC-024)
+
+v0.1.3 preparation includes merged GNATDOC-023 offline documentation search.
+Existing consumers without `[search]` keep native API routing and exactly the
+same three legacy JavaScript variants. No search index or search stylesheet is
+published. The API index label intentionally changes from **Search documentation**
+to **Filter navigation links**, so `api/index.html`, its `output_sha256` manifest
+entry, and `enhancer_version` change. Navigation-disabled output changes only
+the version. Reject any other unexplained bytes; this is not version-only parity.
+
+Opt-in `[search]` schema version 1 / `mode = "documentation"` adds a deterministic
+index and scoped CSS, composes search into the selected router, and updates the
+shell and dependent manifest fields/hashes. Reconstruct all output from source,
+native destinations and approved rendered guides; custom themes remain intact.
+The complete authentic Core fixture contains 195 packages, 215 types/subtypes,
+1,047 operations and five guides (1,462 searchable records).
+
+See [search scope/security/browser requirements](documentation-search.md) and
+[executed release qualification](evidence/gnatdoc024/README.md). Regenerate from
+pristine GNATdoc HTML 26.0.0; old v0.1.2 manifests are rejected. Python 3.11–3.13,
+Apache-2.0, dependency-free core and optional renderer pins are unchanged.
+Consumer upgrade, warning/coverage/compiler/browser/deployment checks remain
+separate consumer-owned work. No migration or deployment is authorized here.
+
+## Historical v0.1.2 preparation assessment
 
 GNATDOC-020 prepares, but does not publish, v0.1.2. The release retains the exact
 merged GNATDOC-017/018/019 implementation. Against merged main `8527052b43af06a5fefd74428a07342022469ff3`,
