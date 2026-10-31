@@ -107,7 +107,10 @@ def run(workspace, output):
                                     for frame in comparison.frames:
                                         frame.wait_for_load_state('load')
                                         frame.evaluate('() => document.fonts.ready')
-                                        frame.evaluate('() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))')
+                                    # Hidden iframe documents do not receive rAF
+                                    # with JavaScript disabled; wait on the visible
+                                    # outer document, not an indefinitely paused frame.
+                                    comparison.evaluate('() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))')
                                     capture = comparison.screenshot(animations='disabled', caret='hide')
                                     captures.append(capture)
                                     filename = f'legacy-{relative.replace("/", "-")}-{width}-{theme}-js{int(javascript)}-{variant}.png'
