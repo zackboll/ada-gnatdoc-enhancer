@@ -97,10 +97,23 @@ def run(workspace, output):
                                                              no_page_overflow=True, screenshot=screenshot))
                             # Feature-off visual parity: independent official and candidate rendering.
                             for relative in ('index.html', 'guides/typed-access-guide.html', 'api/index.html'):
-                                page.goto(base + '/baseline/core-search/site/' + relative)
-                                before = page.screenshot(animations='disabled')
-                                page.goto(base + '/candidate/core-search/site/' + relative)
-                                assert page.screenshot(animations='disabled') == before, ('legacy presentation', relative)
+                                captures = []
+                                for variant in ('baseline', 'candidate'):
+                                    # Isolate history, focus, selection and scroll state;
+                                    # the API router/iframe settles after outer load.
+                                    comparison = context.new_page()
+                                    comparison.goto(base + '/' + variant + '/core-search/site/' + relative,
+                                                    wait_until='networkidle')
+                                    for frame in comparison.frames:
+                                        frame.wait_for_load_state('load')
+                                        frame.evaluate('() => document.fonts.ready')
+                                        frame.evaluate('() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))')
+                                    capture = comparison.screenshot(animations='disabled', caret='hide')
+                                    captures.append(capture)
+                                    filename = f'legacy-{relative.replace("/", "-")}-{width}-{theme}-js{int(javascript)}-{variant}.png'
+                                    (output/filename).write_bytes(capture)
+                                    comparison.close()
+                                assert captures[0] == captures[1], ('legacy presentation', relative, width, theme, javascript)
                             context.close()
             finally:
                 browser.close()
