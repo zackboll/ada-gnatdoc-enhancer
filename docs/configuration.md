@@ -1,5 +1,14 @@
 # Configuration
 
+## Opt-in Ada example presentation (GNATDOC-027)
+
+Configuration schema 1 adds three strict Boolean fields under `[guides]`:
+`ada_example_highlighting`, `ada_example_api_links`, and
+`ada_landing_example_highlighting`. All default to false and require
+`mode = "authored-markdown"`; API links require example highlighting.
+See [Ada examples](ada-examples.md) for the complete public contract, source/native
+link evidence, conservative ambiguity rules and exact landing-example checks.
+
 ## Documentation search (GNATDOC-023, unreleased opt-in)
 
 ```toml

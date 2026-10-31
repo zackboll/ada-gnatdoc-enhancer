@@ -179,11 +179,19 @@ def safe_uri(link, config):
     return url
 
 
-def markdown(text, languages, rewrite=None):
+def markdown(text, languages, rewrite=None, example_renderer=None):
     from markdown_it import MarkdownIt
     require(version('markdown-it-py') == '3.0.0' and version('mdurl') == '0.1.2',
             'unqualified Markdown dependency version')
     parser = MarkdownIt('commonmark', {'html': True}).enable('table')
+    if example_renderer is not None:
+        ordinary_fence = parser.renderer.rules['fence']
+        def fence(tokens, idx, options, env):
+            token = tokens[idx]
+            if token.info.strip() == 'ada':
+                return '<pre class="ada-example" tabindex="0"><code class="language-ada">' + example_renderer(token.content) + '</code></pre>\n'
+            return ordinary_fence(tokens, idx, options, env)
+        parser.renderer.rules['fence'] = fence
     parser.validateLink = lambda destination: True
     parser.normalizeLink = lambda destination: destination
     tokens = parser.parse(text)
@@ -304,6 +312,16 @@ def render(config, native):
     data = manifest(config, native)
     style = source(config, data['stylesheet']['source']); css_safe(style)
     output = {data['stylesheet']['path']: style}
+    from .examples import Resolver, STYLESHEET, code, landing, stylesheet_link
+    from .theme import asset
+    examples_enabled = config.ada_example_highlighting or config.ada_landing_example_highlighting
+    require(not examples_enabled or config.guides == 'authored-markdown',
+            'Ada examples require authored-markdown guides')
+    require(not config.ada_example_api_links or config.ada_example_highlighting,
+            'Ada example API links require highlighting')
+    resolver = Resolver(config, native) if config.ada_example_api_links else None
+    if examples_enabled:
+        output[STYLESHEET] = asset('gnatdoc-examples.css')
     home = source(config, data['home']['source']).decode('utf-8')
     texts = {e['id']: source(config, e['source']).decode('utf-8') for e in data['guides']}
     if config.guides == 'authored-html':
@@ -354,7 +372,8 @@ def render(config, native):
                     'unknown published guide destination')
             require(not url.fragment or url.fragment in headings[target], 'invalid guide heading fragment')
             return (target + '.html' if url.path else '') + ('#' + url.fragment if url.fragment else '')
-        content, ids, fences = markdown(text, data['languages'], rewrite)
+        content, ids, fences = markdown(text, data['languages'], rewrite,
+                                       (lambda text: code(text, resolver)) if config.ada_example_highlighting else None)
         for fence in fences:
             if data['ada_policy'] == 'exact-examples':
                 owners = [p for p, value in examples.items() if value == fence]
@@ -396,10 +415,15 @@ def render(config, native):
 </body>
 </html>
 '''
+        if config.ada_example_highlighting:
+            page = stylesheet_link(page)
         output[entry['path']] = page.encode()
     require(used == set(examples), 'authoritative examples missing from guides')
     if data['landing_example']:
-        code = source(config, data['landing_example']).decode().rstrip('\n')
-        require(html.escape(code, quote=False) in home, 'landing example differs from authoritative source')
+        example = source(config, data['landing_example']).decode().rstrip('\n')
+        require(html.escape(example, quote=False) in home, 'landing example differs from authoritative source')
+    if config.ada_landing_example_highlighting:
+        require(data['landing_example'], 'missing authoritative landing_example identity')
+        home = stylesheet_link(landing(home, example, resolver), landing=True)
     output['index.html'] = home.encode()
     return output

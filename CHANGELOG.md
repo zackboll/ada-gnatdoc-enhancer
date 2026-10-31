@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased — GNATDOC-027
+
+- Add opt-in static authored Ada fence and exact-source landing-example lexical
+  highlighting, reusing the existing lexer and leaving native declaration behavior
+  and all feature-off output unchanged.
+- Add conservative public source/native-profile verified type and unique-callable
+  example links, with shadowing/visibility guards and no arbitrary overload choice.
+- Add strict Boolean guide options, scoped bundled CSS, exact landing-pre identity
+  checks, mutation tests, official-wheel byte comparison and Chromium qualification.
+- Development archives retain the current package metadata for compatibility
+  qualification; they are not official published v0.1.3 release archives.
+
 ## 0.1.3 — release candidate (GNATDOC-024; not published)
 
 - Add version-one opt-in offline documentation search over public, reconciled

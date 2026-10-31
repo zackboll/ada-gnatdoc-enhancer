@@ -55,6 +55,9 @@ class Config:
     theme_config_sha256: str | None = None
     external_symbol_bookmarks: dict = field(default_factory=dict)
     search: bool = False
+    ada_example_highlighting: bool = False
+    ada_example_api_links: bool = False
+    ada_landing_example_highlighting: bool = False
 
 
 def load(root: Path, path: str) -> Config:
@@ -129,9 +132,18 @@ def load(root: Path, path: str) -> Config:
     require(external_target is None or external_target == '_top',
             'presentation.external_type_target must be "_top" when specified')
     guide = raw.get("guides", {})
-    members(guide, {"mode", "manifest", "sha256"}, "guides")
+    example_options = ('ada_example_highlighting', 'ada_example_api_links',
+                       'ada_landing_example_highlighting')
+    members(guide, {"mode", "manifest", "sha256", *example_options}, "guides")
     guide_mode = guide.get("mode", "none")
     require(guide_mode in ("none", "html", "markdown", "authored-html", "authored-markdown"), "invalid guide mode")
+    for option in example_options:
+        require(type(guide.get(option, False)) is bool, f'guides.{option} must be Boolean')
+    if any(option in guide for option in example_options):
+        require(guide_mode == 'authored-markdown',
+                'Ada example options require authored-markdown guides')
+    require(not guide.get('ada_example_api_links', False) or guide.get('ada_example_highlighting', False),
+            'Ada example API links require Ada example highlighting')
     guide_manifest = guide.get("manifest")
     if guide_mode != "none":
         require(isinstance(guide_manifest, str), "guide manifest required")
@@ -215,7 +227,8 @@ def load(root: Path, path: str) -> Config:
                   symbols, default_package, incoming, external_target,
                   pres.get('theme_css_source'), pres.get('theme_css_sha256'),
                   config_path.relative_to(root).as_posix() if custom_theme else None,
-                   digest(config_bytes) if custom_theme else None, bookmarks, bool(search))
+                  digest(config_bytes) if custom_theme else None, bookmarks, bool(search),
+                  *(guide.get(option, False) for option in example_options))
     if custom_theme:
         from .theme import theme_asset
         theme_asset(config)

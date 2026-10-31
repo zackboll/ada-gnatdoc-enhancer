@@ -139,3 +139,41 @@ jobs:
           name: documentation-search-browser
           path: ${{ runner.temp }}/search-evidence/
           retention-days: 30
+  examples-browser:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install enhancer and optional browser qualification tool
+        run: |
+          python -m pip install -e '.[guides]' playwright==1.64.0
+          python -m playwright install --with-deps chromium
+      - name: Acquire independently pinned official baseline (not a publication)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir "$RUNNER_TEMP/official-013"
+          gh release download v0.1.3 --repo zackboll/ada-gnatdoc-enhancer --pattern '*.whl' --dir "$RUNNER_TEMP/official-013"
+          echo "f03f20ee4bcb6a918013bac7577300ab2bfb42714c22dc4677139e5359a7bac9  $RUNNER_TEMP/official-013/ada_gnatdoc_enhancer-0.1.3-py3-none-any.whl" | sha256sum --check
+          python -m venv "$RUNNER_TEMP/official-env"
+          "$RUNNER_TEMP/official-env/bin/python" -m pip install "$RUNNER_TEMP"/official-013/*.whl markdown-it-py==3.0.0 mdurl==0.1.2
+      - name: Official byte parity and opt-in source/native qualification
+        run: |
+          cd "$RUNNER_TEMP"
+          "$RUNNER_TEMP/official-env/bin/python" "$GITHUB_WORKSPACE/scripts/qualify_examples.py" --repository "$GITHUB_WORKSPACE" --workspace "$RUNNER_TEMP/example-sites" --variant baseline
+          python "$GITHUB_WORKSPACE/scripts/qualify_examples.py" --repository "$GITHUB_WORKSPACE" --workspace "$RUNNER_TEMP/example-sites" --variant candidate
+      - name: Chromium static examples, clipboard, focus and legacy presentation
+        run: python scripts/check_examples_browser.py --workspace "$RUNNER_TEMP/example-sites" --output "$RUNNER_TEMP/example-evidence"
+      - name: Retain structured comparisons and representative screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ada-example-qualification
+          path: |
+            ${{ runner.temp }}/example-evidence/
+            ${{ runner.temp }}/example-sites/*.json
+          retention-days: 30

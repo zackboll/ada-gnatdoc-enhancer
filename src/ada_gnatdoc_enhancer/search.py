@@ -66,6 +66,15 @@ def flat_public(package):
 
 
 def records(config, native, guides):
+    if config.ada_example_highlighting or config.ada_landing_example_highlighting:
+        # Token spans split HTMLParser data events. Index the original authored
+        # rendering so presentation cannot insert spaces into identifiers or
+        # otherwise change the established search corpus/authority hash.
+        from dataclasses import replace
+        from .guides import render
+        guides = render(replace(config, ada_example_highlighting=False,
+                                ada_example_api_links=False,
+                                ada_landing_example_highlighting=False), native)
     source = packages(config)
     destinations = source_destinations(config, native, source)
     result = []
