@@ -49,7 +49,7 @@ def sdist_files(path):
         packaged = {}
         for member in members:
             parts = PurePosixPath(member.name).parts
-            require(parts and parts[0] == 'ada_gnatdoc_enhancer-0.1.3'
+            require(parts and parts[0] == 'ada_gnatdoc_enhancer-0.1.4'
                     and '..' not in parts, 'unsafe sdist path')
             require(member.isdir() or member.isfile(), 'nonregular sdist member')
             if member.isfile():
@@ -75,10 +75,10 @@ def verify_record(content, prefix):
 def audit(source, wheel, sdist, rebuilt):
     source = source.resolve()
     project = tomllib.loads((source/'pyproject.toml').read_text())['project']
-    require(project['version'] == '0.1.3', 'wrong source version')
-    require(wheel.name == rebuilt.name == 'ada_gnatdoc_enhancer-0.1.3-py3-none-any.whl',
+    require(project['version'] == '0.1.4', 'wrong source version')
+    require(wheel.name == rebuilt.name == 'ada_gnatdoc_enhancer-0.1.4-py3-none-any.whl',
             'wrong wheel filename')
-    require(sdist.name == 'ada_gnatdoc_enhancer-0.1.3.tar.gz', 'wrong sdist filename')
+    require(sdist.name == 'ada_gnatdoc_enhancer-0.1.4.tar.gz', 'wrong sdist filename')
     original = wheel_files(wheel)
     second = wheel_files(rebuilt)
     packaged = sdist_files(sdist)
@@ -92,7 +92,7 @@ def audit(source, wheel, sdist, rebuilt):
         require(len(metadata_names) == 1, 'missing/duplicate metadata')
         metadata = BytesParser().parsebytes(content[metadata_names[0]])
         require(metadata['Name'] == 'ada-gnatdoc-enhancer', 'metadata name mismatch')
-        require(metadata['Version'] == '0.1.3', 'metadata version mismatch')
+        require(metadata['Version'] == '0.1.4', 'metadata version mismatch')
         require(metadata['Requires-Python'] == '>=3.11', 'Python support changed')
         require(metadata['License-Expression'] == 'Apache-2.0', 'missing SPDX license')
         require(metadata.get_all('License-File') == ['LICENSE'], 'missing license declaration')
@@ -102,7 +102,7 @@ def audit(source, wheel, sdist, rebuilt):
                 'unexpected dependency: '+repr(dependencies))
         require(metadata.get_all('Provides-Extra') == ['guides'], 'unexpected extras')
         prefix = metadata_names[0].removesuffix('METADATA')
-        require(prefix == 'ada_gnatdoc_enhancer-0.1.3.dist-info/', 'wrong dist-info identity')
+        require(prefix == 'ada_gnatdoc_enhancer-0.1.4.dist-info/', 'wrong dist-info identity')
         require(set(content) == set(expected) | {prefix+n for n in (
             'METADATA', 'WHEEL', 'RECORD', 'entry_points.txt', 'top_level.txt', 'licenses/LICENSE')},
             'unexpected/missing wheel members')
@@ -151,11 +151,11 @@ def audit(source, wheel, sdist, rebuilt):
         parts = PurePosixPath(name).parts
         require(not {'build', 'dist', '.venv', '.git', '__pycache__'}.intersection(parts)
                 and not name.endswith(('.pyc', '.pyo')), 'generated sdist member: '+name)
-    require(packaged['PKG-INFO'] == original['ada_gnatdoc_enhancer-0.1.3.dist-info/METADATA'],
+    require(packaged['PKG-INFO'] == original['ada_gnatdoc_enhancer-0.1.4.dist-info/METADATA'],
             'sdist/wheel metadata differ')
     require(packaged['src/ada_gnatdoc_enhancer.egg-info/PKG-INFO'] == packaged['PKG-INFO'],
             'sdist egg-info metadata differ')
-    return {'version': '0.1.3', 'module_asset_sha256': {n: sha(d) for n, d in sorted(expected.items())},
+    return {'version': '0.1.4', 'module_asset_sha256': {n: sha(d) for n, d in sorted(expected.items())},
             'wheel_record_hashes_and_sizes_verified': True,
             'source_wheel_sdist_rebuilt_module_assets_equal': True,
             'required_sdist_inputs': len(required), 'sdist_files': len(packaged),

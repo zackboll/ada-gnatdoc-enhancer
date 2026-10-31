@@ -1,0 +1,11 @@
+{
+  "product_gate_failures": 0,
+  "corrected_setup_attempts": [
+    "Current Core initially scanned src/internal; mirrored pinned consumer public staging, then all current gates passed.",
+    "Legacy historical workspace path had moved; revalidated retained native/source hashes and independent oracle in disposable copies.",
+    "Current Imgproc legacy controls require their 329-declaration source/categories, not historical 314-declaration inputs; exact manifest hashes/oracle verified.",
+    "Current search incoming-reference router requires symbol navigation; restored its independently pinned config prerequisite.",
+    "Operation browser Git identity collection must run from repository cwd, not git-archive export; rerun from repository."
+  ],
+  "no_failed_gate_waivers": true
+}

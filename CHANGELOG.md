@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased — GNATDOC-027
+## 0.1.4 — prepared, not published (GNATDOC-028)
 
 - Add opt-in static authored Ada fence and exact-source landing-example lexical
   highlighting, reusing the existing lexer and leaving native declaration behavior
@@ -9,10 +9,16 @@
   example links, with shadowing/visibility guards and no arbitrary overload choice.
 - Add strict Boolean guide options, scoped bundled CSS, exact landing-pre identity
   checks, mutation tests, official-wheel byte comparison and Chromium qualification.
-- Development archives retain the current package metadata for compatibility
-  qualification; they are not official published v0.1.3 release archives.
+- Include merged GNATDOC-027 without widening its lexical/overload scope.
+- Advance CLI, module, distribution, archive audits and presentation metadata to
+  0.1.4. Feature-off official v0.1.3 comparisons permit only the manifest version;
+  preserve the historical v0.1.2-to-v0.1.3 comparator and acceptance tests.
+- Distinguish the 1,462-record historical Core fixture from the 1,487-record
+  current qualified Core consumer. No historical inventory is inflated.
+- Candidate provenance uses `publication_authorized = false`. Final public assets
+  require regeneration and qualification against the approved merged-main source.
 
-## 0.1.3 — release candidate (GNATDOC-024; not published)
+## 0.1.3 — published baseline (GNATDOC-024 preparation history below)
 
 - Add version-one opt-in offline documentation search over public, reconciled
   package/type/subtype/operation identities, source signatures/descriptions,

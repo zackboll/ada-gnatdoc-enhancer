@@ -24,7 +24,7 @@ class Quiet(SimpleHTTPRequestHandler):
 def run(workspace, output):
     from playwright.sync_api import sync_playwright
     output.mkdir(parents=True, exist_ok=True)
-    results = dict(cases=[], runtime_errors=[], unexpected_requests=[])
+    results = dict(cases=[], legacy_comparisons=[], runtime_errors=[], unexpected_requests=[])
     server = ThreadingHTTPServer(('127.0.0.1', 0), functools.partial(Quiet, directory=str(workspace)))
     thread = threading.Thread(target=server.serve_forever, daemon=True); thread.start()
     base = f'http://127.0.0.1:{server.server_port}'
@@ -59,7 +59,7 @@ def run(workspace, output):
                                 assert page.locator('pre').all_text_contents() == expected
                                 assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), (width, relative)
                                 colors = {}
-                                for token in ('keyword', 'comment', 'string', 'character', 'attribute'):
+                                for token in ('keyword', 'comment', 'string', 'character', 'attribute', 'number', 'operator'):
                                     locator = page.locator('.ada-example .ada-' + token)
                                     if locator.count():
                                         locator.first.scroll_into_view_if_needed()
@@ -116,6 +116,9 @@ def run(workspace, output):
                                     (output/filename).write_bytes(capture)
                                     comparison.close()
                                 assert captures[0] == captures[1], ('legacy presentation', relative, width, theme, javascript)
+                                results['legacy_comparisons'].append(dict(page=relative, width=width, height=900,
+                                                                         theme=theme, javascript=javascript,
+                                                                         screenshot_bytes_equal=True))
                             context.close()
             finally:
                 browser.close()

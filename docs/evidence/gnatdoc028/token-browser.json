@@ -1,0 +1,152 @@
+{
+  "scope": "supplemental synthetic all-token browser control; authentic consumer controls are separate",
+  "cases": [
+    {
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "javascript": true,
+      "colors": {
+        "keyword": "rgb(116, 66, 167)",
+        "string": "rgb(20, 102, 62)",
+        "character": "rgb(20, 102, 62)",
+        "number": "rgb(149, 82, 12)",
+        "attribute": "rgb(146, 81, 0)",
+        "comment": "rgb(83, 101, 123)",
+        "operator": "rgb(65, 85, 114)"
+      },
+      "exact_text": true,
+      "clipboard": true,
+      "screenshot": "tokens-1280-light-js1.png"
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "javascript": false,
+      "colors": {
+        "keyword": "rgb(116, 66, 167)",
+        "string": "rgb(20, 102, 62)",
+        "character": "rgb(20, 102, 62)",
+        "number": "rgb(149, 82, 12)",
+        "attribute": "rgb(146, 81, 0)",
+        "comment": "rgb(83, 101, 123)",
+        "operator": "rgb(65, 85, 114)"
+      },
+      "exact_text": true,
+      "clipboard": true,
+      "screenshot": "tokens-1280-light-js0.png"
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "javascript": true,
+      "colors": {
+        "keyword": "rgb(207, 168, 255)",
+        "string": "rgb(141, 223, 183)",
+        "character": "rgb(141, 223, 183)",
+        "number": "rgb(255, 196, 142)",
+        "attribute": "rgb(255, 209, 132)",
+        "comment": "rgb(180, 194, 212)",
+        "operator": "rgb(192, 207, 228)"
+      },
+      "exact_text": true,
+      "clipboard": true,
+      "screenshot": "tokens-1280-dark-js1.png"
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "javascript": false,
+      "colors": {
+        "keyword": "rgb(207, 168, 255)",
+        "string": "rgb(141, 223, 183)",
+        "character": "rgb(141, 223, 183)",
+        "number": "rgb(255, 196, 142)",
+        "attribute": "rgb(255, 209, 132)",
+        "comment": "rgb(180, 194, 212)",
+        "operator": "rgb(192, 207, 228)"
+      },
+      "exact_text": true,
+      "clipboard": true,
+      "screenshot": "tokens-1280-dark-js0.png"
+    },
+    {
+      "width": 390,
+      "height": 900,
+      "theme": "light",
+      "javascript": true,
+      "colors": {
+        "keyword": "rgb(116, 66, 167)",
+        "string": "rgb(20, 102, 62)",
+        "character": "rgb(20, 102, 62)",
+        "number": "rgb(149, 82, 12)",
+        "attribute": "rgb(146, 81, 0)",
+        "comment": "rgb(83, 101, 123)",
+        "operator": "rgb(65, 85, 114)"
+      },
+      "exact_text": true,
+      "clipboard": true,
+      "screenshot": "tokens-390-light-js1.png"
+    },
+    {
+      "width": 390,
+      "height": 900,
+      "theme": "light",
+      "javascript": false,
+      "colors": {
+        "keyword": "rgb(116, 66, 167)",
+        "string": "rgb(20, 102, 62)",
+        "character": "rgb(20, 102, 62)",
+        "number": "rgb(149, 82, 12)",
+        "attribute": "rgb(146, 81, 0)",
+        "comment": "rgb(83, 101, 123)",
+        "operator": "rgb(65, 85, 114)"
+      },
+      "exact_text": true,
+      "clipboard": true,
+      "screenshot": "tokens-390-light-js0.png"
+    },
+    {
+      "width": 390,
+      "height": 900,
+      "theme": "dark",
+      "javascript": true,
+      "colors": {
+        "keyword": "rgb(207, 168, 255)",
+        "string": "rgb(141, 223, 183)",
+        "character": "rgb(141, 223, 183)",
+        "number": "rgb(255, 196, 142)",
+        "attribute": "rgb(255, 209, 132)",
+        "comment": "rgb(180, 194, 212)",
+        "operator": "rgb(192, 207, 228)"
+      },
+      "exact_text": true,
+      "clipboard": true,
+      "screenshot": "tokens-390-dark-js1.png"
+    },
+    {
+      "width": 390,
+      "height": 900,
+      "theme": "dark",
+      "javascript": false,
+      "colors": {
+        "keyword": "rgb(207, 168, 255)",
+        "string": "rgb(141, 223, 183)",
+        "character": "rgb(141, 223, 183)",
+        "number": "rgb(255, 196, 142)",
+        "attribute": "rgb(255, 209, 132)",
+        "comment": "rgb(180, 194, 212)",
+        "operator": "rgb(192, 207, 228)"
+      },
+      "exact_text": true,
+      "clipboard": true,
+      "screenshot": "tokens-390-dark-js0.png"
+    }
+  ],
+  "errors": [],
+  "external_requests": [],
+  "status": "passed"
+}
