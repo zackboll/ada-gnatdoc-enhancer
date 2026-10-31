@@ -1,0 +1,14 @@
+/* Opt-in, scoped example colors. No consumer or native stylesheet is changed. */
+.ada-example { --ada-keyword: #7442a7; --ada-literal: #14663e; --ada-number: #95520c; --ada-attribute: #925100; --ada-comment: #53657b; --ada-operator: #415572; --ada-link: #15559f; max-width: 100%; overflow-x: auto; }
+@media (prefers-color-scheme: dark) {
+  .ada-example { --ada-keyword: #cfa8ff; --ada-literal: #8ddfb7; --ada-number: #ffc48e; --ada-attribute: #ffd184; --ada-comment: #b4c2d4; --ada-operator: #c0cfe4; --ada-link: #8bc4ff; }
+}
+.ada-example .ada-keyword { color: var(--ada-keyword); font-weight: 700; }
+.ada-example .ada-string, .ada-example .ada-character { color: var(--ada-literal); }
+.ada-example .ada-number { color: var(--ada-number); }
+.ada-example .ada-attribute { color: var(--ada-attribute); }
+.ada-example .ada-comment { color: var(--ada-comment); font-style: italic; }
+.ada-example .ada-operator { color: var(--ada-operator); }
+.ada-example a.ada-api-reference { color: var(--ada-link); text-decoration: underline; }
+.ada-example:focus-visible, .ada-example a:focus-visible { outline: 3px solid var(--ada-attribute); outline-offset: 2px; }
+.ada-example .ada-example-end { display: inline-block; width: 0; height: 1em; }

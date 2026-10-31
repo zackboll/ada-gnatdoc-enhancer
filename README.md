@@ -1,5 +1,13 @@
 # Ada GNATdoc Enhancer
 
+## Development: opt-in Ada examples
+
+GNATDOC-027 adds static Ada fence and exact-source landing-example highlighting,
+with optional conservative source/native-verified API links. It is disabled by
+default and does not change v0.1.3 consumer output unless explicitly enabled.
+See [configuration and limitations](docs/ada-examples.md). Development archives
+built from this branch are not the official published v0.1.3 release.
+
 Offline full-documentation search is available through the versioned opt-in
 `[search]` configuration. See [documentation search](docs/documentation-search.md)
 for coverage, authority, bounds, and qualification. Existing consumers retain
