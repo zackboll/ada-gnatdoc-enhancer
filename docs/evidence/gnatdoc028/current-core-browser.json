@@ -1,0 +1,648 @@
+{
+  "cases": [
+    {
+      "page": "landing",
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "javascript": true,
+      "colors": {
+        "keyword": "rgb(116, 66, 167)",
+        "number": "rgb(149, 82, 12)",
+        "operator": "rgb(65, 85, 114)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "landing-1280-light-js1.png"
+    },
+    {
+      "page": "guide",
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "javascript": true,
+      "colors": {
+        "keyword": "rgb(116, 66, 167)",
+        "comment": "rgb(83, 101, 123)",
+        "attribute": "rgb(146, 81, 0)",
+        "number": "rgb(149, 82, 12)",
+        "operator": "rgb(65, 85, 114)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "guide-1280-light-js1.png"
+    },
+    {
+      "page": "literals",
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "javascript": true,
+      "colors": {
+        "keyword": "rgb(116, 66, 167)",
+        "comment": "rgb(83, 101, 123)",
+        "string": "rgb(20, 102, 62)",
+        "attribute": "rgb(146, 81, 0)",
+        "number": "rgb(149, 82, 12)",
+        "operator": "rgb(65, 85, 114)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/8b1b70c335e7cb0d913085e89f39b5a5afede0758ca12468cd43715567117fa9.html#9dc4946b00977dfda5f083bb32bff734efd11488fb3ff9126e729bbb710bfc26",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "literals-1280-light-js1.png"
+    },
+    {
+      "page": "landing",
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "javascript": false,
+      "colors": {
+        "keyword": "rgb(116, 66, 167)",
+        "number": "rgb(149, 82, 12)",
+        "operator": "rgb(65, 85, 114)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "landing-1280-light-js0.png"
+    },
+    {
+      "page": "guide",
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "javascript": false,
+      "colors": {
+        "keyword": "rgb(116, 66, 167)",
+        "comment": "rgb(83, 101, 123)",
+        "attribute": "rgb(146, 81, 0)",
+        "number": "rgb(149, 82, 12)",
+        "operator": "rgb(65, 85, 114)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "guide-1280-light-js0.png"
+    },
+    {
+      "page": "literals",
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "javascript": false,
+      "colors": {
+        "keyword": "rgb(116, 66, 167)",
+        "comment": "rgb(83, 101, 123)",
+        "string": "rgb(20, 102, 62)",
+        "attribute": "rgb(146, 81, 0)",
+        "number": "rgb(149, 82, 12)",
+        "operator": "rgb(65, 85, 114)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/8b1b70c335e7cb0d913085e89f39b5a5afede0758ca12468cd43715567117fa9.html#9dc4946b00977dfda5f083bb32bff734efd11488fb3ff9126e729bbb710bfc26",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "literals-1280-light-js0.png"
+    },
+    {
+      "page": "landing",
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "javascript": true,
+      "colors": {
+        "keyword": "rgb(207, 168, 255)",
+        "number": "rgb(255, 196, 142)",
+        "operator": "rgb(192, 207, 228)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "landing-1280-dark-js1.png"
+    },
+    {
+      "page": "guide",
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "javascript": true,
+      "colors": {
+        "keyword": "rgb(207, 168, 255)",
+        "comment": "rgb(180, 194, 212)",
+        "attribute": "rgb(255, 209, 132)",
+        "number": "rgb(255, 196, 142)",
+        "operator": "rgb(192, 207, 228)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "guide-1280-dark-js1.png"
+    },
+    {
+      "page": "literals",
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "javascript": true,
+      "colors": {
+        "keyword": "rgb(207, 168, 255)",
+        "comment": "rgb(180, 194, 212)",
+        "string": "rgb(141, 223, 183)",
+        "attribute": "rgb(255, 209, 132)",
+        "number": "rgb(255, 196, 142)",
+        "operator": "rgb(192, 207, 228)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/8b1b70c335e7cb0d913085e89f39b5a5afede0758ca12468cd43715567117fa9.html#9dc4946b00977dfda5f083bb32bff734efd11488fb3ff9126e729bbb710bfc26",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "literals-1280-dark-js1.png"
+    },
+    {
+      "page": "landing",
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "javascript": false,
+      "colors": {
+        "keyword": "rgb(207, 168, 255)",
+        "number": "rgb(255, 196, 142)",
+        "operator": "rgb(192, 207, 228)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "landing-1280-dark-js0.png"
+    },
+    {
+      "page": "guide",
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "javascript": false,
+      "colors": {
+        "keyword": "rgb(207, 168, 255)",
+        "comment": "rgb(180, 194, 212)",
+        "attribute": "rgb(255, 209, 132)",
+        "number": "rgb(255, 196, 142)",
+        "operator": "rgb(192, 207, 228)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "guide-1280-dark-js0.png"
+    },
+    {
+      "page": "literals",
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "javascript": false,
+      "colors": {
+        "keyword": "rgb(207, 168, 255)",
+        "comment": "rgb(180, 194, 212)",
+        "string": "rgb(141, 223, 183)",
+        "attribute": "rgb(255, 209, 132)",
+        "number": "rgb(255, 196, 142)",
+        "operator": "rgb(192, 207, 228)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/8b1b70c335e7cb0d913085e89f39b5a5afede0758ca12468cd43715567117fa9.html#9dc4946b00977dfda5f083bb32bff734efd11488fb3ff9126e729bbb710bfc26",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "literals-1280-dark-js0.png"
+    },
+    {
+      "page": "landing",
+      "width": 390,
+      "height": 900,
+      "theme": "light",
+      "javascript": true,
+      "colors": {
+        "keyword": "rgb(116, 66, 167)",
+        "number": "rgb(149, 82, 12)",
+        "operator": "rgb(65, 85, 114)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "landing-390-light-js1.png"
+    },
+    {
+      "page": "guide",
+      "width": 390,
+      "height": 900,
+      "theme": "light",
+      "javascript": true,
+      "colors": {
+        "keyword": "rgb(116, 66, 167)",
+        "comment": "rgb(83, 101, 123)",
+        "attribute": "rgb(146, 81, 0)",
+        "number": "rgb(149, 82, 12)",
+        "operator": "rgb(65, 85, 114)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "guide-390-light-js1.png"
+    },
+    {
+      "page": "literals",
+      "width": 390,
+      "height": 900,
+      "theme": "light",
+      "javascript": true,
+      "colors": {
+        "keyword": "rgb(116, 66, 167)",
+        "comment": "rgb(83, 101, 123)",
+        "string": "rgb(20, 102, 62)",
+        "attribute": "rgb(146, 81, 0)",
+        "number": "rgb(149, 82, 12)",
+        "operator": "rgb(65, 85, 114)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/8b1b70c335e7cb0d913085e89f39b5a5afede0758ca12468cd43715567117fa9.html#9dc4946b00977dfda5f083bb32bff734efd11488fb3ff9126e729bbb710bfc26",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "literals-390-light-js1.png"
+    },
+    {
+      "page": "landing",
+      "width": 390,
+      "height": 900,
+      "theme": "light",
+      "javascript": false,
+      "colors": {
+        "keyword": "rgb(116, 66, 167)",
+        "number": "rgb(149, 82, 12)",
+        "operator": "rgb(65, 85, 114)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "landing-390-light-js0.png"
+    },
+    {
+      "page": "guide",
+      "width": 390,
+      "height": 900,
+      "theme": "light",
+      "javascript": false,
+      "colors": {
+        "keyword": "rgb(116, 66, 167)",
+        "comment": "rgb(83, 101, 123)",
+        "attribute": "rgb(146, 81, 0)",
+        "number": "rgb(149, 82, 12)",
+        "operator": "rgb(65, 85, 114)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "guide-390-light-js0.png"
+    },
+    {
+      "page": "literals",
+      "width": 390,
+      "height": 900,
+      "theme": "light",
+      "javascript": false,
+      "colors": {
+        "keyword": "rgb(116, 66, 167)",
+        "comment": "rgb(83, 101, 123)",
+        "string": "rgb(20, 102, 62)",
+        "attribute": "rgb(146, 81, 0)",
+        "number": "rgb(149, 82, 12)",
+        "operator": "rgb(65, 85, 114)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/8b1b70c335e7cb0d913085e89f39b5a5afede0758ca12468cd43715567117fa9.html#9dc4946b00977dfda5f083bb32bff734efd11488fb3ff9126e729bbb710bfc26",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "literals-390-light-js0.png"
+    },
+    {
+      "page": "landing",
+      "width": 390,
+      "height": 900,
+      "theme": "dark",
+      "javascript": true,
+      "colors": {
+        "keyword": "rgb(207, 168, 255)",
+        "number": "rgb(255, 196, 142)",
+        "operator": "rgb(192, 207, 228)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "landing-390-dark-js1.png"
+    },
+    {
+      "page": "guide",
+      "width": 390,
+      "height": 900,
+      "theme": "dark",
+      "javascript": true,
+      "colors": {
+        "keyword": "rgb(207, 168, 255)",
+        "comment": "rgb(180, 194, 212)",
+        "attribute": "rgb(255, 209, 132)",
+        "number": "rgb(255, 196, 142)",
+        "operator": "rgb(192, 207, 228)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "guide-390-dark-js1.png"
+    },
+    {
+      "page": "literals",
+      "width": 390,
+      "height": 900,
+      "theme": "dark",
+      "javascript": true,
+      "colors": {
+        "keyword": "rgb(207, 168, 255)",
+        "comment": "rgb(180, 194, 212)",
+        "string": "rgb(141, 223, 183)",
+        "attribute": "rgb(255, 209, 132)",
+        "number": "rgb(255, 196, 142)",
+        "operator": "rgb(192, 207, 228)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/8b1b70c335e7cb0d913085e89f39b5a5afede0758ca12468cd43715567117fa9.html#9dc4946b00977dfda5f083bb32bff734efd11488fb3ff9126e729bbb710bfc26",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "literals-390-dark-js1.png"
+    },
+    {
+      "page": "landing",
+      "width": 390,
+      "height": 900,
+      "theme": "dark",
+      "javascript": false,
+      "colors": {
+        "keyword": "rgb(207, 168, 255)",
+        "number": "rgb(255, 196, 142)",
+        "operator": "rgb(192, 207, 228)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#292b48d25d5af7f9173c36aa1336fe26305f00cc0f86b23654029fc9374ba1a2",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "landing-390-dark-js0.png"
+    },
+    {
+      "page": "guide",
+      "width": 390,
+      "height": 900,
+      "theme": "dark",
+      "javascript": false,
+      "colors": {
+        "keyword": "rgb(207, 168, 255)",
+        "comment": "rgb(180, 194, 212)",
+        "attribute": "rgb(255, 209, 132)",
+        "number": "rgb(255, 196, 142)",
+        "operator": "rgb(192, 207, 228)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/ea2ebcbc108269c77d7c6d44d2dabdfb5f6d0179ad5622b1be3cbceaee5c44aa.html#1215ef894b260b92bcbe497fa349340704bef8836a9078a52774af895fd1f278",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "guide-390-dark-js0.png"
+    },
+    {
+      "page": "literals",
+      "width": 390,
+      "height": 900,
+      "theme": "dark",
+      "javascript": false,
+      "colors": {
+        "keyword": "rgb(207, 168, 255)",
+        "comment": "rgb(180, 194, 212)",
+        "string": "rgb(141, 223, 183)",
+        "attribute": "rgb(255, 209, 132)",
+        "number": "rgb(255, 196, 142)",
+        "operator": "rgb(192, 207, 228)"
+      },
+      "destination": "http://127.0.0.1:42007/candidate/core-search/enabled/api/8b1b70c335e7cb0d913085e89f39b5a5afede0758ca12468cd43715567117fa9.html#9dc4946b00977dfda5f083bb32bff734efd11488fb3ff9126e729bbb710bfc26",
+      "exact_text": true,
+      "clipboard": true,
+      "no_page_overflow": true,
+      "screenshot": "literals-390-dark-js0.png"
+    }
+  ],
+  "legacy_comparisons": [
+    {
+      "page": "index.html",
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "javascript": true,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "guides/typed-access-guide.html",
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "javascript": true,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "api/index.html",
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "javascript": true,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "index.html",
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "javascript": false,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "guides/typed-access-guide.html",
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "javascript": false,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "api/index.html",
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "javascript": false,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "index.html",
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "javascript": true,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "guides/typed-access-guide.html",
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "javascript": true,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "api/index.html",
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "javascript": true,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "index.html",
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "javascript": false,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "guides/typed-access-guide.html",
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "javascript": false,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "api/index.html",
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "javascript": false,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "height": 900,
+      "theme": "light",
+      "javascript": true,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "guides/typed-access-guide.html",
+      "width": 390,
+      "height": 900,
+      "theme": "light",
+      "javascript": true,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "api/index.html",
+      "width": 390,
+      "height": 900,
+      "theme": "light",
+      "javascript": true,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "height": 900,
+      "theme": "light",
+      "javascript": false,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "guides/typed-access-guide.html",
+      "width": 390,
+      "height": 900,
+      "theme": "light",
+      "javascript": false,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "api/index.html",
+      "width": 390,
+      "height": 900,
+      "theme": "light",
+      "javascript": false,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "height": 900,
+      "theme": "dark",
+      "javascript": true,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "guides/typed-access-guide.html",
+      "width": 390,
+      "height": 900,
+      "theme": "dark",
+      "javascript": true,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "api/index.html",
+      "width": 390,
+      "height": 900,
+      "theme": "dark",
+      "javascript": true,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "height": 900,
+      "theme": "dark",
+      "javascript": false,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "guides/typed-access-guide.html",
+      "width": 390,
+      "height": 900,
+      "theme": "dark",
+      "javascript": false,
+      "screenshot_bytes_equal": true
+    },
+    {
+      "page": "api/index.html",
+      "width": 390,
+      "height": 900,
+      "theme": "dark",
+      "javascript": false,
+      "screenshot_bytes_equal": true
+    }
+  ],
+  "runtime_errors": [],
+  "unexpected_requests": []
+}

@@ -1,0 +1,83 @@
+[
+  {
+    "environment": "source-3.11",
+    "status": "passed",
+    "tests": 703,
+    "skips": 0,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 315.85
+  },
+  {
+    "environment": "wheel-3.11",
+    "status": "passed",
+    "tests": 703,
+    "skips": 0,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 312.29
+  },
+  {
+    "environment": "sdist-3.11",
+    "status": "passed",
+    "tests": 703,
+    "skips": 0,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 311.56
+  },
+  {
+    "environment": "source-3.12",
+    "status": "passed",
+    "tests": 703,
+    "skips": 0,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 292.79
+  },
+  {
+    "environment": "wheel-3.12",
+    "status": "passed",
+    "tests": 703,
+    "skips": 0,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 291.56
+  },
+  {
+    "environment": "sdist-3.12",
+    "status": "passed",
+    "tests": 703,
+    "skips": 0,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 292.33
+  },
+  {
+    "environment": "source-3.13",
+    "status": "passed",
+    "tests": 703,
+    "skips": 0,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 301.43
+  },
+  {
+    "environment": "wheel-3.13",
+    "status": "passed",
+    "tests": 703,
+    "skips": 0,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 334.03
+  },
+  {
+    "environment": "sdist-3.13",
+    "status": "passed",
+    "tests": 703,
+    "skips": 0,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 301.16
+  }
+]
