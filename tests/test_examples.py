@@ -93,6 +93,9 @@ end Begin_Keyword;
                      'task Mat; use OpenCV.Core; X : Mat;',
                      'protected type Mat is end Mat; use OpenCV.Core; X : Mat;'):
             self.assertNotIn('<a ', code(text, self.resolver))
+        resolver = Resolver(self.config, self.native)
+        resolver.public['opencv.core'] = 'type Unrelated is null record;'
+        self.assertNotIn('<a ', code('X : OpenCV.Core.Mat;', resolver))
 
     def test_use_clause_scope_and_inherited_names_fail_closed(self):
         for text in ('X : Mat; use OpenCV.Core;',

@@ -22,6 +22,7 @@ NAME = re.compile(r'\b' + IDENT + r'(?:\s*\.\s*' + IDENT + r')*\b')
 
 class Resolver:
     def __init__(self, config, native):
+        from .search import flat_public
         self.symbols = {}
         source = packages(config)
         self.owners = set(source)
@@ -30,6 +31,7 @@ class Resolver:
                 key = owner + '.' + destination.declaration.name.lower()
                 self.symbols.setdefault(key, []).append(destination)
         self.supported = {owner for owner, pkg in source.items() if external_visible(owner, pkg)}
+        self.public = {owner: flat_public(pkg) for owner, pkg in source.items()}
 
     def positions(self, text):
         masked = mask_ada(text)
@@ -81,6 +83,9 @@ class Resolver:
                 continue
             destination = candidates[0]
             if destination.package.lower() not in self.supported or destination.total != 1:
+                continue
+            signature = mask_ada(destination.declaration.signature).strip()
+            if not signature or signature not in self.public[destination.package.lower()]:
                 continue
             if destination.declaration.kind in ('type', 'subtype'):
                 # Only supported type-mark contexts, never declaration names,

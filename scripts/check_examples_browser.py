@@ -84,6 +84,12 @@ def run(workspace, output):
                                     assert page.locator('[id="' + fragment + '"]').count() == 1
                                     page.goto(url)
                                 screenshot = f'{name}-{width}-{theme}-js{int(javascript)}.png'
+                                if colors.get('string'):
+                                    page.locator('.ada-example .ada-string').first.scroll_into_view_if_needed()
+                                elif colors.get('comment'):
+                                    page.locator('.ada-example .ada-comment').first.scroll_into_view_if_needed()
+                                else:
+                                    page.locator('pre.ada-example').first.scroll_into_view_if_needed()
                                 page.screenshot(path=str(output/screenshot), full_page=False)
                                 results['cases'].append(dict(page=name, width=width, height=900, theme=theme,
                                                              javascript=javascript, colors=colors,
