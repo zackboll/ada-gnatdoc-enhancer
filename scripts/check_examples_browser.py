@@ -106,11 +106,10 @@ def run(workspace, output):
                                                     wait_until='networkidle')
                                     for frame in comparison.frames:
                                         frame.wait_for_load_state('load')
-                                        frame.evaluate('() => document.fonts.ready')
-                                    # Hidden iframe documents do not receive rAF
-                                    # with JavaScript disabled; wait on the visible
-                                    # outer document, not an indefinitely paused frame.
-                                    comparison.evaluate('() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))')
+                                    # JS-disabled/background documents may pause
+                                    # font/rAF promises. No such promise is needed
+                                    # for the system-font-only static baseline.
+                                    comparison.wait_for_timeout(250)
                                     capture = comparison.screenshot(animations='disabled', caret='hide')
                                     captures.append(capture)
                                     filename = f'legacy-{relative.replace("/", "-")}-{width}-{theme}-js{int(javascript)}-{variant}.png'
