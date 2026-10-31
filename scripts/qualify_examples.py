@@ -18,6 +18,8 @@ from ada_gnatdoc_enhancer.pipeline import enhance, verify
 from ada_gnatdoc_enhancer.qualification import hashes
 from ada_gnatdoc_enhancer.util import sorted_json
 
+from compare_release_013_014 import compare
+
 
 def run(repository, workspace, variant):
     reports = {}
@@ -40,7 +42,7 @@ def run(repository, workspace, variant):
         record = dict(disabled=report, disabled_hashes=before)
         if variant == 'candidate':
             baseline = workspace/'baseline'/name/'site'
-            assert hashes(baseline) == before, f'official disabled byte mismatch: {name}'
+            record['release_comparison'] = compare(baseline, site)
             record['official_disabled_byte_parity'] = True
             if name != 'mel':
                 enabled = folder/'enabled'
@@ -66,8 +68,7 @@ def run(repository, workspace, variant):
                     assert search == baseline_search
                     assert len(search['records']) == 1462  # Pinned official fixture; see test_search.py.
                     record['search_records'] = len(search['records'])
-                    record['requested_search_records'] = 1487
-                    record['requested_count_matches_pinned_baseline'] = False
+                    record['baseline_kind'] = 'historical official v0.1.3 fixture, not current production Core'
                 record['enabled_hashes'] = after
         reports[name] = record
     (workspace/(variant + '.json')).write_text(sorted_json(reports))

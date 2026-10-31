@@ -1,6 +1,6 @@
 # Source-verified Ada examples (GNATDOC-027)
 
-This is a development feature, not an official v0.1.3 archive or release.
+This feature is included in v0.1.4 preparation, not yet published.
 Rendering is static, deterministic and offline. There is no browser highlighter,
 network lookup, JavaScript dependency, external stylesheet or consumer-code execution.
 
@@ -30,8 +30,9 @@ Landing highlighting is independently selectable. Landing API links require all
 three fields. Existing `[presentation].syntax_highlighting` and `type_links`
 continue to apply only to native declarations; they do not enable this feature.
 
-Omitted options preserve the complete v0.1.3 output bytes, including publication
-metadata. Explicit `false` in the supported mode has the same rendering behavior.
+Omitted options preserve the complete v0.1.3 output bytes except for the
+`enhancer_version` field in publication metadata. Explicit `false` in the
+supported mode has the same rendering behavior.
 For custom consumer themes, configuration bytes are already hash-bound: changing
 even disabled settings requires regeneration from pristine native input.
 
@@ -133,9 +134,11 @@ The unit suite includes source text, visibility, shadowing, ambiguity, landing
 identity and rehashed-publication tampering tests. See the PR qualification report
 for actual executed environment counts and remaining gates.
 
-Baseline count discrepancy: the pinned official v0.1.3 Core search fixture contains
+Separate baselines: the pinned official v0.1.3 Core search fixture contains
 1,462 records (195 packages, 215 types/subtypes, 1,047 operations, five guides), as
-asserted by the existing `test_search.py`. The task's stated 1,487 is not the count
-of that fixture. Qualification preserves the official records byte-for-byte rather
-than adding invented records. This discrepancy needs independent reconciliation
-before claiming the requested 1,487-record production-site gate.
+asserted by the existing `test_search.py`. Current qualified production Core has
+1,487 records: 195 packages, 216 types/subtypes, 1,071 operations and five guides.
+These are different source/native inventories, not inconsistent expectations.
+Preserve historical index bytes and independently qualify the actual current
+consumer inventory; neither adding invented historical records nor lowering
+current expectations is permitted. See [release evidence](evidence/gnatdoc028/README.md).

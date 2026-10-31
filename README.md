@@ -1,12 +1,12 @@
 # Ada GNATdoc Enhancer
 
-## Development: opt-in Ada examples
+## v0.1.4 preparation: opt-in Ada examples (not published)
 
 GNATDOC-027 adds static Ada fence and exact-source landing-example highlighting,
 with optional conservative source/native-verified API links. It is disabled by
-default and does not change v0.1.3 consumer output unless explicitly enabled.
-See [configuration and limitations](docs/ada-examples.md). Development archives
-built from this branch are not the official published v0.1.3 release.
+default. Feature-off output differs from official v0.1.3 only in the
+version-bound presentation manifest. See [configuration and limitations](docs/ada-examples.md).
+Preparation archives are not public release assets; publication is not authorized.
 
 Offline full-documentation search is available through the versioned opt-in
 `[search]` configuration. See [documentation search](docs/documentation-search.md)
@@ -15,11 +15,10 @@ navigation-link filtering unless explicitly opted in.
 
 **Offline, source-verified enhancement of GNATdoc 26.0.0 HTML sites.**
 
-The published **v0.1.2 baseline** incorporates opt-in consumer-owned custom themes
+The published **v0.1.3 baseline** incorporates opt-in consumer-owned custom themes
 (GNATDOC-017), opt-in stable external symbol bookmarks (GNATDOC-018), and default
 declaration visibility restoration after browser history traversal (GNATDOC-019).
-GNATDOC-023 adds unreleased, opt-in documentation search; it does not modify
-the published release. Python **3.11, 3.12 and 3.13** are supported on Linux. The core
+and GNATDOC-023 opt-in documentation search. Python **3.11, 3.12 and 3.13** are supported on Linux. The core
 has **no runtime dependencies** and needs neither Ada nor GNATdoc at installation.
 
 ## Install a standalone distribution
@@ -161,22 +160,23 @@ python scripts/test_installed.py --fixtures tests/fixtures
 Synthetic conformance never substitutes for independently pinned real sites.
 Historical campaigns remain under `docs/evidence/`; current release results and
 source/artifact identities are described in
-[v0.1.3 preparation evidence](docs/evidence/gnatdoc024/README.md). Historical
+[v0.1.4 preparation evidence](docs/evidence/gnatdoc028/README.md). Historical
+[v0.1.3 preparation evidence](docs/evidence/gnatdoc024/README.md),
 [v0.1.2 preparation evidence](docs/evidence/gnatdoc020/README.md),
 [v0.1.1 evidence](docs/evidence/gnatdoc015/README.md) and the original
 [v0.1.0 qualification](docs/release-0.1.0-qualification.md) remains historical.
 
 For upgrades, regenerate from pristine native output: the version-bound
-presentation manifest changes from `0.1.2` to `0.1.3`, so do not carry an
+presentation manifest changes from `0.1.3` to `0.1.4`, so do not carry an
 old manifest into release verification. Recheck source, native, warning,
 coverage, guide and browser baselines in a separate consumer PR. See
 [migration](docs/migration.md), the [consumer matrix](docs/release-compatibility.md),
 and the [auditable release procedure](docs/releasing.md).
 
 Full offline documentation search remains an explicit opt-in. Without `[search]`,
-the existing navigation-link filter and native routing remain; its label now
-accurately reads **Filter navigation links**, changing index HTML and its manifest
-hash, not only version metadata. See [search configuration, browser requirements
+the existing navigation-link filter and native routing remain. The v0.1.3 label
+**Filter navigation links** and all search assets remain byte-identical when the
+new example options are off. See [search configuration, browser requirements
 and scope](docs/documentation-search.md). No consumer migration is automatic.
 
 Historical bootstrap provenance remains in [qualification](docs/qualification.md)

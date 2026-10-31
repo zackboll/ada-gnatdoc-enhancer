@@ -1,6 +1,37 @@
 # Auditable release preparation and later publication
 
-## GNATDOC-024: v0.1.3 preparation only
+## GNATDOC-028: v0.1.4 preparation only (current)
+
+Verify merged PR #24 commit `6c448f6bcd99ca47fd9b54444cb26d91f71fdc13`
+and tree `d0766f709db2623a9b1ed3f1f1a9f292f8cf2804` against the reviewed
+implementation head. Independently qualify merged-main CI run 41220092687;
+PR-head CI is not a substitute. If it remains incomplete, use `MAIN_CI_PENDING`.
+
+Independently download/hash all four official v0.1.3 assets and verify published
+commit `ce117aedc7eeb8c45aafc07dea9357166caadf0d` and tree
+`e87c8500165c119753843f71e34868b7133523d1`. Do not modify that release.
+Update current version authorities to 0.1.4, retaining historical evidence and
+the 012/013 comparator. Run the explicit 013/014 comparator on identical qualified
+inputs: only manifest version may differ with examples off, including Core search.
+Keep historical 1,462 and current 1,487 Core records separate.
+
+Run the full source/wheel/rebuilt-sdist suite on Python 3.11/3.12/3.13, strict
+archive/content/RECORD/metadata/Twine audits, installed CLI and conformance,
+authentic guides/real sites and security mutations. Preserve all 24 example
+browser cases and 24 feature-off screenshot controls, search/navigation/history,
+clipboard, keyboard focus and actual native-anchor arrival. Retain evidence.
+
+Build candidates from an immutable verified commit/tree, recording actual hashes
+and `publication_authorized = false`. Open one non-draft PR against main with
+auto-merge disabled. Record exact base/head/tree and exact-head hosted CI in its
+body (not self-referential evidence). Failed mandatory gates require
+`CORRECTIVE_WORK_REQUIRED`; incomplete candidate CI requires `HOSTED_CI_PENDING`
+once predecessor main passes. Only all passed gates warrant
+`READY_FOR_MAINTAINER_REVIEW`. Never tag, publish, merge or modify consumers here.
+Final public assets must be regenerated/requalified from approved merged main.
+See [GNATDOC-028 evidence](evidence/gnatdoc028/README.md).
+
+## Historical GNATDOC-024: v0.1.3 preparation only
 
 Start from freshly fetched `main`; record commit/tree, PR #22 tree parity and
 all seven successful exact-main CI jobs, including `search-browser`. Incomplete

@@ -1,5 +1,26 @@
 # Consumer compatibility and adoption boundary
 
+## v0.1.3 → v0.1.4 (GNATDOC-028; prepared, not published)
+
+The three opt-in Ada example options default to false. Without them, complete
+publication inventories and bytes must match official v0.1.3, except the exact
+`enhancer_version` value in `api/presentation.json`. This includes search-enabled
+Core, routers, native pages/destinations, themes, guides and search-index bytes.
+Use `scripts/compare_release_013_014.py`; the older comparator below and its
+historical tests remain unchanged. Reject even rehashed unclassified changes.
+
+Opt-in adds scoped example CSS and source-preserving spans/verified links only
+to authored Ada fences and the exact source-verified landing example. Native
+pages, existing CSS and search records remain unchanged. Overloaded Create/Clone,
+local names, unsupported object-prefix/nested-scope inference remain deliberately
+unlinked; this is not full Ada semantic analysis. See [Ada examples](ada-examples.md).
+
+Historical Core retains 195 packages / 215 types-subtypes / 1,047 operations /
+five guides = 1,462 records. Current qualified Core independently requires
+195 / 216 / 1,071 / five = 1,487 records. Regenerate from pristine native input;
+v0.1.3 manifests are not accepted as v0.1.4. No consumer adoption is authorized.
+See [executed gates and limitations](evidence/gnatdoc028/README.md).
+
 ## v0.1.2 → v0.1.3 (GNATDOC-024)
 
 v0.1.3 preparation includes merged GNATDOC-023 offline documentation search.
