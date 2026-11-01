@@ -77,8 +77,7 @@ def run(repository, workspace, variant):
             record['navigation_profiles'] = {}
             for profile, options in (
                     ('none', dict(navigation='none')),
-                    ('symbol', dict(symbol_bookmarks=True, default_package='OpenCV.Core')),
-                    ('no-theme', dict(theme=False))):
+                    ('symbol', dict(symbol_bookmarks=True, default_package='OpenCV.Core'))):
                 output = folder/profile
                 shutil.copytree(fixture/'native', output)
                 profiled = replace(config, **options)
@@ -92,6 +91,7 @@ def run(repository, workspace, variant):
     # configuration does not authorize incoming-instance references.
     for name, fixture, config_name, native_name, options in (
             ('operations', 'tests/fixtures/imgproc', 'project.toml', '_site', {}),
+            ('no-theme', 'tests/fixtures/core', 'project.toml', '_site', dict(theme=False)),
             ('incoming-instance', 'tests/real-fixtures/generic-core', 'enhancer.toml', 'pristine',
              dict(instance_references=True, symbol_bookmarks=True, default_package='OpenCV.Core'))):
         folder = workspace/variant/name

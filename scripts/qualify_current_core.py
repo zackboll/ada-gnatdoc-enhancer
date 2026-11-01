@@ -6,6 +6,7 @@ authored manifest. This reuses a pinned acquisition, not a fresh GNATdoc build.
 """
 import argparse
 from collections import Counter
+from dataclasses import replace
 import io
 import json
 from pathlib import Path
@@ -80,18 +81,21 @@ def run(repository, commit, native, workspace, official_python):
         if record['kind'] in ('symbol', 'operation'):
             assert (record['name'], record['href']) in expected_destinations
     assert (site/index_path).read_bytes() == (baseline/index_path).read_bytes()
-    text = (authority/config_name).read_text().replace('[guides]', '[guides]\n'
-        'ada_example_highlighting = true\nada_example_api_links = true\n'
-        'ada_landing_example_highlighting = true')
-    enabled_config = authority/'docs/enabled.toml'; enabled_config.write_text(text)
-    opted = load(authority, 'docs/enabled.toml')
+    # Current Core may already opt into the published lexical presentation.
+    # Do not duplicate TOML keys or change the theme's configuration identity.
+    opted = replace(config, ada_example_highlighting=True, ada_example_api_links=True,
+                    ada_landing_example_highlighting=True)
     enabled = workspace/'enabled'; shutil.copytree(native, enabled)
     enabled_report = enhance(opted, enabled); verify(opted, enabled)
     after = hashes(enabled); enhance(opted, enabled); assert after == hashes(enabled)
     assert (enabled/index_path).read_bytes() == (site/index_path).read_bytes()
     added = sorted(set(after)-set(before)); removed = sorted(set(before)-set(after))
     changed = sorted(p for p in before.keys() & after.keys() if before[p] != after[p])
-    assert added == ['assets/gnatdoc-examples.css'] and not removed
+    already_enabled = (config.ada_example_highlighting and config.ada_example_api_links
+                       and config.ada_landing_example_highlighting)
+    assert added == ([] if already_enabled else ['assets/gnatdoc-examples.css']) and not removed
+    if already_enabled:
+        assert not changed, 'already enabled presentation changed'
     assert all(p in ('index.html', 'api/presentation.json') or p.startswith('guides/') for p in changed)
     result = dict(source_commit=commit, source_tree=tree,
                   acquisition='existing approved native bytes, not fresh compiler/GNATdoc generation',
