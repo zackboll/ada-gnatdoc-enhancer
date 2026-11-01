@@ -1,0 +1,157 @@
+{
+  "schema": 1,
+  "platform": "Linux-6.12.113+deb13-amd64-x86_64-with-glibc2.41",
+  "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "python_executable": "/usr/bin/python3",
+  "identities": {
+    "enhancer": {
+      "argv": [
+        "git",
+        "ls-remote",
+        "git@github.com:zackboll/ada-gnatdoc-enhancer.git",
+        "refs/heads/main"
+      ],
+      "exit": 0,
+      "stdout": "2200eb0e95e769a70d3d38a6c8b7facce8205924\trefs/heads/main\n",
+      "stderr": ""
+    },
+    "core": {
+      "argv": [
+        "git",
+        "ls-remote",
+        "git@github.com:zackboll/opencv_core_ada.git",
+        "refs/heads/main"
+      ],
+      "exit": 0,
+      "stdout": "dbdb410c0d86b640271733d7b999ede5a5f92267\trefs/heads/main\n",
+      "stderr": ""
+    }
+  },
+  "tools": {
+    "alr": {
+      "argv": [
+        "alr",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "alr 2.1.1\n",
+      "stderr": ""
+    },
+    "/usr/bin/gnatls": {
+      "argv": [
+        "/usr/bin/gnatls",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "GNATLS 14.2.0\nCopyright (C) 1992-2024, Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.\nThere is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/bin/gnatls": {
+      "argv": [
+        "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/bin/gnatls",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "GNATLS 16.1.0\nCopyright (C) 1992-2025, Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_15.3.1_a6af58cb/bin/gnatls": {
+      "argv": [
+        "/home/zboll/.local/share/alire/toolchains/gnat_native_15.3.1_a6af58cb/bin/gnatls",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "GNATLS 15.3.0\nCopyright (C) 1992-2025, Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    "/home/zboll/.local/share/alire/toolchains/gprbuild_26.0.1_e3f27f25/bin/gprbuild": {
+      "argv": [
+        "/home/zboll/.local/share/alire/toolchains/gprbuild_26.0.1_e3f27f25/bin/gprbuild",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "GPRBUILD 26.0.0 (2026-04-15) (x86_64-pc-linux-gnu)\nCopyright (C) 2004-2026, AdaCore\nThis is free software; see the source for copying conditions.\nThere is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    "/home/zboll/.alire/gnatdoc_bin_26.0.0_6e6e0320/bin/gnatdoc": {
+      "argv": [
+        "/home/zboll/.alire/gnatdoc_bin_26.0.0_6e6e0320/bin/gnatdoc",
+        "--version"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "GNATdoc 26.0.0 (20260415)\n"
+    }
+  },
+  "isolation": {
+    "enhancer_worktree": "/home/zboll/gnatdoc031-enhancer",
+    "core_checkout": "/home/zboll/gnatdoc031-core-dbdb410c",
+    "private_workspace": "/home/zboll/gnatdoc031-private",
+    "global_packages_changed": false,
+    "core_source_modified": false
+  },
+  "smoke": {
+    "import_seconds": 0.034990025917068124,
+    "initialization_seconds": 0.005577148054726422,
+    "parse_seconds": 0.0002552010118961334,
+    "semantic_seconds": 0.0010880900081247091,
+    "type": "Standard.Universal_Int_Type_",
+    "peak_rss_kib": 72800,
+    "module": "/home/zboll/gnatdoc031-private/venv/lib/python3.13/site-packages/libadalang/__init__.py"
+  },
+  "native_build": {
+    "release": "26.0.0",
+    "python_package_metadata_version": "0.1",
+    "alire_compiler": "gnat_native=15.3.1 (GNAT 15.3.0)",
+    "core_compiler": "GNAT 16.1.0",
+    "build_seconds": 1048.41,
+    "parallel_jobs": 2,
+    "private_install_bytes": 250882082,
+    "flags": [
+      "-XLIBRARY_TYPE=relocatable"
+    ],
+    "extra_install": "XMLAda aggregate explicitly installed after recursive Libadalang gprinstall omitted it",
+    "diagnostics": [
+      "Initial /usr/bin/time invocation failed: binary absent; restarted build succeeded.",
+      "Local GNAT 16 preference did not replace Alire lock GNAT 15.3; actual build recorded.",
+      "First import after recursive gprinstall failed: libxmlada_schema.so.18.0w missing; explicit XMLAda installation fixed native closure.",
+      "Initial smoke used next(list), corrected to installed API list indexing."
+    ]
+  },
+  "ldd": "\tlinux-vdso.so.1 (0x00007f20df491000)\n\tlibgpr2.so => /home/zboll/gnatdoc031-private/install/lib/libgpr2.so (0x00007f20dc400000)\n\tlibgnatcoll_projects.so.26.0.0 => /home/zboll/gnatdoc031-private/install/lib/libgnatcoll_projects.so.26.0.0 (0x00007f20dc000000)\n\tlibgpr.so => /home/zboll/gnatdoc031-private/install/lib/libgpr.so (0x00007f20db400000)\n\tlibxmlada_schema.so.18.0w => /home/zboll/gnatdoc031-private/install/lib/libxmlada_schema.so.18.0w (0x00007f20df3be000)\n\tlibxmlada_dom.so.18.0w => /home/zboll/gnatdoc031-private/install/lib/libxmlada_dom.so.18.0w (0x00007f20df39e000)\n\tlibxmlada_sax.so.18.0w => /home/zboll/gnatdoc031-private/install/lib/libxmlada_sax.so.18.0w (0x00007f20dc3b1000)\n\tlibxmlada_input_sources.so.18.0w => /home/zboll/gnatdoc031-private/install/lib/libxmlada_input_sources.so.18.0w (0x00007f20df38e000)\n\tlibxmlada_unicode.so.18.0w => /home/zboll/gnatdoc031-private/install/lib/libxmlada_unicode.so.18.0w (0x00007f20db000000)\n\tliblangkit_support.so => /home/zboll/gnatdoc031-private/install/lib/liblangkit_support.so (0x00007f20daa00000)\n\tlibadasat.so => /home/zboll/gnatdoc031-private/install/lib/libadasat.so (0x00007f20df37c000)\n\tlibprettier_ada.so => /home/zboll/gnatdoc031-private/install/lib/libprettier_ada.so (0x00007f20dc26f000)\n\tlibvss-text.so => /home/zboll/gnatdoc031-private/install/lib/libvss-text.so (0x00007f20dbe42000)\n\tlibvss-gnat.so => /home/zboll/gnatdoc031-private/install/lib/libvss-gnat.so (0x00007f20ddbfd000)\n\tlibgnatcoll_iconv.so.26.0.0 => /home/zboll/gnatdoc031-private/install/lib/libgnatcoll_iconv.so.26.0.0 (0x00007f20ddbf7000)\n\tlibgnatcoll_gmp.so.26.0.0 => /home/zboll/gnatdoc031-private/install/lib/libgnatcoll_gmp.so.26.0.0 (0x00007f20dc253000)\n\tlibgnatcoll_core.so.26.0.0 => /home/zboll/gnatdoc031-private/install/lib/libgnatcoll_core.so.26.0.0 (0x00007f20da400000)\n\tlibgnatcoll_minimal.so.26.0.0 => /home/zboll/gnatdoc031-private/install/lib/libgnatcoll_minimal.so.26.0.0 (0x00007f20db3b8000)\n\tlibgnarl-15.so => /home/zboll/.local/share/alire/toolchains/gnat_native_15.3.1_a6af58cb/lib/gcc/x86_64-pc-linux-gnu/15.3.0/adalib/libgnarl-15.so (0x00007f20db36e000)\n\tlibgnat-15.so => /home/zboll/.local/share/alire/toolchains/gnat_native_15.3.1_a6af58cb/lib/gcc/x86_64-pc-linux-gnu/15.3.0/adalib/libgnat-15.so (0x00007f20d9e00000)\n\tlibgmp.so.10 => /lib/x86_64-linux-gnu/libgmp.so.10 (0x00007f20daf76000)\n\tlibgcc_s.so.1 => /home/zboll/.local/share/alire/toolchains/gnat_native_15.3.1_a6af58cb/lib64/libgcc_s.so.1 (0x00007f20db322000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f20d9c0c000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007f20df493000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f20da910000)\n",
+  "settings": "export LD_LIBRARY_PATH=/home/zboll/gnatdoc031-private/install/lib:/home/zboll/gnatdoc031-private/install/lib/adasat:/home/zboll/gnatdoc031-private/install/lib/gnatcoll_core:/home/zboll/gnatdoc031-private/install/lib/gnatcoll_gmp:/home/zboll/gnatdoc031-private/install/lib/gnatcoll_iconv:/home/zboll/gnatdoc031-private/install/lib/gnatcoll_minimal:/home/zboll/gnatdoc031-private/install/lib/gnatcoll_projects:/home/zboll/gnatdoc031-private/install/lib/gpr:/home/zboll/gnatdoc031-private/install/lib/gpr2:/home/zboll/gnatdoc031-private/install/lib/langkit_support:/home/zboll/gnatdoc031-private/install/lib/libadalang:/home/zboll/gnatdoc031-private/install/lib/prettier_ada:/home/zboll/gnatdoc031-private/install/lib/vss_gnat:/home/zboll/gnatdoc031-private/install/lib/vss_text:/home/zboll/.local/share/alire/toolchains/gnat_native_15.3.1_a6af58cb/lib64\nexport PATH=/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/bin:/home/zboll/.local/share/alire/toolchains/gprbuild_26.0.1_e3f27f25/bin:$PATH\nexport PYTHONPATH=/home/zboll/gnatdoc031-enhancer/src\n",
+  "build_environment": "export ADASAT_ALIRE_PREFIX=\"/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/adasat_26.0.0_37336738\"\nexport ALIRE=\"True\"\nexport GNATCOLL_ALIRE_PREFIX=\"/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/gnatcoll_26.0.0_cc5dd0a1\"\nexport GNATCOLL_GMP_ALIRE_PREFIX=\"/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/gnatcoll_gmp_26.0.0_dacec6f3\"\nexport GNATCOLL_ICONV_ALIRE_PREFIX=\"/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/gnatcoll_iconv_26.0.0_dacec6f3\"\nexport GNATCOLL_ICONV_OPT=\"-v\"\nexport GNATCOLL_MINIMAL_ALIRE_PREFIX=\"/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/gnatcoll_minimal_26.0.0_cc5dd0a1\"\nexport GNATCOLL_OS=\"unix\"\nexport GNATCOLL_PROJECTS_ALIRE_PREFIX=\"/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/gnatcoll_projects_26.0.0_cc5dd0a1\"\nexport GNATCOLL_VERSION=\"26.0.0\"\nexport GNAT_NATIVE_ALIRE_PREFIX=\"/home/zboll/.local/share/alire/toolchains/gnat_native_15.3.1_a6af58cb\"\nexport GPR2KBDIR=\"$$GPRCONFIG_KB_ALIRE_PREFIX//db\"\nexport GPR2_BUILD=\"release\"\nexport GPRBUILD_ALIRE_PREFIX=\"/home/zboll/.local/share/alire/toolchains/gprbuild_26.0.1_e3f27f25\"\nexport GPRCONFIG_KB_ALIRE_PREFIX=\"/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/gprconfig_kb_26.0.0_8d626e98\"\nexport GPR_PROJECT_PATH=\"/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/adasat_26.0.0_37336738:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/gnatcoll_26.0.0_cc5dd0a1/core:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/gnatcoll_gmp_26.0.0_dacec6f3/gmp:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/gnatcoll_iconv_26.0.0_dacec6f3/iconv:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/gnatcoll_minimal_26.0.0_cc5dd0a1/minimal:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/gnatcoll_projects_26.0.0_cc5dd0a1/projects:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/langkit_support_26.0.0_1745168f/langkit/support:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/libgpr2_26.0.0_99e9d2cd:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/libgpr_26.0.0_600d4a7b/gpr:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/prettier_ada_26.0.0_8fa12a56:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/vss_text_26.2.0_c021ca33/gnat:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/xmlada_26.0.0_b140ed4a/distrib:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/xmlada_26.0.0_b140ed4a/dom:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/xmlada_26.0.0_b140ed4a/input_sources:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/xmlada_26.0.0_b140ed4a/sax:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/xmlada_26.0.0_b140ed4a/schema:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/xmlada_26.0.0_b140ed4a/unicode\"\nexport LANGKIT_SUPPORT_ALIRE_PREFIX=\"/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/langkit_support_26.0.0_1745168f\"\nexport LANGKIT_SUPPORT_BUILD_MODE=\"prod\"\nexport LD_LIBRARY_PATH=\"/home/zboll/.local/share/alire/toolchains/gnat_native_15.3.1_a6af58cb/lib64:/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/vss_text_26.2.0_c021ca33/.libs/release/relocatable\"\nexport LD_RUN_PATH=\"/home/zboll/.local/share/alire/toolchains/gnat_native_15.3.1_a6af58cb/lib64\"\nexport LIBADALANG_ALIRE_PREFIX=\"/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d\"\nexport LIBADALANG_BUILD_MODE=\"prod\"\nexport LIBGMP_ALIRE_PREFIX=\"/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/libgmp_6.3.0_system\"\nexport LIBGPR2_ALIRE_PREFIX=\"/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/libgpr2_26.0.0_99e9d2cd\"\nexport LIBGPR_ALIRE_PREFIX=\"/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/libgpr_26.0.0_600d4a7b\"\nexport LIBRARY_PATH=\"/home/zboll/.local/share/alire/toolchains/gnat_native_15.3.1_a6af58cb/lib64\"\nexport MAKE_ALIRE_PREFIX=\"/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/make_4.4.1_system\"\nexport PATH=\"/home/zboll/.local/share/alire/toolchains/gprbuild_26.0.1_e3f27f25/bin:/home/zboll/.local/share/alire/toolchains/gnat_native_15.3.1_a6af58cb/bin:/home/zboll/.local/bin:/home/zboll/opt/gnatstudio-2026.2/bin:/home/zboll/.cargo/bin:/home/zboll/.alire/bin:/home/zboll/.npm-global/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/zboll/.lmstudio/bin:/home/zboll/.lmstudio/bin\"\nexport PRETTIER_ADA_ALIRE_PREFIX=\"/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/prettier_ada_26.0.0_8fa12a56\"\nexport PRETTIER_ADA_BUILD_MODE=\"prod\"\nexport VSS_OS=\"unix\"\nexport VSS_TEXT_ALIRE_PREFIX=\"/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/vss_text_26.2.0_c021ca33\"\nexport XMLADA_ALIRE_PREFIX=\"/home/zboll/gnatdoc031-private/libadalang_26.0.0_75276b8d/alire/cache/dependencies/xmlada_26.0.0_b140ed4a\"\n",
+  "python_packages": "[{\"name\": \"Libadalang\", \"version\": \"0.1\"}, {\"name\": \"pip\", \"version\": \"25.1.1\"}]\n",
+  "libraries": {
+    "/home/zboll/gnatdoc031-private/install/lib/vss_gnat/libvss-gnat.so": "6fab86df567851944f4fe9f42277ac32280250e714780fbfc00301ef382c759e",
+    "/home/zboll/gnatdoc031-private/install/lib/gnatcoll_gmp/libgnatcoll_gmp.so.26.0.0": "1c206bb5b6b2f32887099e5aa881843bf2e2cdaf0bf2d91a6a0f3a68d4b1f0e8",
+    "/home/zboll/gnatdoc031-private/install/lib/gpr2/libgpr2.so": "a656aa419985a5e0f338a327788ac301cf5c94aa278f910ab955031e956e0616",
+    "/home/zboll/gnatdoc031-private/install/lib/vss_text/libvss-text.so": "01a61ca38bd500ad1f766a0ad169687b55264d3730b3f47d39d5dc4174fe6dfc",
+    "/home/zboll/gnatdoc031-private/install/lib/xmlada_unicode/libxmlada_unicode.so.18.0w": "9795a69b2c0dc2e6ce99d5bb6ae6fe2ececdc79805aec5ad78895b13ebe452fb",
+    "/home/zboll/gnatdoc031-private/install/lib/gpr/libgpr.so": "a81e0fceafae718ec8fb995672506440d38c7940ff6065b69f2eaa8f56bc4093",
+    "/home/zboll/gnatdoc031-private/install/lib/gnatcoll_core/libgnatcoll_core.so.26.0.0": "20e6167bac6ff0e6b4fd81b38cd23491e3e400c5e8f4d0f95d61bf418f5c00f8",
+    "/home/zboll/gnatdoc031-private/install/lib/prettier_ada/libprettier_ada.so": "5789f41ef0b79ae630e8d3b04811314b7f1863e3874121f6374d164196e3681c",
+    "/home/zboll/gnatdoc031-private/install/lib/langkit_support/liblangkit_support.so": "9bc73b1d6b4cb87848a3a6a14cb2013f25362843f4a2c206d0ccd9b98ae87fd1",
+    "/home/zboll/gnatdoc031-private/install/lib/xmlada_sax/libxmlada_sax.so.18.0w": "371bb2c10af28bd0de4f2570b5a2231f9ba717a216020bdf08aa0406a9b28bb1",
+    "/home/zboll/gnatdoc031-private/install/lib/xmlada_input/libxmlada_input_sources.so.18.0w": "91062b09053827904d7718c0807f6202b4af9caef6a6f4c1ccee595a834cef53",
+    "/home/zboll/gnatdoc031-private/install/lib/libadalang/libadalang.so": "c768a3361b55c048ed9d80b33d8629d03aa46a95bb35a72dadea5f9e20241c33",
+    "/home/zboll/gnatdoc031-private/install/lib/adasat/libadasat.so": "bef83f42a8ef535b42431e2f19d5f86259846a324f211001a4b2a0f3363a83f5",
+    "/home/zboll/gnatdoc031-private/install/lib/xmlada_dom/libxmlada_dom.so.18.0w": "5a3fd59616b72681c896ddd9be425cbba682d0a93da50efd212b882f8c115a58",
+    "/home/zboll/gnatdoc031-private/install/lib/gnatcoll_minimal/libgnatcoll_minimal.so.26.0.0": "a437fbfd2e85f890ed93128bece19f1472028677951efa4f4aadda672f49319b",
+    "/home/zboll/gnatdoc031-private/install/lib/gnatcoll_projects/libgnatcoll_projects.so.26.0.0": "33f7e6d2a88715f5fba446ae39834ed552d8fc3f98e125f861ccc2ac3dc4ffd6",
+    "/home/zboll/gnatdoc031-private/install/lib/xmlada_schema/libxmlada_schema.so.18.0w": "f387c838cfc959999b33fc8f3f75b53781bf410850a4b7b66689b254d6e2e48c",
+    "/home/zboll/gnatdoc031-private/install/lib/gnatcoll_iconv/libgnatcoll_iconv.so.26.0.0": "0b6a37a8b97f6f662d04b4e425d6a8a56e50e7ac060f18e91a53b4be6e544f49"
+  },
+  "crate_lock_sha256": "91c616e3b331964f14bef3dd690237a8cbb9f6f012c398ff2dcecbe897ef6fab",
+  "binding_sha256": "945bc33d367f6230757d4030740146cc7df1cca4c52beaae962e3aad36dbc39b",
+  "build_log_sha256": "0de55b22c5af1acd704ee79d4ad9eda2f7e41044cfc66623a3bed0b26d6a17c0",
+  "retained_crate_lock_sha256": "cbcf5bf34e52048f7c161c5eea154ec9c6447fdff2b81f06c1079e0d393020c0",
+  "retained_crate_lock_note": "Exact resolved TOML solution; one trailing blank line removed for repository whitespace controls. crate_lock_sha256 records original generated bytes.",
+  "r1": {
+    "evidence": "revision-r1.json",
+    "verified_qualification_sha256": "77e3a4f3627b88adc58bd0e76baf4d301788110530d06fb4b3bbf8a7254a1469",
+    "schema": 2,
+    "review_approval_granted": false,
+    "original_dependency_and_toolchain_observations_unchanged": true
+  }
+}
