@@ -1,0 +1,11 @@
+{
+  "members": 47,
+  "all_members_byte_identical": true,
+  "dependency_metadata_identical": true,
+  "research_members": [],
+  "requires_dist": [
+    "Requires-Dist: markdown-it-py==3.0.0; extra == \"guides\"",
+    "Requires-Dist: mdurl==0.1.2; extra == \"guides\""
+  ],
+  "libadalang_available": false
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "occurrence": {
+      "file": "docs/example.adb",
+      "line": 5,
+      "column": 28
+    },
+    "selected": {
+      "file": "src/opencv-core.ads",
+      "line": 1130,
+      "column": 13,
+      "sha256": "813d29cf136ca703e108aa10586ca8e4536494fbd175c200049e997a8622d1ec",
+      "kind": "SubpDecl"
+    }
+  },
+  {
+    "occurrence": {
+      "file": "docs/example.adb",
+      "line": 6,
+      "column": 34
+    },
+    "selected": {
+      "file": "src/opencv-core.ads",
+      "line": 1242,
+      "column": 13,
+      "sha256": "813d29cf136ca703e108aa10586ca8e4536494fbd175c200049e997a8622d1ec",
+      "kind": "SubpDecl"
+    }
+  }
+]

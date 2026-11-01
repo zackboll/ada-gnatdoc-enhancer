@@ -1,0 +1,37 @@
+{
+  "fully_pinned_consumer_sites": "not qualified in bootstrap",
+  "profiles": {
+    "core": {
+      "deterministic": true,
+      "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+      "html_pages": 4,
+      "idempotent": true,
+      "linked_types": 4,
+      "packages": 3
+    },
+    "geometry": {
+      "deterministic": true,
+      "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+      "html_pages": 3,
+      "idempotent": true,
+      "linked_types": 5,
+      "packages": 2
+    },
+    "imgproc": {
+      "deterministic": true,
+      "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+      "html_pages": 2,
+      "idempotent": true,
+      "linked_types": 6,
+      "packages": 1
+    },
+    "mel": {
+      "deterministic": true,
+      "fixture": "synthetic native GNATdoc 26; NOT complete pinned site",
+      "html_pages": 37,
+      "idempotent": true,
+      "linked_types": 7,
+      "packages": 29
+    }
+  }
+}

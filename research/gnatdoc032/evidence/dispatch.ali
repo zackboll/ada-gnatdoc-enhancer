@@ -1,0 +1,78 @@
+V "GNAT Lib v16"
+M P W=b
+A -gnatA
+A -gnat2022
+A -gnata
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_TAGGED_TYPES
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV STATIC_DISPATCH_TABLES
+
+U dispatch%b		dispatch.adb		85665e4d NE OO SU
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.streams%s		a-stream.adb		a-stream.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z system%s		system.ads		system.ali
+Z system.assertions%s	s-assert.adb		s-assert.ali
+Z system.concat_2%s	s-conca2.adb		s-conca2.ali
+Z system.img_address_64%s  s-imad64.ads		s-imad64.ali
+Z system.return_stack%s	s-retsta.ads		s-retsta.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+D ada.ads		20260430083320 76789da1 ada%s
+D a-assert.ads		20260430083320 ba465f5c ada.assertions%s
+D a-except.ads		20260430083320 8699d7ff ada.exceptions%s
+D a-stream.ads		20260430083320 cb01a8f8 ada.streams%s
+D a-string.ads		20260430083320 90ac6797 ada.strings%s
+D a-sttebu.ads		20260430083320 f1ad67a2 ada.strings.text_buffers%s
+D a-stuten.ads		20260430083320 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		20260430083320 2dbf449c ada.tags%s
+D a-unccon.ads		20260430083320 0e9b276f ada.unchecked_conversion%s
+D dispatch.adb		20261101033009 85665e4d dispatch%b
+D interfac.ads		20260430083320 9111f9c1 interfaces%s
+D system.ads		20260430083320 e2b7c99d system%s
+D s-assert.ads		20260430083320 9c4520c7 system.assertions%s
+D s-conca2.ads		20260430083320 b5fb73f7 system.concat_2%s
+D s-exctab.ads		20260430083320 91bef6ef system.exception_table%s
+D s-imagea.ads		20260430083320 c875d703 system.image_a%s
+D s-imad64.ads		20260430083320 41fa65e5 system.img_address_64%s
+D s-parame.ads		20260430083320 a1aeab5c system.parameters%s
+D s-putima.ads		20260430083320 1b989439 system.put_images%s
+D s-retsta.ads		20260430083320 0f6b06cb system.return_stack%s
+D s-secsta.ads		20260430083320 578279f5 system.secondary_stack%s
+D s-soflin.ads		20260430083320 5d88fdea system.soft_links%s
+D s-stache.ads		20260430083320 0b81c1fe system.stack_checking%s
+D s-stalib.ads		20260430083320 1c9580f6 system.standard_library%s
+D s-stoele.ads		20260430083320 ccded4e8 system.storage_elements%s
+D s-traent.ads		20260430083320 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		20260430083320 fa2a7f59 system.unsigned_types%s
+G a e
+G c Z b b [dispatch standard 1 11 none]
+X 10 dispatch.adb
+1U11*Dispatch 1b11 17l5 17t13
+2K12 Types 7l8 7e13 8r8
+3R12 Root 3e38 4p16 4r30 5r25 9r29
+4V16 Value{integer} 4b16 4>23 10R27
+4r23 Self{3R12}
+5R12 Child<3R12> 5e46 6P27 6r41 14r13
+6V27 Value{integer}<4p16> 6b27 6>34
+6r34 Self{5R12}
+9U14 Invoke 9b14 9>22 13l8 13t14 16s4
+9c22 Self<3R12> 10r34
+10i7 Answer{integer} 12r22
+14r4 Object{5R12} 16r12
+

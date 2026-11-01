@@ -1,0 +1,3 @@
+Processing /home/zboll/gnatdoc032-private/wheels/candidate/ada_gnatdoc_enhancer-0.1.4-py3-none-any.whl
+Installing collected packages: ada-gnatdoc-enhancer
+Successfully installed ada-gnatdoc-enhancer-0.1.4

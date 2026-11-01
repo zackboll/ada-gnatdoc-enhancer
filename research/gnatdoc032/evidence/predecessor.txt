@@ -1,0 +1,28 @@
+test_core_and_tampered_native (test_probe.CoreTests.test_core_and_tampered_native) ... ok
+test_no_compiler_cannot_authorize_link (test_probe.CoreTests.test_no_compiler_cannot_authorize_link) ... ok
+test_missing_and_modified_inventories (test_probe.QualificationTests.test_missing_and_modified_inventories) ... ok
+test_unreviewed_acquisition (test_probe.QualificationTests.test_unreviewed_acquisition) ... ok
+test_exact_overloads (test_probe.SemanticTests.test_exact_overloads) ... ok
+test_invalid_ambiguous_and_missing_context_never_link (test_probe.SemanticTests.test_invalid_ambiguous_and_missing_context_never_link) ... ok
+test_return_context_visibility_shadowing_generics (test_probe.SemanticTests.test_return_context_visibility_shadowing_generics) ... ok
+test_approval_for_other_manifest_and_stale_binding (test_security.SecurityTests.test_approval_for_other_manifest_and_stale_binding) ... ok
+test_changed_native_source_and_rehashed_evidence (test_security.SecurityTests.test_changed_native_source_and_rehashed_evidence) ... ok
+test_commit_tree_and_checkout_cleanliness (test_security.SecurityTests.test_commit_tree_and_checkout_cleanliness) ... ok
+test_duplicate_and_normalized_conflicts (test_security.SecurityTests.test_duplicate_and_normalized_conflicts) ... ok
+test_explicit_test_only_approval_and_unauthorized_reviewer (test_security.SecurityTests.test_explicit_test_only_approval_and_unauthorized_reviewer) ... ok
+test_manifest_removed_on_extraction_failure (test_security.SecurityTests.test_manifest_removed_on_extraction_failure) ... ok
+test_missing_and_inconsistent_authenticated_metadata (test_security.SecurityTests.test_missing_and_inconsistent_authenticated_metadata) ... ok
+test_missing_extra_and_changed_non_api_evidence (test_security.SecurityTests.test_missing_extra_and_changed_non_api_evidence) ... ok
+test_symlinked_evidence_rejected (test_security.SecurityTests.test_symlinked_evidence_rejected) ... ok
+test_traversal_absolute_and_noncanonical_paths (test_security.SecurityTests.test_traversal_absolute_and_noncanonical_paths) ... ok
+test_unsafe_archive_member_types (test_security.SecurityTests.test_unsafe_archive_member_types) ... ok
+test_unsafe_or_escaping_destination (test_security.SecurityTests.test_unsafe_or_escaping_destination) ... ok
+test_valid_acquisition_never_authorizes (test_security.SecurityTests.test_valid_acquisition_never_authorizes) ... ok
+test_wrong_metadata_digest (test_security.SecurityTests.test_wrong_metadata_digest) ... ok
+test_wrong_zip_digest (test_security.SecurityTests.test_wrong_zip_digest) ... ok
+test_zip_integrity (test_security.SecurityTests.test_zip_integrity) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 8.517s
+
+OK

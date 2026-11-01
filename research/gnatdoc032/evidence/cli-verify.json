@@ -1,0 +1,440 @@
+{
+  "calls": [
+    {
+      "status": "COMPILER_IDENTITY_CONFIRMED",
+      "occurrence": {
+        "file": "valid.adb",
+        "line": 6,
+        "column": 18
+      },
+      "libadalang_selected": {
+        "file": "overloads.ads",
+        "line": 4,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a",
+        "kind": "SubpDecl"
+      },
+      "compiler_selected": {
+        "file": "overloads.ads",
+        "line": 4,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a"
+      },
+      "compiler_reference": {
+        "file": "overloads.ads",
+        "line": 4,
+        "column": 13,
+        "entity_type": "V",
+        "metadata": "{2R9}",
+        "name": "Clone",
+        "reference_type": "s"
+      },
+      "lookup_seconds": 4.462397191673517e-05
+    },
+    {
+      "status": "COMPILER_IDENTITY_CONFIRMED",
+      "occurrence": {
+        "file": "valid.adb",
+        "line": 7,
+        "column": 19
+      },
+      "libadalang_selected": {
+        "file": "overloads.ads",
+        "line": 5,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a",
+        "kind": "SubpDecl"
+      },
+      "compiler_selected": {
+        "file": "overloads.ads",
+        "line": 5,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a"
+      },
+      "compiler_reference": {
+        "file": "overloads.ads",
+        "line": 5,
+        "column": 13,
+        "entity_type": "V",
+        "metadata": "{3R9}",
+        "name": "Clone",
+        "reference_type": "s"
+      },
+      "lookup_seconds": 1.9317027181386948e-05
+    },
+    {
+      "status": "COMPILER_IDENTITY_CONFIRMED",
+      "occurrence": {
+        "file": "valid.adb",
+        "line": 8,
+        "column": 19
+      },
+      "libadalang_selected": {
+        "file": "overloads.ads",
+        "line": 6,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a",
+        "kind": "SubpDecl"
+      },
+      "compiler_selected": {
+        "file": "overloads.ads",
+        "line": 6,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a"
+      },
+      "compiler_reference": {
+        "file": "overloads.ads",
+        "line": 6,
+        "column": 13,
+        "entity_type": "V",
+        "metadata": "{integer}",
+        "name": "Pick",
+        "reference_type": "s"
+      },
+      "lookup_seconds": 1.4077057130634785e-05
+    },
+    {
+      "status": "COMPILER_IDENTITY_CONFIRMED",
+      "occurrence": {
+        "file": "valid.adb",
+        "line": 9,
+        "column": 19
+      },
+      "libadalang_selected": {
+        "file": "overloads.ads",
+        "line": 7,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a",
+        "kind": "SubpDecl"
+      },
+      "compiler_selected": {
+        "file": "overloads.ads",
+        "line": 7,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a"
+      },
+      "compiler_reference": {
+        "file": "overloads.ads",
+        "line": 7,
+        "column": 13,
+        "entity_type": "V",
+        "metadata": "{integer}",
+        "name": "Pick",
+        "reference_type": "s"
+      },
+      "lookup_seconds": 1.0970979928970337e-05
+    },
+    {
+      "status": "COMPILER_IDENTITY_CONFIRMED",
+      "occurrence": {
+        "file": "valid.adb",
+        "line": 10,
+        "column": 19
+      },
+      "libadalang_selected": {
+        "file": "overloads.ads",
+        "line": 8,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a",
+        "kind": "SubpDecl"
+      },
+      "compiler_selected": {
+        "file": "overloads.ads",
+        "line": 8,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a"
+      },
+      "compiler_reference": {
+        "file": "overloads.ads",
+        "line": 8,
+        "column": 13,
+        "entity_type": "V",
+        "metadata": "{integer}",
+        "name": "Count",
+        "reference_type": "s"
+      },
+      "lookup_seconds": 9.62789636105299e-06
+    },
+    {
+      "status": "COMPILER_IDENTITY_CONFIRMED",
+      "occurrence": {
+        "file": "valid.adb",
+        "line": 11,
+        "column": 19
+      },
+      "libadalang_selected": {
+        "file": "overloads.ads",
+        "line": 9,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a",
+        "kind": "SubpDecl"
+      },
+      "compiler_selected": {
+        "file": "overloads.ads",
+        "line": 9,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a"
+      },
+      "compiler_reference": {
+        "file": "overloads.ads",
+        "line": 9,
+        "column": 13,
+        "entity_type": "V",
+        "metadata": "{integer}",
+        "name": "Count",
+        "reference_type": "s"
+      },
+      "lookup_seconds": 9.21695027500391e-06
+    },
+    {
+      "status": "COMPILER_IDENTITY_CONFIRMED",
+      "occurrence": {
+        "file": "valid.adb",
+        "line": 12,
+        "column": 19
+      },
+      "libadalang_selected": {
+        "file": "overloads.ads",
+        "line": 10,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a",
+        "kind": "SubpDecl"
+      },
+      "compiler_selected": {
+        "file": "overloads.ads",
+        "line": 10,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a"
+      },
+      "compiler_reference": {
+        "file": "overloads.ads",
+        "line": 10,
+        "column": 13,
+        "entity_type": "V",
+        "metadata": "{integer}",
+        "name": "Named",
+        "reference_type": "s"
+      },
+      "lookup_seconds": 9.167008101940155e-06
+    },
+    {
+      "status": "COMPILER_IDENTITY_CONFIRMED",
+      "occurrence": {
+        "file": "valid.adb",
+        "line": 13,
+        "column": 19
+      },
+      "libadalang_selected": {
+        "file": "overloads.ads",
+        "line": 11,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a",
+        "kind": "SubpDecl"
+      },
+      "compiler_selected": {
+        "file": "overloads.ads",
+        "line": 11,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a"
+      },
+      "compiler_reference": {
+        "file": "overloads.ads",
+        "line": 11,
+        "column": 13,
+        "entity_type": "V",
+        "metadata": "{integer}",
+        "name": "Named",
+        "reference_type": "s"
+      },
+      "lookup_seconds": 8.785980753600597e-06
+    },
+    {
+      "status": "COMPILER_IDENTITY_CONFIRMED",
+      "occurrence": {
+        "file": "valid.adb",
+        "line": 14,
+        "column": 19
+      },
+      "libadalang_selected": {
+        "file": "overloads.ads",
+        "line": 12,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a",
+        "kind": "SubpDecl"
+      },
+      "compiler_selected": {
+        "file": "overloads.ads",
+        "line": 12,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a"
+      },
+      "compiler_reference": {
+        "file": "overloads.ads",
+        "line": 12,
+        "column": 13,
+        "entity_type": "V",
+        "metadata": "{integer}",
+        "name": "Defaulted",
+        "reference_type": "s"
+      },
+      "lookup_seconds": 8.695991709828377e-06
+    },
+    {
+      "status": "COMPILER_IDENTITY_CONFIRMED",
+      "occurrence": {
+        "file": "valid.adb",
+        "line": 15,
+        "column": 19
+      },
+      "libadalang_selected": {
+        "file": "overloads.ads",
+        "line": 14,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a",
+        "kind": "SubpDecl"
+      },
+      "compiler_selected": {
+        "file": "overloads.ads",
+        "line": 14,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a"
+      },
+      "compiler_reference": {
+        "file": "overloads.ads",
+        "line": 14,
+        "column": 13,
+        "entity_type": "V",
+        "metadata": "{integer}",
+        "name": "Result",
+        "reference_type": "s"
+      },
+      "lookup_seconds": 8.406001143157482e-06
+    },
+    {
+      "status": "COMPILER_IDENTITY_CONFIRMED",
+      "occurrence": {
+        "file": "valid.adb",
+        "line": 16,
+        "column": 18
+      },
+      "libadalang_selected": {
+        "file": "overloads.ads",
+        "line": 15,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a",
+        "kind": "SubpDecl"
+      },
+      "compiler_selected": {
+        "file": "overloads.ads",
+        "line": 15,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a"
+      },
+      "compiler_reference": {
+        "file": "overloads.ads",
+        "line": 15,
+        "column": 13,
+        "entity_type": "V",
+        "metadata": "{string}",
+        "name": "Result",
+        "reference_type": "s"
+      },
+      "lookup_seconds": 1.2804055586457253e-05
+    },
+    {
+      "status": "COMPILER_IDENTITY_CONFIRMED",
+      "occurrence": {
+        "file": "valid.adb",
+        "line": 17,
+        "column": 29
+      },
+      "libadalang_selected": {
+        "file": "overloads.ads",
+        "line": 6,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a",
+        "kind": "SubpDecl"
+      },
+      "compiler_selected": {
+        "file": "overloads.ads",
+        "line": 6,
+        "column": 13,
+        "sha256": "02fb564b2ec6c948ceedd772cb76e367037e1d484603f3c537082c9097d5654a"
+      },
+      "compiler_reference": {
+        "file": "overloads.ads",
+        "line": 6,
+        "column": 13,
+        "entity_type": "V",
+        "metadata": "{integer}",
+        "name": "Pick",
+        "reference_type": "s"
+      },
+      "lookup_seconds": 8.846051059663296e-06
+    },
+    {
+      "status": "COMPILER_IDENTITY_CONFIRMED",
+      "occurrence": {
+        "file": "valid.adb",
+        "line": 18,
+        "column": 19
+      },
+      "libadalang_selected": {
+        "file": "other.ads",
+        "line": 2,
+        "column": 13,
+        "sha256": "e0537bdfd11ea9ad96493b48313a26d43ecc1c352fac4ce0342822e7dcd86060",
+        "kind": "ExprFunction"
+      },
+      "compiler_selected": {
+        "file": "other.ads",
+        "line": 2,
+        "column": 13,
+        "sha256": "e0537bdfd11ea9ad96493b48313a26d43ecc1c352fac4ce0342822e7dcd86060"
+      },
+      "compiler_reference": {
+        "file": "other.ads",
+        "line": 2,
+        "column": 13,
+        "entity_type": "V",
+        "metadata": "{integer}",
+        "name": "Pick",
+        "reference_type": "s"
+      },
+      "lookup_seconds": 1.1721975170075893e-05
+    },
+    {
+      "status": "COMPILER_IDENTITY_CONFIRMED",
+      "occurrence": {
+        "file": "valid.adb",
+        "line": 25,
+        "column": 29
+      },
+      "libadalang_selected": {
+        "file": "valid.adb",
+        "line": 24,
+        "column": 16,
+        "sha256": "f686ed8183426a13a9450133f0ae9f852e92306e15b01129c6bd3cbd0ff7bfdd",
+        "kind": "ExprFunction"
+      },
+      "compiler_selected": {
+        "file": "valid.adb",
+        "line": 24,
+        "column": 16,
+        "sha256": "f686ed8183426a13a9450133f0ae9f852e92306e15b01129c6bd3cbd0ff7bfdd"
+      },
+      "compiler_reference": {
+        "file": "valid.adb",
+        "line": 24,
+        "column": 16,
+        "entity_type": "V",
+        "metadata": "{integer}",
+        "name": "Pick",
+        "reference_type": "s"
+      },
+      "lookup_seconds": 9.368057362735271e-06
+    }
+  ],
+  "validation_seconds": 0.19923872500658035,
+  "index_seconds": 0.00029634800739586353
+}
