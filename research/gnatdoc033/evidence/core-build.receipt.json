@@ -2611,7 +2611,7 @@
       }
     }
   },
-  "build": "/home/zboll/gnatdoc033-private/core-build5",
+  "build": "/home/zboll/gnatdoc033-private/portable-core-build",
   "runs": [
     {
       "argv": [
@@ -2620,7 +2620,7 @@
         "-P",
         "/home/zboll/gnatdoc033-private/core/docs/example.gpr",
         "--root-dir=/home/zboll/gnatdoc033-private/core",
-        "--relocate-build-tree=/home/zboll/gnatdoc033-private/core-build5",
+        "--relocate-build-tree=/home/zboll/gnatdoc033-private/portable-core-build",
         "-p",
         "-c",
         "-u",
@@ -2628,9 +2628,9 @@
         "example.adb"
       ],
       "exit": 0,
-      "stdout": "object directory \"/home/zboll/gnatdoc033-private/core-build5/obj/shim/development\" created for project OpenCV_Core_Shim\nlibrary directory \"/home/zboll/gnatdoc033-private/core-build5/lib\" created for project OpenCV_Core_Shim\nobject directory \"/home/zboll/gnatdoc033-private/core-build5/obj/development\" created for project OpenCV_Core\nobject directory \"/home/zboll/gnatdoc033-private/core-build5/obj/docs-example\" created for project Example\nChanging to object directory of \"Example\": \"/home/zboll/gnatdoc033-private/core-build5/obj/docs-example/\"\n/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/bin/gcc -c -x ada -gnatA -gnat2022 -gnata -gnatwa -Werror -gnatec=/tmp/GPR.954329/GNAT-TEMP-000003.TMP -gnatem=/tmp/GPR.954329/GNAT-TEMP-000004.TMP /home/zboll/gnatdoc033-private/core/docs/example.adb\n",
+      "stdout": "object directory \"/home/zboll/gnatdoc033-private/portable-core-build/obj/shim/development\" created for project OpenCV_Core_Shim\nlibrary directory \"/home/zboll/gnatdoc033-private/portable-core-build/lib\" created for project OpenCV_Core_Shim\nobject directory \"/home/zboll/gnatdoc033-private/portable-core-build/obj/development\" created for project OpenCV_Core\nobject directory \"/home/zboll/gnatdoc033-private/portable-core-build/obj/docs-example\" created for project Example\nChanging to object directory of \"Example\": \"/home/zboll/gnatdoc033-private/portable-core-build/obj/docs-example/\"\n/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/bin/gcc -c -x ada -gnatA -gnat2022 -gnata -gnatwa -Werror -gnatec=/tmp/GPR.1343229/GNAT-TEMP-000003.TMP -gnatem=/tmp/GPR.1343229/GNAT-TEMP-000004.TMP /home/zboll/gnatdoc033-private/core/docs/example.adb\n",
       "stderr": "",
-      "seconds": 0.26142237102612853
+      "seconds": 0.29344418400432914
     }
   ],
   "dependencies": {

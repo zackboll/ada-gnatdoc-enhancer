@@ -4,6 +4,6 @@ test_unsupported_canonical_form_never_emits_mapping (test_generator.Generator.te
 test_wrong_overload_injection_never_emits_mapping (test_generator.Generator.test_wrong_overload_injection_never_emits_mapping) ... ok
 
 ----------------------------------------------------------------------
-Ran 4 tests in 3.965s
+Ran 4 tests in 4.448s
 
 OK

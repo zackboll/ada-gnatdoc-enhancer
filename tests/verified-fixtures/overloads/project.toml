@@ -12,4 +12,4 @@ ada_example_highlighting = true
 ada_example_api_links = true
 [guides.verified_examples]
 mapping = "mapping.json"
-sha256 = "5ac0ba42e0ddf0fa897b8f9d74070d3882f51cac3484e906c0d65b3bd2f3071e"
+sha256 = "70166b1ee9eb70f2a7ea0122c1769ed9665cd5024a25c8b229aef209bd240b33"

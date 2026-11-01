@@ -47,6 +47,10 @@ class Generator(unittest.TestCase):
         self.assertEqual(compile_units.call_count, 1)
         receipt = json.loads((self.work / 'one.receipt.json').read_text())
         self.assertEqual(len(receipt['runs']), 1)
+        for path in self.root.rglob('*'):
+            if path.is_file(): os.utime(path, (1700000000, 1700000000))
+        relocated = self.work / 'relocated-source'
+        self.root.rename(relocated); self.root = relocated
         second = self.generate('two')
         self.assertEqual(first, second)
         self.assertEqual(len(first['mappings']), 12)

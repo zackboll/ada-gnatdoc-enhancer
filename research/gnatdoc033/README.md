@@ -51,7 +51,8 @@ Retained evidence in `evidence/`:
   and wrong-destination verification; original 18 also passed with
   `PYTHONOPTIMIZE=1`.
 * Real compiler generator: **4 passed** normal, `-O`, and `PYTHONOPTIMIZE=1`.
-  Fresh compile count, deterministic new builds, wrong-LAL-overload injection,
+  Fresh compile count, deterministic new builds despite source-mtime and absolute
+  source/build-root relocation, wrong-LAL-overload injection,
   unsupported canonical form and source mutation during selection are checked.
 * GNATDOC-031: **23 passed, no skips** in the private compiler/Core environment.
 * GNATDOC-032: **18 passed, no skips**, normal and `-O`; includes original

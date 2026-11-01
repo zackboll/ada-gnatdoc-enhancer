@@ -1,25 +1,5 @@
-test_changed_native_anchor_and_profile_rejected (test_verified_examples.VerifiedExamples.test_changed_native_anchor_and_profile_rejected) ... ok
-test_complete_authored_overload_render (test_verified_examples.VerifiedExamples.test_complete_authored_overload_render) ... ok
-test_configuration_requires_pin_and_explicit_links (test_verified_examples.VerifiedExamples.test_configuration_requires_pin_and_explicit_links) ... ok
-test_disabled_feature_ignores_missing_mapping_and_preserves_bytes (test_verified_examples.VerifiedExamples.test_disabled_feature_ignores_missing_mapping_and_preserves_bytes) ... ok
-test_duplicate_and_conflicting_spans_rejected (test_verified_examples.VerifiedExamples.test_duplicate_and_conflicting_spans_rejected) ... ok
-test_duplicate_json_keys_rejected (test_verified_examples.VerifiedExamples.test_duplicate_json_keys_rejected) ... ok
-test_exact_overloads_named_defaulted_and_return_context (test_verified_examples.VerifiedExamples.test_exact_overloads_named_defaulted_and_return_context) ... ok
-test_full_pipeline_repeated_generation_and_tamper_verification (test_verified_examples.VerifiedExamples.test_full_pipeline_repeated_generation_and_tamper_verification) ... ok
-test_incomplete_fragment_or_unowned_source_gets_no_verified_link (test_verified_examples.VerifiedExamples.test_incomplete_fragment_or_unowned_source_gets_no_verified_link) ... ok
-test_malformed_json_and_traversal_rejected (test_verified_examples.VerifiedExamples.test_malformed_json_and_traversal_rejected) ... ok
-test_missing_mapping_rejected (test_verified_examples.VerifiedExamples.test_missing_mapping_rejected) ... ok
-test_no_verified_links_on_landing_or_without_identity (test_verified_examples.VerifiedExamples.test_no_verified_links_on_landing_or_without_identity) ... ok
-test_real_authored_core_html_mat_not_umat (test_verified_examples.VerifiedExamples.test_real_authored_core_html_mat_not_umat) ... ok
-test_reordered_overloads_rejected_even_if_input_hashes_rewritten (test_verified_examples.VerifiedExamples.test_reordered_overloads_rejected_even_if_input_hashes_rewritten) ... ok
-test_stale_sources_and_project_rejected (test_verified_examples.VerifiedExamples.test_stale_sources_and_project_rejected) ... ok
-test_tampered_mapping_with_original_pin_rejected (test_verified_examples.VerifiedExamples.test_tampered_mapping_with_original_pin_rejected) ... ok
-test_unknown_incomplete_and_url_authority_rejected (test_verified_examples.VerifiedExamples.test_unknown_incomplete_and_url_authority_rejected) ... ok
-test_wrong_columns_and_token_boundaries_rejected (test_verified_examples.VerifiedExamples.test_wrong_columns_and_token_boundaries_rejected) ... ok
-test_wrong_compiler_identity_rejected (test_verified_examples.VerifiedExamples.test_wrong_compiler_identity_rejected) ... ok
-test_wrong_lal_identity_rejected_even_with_new_mapping_pin (test_verified_examples.VerifiedExamples.test_wrong_lal_identity_rejected_even_with_new_mapping_pin) ... ok
-
+....................
 ----------------------------------------------------------------------
-Ran 20 tests in 17.555s
+Ran 20 tests in 18.046s
 
 OK

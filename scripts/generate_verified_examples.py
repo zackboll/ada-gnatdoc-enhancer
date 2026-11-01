@@ -57,15 +57,21 @@ def generate(root, project, sources, compiler, build, config_path, native_site, 
             return value.replace(str(root), '$SOURCE').replace(str(build.resolve()), '$BUILD')
         return value
     import libadalang as lal
+    # Raw ALI/object bytes embed source mtimes and sometimes build paths. Retain
+    # those exact hashes in the local receipt, but fingerprint the parsed ALI
+    # evidence for portable output so identical source bytes remain reproducible
+    # after copying/checking out on another machine.
+    ali_evidence = [[list(key), sorted({json.dumps(record, sort_keys=True) for record in records})]
+                    for key, records in sorted(evidence.index.items())]
     provenance = {
         'compiler': fingerprint(tools),
         'libadalang': fingerprint({'version': importlib.metadata.version('libadalang'),
                                   'binding_sha256': v.digest(lal.__file__)}),
         'project': fingerprint({'inputs': project_inputs, 'scenarios': list(scenarios),
                                 'configuration': portable(r['project_configuration'])}),
-        'evidence': fingerprint({'snapshot': r['snapshot'], 'artifacts': r['artifacts'],
+        'evidence': fingerprint({'snapshot': r['snapshot'], 'ali': ali_evidence,
                                   'dependencies': sorted(r['dependencies'].values())}),
-        'ali': fingerprint({name: r['artifacts'][name] for name in r['alis']})}
+        'ali': fingerprint(ali_evidence)}
     result = dict(schema_version=1, inputs=project_inputs, native_sha256=fingerprint(native_identity(native)),
                   provenance=provenance, mappings=[], skipped=[])
     for path in sources:

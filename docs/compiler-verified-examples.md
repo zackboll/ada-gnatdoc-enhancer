@@ -117,6 +117,11 @@ requires updating its project pin; that alone cannot bypass source/native checks
 Changing sources/projects/native evidence requires fresh generation. Disabled
 configuration never reads mappings and preserves previous output bytes.
 
+Portable ALI fingerprints bind the verifier's parsed cross-reference evidence,
+not timestamp-bearing raw ALI/object bytes. Exact raw artifact hashes remain in
+the retained local receipt. Copying byte-identical sources with different mtimes
+does not change the portable mapping.
+
 ## Validated scope and reproduction
 
 Retained source-backed controls under `tests/verified-fixtures` contain **16

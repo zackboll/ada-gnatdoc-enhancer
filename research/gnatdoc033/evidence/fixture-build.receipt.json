@@ -315,7 +315,7 @@
       }
     }
   },
-  "build": "/home/zboll/gnatdoc033-private/static-build2",
+  "build": "/home/zboll/gnatdoc033-private/portable-fixture-build",
   "runs": [
     {
       "argv": [
@@ -324,7 +324,7 @@
         "-P",
         "/home/zboll/gnatdoc033-private/static-fixtures/fixtures.gpr",
         "--root-dir=/home/zboll/gnatdoc033-private/static-fixtures",
-        "--relocate-build-tree=/home/zboll/gnatdoc033-private/static-build2",
+        "--relocate-build-tree=/home/zboll/gnatdoc033-private/portable-fixture-build",
         "-p",
         "-c",
         "-u",
@@ -332,9 +332,9 @@
         "valid.adb"
       ],
       "exit": 0,
-      "stdout": "object directory \"/home/zboll/gnatdoc033-private/static-build2/obj\" created for project Fixtures\nChanging to object directory of \"Fixtures\": \"/home/zboll/gnatdoc033-private/static-build2/obj/\"\n/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/bin/gcc -c -x ada -gnatA -gnat2022 -gnata -gnatec=/tmp/GPR.1121368/GNAT-TEMP-000003.TMP -gnatem=/tmp/GPR.1121368/GNAT-TEMP-000004.TMP /home/zboll/gnatdoc033-private/static-fixtures/valid.adb\n",
+      "stdout": "object directory \"/home/zboll/gnatdoc033-private/portable-fixture-build/obj\" created for project Fixtures\nChanging to object directory of \"Fixtures\": \"/home/zboll/gnatdoc033-private/portable-fixture-build/obj/\"\n/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/bin/gcc -c -x ada -gnatA -gnat2022 -gnata -gnatec=/tmp/GPR.1343038/GNAT-TEMP-000003.TMP -gnatem=/tmp/GPR.1343038/GNAT-TEMP-000004.TMP /home/zboll/gnatdoc033-private/static-fixtures/valid.adb\n",
       "stderr": "",
-      "seconds": 0.21995810908265412
+      "seconds": 0.22493449598550797
     }
   ],
   "dependencies": {
