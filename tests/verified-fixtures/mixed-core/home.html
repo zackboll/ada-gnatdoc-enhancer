@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenCV Core Ada</title>
+<link rel="stylesheet" href="api/gnatdoc-theme.css">
+<body>
+<main class="landing">
+<p class="eyebrow">Ada 2022 · OpenCV Core</p>
+<h1>OpenCV Core Ada</h1>
+<p class="lead">A thick, idiomatic Ada 2022 binding for the OpenCV Core module, with
+controlled resources, strong types, typed access and Ada exceptions.</p>
+<p><a class="api-button" href="api/index.html">Explore the API reference →</a></p>
+<p>The package specifications are the authoritative API declarations.
+The <a href="https://github.com/zackboll/opencv_core_ada/blob/main/README.md">repository README</a>
+defines the supported OpenCV version policy (currently 4.1 through 5.0,
+inclusive; not every intermediate release is explicitly tested).</p>
+<h2>Install with Alire</h2>
+<pre>alr with opencv_core</pre>
+<p>Install the native OpenCV development library and pkg-config as described
+in the README. This crate covers Core only, not image codecs or GUI modules.</p>
+<h2>Basic usage</h2>
+<pre>with OpenCV.Core;
+
+procedure Example is
+   use OpenCV.Core;
+   Image : constant Mat := Create (2, 3, (Depth =&gt; UInt8, Channels =&gt; 1));
+   Copy  : constant Mat := Image.Clone;
+begin
+   pragma Assert (Copy.Rows = 2 and then Copy.Columns = 3);
+end Example;</pre>
+<p>Assignment shares OpenCV storage; <code>Clone</code> makes a deep copy.</p>
+<section aria-labelledby="developer-guides">
+<h2 id="developer-guides">Developer Guides</h2>
+<ul>
+<li><a href="guides/ownership-and-views.html">Ownership and views</a> — shared storage, lifetimes, and zero-copy access.</li>
+<li><a href="guides/typed-access-guide.html">Typed access</a> — supported layouts and exact Float16 encodings.</li>
+<li><a href="guides/core-operations-guide.html">Core operations</a> — mathematics, reusable destinations, and operation contracts.</li>
+<li><a href="guides/sparse-and-persistence-guide.html">Sparse matrices and persistence</a> — stored nodes and structured file storage.</li>
+<li><a href="guides/interop-and-compatibility.html">Interoperability and compatibility</a> — module boundaries, supported versions, and contributor architecture.</li>
+</ul>
+</section>
+<nav>
+<a href="https://github.com/zackboll/opencv_core_ada">Source repository</a> ·
+<a href="https://github.com/zackboll/opencv_core_ada/releases">Releases</a> ·
+<a href="https://github.com/zackboll/opencv_core_ada/issues">Issue tracker</a>
+</nav>
+</main>
+</body>
+</html>

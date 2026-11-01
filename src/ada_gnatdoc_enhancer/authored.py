@@ -63,6 +63,39 @@ def source(config, name):
     return regular(path).read_bytes()
 
 
+def example_coverage(config, project_name, names):
+    """Qualify literal project-owned mains, not coincidentally matching basenames.
+
+    This deliberately supports only explicit, local Source_Dirs/Main inventories;
+    evaluated/compiler project closure remains bound by the verified mapping.
+    """
+    require(project_name, 'missing authoritative example build project')
+    project = source(config, project_name).decode('utf-8')
+    project = re.sub(r'--[^\n]*', '', project)
+    require(not re.search(r'\b(?:extends|case)\b', project, re.I),
+            'unsupported inherited/conditional example build project')
+    def values(attribute):
+        declarations = re.findall(r'\bfor\s+' + attribute + r'\s+use\s*\(([^;]*)\)\s*;', project, re.I)
+        require(len(declarations) == 1, 'missing/ambiguous example project ' + attribute)
+        value = declarations[0]
+        require(re.fullmatch(r'\s*"[^"\n]+"\s*(?:,\s*"[^"\n]+"\s*)*', value),
+                'nonliteral example project ' + attribute)
+        return re.findall(r'"([^"\n]+)"', value)
+    mains = values('Main')
+    folders = values('Source_Dirs') if re.search(r'\bSource_Dirs\b', project, re.I) else ['.']
+    files = values('Source_Files') if re.search(r'\bSource_Files\b', project, re.I) else mains
+    parent = inside(config.root, project_name).parent
+    owners = [folder / main for directory in folders
+              for folder in [(parent / directory).resolve()] for main in mains
+              if (folder / main).is_file()]
+    expected = [inside(config.root, name).resolve() for name in names]
+    require(len(expected) == len(set(expected)) and
+            all(path.name in files for path in expected) and
+            all(owners.count(path) == 1 for path in expected) and
+            all(sum(path.name == owner.name for owner in owners) == 1 for path in expected),
+            'examples not covered by authoritative build project')
+
+
 def manifest(config, native):
     payload = source(config, config.guide_manifest)
     require(digest(payload) == config.guide_sha256, 'authored manifest hash mismatch')
@@ -129,6 +162,17 @@ def manifest(config, native):
         landing = source(config, data['landing_project']).decode('utf-8')
         require(Path(data['landing_example']).name in re.findall(r'"([A-Za-z0-9_]+\.adb)"', landing),
                 'landing example not covered by build project')
+    if config.verified_examples and data['ada_policy'] == 'source-text':
+        if data['examples']:
+            example_coverage(config, data['example_project'], data['examples'])
+        if data['landing_example']:
+            example_coverage(config, data['landing_project'], [data['landing_example']])
+        identities = list(dict.fromkeys([*data['examples'],
+                                        *([data['landing_example']] if data['landing_example'] else [])]))
+        paths = [inside(config.root, name).resolve() for name in identities]
+        contents = [source(config, name) for name in identities]
+        require(len(set(paths)) == len(paths) and len(set(contents)) == len(contents),
+                'duplicate/conflicting authoritative example identities')
     observed = {'api/index.html': digest(native.index.encode()),
                 'api/gnatdoc.css': digest(native.original_css)}
     observed.update({'api/' + p.path.name: digest(p.original.encode()) for p in native.pages.values()})
@@ -321,9 +365,13 @@ def render(config, native):
             'Ada examples require authored-markdown guides')
     require(not config.ada_example_api_links or config.ada_example_highlighting,
             'Ada example API links require highlighting')
-    require(not config.verified_examples or data['ada_policy'] == 'exact-examples',
-            'verified examples require exact-examples policy')
-    resolver = Resolver(config, native, data['examples']) if config.ada_example_api_links else None
+    authoritative = list(dict.fromkeys([*data['examples'],
+                                       *([data['landing_example']] if data['landing_example'] else [])]))
+    build_projects = ([data['example_project']] if data['examples'] else []) + (
+        [data['landing_project']] if data['landing_example'] else [])
+    resolver = (Resolver(config, native, authoritative,
+                         build_projects=build_projects if data['ada_policy'] == 'source-text' else ())
+                if config.ada_example_api_links else None)
     if examples_enabled:
         output[STYLESHEET] = asset('gnatdoc-examples.css')
     home = source(config, data['home']['source']).decode('utf-8')
@@ -383,9 +431,10 @@ def render(config, native):
         content, ids, fences = markdown(text, data['languages'], rewrite,
                                        example_code if config.ada_example_highlighting else None)
         for fence in fences:
+            owners = [p for p, value in examples.items() if value == fence]
             if data['ada_policy'] == 'exact-examples':
-                owners = [p for p, value in examples.items() if value == fence]
                 require(len(owners) == 1, 'Ada fence differs from unique authoritative example')
+            if len(owners) == 1:
                 used.update(owners)
         require(not {'main-content', 'native-api-entry-points'} & set(ids), 'reserved heading identity')
         nav = '\n'.join(f'<li><a href="{e["id"]}.html"' +
@@ -432,6 +481,6 @@ def render(config, native):
         require(html.escape(example, quote=False) in home, 'landing example differs from authoritative source')
     if config.ada_landing_example_highlighting:
         require(data['landing_example'], 'missing authoritative landing_example identity')
-        home = stylesheet_link(landing(home, example, resolver), landing=True)
+        home = stylesheet_link(landing(home, example, resolver, source=data['landing_example']), landing=True)
     output['index.html'] = home.encode()
     return output

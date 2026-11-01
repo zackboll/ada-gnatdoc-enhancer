@@ -1,0 +1,175 @@
+{
+  "inputs": {
+    "config/opencv_core_config.gpr": "f405597289217976be3fd42d4b84da66179ebc412dad0f0a8c450861ee42a442",
+    "config/opencv_core_install.gpr": "e6ff00743bd6b1083c90963b994f4e298279e40e64c8f3ddd8e56c676b58274a",
+    "docs/example.adb": "d762c586f5cbdcccc9dc2901b67e08628546b3d08aa6e9d0f321f42c460e2cfa",
+    "docs/example.gpr": "f2eff62f0bb8908e4974bc560581caa6935b78b560575dd1203004199b8b0a81",
+    "docs_api.gpr": "62ade99145270c1d422747332ca6bc839e779ae92adb9cffffa0ed958bce8fef",
+    "docs_internal.gpr": "455751194d552aaf35f95b86f3ffed74b77c94f902703514e1b5926ca3814ac4",
+    "opencv_core.gpr": "e634f7bc936c66e624883482907bb659790ce33e9ca3ca1973325a870ba11aa9",
+    "opencv_core_shim.gpr": "525ab7c0aff064cc15e3760ec7cca4babb10883bb02c2fba820a58128265ca28",
+    "src/internal/opencv-internal-c_api.ads": "eb73d6fb5a8d7367e2c6517f61d04b6fecbcac90368193ee830bd9298991d38e",
+    "src/internal/opencv-internal.ads": "d8c77125d6d7712e4fdc00e8c3b7c70782736861b9638b602371b1ab75d91c5c",
+    "src/opencv-core.ads": "813d29cf136ca703e108aa10586ca8e4536494fbd175c200049e997a8622d1ec",
+    "src/opencv.ads": "2ebf97ba3b08e88cef529f77e78cf896cab17fa24b7a6f3363db33016b58d076",
+    "tests/adacore25/tests_config.gpr": "33512fb7d852e4975474a8553e963e0f56ba2635609c16b968af6dc86ff68c0b",
+    "tests/fixtures/cross-reference/opencv_core_config.gpr": "07b13f83d4a2d2ba80d4aacd73787bbb5f30404e28c10d1c0c7f46ab34ac6eba",
+    "tests/fixtures/cross-reference/probe.gpr": "aa20ea7125081b5d6b93c287ab3656312e5bbb3fdf24686adbc334317243a4d0",
+    "tests/gnat12/installed_ada.gpr": "7a447392cf2ef8906534ce9bc5ac68c43a36b4ac7813072ca0d7ddd5bd91566b",
+    "tests/gnat12/installed_mixed.gpr": "c53bee8101d6122778fe1b5a8b3a37680eb2b6271e6748bd1dd2633f4ed6065f",
+    "tests/gnat12/opencv_core_config.gpr": "d1cc04e4a980ae950f54c4608e178372f7668d6e45e764c2ffb49a164f15f4e7",
+    "tests/gnat12/tests_config.gpr": "9464ca645c6be3f8dd6c0e7aaa69f1050eaf69e2d1e7cfe68ed813ddf37a7ef3",
+    "tests/installed_mixed_consumer.gpr": "5a6da1087010550145d8b52030075ae2c522060188ff4b075661ffcfb3d101de",
+    "tests/layout/all_family_controls.gpr": "30b29cb051a02db1a79d2dc46474b01e1f5c805e582e107c065d318a16446a64",
+    "tests/layout/layout_controls.gpr": "3af88435b76b6a0d9b38ec31a23172968f0360db0ede1368a2e559502ed1eba4",
+    "tests/probes/k_means_attempts_controls.gpr": "23039b45ea85b714538ba185d751c0d4e132244e875798bfd79b1d40b8e3600c",
+    "tests/probes/numerical_norms_example.gpr": "73944333d67c0f3ee0675eafaef31e975585535888457cc532127123741d02ed",
+    "tests/probes/runtime_identity_controls.gpr": "31f1155747a7e9a23910017c03c8161df24ac9fdedf1602646b69329bd3a2a81",
+    "tests/probes/scalar_modes_example.gpr": "b5750583d04b6d28fa04e71690d435773207fccb9d1acd13c83b8d39c7bb7324",
+    "tests/tests.gpr": "647858cd299de5222170c9a4c99c6211cb60cf729446347ace08a7a64fc8af5a"
+  },
+  "mappings": [
+    {
+      "classification": "explicit-static-subprogram-call",
+      "compiler_selected": {
+        "column": 13,
+        "file": "src/opencv-core.ads",
+        "line": 1130,
+        "sha256": "813d29cf136ca703e108aa10586ca8e4536494fbd175c200049e997a8622d1ec"
+      },
+      "evidence_sha256": "d8e751ed94ab4989bda2cf79da11243bed46388e8f9ba0aa011f477d4db338ac",
+      "identity": "opencv.core.create",
+      "occurrence": {
+        "column": 28,
+        "end": 93,
+        "line": 5,
+        "start": 87,
+        "text": "Create"
+      },
+      "profile": "function Create\n     (Rows, Columns : Natural; Element_Type : Mat_Type) return Mat\n   with Pre => Rows <= 2_147_483_647 and then Columns <= 2_147_483_647;",
+      "schema_version": 1,
+      "selected": {
+        "column": 13,
+        "file": "src/opencv-core.ads",
+        "kind": "SubpDecl",
+        "line": 1130,
+        "sha256": "813d29cf136ca703e108aa10586ca8e4536494fbd175c200049e997a8622d1ec"
+      },
+      "source": {
+        "file": "docs/example.adb",
+        "sha256": "d762c586f5cbdcccc9dc2901b67e08628546b3d08aa6e9d0f321f42c460e2cfa"
+      }
+    },
+    {
+      "classification": "explicit-static-subprogram-call",
+      "compiler_selected": {
+        "column": 13,
+        "file": "src/opencv-core.ads",
+        "line": 1242,
+        "sha256": "813d29cf136ca703e108aa10586ca8e4536494fbd175c200049e997a8622d1ec"
+      },
+      "evidence_sha256": "d8e751ed94ab4989bda2cf79da11243bed46388e8f9ba0aa011f477d4db338ac",
+      "identity": "opencv.core.clone",
+      "occurrence": {
+        "column": 34,
+        "end": 173,
+        "line": 6,
+        "start": 168,
+        "text": "Clone"
+      },
+      "profile": "function Clone (Self : Mat) return Mat;",
+      "schema_version": 1,
+      "selected": {
+        "column": 13,
+        "file": "src/opencv-core.ads",
+        "kind": "SubpDecl",
+        "line": 1242,
+        "sha256": "813d29cf136ca703e108aa10586ca8e4536494fbd175c200049e997a8622d1ec"
+      },
+      "source": {
+        "file": "docs/example.adb",
+        "sha256": "d762c586f5cbdcccc9dc2901b67e08628546b3d08aa6e9d0f321f42c460e2cfa"
+      }
+    },
+    {
+      "classification": "explicit-static-subprogram-call",
+      "compiler_selected": {
+        "column": 13,
+        "file": "src/opencv-core.ads",
+        "line": 3661,
+        "sha256": "813d29cf136ca703e108aa10586ca8e4536494fbd175c200049e997a8622d1ec"
+      },
+      "evidence_sha256": "d8e751ed94ab4989bda2cf79da11243bed46388e8f9ba0aa011f477d4db338ac",
+      "identity": "opencv.core.rows",
+      "occurrence": {
+        "column": 24,
+        "end": 208,
+        "line": 8,
+        "start": 204,
+        "text": "Rows"
+      },
+      "profile": "function Rows (Self : Mat) return Natural;",
+      "schema_version": 1,
+      "selected": {
+        "column": 13,
+        "file": "src/opencv-core.ads",
+        "kind": "SubpDecl",
+        "line": 3661,
+        "sha256": "813d29cf136ca703e108aa10586ca8e4536494fbd175c200049e997a8622d1ec"
+      },
+      "source": {
+        "file": "docs/example.adb",
+        "sha256": "d762c586f5cbdcccc9dc2901b67e08628546b3d08aa6e9d0f321f42c460e2cfa"
+      }
+    },
+    {
+      "classification": "explicit-static-subprogram-call",
+      "compiler_selected": {
+        "column": 13,
+        "file": "src/opencv-core.ads",
+        "line": 3669,
+        "sha256": "813d29cf136ca703e108aa10586ca8e4536494fbd175c200049e997a8622d1ec"
+      },
+      "evidence_sha256": "d8e751ed94ab4989bda2cf79da11243bed46388e8f9ba0aa011f477d4db338ac",
+      "identity": "opencv.core.columns",
+      "occurrence": {
+        "column": 47,
+        "end": 234,
+        "line": 8,
+        "start": 227,
+        "text": "Columns"
+      },
+      "profile": "function Columns (Self : Mat) return Natural;",
+      "schema_version": 1,
+      "selected": {
+        "column": 13,
+        "file": "src/opencv-core.ads",
+        "kind": "SubpDecl",
+        "line": 3669,
+        "sha256": "813d29cf136ca703e108aa10586ca8e4536494fbd175c200049e997a8622d1ec"
+      },
+      "source": {
+        "file": "docs/example.adb",
+        "sha256": "d762c586f5cbdcccc9dc2901b67e08628546b3d08aa6e9d0f321f42c460e2cfa"
+      }
+    }
+  ],
+  "native_sha256": "438ad2dcf9199c1ad162aa61b0ae9903037790516173b5aa3d664943d8dce664",
+  "provenance": {
+    "ali": "da9e03c47876db565c12a53fe99e73b852e1169a0a7fe356f582d6f5db06c7c4",
+    "compiler": "9a831d92a745fb293fbcf9e3c86d5b80846cb8beae1864b8a8c9d2252445909c",
+    "evidence": "51e8bb2663c59fd6ef68f72d926e63a514171a786fae19a471e7bae2f19a3c20",
+    "libadalang": "2d4b8d41169497d19dbf396ca27f94e600d1a5c18eea220e6a082d80851ee5c7",
+    "project": "b42ca5938aec3760cc7b866c0b2df2c26fb916bafe1b79373b25988d6948d76d"
+  },
+  "schema_version": 1,
+  "skipped": [
+    {
+      "column": 5,
+      "line": 9,
+      "reason": "not an explicit static subprogram call",
+      "source": "docs/example.adb",
+      "status": "UNSUPPORTED"
+    }
+  ]
+}
