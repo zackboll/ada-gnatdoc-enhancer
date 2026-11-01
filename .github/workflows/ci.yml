@@ -106,8 +106,8 @@ jobs:
       - name: Audit archive metadata, complete test inputs and source/module/asset identities
         run: |
           python scripts/check_distributions.py --source "$GITHUB_WORKSPACE" --wheel dist/*.whl --sdist dist/*.tar.gz --rebuilt "$RUNNER_TEMP"/sdist-wheel/*.whl > dist/content-audit.json
-          python scripts/record_candidate_provenance.py --repository "$GITHUB_WORKSPACE" --source "$GITHUB_WORKSPACE" --expected-source-commit "$(git rev-parse HEAD)" --expected-source-tree "$(git rev-parse HEAD^{tree})" --wheel dist/*.whl --sdist dist/*.tar.gz --rebuilt "$RUNNER_TEMP"/sdist-wheel/*.whl > dist/candidate-provenance.json
-          sha256sum dist/*.whl dist/*.tar.gz dist/candidate-provenance.json > dist/SHA256SUMS
+          python scripts/record_candidate_provenance.py --repository "$GITHUB_WORKSPACE" --source "$GITHUB_WORKSPACE" --expected-source-commit "$(git rev-parse HEAD)" --expected-source-tree "$(git rev-parse HEAD^{tree})" --wheel dist/*.whl --sdist dist/*.tar.gz --rebuilt "$RUNNER_TEMP"/sdist-wheel/*.whl > dist/release-provenance.json
+          (cd dist && sha256sum *.whl *.tar.gz release-provenance.json > SHA256SUMS)
       - name: Qualify tests and fixtures shipped in the source distribution
         working-directory: ${{ runner.temp }}
         run: |
