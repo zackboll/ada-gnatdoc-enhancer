@@ -1,6 +1,11 @@
 # Changelog
 
-## Unreleased — GNATDOC-034
+## 0.1.5 — release preparation (GNATDOC-035; not published)
+
+- Include merged GNATDOC-031/032 research controls and GNATDOC-033 compiler-backed
+  static overload mappings. Authenticate selected declarations against GNAT ALI,
+  Libadalang, public source profiles and native GNATdoc anchors; fail closed on
+  stale, mutated or unsupported evidence. No new mandatory runtime dependencies.
 
 - Support compiler-verified complete units in mixed `source-text` guides, with
   authoritative build-project coverage and unchanged lexical fragment handling.
@@ -9,8 +14,21 @@
 - Qualify the pinned Core homepage's four static API calls without rewriting
   its five guides/38 Ada fences; retain lexical type links, strict browser
   comparisons, compiler-free installed execution and dependency-free core.
+- Preserve official v0.1.4 publication bytes when verified mappings are disabled,
+  except the version-bound presentation metadata, including existing highlighting,
+  search, navigation, guides and themes. Keep earlier release comparators intact.
+- Mapping generation remains a source-checkout operation requiring the documented
+  private GNAT 16.1.0 / GPRbuild 26 / Libadalang 26 build environment and GNATdoc 26
+  native evidence. It is not a standalone wheel entry point. Installed publishing
+  consumes authenticated mappings without GNAT or Libadalang.
+- Incomplete fragments retain conservative lexical behavior. Generic, renaming,
+  dispatching, implicit/inherited/local declarations, operators, unsupported ALI
+  forms, non-ASCII/tab/CRLF columns and automatic fragment compilation remain
+  unsupported. No consumer migration or publication is included.
+- Candidate provenance retains `publication_authorized = false`; final public
+  assets must be rebuilt and qualified from the approved exact merged-main source.
 
-## 0.1.4 — prepared, not published (GNATDOC-028)
+## 0.1.4 — published 2026-10-31 (GNATDOC-028 preparation history)
 
 - Add opt-in static authored Ada fence and exact-source landing-example lexical
   highlighting, reusing the existing lexer and leaving native declaration behavior

@@ -21,7 +21,7 @@ from ada_gnatdoc_enhancer.pipeline import enhance, verify
 from ada_gnatdoc_enhancer.qualification import hashes
 from ada_gnatdoc_enhancer.util import sorted_json
 
-from compare_release_013_014 import compare
+from compare_release_014_015 import compare
 
 
 def run(repository, commit, native, workspace, official_python):

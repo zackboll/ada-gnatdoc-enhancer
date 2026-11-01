@@ -1,10 +1,17 @@
 # Ada GNATdoc Enhancer
 
-## v0.1.4 preparation: opt-in Ada examples (not published)
+## v0.1.5 preparation: compiler-verified example links (not published)
+
+Authenticated static overload mappings support mixed source-text guides and the
+original Core homepage without rewriting its five guides. The installed enhancer
+consumes mappings without GNAT or Libadalang; generation still requires the
+documented source checkout and private build-time toolchain, not a wheel entry
+point. Unsupported forms and incomplete fragments remain conservative. See
+[compiler-verified examples](docs/compiler-verified-examples.md).
 
 GNATDOC-027 adds static Ada fence and exact-source landing-example highlighting,
 with optional conservative source/native-verified API links. It is disabled by
-default. Feature-off output differs from official v0.1.3 only in the
+default. Verification-disabled output differs from official v0.1.4 only in the
 version-bound presentation manifest. See [configuration and limitations](docs/ada-examples.md).
 Preparation archives are not public release assets; publication is not authorized.
 
@@ -15,7 +22,7 @@ navigation-link filtering unless explicitly opted in.
 
 **Offline, source-verified enhancement of GNATdoc 26.0.0 HTML sites.**
 
-The published **v0.1.3 baseline** incorporates opt-in consumer-owned custom themes
+The published **v0.1.4 baseline** incorporates opt-in consumer-owned custom themes
 (GNATDOC-017), opt-in stable external symbol bookmarks (GNATDOC-018), and default
 declaration visibility restoration after browser history traversal (GNATDOC-019).
 and GNATDOC-023 opt-in documentation search. Python **3.11, 3.12 and 3.13** are supported on Linux. The core
@@ -25,20 +32,20 @@ has **no runtime dependencies** and needs neither Ada nor GNATdoc at installatio
 
 For candidate qualification, build from the exact reviewed source commit with
 `python -m build` and verify its archive audit and SHA-256 inventory. The examples
-below name candidate artifacts, not an already published v0.1.2 release. Never
-replace official v0.1.1 assets. See the [publication gates](docs/releasing.md).
+below name v0.1.5 candidate artifacts, not a published release. Never
+replace official v0.1.4 assets. See the [publication gates](docs/releasing.md).
 
 ```sh
 python3 -m venv /tmp/enhancer-env
-/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.2-py3-none-any.whl
+/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.5-py3-none-any.whl
 /tmp/enhancer-env/bin/gnatdoc-enhancer --version
 /tmp/enhancer-env/bin/gnatdoc-enhancer --help
 # Alternative: standalone sdist (requires the build backend).
-/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.2.tar.gz
+/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.5.tar.gz
 ```
 
 Optional Markdown guides require the `guides` extra: install the wheel as
-`'/path/to/ada_gnatdoc_enhancer-0.1.2-py3-none-any.whl[guides]'` or preinstall
+`'/path/to/ada_gnatdoc_enhancer-0.1.5-py3-none-any.whl[guides]'` or preinstall
 `markdown-it-py==3.0.0` and `mdurl==0.1.2`. For offline use, provision those
 wheels and the sdist build requirements in advance, then use `--no-index` and
 `--find-links`. The renderer is optional; it is not bundled into the wheel.
@@ -160,14 +167,15 @@ python scripts/test_installed.py --fixtures tests/fixtures
 Synthetic conformance never substitutes for independently pinned real sites.
 Historical campaigns remain under `docs/evidence/`; current release results and
 source/artifact identities are described in
-[v0.1.4 preparation evidence](docs/evidence/gnatdoc028/README.md). Historical
+[v0.1.5 preparation evidence](docs/evidence/gnatdoc035/README.md). Historical
+[v0.1.4 preparation evidence](docs/evidence/gnatdoc028/README.md),
 [v0.1.3 preparation evidence](docs/evidence/gnatdoc024/README.md),
 [v0.1.2 preparation evidence](docs/evidence/gnatdoc020/README.md),
 [v0.1.1 evidence](docs/evidence/gnatdoc015/README.md) and the original
 [v0.1.0 qualification](docs/release-0.1.0-qualification.md) remains historical.
 
 For upgrades, regenerate from pristine native output: the version-bound
-presentation manifest changes from `0.1.3` to `0.1.4`, so do not carry an
+presentation manifest changes from `0.1.4` to `0.1.5`, so do not carry an
 old manifest into release verification. Recheck source, native, warning,
 coverage, guide and browser baselines in a separate consumer PR. See
 [migration](docs/migration.md), the [consumer matrix](docs/release-compatibility.md),
