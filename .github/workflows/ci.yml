@@ -174,7 +174,7 @@ jobs:
           python "$GITHUB_WORKSPACE/scripts/qualify_examples.py" --repository "$GITHUB_WORKSPACE" --workspace "$RUNNER_TEMP/example-sites" --variant candidate
       - name: Chromium static examples, clipboard, focus and legacy presentation
         run: python scripts/check_examples_browser.py --workspace "$RUNNER_TEMP/example-sites" --output "$RUNNER_TEMP/example-evidence"
-      - name: Compiler-verified Core Mat Clone native navigation
+      - name: Compiler-verified production Core homepage and mixed-guide controls
         run: python scripts/check_verified_examples_browser.py --workspace "$RUNNER_TEMP/verified-example-evidence"
       - name: Retain structured comparisons and representative screenshots
         if: always()
@@ -185,4 +185,5 @@ jobs:
             ${{ runner.temp }}/example-evidence/
             ${{ runner.temp }}/example-sites/*.json
             ${{ runner.temp }}/verified-example-evidence/results.json
+            ${{ runner.temp }}/verified-example-evidence/*.png
           retention-days: 30

@@ -1,4 +1,4 @@
-# Compiler-verified Ada example links (GNATDOC-033)
+# Compiler-verified Ada example links (GNATDOC-033/034)
 
 This optional feature extends the existing example resolver, highlighter and HTML
 renderer. The installed enhancer **does not import GNAT, Libadalang, or ALI files**.
@@ -67,12 +67,33 @@ mapping = "docs/verified-examples.json"
 sha256 = "<mapping file SHA-256>"
 ```
 
-The authored manifest must use `exact-examples`: every published Ada fence is
-byte-exactly one complete authoritative source file, covered by the existing
-example-build contract. Incomplete fragments receive no compiler links. Landing
-examples are not enabled by this initial mapping interface. Unrelated lexical
-links retain their existing conservative behavior. Verified spans override only
-overlapping lexical links; generated anchors never nest or overlap.
+The authored manifest supports two existing policies:
+
+* `exact-examples` retains its original contract: every published Ada fence must
+  be byte-exactly one complete authoritative example, covered by the existing
+  example-build requirements.
+* `source-text` permits mixed guides. Only an exact fence with a unique owner in
+  `examples` can receive compiler links. Selected guide examples must be covered
+  by `example_project`: an explicit literal `Main` and local `Source_Dirs`
+  (defaulting to the project directory), plus `Source_Files` when specified, must
+  locate the actual authoritative files uniquely. Filenames alone do not grant
+  coverage. Unsupported computed/project-inheritance forms are rejected rather
+  than guessed. Selected guide examples must appear in the published guides;
+  other fences need not compile. Duplicate source paths/contents are rejected.
+
+The existing `landing_example` is a separately authorized source, covered by
+`landing_project` under `source-text`. It need not also be a guide example.
+Enable the existing `ada_landing_example_highlighting = true` option to apply
+verified links through the same renderer/resolver. Homepage text must equal the
+authoritative source with **only final LF characters removed**. No other
+whitespace is normalized and call-site offsets never shift.
+
+Incomplete and unmatched fences retain conservative lexical linking. No fragment
+is wrapped, compiled, or given invented declarations/context. Prose and non-Ada
+fences are unaffected. Unrelated lexical links retain their existing behavior.
+Verified spans override only overlapping lexical links; generated anchors never
+nest or overlap. All mapped sources must be explicitly authorized by `examples`
+or `landing_example`; compiler input membership alone does not grant permission.
 
 There is **no new human approval workflow**. Explicit project configuration and
 its pin choose the trusted compiler output. Pinning is **not a cryptographic
@@ -130,6 +151,14 @@ verified call sites**, four in authentic Core (`Create`, Mat `Clone`, `Rows`,
 Integer/String, named/defaulted and contextual return overloads). Rendering adds
 sixteen compiler links, plus two unchanged lexical Mat type marks in the Core
 fence. This does not claim coverage of existing production guide fragments.
+
+GNATDOC-034 additionally retains the authentic pinned Core homepage, current
+five-guide inputs (38 original Ada fences), and a mixed-guide control under
+`tests/verified-fixtures/mixed-core`. Its production mapping is freshly generated
+from Core `dbdb410c0d86b640271733d7b999ede5a5f92267`. Homepage `Create`, Mat `Clone`,
+`Rows`, and `Columns` link to declarations at lines 1130, 1242, 3661, and 3669;
+the two existing lexical Mat links remain. Enabling verification does not change
+any of those five guide outputs. See `docs/mixed-verified-examples.md` for evidence.
 
 ```sh
 python -m unittest discover -s tests -p test_verified_examples.py -v

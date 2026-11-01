@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased — GNATDOC-034
+
+- Support compiler-verified complete units in mixed `source-text` guides, with
+  authoritative build-project coverage and unchanged lexical fragment handling.
+- Pass the existing authoritative landing source through the same verified
+  resolver, preserving the exact final-LF-only display rule and call offsets.
+- Qualify the pinned Core homepage's four static API calls without rewriting
+  its five guides/38 Ada fences; retain lexical type links, strict browser
+  comparisons, compiler-free installed execution and dependency-free core.
+
 ## 0.1.4 — prepared, not published (GNATDOC-028)
 
 - Add opt-in static authored Ada fence and exact-source landing-example lexical

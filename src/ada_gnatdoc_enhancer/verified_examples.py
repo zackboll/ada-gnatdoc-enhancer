@@ -91,13 +91,13 @@ def destination_for(selected, identity, profile, config, source, symbols):
 
 
 class VerifiedExamples:
-    def __init__(self, config, native, source, symbols, authoritative):
+    def __init__(self, config, native, source, symbols, authoritative, *, build_projects=()):
         try:
-            self._load(config, native, source, symbols, authoritative)
+            self._load(config, native, source, symbols, authoritative, build_projects)
         except (KeyError, TypeError, ValueError, UnicodeError, OSError) as exc:
             raise EnhancementError('invalid verified mapping: ' + str(exc)) from exc
 
-    def _load(self, config, native, source, symbols, authoritative):
+    def _load(self, config, native, source, symbols, authoritative, build_projects):
         from .authored import source as read_source
         setting = config.verified_examples
         payload = read_source(config, setting['mapping'])
@@ -109,6 +109,8 @@ class VerifiedExamples:
         for name, expected in data['inputs'].items():
             sha(expected)
             require(digest(read_source(config, name)) == expected, 'stale compiler project/source input: ' + name)
+        require(all(name in data['inputs'] for name in build_projects),
+                'authoritative build project not bound to compiler snapshot')
         sha(data['native_sha256'])
         require(fingerprint(native_identity(native)) == data['native_sha256'], 'changed verified native anchors/profiles')
         fields(data['provenance'], {'compiler', 'libadalang', 'project', 'evidence', 'ali'})
@@ -165,8 +167,9 @@ class VerifiedExamples:
             require(type(skipped['line']) is int and skipped['line'] > 0 and
                     type(skipped['column']) is int and skipped['column'] > 0, 'invalid skipped-call coordinates')
 
-    def positions(self, text, source):
+    def positions(self, text, source, *, landing=False):
         if source not in self.examples:
             return []
-        require(text == self.examples[source], 'verified fence differs from complete authoritative source')
+        expected = self.examples[source].rstrip('\n') if landing else self.examples[source]
+        require(text == expected, 'verified fence differs from complete authoritative source')
         return sorted(self.links[source])

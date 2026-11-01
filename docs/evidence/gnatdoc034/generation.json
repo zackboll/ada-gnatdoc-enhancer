@@ -1,0 +1,36 @@
+{
+  "starting_commit": "d15ca9febbe939feee70fb6ce9c96a31e89150b5",
+  "starting_tree": "0eb491843a32df60ab1611aef86487bc9adf344d",
+  "core_commit": "dbdb410c0d86b640271733d7b999ede5a5f92267",
+  "core_tree": "5bcbe86967fea4f718aab96a348fcaef5e8cfe8a",
+  "mapping_sha256": "2eeeb283aa0a54113dbeb423653549f13f6238f587c282ab391b9debfc6ba61a",
+  "fresh_unit_compilations": 1,
+  "provenance": {
+    "ali": "da9e03c47876db565c12a53fe99e73b852e1169a0a7fe356f582d6f5db06c7c4",
+    "compiler": "9a831d92a745fb293fbcf9e3c86d5b80846cb8beae1864b8a8c9d2252445909c",
+    "evidence": "51e8bb2663c59fd6ef68f72d926e63a514171a786fae19a471e7bae2f19a3c20",
+    "libadalang": "2d4b8d41169497d19dbf396ca27f94e600d1a5c18eea220e6a082d80851ee5c7",
+    "project": "b42ca5938aec3760cc7b866c0b2df2c26fb916bafe1b79373b25988d6948d76d"
+  },
+  "accepted": 4,
+  "skipped": [
+    {
+      "column": 5,
+      "line": 9,
+      "reason": "not an explicit static subprogram call",
+      "source": "docs/example.adb",
+      "status": "UNSUPPORTED"
+    }
+  ],
+  "compiler_tools": {
+    "gprbuild": "/home/zboll/.local/share/alire/toolchains/gprbuild_26.0.1_e3f27f25/bin/gprbuild",
+    "gprbuild_sha256": "aff9fde5ca766d5497da9dec185cb8b96878206a0d02512aa5685e1e56d0a4d3",
+    "gprbuild_version": "GPRBUILD 26.0.0 (2026-04-15) (x86_64-pc-linux-gnu)\nCopyright (C) 2004-2026, AdaCore\nThis is free software; see the source for copying conditions.\nThere is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "gcc": "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/bin/gcc",
+    "gcc_sha256": "238f4adafcb1425c84da6519068fdfcf33e57e406fc793e2958a9238789900de",
+    "gnat1": "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/libexec/gcc/x86_64-pc-linux-gnu/16.1.0/gnat1",
+    "gnat1_sha256": "5bf9b821ec0388ca6a6962dbc4bcb5773799926445fede6356069357c48dd58e",
+    "compiler_version": "gcc (GNAT-FSF-builds) 16.1.0\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+  },
+  "local_receipt_sha256": "880381d392db3db9d0bb0a80e2c09016b47763bf18cadebd2429e104cee82af4"
+}

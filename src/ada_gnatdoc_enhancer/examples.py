@@ -22,7 +22,7 @@ NAME = re.compile(r'\b' + IDENT + r'(?:\s*\.\s*' + IDENT + r')*\b')
 
 
 class Resolver:
-    def __init__(self, config, native, authoritative_examples=None):
+    def __init__(self, config, native, authoritative_examples=None, *, build_projects=()):
         from .search import flat_public
         self.symbols = {}
         source = packages(config)
@@ -36,10 +36,11 @@ class Resolver:
         self.verified = None
         if config.verified_examples:
             from .verified_examples import VerifiedExamples
-            self.verified = VerifiedExamples(config, native, source, self.symbols, authoritative_examples)
+            self.verified = VerifiedExamples(config, native, source, self.symbols, authoritative_examples,
+                                             build_projects=build_projects)
 
-    def positions(self, text, source=None):
-        verified = self.verified.positions(text, source) if self.verified and source else []
+    def positions(self, text, source=None, *, landing=False):
+        verified = self.verified.positions(text, source, landing=landing) if self.verified and source else []
         lexical = list(self.lexical_positions(text))
         positions = verified + [p for p in lexical if not any(p[0] < v[1] and v[0] < p[1] for v in verified)]
         positions.sort()
@@ -112,7 +113,7 @@ class Resolver:
 
 def code(text, resolver=None, *, landing=False, source=None):
     """Escape once and reuse the declaration lexer; retain every source character."""
-    positions = list(resolver.positions(text, source)) if resolver else []
+    positions = list(resolver.positions(text, source, landing=landing)) if resolver else []
     parts, end = [], 0
     for start, stop, destination in positions:
         parts.append(highlighted(html.escape(text[end:start], quote=False)))
@@ -129,7 +130,7 @@ def code(text, resolver=None, *, landing=False, source=None):
     return ''.join(parts)
 
 
-def landing(home, text, resolver=None):
+def landing(home, text, resolver=None, *, source=None):
     """Replace exactly one plain pre's contents, not arbitrary consumer markup.
 
     HTMLParser supplies decoded text and original source offsets. Nested tags,
@@ -188,7 +189,7 @@ def landing(home, text, resolver=None):
     require(parser.active is None and len(parser.matches) == 1,
             'landing example requires exactly one authoritative plain pre')
     start, _, end = parser.matches[0]
-    return home[:start] + '<pre class="ada-example" tabindex="0">' + code(expected, resolver, landing=True) + home[end:]
+    return home[:start] + '<pre class="ada-example" tabindex="0">' + code(expected, resolver, landing=True, source=source) + home[end:]
 
 
 def stylesheet_link(page, *, landing=False):
