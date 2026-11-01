@@ -1,0 +1,70 @@
+{
+  "calls": [
+    {
+      "status": "SOURCE_NATIVE_MISMATCH",
+      "occurrence": {
+        "file": "docs/example.adb",
+        "line": 5,
+        "column": 28
+      },
+      "libadalang_selected": {
+        "file": "src/opencv-core.ads",
+        "line": 1130,
+        "column": 13,
+        "sha256": "813d29cf136ca703e108aa10586ca8e4536494fbd175c200049e997a8622d1ec",
+        "kind": "SubpDecl"
+      },
+      "compiler_selected": {
+        "file": "src/opencv-core.ads",
+        "line": 1130,
+        "column": 13,
+        "sha256": "813d29cf136ca703e108aa10586ca8e4536494fbd175c200049e997a8622d1ec"
+      },
+      "compiler_reference": {
+        "file": "opencv-core.ads",
+        "line": 1130,
+        "column": 13,
+        "entity_type": "V",
+        "metadata": "{463R9}",
+        "name": "Create",
+        "reference_type": "s"
+      },
+      "lookup_seconds": 6.825802847743034e-05,
+      "reason": "missing explicit review authorization"
+    },
+    {
+      "status": "SOURCE_NATIVE_MISMATCH",
+      "occurrence": {
+        "file": "docs/example.adb",
+        "line": 6,
+        "column": 34
+      },
+      "libadalang_selected": {
+        "file": "src/opencv-core.ads",
+        "line": 1242,
+        "column": 13,
+        "sha256": "813d29cf136ca703e108aa10586ca8e4536494fbd175c200049e997a8622d1ec",
+        "kind": "SubpDecl"
+      },
+      "compiler_selected": {
+        "file": "src/opencv-core.ads",
+        "line": 1242,
+        "column": 13,
+        "sha256": "813d29cf136ca703e108aa10586ca8e4536494fbd175c200049e997a8622d1ec"
+      },
+      "compiler_reference": {
+        "file": "opencv-core.ads",
+        "line": 1242,
+        "column": 13,
+        "entity_type": "V",
+        "metadata": "{463R9}",
+        "name": "Clone",
+        "reference_type": "s"
+      },
+      "lookup_seconds": 8.595094550400972e-05,
+      "reason": "missing explicit review authorization"
+    }
+  ],
+  "validation_seconds": 0.7903843220556155,
+  "index_seconds": 0.002979004057124257
+}

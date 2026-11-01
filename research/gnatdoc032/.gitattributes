@@ -1,0 +1,2 @@
+# Authentic compiler outputs intentionally end in a blank line; preserve bytes.
+*.ali whitespace=-blank-at-eof

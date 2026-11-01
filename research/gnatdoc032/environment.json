@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "platform": "Linux-6.12.113+deb13-amd64-x86_64-with-glibc2.41",
+  "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "base": {
+    "commit": "847e0b1bbe67ee14ed78d5ecc84fb61dde121381",
+    "tree": "8ac01ed492cabcf7dd96e737570894b8054eba5f",
+    "authenticated_remote_main": "847e0b1bbe67ee14ed78d5ecc84fb61dde121381",
+    "moved": false,
+    "authentication": "git fetch origin main and git ls-remote over authenticated SSH before branching"
+  },
+  "core": {
+    "commit": "dbdb410c0d86b640271733d7b999ede5a5f92267",
+    "tree": "5bcbe86967fea4f718aab96a348fcaef5e8cfe8a"
+  },
+  "branch": "research/gnatdoc-032-compiler-xref-identity",
+  "baseline_tracked_files_verified": 2928,
+  "changed_baseline_files": [],
+  "private_dependencies_reused": true,
+  "new_global_packages": false,
+  "gnatcoll_xref_runtime_qualified": false,
+  "gnatinspect_available": false,
+  "gnatxref_available": false,
+  "gnatfind_available": false,
+  "tools": {
+    "gprbuild": "/home/zboll/.local/share/alire/toolchains/gprbuild_26.0.1_e3f27f25/bin/gprbuild",
+    "gprbuild_sha256": "aff9fde5ca766d5497da9dec185cb8b96878206a0d02512aa5685e1e56d0a4d3",
+    "gprbuild_version": "GPRBUILD 26.0.0 (2026-04-15) (x86_64-pc-linux-gnu)\nCopyright (C) 2004-2026, AdaCore\nThis is free software; see the source for copying conditions.\nThere is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "gcc": "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/bin/gcc",
+    "gcc_sha256": "238f4adafcb1425c84da6519068fdfcf33e57e406fc793e2958a9238789900de",
+    "gnat1": "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/libexec/gcc/x86_64-pc-linux-gnu/16.1.0/gnat1",
+    "gnat1_sha256": "5bf9b821ec0388ca6a6962dbc4bcb5773799926445fede6356069357c48dd58e",
+    "compiler_version": "gcc (GNAT-FSF-builds) 16.1.0\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+  },
+  "upstream_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/gcc-mirror/gcc/cf6e20578339f81bb1a029dedd2d3248337aabba/gcc/ada/lib-xref.ads",
+      "sha256": "7e78eb53217c256444a1d6cf938106204b04cb766eeb93e16b58d7e114a2126c",
+      "runtime_tested": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/AdaCore/gnatcoll-db/e43ed894c20c69544882e28eb8c75f7eafe14c08/xref/gnatcoll-xref.ads",
+      "sha256": "24adf170bc96cb3097ddb848da4379000fd3469ebef8be4726bcc6fe380684fa",
+      "runtime_tested": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/AdaCore/gnatcoll-db/e43ed894c20c69544882e28eb8c75f7eafe14c08/gnatinspect/gnatinspect.adb",
+      "sha256": "5a5fa20c570c8c67986faab72e52949f922de47251f873b41359b1661309c23f",
+      "runtime_tested": false
+    }
+  ],
+  "additional_tool_versions": {
+    "alire": {
+      "argv": [
+        "/usr/local/bin/alr",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "alr 2.1.1\n",
+      "stderr": ""
+    },
+    "system_gnat": {
+      "argv": [
+        "/usr/bin/gnat",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "GNAT 14.2.0\nCopyright (C) 1996-2024, Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.\nThere is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    "gnatdoc": {
+      "argv": [
+        "/home/zboll/.alire/bin/gnatdoc",
+        "--version"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "GNATdoc 26.0.0\n"
+    }
+  },
+  "private_libadalang": {
+    "native_release": "26.0.0",
+    "python_metadata_version": "0.1",
+    "prefix": "/home/zboll/gnatdoc031-private/install",
+    "venv": "/home/zboll/gnatdoc031-private/venv",
+    "setup_reference": "/home/zboll/git/ada-gnatdoc-enhancer/research/gnatdoc031/setup_private.sh",
+    "lock_sha256": "cbcf5bf34e52048f7c161c5eea154ec9c6447fdff2b81f06c1079e0d393020c0",
+    "runtime_environment": "export LD_LIBRARY_PATH=/home/zboll/gnatdoc031-private/install/lib:/home/zboll/gnatdoc031-private/install/lib/adasat:/home/zboll/gnatdoc031-private/install/lib/gnatcoll_core:/home/zboll/gnatdoc031-private/install/lib/gnatcoll_gmp:/home/zboll/gnatdoc031-private/install/lib/gnatcoll_iconv:/home/zboll/gnatdoc031-private/install/lib/gnatcoll_minimal:/home/zboll/gnatdoc031-private/install/lib/gnatcoll_projects:/home/zboll/gnatdoc031-private/install/lib/gpr:/home/zboll/gnatdoc031-private/install/lib/gpr2:/home/zboll/gnatdoc031-private/install/lib/langkit_support:/home/zboll/gnatdoc031-private/install/lib/libadalang:/home/zboll/gnatdoc031-private/install/lib/prettier_ada:/home/zboll/gnatdoc031-private/install/lib/vss_gnat:/home/zboll/gnatdoc031-private/install/lib/vss_text:/home/zboll/.local/share/alire/toolchains/gnat_native_15.3.1_a6af58cb/lib64\nexport PATH=/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/bin:/home/zboll/.local/share/alire/toolchains/gprbuild_26.0.1_e3f27f25/bin:$PATH\nexport PYTHONPATH=/home/zboll/gnatdoc031-enhancer/src\n"
+  }
+}

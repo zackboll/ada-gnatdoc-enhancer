@@ -1,0 +1,91 @@
+V "GNAT Lib v16"
+M P W=b
+A -Werror
+A -gnatwe
+A -gnatA
+A -gnat2022
+A -gnata
+A -gnatwa
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_NESTED_FINALIZATION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U example%b		example.adb		50d17f3d NE OO SU
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W opencv%s		opencv.ads		opencv.ali
+W opencv.core%s		opencv-core.adb		opencv-core.ali
+Z system%s		system.ads		system.ali
+Z system.assertions%s	s-assert.adb		s-assert.ali
+Z system.finalization_primitives%s  s-finpri.adb  s-finpri.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+
+D ada.ads		20260430083320 76789da1 ada%s
+D a-assert.ads		20260430083320 ba465f5c ada.assertions%s
+D a-except.ads		20260430083320 8699d7ff ada.exceptions%s
+D a-finali.ads		20260430083320 099c16e4 ada.finalization%s
+D a-stream.ads		20260430083320 cb01a8f8 ada.streams%s
+D a-string.ads		20260430083320 90ac6797 ada.strings%s
+D a-sttebu.ads		20260430083320 f1ad67a2 ada.strings.text_buffers%s
+D a-stuten.ads		20260430083320 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		20260430083320 2dbf449c ada.tags%s
+D a-unccon.ads		20260430083320 0e9b276f ada.unchecked_conversion%s
+D example.adb		20261031215008 7c624ef7 example%b
+D interfac.ads		20260430083320 9111f9c1 interfaces%s
+D i-c.ads		20260430083320 dbdd3be7 interfaces.c%s
+D opencv.ads		20261031215008 d5896ba9 opencv%s
+D opencv-core.ads	20261031215008 2cb331ca opencv.core%s
+D opencv-internal.ads	20261031215008 060d35d4 opencv.internal%s
+D opencv-internal-c_api.ads  20261031215008 330ed470 opencv.internal.c_api%s
+D system.ads		20260430083320 e2b7c99d system%s
+D s-assert.ads		20260430083320 9c4520c7 system.assertions%s
+D s-exctab.ads		20260430083320 91bef6ef system.exception_table%s
+D s-finpri.ads		20260430083320 5970d55a system.finalization_primitives%s
+D s-finroo.ads		20260430083320 0a7c3ed4 system.finalization_root%s
+D s-oscons.ads		20260626180101 d0718993 system.os_constants%s
+D s-oslock.ads		20260430083320 13fa6b78 system.os_locks%s
+D s-parame.ads		20260430083320 a1aeab5c system.parameters%s
+D s-putima.ads		20260430083320 1b989439 system.put_images%s
+D s-retsta.ads		20260430083320 0f6b06cb system.return_stack%s
+D s-secsta.ads		20260430083320 578279f5 system.secondary_stack%s
+D s-soflin.ads		20260430083320 5d88fdea system.soft_links%s
+D s-stache.ads		20260430083320 0b81c1fe system.stack_checking%s
+D s-stalib.ads		20260430083320 1c9580f6 system.standard_library%s
+D s-stoele.ads		20260430083320 ccded4e8 system.storage_elements%s
+D s-stratt.ads		20260430083320 80b8dafb system.stream_attributes%s
+D s-traent.ads		20260430083320 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		20260430083320 fa2a7f59 system.unsigned_types%s
+G a e
+G c Z b b [example standard 3 11 none]
+G r c none [example standard 3 11 none] [create opencv__core 1130 13 none]
+G r c none [example standard 3 11 none] [clone opencv__core 1242 13 none]
+G r c none [example standard 3 11 none] [columns opencv__core 3669 13 none]
+G r c none [example standard 3 11 none] [rows opencv__core 3661 13 none]
+X 11 example.adb
+3U11*Example 3b11 9l5 9t12
+5r4 Image{15|463R9} 6r28
+6r4 Copy{15|463R9} 8r19 8r42
+X 12 interfac.ads
+65I9*Integer_32<integer>
+X 14 opencv.ads
+14K9*OpenCV 11|1r6 4r8 14|214e11
+X 15 opencv-core.ads
+16K16*Core 11|1w13 4r15 15|5452e16
+33n7*UInt8{32E9} 11|5r52
+179I9*Channel_Count<12|65I9>
+371e7*Depth{32E9} 11|5m43
+372i7*Channels{179I9} 11|5m59
+463R9*Mat<4|43R9> 11|5r21 6r21 15|5407e14
+1130V13*Create{463R9} 11|5s28
+1242V13*Clone{463R9} 11|6s34
+3661V13*Rows{natural} 11|8s24
+3669V13*Columns{natural} 11|8s47
+
