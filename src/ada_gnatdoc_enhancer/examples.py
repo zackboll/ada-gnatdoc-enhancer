@@ -2,8 +2,9 @@
 
 Destinations are reconstructed from public source and complete native profiles.
 No manifest, HTML attribute, example annotation or URL can grant a destination.
-The resolver declines all overloads and prefixed object calls. Local declarations
-conservatively suppress a name throughout the fence (including before its scope).
+The lexical resolver declines overloads and prefixed object calls; optional pinned
+compiler evidence can authorize exact tokens in complete authoritative examples.
+Local declarations conservatively suppress lexical names throughout the fence.
 """
 from __future__ import annotations
 
@@ -21,7 +22,7 @@ NAME = re.compile(r'\b' + IDENT + r'(?:\s*\.\s*' + IDENT + r')*\b')
 
 
 class Resolver:
-    def __init__(self, config, native):
+    def __init__(self, config, native, authoritative_examples=None):
         from .search import flat_public
         self.symbols = {}
         source = packages(config)
@@ -32,8 +33,20 @@ class Resolver:
                 self.symbols.setdefault(key, []).append(destination)
         self.supported = {owner for owner, pkg in source.items() if external_visible(owner, pkg)}
         self.public = {owner: flat_public(pkg) for owner, pkg in source.items()}
+        self.verified = None
+        if config.verified_examples:
+            from .verified_examples import VerifiedExamples
+            self.verified = VerifiedExamples(config, native, source, self.symbols, authoritative_examples)
 
-    def positions(self, text):
+    def positions(self, text, source=None):
+        verified = self.verified.positions(text, source) if self.verified and source else []
+        lexical = list(self.lexical_positions(text))
+        positions = verified + [p for p in lexical if not any(p[0] < v[1] and v[0] < p[1] for v in verified)]
+        positions.sort()
+        require(all(a[1] <= b[0] for a, b in zip(positions, positions[1:])), 'overlapping example links')
+        return positions
+
+    def lexical_positions(self, text):
         masked = mask_ada(text)
         for token in LEXEME.finditer(text):
             if token.lastgroup == 'attribute':
@@ -97,9 +110,9 @@ class Resolver:
             yield match.start(), match.end(), destination.href
 
 
-def code(text, resolver=None, *, landing=False):
+def code(text, resolver=None, *, landing=False, source=None):
     """Escape once and reuse the declaration lexer; retain every source character."""
-    positions = list(resolver.positions(text)) if resolver else []
+    positions = list(resolver.positions(text, source)) if resolver else []
     parts, end = [], 0
     for start, stop, destination in positions:
         parts.append(highlighted(html.escape(text[end:start], quote=False)))

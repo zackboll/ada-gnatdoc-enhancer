@@ -117,7 +117,9 @@ def manifest(config, native):
                 data['landing_example'], 'missing authoritative example build requirements')
         project = source(config, data['example_project']).decode('utf-8')
         mains = re.findall(r'"([A-Za-z0-9_]+\.adb)"', project)
-        require(Counter(mains) == Counter(Path(p).name for p in data['examples']) and
+        # Authentic projects may repeat a unit in Source_Files and Main.
+        require((set(mains) == {Path(p).name for p in data['examples']} if config.verified_examples else
+                 Counter(mains) == Counter(Path(p).name for p in data['examples'])) and
                 all(s in project for s in ('"-gnat2022"', '"-gnata"', '"-Werror"')),
                 'examples not covered by authoritative build project')
         folders = {inside(config.root, p).parent for p in data['examples']}
@@ -319,7 +321,9 @@ def render(config, native):
             'Ada examples require authored-markdown guides')
     require(not config.ada_example_api_links or config.ada_example_highlighting,
             'Ada example API links require highlighting')
-    resolver = Resolver(config, native) if config.ada_example_api_links else None
+    require(not config.verified_examples or data['ada_policy'] == 'exact-examples',
+            'verified examples require exact-examples policy')
+    resolver = Resolver(config, native, data['examples']) if config.ada_example_api_links else None
     if examples_enabled:
         output[STYLESHEET] = asset('gnatdoc-examples.css')
     home = source(config, data['home']['source']).decode('utf-8')
@@ -372,8 +376,12 @@ def render(config, native):
                     'unknown published guide destination')
             require(not url.fragment or url.fragment in headings[target], 'invalid guide heading fragment')
             return (target + '.html' if url.path else '') + ('#' + url.fragment if url.fragment else '')
+        def example_code(text):
+            owners = [path for path, value in examples.items() if value == text]
+            identity = owners[0] if len(owners) == 1 else None
+            return code(text, resolver, source=identity)
         content, ids, fences = markdown(text, data['languages'], rewrite,
-                                       (lambda text: code(text, resolver)) if config.ada_example_highlighting else None)
+                                       example_code if config.ada_example_highlighting else None)
         for fence in fences:
             if data['ada_policy'] == 'exact-examples':
                 owners = [p for p, value in examples.items() if value == fence]

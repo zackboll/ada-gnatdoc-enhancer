@@ -1,0 +1,23 @@
+test_real_controls (test_verifier.AuthenticIntegration.test_real_controls) ... ok
+test_conflicting_records (test_verifier.ParserTests.test_conflicting_records) ... ok
+test_continuation_and_file_state (test_verifier.ParserTests.test_continuation_and_file_state) ... ok
+test_dispatching_and_noncall (test_verifier.ParserTests.test_dispatching_and_noncall) ... ok
+test_duplicate_basename_fail_closed (test_verifier.ParserTests.test_duplicate_basename_fail_closed) ... ok
+test_each_identity_coordinate_and_hash (test_verifier.ParserTests.test_each_identity_coordinate_and_hash) ... ok
+test_exact_static_call (test_verifier.ParserTests.test_exact_static_call) ... ok
+test_generic_suffix_rejected_not_silently_dropped (test_verifier.ParserTests.test_generic_suffix_rejected_not_silently_dropped) ... ok
+test_identical_duplicate_evidence (test_verifier.ParserTests.test_identical_duplicate_evidence) ... ok
+test_instance_renaming_overriding (test_verifier.ParserTests.test_instance_renaming_overriding) ... ok
+test_malformed_and_truncated (test_verifier.ParserTests.test_malformed_and_truncated) ... ok
+test_missing_exact_occurrence (test_verifier.ParserTests.test_missing_exact_occurrence) ... ok
+test_missing_or_rewritten_receipt (test_verifier.ParserTests.test_missing_or_rewritten_receipt) ... ok
+test_missing_selected_field_is_analysis_error (test_verifier.ParserTests.test_missing_selected_field_is_analysis_error) ... ok
+test_operator_grammar_not_approximated (test_verifier.ParserTests.test_operator_grammar_not_approximated) ... ok
+test_same_name_different_positions (test_verifier.ParserTests.test_same_name_different_positions) ... ok
+test_unsupported_lal_form (test_verifier.ParserTests.test_unsupported_lal_form) ... ok
+test_wrong_identity_never_invokes_native (test_verifier.ParserTests.test_wrong_identity_never_invokes_native) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 11.355s
+
+OK

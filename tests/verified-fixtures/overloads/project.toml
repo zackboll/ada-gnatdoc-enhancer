@@ -1,0 +1,15 @@
+schema_version = 1
+project = "verified-overloads"
+[sources]
+directories = ["public"]
+[security]
+external_hosts = ["github.com"]
+[guides]
+mode = "authored-markdown"
+manifest = "authored.json"
+sha256 = "8bd5b9613d7b4282c600bd3084a4d80663f043d062db6804d4936f059d18acf8"
+ada_example_highlighting = true
+ada_example_api_links = true
+[guides.verified_examples]
+mapping = "mapping.json"
+sha256 = "5ac0ba42e0ddf0fa897b8f9d74070d3882f51cac3484e906c0d65b3bd2f3071e"

@@ -1,0 +1,9 @@
+test_fresh_compilation_once_and_deterministic_portable_output (test_generator.Generator.test_fresh_compilation_once_and_deterministic_portable_output) ... ok
+test_snapshot_mutation_during_selection_rejected (test_generator.Generator.test_snapshot_mutation_during_selection_rejected) ... ok
+test_unsupported_canonical_form_never_emits_mapping (test_generator.Generator.test_unsupported_canonical_form_never_emits_mapping) ... ok
+test_wrong_overload_injection_never_emits_mapping (test_generator.Generator.test_wrong_overload_injection_never_emits_mapping) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 3.931s
+
+OK

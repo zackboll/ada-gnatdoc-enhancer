@@ -1,0 +1,2 @@
+# Preserve authentic GNAT ALI terminal blank lines byte-for-byte.
+*.ali whitespace=-blank-at-eof

@@ -1,0 +1,22 @@
+{
+  "core": {
+    "files": 207,
+    "verified_main_disabled_byte_identity": true
+  },
+  "core-search": {
+    "files": 209,
+    "verified_main_disabled_byte_identity": true
+  },
+  "geometry": {
+    "files": 14,
+    "verified_main_disabled_byte_identity": true
+  },
+  "imgproc": {
+    "files": 13,
+    "verified_main_disabled_byte_identity": true
+  },
+  "mel": {
+    "files": 42,
+    "verified_main_disabled_byte_identity": true
+  }
+}

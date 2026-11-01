@@ -1,0 +1,4 @@
+abstract project Tests_Config is
+   Build_Profile := "gnat12";
+   Ada_Compiler_Switches := ("-O0", "-gnatwa", "-gnatwe");
+end Tests_Config;

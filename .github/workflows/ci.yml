@@ -32,6 +32,12 @@ jobs:
         run: python -m unittest discover -s tests -p test_authored.py -v
       - name: Unit and mutation tests
         run: python -m unittest discover -s tests -v
+      - name: Compiler-free verified mapping and predecessor regressions (normal and optimized)
+        run: |
+          python -O -m unittest discover -s tests -p 'test_verified*.py' -v
+          python -m unittest discover -s research/gnatdoc032/tests -v
+          python -O -m unittest discover -s research/gnatdoc032/tests -v
+          python -m unittest discover -s research/gnatdoc031/tests -v
       - name: Source-verified declaration profiles (authentic excerpts and synthetic mutations)
         run: |
           python -m unittest discover -s tests -p test_declaration_profiles.py -v
@@ -168,6 +174,8 @@ jobs:
           python "$GITHUB_WORKSPACE/scripts/qualify_examples.py" --repository "$GITHUB_WORKSPACE" --workspace "$RUNNER_TEMP/example-sites" --variant candidate
       - name: Chromium static examples, clipboard, focus and legacy presentation
         run: python scripts/check_examples_browser.py --workspace "$RUNNER_TEMP/example-sites" --output "$RUNNER_TEMP/example-evidence"
+      - name: Compiler-verified Core Mat Clone native navigation
+        run: python scripts/check_verified_examples_browser.py --workspace "$RUNNER_TEMP/verified-example-evidence"
       - name: Retain structured comparisons and representative screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -176,4 +184,5 @@ jobs:
           path: |
             ${{ runner.temp }}/example-evidence/
             ${{ runner.temp }}/example-sites/*.json
+            ${{ runner.temp }}/verified-example-evidence/results.json
           retention-days: 30

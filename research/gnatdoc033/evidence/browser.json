@@ -1,0 +1,58 @@
+[
+  {
+    "clipboard": true,
+    "create_destination": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#9453fef18922c567cef4a785986626da5ded5225eecc2276f7b7ab8de77d92c6",
+    "destination": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#f0d347c5f5d28b39c4b977115b9879f00e12c48a5e95816c85142ade1ea40af1",
+    "exact_text": true,
+    "focus": true,
+    "javascript": true,
+    "native_profile": "function Clone (Self : Mat) return Mat\n",
+    "syntax": {
+      "keyword": "rgb(116, 66, 167)",
+      "number": "rgb(149, 82, 12)"
+    },
+    "theme": "light"
+  },
+  {
+    "clipboard": true,
+    "create_destination": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#9453fef18922c567cef4a785986626da5ded5225eecc2276f7b7ab8de77d92c6",
+    "destination": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#f0d347c5f5d28b39c4b977115b9879f00e12c48a5e95816c85142ade1ea40af1",
+    "exact_text": true,
+    "focus": true,
+    "javascript": true,
+    "native_profile": "function Clone (Self : Mat) return Mat\n",
+    "syntax": {
+      "keyword": "rgb(207, 168, 255)",
+      "number": "rgb(255, 196, 142)"
+    },
+    "theme": "dark"
+  },
+  {
+    "clipboard": true,
+    "create_destination": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#9453fef18922c567cef4a785986626da5ded5225eecc2276f7b7ab8de77d92c6",
+    "destination": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#f0d347c5f5d28b39c4b977115b9879f00e12c48a5e95816c85142ade1ea40af1",
+    "exact_text": true,
+    "focus": true,
+    "javascript": false,
+    "native_profile": "function Clone (Self : Mat) return Mat\n",
+    "syntax": {
+      "keyword": "rgb(116, 66, 167)",
+      "number": "rgb(149, 82, 12)"
+    },
+    "theme": "light"
+  },
+  {
+    "clipboard": true,
+    "create_destination": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#9453fef18922c567cef4a785986626da5ded5225eecc2276f7b7ab8de77d92c6",
+    "destination": "6913f2e7169ad4fb9224d4d93fd20e50615a317c7374a7e469bab89cdd6bb7e9.html#f0d347c5f5d28b39c4b977115b9879f00e12c48a5e95816c85142ade1ea40af1",
+    "exact_text": true,
+    "focus": true,
+    "javascript": false,
+    "native_profile": "function Clone (Self : Mat) return Mat\n",
+    "syntax": {
+      "keyword": "rgb(207, 168, 255)",
+      "number": "rgb(255, 196, 142)"
+    },
+    "theme": "dark"
+  }
+]

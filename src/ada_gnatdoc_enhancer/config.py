@@ -58,6 +58,7 @@ class Config:
     ada_example_highlighting: bool = False
     ada_example_api_links: bool = False
     ada_landing_example_highlighting: bool = False
+    verified_examples: dict = field(default_factory=dict)
 
 
 def load(root: Path, path: str) -> Config:
@@ -134,7 +135,7 @@ def load(root: Path, path: str) -> Config:
     guide = raw.get("guides", {})
     example_options = ('ada_example_highlighting', 'ada_example_api_links',
                        'ada_landing_example_highlighting')
-    members(guide, {"mode", "manifest", "sha256", *example_options}, "guides")
+    members(guide, {"mode", "manifest", "sha256", "verified_examples", *example_options}, "guides")
     guide_mode = guide.get("mode", "none")
     require(guide_mode in ("none", "html", "markdown", "authored-html", "authored-markdown"), "invalid guide mode")
     for option in example_options:
@@ -144,6 +145,17 @@ def load(root: Path, path: str) -> Config:
                 'Ada example options require authored-markdown guides')
     require(not guide.get('ada_example_api_links', False) or guide.get('ada_example_highlighting', False),
             'Ada example API links require Ada example highlighting')
+    verified = guide.get('verified_examples', {})
+    if 'verified_examples' in guide:
+        import re
+        members(verified, {'mapping', 'sha256'}, 'guides.verified_examples')
+        require(set(verified) == {'mapping', 'sha256'}, 'incomplete verified example configuration')
+        require(guide_mode == 'authored-markdown' and guide.get('ada_example_api_links', False),
+                'verified examples require authored Markdown API links')
+        require(isinstance(verified['mapping'], str), 'verified mapping must be a path')
+        regular(inside(root, verified['mapping']))
+        require(isinstance(verified['sha256'], str) and re.fullmatch('[a-f0-9]{64}', verified['sha256']),
+                'invalid verified mapping SHA-256')
     guide_manifest = guide.get("manifest")
     if guide_mode != "none":
         require(isinstance(guide_manifest, str), "guide manifest required")
@@ -228,7 +240,7 @@ def load(root: Path, path: str) -> Config:
                   pres.get('theme_css_source'), pres.get('theme_css_sha256'),
                   config_path.relative_to(root).as_posix() if custom_theme else None,
                   digest(config_bytes) if custom_theme else None, bookmarks, bool(search),
-                  *(guide.get(option, False) for option in example_options))
+                  *(guide.get(option, False) for option in example_options), verified)
     if custom_theme:
         from .theme import theme_asset
         theme_asset(config)

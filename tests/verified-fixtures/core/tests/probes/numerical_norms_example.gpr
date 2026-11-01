@@ -1,0 +1,11 @@
+with "../../opencv_core.gpr";
+project Numerical_Norms_Example is
+   for Source_Dirs use (".");
+   for Object_Dir use "obj-numerical-example";
+   for Exec_Dir use "bin-numerical-example";
+   for Create_Missing_Dirs use "True";
+   for Main use ("numerical_norms_example.adb");
+   package Compiler is
+      for Default_Switches ("Ada") use ("-gnatwa", "-gnatwe");
+   end Compiler;
+end Numerical_Norms_Example;

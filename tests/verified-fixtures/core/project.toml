@@ -1,0 +1,15 @@
+schema_version = 1
+project = "verified-core"
+[sources]
+directories = ["public"]
+[security]
+external_hosts = ["github.com"]
+[guides]
+mode = "authored-markdown"
+manifest = "authored.json"
+sha256 = "1ef852e77d309f021253eb05d4b2af384355cadb507009d27157f8393441d6e9"
+ada_example_highlighting = true
+ada_example_api_links = true
+[guides.verified_examples]
+mapping = "mapping.json"
+sha256 = "5a2dd034c2c8b1aec86512925a5e6799fe7686c77a3417972a81a70b7f83bb15"

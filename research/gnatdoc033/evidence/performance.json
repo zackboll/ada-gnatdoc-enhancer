@@ -1,0 +1,16 @@
+{
+  "lexical": {
+    "initialization_seconds_median": 0.5957279569702223,
+    "render_seconds_median": 0.0009664633206557482
+  },
+  "verified": {
+    "initialization_seconds_median": 1.0770442510256544,
+    "render_seconds_median": 0.0009280871402006596
+  },
+  "core_compile_seconds": 0.26142237102612853,
+  "core_compilation_units": 1,
+  "core_verified_calls": 4,
+  "fixture_compile_seconds": 0.21995810908265412,
+  "fixture_compilation_units": 1,
+  "fixture_verified_calls": 12
+}

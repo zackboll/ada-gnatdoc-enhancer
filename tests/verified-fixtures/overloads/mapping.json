@@ -1,0 +1,422 @@
+{
+  "inputs": {
+    "fixtures.gpr": "0b14e13bf75697382cb301af18504b4e96d55bcdf570c64c7bc4fbe8b571df73",
+    "missing.gpr": "2df7c426a36c1450e52fbc798b231fb0002d7003320d48243cd108f0dc97050b",
+    "other.ads": "e0537bdfd11ea9ad96493b48313a26d43ecc1c352fac4ce0342822e7dcd86060",
+    "overloads.ads": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50",
+    "valid.adb": "d9faf609bdaf913c9e7bfa7837cce521e1a1de80b020b56dbad6f16ed17e60fd"
+  },
+  "mappings": [
+    {
+      "classification": "explicit-static-subprogram-call",
+      "compiler_selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "line": 4,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "evidence_sha256": "3dae690b4ffe3d3fce582e726ad88d09925a3a46f99d49188d5a8462d74b6096",
+      "identity": "overloads.clone",
+      "occurrence": {
+        "column": 18,
+        "end": 120,
+        "line": 6,
+        "start": 115,
+        "text": "Clone"
+      },
+      "profile": "function Clone (Self : Mat) return Mat;",
+      "schema_version": 1,
+      "selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "kind": "SubpDecl",
+        "line": 4,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "source": {
+        "file": "valid.adb",
+        "sha256": "d9faf609bdaf913c9e7bfa7837cce521e1a1de80b020b56dbad6f16ed17e60fd"
+      }
+    },
+    {
+      "classification": "explicit-static-subprogram-call",
+      "compiler_selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "line": 5,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "evidence_sha256": "3dae690b4ffe3d3fce582e726ad88d09925a3a46f99d49188d5a8462d74b6096",
+      "identity": "overloads.clone",
+      "occurrence": {
+        "column": 19,
+        "end": 145,
+        "line": 7,
+        "start": 140,
+        "text": "Clone"
+      },
+      "profile": "function Clone (Self : UMat) return UMat;",
+      "schema_version": 1,
+      "selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "kind": "SubpDecl",
+        "line": 5,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "source": {
+        "file": "valid.adb",
+        "sha256": "d9faf609bdaf913c9e7bfa7837cce521e1a1de80b020b56dbad6f16ed17e60fd"
+      }
+    },
+    {
+      "classification": "explicit-static-subprogram-call",
+      "compiler_selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "line": 6,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "evidence_sha256": "3dae690b4ffe3d3fce582e726ad88d09925a3a46f99d49188d5a8462d74b6096",
+      "identity": "overloads.pick",
+      "occurrence": {
+        "column": 19,
+        "end": 169,
+        "line": 8,
+        "start": 165,
+        "text": "Pick"
+      },
+      "profile": "function Pick (Value : Integer) return Integer;",
+      "schema_version": 1,
+      "selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "kind": "SubpDecl",
+        "line": 6,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "source": {
+        "file": "valid.adb",
+        "sha256": "d9faf609bdaf913c9e7bfa7837cce521e1a1de80b020b56dbad6f16ed17e60fd"
+      }
+    },
+    {
+      "classification": "explicit-static-subprogram-call",
+      "compiler_selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "line": 7,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "evidence_sha256": "3dae690b4ffe3d3fce582e726ad88d09925a3a46f99d49188d5a8462d74b6096",
+      "identity": "overloads.pick",
+      "occurrence": {
+        "column": 19,
+        "end": 197,
+        "line": 9,
+        "start": 193,
+        "text": "Pick"
+      },
+      "profile": "function Pick (Value : String) return Integer;",
+      "schema_version": 1,
+      "selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "kind": "SubpDecl",
+        "line": 7,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "source": {
+        "file": "valid.adb",
+        "sha256": "d9faf609bdaf913c9e7bfa7837cce521e1a1de80b020b56dbad6f16ed17e60fd"
+      }
+    },
+    {
+      "classification": "explicit-static-subprogram-call",
+      "compiler_selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "line": 8,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "evidence_sha256": "3dae690b4ffe3d3fce582e726ad88d09925a3a46f99d49188d5a8462d74b6096",
+      "identity": "overloads.count",
+      "occurrence": {
+        "column": 19,
+        "end": 230,
+        "line": 10,
+        "start": 225,
+        "text": "Count"
+      },
+      "profile": "function Count (Left : Integer) return Integer;",
+      "schema_version": 1,
+      "selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "kind": "SubpDecl",
+        "line": 8,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "source": {
+        "file": "valid.adb",
+        "sha256": "d9faf609bdaf913c9e7bfa7837cce521e1a1de80b020b56dbad6f16ed17e60fd"
+      }
+    },
+    {
+      "classification": "explicit-static-subprogram-call",
+      "compiler_selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "line": 9,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "evidence_sha256": "3dae690b4ffe3d3fce582e726ad88d09925a3a46f99d49188d5a8462d74b6096",
+      "identity": "overloads.count",
+      "occurrence": {
+        "column": 19,
+        "end": 259,
+        "line": 11,
+        "start": 254,
+        "text": "Count"
+      },
+      "profile": "function Count (Left, Right : Integer) return Integer;",
+      "schema_version": 1,
+      "selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "kind": "SubpDecl",
+        "line": 9,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "source": {
+        "file": "valid.adb",
+        "sha256": "d9faf609bdaf913c9e7bfa7837cce521e1a1de80b020b56dbad6f16ed17e60fd"
+      }
+    },
+    {
+      "classification": "explicit-static-subprogram-call",
+      "compiler_selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "line": 10,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "evidence_sha256": "3dae690b4ffe3d3fce582e726ad88d09925a3a46f99d49188d5a8462d74b6096",
+      "identity": "overloads.named",
+      "occurrence": {
+        "column": 19,
+        "end": 291,
+        "line": 12,
+        "start": 286,
+        "text": "Named"
+      },
+      "profile": "function Named (Left : Integer; Right : String) return Integer;",
+      "schema_version": 1,
+      "selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "kind": "SubpDecl",
+        "line": 10,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "source": {
+        "file": "valid.adb",
+        "sha256": "d9faf609bdaf913c9e7bfa7837cce521e1a1de80b020b56dbad6f16ed17e60fd"
+      }
+    },
+    {
+      "classification": "explicit-static-subprogram-call",
+      "compiler_selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "line": 11,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "evidence_sha256": "3dae690b4ffe3d3fce582e726ad88d09925a3a46f99d49188d5a8462d74b6096",
+      "identity": "overloads.named",
+      "occurrence": {
+        "column": 19,
+        "end": 342,
+        "line": 13,
+        "start": 337,
+        "text": "Named"
+      },
+      "profile": "function Named (Left : String; Right : Integer) return Integer;",
+      "schema_version": 1,
+      "selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "kind": "SubpDecl",
+        "line": 11,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "source": {
+        "file": "valid.adb",
+        "sha256": "d9faf609bdaf913c9e7bfa7837cce521e1a1de80b020b56dbad6f16ed17e60fd"
+      }
+    },
+    {
+      "classification": "explicit-static-subprogram-call",
+      "compiler_selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "line": 12,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "evidence_sha256": "3dae690b4ffe3d3fce582e726ad88d09925a3a46f99d49188d5a8462d74b6096",
+      "identity": "overloads.defaulted",
+      "occurrence": {
+        "column": 19,
+        "end": 397,
+        "line": 14,
+        "start": 388,
+        "text": "Defaulted"
+      },
+      "profile": "function Defaulted (Value : Integer; Extra : Boolean := False) return Integer;",
+      "schema_version": 1,
+      "selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "kind": "SubpDecl",
+        "line": 12,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "source": {
+        "file": "valid.adb",
+        "sha256": "d9faf609bdaf913c9e7bfa7837cce521e1a1de80b020b56dbad6f16ed17e60fd"
+      }
+    },
+    {
+      "classification": "explicit-static-subprogram-call",
+      "compiler_selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "line": 14,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "evidence_sha256": "3dae690b4ffe3d3fce582e726ad88d09925a3a46f99d49188d5a8462d74b6096",
+      "identity": "overloads.result",
+      "occurrence": {
+        "column": 19,
+        "end": 427,
+        "line": 15,
+        "start": 421,
+        "text": "Result"
+      },
+      "profile": "function Result return Integer;",
+      "schema_version": 1,
+      "selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "kind": "SubpDecl",
+        "line": 14,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "source": {
+        "file": "valid.adb",
+        "sha256": "d9faf609bdaf913c9e7bfa7837cce521e1a1de80b020b56dbad6f16ed17e60fd"
+      }
+    },
+    {
+      "classification": "explicit-static-subprogram-call",
+      "compiler_selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "line": 15,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "evidence_sha256": "3dae690b4ffe3d3fce582e726ad88d09925a3a46f99d49188d5a8462d74b6096",
+      "identity": "overloads.result",
+      "occurrence": {
+        "column": 18,
+        "end": 452,
+        "line": 16,
+        "start": 446,
+        "text": "Result"
+      },
+      "profile": "function Result return String;",
+      "schema_version": 1,
+      "selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "kind": "SubpDecl",
+        "line": 15,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "source": {
+        "file": "valid.adb",
+        "sha256": "d9faf609bdaf913c9e7bfa7837cce521e1a1de80b020b56dbad6f16ed17e60fd"
+      }
+    },
+    {
+      "classification": "explicit-static-subprogram-call",
+      "compiler_selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "line": 6,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "evidence_sha256": "3dae690b4ffe3d3fce582e726ad88d09925a3a46f99d49188d5a8462d74b6096",
+      "identity": "overloads.pick",
+      "occurrence": {
+        "column": 29,
+        "end": 486,
+        "line": 17,
+        "start": 482,
+        "text": "Pick"
+      },
+      "profile": "function Pick (Value : Integer) return Integer;",
+      "schema_version": 1,
+      "selected": {
+        "column": 13,
+        "file": "overloads.ads",
+        "kind": "SubpDecl",
+        "line": 6,
+        "sha256": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50"
+      },
+      "source": {
+        "file": "valid.adb",
+        "sha256": "d9faf609bdaf913c9e7bfa7837cce521e1a1de80b020b56dbad6f16ed17e60fd"
+      }
+    }
+  ],
+  "native_sha256": "96f3e6149a08c5d825be07d506bc966eb39fc7e88a23525a3c8ea4b34635ee04",
+  "provenance": {
+    "ali": "58c1e7e726c94859415ba51e42e012edc17dead44c5fd3ed0c3a97d445e7ff83",
+    "compiler": "9a831d92a745fb293fbcf9e3c86d5b80846cb8beae1864b8a8c9d2252445909c",
+    "evidence": "8233f465f67c6c2f7163b62ede11ddec4562edd13b5d1a634dff0498c0672a7c",
+    "libadalang": "2d4b8d41169497d19dbf396ca27f94e600d1a5c18eea220e6a082d80851ee5c7",
+    "project": "8b7aea3985806ba849fe76227bf7cd76e7b24f837d6acdc9c34dd7b0704d11dc"
+  },
+  "schema_version": 1,
+  "skipped": [
+    {
+      "column": 19,
+      "line": 18,
+      "reason": "only ordinary public subprogram declarations supported",
+      "source": "valid.adb",
+      "status": "UNSUPPORTED"
+    },
+    {
+      "column": 22,
+      "line": 24,
+      "reason": "no Libadalang declaration",
+      "source": "valid.adb",
+      "status": "ANALYSIS_ERROR"
+    },
+    {
+      "column": 29,
+      "line": 25,
+      "reason": "only ordinary public subprogram declarations supported",
+      "source": "valid.adb",
+      "status": "UNSUPPORTED"
+    },
+    {
+      "column": 5,
+      "line": 32,
+      "reason": "not an explicit static subprogram call",
+      "source": "valid.adb",
+      "status": "UNSUPPORTED"
+    }
+  ]
+}

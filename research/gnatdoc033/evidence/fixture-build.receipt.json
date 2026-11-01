@@ -1,0 +1,377 @@
+{
+  "schema": 1,
+  "root": "/home/zboll/gnatdoc033-private/static-fixtures",
+  "project": "/home/zboll/gnatdoc033-private/static-fixtures/fixtures.gpr",
+  "sources": [
+    "/home/zboll/gnatdoc033-private/static-fixtures/valid.adb"
+  ],
+  "snapshot": {
+    "ambiguous.adb": "1dfb861b66d1a4e5cf7a47ef4184e126c090a6cb9ba97db0dc0b7bc49003a95c",
+    "config.toml": "a77f7e73b19634b65ac0049dfad79287c29e86c2bd3b422993ecd87f2ef6d286",
+    "default_ambiguous.adb": "3b358bcf3574856f0da3cbc95a8d9bf988ce36c0e75a583d3242077377153605",
+    "fixtures.gpr": "0b14e13bf75697382cb301af18504b4e96d55bcdf570c64c7bc4fbe8b571df73",
+    "invalid.adb": "6cb61078736ce844a47e5752d07fc4d1b32bc9cead179594d9c0d3254250e4b4",
+    "missing.gpr": "2df7c426a36c1450e52fbc798b231fb0002d7003320d48243cd108f0dc97050b",
+    "obj/valid.adb.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "obj/valid.adb.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "obj/valid.ali": "80491403912aa475c23296a9924920c55a1125eb569d646a094f586bc9cac04f",
+    "obj/valid.o": "6a95f2f745aa8c6278cde6ef75ecdbad9928ddffa9bd3efde31bc85ca809205a",
+    "other.ads": "e0537bdfd11ea9ad96493b48313a26d43ecc1c352fac4ce0342822e7dcd86060",
+    "overloads.adb": "c60b9b715f0a35dc303a10288c120d077bfaa1da56a04815064f81f4ea1ea206",
+    "overloads.ads": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50",
+    "valid.adb": "d9faf609bdaf913c9e7bfa7837cce521e1a1de80b020b56dbad6f16ed17e60fd"
+  },
+  "tools": {
+    "gprbuild": "/home/zboll/.local/share/alire/toolchains/gprbuild_26.0.1_e3f27f25/bin/gprbuild",
+    "gprbuild_sha256": "aff9fde5ca766d5497da9dec185cb8b96878206a0d02512aa5685e1e56d0a4d3",
+    "gprbuild_version": "GPRBUILD 26.0.0 (2026-04-15) (x86_64-pc-linux-gnu)\nCopyright (C) 2004-2026, AdaCore\nThis is free software; see the source for copying conditions.\nThere is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "gcc": "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/bin/gcc",
+    "gcc_sha256": "238f4adafcb1425c84da6519068fdfcf33e57e406fc793e2958a9238789900de",
+    "gnat1": "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/libexec/gcc/x86_64-pc-linux-gnu/16.1.0/gnat1",
+    "gnat1_sha256": "5bf9b821ec0388ca6a6962dbc4bcb5773799926445fede6356069357c48dd58e",
+    "compiler_version": "gcc (GNAT-FSF-builds) 16.1.0\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+  },
+  "environment": {
+    "PATH": "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/bin:/home/zboll/.local/share/alire/toolchains/gprbuild_26.0.1_e3f27f25/bin:/home/zboll/.local/bin:/home/zboll/opt/gnatstudio-2026.2/bin:/home/zboll/.cargo/bin:/home/zboll/.alire/bin:/home/zboll/.npm-global/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/zboll/.lmstudio/bin:/home/zboll/.lmstudio/bin",
+    "GPR_PROJECT_PATH": null,
+    "ADA_PROJECT_PATH": null,
+    "ADA_INCLUDE_PATH": null,
+    "ADA_OBJECTS_PATH": null,
+    "GPR_CONFIG": null,
+    "GPR_RUNTIME_PATH": null,
+    "ADAFLAGS": null,
+    "CFLAGS": null,
+    "CXXFLAGS": null,
+    "LIBRARY_TYPE": null,
+    "GCC_EXEC_PREFIX": null,
+    "COMPILER_PATH": null,
+    "CPATH": null,
+    "LIBRARY_PATH": null
+  },
+  "scenarios": [],
+  "project_configuration": {
+    "inspector_sha256": "6fc82772f262e4305410e6aad65c9f64b970d6642688c90fca749eb35034cc7a",
+    "projects": [
+      {
+        "attributes": [
+          {
+            "kind": "single",
+            "name": "Archive_Prefix",
+            "value": "lib"
+          },
+          {
+            "kind": "single",
+            "name": "Create_Missing_Dirs",
+            "value": "True"
+          },
+          {
+            "kind": "single",
+            "name": "Exec_Dir",
+            "value": "obj"
+          },
+          {
+            "kind": "single",
+            "name": "Externally_Built",
+            "value": "false"
+          },
+          {
+            "index": "Asm_Cpp",
+            "kind": "list",
+            "name": "Inherit_Source_Path",
+            "values": [
+              "Asm"
+            ]
+          },
+          {
+            "index": "C++",
+            "kind": "list",
+            "name": "Inherit_Source_Path",
+            "values": [
+              "C"
+            ]
+          },
+          {
+            "kind": "list",
+            "name": "Languages",
+            "values": [
+              "Ada"
+            ]
+          },
+          {
+            "kind": "single",
+            "name": "Name",
+            "value": "fixtures"
+          },
+          {
+            "kind": "single",
+            "name": "Object_Dir",
+            "value": "obj"
+          },
+          {
+            "kind": "single",
+            "name": "Project_Dir",
+            "value": "/home/zboll/gnatdoc033-private/static-fixtures/"
+          },
+          {
+            "index": "Ada",
+            "kind": "single",
+            "name": "Runtime_Dir",
+            "value": "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/"
+          },
+          {
+            "kind": "list",
+            "name": "Source_Dirs",
+            "values": [
+              "."
+            ]
+          },
+          {
+            "index": "Ada",
+            "kind": "single",
+            "name": "Toolchain_Version",
+            "value": "GNAT 16.1"
+          }
+        ],
+        "packages": [
+          {
+            "attributes": [
+              {
+                "index": "Ada",
+                "kind": "list",
+                "name": "Default_Switches",
+                "values": [
+                  "-gnat2022",
+                  "-gnata"
+                ]
+              },
+              {
+                "index": "Ada",
+                "kind": "single",
+                "name": "Driver",
+                "value": "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/bin/gcc"
+              },
+              {
+                "index": "Ada",
+                "kind": "single",
+                "name": "Config_Body_File_Name",
+                "value": "pragma Source_File_Name_Project (%u, Body_File_Name => \"%f\");"
+              },
+              {
+                "index": "Ada",
+                "kind": "single",
+                "name": "Config_Body_File_Name_Index",
+                "value": "pragma Source_File_Name_Project (%u, Body_File_Name => \"%f\", Index => %i);"
+              },
+              {
+                "index": "Ada",
+                "kind": "single",
+                "name": "Config_Body_File_Name_Pattern",
+                "value": "pragma Source_File_Name_Project   (Body_File_Name  => \"*%b\",   Casing          => %c,   Dot_Replacement => \"%d\");"
+              },
+              {
+                "index": "Ada",
+                "kind": "list",
+                "name": "Config_File_Switches",
+                "values": [
+                  "-gnatec="
+                ]
+              },
+              {
+                "index": "Ada",
+                "kind": "single",
+                "name": "Config_File_Unique",
+                "value": "False"
+              },
+              {
+                "index": "Ada",
+                "kind": "single",
+                "name": "Config_Spec_File_Name",
+                "value": "pragma Source_File_Name_Project (%u, Spec_File_Name => \"%f\");"
+              },
+              {
+                "index": "Ada",
+                "kind": "single",
+                "name": "Config_Spec_File_Name_Index",
+                "value": "pragma Source_File_Name_Project (%u, Spec_File_Name => \"%f\", Index => %i);"
+              },
+              {
+                "index": "Ada",
+                "kind": "single",
+                "name": "Config_Spec_File_Name_Pattern",
+                "value": "pragma Source_File_Name_Project   (Spec_File_Name  => \"*%s\",   Casing          => %c,   Dot_Replacement => \"%d\");"
+              },
+              {
+                "index": "Ada",
+                "kind": "single",
+                "name": "Dependency_Kind",
+                "value": "ALI_File"
+              },
+              {
+                "index": "Ada",
+                "kind": "single",
+                "name": "Include_Path_File",
+                "value": "ADA_PRJ_INCLUDE_FILE"
+              },
+              {
+                "index": "Ada",
+                "kind": "single",
+                "name": "Language_Kind",
+                "value": "unit_based"
+              },
+              {
+                "index": "Ada",
+                "kind": "list",
+                "name": "Leading_Required_Switches",
+                "values": [
+                  "-c",
+                  "-x",
+                  "ada",
+                  "-gnatA"
+                ]
+              },
+              {
+                "index": "Ada",
+                "kind": "single",
+                "name": "Mapping_Body_Suffix",
+                "value": "%b"
+              },
+              {
+                "index": "Ada",
+                "kind": "list",
+                "name": "Mapping_File_Switches",
+                "values": [
+                  "-gnatem="
+                ]
+              },
+              {
+                "index": "Ada",
+                "kind": "single",
+                "name": "Mapping_Spec_Suffix",
+                "value": "%s"
+              },
+              {
+                "index": "Ada",
+                "kind": "single",
+                "name": "Multi_Unit_Object_Separator",
+                "value": "~"
+              },
+              {
+                "index": "Ada",
+                "kind": "list",
+                "name": "Multi_Unit_Switches",
+                "values": [
+                  "-gnateI"
+                ]
+              },
+              {
+                "index": "Ada",
+                "kind": "list",
+                "name": "Pic_Option",
+                "values": [
+                  "-fPIC"
+                ]
+              }
+            ],
+            "name": "Compiler"
+          }
+        ],
+        "project": {
+          "directory": "/home/zboll/gnatdoc033-private/static-fixtures/",
+          "file-name": "/home/zboll/gnatdoc033-private/static-fixtures/fixtures.gpr",
+          "id": "</home/zboll/gnatdoc033-private/static-fixtures/fixtures.gpr",
+          "kind": "standard",
+          "name": "Fixtures",
+          "object-directory": "/home/zboll/gnatdoc033-private/static-fixtures/obj/",
+          "qualifier": "standard",
+          "simple-name": "fixtures.gpr",
+          "source-directories": [
+            "/home/zboll/gnatdoc033-private/static-fixtures"
+          ]
+        }
+      }
+    ],
+    "tree": {
+      "object-search-paths": [
+        "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adalib/",
+        "/home/zboll/gnatdoc033-private/static-fixtures/obj/"
+      ],
+      "project-search-paths": [
+        "/home/zboll/git/ada-gnatdoc-enhancer/",
+        "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/x86_64-linux/share/gpr/",
+        "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/x86_64-linux/lib/gnat/",
+        "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/share/gpr/",
+        "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gnat/"
+      ],
+      "root-project": {
+        "id": "</home/zboll/gnatdoc033-private/static-fixtures/fixtures.gpr",
+        "name": "Fixtures"
+      },
+      "source-search-paths": [
+        "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/",
+        "/home/zboll/gnatdoc033-private/static-fixtures"
+      ],
+      "stats": {
+        "project-count": 1
+      }
+    }
+  },
+  "build": "/home/zboll/gnatdoc033-private/static-build2",
+  "runs": [
+    {
+      "argv": [
+        "/home/zboll/.local/share/alire/toolchains/gprbuild_26.0.1_e3f27f25/bin/gprbuild",
+        "-v",
+        "-P",
+        "/home/zboll/gnatdoc033-private/static-fixtures/fixtures.gpr",
+        "--root-dir=/home/zboll/gnatdoc033-private/static-fixtures",
+        "--relocate-build-tree=/home/zboll/gnatdoc033-private/static-build2",
+        "-p",
+        "-c",
+        "-u",
+        "-f",
+        "valid.adb"
+      ],
+      "exit": 0,
+      "stdout": "object directory \"/home/zboll/gnatdoc033-private/static-build2/obj\" created for project Fixtures\nChanging to object directory of \"Fixtures\": \"/home/zboll/gnatdoc033-private/static-build2/obj/\"\n/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/bin/gcc -c -x ada -gnatA -gnat2022 -gnata -gnatec=/tmp/GPR.1121368/GNAT-TEMP-000003.TMP -gnatem=/tmp/GPR.1121368/GNAT-TEMP-000004.TMP /home/zboll/gnatdoc033-private/static-fixtures/valid.adb\n",
+      "stderr": "",
+      "seconds": 0.21995810908265412
+    }
+  ],
+  "dependencies": {
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/ada.ads": "3915ec3edb9ce5eb7686ad4a3d372c12874be219d2b21fcf55bd05af22cd5bbb",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/a-assert.ads": "7980b8b4fe9e3d45834f47eea896444826bd4548c629f901c95a4c28e9463d91",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/a-except.ads": "61cac87bb1541705da0a2dbcf2d4afe7bb0e95215d41e2583b0c632dcb16444a",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/a-stream.ads": "1f9af89dab4acb7b5e50704165316a87ab1fb4f14d04f553e39e125234498b33",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/a-string.ads": "442b67ae5ce5e31702143ec2d7673a66ffa998d7b97afcdd19b552e670d96e02",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/a-sttebu.ads": "7ea218c66ba5dfc6f5870bb854f4be4ece5eaa4349dce839ea6d14c218b9e052",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/a-stuten.ads": "e94fcfe456cd618544fcacbc1ea54120caf3e5ebaca1f5d346f46b235b24a865",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/a-tags.ads": "984f3dd3fccc4d7a9d28c7efd8d34ee7cec531b41fd8d5477037a424535cd048",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/a-unccon.ads": "576b8b0ecb9ab7a72b6686f06f4c30e74c8e4eff1e1ce93de7f3a32da0599864",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/interfac.ads": "cb0812255c9176e7494a2c3a5c83b1cc3f36924adc8f7e69c54d4e7ccc73c366",
+    "/home/zboll/gnatdoc033-private/static-fixtures/other.ads": "e0537bdfd11ea9ad96493b48313a26d43ecc1c352fac4ce0342822e7dcd86060",
+    "/home/zboll/gnatdoc033-private/static-fixtures/overloads.ads": "7378aedd82dcaaea2d5d762c4b593e9ef03df3c57adb7babf67c9e7301a7bb50",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/system.ads": "545339a0b49ad059358dcfcc69d47d04dfb3e5acb245cb39a1d590b13d693c95",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/s-assert.ads": "4ce59e37718c5597228e05d05d14cad03ea580ab1b0ad2b83a71aeb4d82de467",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/s-exctab.ads": "7b47d706f502d266c30b31377b6dfa7a491be181cea388a4eaecdc51ea796c77",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/s-parame.ads": "69309e996793d5dfeab1a207beae3658b41d7979f099b1c248823adb7e898ac9",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/s-putima.ads": "f7a8721687fc233cf4b774b6db98ac1deaff3ebe42e0e2f88ddb5e9459db1910",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/s-retsta.ads": "f637d25fc08739a3fadbc8e582a39f5e71b872ada81ac71d262242847d510833",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/s-secsta.ads": "25ddf544c6bd3f278ed5edaf33b6a2aefe83f736507f6e4f5c3e2ee9cd407d76",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/s-soflin.ads": "818d0cebb13a6efc2cb7426d20751c8c45a3ed15a803d34860c39956f2e61f83",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/s-stache.ads": "6691d3001b04e06b221b2c49a0052691a2dd450d084df24295de26b50d8bc98a",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/s-stalib.ads": "da57c5e674474761f1dfc4c9d3ebc2cb879aaf9e236be7c031222a25b1bd0b02",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/s-stoele.ads": "97f344018fd2716cbd58b046f0c5ec3062594af54ac0d9fa7656f0f75074ef33",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/s-traent.ads": "e55203442b4dbaf3170bfbe04389f371b16f33cc62eb12d9020d0c91a3588f4d",
+    "/home/zboll/.local/share/alire/toolchains/gnat_native_16.1.0_9f74f58a/lib/gcc/x86_64-pc-linux-gnu/16.1.0/adainclude/s-unstyp.ads": "b98b23b18685b9a87c19905d33ea34a0dd60adbca6913431ce455ab0d0bf0d3e",
+    "/home/zboll/gnatdoc033-private/static-fixtures/valid.adb": "d9faf609bdaf913c9e7bfa7837cce521e1a1de80b020b56dbad6f16ed17e60fd"
+  },
+  "artifacts": {
+    "obj/valid.adb.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "obj/valid.adb.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "obj/valid.ali": "5be5d4fec3381f0c7a1232a35c37d65a94c85a7ffbd8c088e4c93022436f80af",
+    "obj/valid.o": "6a95f2f745aa8c6278cde6ef75ecdbad9928ddffa9bd3efde31bc85ca809205a"
+  },
+  "alis": [
+    "obj/valid.ali"
+  ]
+}

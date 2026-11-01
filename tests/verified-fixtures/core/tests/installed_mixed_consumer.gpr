@@ -1,0 +1,20 @@
+with "opencv_core";
+project Installed_Mixed_Consumer is
+   for Languages use ("Ada", "C++");
+   for Source_Dirs use (".");
+   for Source_Files use ("installed_mixed_consumer.adb", "installed_application.cpp");
+   for Object_Dir use "obj-mixed";
+   for Exec_Dir use "bin";
+   for Main use ("installed_mixed_consumer.adb");
+   for Create_Missing_Dirs use "True";
+   package Compiler is
+      for Default_Switches ("Ada") use ("-gnat2022", "-gnatwa", "-gnatwe");
+      for Driver ("C++") use "/usr/bin/g++";
+      for Default_Switches ("C++") use
+        ("-std=c++17", "-Wall", "-Wextra", "-Werror", "-I/usr/include/opencv4");
+   end Compiler;
+   package Linker is
+      --  Existing application's native OpenCV dependency remains in place.
+      for Linker_Options use ("-lopencv_core", "-lstdc++");
+   end Linker;
+end Installed_Mixed_Consumer;

@@ -74,7 +74,7 @@ def records(config, native, guides):
         from .guides import render
         guides = render(replace(config, ada_example_highlighting=False,
                                 ada_example_api_links=False,
-                                ada_landing_example_highlighting=False), native)
+                                ada_landing_example_highlighting=False, verified_examples={}), native)
     source = packages(config)
     destinations = source_destinations(config, native, source)
     result = []

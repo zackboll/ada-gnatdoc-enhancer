@@ -337,12 +337,26 @@ def lal_identity(declaration, root):
 
 def lal_select(project, root, occurrence):
     """Optional adapter; the ALI parser has no access to these selections."""
+    return SelectionSession(project, root).select(occurrence)
+
+
+class SelectionSession:
+    """Reuse one precise project context across all occurrences in a batch."""
+    def __init__(self, project, root, scenarios=()):
+        import libadalang as lal
+        self.root = root
+        need(not any("\t" in p.read_text() or not p.read_text().isascii()
+                     for p in root.rglob("*.ad[bs]")), "UNSUPPORTED", "tabs/non-ASCII columns require qualification")
+        self.gpr = lal.GPRProject(str(project), scenario_vars=dict(s.split('=', 1) for s in scenarios), print_errors=False)
+        need(not self.gpr.errors, "ANALYSIS_ERROR", str(self.gpr.errors))
+        self.context = self.gpr.create_context()
+
+    def select(self, occurrence):
+        return _lal_select(self.context, self.root, occurrence)
+
+
+def _lal_select(context, root, occurrence):
     import libadalang as lal
-    need(not any("\t" in p.read_text() or not p.read_text().isascii()
-                 for p in root.rglob("*.ad[bs]")), "UNSUPPORTED", "tabs/non-ASCII columns require qualification")
-    gpr = lal.GPRProject(str(project), print_errors=False)
-    need(not gpr.errors, "ANALYSIS_ERROR", str(gpr.errors))
-    context = gpr.create_context()
     unit = context.get_from_file(str(root / occurrence["file"]))
     need(not unit.diagnostics and unit.root is not None, "ANALYSIS_ERROR", "Libadalang parse failure")
     node = unit.root.lookup(lal.Sloc(occurrence["line"], occurrence["column"]))
