@@ -78,8 +78,6 @@ def run(repository, workspace, variant):
             for profile, options in (
                     ('none', dict(navigation='none')),
                     ('symbol', dict(symbol_bookmarks=True, default_package='OpenCV.Core')),
-                    ('instance', dict(symbol_bookmarks=True, default_package='OpenCV.Core',
-                                      instance_references=True)),
                     ('no-theme', dict(theme=False))):
                 output = folder/profile
                 shutil.copytree(fixture/'native', output)
@@ -89,6 +87,23 @@ def run(repository, workspace, variant):
                     compare(workspace/'baseline'/name/profile, output)
                     if variant == 'candidate' else dict(files=len(hashes(output))))
         reports[name] = record
+    # Use the existing qualified fixture for each profile. Authored Core's
+    # generic native sections are not a complete operation inventory and its
+    # configuration does not authorize incoming-instance references.
+    for name, fixture, config_name, native_name, options in (
+            ('operations', 'tests/fixtures/imgproc', 'project.toml', '_site', {}),
+            ('incoming-instance', 'tests/real-fixtures/generic-core', 'enhancer.toml', 'pristine',
+             dict(instance_references=True, symbol_bookmarks=True, default_package='OpenCV.Core'))):
+        folder = workspace/variant/name
+        authority = folder/'authority'; site = folder/'site'
+        shutil.copytree(repository/fixture, authority)
+        shutil.copytree(authority/native_name, site)
+        config = replace(load(authority, config_name), **options)
+        report = enhance(config, site); verify(config, site)
+        before = hashes(site); enhance(config, site); assert before == hashes(site)
+        reports[name] = dict(disabled=report, disabled_hashes=before)
+        if variant == 'candidate':
+            reports[name]['release_comparison'] = compare(workspace/'baseline'/name/'site', site)
     (workspace/(variant + '.json')).write_text(sorted_json(reports))
     return reports
 
