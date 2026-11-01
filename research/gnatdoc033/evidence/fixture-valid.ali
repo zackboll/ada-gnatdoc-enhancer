@@ -1,0 +1,110 @@
+V "GNAT Lib v16"
+M P W=b
+A -gnatA
+A -gnat2022
+A -gnata
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U valid%b		valid.adb		199536ce NE OO SU
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W other%s		other.ads		other.ali
+W overloads%s		overloads.adb		overloads.ali
+Z system.assertions%s	s-assert.adb		s-assert.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+D ada.ads		20260430083320 76789da1 ada%s
+D a-assert.ads		20260430083320 ba465f5c ada.assertions%s
+D a-except.ads		20260430083320 8699d7ff ada.exceptions%s
+D a-stream.ads		20260430083320 cb01a8f8 ada.streams%s
+D a-string.ads		20260430083320 90ac6797 ada.strings%s
+D a-sttebu.ads		20260430083320 f1ad67a2 ada.strings.text_buffers%s
+D a-stuten.ads		20260430083320 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		20260430083320 2dbf449c ada.tags%s
+D a-unccon.ads		20260430083320 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20260430083320 9111f9c1 interfaces%s
+D other.ads		20261101031913 7e755bd4 other%s
+D overloads.ads		20261101044631 03f6f282 overloads%s
+D system.ads		20260430083320 e2b7c99d system%s
+D s-assert.ads		20260430083320 9c4520c7 system.assertions%s
+D s-exctab.ads		20260430083320 91bef6ef system.exception_table%s
+D s-parame.ads		20260430083320 a1aeab5c system.parameters%s
+D s-putima.ads		20260430083320 1b989439 system.put_images%s
+D s-retsta.ads		20260430083320 0f6b06cb system.return_stack%s
+D s-secsta.ads		20260430083320 578279f5 system.secondary_stack%s
+D s-soflin.ads		20260430083320 5d88fdea system.soft_links%s
+D s-stache.ads		20260430083320 0b81c1fe system.stack_checking%s
+D s-stalib.ads		20260430083320 1c9580f6 system.standard_library%s
+D s-stoele.ads		20260430083320 ccded4e8 system.storage_elements%s
+D s-traent.ads		20260430083320 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		20260430083320 fa2a7f59 system.unsigned_types%s
+D valid.adb		20261101045521 64169f98 valid%b
+G a e
+G c Z b b [valid standard 3 11 none]
+G r s mat [valid standard 3 11 none] [matIP overloads 2 9 none]
+G r s umat [valid standard 3 11 none] [umatIP overloads 3 9 none]
+G r c none [valid standard 3 11 none] [clone overloads 4 13 none]
+G r c none [valid standard 3 11 none] [clone overloads 5 13 none]
+G r c none [valid standard 3 11 none] [pick overloads 6 13 none]
+G r c none [valid standard 3 11 none] [pick overloads 7 13 none]
+G r c none [valid standard 3 11 none] [count overloads 8 13 none]
+G r c none [valid standard 3 11 none] [count overloads 9 13 none]
+G r c none [valid standard 3 11 none] [named overloads 10 13 none]
+G r c none [valid standard 3 11 none] [named overloads 11 13 none]
+G r c none [valid standard 3 11 none] [defaulted overloads 12 13 none]
+G r c none [valid standard 3 11 none] [result overloads 14 13 none]
+G r c none [valid standard 3 11 none] [result overloads 15 13 none]
+G r c none [valid standard 3 11 none] [pick other 2 13 none]
+X 11 other.ads
+1K9*Other 3e10 26|2w6 2r17
+2V13*Pick{integer} 26|18s19
+X 12 overloads.ads
+1K9*Overloads 16e14 26|1w6 1r21 17r19
+2R9*Mat 2e34 26|4r8 6r9 31r25
+3R9*UMat 3e35 26|5r8 7r9 31r39
+4V13*Clone{2R9} 26|6s18
+5V13*Clone{3R9} 26|7s19
+6V13*Pick{integer} 26|8s19 17s29
+7V13*Pick{integer} 26|9s19
+8V13*Count{integer} 26|10s19
+9V13*Count{integer} 26|11s19
+10V13*Named{integer} 26|12s19
+10i20 Left{integer} 26|12r40
+10a36 Right{string} 26|12r26
+11V13*Named{integer} 26|13s19
+11a20 Left{string} 26|13r38
+11i35 Right{integer} 26|13r26
+12V13*Defaulted{integer} 26|14s19
+14V13*Result{integer} 26|15s19
+15V13*Result{string} 26|16s18
+X 26 valid.adb
+3U11*Valid 3b11 32l5 32t10
+4r4 M{12|2R9} 6r16
+5r4 U{12|3R9} 7r17
+6r4 MC{12|2R9} 31r19
+7r4 UC{12|3R9} 31r33
+8i4 A{integer} 29r19
+9i4 B{integer} 29r29
+10i4 C{integer} 29r39
+11i4 D{integer} 29r49
+12i4 E{integer} 29r59
+13i4 F{integer} 29r69
+14i4 G{integer} 30r19
+15i4 H{integer} 30r29
+16a4 S{string} 30r39
+17i4 I{integer} 30r53
+18i4 J{integer} 30r63
+24V16 Pick{integer} 24b16 24>22 25s29
+24i22 Value{integer} 24r58
+25i7 Shadowed{integer} 27r22
+

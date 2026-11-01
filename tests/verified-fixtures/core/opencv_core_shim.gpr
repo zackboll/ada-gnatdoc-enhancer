@@ -1,0 +1,99 @@
+with "config/opencv_core_config.gpr";
+with "config/opencv_core_install.gpr";
+
+project OpenCV_Core_Shim is
+
+   for Library_Name use "opencv_core_shim";
+
+   for Object_Dir use "obj/shim/" & OpenCV_Core_Config.Build_Profile;
+   for Create_Missing_Dirs use "True";
+   for Library_Dir use "lib";
+
+   case OpenCV_Core_Install.Shim_Build is
+      when "Static_PIC" =>
+         for Languages use ("C++");
+         for Source_Dirs use ("cpp/");
+         for Library_Kind use "static-pic";
+      when "Relocatable" =>
+         for Languages use ("C++");
+         for Source_Dirs use ("cpp/");
+         for Library_Kind use "relocatable";
+      when "External_Relocatable" =>
+         for Externally_Built use "True";
+         --  GPRinstall needs a language and actual sources to recognize this
+         --  as a library, even though only the external MSYS2 builder compiles it.
+         for Languages use ("C++");
+         for Source_Dirs use ("cpp/");
+         for Library_Kind use "relocatable";
+   end case;
+
+   Common_Cxx_Switches :=
+     ("-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-Werror",
+      OpenCV_Core_Install.Include_Switch) &
+      OpenCV_Core_Install.Cross_Compiler_Switches;
+
+   package Compiler is
+      case OpenCV_Core_Install.Cxx_Toolchain is
+         when "GNU" =>
+            for Default_Switches ("C++") use Common_Cxx_Switches;
+            for Driver ("C++") use OpenCV_Core_Install.Cxx_Driver;
+         when "Apple_Clang" =>
+            --  OpenCV headers use C11 _Atomic through CV_XADD. Retain
+            --  -Werror while allowing that system-header extension.
+            for Default_Switches ("C++") use
+              Common_Cxx_Switches & ("-Wno-error=c11-extensions");
+            for Driver ("C++") use OpenCV_Core_Install.Cxx_Driver;
+            for Leading_Required_Switches ("C++") use
+              ("-c",
+               "-x",
+               "c++",
+               "-isysroot",
+               OpenCV_Core_Install.Cxx_Sysroot);
+            for Include_Switches ("C++") use ("-I");
+            for Dependency_Switches ("C++") use ("-MMD", "-MF", "");
+      end case;
+   end Compiler;
+
+   case OpenCV_Core_Install.Shim_Build is
+      when "Relocatable" =>
+         for Library_Options use
+           ("-isysroot",
+            OpenCV_Core_Install.Cxx_Sysroot,
+            OpenCV_Core_Install.Library_Search_Switch,
+            OpenCV_Core_Install.OpenCV_Core_Link_Option);
+      when "Static_PIC" | "External_Relocatable" =>
+         null;
+   end case;
+
+   package Linker is
+      case OpenCV_Core_Install.Shim_Build is
+         when "Static_PIC" =>
+            for Linker_Options use
+              (OpenCV_Core_Install.Library_Search_Switch,
+               OpenCV_Core_Install.OpenCV_Core_Link_Option,
+               OpenCV_Core_Install.Cxx_Runtime_Switch) &
+               OpenCV_Core_Install.Cross_Linker_Switches;
+         when "Relocatable" =>
+            for Driver use OpenCV_Core_Install.Cxx_Driver;
+         when "External_Relocatable" =>
+            null;
+      end case;
+   end Linker;
+
+   package Install is
+      case OpenCV_Core_Install.Shim_Build is
+         when "External_Relocatable" =>
+            --  The external builder, not GPRbuild, produces this import archive.
+            --  Install it beside the DLL in the generated Library_Dir.
+            for Required_Artifacts ("lib/opencv_core_shim") use
+              ("lib/libopencv_core_shim.dll.a");
+         when "Static_PIC" | "Relocatable" =>
+            null;
+      end case;
+   end Install;
+
+end OpenCV_Core_Shim;

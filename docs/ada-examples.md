@@ -1,5 +1,12 @@
 # Source-verified Ada examples (GNATDOC-027)
 
+## Compiler-verified static calls
+
+An additional optional pinned mapping can link validated overloads and prefixed
+static calls in complete `exact-examples` fences. See
+[compiler-verified examples](compiler-verified-examples.md) for generation,
+configuration, trust boundaries, schema and qualification scope.
+
 This feature is included in v0.1.4 preparation, not yet published.
 Rendering is static, deterministic and offline. There is no browser highlighter,
 network lookup, JavaScript dependency, external stylesheet or consumer-code execution.

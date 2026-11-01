@@ -1,0 +1,11 @@
+with "../../opencv_core.gpr";
+project Scalar_Modes_Example is
+   for Source_Dirs use (".");
+   for Object_Dir use "obj-scalar-example";
+   for Exec_Dir use "bin-scalar-example";
+   for Create_Missing_Dirs use "True";
+   for Main use ("scalar_modes_example.adb");
+   package Compiler is
+      for Default_Switches ("Ada") use ("-gnatwa", "-gnatwe");
+   end Compiler;
+end Scalar_Modes_Example;

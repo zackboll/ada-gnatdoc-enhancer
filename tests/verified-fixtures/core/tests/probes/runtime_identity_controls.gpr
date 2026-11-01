@@ -1,0 +1,20 @@
+with "../../opencv_core.gpr";
+project Runtime_Identity_Controls is
+   for Source_Dirs use ("runtime_identity");
+   for Object_Dir use "obj-runtime-controls";
+   for Exec_Dir use "bin-runtime-controls";
+   for Create_Missing_Dirs use "True";
+   for Main use ("runtime_identity_controls.adb");
+   for Languages use ("Ada", "C");
+   package Compiler is
+      for Default_Switches ("Ada") use ("-gnatwa", "-gnatwe", "-gnatVa");
+      for Default_Switches ("C") use
+        ("-std=c11", "-Wall", "-Wextra", "-Werror",
+         "-I" & Runtime_Identity_Controls'Project_Dir & "../../cpp");
+   end Compiler;
+   package Linker is
+      for Switches ("Ada") use
+        ("-Wl,--wrap=opencv_core_native_version_string",
+         "-Wl,--wrap=opencv_core_native_build_information");
+   end Linker;
+end Runtime_Identity_Controls;

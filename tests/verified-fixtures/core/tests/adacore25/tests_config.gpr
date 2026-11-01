@@ -1,0 +1,7 @@
+abstract project Tests_Config is
+   Build_Profile := "adacore25-release";
+   --  The checked harness matches tests/gnat12, not Alire development's
+   --  -gnatVa profile (which conflicts with intentional IEEE special values).
+   --  Production keeps the separately qualified release configuration.
+   Ada_Compiler_Switches := ("-O0", "-gnatwa", "-gnatwe");
+end Tests_Config;

@@ -1,0 +1,57 @@
+{
+  "ada_policy": "exact-examples",
+  "anchors": null,
+  "api_label": "GNATdoc API browser",
+  "attribution_base": "https://github.com/zackboll/opencv_core_ada/blob/main/",
+  "directory_pages": [],
+  "example_project": "publishing/examples.gpr",
+  "examples": [
+    "valid.adb"
+  ],
+  "groups": [],
+  "guides": [
+    {
+      "entry_points": [],
+      "id": "verified",
+      "label": "Verified calls",
+      "path": "guides/verified.html",
+      "source": "guide.md"
+    }
+  ],
+  "home": {
+    "path": "index.html",
+    "source": "home.html"
+  },
+  "inputs": {
+    "guide.md": "fdfd74953a96b29aebfba5c9f376b70b14aa1c8267224134cc54670108ac4197",
+    "guides.css": "b253a6bc1df44330d8a250caebac65b2f3afda38eb8ae5a424a9b86b484c6d82",
+    "home.html": "71e27f1df941520e85d73447a379a6721ec35671d52980c73d875b17f634d1af",
+    "publishing/examples.gpr": "36d49c6a8f658877d340f8469678c463eddaa4b7953ec75540cca48d7c38f3d8",
+    "valid.adb": "d9faf609bdaf913c9e7bfa7837cce521e1a1de80b020b56dbad6f16ed17e60fd"
+  },
+  "landing_example": "valid.adb",
+  "landing_project": "publishing/examples.gpr",
+  "languages": [
+    "ada",
+    "sh",
+    "shell",
+    "text",
+    ""
+  ],
+  "native_sha256": {
+    "api/6b7ff90a5c8ebb6c34be5dfcaf2cf221dbe5d1a2ab7079d80c47baf9553f8976.html": "708c9dd094266f34dd4bacad5b885aa58d47a3826c8eec77424f26fcbd553e38",
+    "api/d9298a10d1b0735837dc4bd85dac641b0f3cef27a47e5d53a54f2f3f5b2fcffa.html": "a7e5658bad39f7982fb11cc95aeb7a0f6f3e4f0de46e94a248a76507d92345ef",
+    "api/gnatdoc.css": "e86c483e8a66f80bd653129c7ceeec99e63848ecfc308e98ea9de1693fd32e0e",
+    "api/index.html": "00d336c1d760b63c8b61d85e888255aa67019f4a07cbecb8b016e982e9135848"
+  },
+  "renderer_exceptions": [],
+  "schema_version": 2,
+  "site_map": null,
+  "source_inventory": null,
+  "source_links": {},
+  "stylesheet": {
+    "path": "guides/gnatdoc-guides.css",
+    "source": "guides.css"
+  },
+  "title_suffix": "OpenCV Core Ada"
+}

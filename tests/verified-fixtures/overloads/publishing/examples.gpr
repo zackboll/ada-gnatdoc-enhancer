@@ -1,0 +1,6 @@
+project Examples is
+ for Main use ("valid.adb");
+ package Compiler is
+ for Default_Switches ("Ada") use ("-gnat2022", "-gnata", "-Werror");
+ end Compiler;
+end Examples;

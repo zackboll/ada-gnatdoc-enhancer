@@ -35,5 +35,5 @@
   "fixtures/dispatch.adb": "649f34a4be6c7fbb37cb206e28851333806fada99affe7475271cf1aac837ca4",
   "results.json": "02221063dac2449b352ad02219bb9f1aa7ec1ed178aee426271a7c8b1ac301b9",
   "tests/test_verifier.py": "f4ba16132ac7590a97477f8d7fd438129f304d9877150241719fb76e277f9b27",
-  "verifier.py": "fd23810c4ac95162dee4dd019af0c85150bb44afbae4725efbc908ac17bed32e"
+  "verifier.py": "d0a987bd5b7e799ed0084d1bae7d0673dfa639d044ee944cad11e03a4e0f5215"
 }

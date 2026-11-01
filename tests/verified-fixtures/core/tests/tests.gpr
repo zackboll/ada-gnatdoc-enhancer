@@ -1,0 +1,91 @@
+with "config/tests_config.gpr";
+with "../config/opencv_core_install.gpr";
+with "aunit";
+with "opencv_core";
+
+project Tests is
+
+   --  Statically isolate the GNAT/Ada runtime inside the test executable
+   --  while still loading the separately built shared C++ shim. The default
+   --  keeps the normal test linking behavior unchanged on every platform.
+   type Static_Ada_Runtime_Kind is ("False", "True");
+   Static_Ada_Runtime : Static_Ada_Runtime_Kind :=
+      external ("TESTS_STATIC_ADA_RUNTIME", "False");
+
+   for Source_Dirs use ("src/", "cpp/", "config/");
+   for Object_Dir use "obj/" & Tests_Config.Build_Profile;
+   for Create_Missing_Dirs use "True";
+   for Exec_Dir use "bin";
+   for Main use ("tests.adb");
+
+   package Compiler is
+      for Default_Switches ("Ada") use
+         Tests_Config.Ada_Compiler_Switches & ("-Werror");
+
+      case OpenCV_Core_Install.Shim_Build is
+         when "External_Relocatable" =>
+            null;
+         when "Relocatable" =>
+             null;
+         when "Static_PIC" =>
+            for Default_Switches ("C++") use
+              ("-std=c++17", "-Wall", "-Wextra", "-Wpedantic", "-Werror",
+               "-I" & OpenCV_Core'Project_Dir & "cpp",
+               OpenCV_Core_Install.Include_Switch);
+      end case;
+   end Compiler;
+
+   case OpenCV_Core_Install.Shim_Build is
+      when "External_Relocatable" | "Relocatable" =>
+          --  OpenCV-facing C++ remains in the configured external compiler
+          --  family. The probe library is built by build_module_bridge_probe.sh.
+         for Languages use ("Ada");
+      when "Static_PIC" =>
+         for Languages use ("Ada", "C++");
+   end case;
+
+   package Binder is
+      case Static_Ada_Runtime is
+         when "True" =>
+            for Switches ("Ada") use ("-Es", "-static");
+         when "False" =>
+            for Switches ("Ada") use ("-Es"); --  Symbolic traceback
+      end case;
+   end Binder;
+
+   package Linker is
+      case Static_Ada_Runtime is
+         when "True" =>
+            --  Communicate with C++ only through the shim DLL C ABI, so
+            --  the executable can be linked with GNAT gcc. g++ injects
+            --  -shared-libgcc and defeats -static-libgcc placed in
+            --  Switches. Trailing_Switches come after GPRbuild's
+            --  required linker switches, so -static-libgcc wins.
+            for Driver use "gcc";
+            for Trailing_Switches ("Ada") use ("-static-libgcc");
+         when "False" =>
+            null;
+      end case;
+
+      case OpenCV_Core_Install.Shim_Build is
+         when "External_Relocatable" =>
+            for Switches ("Ada") use
+              ("-L" & OpenCV_Core'Project_Dir & "lib",
+               "-lopencv_core_module_bridge_probe");
+         when "Relocatable" =>
+             for Switches ("Ada") use
+               ("-L" & OpenCV_Core'Project_Dir & "lib",
+                "-lopencv_core_module_bridge_probe",
+                "-Wl,-rpath,@loader_path/../../lib");
+         when "Static_PIC" =>
+            for Switches ("Ada") use
+              ("-L" & OpenCV_Core'Project_Dir & "lib",
+               "-linteger_borrow_lifetime_probe");
+      end case;
+   end Linker;
+
+   package Install is
+      for Artifacts (".") use ("share");
+   end Install;
+
+end Tests;

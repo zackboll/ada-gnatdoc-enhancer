@@ -1,0 +1,85 @@
+with "config/opencv_core_config.gpr";
+with "config/opencv_core_install.gpr";
+with "opencv_core_shim.gpr";
+
+project OpenCV_Core is
+
+   for Library_Name use "opencv_core_ada";
+
+   for Languages use ("Ada");
+   for Source_Dirs use ("src/", "src/internal/", "config/");
+   for Object_Dir use "obj/" & OpenCV_Core_Config.Build_Profile;
+   for Create_Missing_Dirs use "True";
+   for Library_Dir use "lib";
+
+   type Library_Type_Type is ("relocatable", "static", "static-pic");
+   Library_Type : Library_Type_Type :=
+     external
+       ("OPENCV_CORE_LIBRARY_TYPE",
+        external ("LIBRARY_TYPE", "static-pic"));
+   for Library_Kind use Library_Type;
+
+   case Library_Type is
+      when "relocatable" =>
+         case OpenCV_Core_Install.Ada_Link is
+            when "Shared_Shim_Static_GCC_Runtime" =>
+               for Library_Options use
+                 ("-L" & Project'Project_Dir & "lib",
+                  "-lopencv_core_shim",
+                  "-static-libgcc",
+                  "-static-libstdc++");
+            when "Default" =>
+               case OpenCV_Core_Install.Cxx_Toolchain is
+                  when "Apple_Clang" =>
+                     --  GNAT's linker otherwise uses the independent CLT SDK,
+                     --  which can be newer than its supported TBD format.
+                     for Library_Options use
+                       ("--sysroot=" & OpenCV_Core_Install.Cxx_Sysroot);
+                  when "GNU" =>
+                     null;
+               end case;
+         end case;
+      when "static" | "static-pic" =>
+         null;
+   end case;
+
+   package Compiler is
+      for Default_Switches ("Ada") use
+         OpenCV_Core_Config.Ada_Compiler_Switches & ("-Werror");
+      --  This unit uses Ada 2022 bracket array aggregates. Keep the language
+      --  selection local rather than changing unrelated units' warning sets.
+      for Switches ("opencv-core-internal-typed_access.adb") use
+         OpenCV_Core_Config.Ada_Compiler_Switches & ("-gnat2022", "-Werror");
+   end Compiler;
+
+   package Binder is
+      for Switches ("Ada") use ("-Es"); --  Symbolic traceback
+   end Binder;
+
+   package Linker is
+      --  Ada consumers of a shared shim may require an isolated static GCC
+      --  runtime. Other consumer link strategies remain unchanged.
+      case OpenCV_Core_Install.Ada_Link is
+         when "Shared_Shim_Static_GCC_Runtime" =>
+            for Linker_Options use
+              ("-lopencv_core_shim", "-static-libgcc", "-static-libstdc++");
+         when "Default" =>
+            case OpenCV_Core_Install.Cxx_Toolchain is
+               when "Apple_Clang" =>
+                  --  Propagate to native Ada executables, including consumers
+                  --  of the installed and relocated project. Do not rely on
+                  --  SDKROOT overriding the GNAT GCC driver's built-in specs.
+                  for Linker_Options use
+                    ("--sysroot=" & OpenCV_Core_Install.Cxx_Sysroot);
+               when "GNU" =>
+                  null;
+            end case;
+      end case;
+   end Linker;
+
+   package Install is
+      for Artifacts (".") use ("share");
+      for Artifacts ("include") use ("cpp/opencv_core_module_bridge.hpp");
+   end Install;
+
+end OpenCV_Core;

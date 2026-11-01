@@ -1,0 +1,13 @@
+with "opencv_core";
+project Installed_Ada is
+   for Languages use ("Ada");
+   for Source_Dirs use (".");
+   for Source_Files use ("installed_mat_consumer.adb");
+   for Main use ("installed_mat_consumer.adb");
+   for Object_Dir use "obj-ada";
+   for Exec_Dir use "bin";
+   for Create_Missing_Dirs use "True";
+   package Compiler is
+      for Default_Switches ("Ada") use ("-gnatwa", "-gnatwe", "-Werror");
+   end Compiler;
+end Installed_Ada;

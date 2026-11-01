@@ -1,0 +1,21 @@
+with "../../opencv_core.gpr";
+project K_Means_Attempts_Controls is
+   for Source_Dirs use (".");
+   for Object_Dir use "k-means-attempts-obj";
+   for Create_Missing_Dirs use "True";
+   for Exec_Dir use ".";
+   for Main use ("k_means_attempts_controls.adb");
+   for Languages use ("Ada", "C");
+   package Compiler is
+      for Default_Switches ("Ada") use
+        ("-gnatwa", "-gnatwe", "-Werror");
+      for Default_Switches ("C") use
+        ("-std=c11", "-Wall", "-Wextra", "-Werror",
+         "-I" & K_Means_Attempts_Controls'Project_Dir & "../../cpp");
+   end Compiler;
+   package Linker is
+      for Switches ("Ada") use
+        ("-Wl,--wrap=opencv_core_mat_kmeans",
+         "-Wl,--wrap=opencv_core_mat_kmeans_with_initial_labels");
+   end Linker;
+end K_Means_Attempts_Controls;

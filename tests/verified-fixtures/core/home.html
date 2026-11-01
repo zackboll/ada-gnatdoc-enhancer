@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Verified calls</title></head><body><pre>with OpenCV.Core;
+
+procedure Example is
+   use OpenCV.Core;
+   Image : constant Mat := Create (2, 3, (Depth =&gt; UInt8, Channels =&gt; 1));
+   Copy  : constant Mat := Image.Clone;
+begin
+   pragma Assert (Copy.Rows = 2 and then Copy.Columns = 3);
+end Example;
+</pre></body></html>
