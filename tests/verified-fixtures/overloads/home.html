@@ -7,11 +7,11 @@ procedure Valid is
    MC : Mat := M.Clone;
    UC : UMat := U.Clone;
    A : Integer := Pick (1);
-   B : Integer := Pick (&quot;two&quot;);
+   B : Integer := Pick ("two");
    C : Integer := Count (1);
    D : Integer := Count (1, 2);
-   E : Integer := Named (Right =&gt; &quot;x&quot;, Left =&gt; 1);
-   F : Integer := Named (Right =&gt; 1, Left =&gt; &quot;x&quot;);
+   E : Integer := Named (Right =&gt; "x", Left =&gt; 1);
+   F : Integer := Named (Right =&gt; 1, Left =&gt; "x");
    G : Integer := Defaulted (1);
    H : Integer := Result;
    S : String := Result;
@@ -28,6 +28,7 @@ begin
       pragma Assert (Shadowed = 17);
    end;
    pragma Assert (A = 1 and B = 3 and C = 1 and D = 3 and E = 2 and F = 2);
-   pragma Assert (G = 1 and H = 1 and S = &quot;one&quot; and I = 3 and J = 1);
+   pragma Assert (G = 1 and H = 1 and S = "one" and I = 3 and J = 1);
    pragma Assert (MC in Mat and UC in UMat);
-end Valid;</pre></body></html>
+end Valid;
+</pre></body></html>

@@ -21,6 +21,7 @@ research/gnatdoc033/evidence/fixture-valid.ali
 research/gnatdoc033/evidence/generator-env-optimized.txt
 research/gnatdoc033/evidence/generator-normal.txt
 research/gnatdoc033/evidence/generator-optimized.txt
+research/gnatdoc033/evidence/legacy-browser.json
 research/gnatdoc033/evidence/metadata.json
 research/gnatdoc033/evidence/performance.json
 research/gnatdoc033/evidence/predecessor031.txt

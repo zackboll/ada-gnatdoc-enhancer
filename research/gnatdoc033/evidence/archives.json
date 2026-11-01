@@ -3,17 +3,17 @@
     "rebuilt_wheel": {
       "bytes": 116900,
       "name": "ada_gnatdoc_enhancer-0.1.4-py3-none-any.whl",
-      "sha256": "b9c6bf71dcf06515b3eb16c9f0b1d07ce679d80836cb42549f2e02a10e211054"
+      "sha256": "d6c31492998f9fd2f31baa1f2020b6015ad35829ed330b0e8f0c0deb2a293fc2"
     },
     "sdist": {
-      "bytes": 3415274,
+      "bytes": 3415304,
       "name": "ada_gnatdoc_enhancer-0.1.4.tar.gz",
-      "sha256": "2e4d1c4ba1e6b93f5071918f63e5674aac5e7ecec6d9844316729094d91c52bf"
+      "sha256": "6b98da3b38dee4aa5d34005a1cfa2a4d157f3f5dfbd4005d5990364eb98de50b"
     },
     "wheel": {
       "bytes": 116900,
       "name": "ada_gnatdoc_enhancer-0.1.4-py3-none-any.whl",
-      "sha256": "98bf658d3298428b6b4165d511e573e2f7537df3eef444cbb8e1fec14e9bb06b"
+      "sha256": "ed0a29937492e4ae28031421e376b95e7a7a2dfb7964ccd310990efdf06f66a7"
     }
   },
   "compression_byte_identity_required": false,

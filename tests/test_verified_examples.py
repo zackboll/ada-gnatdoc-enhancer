@@ -71,6 +71,12 @@ class VerifiedExamples(unittest.TestCase):
         self.assertEqual(''.join(parsed.text).encode(), text.encode())
         self.assertEqual(len(parsed.links), 12)
 
+    def test_complete_authored_overload_render(self):
+        result = render(self.config, self.native)
+        parsed = CodeHTML(result['guides/verified.html'].decode())
+        self.assertEqual(len(parsed.links), 12)
+        self.assertEqual(''.join(parsed.text).encode(), (self.root / 'valid.adb').read_bytes())
+
     def test_real_authored_core_html_mat_not_umat(self):
         root = FIXTURES / 'core'; config = load(root, 'project.toml')
         native = snapshot(config, root / 'native'); result = render(config, native)

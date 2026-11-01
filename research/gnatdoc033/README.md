@@ -46,7 +46,7 @@ Retained evidence in `evidence/`:
 * Baseline: **703 tests passed** (339.265 s).
 * Existing + initial new regressions: **721 passed** (356.657 s); final rerun
   includes the added overload-reordering control (722 expected, not yet claimed).
-* Consumer: **19 passed**, normal and `-O`, including full pipeline idempotence
+* Consumer: **20 passed**, normal and `-O`, including full pipeline idempotence
   and wrong-destination verification; original 18 also passed with
   `PYTHONOPTIMIZE=1`.
 * Real compiler generator: **4 passed** normal, `-O`, and `PYTHONOPTIMIZE=1`.
@@ -57,7 +57,8 @@ Retained evidence in `evidence/`:
   generics/renamings/dispatch negatives and real Core wrong-UMat injection.
 * Browser: **4 passed** (JavaScript on/off × light/dark); exact example text,
   native clipboard, focus, computed syntax colors, Mat Clone and Mat-returning
-  Create clicks; no external requests or runtime errors.
+  Create clicks; no external requests or runtime errors. Existing example browser checks also
+  passed 24 cases and 24 byte-equal disabled screenshot comparisons.
 * Wheel/sdist/rebuilt wheel audit passed. Wheel METADATA is byte-identical to
   baseline; mandatory dependencies remain empty and guides extras unchanged.
 * Clean no-deps wheel installation without Libadalang passed installed smoke and
