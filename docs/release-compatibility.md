@@ -1,6 +1,32 @@
 # Consumer compatibility and adoption boundary
 
-## v0.1.3 → v0.1.4 (GNATDOC-028; prepared, not published)
+## v0.1.4 → v0.1.5 (GNATDOC-035; preparation, not published)
+
+Use independently retrieved official v0.1.4 assets, not a predecessor PR build.
+With verified examples disabled, complete file inventories and bytes must match,
+except the exact `enhancer_version` field in `api/presentation.json`. This includes
+existing opt-in highlighting/API links, search, every supported navigation profile,
+guides, native destinations, custom themes and search-index bytes. The new
+`scripts/compare_release_014_015.py` rejects every other difference, including
+rehashes and manifest formatting. Older comparators and tests remain unchanged.
+
+With authenticated mappings enabled, only compiler-backed call-token hyperlinks
+and necessary presentation metadata may change. Core selects Mat Create at 1130,
+Mat Clone at 1242 (not UMat), Rows at 3661 and Columns at 3669, preserving both
+lexical Mat links. All five original guides / 38 Ada fences stay unchanged.
+Complete units in mixed guides can gain authenticated links; incomplete fragments
+keep conservative lexical behavior. See [compiler requirements and exclusions](
+compiler-verified-examples.md) and [mixed-guide controls](mixed-verified-examples.md).
+
+The generator requires a documented source checkout/private build toolchain;
+the installed enhancer consumes mappings without importing GNAT/Libadalang.
+Python 3.11–3.13, zero mandatory dependencies, Apache-2.0 and optional
+`markdown-it-py==3.0.0` / `mdurl==0.1.2` pins remain unchanged. Regenerate from
+pristine native input: v0.1.4 manifests are not valid v0.1.5 manifests. Consumer
+adoption is separate; no guide rewrite, consumer edit or deployment is authorized.
+See [release evidence](evidence/gnatdoc035/README.md).
+
+## Historical v0.1.3 → v0.1.4 (GNATDOC-028; subsequently published)
 
 The three opt-in Ada example options default to false. Without them, complete
 publication inventories and bytes must match official v0.1.3, except the exact

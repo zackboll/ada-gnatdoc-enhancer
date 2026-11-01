@@ -17,7 +17,7 @@ class ReleaseContracts(unittest.TestCase):
         root = Path(__file__).resolve().parents[1]
         metadata = tomllib.loads((root/'pyproject.toml').read_text())['project']
         self.assertEqual(metadata['version'], __version__)
-        self.assertEqual(__version__, '0.1.4')
+        self.assertEqual(__version__, '0.1.5')
         self.assertEqual(metadata['license'], 'Apache-2.0')
         self.assertEqual(metadata['license-files'], ['LICENSE'])
         self.assertEqual(metadata['requires-python'], '>=3.11')
@@ -30,7 +30,7 @@ class ReleaseContracts(unittest.TestCase):
         enhance(fx.config, fx.site)
         manifest = fx.site/'api/presentation.json'
         data = json.loads(manifest.read_text())
-        self.assertEqual(data['enhancer_version'], '0.1.4')
+        self.assertEqual(data['enhancer_version'], '0.1.5')
         data['enhancer_version'] = '0.1.0'
         manifest.write_text(json.dumps(data))
         before = hashes(fx.site)
@@ -42,11 +42,13 @@ class ReleaseContracts(unittest.TestCase):
         enhance(fx.config, fx.site)
         manifest = fx.site/'api/presentation.json'
         data = json.loads(manifest.read_text())
-        data['enhancer_version'] = '0.1.3'
-        manifest.write_text(json.dumps(data))
-        before = hashes(fx.site)
-        with self.assertRaises(EnhancementError):verify(fx.config, fx.site)
-        self.assertEqual(before, hashes(fx.site))
+        for version in ('0.1.3', '0.1.4'):
+            with self.subTest(version=version):
+                data['enhancer_version'] = version
+                manifest.write_text(json.dumps(data))
+                before = hashes(fx.site)
+                with self.assertRaises(EnhancementError):verify(fx.config, fx.site)
+                self.assertEqual(before, hashes(fx.site))
 
     def test_default_and_symbol_only_router_byte_contracts(self):
         # GNATDOC-019 changes the default runtime, not the released artifacts or

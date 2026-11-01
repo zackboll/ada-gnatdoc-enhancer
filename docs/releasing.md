@@ -1,6 +1,41 @@
 # Auditable release preparation and later publication
 
-## GNATDOC-028: v0.1.4 preparation only (current)
+## GNATDOC-035: v0.1.5 preparation only (current)
+
+Fetch main before branching. Starting commit is
+`4be96483ef0d38ac78669e18b4910d0f711c5d86`, tree
+`b0338f6467c9740e7c1d8b90cdee3d37fa2ce50e` (merged PR #29).
+Require completion of exact-main CI run **41340729620**; successful PR-head
+checks do not substitute. Record any main advancement independently.
+
+Independently retrieve all four official v0.1.4 assets; verify GitHub digests,
+SHA256SUMS, metadata and release commit/tree. Classify all version occurrences
+before changing current authorities to 0.1.5. Preserve historical tests/evidence,
+assets and comparators. Add an explicit 014/015 comparison: with verification
+disabled allow only the manifest version, including existing highlighting, search,
+navigation, guides and themes. With verification enabled authenticate only the
+four Core call links and dependent presentation metadata. Preserve five guides,
+38 Ada fences, two lexical Mat links and mixed-fragment conservative behavior.
+
+Run all applicable 031/032/033/034 regressions with actual skips reported, the
+qualified private compiler environment, all nine source/wheel/rebuilt-sdist
+Python 3.11–3.13 environments, installed compiler-free execution, authentic
+consumer comparisons, Chromium/navigation/clipboard/focus/native anchors,
+unchanged strict screenshot gates and archive/RECORD/metadata/license/Twine audits.
+Retain zero mandatory dependencies and the existing exact optional renderer pins.
+
+Build candidates from an immutable verified commit/tree; retain exact sizes,
+digests, source/module/asset identities and `publication_authorized = false`.
+Open one non-draft PR, ordinary pushes only, auto-merge disabled. Use
+`HOSTED_CI_PENDING` for incomplete CI, `CORRECTIVE_WORK_REQUIRED` for unresolved
+technical failures, and `READY_FOR_MAINTAINER_REVIEW` only after every gate passes.
+Record final commit/tree, changed-file inventory and exact-head CI in the PR body,
+avoiding self-referential commit evidence. Do not merge, tag, publish, deploy,
+upload to PyPI/Alire or modify consumers. After maintainer merge, regenerate and
+qualify final public assets against the exact approved merged-main source.
+The existing maintainer-led policy below applies without additional roles.
+
+## Historical GNATDOC-028: v0.1.4 preparation (subsequently published)
 
 Verify merged PR #24 commit `6c448f6bcd99ca47fd9b54444cb26d91f71fdc13`
 and tree `d0766f709db2623a9b1ed3f1f1a9f292f8cf2804` against the reviewed

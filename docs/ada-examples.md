@@ -7,7 +7,7 @@ static calls in complete `exact-examples` fences. See
 [compiler-verified examples](compiler-verified-examples.md) for generation,
 configuration, trust boundaries, schema and qualification scope.
 
-This feature is included in v0.1.4 preparation, not yet published.
+This feature was published in v0.1.4; v0.1.5 preparation preserves its opt-in behavior.
 Rendering is static, deterministic and offline. There is no browser highlighter,
 network lookup, JavaScript dependency, external stylesheet or consumer-code execution.
 
