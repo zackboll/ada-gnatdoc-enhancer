@@ -185,4 +185,5 @@ jobs:
             ${{ runner.temp }}/example-evidence/
             ${{ runner.temp }}/example-sites/*.json
             ${{ runner.temp }}/verified-example-evidence/results.json
+            ${{ runner.temp }}/verified-example-evidence/*.png
           retention-days: 30
