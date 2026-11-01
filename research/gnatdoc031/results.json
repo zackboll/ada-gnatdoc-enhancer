@@ -8493,5 +8493,12 @@
     "disposition": "PROTOTYPE_DEFECT",
     "setup_script": "Commands exercised in private environment; full clean-room second native rebuild not performed.",
     "production_changed": false
+  },
+  "r1_authorization_correction": {
+    "historical_only": true,
+    "superseded_by": "revision-r1.json",
+    "schema_1_reviewed_boolean": "Self-declared by acquisition; NOT independent review authorization. Rejected by R1 probe.",
+    "historical_links": "Recorded experimental matches, NOT currently authorized mappings.",
+    "disposition": "PROTOTYPE_DEFECT"
   }
 }

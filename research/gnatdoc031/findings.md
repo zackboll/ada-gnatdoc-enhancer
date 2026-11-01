@@ -2,6 +2,24 @@
 
 ## Disposition: PROTOTYPE_DEFECT
 
+### R1 provenance/review correction
+
+The original schema-1 `reviewed: true` was self-declared by acquisition and
+did **not** demonstrate independent review. Historical results below retain
+the scientific observations, not current authorization. R1 replaces that
+contract with unconditional provenance checks (including under optimized
+Python), schema-2 verified evidence, and a separate exact-input review record
+whose reviewer must be trusted by the operator out of band. No actual review
+approval is granted by R1. Test-only records exercise the positive contract.
+See `revision-r1.md` and `revision-r1.json` for rerun qualification evidence.
+
+Compiler acceptance establishes legality, not independently proven exact
+overload identity. GNATDOC-032 remains responsible for investigating
+compiler-backed declaration identity. The Mat-returning Core observations and
+both raw ambiguous-call defects remain unchanged; Libadalang-only authority
+remains rejected. Local review records are editable, not cryptographic
+attestations of independent review.
+
 Both real Core expressions resolve and match verified native anchors, and the
 **compiler-gated** prototype produces zero incorrect hyperlinks in the tested
 controls. Nevertheless, the required negative controls demonstrate incorrect

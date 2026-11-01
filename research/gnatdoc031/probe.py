@@ -7,7 +7,6 @@ Native qualification is an explicit reviewed, hash-bound input, not a URL map.
 from __future__ import annotations
 
 import argparse
-import hashlib
 import html
 import json
 import os
@@ -18,29 +17,17 @@ import sys
 import tempfile
 import time
 
+from provenance import digest, inventory, verified_inputs, verify_review
+
 STATUSES = frozenset({"RESOLVED_AND_MATCHED", "SEMANTICALLY_UNRESOLVED",
                       "AMBIGUOUS", "SOURCE_NATIVE_MISMATCH", "MISSING_CONTEXT",
                       "ANALYSIS_ERROR"})
 
 
-def digest(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
-
-
-def inventory(root, patterns):
-    return {p.relative_to(root).as_posix(): digest(p)
-            for pattern in patterns for p in sorted(root.glob(pattern)) if p.is_file()}
-
-
-def verify_qualification(qualification, source_root, native):
+def verify_qualification(qualification, source_root, native, authorization=None, authorized_reviewers=()):
     """Verify complete inventories, including extra/missing source/native files."""
-    q = json.loads(Path(qualification).read_text())
-    if q.get("schema") != 1 or not q.get("reviewed") or not q.get("provenance"):
-        raise ValueError("native acquisition is not explicitly qualified")
-    if inventory(source_root, ["src/**/*.ads", "src/**/*.adb"]) != q["sources"]:
-        raise ValueError("source/native snapshot mismatch")
-    if inventory(native, ["api/*"]) != q["native"]:
-        raise ValueError("native inventory mismatch")
+    q = verified_inputs(qualification, source_root, native)
+    verify_review(qualification, q, authorization, authorized_reviewers)
     return q
 
 
@@ -129,7 +116,9 @@ def compiler_check(project, source, source_root, compiler):
 
     Libadalang 26 precise properties demonstrably select a declaration for
     compiler-ambiguous calls. Compiler acceptance is therefore mandatory for
-    authority, not an optional corroboration. No bind/link/run is needed here.
+    authority, not an optional corroboration. Compiler acceptance establishes
+    legality only, NOT independently verified exact overload identity (032).
+    No bind/link/run is needed here.
     """
     with tempfile.TemporaryDirectory(prefix="gnatdoc031-compiler-") as directory:
         root = Path(os.path.commonpath([source_root, project.parent, source.parent]))
@@ -140,7 +129,8 @@ def compiler_check(project, source, source_root, compiler):
                 "stdout": result.stdout, "stderr": result.stderr}
 
 
-def analyze(project, sources, source_root, native=None, qualification=None, expressions=(), compiler=None):
+def analyze(project, sources, source_root, native=None, qualification=None, expressions=(), compiler=None,
+            authorization=None, authorized_reviewers=()):
     start = time.perf_counter()
     import libadalang as lal
     imported = time.perf_counter()
@@ -154,8 +144,10 @@ def analyze(project, sources, source_root, native=None, qualification=None, expr
     qualification_error = None
     if native is not None:
         try:
-            q = verify_qualification(qualification, source_root, native)
+            q = verify_qualification(qualification, source_root, native, authorization, authorized_reviewers)
             report["qualification_sha256"] = digest(qualification)
+            report["review_authorization_sha256"] = digest(authorization)
+            report["review_trust"] = "Explicit operator-trusted local record; NOT a cryptographic attestation"
             report["provenance"] = q["provenance"]
         except Exception as exc:
             qualification_error = str(exc)
@@ -289,8 +281,8 @@ def analyze(project, sources, source_root, native=None, qualification=None, expr
     report["timings_seconds"]["total"] = time.perf_counter() - start
     report["peak_rss_kib"] = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
     for call in report["calls"]:
-        assert call["status"] in STATUSES
-        assert "hyperlink" not in call or call["status"] == "RESOLVED_AND_MATCHED"
+        if call["status"] not in STATUSES or ("hyperlink" in call and call["status"] != "RESOLVED_AND_MATCHED"):
+            raise ValueError("invalid authoritative result")
     return report
 
 
@@ -301,6 +293,9 @@ def main():
     parser.add_argument("--source-root", required=True, type=Path)
     parser.add_argument("--native-site", type=Path)
     parser.add_argument("--qualification", type=Path)
+    parser.add_argument("--review-authorization", type=Path)
+    parser.add_argument("--authorized-reviewer", action="append", default=[],
+                        help="operator trust policy, selected independently of the approval record")
     parser.add_argument("--expression", action="append", default=[])
     parser.add_argument("--compiler", type=Path,
                         help="explicit qualified gprbuild; mandatory for authoritative mappings")
@@ -309,7 +304,8 @@ def main():
     try:
         result = analyze(args.project.resolve(), [p.resolve() for p in args.source],
                          args.source_root.resolve(), args.native_site.resolve() if args.native_site else None,
-                         args.qualification, args.expression, args.compiler)
+                         args.qualification, args.expression, args.compiler,
+                         args.review_authorization, args.authorized_reviewer)
     except Exception as exc:
         result = {"status": "ANALYSIS_ERROR", "error": f"{type(exc).__name__}: {exc}"}
     result["authority_contract"] = (
