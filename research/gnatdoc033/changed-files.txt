@@ -21,12 +21,14 @@ research/gnatdoc033/evidence/fixture-valid.ali
 research/gnatdoc033/evidence/generator-env-optimized.txt
 research/gnatdoc033/evidence/generator-normal.txt
 research/gnatdoc033/evidence/generator-optimized.txt
+research/gnatdoc033/evidence/installed-consumer.txt
 research/gnatdoc033/evidence/legacy-browser.json
 research/gnatdoc033/evidence/metadata.json
 research/gnatdoc033/evidence/performance.json
 research/gnatdoc033/evidence/predecessor031.txt
 research/gnatdoc033/evidence/predecessor032-optimized.txt
 research/gnatdoc033/evidence/predecessor032.txt
+research/gnatdoc033/evidence/regression.txt
 research/gnatdoc033/test_generator.py
 scripts/check_verified_examples_browser.py
 scripts/generate_verified_examples.py
