@@ -52,8 +52,8 @@ All **1,143 existing records are byte-equivalent as JSON records**, including
 their text, names, labels and destinations. No existing record was removed.
 There are no additional eligible omissions from other search filters in this
 acquisition. The complete oracle/index destination sets match exactly once.
-46 native sections remain outside the direct public type/subprogram contract
-(including constants and instantiated/generic formal presentations).
+46 native sections remain outside the direct public type/subprogram contract:
+17 constants, 17 exceptions and 12 package instantiation/renaming declarations.
 262 private-part source declarations/completions remain excluded (207 types,
 54 procedures, one function). Private library packages, quoted operators,
 constants, nested members and synthetic instantiated members remain outside
@@ -132,9 +132,17 @@ tests and eight-case Chromium suite passed with decoration enabled.
 Four-profile conformance, synthetic Chromium navigation, optimized verified
 example tests (34), and predecessor research tests passed (31: 23 tests/five
 documented skips; 32: 18 tests/one documented skip in both normal/optimized modes).
-The complete pre-delivery discovery run and archive/installed/hosted results
-are recorded in the PR qualification report; do not infer success from a
-pending job. Hosted CI now repeats complete MEL qualification and browser
+The complete pre-delivery discovery run passed all **754 tests**. Optimized
+search passed all **25 tests**, including complete MEL reconstruction.
+Clean wheel/sdist/rebuilt-wheel content auditing passed (all module/assets
+equal, RECORD hashes/sizes verified, all 1,455 required sdist inputs present),
+as did strict Twine checks and installed CLI/four-profile conformance.
+Installed full-suite and exact-head hosted results are recorded in the PR
+qualification report; do not infer success from a pending job. An initial
+local build correctly failed content auditing because the pre-existing build
+directory contained GNATDOC-036 modules. A clean rebuild excludes those modules
+and passes; no existing release artifact was replaced.
+Hosted CI now repeats complete MEL qualification and browser
 navigation, retaining structured evidence alongside the existing Core suite.
 
 ## Review and release boundary

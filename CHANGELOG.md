@@ -1,4 +1,6 @@
-# Unreleased — GNATDOC-SEARCH-002
+# Changelog
+
+## Unreleased — GNATDOC-SEARCH-002
 
 * Classify direct public Ada declarations by source scope instead of rejecting
   whole packages containing package instances, nested packages, generics,
@@ -9,8 +11,6 @@
   nested, generic-formal and forged-output negative controls.
 * No release artifacts or consumer installations are changed. A separate
   immutable release follows independent review and merge.
-
-# Changelog
 
 ## 0.1.5 — release preparation (GNATDOC-035; not published)
 
