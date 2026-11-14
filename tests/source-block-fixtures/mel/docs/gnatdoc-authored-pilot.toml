@@ -1,0 +1,28 @@
+schema_version = 1
+project = "AMS MEL Bridge"
+
+renderer_exceptions = [
+  "AMS.MEL.IR.Health_Status.Metadata.Status"
+]
+
+[gnatdoc]
+version = "26.0.0"
+
+[sources]
+directories = ["ada/src"]
+comment_style = "trailing"
+
+[navigation]
+mode = "packages"
+symbol_bookmarks = true
+default_package = "AMS.MEL"
+
+[presentation]
+theme = true
+syntax_highlighting = true
+type_links = true
+
+[guides]
+mode = "authored-html"
+manifest = "docs/gnatdoc-authored.json"
+sha256 = "4b4f842da8e6bbdc60a0d547734be5b480a9013db0aa21f0f42a91f6fce14c16"
