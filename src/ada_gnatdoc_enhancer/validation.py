@@ -61,7 +61,7 @@ def css_safe(content:bytes):
         'unapproved CSS resource, escaped import or execution expression')
 
 
-def validate_files(site:Path,config:Config,expected:set[str], *, raw=False, titles=None):
+def validate_files(site:Path,config:Config,expected:set[str], *, raw=False, titles=None, native=None):
     """Reject unpublished extra content and independently validate local links.
 
     Every HTML page needs its document metadata; ``titles`` gives the exact
@@ -72,6 +72,17 @@ def validate_files(site:Path,config:Config,expected:set[str], *, raw=False, titl
     external=destinations(config)
     require(site.is_dir() and not site.is_symlink(),'invalid/symlink site root')
     observed=set(); pages={}
+    source_blocks = None
+    if config.guides == 'authored-html':
+        import json
+        from .authored import manifest, source, unique
+        data = json.loads(source(config, config.guide_manifest), object_pairs_hook=unique)
+        if data.get('schema_version') == 3:
+            from .native_html import snapshot
+            from .source_blocks import Blocks
+            native = native if native is not None else snapshot(config, site)
+            contract = manifest(config, native)
+            source_blocks = Blocks(config, contract, native)
     for path in site.rglob('*'):
         require(not path.is_symlink(),f"symlink published: {path}")
         if path.is_dir():continue
@@ -95,7 +106,10 @@ def validate_files(site:Path,config:Config,expected:set[str], *, raw=False, titl
             page=Page(text)
             if config.guides.startswith('authored-') and not relative.startswith('api/'):
                 from .authored import check_html
-                check_html(text)
+                if source_blocks is not None:
+                    source_blocks.check(text, relative)
+                else:
+                    check_html(text)
             require(not page.issues and len(page.ids)==len(set(page.ids)),
                     f"unsafe HTML/duplicate IDs in {relative}: {page.issues}")
             if page.scripts:

@@ -1,3 +1,16 @@
+# Unreleased — GNATDOC-036
+
+* Add opt-in schema-3 `executable-ada-catalog-v1` authored-HTML source blocks:
+  complete owned Ada listings, declarative case observations, public symbol
+  catalog and conservative example-use associations. Only three exact token
+  forms are supported; no template engine or consumer code execution is added.
+* Validate generated details/source/catalog annotations by exact source/native
+  reconstruction, without widening schema-2 HTML permissions. Record opt-in input
+  identity and portal output hashes in presentation metadata.
+* Qualify the exact MEL-GNATDOC-015-002 seven-guide source/native epoch against
+  independent production reconstruction; retain older consumer fixtures unchanged.
+  See `docs/source-backed-blocks.md`. This is not a release or consumer adoption.
+
 # Changelog
 
 ## 0.1.5 — release preparation (GNATDOC-035; not published)

@@ -29,7 +29,9 @@ jobs:
       - name: Install offline-core package in editable mode
         run: python -m pip install -e '.[guides]'
       - name: Authentic source-backed authored guide and portal qualification
-        run: python -m unittest discover -s tests -p test_authored.py -v
+        run: |
+          python -m unittest discover -s tests -p test_authored.py -v
+          python -m unittest discover -s tests -p test_source_blocks.py -v
       - name: Unit and mutation tests
         run: python -m unittest discover -s tests -v
       - name: Compiler-free verified mapping and predecessor regressions (normal and optimized)
@@ -176,6 +178,8 @@ jobs:
         run: python scripts/check_examples_browser.py --workspace "$RUNNER_TEMP/example-sites" --output "$RUNNER_TEMP/example-evidence"
       - name: Compiler-verified production Core homepage and mixed-guide controls
         run: python scripts/check_verified_examples_browser.py --workspace "$RUNNER_TEMP/verified-example-evidence"
+      - name: Complete source-backed MEL portal in Chromium (no production fallback)
+        run: python scripts/check_source_blocks_browser.py --workspace "$RUNNER_TEMP/source-block-browser"
       - name: Retain structured comparisons and representative screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -186,4 +190,5 @@ jobs:
             ${{ runner.temp }}/example-sites/*.json
             ${{ runner.temp }}/verified-example-evidence/results.json
             ${{ runner.temp }}/verified-example-evidence/*.png
+            ${{ runner.temp }}/source-block-browser/browser.json
           retention-days: 30

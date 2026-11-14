@@ -100,7 +100,10 @@ def manifest(config, native):
     payload = source(config, config.guide_manifest)
     require(digest(payload) == config.guide_sha256, 'authored manifest hash mismatch')
     data = json.loads(payload, object_pairs_hook=unique)
-    require(isinstance(data, dict) and set(data) == FIELDS and data['schema_version'] == 2,
+    require(isinstance(data, dict) and (
+            (set(data) == FIELDS and data.get('schema_version') == 2) or
+            (set(data) == FIELDS | {'source_blocks'} and data.get('schema_version') == 3
+             and config.guides == 'authored-html')),
             'unknown authored manifest structure')
     require(data['renderer_exceptions'] == list(config.renderer_exceptions),
             'authored renderer exception policy changed')
@@ -143,6 +146,9 @@ def manifest(config, native):
     for key in ('site_map', 'anchors', 'landing_example', 'example_project', 'landing_project'):
         if data[key] is not None:
             mapped.add(data[key])
+    if data['schema_version'] == 3:
+        from .source_blocks import input_inventory
+        mapped.update(input_inventory(config, data))
     require(mapped == set(data['inputs']), 'unapproved or missing authored input inventory')
     require(data['ada_policy'] in ('source-text', 'exact-examples'), 'unsupported Ada fence policy')
     if data['ada_policy'] == 'exact-examples':
@@ -377,7 +383,13 @@ def render(config, native):
     home = source(config, data['home']['source']).decode('utf-8')
     texts = {e['id']: source(config, e['source']).decode('utf-8') for e in data['guides']}
     if config.guides == 'authored-html':
+        blocks = None
+        if data['schema_version'] == 3:
+            from .source_blocks import Blocks
+            blocks = Blocks(config, data, native)
         for path, text in [('index.html', home), *((e['path'], texts[e['id']]) for e in data['guides'])]:
+            if blocks is not None:
+                text = blocks.expand(text, path)
             rendered = portal(text, path, data, native)
             require(text.count('{{navigation}}') == 1, 'missing/duplicate portal navigation')
             if path in data['directory_pages']:
@@ -385,7 +397,10 @@ def render(config, native):
                         len(Page(rendered).package_entries) == len(native.pages), 'portal directory cardinality')
             else:
                 require('{{package-directory}}' not in text, 'unapproved package directory page')
-            check_html(rendered)
+            if blocks is not None:
+                blocks.check(rendered, path)
+            else:
+                check_html(rendered)
             output[path] = rendered.encode()
         return output
     headings = {name: markdown(text, data['languages'])[1] for name, text in texts.items()}

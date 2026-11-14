@@ -1,0 +1,2729 @@
+with Interfaces.C;
+with Interfaces.C.Strings;
+with Ada.Containers;
+with Ada.Unchecked_Conversion;
+with System;
+with System.Storage_Elements;
+
+package body AMS.MEL.RF.C2 is
+   package C renames AMS.MEL_C_API;
+   package CS renames Interfaces.C.Strings;
+   --  IEEE NaN/infinity are intentional provider data in this command profile,
+   --  not invalid Ada representations. GNAT's optional float validity checks
+   --  would reject them before submission; disable only those checks here.
+   pragma Validity_Checks ("F");
+   use type Interfaces.Integer_32;
+   use type C.RF_C2_Handle;
+   use type C.RF_VA_Request_Handle;
+   use type C.RF_VA_Handle;
+   use type C.RF_Job_Request_Handle;
+   use type C.RF_Job_Handle;
+   use type C.Size_T;
+   use type Interfaces.Unsigned_64;
+   use type Interfaces.Unsigned_32;
+   use type Interfaces.Integer_64;
+   use type System.Address;
+   use System.Storage_Elements;
+   package US renames Ada.Strings.Unbounded;
+   use type Interfaces.C.char;
+
+   pragma
+     Compile_Time_Error
+       (Pulse_Threshold_Reference'Enum_Rep (DBQ) /= C.RF_PD_Reference_DBQ
+          or else Pulse_Threshold_Reference'Enum_Rep (DB_Above_Noise)
+                  /= C.RF_PD_Reference_DB_Above_Noise
+          or else Pulse_Threshold_Reference'Enum_Rep (DB_Below_Saturation)
+                  /= C.RF_PD_Reference_DB_Below_Saturation
+          or else Pulse_Time_Tag_Threshold'Enum_Rep (At_50_Percent) /= C.RF_PD_Timetag_50_Percent
+          or else Pulse_Time_Tag_Threshold'Enum_Rep (At_90_Percent) /= C.RF_PD_Timetag_90_Percent,
+        "pulse enum representation mismatch");
+
+   function Create_Pulse_Detection_Settings
+     (Reference                                    : Pulse_Threshold_Reference;
+      Leading_M, Leading_N, Trailing_M, Trailing_N : Interfaces.Unsigned_8;
+      Min_Pulse_Width_Femtoseconds                 : Interfaces.Integer_64;
+      Time_Tag_Threshold                           : Pulse_Time_Tag_Threshold)
+      return Pulse_Detection_Settings is
+   begin
+      return
+        (Reference,
+         Leading_M,
+         Leading_N,
+         Trailing_M,
+         Trailing_N,
+         Min_Pulse_Width_Femtoseconds,
+         Time_Tag_Threshold,
+         Pulse_Threshold_Vectors.Empty_Vector);
+   end Create_Pulse_Detection_Settings;
+
+   procedure Append_Pulse_Detection_Threshold
+     (Settings : in out Pulse_Detection_Settings; Leading_Edge_DB, Trailing_Edge_DB : Long_Float) is
+   begin
+      Settings.Thresholds.Append (Pulse_Threshold'(Leading_Edge_DB, Trailing_Edge_DB));
+   end Append_Pulse_Detection_Threshold;
+
+   procedure Set_Pulse_Detection_Settings
+     (Event : in out RX_Receive_Event_Config; Settings : Pulse_Detection_Settings) is
+   begin
+      Event.Pulse_Settings := Settings;
+      Event.Has_Pulse_Settings := True;
+   end Set_Pulse_Detection_Settings;
+
+   procedure Clear_Pulse_Detection_Settings (Event : in out RX_Receive_Event_Config) is
+   begin
+      Event.Has_Pulse_Settings := False;
+   end Clear_Pulse_Detection_Settings;
+
+   type Diagnostic is array (C.Size_T range <>) of aliased Interfaces.C.char with Convention => C;
+   subtype Fixed_Diagnostic is Diagnostic (0 .. 511);
+   type String_Owner is new Ada.Finalization.Limited_Controlled with record
+      Value : CS.chars_ptr := CS.Null_Ptr;
+   end record;
+   overriding
+   procedure Finalize (Value : in out String_Owner) is
+   begin
+      CS.Free (Value.Value);
+   end Finalize;
+
+   function Valid_String (Value : String) return Boolean is
+   begin
+      for Item of Value loop
+         if Item = Character'Val (0) then
+            return False;
+         end if;
+      end loop;
+      return True;
+   end Valid_String;
+
+   function Copy_String (Value : C.String_View_V1) return String is
+      type Char_Access is access all Interfaces.C.char;
+      function To_Char is new Ada.Unchecked_Conversion (System.Address, Char_Access);
+   begin
+      if (Value.Size > 0 and then Value.Data = System.Null_Address)
+        or else Interfaces.Unsigned_64 (Value.Size) > Interfaces.Unsigned_64 (Natural'Last)
+      then
+         raise Provider_Error with "invalid VA label span";
+      end if;
+      declare
+         Result : String (1 .. Natural (Value.Size));
+      begin
+         for I in Result'Range loop
+            Result (I) :=
+              Character'Val
+                (Interfaces.C.char'Pos (To_Char (Value.Data + Storage_Offset (I - 1)).all));
+         end loop;
+         return Result;
+      end;
+   end Copy_String;
+
+   function Message (Buffer : Diagnostic) return String is
+      Last : Natural := 0;
+   begin
+      while Last < Buffer'Length and then Buffer (C.Size_T (Last)) /= Interfaces.C.nul loop
+         Last := Last + 1;
+      end loop;
+      declare
+         Text : String (1 .. Last);
+      begin
+         for I in Text'Range loop
+            Text (I) := Character'Val (Interfaces.C.char'Pos (Buffer (C.Size_T (I - 1))));
+         end loop;
+         return (if Last = 0 then "native RF C2 operation failed" else Text);
+      end;
+   end Message;
+
+   procedure Check (Code : Interfaces.Integer_32; Buffer : Diagnostic) is
+   begin
+      if Code /= C.Success then
+         raise Provider_Error with Message (Buffer);
+      end if;
+   end Check;
+
+   procedure Append_Polarization
+     (Event : in out RX_Receive_Event_Config; S0, S1, S2, S3 : Long_Float) is
+   begin
+      if Natural (Event.Polarization.Length) = 2 then
+         raise Constraint_Error with "at most two polarization values";
+      end if;
+      Event.Polarization.Append (Stokes_Components'(S0, S1, S2, S3));
+   end Append_Polarization;
+   procedure Set_Polarization_Beam_Steer_Correction
+     (Event : in out RX_Receive_Event_Config; Enabled : Boolean) is
+   begin
+      Event.Beam_Correction := Enabled;
+   end Set_Polarization_Beam_Steer_Correction;
+   procedure Set_Phase_Offset_Radians (Event : in out RX_Receive_Event_Config; Value : Long_Float)
+   is
+   begin
+      Event.Phase_Offset := Value;
+   end Set_Phase_Offset_Radians;
+   procedure Set_Event_Execution_Type
+     (Event : in out RX_Receive_Event_Config; Value : Execution_Type) is
+   begin
+      Event.Execution := Value;
+   end Set_Event_Execution_Type;
+   procedure Set_Event_Termination_Type
+     (Event : in out RX_Receive_Event_Config; Value : Event_Termination_Type) is
+   begin
+      Event.Termination := Value;
+   end Set_Event_Termination_Type;
+   procedure Set_Allow_Delay_Start (Event : in out RX_Receive_Event_Config; Enabled : Boolean) is
+   begin
+      Event.Allow_Delay := Enabled;
+   end Set_Allow_Delay_Start;
+   procedure Set_Iteration_Hold_Count
+     (Event : in out RX_Receive_Event_Config; Count : Interfaces.Unsigned_64) is
+   begin
+      Event.Hold_Count := Count;
+   end Set_Iteration_Hold_Count;
+   procedure Set_Iteration_Termination_Count
+     (Event : in out RX_Receive_Event_Config; Count : Interfaces.Unsigned_64) is
+   begin
+      Event.Termination_Count := Count;
+   end Set_Iteration_Termination_Count;
+   procedure Set_Channelization_Enabled (Event : in out RX_Receive_Event_Config; Enabled : Boolean)
+   is
+   begin
+      Event.Channelization := Enabled;
+   end Set_Channelization_Enabled;
+   procedure Append_Polarization
+     (Event : in out TX_Transmit_Event_Config; S0, S1, S2, S3 : Long_Float) is
+   begin
+      if Natural (Event.Polarization.Length) = 2 then
+         raise Constraint_Error with "at most two polarization values";
+      end if;
+      Event.Polarization.Append (Stokes_Components'(S0, S1, S2, S3));
+   end Append_Polarization;
+   procedure Set_Polarization_Beam_Steer_Correction
+     (Event : in out TX_Transmit_Event_Config; Enabled : Boolean) is
+   begin
+      Event.Beam_Correction := Enabled;
+   end Set_Polarization_Beam_Steer_Correction;
+   procedure Set_Phase_Offset_Radians (Event : in out TX_Transmit_Event_Config; Value : Long_Float)
+   is
+   begin
+      Event.Phase_Offset := Value;
+   end Set_Phase_Offset_Radians;
+   procedure Set_Event_Execution_Type
+     (Event : in out TX_Transmit_Event_Config; Value : Execution_Type) is
+   begin
+      Event.Execution := Value;
+   end Set_Event_Execution_Type;
+   procedure Set_Event_Termination_Type
+     (Event : in out TX_Transmit_Event_Config; Value : Event_Termination_Type) is
+   begin
+      Event.Termination := Value;
+   end Set_Event_Termination_Type;
+   procedure Set_Allow_Delay_Start (Event : in out TX_Transmit_Event_Config; Enabled : Boolean) is
+   begin
+      Event.Allow_Delay := Enabled;
+   end Set_Allow_Delay_Start;
+   procedure Set_Iteration_Hold_Count
+     (Event : in out TX_Transmit_Event_Config; Count : Interfaces.Unsigned_64) is
+   begin
+      Event.Hold_Count := Count;
+   end Set_Iteration_Hold_Count;
+   procedure Set_Iteration_Termination_Count
+     (Event : in out TX_Transmit_Event_Config; Count : Interfaces.Unsigned_64) is
+   begin
+      Event.Termination_Count := Count;
+   end Set_Iteration_Termination_Count;
+   procedure Set_Channelization_Enabled (Event : in out TX_Transmit_Event_Config; Enabled : Boolean)
+   is
+   begin
+      Event.Channelization := Enabled;
+   end Set_Channelization_Enabled;
+   procedure Set_Interval_TX_Power_Mode_ID
+     (Interval : in out RX_Job_Interval_Config; Value : Interfaces.Unsigned_32) is
+   begin
+      Interval.TX_Power_Mode := Value;
+   end Set_Interval_TX_Power_Mode_ID;
+   procedure Set_Interval_Activity_ID (Interval : in out RX_Job_Interval_Config; Value : Byte_Array)
+   is
+   begin
+      Interval.Activity.Clear;
+      for Item of Value loop
+         Interval.Activity.Append (Item);
+      end loop;
+   end Set_Interval_Activity_ID;
+   procedure Set_Interval_Execution_Type
+     (Interval : in out RX_Job_Interval_Config; Value : Execution_Type) is
+   begin
+      Interval.Execution := Value;
+   end Set_Interval_Execution_Type;
+   function Create_RX_Receive_Event
+     (Event_ID                    : Interfaces.Unsigned_32;
+      Element_Group_Label         : String;
+      Start_Femtoseconds          : Interfaces.Integer_64;
+      Duration_Femtoseconds       : Interfaces.Integer_64;
+      Center_Frequency_Hz         : Long_Float;
+      Sample_Frequency_Hz         : Long_Float;
+      AGC_Processing_Iterations   : Interfaces.Unsigned_64 := 0;
+      Ignored_Post_AGC_Iterations : Interfaces.Unsigned_64 := 0;
+      Max_Extension_Femtoseconds  : Interfaces.Integer_64 := 0) return RX_Receive_Event_Config is
+   begin
+      if not Valid_String (Element_Group_Label) then
+         raise Constraint_Error with "Element_Group_Label contains embedded NUL";
+      end if;
+      return
+        (Event_ID,
+         US.To_Unbounded_String (Element_Group_Label),
+         Start_Femtoseconds,
+         Duration_Femtoseconds,
+         Center_Frequency_Hz,
+         Sample_Frequency_Hz,
+         AGC_Processing_Iterations,
+         Ignored_Post_AGC_Iterations,
+         Max_Extension_Femtoseconds,
+         0,
+         RX_Index_Vectors.Empty_Vector,
+         others => <>);
+   end Create_RX_Receive_Event;
+   function Create_TX_Transmit_Event
+     (Event_ID                                  : Interfaces.Unsigned_32;
+      Element_Group_Label                       : String;
+      Start_Femtoseconds, Duration_Femtoseconds : Interfaces.Integer_64;
+      Center_Frequency_Hz                       : Long_Float;
+      TX_Attenuation_DB                         : Long_Float := 0.0;
+      Rise_Duration_Femtoseconds                : Interfaces.Integer_64 := 0;
+      Fall_Duration_Femtoseconds                : Interfaces.Integer_64 := 0)
+      return TX_Transmit_Event_Config is
+   begin
+      if not Valid_String (Element_Group_Label) then
+         raise Constraint_Error with "Element_Group_Label contains embedded NUL";
+      end if;
+      return
+        (Event_ID,
+         US.To_Unbounded_String (Element_Group_Label),
+         Start_Femtoseconds,
+         Duration_Femtoseconds,
+         Center_Frequency_Hz,
+         TX_Attenuation_DB,
+         Rise_Duration_Femtoseconds,
+         Fall_Duration_Femtoseconds,
+         0,
+         RX_Index_Vectors.Empty_Vector,
+         others => <>);
+   end Create_TX_Transmit_Event;
+   procedure Set_Event_Stabilization_Point_Index
+     (Event : in out TX_Transmit_Event_Config; Index : Interfaces.Unsigned_64) is
+   begin
+      Event.Stab_Point_Index := Index;
+   end Set_Event_Stabilization_Point_Index;
+   procedure Append_Applicable_TX_Element_Group
+     (Event : in out TX_Transmit_Event_Config; Element_Group_Index : Interfaces.Unsigned_64) is
+   begin
+      Event.Groups.Append (Element_Group_Index);
+   end Append_Applicable_TX_Element_Group;
+   procedure Set_TX_Attenuation_DB (Event : in out TX_Transmit_Event_Config; Value : Long_Float) is
+   begin
+      Event.TX_Attenuation_DB := Value;
+   end Set_TX_Attenuation_DB;
+   procedure Set_TX_Edge_Durations
+     (Event                                : in out TX_Transmit_Event_Config;
+      Rise_Femtoseconds, Fall_Femtoseconds : Interfaces.Integer_64) is
+   begin
+      Event.Rise_Duration_Femtoseconds := Rise_Femtoseconds;
+      Event.Fall_Duration_Femtoseconds := Fall_Femtoseconds;
+   end Set_TX_Edge_Durations;
+   procedure Append_TX_Event
+     (Interval : in out RX_Job_Interval_Config; Event : TX_Transmit_Event_Config) is
+   begin
+      Interval.TX_Events.Append (Event);
+      Interval.Has_TX_Events := True;
+   end Append_TX_Event;
+   function Waveform_Stream
+     (Endpoint_ID, Start_Address, Num_Bytes : Interfaces.Unsigned_64;
+      Sample_Format                         : Stream_Sample_Format := Stream_Complex_Cartesian;
+      Item_Format                           : Stream_Item_Format := Stream_Fixed_Point_Signed;
+      Repeat_Mode                           : Stream_Repeat_Mode := Stream_Repeat_From_Top)
+      return Modulation_Config is
+   begin
+      return
+        (Kind                 => 7,
+         Stream_Endpoint_ID   => Endpoint_ID,
+         Stream_Start_Address => Start_Address,
+         Stream_Num_Bytes     => Num_Bytes,
+         Stream_Sample        => Sample_Format,
+         Stream_Item          => Item_Format,
+         Stream_Repeat        => Repeat_Mode,
+         others               => <>);
+   end Waveform_Stream;
+   procedure Replace_Waveform_Stream
+     (Config                                : in out Modulation_Config;
+      Endpoint_ID, Start_Address, Num_Bytes : Interfaces.Unsigned_64;
+      Sample_Format                         : Stream_Sample_Format;
+      Item_Format                           : Stream_Item_Format;
+      Repeat_Mode                           : Stream_Repeat_Mode) is
+   begin
+      if Config.Kind /= 7 then
+         raise Constraint_Error with "not a WaveformStream";
+      end if;
+      Config :=
+        Waveform_Stream
+          (Endpoint_ID, Start_Address, Num_Bytes, Sample_Format, Item_Format, Repeat_Mode);
+   end Replace_Waveform_Stream;
+   function Create_Waveform_Profile
+     (Chip_Duration_Femtoseconds : Interfaces.Integer_64 := 0) return Waveform_Profile is
+   begin
+      return (Duration => Chip_Duration_Femtoseconds, others => <>);
+   end Create_Waveform_Profile;
+   procedure Set_Chip_Duration_Femtoseconds
+     (Profile : in out Waveform_Profile; Value : Interfaces.Integer_64) is
+   begin
+      Profile.Duration := Value;
+   end Set_Chip_Duration_Femtoseconds;
+   procedure Set_Phase_Degrees
+     (Profile : in out Waveform_Profile; Value : Long_Float; Update : Boolean) is
+   begin
+      Profile.Phase_Degrees := Value;
+      Profile.Update_Phase := Update;
+   end Set_Phase_Degrees;
+   procedure Set_Delta_Phase_Degrees
+     (Profile : in out Waveform_Profile; Value : Long_Float; Update : Boolean) is
+   begin
+      Profile.Delta_Phase_Degrees := Value;
+      Profile.Update_Delta_Phase := Update;
+   end Set_Delta_Phase_Degrees;
+   procedure Set_Frequency_Offset_Hz
+     (Profile : in out Waveform_Profile; Value : Long_Float; Update : Boolean) is
+   begin
+      Profile.Frequency_Offset_Hz := Value;
+      Profile.Update_Frequency_Offset := Update;
+   end Set_Frequency_Offset_Hz;
+   procedure Set_Delta_Frequency_Hz
+     (Profile : in out Waveform_Profile; Value : Long_Float; Update : Boolean) is
+   begin
+      Profile.Delta_Frequency_Hz := Value;
+      Profile.Update_Delta_Frequency := Update;
+   end Set_Delta_Frequency_Hz;
+   procedure Set_Frequency_Slope_Hz_Sec
+     (Profile : in out Waveform_Profile; Value : Long_Float; Update : Boolean) is
+   begin
+      Profile.Frequency_Slope_Hz_Sec := Value;
+      Profile.Update_Frequency_Slope := Update;
+   end Set_Frequency_Slope_Hz_Sec;
+   procedure Set_Amplitude_Factor
+     (Profile : in out Waveform_Profile; Value : Long_Float; Update : Boolean) is
+   begin
+      Profile.Amplitude_Factor := Value;
+      Profile.Update_Amplitude_Factor := Update;
+   end Set_Amplitude_Factor;
+   procedure Append_Profile
+     (Table   : in out Waveform_Profile_Table;
+      Profile : Waveform_Profile;
+      Index   : out Waveform_Profile_Index)
+   is
+      Position : constant Waveform_Profile_Index := Waveform_Profile_Index (Table.Values.Length);
+   begin
+      Table.Values.Append (Profile);
+      Index := Position;
+   end Append_Profile;
+   procedure Append_Step
+     (Pattern             : in out Event_Waveform_Pattern;
+      Profile_Index       : Waveform_Profile_Index;
+      Num_Chip_Iterations : Interfaces.Integer_32 := 1) is
+   begin
+      Pattern.Steps.Append (Waveform_Step'(Num_Chip_Iterations, Profile_Index));
+   end Append_Step;
+   procedure Append_Pattern
+     (Patterns : in out Waveform_Pattern_List; Pattern : Event_Waveform_Pattern) is
+   begin
+      Patterns.Values.Append (Pattern);
+   end Append_Pattern;
+   function Custom_Waveform
+     (Profiles : Waveform_Profile_Table; Patterns : Waveform_Pattern_List) return Modulation_Config
+   is
+   begin
+      return (Kind => 5, Profiles => Profiles, Patterns => Patterns, others => <>);
+   end Custom_Waveform;
+   procedure Replace_Custom_Waveform_Profiles
+     (Config : in out Modulation_Config; Profiles : Waveform_Profile_Table) is
+   begin
+      if Config.Kind /= 5 then
+         raise Constraint_Error with "not a CustomWaveform";
+      end if;
+      declare
+         Copy : constant Waveform_Profile_Table := Profiles;
+      begin
+         Config.Profiles := Copy;
+      end;
+   end Replace_Custom_Waveform_Profiles;
+   procedure Replace_Custom_Waveform_Patterns
+     (Config : in out Modulation_Config; Patterns : Waveform_Pattern_List) is
+   begin
+      if Config.Kind /= 5 then
+         raise Constraint_Error with "not a CustomWaveform";
+      end if;
+      declare
+         Copy : constant Waveform_Pattern_List := Patterns;
+      begin
+         Config.Patterns := Copy;
+      end;
+   end Replace_Custom_Waveform_Patterns;
+   procedure Replace_Waveform_Samples_I8
+     (Config : in out Modulation_Config; Samples : Waveform_Sample_I8_Array)
+   is
+      Copy : Waveform_I8_Vectors.Vector;
+   begin
+      if Config.Kind /= 6 or else Config.Sample_Width /= 8 then
+         raise Constraint_Error with "not an I8 WaveformBuffer";
+      end if;
+      for Value of Samples loop
+         Copy.Append (Value);
+      end loop;
+      Config.Samples_I8 := Copy;
+   end Replace_Waveform_Samples_I8;
+   procedure Replace_Waveform_Samples_I16
+     (Config : in out Modulation_Config; Samples : Waveform_Sample_I16_Array)
+   is
+      Copy : Waveform_I16_Vectors.Vector;
+   begin
+      if Config.Kind /= 6 or else Config.Sample_Width /= 16 then
+         raise Constraint_Error with "not an I16 WaveformBuffer";
+      end if;
+      for Value of Samples loop
+         Copy.Append (Value);
+      end loop;
+      Config.Samples_I16 := Copy;
+   end Replace_Waveform_Samples_I16;
+   function Waveform_Buffer_I8 (Samples : Waveform_Sample_I8_Array) return Modulation_Config is
+      Result : Modulation_Config := (Kind => 6, Sample_Width => 8, others => <>);
+   begin
+      Replace_Waveform_Samples_I8 (Result, Samples);
+      return Result;
+   end Waveform_Buffer_I8;
+   function Waveform_Buffer_I16 (Samples : Waveform_Sample_I16_Array) return Modulation_Config is
+      Result : Modulation_Config := (Kind => 6, Sample_Width => 16, others => <>);
+   begin
+      Replace_Waveform_Samples_I16 (Result, Samples);
+      return Result;
+   end Waveform_Buffer_I16;
+   procedure Append_Waveform_Sample_I8
+     (Config : in out Modulation_Config; Sample : Waveform_Sample_I8) is
+   begin
+      if Config.Kind /= 6 or else Config.Sample_Width /= 8 then
+         raise Constraint_Error with "not an I8 WaveformBuffer";
+      end if;
+      Config.Samples_I8.Append (Sample);
+   end Append_Waveform_Sample_I8;
+   procedure Append_Waveform_Sample_I16
+     (Config : in out Modulation_Config; Sample : Waveform_Sample_I16) is
+   begin
+      if Config.Kind /= 6 or else Config.Sample_Width /= 16 then
+         raise Constraint_Error with "not an I16 WaveformBuffer";
+      end if;
+      Config.Samples_I16.Append (Sample);
+   end Append_Waveform_Sample_I16;
+   function Tone return Modulation_Config is
+   begin
+      return (others => <>);
+   end Tone;
+   procedure Replace_Phase_Chips (Config : in out Modulation_Config; Phases_Rad : Phase_Chip_Array)
+   is
+      Copy : Phase_Chip_Vectors.Vector;
+   begin
+      if Config.Kind /= 1 then
+         raise Constraint_Error with "phase operation requires PhaseCode";
+      end if;
+      for Value of Phases_Rad loop
+         Copy.Append (Value);
+      end loop;
+      Config.Phases := Copy;
+   end Replace_Phase_Chips;
+   function Phase_Code
+     (Chip_Duration_Femtoseconds : Interfaces.Integer_64; Phases_Rad : Phase_Chip_Array)
+      return Modulation_Config
+   is
+      Result : Modulation_Config :=
+        (Kind => 1, Duration => Chip_Duration_Femtoseconds, others => <>);
+   begin
+      Replace_Phase_Chips (Result, Phases_Rad);
+      return Result;
+   end Phase_Code;
+   function Linear_Frequency_Modulation (Frequency_Extent_Hz : Long_Float) return Modulation_Config
+   is
+   begin
+      return (Kind => 2, Extent => Frequency_Extent_Hz, others => <>);
+   end Linear_Frequency_Modulation;
+   procedure Replace_Binary_Data
+     (Config : in out Modulation_Config; Data : Modulation_Boolean_Array; Kind : Natural)
+   is
+      Copy : Modulation_Boolean_Vectors.Vector;
+   begin
+      if Config.Kind /= Kind then
+         raise Constraint_Error with "binary operation requires matching modulation kind";
+      end if;
+      for Value of Data loop
+         Copy.Append (Value);
+      end loop;
+      Config.Binary_Data := Copy;
+   end Replace_Binary_Data;
+   procedure Replace_OOK_Pulse_Enables
+     (Config : in out Modulation_Config; Pulse_Enabled : Modulation_Boolean_Array) is
+   begin
+      Replace_Binary_Data (Config, Pulse_Enabled, 3);
+   end Replace_OOK_Pulse_Enables;
+   procedure Replace_CPFSK_Chips
+     (Config : in out Modulation_Config; Chip_Data : Modulation_Boolean_Array) is
+   begin
+      Replace_Binary_Data (Config, Chip_Data, 4);
+   end Replace_CPFSK_Chips;
+   procedure Append_OOK_Pulse_Enable (Config : in out Modulation_Config; Enabled : Boolean) is
+   begin
+      if Config.Kind /= 3 then
+         raise Constraint_Error with "pulse enable operation requires OOK";
+      end if;
+      Config.Binary_Data.Append (Enabled);
+   end Append_OOK_Pulse_Enable;
+   procedure Append_CPFSK_Chip (Config : in out Modulation_Config; Chip : Boolean) is
+   begin
+      if Config.Kind /= 4 then
+         raise Constraint_Error with "chip operation requires CPFSK";
+      end if;
+      Config.Binary_Data.Append (Chip);
+   end Append_CPFSK_Chip;
+   function On_Off_Keying (Pulse_Enabled : Modulation_Boolean_Array) return Modulation_Config is
+      Result : Modulation_Config := (Kind => 3, others => <>);
+   begin
+      Replace_OOK_Pulse_Enables (Result, Pulse_Enabled);
+      return Result;
+   end On_Off_Keying;
+   function CPFSK_Pulse
+     (Chip_Data                                               : Modulation_Boolean_Array;
+      Pulse_Duration_Femtoseconds, Chip_Duration_Femtoseconds : Interfaces.Integer_64;
+      Frequency_Offset_Hz                                     : Long_Float) return Modulation_Config
+   is
+      Result : Modulation_Config :=
+        (Kind             => 4,
+         Duration         => Chip_Duration_Femtoseconds,
+         Pulse_Duration   => Pulse_Duration_Femtoseconds,
+         Frequency_Offset => Frequency_Offset_Hz,
+         others           => <>);
+   begin
+      Replace_CPFSK_Chips (Result, Chip_Data);
+      return Result;
+   end CPFSK_Pulse;
+   procedure Append_Phase_Chip (Config : in out Modulation_Config; Phase_Rad : Long_Float) is
+   begin
+      if Config.Kind /= 1 then
+         raise Constraint_Error with "phase operation requires PhaseCode";
+      end if;
+      Config.Phases.Append (Phase_Rad);
+   end Append_Phase_Chip;
+   procedure Append_Modulation
+     (Table : in out Modulation_Table; Config : Modulation_Config; Index : out Modulation_Index)
+   is
+      Position : constant Modulation_Index := Modulation_Index (Table.Values.Length);
+   begin
+      Table.Values.Append (Config);
+      Index := Position;
+   end Append_Modulation;
+   procedure Set_Modulations (Interval : in out RX_Job_Interval_Config; Table : Modulation_Table) is
+   begin
+      Interval.Modulations := Table;
+      Interval.Has_Modulations := True;
+   end Set_Modulations;
+   procedure Clear_Modulations (Interval : in out RX_Job_Interval_Config) is
+   begin
+      Interval.Modulations.Values.Clear;
+      Interval.Has_Modulations := False;
+   end Clear_Modulations;
+   procedure Set_Empty_Modulations (Interval : in out RX_Job_Interval_Config) is
+   begin
+      Interval.Modulations.Values.Clear;
+      Interval.Has_Modulations := True;
+   end Set_Empty_Modulations;
+   procedure Append_Modulation_Reference
+     (Event : in out TX_Transmit_Event_Config; Index : Modulation_Index) is
+   begin
+      Event.Modulation_Indices.Append (Index);
+      Event.Has_Modulation_Indices := True;
+   end Append_Modulation_Reference;
+   procedure Clear_Modulation_References (Event : in out TX_Transmit_Event_Config) is
+   begin
+      Event.Modulation_Indices.Clear;
+      Event.Has_Modulation_Indices := False;
+   end Clear_Modulation_References;
+   procedure Set_Empty_Modulation_References (Event : in out TX_Transmit_Event_Config) is
+   begin
+      Event.Modulation_Indices.Clear;
+      Event.Has_Modulation_Indices := True;
+   end Set_Empty_Modulation_References;
+   procedure Set_Empty_TX_Events (Interval : in out RX_Job_Interval_Config) is
+   begin
+      Interval.TX_Events.Clear;
+      Interval.Has_TX_Events := True;
+   end Set_Empty_TX_Events;
+   procedure Clear_TX_Events (Interval : in out RX_Job_Interval_Config) is
+   begin
+      Interval.TX_Events.Clear;
+      Interval.Has_TX_Events := False;
+   end Clear_TX_Events;
+   function Create_RX_Job_Interval
+     (Interval_ID                        : Interfaces.Unsigned_32;
+      Sequence_Duration_Femtoseconds     : Interfaces.Integer_64;
+      Job_Details_ID                     : Interfaces.Unsigned_32 := 0;
+      Interval_Start_Femtoseconds        : Interfaces.Integer_64 :=
+        Continue_From_Previous_Femtoseconds;
+      Interval_Starting_Gap_Femtoseconds : Interfaces.Integer_64 := 0;
+      Sequence_Repeat_Count              : Interfaces.Unsigned_64 := 1;
+      Calibration_Duration_Femtoseconds  : Interfaces.Integer_64 := 0;
+      Interval_Ending_Gap_Femtoseconds   : Interfaces.Integer_64 := 0;
+      Phase_Coherence_With_Prior         : Boolean := False;
+      Iterations_Per_Signal              : Interfaces.Unsigned_64 := 0;
+      Max_Data_Rate_BPS                  : Long_Float := 0.0;
+      Max_Sample_Rate_Hz                 : Long_Float := 0.0) return RX_Job_Interval_Config is
+   begin
+      return
+        (Interval_ID,
+         Job_Details_ID,
+         Interval_Start_Femtoseconds,
+         Interval_Starting_Gap_Femtoseconds,
+         Sequence_Duration_Femtoseconds,
+         Calibration_Duration_Femtoseconds,
+         Interval_Ending_Gap_Femtoseconds,
+         Sequence_Repeat_Count,
+         Iterations_Per_Signal,
+         Phase_Coherence_With_Prior,
+         Max_Data_Rate_BPS,
+         Max_Sample_Rate_Hz,
+         Local_Function_Command_Vectors.Empty_Vector,
+         RX_Event_Vectors.Empty_Vector,
+         Never,
+         Pointing_Vectors.Empty_Vector,
+         others => <>);
+   end Create_RX_Job_Interval;
+   procedure Set_Interval_Status_Enable
+     (Interval : in out RX_Job_Interval_Config; Mode : Interval_Status_Enable) is
+   begin
+      Interval.Status_Enable := Mode;
+   end Set_Interval_Status_Enable;
+   procedure Append_RX_Event
+     (Interval : in out RX_Job_Interval_Config; Event : RX_Receive_Event_Config) is
+   begin
+      Interval.Events.Append (Event);
+   end Append_RX_Event;
+   procedure Append_Job_Interval
+     (Intervals : in out RX_Job_Interval_List; Interval : RX_Job_Interval_Config) is
+   begin
+      Intervals.Values.Append (Interval);
+   end Append_Job_Interval;
+   function Job_Interval_Count (Intervals : RX_Job_Interval_List) return Natural
+   is (Natural (Intervals.Values.Length));
+
+   function Raw_Pointing (Value : Pointing) return C.RF_Pointing_V1;
+   procedure Set_Stab_Point_Index
+     (Event : in out RX_Receive_Event_Config; Index : Interfaces.Unsigned_64) is
+   begin
+      Event.Stab_Point_Index := Index;
+   end Set_Stab_Point_Index;
+   procedure Append_Applicable_RX_Element_Group
+     (Event : in out RX_Receive_Event_Config; Element_Group_Index : Interfaces.Unsigned_64) is
+   begin
+      Event.Applicable_RX_Element_Groups.Append (Element_Group_Index);
+   end Append_Applicable_RX_Element_Group;
+   procedure Append_Stab_Point (Interval : in out RX_Job_Interval_Config; Value : Pointing) is
+   begin
+      Interval.Stab_Points.Append (Value);
+   end Append_Stab_Point;
+
+   function Create_Local_Function_Command
+     (Local_Function_Type_ID : Interfaces.Unsigned_32; Instance : Interfaces.Unsigned_64)
+      return Local_Function_Command is
+   begin
+      return (Local_Function_Type_ID, Instance, Local_Function_Write_Vectors.Empty_Vector);
+   end Create_Local_Function_Command;
+   procedure Append_Local_Function_Write
+     (Command : in out Local_Function_Command; Address, Value : Interfaces.Unsigned_64) is
+   begin
+      Command.Writes.Append (Local_Function_Write'(Address, Value));
+   end Append_Local_Function_Write;
+   procedure Append_Interval_Local_Function_Command
+     (Interval : in out RX_Job_Interval_Config; Command : Local_Function_Command) is
+   begin
+      Interval.Commands.Append (Command);
+   end Append_Interval_Local_Function_Command;
+   function Create_Product_Stream_Params return Product_Stream_Params is
+   begin
+      return (RX_Index_Vectors.Empty_Vector, Product_Stream_Endpoint_Vectors.Empty_Vector);
+   end Create_Product_Stream_Params;
+   procedure Append_Product_Stream_RX_Group
+     (Params : in out Product_Stream_Params; Index : Interfaces.Unsigned_64) is
+   begin
+      Params.RX_Groups.Append (Index);
+   end Append_Product_Stream_RX_Group;
+   procedure Append_Product_Stream_Endpoint
+     (Params                                : in out Product_Stream_Params;
+      Endpoint_ID, Start_Address, Max_Bytes : Interfaces.Unsigned_64) is
+   begin
+      Params.Endpoints.Append (Product_Stream_Endpoint'(Endpoint_ID, Start_Address, Max_Bytes));
+   end Append_Product_Stream_Endpoint;
+   procedure Set_Interval_Product_Stream_Params
+     (Interval : in out RX_Job_Interval_Config; Params : Product_Stream_Params) is
+   begin
+      Interval.Product_Stream := Params;
+      Interval.Has_Product_Stream_Params := True;
+   end Set_Interval_Product_Stream_Params;
+   procedure Clear_Interval_Product_Stream_Params (Interval : in out RX_Job_Interval_Config) is
+   begin
+      Interval.Has_Product_Stream_Params := False;
+   end Clear_Interval_Product_Stream_Params;
+   function Create_Endpoint_Connections return Endpoint_Connections is
+   begin
+      return (Values => Endpoint_Connection_Vectors.Empty_Vector);
+   end Create_Endpoint_Connections;
+   procedure Append_Endpoint_Connection
+     (Connections                          : in out Endpoint_Connections;
+      Element_Group_Label, Data_Pipe_Label : String;
+      Endpoint_ID                          : Interfaces.Unsigned_64) is
+   begin
+      if not Valid_String (Element_Group_Label) or else not Valid_String (Data_Pipe_Label) then
+         raise Constraint_Error with "invalid endpoint connection label";
+      end if;
+      Connections.Values.Append
+        (Endpoint_Connection'
+           (US.To_Unbounded_String (Element_Group_Label),
+            US.To_Unbounded_String (Data_Pipe_Label),
+            Endpoint_ID));
+   end Append_Endpoint_Connection;
+   procedure Set_Interval_Endpoint_Connections
+     (Interval : in out RX_Job_Interval_Config; Connections : Endpoint_Connections) is
+   begin
+      Interval.Connections := Connections;
+      Interval.Has_Endpoint_Connections := True;
+   end Set_Interval_Endpoint_Connections;
+   procedure Clear_Interval_Endpoint_Connections (Interval : in out RX_Job_Interval_Config) is
+   begin
+      Interval.Connections.Values.Clear;
+      Interval.Has_Endpoint_Connections := False;
+   end Clear_Interval_Endpoint_Connections;
+   procedure Set_Interval_User_Context
+     (Interval : in out RX_Job_Interval_Config; Bytes : Byte_Array)
+   is
+      Prepared : Byte_Vectors.Vector;
+   begin
+      for Value of Bytes loop
+         Prepared.Append (Value);
+      end loop;
+      Byte_Vectors.Move (Interval.User_Context, Prepared);
+      Interval.Has_User_Context := True;
+   end Set_Interval_User_Context;
+   procedure Append_Interval_User_Context_Byte
+     (Interval : in out RX_Job_Interval_Config; Value : Interfaces.Unsigned_8) is
+   begin
+      Interval.User_Context.Append (Value);
+      Interval.Has_User_Context := True;
+   end Append_Interval_User_Context_Byte;
+   procedure Set_Empty_Interval_User_Context (Interval : in out RX_Job_Interval_Config) is
+   begin
+      Interval.User_Context.Clear;
+      Interval.Has_User_Context := True;
+   end Set_Empty_Interval_User_Context;
+   procedure Clear_Interval_User_Context (Interval : in out RX_Job_Interval_Config) is
+   begin
+      Interval.User_Context.Clear;
+      Interval.Has_User_Context := False;
+   end Clear_Interval_User_Context;
+   procedure Add_RX_Job_Intervals (Object : in out Job; Intervals : RX_Job_Interval_List) is
+      pragma Validity_Checks ("F");
+      pragma
+        Compile_Time_Error
+          (Long_Float'Digits < Interfaces.C.double'Digits
+             or else Long_Float'Machine_Mantissa < Interfaces.C.double'Machine_Mantissa
+             or else Long_Float'Machine_Emax < Interfaces.C.double'Machine_Emax
+             or else Long_Float'Machine_Emin > Interfaces.C.double'Machine_Emin
+             or else Long_Float'Machine_Radix /= Interfaces.C.double'Machine_Radix,
+           "Pointing requires Long_Float to represent normal C double values");
+      function Pointer_Address is new Ada.Unchecked_Conversion (CS.chars_ptr, System.Address);
+      type Native_Intervals is array (Positive range <>) of aliased C.RF_Job_Interval_Config_V16
+      with Convention => C;
+      type Native_LF_Commands is array (Positive range <>) of aliased C.RF_LF_Command_V1
+      with Convention => C;
+      type Native_LF_Writes is array (Positive range <>) of aliased C.RF_LF_Address_Value_V1
+      with Convention => C;
+      Command_Count, Write_Count                     : Natural := 0;
+      Stream_Group_Count, Endpoint_Count             : Natural := 0;
+      type Native_Endpoints is array (Positive range <>) of aliased C.RF_Product_Stream_Endpoint_V1
+      with Convention => C;
+      type Native_Events is array (Positive range <>) of aliased C.RF_Receive_Event_Config_V4
+      with Convention => C;
+      type Native_Points is array (Positive range <>) of aliased C.RF_Pointing_V1
+      with Convention => C;
+      type Native_Indices is array (Positive range <>) of aliased Interfaces.Unsigned_64
+      with Convention => C;
+      type Native_Stokes is array (Positive range <>) of aliased C.RF_Stokes_Vector_V1
+      with Convention => C;
+      type Native_Thresholds is array (Positive range <>) of aliased C.RF_Pulse_Threshold_V1
+      with Convention => C;
+      type Native_Bytes is array (Positive range <>) of aliased Interfaces.Unsigned_8
+      with Convention => C;
+      TX_Count, TX_Group_Count                       : Natural := 0;
+      type Native_TX_Events is array (Positive range <>) of aliased C.RF_TX_Event_Config_V3
+      with Convention => C;
+      type Native_Modulations is array (Positive range <>) of aliased C.RF_Modulation_Config_V5
+      with Convention => C;
+      type Native_Phases is array (Positive range <>) of aliased Interfaces.C.double
+      with Convention => C;
+      type Native_Modulation_Indices is array (Positive range <>) of aliased Interfaces.Integer_32
+      with Convention => C;
+      Modulation_Count, Phase_Count, Reference_Count : Natural := 0;
+      type Native_Binary_Data is array (Positive range <>) of aliased Interfaces.Unsigned_32
+      with Convention => C;
+      Binary_Count                                   : Natural := 0;
+      Sample_I8_Count, Sample_I16_Count              : Natural := 0;
+      type Native_I8_Samples is array (Positive range <>) of aliased C.RF_Complex_I8_V1
+      with Convention => C;
+      type Native_I16_Samples is array (Positive range <>) of aliased C.RF_Complex_I16_V1
+      with Convention => C;
+      Profile_Count, Pattern_Count, Step_Count       : Natural := 0;
+      type Native_Profiles is array (Positive range <>) of aliased C.RF_Waveform_Profile_Params_V1
+      with Convention => C;
+      type Native_Patterns is
+        array (Positive range <>) of aliased C.RF_Event_Waveform_Profile_Pattern_V1
+      with Convention => C;
+      type Native_Steps is array (Positive range <>) of aliased C.RF_Waveform_Profile_Iterations_V1
+      with Convention => C;
+      Connection_Count                               : Natural := 0;
+      type Native_Connections is
+        array (Positive range <>) of aliased C.RF_Interval_Endpoint_Connection_V1
+      with Convention => C;
+      type Labels is array (Positive range <>) of String_Owner;
+      Count                                          : constant Natural :=
+        Job_Interval_Count (Intervals);
+      Event_Count, Point_Count, Group_Count          : Natural := 0;
+      Threshold_Count                                : Natural := 0;
+      Stokes_Count, Byte_Count                       : Natural := 0;
+      Context_Count                                  : Natural := 0;
+      D                                              : aliased Fixed_Diagnostic :=
+        [others => Interfaces.C.nul];
+      R                                              : aliased C.Size_T := 0;
+      procedure Check_Backing_Size (Elements : Natural; Element_Bits : Natural) is
+         Bytes : constant Interfaces.Unsigned_64 := Interfaces.Unsigned_64 (Element_Bits / 8);
+      begin
+         if Bytes = 0
+           or else Interfaces.Unsigned_64 (Elements)
+                   > Interfaces.Unsigned_64 (C.Size_T'Last) / Bytes
+         then
+            raise Constraint_Error with "interval backing size exceeds native size_t";
+         end if;
+      end Check_Backing_Size;
+      function Fits_Native_Int (Value : Interfaces.Integer_64) return Boolean is
+      begin
+         return
+           Value >= Interfaces.Integer_64 (Interfaces.C.int'First)
+           and then Value <= Interfaces.Integer_64 (Interfaces.C.int'Last);
+      end Fits_Native_Int;
+   begin
+      for Interval of Intervals.Values loop
+         if Interval.Has_User_Context then
+            Context_Count := Context_Count + Natural (Interval.User_Context.Length);
+         end if;
+         if Interval.Has_Modulations then
+            Modulation_Count := Modulation_Count + Natural (Interval.Modulations.Values.Length);
+            for Config of Interval.Modulations.Values loop
+               if Config.Kind = 7 then
+                  declare
+                     Checked : constant C.Size_T := C.Size_T (Config.Stream_Num_Bytes);
+                  begin
+                     if Interfaces.Unsigned_64 (Checked) /= Config.Stream_Num_Bytes then
+                        raise Constraint_Error with "stream byte count exceeds native size_t";
+                     end if;
+                  end;
+               end if;
+               Phase_Count := Phase_Count + Natural (Config.Phases.Length);
+               Binary_Count := Binary_Count + Natural (Config.Binary_Data.Length);
+               if Config.Kind = 6 then
+                  Sample_I8_Count := Sample_I8_Count + Natural (Config.Samples_I8.Length);
+                  Sample_I16_Count := Sample_I16_Count + Natural (Config.Samples_I16.Length);
+               end if;
+               if Config.Kind = 5 then
+                  Profile_Count := Profile_Count + Natural (Config.Profiles.Values.Length);
+                  Pattern_Count := Pattern_Count + Natural (Config.Patterns.Values.Length);
+                  for Pattern of Config.Patterns.Values loop
+                     Step_Count := Step_Count + Natural (Pattern.Steps.Length);
+                     for Step of Pattern.Steps loop
+                        if not Fits_Native_Int (Interfaces.Integer_64 (Step.Index))
+                          or else not Fits_Native_Int (Interfaces.Integer_64 (Step.Iterations))
+                          or else Interfaces.Unsigned_64 (Step.Index)
+                                  >= Interfaces.Unsigned_64 (Config.Profiles.Values.Length)
+                        then
+                           raise Constraint_Error with "profile reference outside CustomWaveform";
+                        end if;
+                     end loop;
+                  end loop;
+               end if;
+            end loop;
+         end if;
+         TX_Count := TX_Count + Natural (Interval.TX_Events.Length);
+         for Event of Interval.TX_Events loop
+            if Event.Has_Modulation_Indices then
+               Reference_Count := Reference_Count + Natural (Event.Modulation_Indices.Length);
+               for Index of Event.Modulation_Indices loop
+                  if Index >= 0
+                    and then (not Interval.Has_Modulations
+                              or else Interfaces.Unsigned_64 (Index)
+                                      >= Interfaces.Unsigned_64
+                                           (Interval.Modulations.Values.Length))
+                  then
+                     raise Constraint_Error with "modulation reference outside same interval table";
+                  end if;
+               end loop;
+            end if;
+            TX_Group_Count := TX_Group_Count + Natural (Event.Groups.Length);
+            Stokes_Count := Stokes_Count + Natural (Event.Polarization.Length);
+         end loop;
+         if Interval.Has_Endpoint_Connections then
+            Connection_Count := Connection_Count + Natural (Interval.Connections.Values.Length);
+         end if;
+         if Interval.Has_Product_Stream_Params then
+            Stream_Group_Count :=
+              Stream_Group_Count + Natural (Interval.Product_Stream.RX_Groups.Length);
+            Endpoint_Count := Endpoint_Count + Natural (Interval.Product_Stream.Endpoints.Length);
+         end if;
+         Command_Count := Command_Count + Natural (Interval.Commands.Length);
+         for Command of Interval.Commands loop
+            Write_Count := Write_Count + Natural (Command.Writes.Length);
+         end loop;
+         Byte_Count := Byte_Count + Natural (Interval.Activity.Length);
+         Event_Count := Event_Count + Natural (Interval.Events.Length);
+         Point_Count := Point_Count + Natural (Interval.Stab_Points.Length);
+         for Event of Interval.Events loop
+            if Event.Has_Pulse_Settings then
+               Threshold_Count :=
+                 Threshold_Count + Natural (Event.Pulse_Settings.Thresholds.Length);
+            end if;
+            Stokes_Count := Stokes_Count + Natural (Event.Polarization.Length);
+            Group_Count := Group_Count + Natural (Event.Applicable_RX_Element_Groups.Length);
+         end loop;
+      end loop;
+      Check_Backing_Size (Count, C.RF_Job_Interval_Config_V16'Size);
+      Check_Backing_Size (Context_Count, Interfaces.Unsigned_8'Size);
+      if Context_Count = Natural'Last then
+         raise Constraint_Error with "context backing cursor exceeds Ada index range";
+      end if;
+      Check_Backing_Size (TX_Count, C.RF_TX_Event_Config_V3'Size);
+      Check_Backing_Size (Modulation_Count, C.RF_Modulation_Config_V5'Size);
+      Check_Backing_Size (Sample_I8_Count, C.RF_Complex_I8_V1'Size);
+      Check_Backing_Size (Sample_I16_Count, C.RF_Complex_I16_V1'Size);
+      if Sample_I8_Count = Natural'Last or else Sample_I16_Count = Natural'Last then
+         raise Constraint_Error with "sample backing cursor exceeds Ada index range";
+      end if;
+      Check_Backing_Size (Profile_Count, C.RF_Waveform_Profile_Params_V1'Size);
+      Check_Backing_Size (Pattern_Count, C.RF_Event_Waveform_Profile_Pattern_V1'Size);
+      Check_Backing_Size (Step_Count, C.RF_Waveform_Profile_Iterations_V1'Size);
+      Check_Backing_Size (Binary_Count, Interfaces.Unsigned_32'Size);
+      Check_Backing_Size (Phase_Count, Interfaces.C.double'Size);
+      Check_Backing_Size (Reference_Count, Interfaces.Integer_32'Size);
+      Check_Backing_Size (TX_Group_Count, Interfaces.Unsigned_64'Size);
+      Check_Backing_Size (Stokes_Count, C.RF_Stokes_Vector_V1'Size);
+      -- Cursors advance once past the final element. Reject that overflow
+      -- before allocating any backing or publishing addresses.
+      if Profile_Count = Natural'Last
+        or else Pattern_Count = Natural'Last
+        or else Step_Count = Natural'Last
+        or else Modulation_Count = Natural'Last
+        or else Binary_Count = Natural'Last
+        or else Phase_Count = Natural'Last
+        or else Reference_Count = Natural'Last
+      then
+         raise Constraint_Error with "modulation backing cursor exceeds Ada index range";
+      end if;
+      --  Final-sized Ada-owned backing lives through the synchronous borrowed Add.
+      --  Controlled label owners clean up on normal return and exceptions.
+      declare
+         Commands                                    : Native_LF_Commands (1 .. Command_Count);
+         Writes                                      : Native_LF_Writes (1 .. Write_Count);
+         Next_Command, Next_Write                    : Positive := 1;
+         Connections                                 : Native_Connections (1 .. Connection_Count);
+         Group_Labels, Pipe_Labels                   : Labels (1 .. Connection_Count);
+         Next_Connection                             : Positive := 1;
+         TX_Events                                   : Native_TX_Events (1 .. TX_Count);
+         Modulations                                 : Native_Modulations (1 .. Modulation_Count);
+         Phases                                      : Native_Phases (1 .. Phase_Count);
+         References                                  :
+           Native_Modulation_Indices (1 .. Reference_Count);
+         Next_Modulation, Next_Phase, Next_Reference : Positive := 1;
+         Binary_Data                                 : Native_Binary_Data (1 .. Binary_Count);
+         Samples_I8                                  : Native_I8_Samples (1 .. Sample_I8_Count);
+         Samples_I16                                 : Native_I16_Samples (1 .. Sample_I16_Count);
+         Next_I8, Next_I16                           : Positive := 1;
+         Next_Binary                                 : Positive := 1;
+         Profiles                                    : Native_Profiles (1 .. Profile_Count);
+         Patterns                                    : Native_Patterns (1 .. Pattern_Count);
+         Steps                                       : Native_Steps (1 .. Step_Count);
+         Next_Profile, Next_Pattern, Next_Step       : Positive := 1;
+         TX_Strings                                  : Labels (1 .. TX_Count);
+         TX_Groups                                   : Native_Indices (1 .. TX_Group_Count);
+         Next_TX, Next_TX_Group                      : Positive := 1;
+         Configs                                     : Native_Intervals (1 .. Count);
+         Stream_Groups                               : Native_Indices (1 .. Stream_Group_Count);
+         Endpoints                                   : Native_Endpoints (1 .. Endpoint_Count);
+         Next_Stream_Group, Next_Endpoint            : Positive := 1;
+         Events                                      : Native_Events (1 .. Event_Count);
+         Points                                      : Native_Points (1 .. Point_Count);
+         Groups                                      : Native_Indices (1 .. Group_Count);
+         Stokes                                      : Native_Stokes (1 .. Stokes_Count);
+         Thresholds                                  : Native_Thresholds (1 .. Threshold_Count);
+         Next_Threshold                              : Positive := 1;
+         Bytes                                       : Native_Bytes (1 .. Byte_Count);
+         Context_Bytes                               : Native_Bytes (1 .. Context_Count);
+         Next_Context                                : Positive := 1;
+         Next_Stokes, Next_Byte                      : Positive := 1;
+         Strings                                     : Labels (1 .. Event_Count);
+         Next_Event, Next_Point, Next_Group, I       : Positive := 1;
+         Span                                        : C.RF_Job_Interval_Config_Span_V16 :=
+           (System.Null_Address, C.Size_T (Count));
+      begin
+         for Interval of Intervals.Values loop
+            declare
+               First_Event   : constant Positive := Next_Event;
+               First_Point   : constant Positive := Next_Point;
+               Activity_Span : C.U8_Span_V1 :=
+                 (System.Null_Address, C.Size_T (Interval.Activity.Length));
+               Event_Span    : C.RF_Receive_Event_Config_Span_V4 :=
+                 (System.Null_Address, C.Size_T (Interval.Events.Length));
+               Point_Span    : C.RF_Pointing_Span_V1 :=
+                 (System.Null_Address, C.Size_T (Interval.Stab_Points.Length));
+            begin
+               if Activity_Span.Size > 0 then
+                  Activity_Span.Data := Bytes (Next_Byte)'Address;
+               end if;
+               for Value of Interval.Activity loop
+                  Bytes (Next_Byte) := Value;
+                  Next_Byte := Next_Byte + 1;
+               end loop;
+               Configs (I).Has_User_Context := Boolean'Pos (Interval.Has_User_Context);
+               Configs (I).User_Context := (System.Null_Address, 0);
+               if Interval.Has_User_Context then
+                  Configs (I).User_Context.Size := C.Size_T (Interval.User_Context.Length);
+                  if not Interval.User_Context.Is_Empty then
+                     Configs (I).User_Context.Data := Context_Bytes (Next_Context)'Address;
+                  end if;
+                  for Value of Interval.User_Context loop
+                     Context_Bytes (Next_Context) := Value;
+                     Next_Context := Next_Context + 1;
+                  end loop;
+               end if;
+               for Value of Interval.Stab_Points loop
+                  Points (Next_Point) := Raw_Pointing (Value);
+                  Next_Point := Next_Point + 1;
+               end loop;
+               if Point_Span.Size > 0 then
+                  Point_Span.Data := Points (First_Point)'Address;
+               end if;
+               for Event of Interval.Events loop
+                  Strings (Next_Event).Value := CS.New_String (US.To_String (Event.Label));
+                  Events (Next_Event).Event.Event.Applicable_RX_Element_Groups :=
+                    (System.Null_Address, C.Size_T (Event.Applicable_RX_Element_Groups.Length));
+                  if not Event.Applicable_RX_Element_Groups.Is_Empty then
+                     Events (Next_Event).Event.Event.Applicable_RX_Element_Groups.Data :=
+                       Groups (Next_Group)'Address;
+                  end if;
+                  for Value of Event.Applicable_RX_Element_Groups loop
+                     Groups (Next_Group) := Value;
+                     Next_Group := Next_Group + 1;
+                  end loop;
+                  Events (Next_Event).Event.Event.Stab_Point_Index := Event.Stab_Point_Index;
+                  Events (Next_Event).Event.Event.Event :=
+                    (Event.Event_ID,
+                     (Pointer_Address (Strings (Next_Event).Value),
+                      C.Size_T (US.Length (Event.Label))),
+                     Event.Start_Femtoseconds,
+                     Event.Duration_Femtoseconds,
+                     Interfaces.C.double (Event.Center_Frequency_Hz),
+                     Interfaces.C.double (Event.Sample_Frequency_Hz),
+                     Event.AGC_Processing_Iterations,
+                     Event.Ignored_Post_AGC_Iterations,
+                     Event.Max_Extension_Femtoseconds);
+                  Events (Next_Event).Event.Polarization :=
+                    (System.Null_Address, C.Size_T (Event.Polarization.Length));
+                  if not Event.Polarization.Is_Empty then
+                     Events (Next_Event).Event.Polarization.Data := Stokes (Next_Stokes)'Address;
+                  end if;
+                  for Value of Event.Polarization loop
+                     Stokes (Next_Stokes) :=
+                       (Interfaces.C.double (Value (1)),
+                        Interfaces.C.double (Value (2)),
+                        Interfaces.C.double (Value (3)),
+                        Interfaces.C.double (Value (4)));
+                     Next_Stokes := Next_Stokes + 1;
+                  end loop;
+                  Events (Next_Event).Event.Polarization_Beam_Steer_Correction :=
+                    Boolean'Pos (Event.Beam_Correction);
+                  Events (Next_Event).Event.Phase_Offset_Rad :=
+                    Interfaces.C.double (Event.Phase_Offset);
+                  Events (Next_Event).Event.Execution_Type :=
+                    Execution_Type'Enum_Rep (Event.Execution);
+                  Events (Next_Event).Event.Termination_Type :=
+                    Event_Termination_Type'Enum_Rep (Event.Termination);
+                  Events (Next_Event).Event.Allow_Delay_Start := Boolean'Pos (Event.Allow_Delay);
+                  Events (Next_Event).Event.Iteration_Hold_Count := Event.Hold_Count;
+                  Events (Next_Event).Event.Iteration_Termination_Count := Event.Termination_Count;
+                  Events (Next_Event).Event.Channelization_Enabled :=
+                    Boolean'Pos (Event.Channelization);
+                  Events (Next_Event).Has_Pulse_Detection_Settings :=
+                    Boolean'Pos (Event.Has_Pulse_Settings);
+                  Events (Next_Event).Pulse_Detection_Settings :=
+                    (0, (0, 0), (0, 0), 0, 0, (System.Null_Address, 0));
+                  if Event.Has_Pulse_Settings then
+                     declare
+                        Settings       : Pulse_Detection_Settings renames Event.Pulse_Settings;
+                        Threshold_Span : C.RF_Pulse_Threshold_Span_V1 :=
+                          (System.Null_Address, C.Size_T (Settings.Thresholds.Length));
+                     begin
+                        if not Settings.Thresholds.Is_Empty then
+                           Threshold_Span.Data := Thresholds (Next_Threshold)'Address;
+                        end if;
+                        for Value of Settings.Thresholds loop
+                           Thresholds (Next_Threshold) :=
+                             (Interfaces.C.double (Value.Leading_Edge_DB),
+                              Interfaces.C.double (Value.Trailing_Edge_DB));
+                           Next_Threshold := Next_Threshold + 1;
+                        end loop;
+                        Events (Next_Event).Pulse_Detection_Settings :=
+                          (Pulse_Threshold_Reference'Enum_Rep (Settings.Reference),
+                           (Settings.Leading_M, Settings.Leading_N),
+                           (Settings.Trailing_M, Settings.Trailing_N),
+                           Settings.Min_Pulse_Width_Femtoseconds,
+                           Pulse_Time_Tag_Threshold'Enum_Rep (Settings.Time_Tag_Threshold),
+                           Threshold_Span);
+                     end;
+                  end if;
+                  Next_Event := Next_Event + 1;
+               end loop;
+               if Event_Span.Size > 0 then
+                  Event_Span.Data := Events (First_Event)'Address;
+               end if;
+               Configs (I).Interval.Interval.Interval.Interval :=
+                 (Interval.Interval_Start_Femtoseconds,
+                  Interval.Interval_ID,
+                  Interval.Interval_Starting_Gap_Femtoseconds,
+                  Interval.Sequence_Duration_Femtoseconds,
+                  Interval.Sequence_Repeat_Count,
+                  Interval.Calibration_Duration_Femtoseconds,
+                  Interval.Interval_Ending_Gap_Femtoseconds,
+                  Boolean'Pos (Interval.Phase_Coherence_With_Prior),
+                  Interval.Iterations_Per_Signal,
+                  Interfaces.C.double (Interval.Max_Data_Rate_BPS),
+                  Interfaces.C.double (Interval.Max_Sample_Rate_Hz),
+                  Interval.Job_Details_ID,
+                  Interval_Status_Enable'Enum_Rep (Interval.Status_Enable),
+                  Point_Span,
+                  Event_Span,
+                  Interval.TX_Power_Mode,
+                  Activity_Span,
+                  Execution_Type'Enum_Rep (Interval.Execution));
+               Configs (I).Interval.Interval.Interval.Local_Function_Commands :=
+                 (System.Null_Address, C.Size_T (Interval.Commands.Length));
+               if not Interval.Commands.Is_Empty then
+                  Configs (I).Interval.Interval.Interval.Local_Function_Commands.Data :=
+                    Commands (Next_Command)'Address;
+               end if;
+               for Command of Interval.Commands loop
+                  Commands (Next_Command) :=
+                    (Command.Type_ID,
+                     Command.Instance,
+                     (System.Null_Address, C.Size_T (Command.Writes.Length)));
+                  if not Command.Writes.Is_Empty then
+                     Commands (Next_Command).Address_Values.Data := Writes (Next_Write)'Address;
+                  end if;
+                  for Write of Command.Writes loop
+                     Writes (Next_Write) := (Write.Address, Write.Value);
+                     Next_Write := Next_Write + 1;
+                  end loop;
+                  Next_Command := Next_Command + 1;
+               end loop;
+               Configs (I).Interval.Interval.Has_Product_Stream_Params :=
+                 Boolean'Pos (Interval.Has_Product_Stream_Params);
+               Configs (I).Interval.Interval.Product_Stream_Params :=
+                 ((System.Null_Address, 0), (System.Null_Address, 0));
+               if Interval.Has_Product_Stream_Params then
+                  declare
+                     Params : Product_Stream_Params renames Interval.Product_Stream;
+                  begin
+                     Configs (I)
+                       .Interval
+                       .Interval
+                       .Product_Stream_Params
+                       .Applicable_RX_Element_Groups
+                       .Size :=
+                       C.Size_T (Params.RX_Groups.Length);
+                     if not Params.RX_Groups.Is_Empty then
+                        Configs (I)
+                          .Interval
+                          .Interval
+                          .Product_Stream_Params
+                          .Applicable_RX_Element_Groups
+                          .Data :=
+                          Stream_Groups (Next_Stream_Group)'Address;
+                     end if;
+                     for Index of Params.RX_Groups loop
+                        Stream_Groups (Next_Stream_Group) := Index;
+                        Next_Stream_Group := Next_Stream_Group + 1;
+                     end loop;
+                     Configs (I).Interval.Interval.Product_Stream_Params.Endpoints.Size :=
+                       C.Size_T (Params.Endpoints.Length);
+                     if not Params.Endpoints.Is_Empty then
+                        Configs (I).Interval.Interval.Product_Stream_Params.Endpoints.Data :=
+                          Endpoints (Next_Endpoint)'Address;
+                     end if;
+                     for Endpoint of Params.Endpoints loop
+                        Endpoints (Next_Endpoint) :=
+                          (Endpoint.Endpoint_ID, Endpoint.Start_Address, Endpoint.Max_Bytes);
+                        Next_Endpoint := Next_Endpoint + 1;
+                     end loop;
+                  end;
+               end if;
+               Configs (I).Interval.Has_Endpoint_Connections :=
+                 Boolean'Pos (Interval.Has_Endpoint_Connections);
+               Configs (I).Interval.Endpoint_Connections := (System.Null_Address, 0);
+               if Interval.Has_Endpoint_Connections then
+                  Configs (I).Interval.Endpoint_Connections.Size :=
+                    C.Size_T (Interval.Connections.Values.Length);
+                  if not Interval.Connections.Values.Is_Empty then
+                     Configs (I).Interval.Endpoint_Connections.Data :=
+                       Connections (Next_Connection)'Address;
+                  end if;
+                  for Connection of Interval.Connections.Values loop
+                     Group_Labels (Next_Connection).Value :=
+                       CS.New_String (US.To_String (Connection.Group_Label));
+                     Pipe_Labels (Next_Connection).Value :=
+                       CS.New_String (US.To_String (Connection.Pipe_Label));
+                     Connections (Next_Connection) :=
+                       ((Pointer_Address (Group_Labels (Next_Connection).Value),
+                         C.Size_T (US.Length (Connection.Group_Label))),
+                        (Pointer_Address (Pipe_Labels (Next_Connection).Value),
+                         C.Size_T (US.Length (Connection.Pipe_Label))),
+                        Connection.ID);
+                     Next_Connection := Next_Connection + 1;
+                  end loop;
+               end if;
+               Configs (I).Has_Transmit_Events := Boolean'Pos (Interval.Has_TX_Events);
+               Configs (I).Has_Modulations := Boolean'Pos (Interval.Has_Modulations);
+               Configs (I).Modulations := (System.Null_Address, 0);
+               if Interval.Has_Modulations then
+                  Configs (I).Modulations.Size := C.Size_T (Interval.Modulations.Values.Length);
+                  if not Interval.Modulations.Values.Is_Empty then
+                     Configs (I).Modulations.Data := Modulations (Next_Modulation)'Address;
+                  end if;
+                  for Config of Interval.Modulations.Values loop
+                     Modulations (Next_Modulation).Waveform_Stream :=
+                       (Config.Stream_Endpoint_ID,
+                        Config.Stream_Start_Address,
+                        Config.Stream_Num_Bytes,
+                        Interfaces.Unsigned_32
+                          (Stream_Sample_Format'Enum_Rep (Config.Stream_Sample)),
+                        Interfaces.Unsigned_32 (Stream_Item_Format'Enum_Rep (Config.Stream_Item)),
+                        Interfaces.Unsigned_32
+                          (Stream_Repeat_Mode'Enum_Rep (Config.Stream_Repeat)));
+                     Modulations (Next_Modulation).Modulation.Modulation :=
+                       (((Interfaces.Unsigned_32 (Config.Kind),
+                          Config.Duration,
+                          (System.Null_Address, C.Size_T (Config.Phases.Length)),
+                          Interfaces.C.double (Config.Extent)),
+                         (System.Null_Address, C.Size_T (Config.Binary_Data.Length)),
+                         Config.Pulse_Duration,
+                         Interfaces.C.double (Config.Frequency_Offset)),
+                        ((System.Null_Address, 0), (System.Null_Address, 0)));
+                     if not Config.Binary_Data.Is_Empty then
+                        Modulations (Next_Modulation)
+                          .Modulation
+                          .Modulation
+                          .Modulation
+                          .Binary_Data
+                          .Data :=
+                          Binary_Data (Next_Binary)'Address;
+                     end if;
+                     for Value of Config.Binary_Data loop
+                        Binary_Data (Next_Binary) := Boolean'Pos (Value);
+                        Next_Binary := Next_Binary + 1;
+                     end loop;
+                     if not Config.Phases.Is_Empty then
+                        Modulations (Next_Modulation)
+                          .Modulation
+                          .Modulation
+                          .Modulation
+                          .Modulation
+                          .Phase_Chips_Rad
+                          .Data :=
+                          Phases (Next_Phase)'Address;
+                     end if;
+                     for Value of Config.Phases loop
+                        Phases (Next_Phase) := Interfaces.C.double (Value);
+                        Next_Phase := Next_Phase + 1;
+                     end loop;
+                     if Config.Kind = 5 then
+                        Modulations (Next_Modulation)
+                          .Modulation
+                          .Modulation
+                          .Custom_Waveform
+                          .Profiles
+                          .Size :=
+                          C.Size_T (Config.Profiles.Values.Length);
+                        if not Config.Profiles.Values.Is_Empty then
+                           Modulations (Next_Modulation)
+                             .Modulation
+                             .Modulation
+                             .Custom_Waveform
+                             .Profiles
+                             .Data :=
+                             Profiles (Next_Profile)'Address;
+                        end if;
+                        for Profile of Config.Profiles.Values loop
+                           Profiles (Next_Profile) :=
+                             (Profile.Duration,
+                              Boolean'Pos (Profile.Update_Phase),
+                              Boolean'Pos (Profile.Update_Delta_Phase),
+                              Boolean'Pos (Profile.Update_Frequency_Offset),
+                              Boolean'Pos (Profile.Update_Delta_Frequency),
+                              Boolean'Pos (Profile.Update_Frequency_Slope),
+                              Boolean'Pos (Profile.Update_Amplitude_Factor),
+                              Interfaces.C.double (Profile.Phase_Degrees),
+                              Interfaces.C.double (Profile.Delta_Phase_Degrees),
+                              Interfaces.C.double (Profile.Frequency_Offset_Hz),
+                              Interfaces.C.double (Profile.Delta_Frequency_Hz),
+                              Interfaces.C.double (Profile.Frequency_Slope_Hz_Sec),
+                              Interfaces.C.double (Profile.Amplitude_Factor));
+                           Next_Profile := Next_Profile + 1;
+                        end loop;
+                        Modulations (Next_Modulation)
+                          .Modulation
+                          .Modulation
+                          .Custom_Waveform
+                          .Patterns
+                          .Size :=
+                          C.Size_T (Config.Patterns.Values.Length);
+                        if not Config.Patterns.Values.Is_Empty then
+                           Modulations (Next_Modulation)
+                             .Modulation
+                             .Modulation
+                             .Custom_Waveform
+                             .Patterns
+                             .Data :=
+                             Patterns (Next_Pattern)'Address;
+                        end if;
+                        for Pattern of Config.Patterns.Values loop
+                           Patterns (Next_Pattern).Steps :=
+                             (System.Null_Address, C.Size_T (Pattern.Steps.Length));
+                           if not Pattern.Steps.Is_Empty then
+                              Patterns (Next_Pattern).Steps.Data := Steps (Next_Step)'Address;
+                           end if;
+                           for Step of Pattern.Steps loop
+                              Steps (Next_Step) := (Step.Iterations, Step.Index);
+                              Next_Step := Next_Step + 1;
+                           end loop;
+                           Next_Pattern := Next_Pattern + 1;
+                        end loop;
+                     end if;
+                     Modulations (Next_Modulation).Modulation.Waveform_Buffer :=
+                       (0, (System.Null_Address, 0), (System.Null_Address, 0));
+                     if Config.Kind = 6 then
+                        if Config.Sample_Width = 8 then
+                           Modulations (Next_Modulation).Modulation.Waveform_Buffer.Data_Format :=
+                             2;
+                           Modulations (Next_Modulation)
+                             .Modulation
+                             .Waveform_Buffer
+                             .Samples_I8
+                             .Size :=
+                             C.Size_T (Config.Samples_I8.Length);
+                           if not Config.Samples_I8.Is_Empty then
+                              Modulations (Next_Modulation)
+                                .Modulation
+                                .Waveform_Buffer
+                                .Samples_I8
+                                .Data :=
+                                Samples_I8 (Next_I8)'Address;
+                           end if;
+                           for Sample of Config.Samples_I8 loop
+                              Samples_I8 (Next_I8) := (Sample.Real, Sample.Imag);
+                              Next_I8 := Next_I8 + 1;
+                           end loop;
+                        else
+                           Modulations (Next_Modulation).Modulation.Waveform_Buffer.Data_Format :=
+                             3;
+                           Modulations (Next_Modulation)
+                             .Modulation
+                             .Waveform_Buffer
+                             .Samples_I16
+                             .Size :=
+                             C.Size_T (Config.Samples_I16.Length);
+                           if not Config.Samples_I16.Is_Empty then
+                              Modulations (Next_Modulation)
+                                .Modulation
+                                .Waveform_Buffer
+                                .Samples_I16
+                                .Data :=
+                                Samples_I16 (Next_I16)'Address;
+                           end if;
+                           for Sample of Config.Samples_I16 loop
+                              Samples_I16 (Next_I16) := (Sample.Real, Sample.Imag);
+                              Next_I16 := Next_I16 + 1;
+                           end loop;
+                        end if;
+                     end if;
+                     Next_Modulation := Next_Modulation + 1;
+                  end loop;
+               end if;
+               Configs (I).Transmit_Events :=
+                 (System.Null_Address, C.Size_T (Interval.TX_Events.Length));
+               if not Interval.TX_Events.Is_Empty then
+                  Configs (I).Transmit_Events.Data := TX_Events (Next_TX)'Address;
+               end if;
+               for Event of Interval.TX_Events loop
+                  TX_Strings (Next_TX).Value := CS.New_String (US.To_String (Event.Label));
+                  TX_Events (Next_TX).Event.Event :=
+                    (Event.Event_ID,
+                     (Pointer_Address (TX_Strings (Next_TX).Value),
+                      C.Size_T (US.Length (Event.Label))),
+                     Event.Start_Femtoseconds,
+                     Event.Duration_Femtoseconds,
+                     Interfaces.C.double (Event.Center_Frequency_Hz),
+                     Event.Stab_Point_Index,
+                     (System.Null_Address, C.Size_T (Event.Groups.Length)),
+                     Interfaces.C.double (Event.TX_Attenuation_DB),
+                     Event.Rise_Duration_Femtoseconds,
+                     Event.Fall_Duration_Femtoseconds);
+                  if not Event.Groups.Is_Empty then
+                     TX_Events (Next_TX).Event.Event.Applicable_TX_Element_Groups.Data :=
+                       TX_Groups (Next_TX_Group)'Address;
+                  end if;
+                  for Group of Event.Groups loop
+                     TX_Groups (Next_TX_Group) := Group;
+                     Next_TX_Group := Next_TX_Group + 1;
+                  end loop;
+                  TX_Events (Next_TX).Event.Polarization :=
+                    (System.Null_Address, C.Size_T (Event.Polarization.Length));
+                  if not Event.Polarization.Is_Empty then
+                     TX_Events (Next_TX).Event.Polarization.Data := Stokes (Next_Stokes)'Address;
+                  end if;
+                  for Value of Event.Polarization loop
+                     Stokes (Next_Stokes) :=
+                       (Interfaces.C.double (Value (1)),
+                        Interfaces.C.double (Value (2)),
+                        Interfaces.C.double (Value (3)),
+                        Interfaces.C.double (Value (4)));
+                     Next_Stokes := Next_Stokes + 1;
+                  end loop;
+                  TX_Events (Next_TX).Event.Polarization_Beam_Steer_Correction :=
+                    Boolean'Pos (Event.Beam_Correction);
+                  TX_Events (Next_TX).Event.Phase_Offset_Rad :=
+                    Interfaces.C.double (Event.Phase_Offset);
+                  TX_Events (Next_TX).Event.Execution_Type := Execution_Type'Pos (Event.Execution);
+                  TX_Events (Next_TX).Event.Termination_Type :=
+                    Event_Termination_Type'Pos (Event.Termination);
+                  TX_Events (Next_TX).Event.Allow_Delay_Start := Boolean'Pos (Event.Allow_Delay);
+                  TX_Events (Next_TX).Event.Iteration_Hold_Count := Event.Hold_Count;
+                  TX_Events (Next_TX).Event.Iteration_Termination_Count := Event.Termination_Count;
+                  TX_Events (Next_TX).Event.Channelization_Enabled :=
+                    Boolean'Pos (Event.Channelization);
+                  TX_Events (Next_TX).Has_Modulation_Indices :=
+                    Boolean'Pos (Event.Has_Modulation_Indices);
+                  TX_Events (Next_TX).Modulation_Indices :=
+                    (System.Null_Address, C.Size_T (Event.Modulation_Indices.Length));
+                  if not Event.Modulation_Indices.Is_Empty then
+                     TX_Events (Next_TX).Modulation_Indices.Data :=
+                       References (Next_Reference)'Address;
+                  end if;
+                  for Index of Event.Modulation_Indices loop
+                     References (Next_Reference) := Index;
+                     Next_Reference := Next_Reference + 1;
+                  end loop;
+                  Next_TX := Next_TX + 1;
+               end loop;
+               I := I + 1;
+            end;
+         end loop;
+         if Count > 0 then
+            Span.Data := Configs (1)'Address;
+         end if;
+         if Next_Context /= Context_Count + 1 then
+            raise Program_Error with "context backing cursor mismatch";
+         end if;
+         if Next_I8 /= Sample_I8_Count + 1 or else Next_I16 /= Sample_I16_Count + 1 then
+            raise Program_Error with "sample backing cursor mismatch";
+         end if;
+         declare
+            Code : constant Interfaces.Integer_32 :=
+              C.RF_Job_Add_Intervals_V16 (Object.Handle, Span, D'Address, D'Length, R'Access);
+         begin
+            if Code = C.Invalid_Argument then
+               raise Constraint_Error with "invalid final interval configuration";
+            end if;
+            Check (Code, D);
+         end;
+      end;
+   end Add_RX_Job_Intervals;
+   procedure Flush_Job (Object : in out Job) is
+      D : aliased Fixed_Diagnostic := [others => Interfaces.C.nul];
+      R : aliased C.Size_T := 0;
+   begin
+      Check (C.RF_Job_Flush (Object.Handle, D'Address, D'Length, R'Access), D);
+   end Flush_Job;
+   procedure Cancel_Remaining_Job_Intervals (Object : in out Job) is
+      D : aliased Fixed_Diagnostic := [others => Interfaces.C.nul];
+      R : aliased C.Size_T := 0;
+   begin
+      Check (C.RF_Job_Cancel_Remaining_Intervals (Object.Handle, D'Address, D'Length, R'Access), D);
+   end Cancel_Remaining_Job_Intervals;
+   procedure Extend_Job_Event
+     (Object                      : in out Job;
+      Interval_ID                 : Interfaces.Unsigned_32;
+      Event_ID                    : Interfaces.Unsigned_32;
+      Added_Duration_Femtoseconds : Interfaces.Integer_64)
+   is
+      D : aliased Fixed_Diagnostic := [others => Interfaces.C.nul];
+      R : aliased C.Size_T := 0;
+   begin
+      Check
+        (C.RF_Job_Extend_Event
+           (Object.Handle,
+            Interval_ID,
+            Event_ID,
+            Added_Duration_Femtoseconds,
+            D'Address,
+            D'Length,
+            R'Access),
+         D);
+   end Extend_Job_Event;
+
+   function Open (Library_Path : String; Configuration : String) return C2_MEL is
+      Library_C, Configuration_C : String_Owner;
+      D                          : aliased Fixed_Diagnostic := [others => Interfaces.C.nul];
+      R                          : aliased C.Size_T := 0;
+   begin
+      for Item of Library_Path loop
+         if Item = Character'Val (0) then
+            raise Constraint_Error with "Library_Path contains an embedded NUL";
+         end if;
+      end loop;
+      for Item of Configuration loop
+         if Item = Character'Val (0) then
+            raise Constraint_Error with "Configuration contains an embedded NUL";
+         end if;
+      end loop;
+      Library_C.Value := CS.New_String (Library_Path);
+      Configuration_C.Value := CS.New_String (Configuration);
+      return Result : C2_MEL do
+         Check
+           (C.RF_C2_Open
+              (Library_C.Value,
+               Configuration_C.Value,
+               Result.Handle'Access,
+               D'Address,
+               D'Length,
+               R'Access),
+            D);
+      end return;
+   end Open;
+
+   function Is_Open (Object : C2_MEL) return Boolean
+   is (Object.Handle /= C.Null_RF_C2);
+
+   procedure Close (Object : in out C2_MEL) is
+      D : aliased Fixed_Diagnostic := [others => Interfaces.C.nul];
+      R : aliased C.Size_T := 0;
+   begin
+      Check (C.RF_C2_Close (Object.Handle'Access, D'Address, D'Length, R'Access), D);
+   end Close;
+
+   overriding
+   procedure Finalize (Object : in out C2_MEL) is
+      Ignored : Interfaces.Integer_32;
+   begin
+      Ignored := C.RF_C2_Close (Object.Handle'Access, System.Null_Address, 0, null);
+   exception
+      when others =>
+         Object.Handle := C.Null_RF_C2;
+   end Finalize;
+   function Create_Virtual_Aperture_Config
+     (VA_Definition_ID        : Interfaces.Unsigned_32;
+      Priority                : Interfaces.Unsigned_32;
+      VA_Definition_File_Info : String) return Virtual_Aperture_Config is
+   begin
+      if not Valid_String (VA_Definition_File_Info) then
+         raise Constraint_Error with "invalid VA definition file info";
+      end if;
+      return
+        (ID           => VA_Definition_ID,
+         Priority     => Priority,
+         File_Info    => US.To_Unbounded_String (VA_Definition_File_Info),
+         Local        => Text_Vectors.Empty_Vector,
+         Capabilities => UCI_Vectors.Empty_Vector);
+   end Create_Virtual_Aperture_Config;
+
+   procedure Append_Local_Function_Info (Config : in out Virtual_Aperture_Config; Value : String) is
+   begin
+      if not Valid_String (Value) then
+         raise Constraint_Error with "invalid local function info";
+      end if;
+      Config.Local.Append (US.To_Unbounded_String (Value));
+   end Append_Local_Function_Info;
+
+   procedure Append_Capability_ID
+     (Config : in out Virtual_Aperture_Config; Value : AMS.MEL.IR.UCI_ID) is
+   begin
+      if not Valid_String (AMS.MEL.IR.Descriptive_Label (Value)) then
+         raise Constraint_Error with "invalid capability label";
+      end if;
+      Config.Capabilities.Append (Value);
+   end Append_Capability_ID;
+
+   function To_View (Value : String) return C.String_View_V1 is
+   begin
+      return
+        (Data => (if Value'Length = 0 then System.Null_Address else Value'Address),
+         Size => C.Size_T (Value'Length));
+   end To_View;
+
+   function Submit_Virtual_Aperture
+     (Parent : C2_MEL'Class; Config : Virtual_Aperture_Config) return Virtual_Aperture_Request
+   is
+      type String_Owners is array (Positive range <>) of String_Owner;
+      type Raw_IDs is array (Positive range <>) of aliased C.UCI_ID_V1 with Convention => C;
+      function Pointer_Address is new Ada.Unchecked_Conversion (CS.chars_ptr, System.Address);
+      Local_Values     : String_Owners (1 .. Natural (Config.Local.Length));
+      Labels           : String_Owners (1 .. Natural (Config.Capabilities.Length));
+      Raw_Local        : C.String_View_Array (1 .. Natural (Config.Local.Length));
+      Raw_Capabilities : Raw_IDs (1 .. Natural (Config.Capabilities.Length));
+      File_Value       : constant String := US.To_String (Config.File_Info);
+      D                : aliased Fixed_Diagnostic := [others => Interfaces.C.nul];
+      R                : aliased C.Size_T := 0;
+   begin
+      for I in Local_Values'Range loop
+         declare
+            Value : constant String := US.To_String (Config.Local (I));
+         begin
+            Local_Values (I).Value := CS.New_String (Value);
+            Raw_Local (I) := (Pointer_Address (Local_Values (I).Value), C.Size_T (Value'Length));
+         end;
+      end loop;
+      for I in Labels'Range loop
+         declare
+            Bytes : constant AMS.MEL.IR.UUID := AMS.MEL.IR.UUID_Value (Config.Capabilities (I));
+         begin
+            declare
+               Label : constant String := AMS.MEL.IR.Descriptive_Label (Config.Capabilities (I));
+            begin
+               Labels (I).Value := CS.New_String (Label);
+               Raw_Capabilities (I).Descriptive_Label :=
+                 (Pointer_Address (Labels (I).Value), C.Size_T (Label'Length));
+            end;
+            for B in Bytes'Range loop
+               Raw_Capabilities (I).UUID (B) := Bytes (B);
+            end loop;
+         end;
+      end loop;
+      declare
+         Raw : aliased constant C.RF_VA_Config_V1 :=
+           (VA_Definition_ID        => Config.ID,
+            Priority                => Config.Priority,
+            Local_Function_Info     =>
+              (Data =>
+                 (if Raw_Local'Length = 0
+                  then System.Null_Address
+                  else Raw_Local (Raw_Local'First)'Address),
+               Size => C.Size_T (Raw_Local'Length)),
+            VA_Definition_File_Info => To_View (File_Value),
+            Capability_IDs          =>
+              (Data =>
+                 (if Raw_Capabilities'Length = 0
+                  then System.Null_Address
+                  else Raw_Capabilities (Raw_Capabilities'First)'Address),
+               Size => C.Size_T (Raw_Capabilities'Length)));
+      begin
+         return Result : Virtual_Aperture_Request do
+            Check
+              (C.RF_C2_Submit_VA
+                 (Parent.Handle, Raw'Access, Result.Handle'Access, D'Address, D'Length, R'Access),
+               D);
+         end return;
+      end;
+   end Submit_Virtual_Aperture;
+
+   function Is_Open (Request : Virtual_Aperture_Request) return Boolean
+   is (Request.Handle /= C.Null_RF_VA_Request);
+   procedure Close (Request : in out Virtual_Aperture_Request) is
+      D : aliased Fixed_Diagnostic := [others => Interfaces.C.nul];
+      R : aliased C.Size_T := 0;
+   begin
+      Check (C.RF_VA_Request_Close (Request.Handle'Access, D'Address, D'Length, R'Access), D);
+   end Close;
+   overriding
+   procedure Finalize (Request : in out Virtual_Aperture_Request) is
+      Ignored : Interfaces.Integer_32;
+   begin
+      Ignored := C.RF_VA_Request_Close (Request.Handle'Access, System.Null_Address, 0, null);
+   exception
+      when others =>
+         Request.Handle := C.Null_RF_VA_Request;
+   end Finalize;
+   function Outcome (Result : Virtual_Aperture_Result) return Request_Outcome
+   is (Result.State);
+   function Error_Code (Result : Virtual_Aperture_Result) return Request_Error_Code
+   is (Result.Code);
+   function Description (Result : Virtual_Aperture_Result) return String
+   is (US.To_String (Result.Text));
+
+   function Wait
+     (Request : Virtual_Aperture_Request; Timeout_Milliseconds : Natural)
+      return Virtual_Aperture_Result
+   is
+      D      : aliased Fixed_Diagnostic := [others => Interfaces.C.nul];
+      R      : aliased C.Size_T := 0;
+      Raw    : aliased C.RF_VA_Result_V1 := (Error_Code => 0);
+      Status : Interfaces.Integer_32;
+   begin
+      Status :=
+        C.RF_VA_Request_Wait
+          (Request.Handle,
+           Interfaces.Unsigned_32 (Timeout_Milliseconds),
+           Raw'Access,
+           D'Address,
+           D'Length,
+           R'Access);
+      if Status = C.Timeout then
+         raise Timeout_Error;
+      end if;
+      if Status = C.Success then
+         if Raw.Error_Code /= 0 then
+            raise Provider_Error with "invalid successful VA result";
+         end if;
+         return (State => Created, Code => None, Text => US.Null_Unbounded_String);
+      elsif Status = C.Provider_Failed then
+         if Raw.Error_Code > 8 then
+            raise Provider_Error with Message (D);
+         end if;
+         if R = 0 or else Interfaces.Unsigned_64 (R) > Interfaces.Unsigned_64 (Natural'Last) then
+            raise Provider_Error with "invalid VA diagnostic size";
+         end if;
+         if R > D'Length then
+            declare
+               Full  : aliased Diagnostic (0 .. R - 1) := [others => Interfaces.C.nul];
+               Again : aliased C.RF_VA_Result_V1 := (Error_Code => 0);
+               Need  : aliased C.Size_T := 0;
+               Retry : constant Interfaces.Integer_32 :=
+                 C.RF_VA_Request_Wait
+                   (Request.Handle, 0, Again'Access, Full'Address, Full'Length, Need'Access);
+            begin
+               if Retry /= Status or else Again.Error_Code /= Raw.Error_Code or else Need /= R then
+                  raise Provider_Error with "VA terminal result changed";
+               end if;
+               return
+                 (State => Failed,
+                  Code  => Request_Error_Code'Enum_Val (Raw.Error_Code),
+                  Text  => US.To_Unbounded_String (Message (Full)));
+            end;
+         end if;
+         return
+           (State => Failed,
+            Code  => Request_Error_Code'Enum_Val (Raw.Error_Code),
+            Text  => US.To_Unbounded_String (Message (D)));
+      end if;
+      raise Provider_Error with Message (D);
+   end Wait;
+
+   type Info_Access is access all C.RF_VA_Info_V1;
+   function To_Info is new Ada.Unchecked_Conversion (System.Address, Info_Access);
+   type U32_Access is access all Interfaces.Unsigned_32;
+   function To_U32 is new Ada.Unchecked_Conversion (System.Address, U32_Access);
+   type String_Access is access all C.String_View_V1;
+   function To_String_View is new Ada.Unchecked_Conversion (System.Address, String_Access);
+   function Claim (Request : Virtual_Aperture_Request'Class) return Virtual_Aperture is
+      D       : aliased Fixed_Diagnostic := [others => Interfaces.C.nul];
+      R       : aliased C.Size_T := 0;
+      Address : aliased System.Address := System.Null_Address;
+   begin
+      return Result : Virtual_Aperture do
+         Check
+           (C.RF_VA_Request_Claim
+              (Request.Handle, Result.Handle'Access, D'Address, D'Length, R'Access),
+            D);
+         Check (C.RF_VA_View (Result.Handle, Address'Access, D'Address, D'Length, R'Access), D);
+         if Address = System.Null_Address then
+            raise Provider_Error with "null VA snapshot";
+         end if;
+         declare
+            Info : constant C.RF_VA_Info_V1 := To_Info (Address).all;
+         begin
+            if (Info.VA_Instance_IDs.Size > 0
+                and then Info.VA_Instance_IDs.Data = System.Null_Address)
+              or else (Info.Element_Group_Labels.Size > 0
+                       and then Info.Element_Group_Labels.Data = System.Null_Address)
+              or else Interfaces.Unsigned_64 (Info.VA_Instance_IDs.Size)
+                      > Interfaces.Unsigned_64 (Natural'Last)
+              or else Interfaces.Unsigned_64 (Info.Element_Group_Labels.Size)
+                      > Interfaces.Unsigned_64 (Natural'Last)
+              or else Info.Is_Single_Group > 1
+            then
+               raise Provider_Error with "invalid VA snapshot";
+            end if;
+            Result.Single := Info.Is_Single_Group = 1;
+            for I in 1 .. Natural (Info.VA_Instance_IDs.Size) loop
+               Result.IDs.Append
+                 (To_U32
+                    (Info.VA_Instance_IDs.Data
+                     + Storage_Offset
+                         ((I - 1) * Interfaces.Unsigned_32'Object_Size / System.Storage_Unit)).all);
+            end loop;
+            for I in 1 .. Natural (Info.Element_Group_Labels.Size) loop
+               declare
+                  Raw : constant C.String_View_V1 :=
+                    To_String_View
+                      (Info.Element_Group_Labels.Data
+                       + Storage_Offset
+                           ((I - 1) * C.String_View_V1'Object_Size / System.Storage_Unit)).all;
+               begin
+                  Result.Labels.Append (US.To_Unbounded_String (Copy_String (Raw)));
+               end;
+            end loop;
+         end;
+      end return;
+   end Claim;
+   function Is_Open (Object : Virtual_Aperture) return Boolean
+   is (Object.Handle /= C.Null_RF_VA);
+   function VA_Instance_ID_Count (Object : Virtual_Aperture) return Natural
+   is (Natural (Object.IDs.Length));
+   function VA_Instance_ID_At
+     (Object : Virtual_Aperture; Index : Positive) return Interfaces.Unsigned_32
+   is (Object.IDs (Index));
+   function Element_Group_Label_Count (Object : Virtual_Aperture) return Natural
+   is (Natural (Object.Labels.Length));
+   function Element_Group_Label_At (Object : Virtual_Aperture; Index : Positive) return String
+   is (US.To_String (Object.Labels (Index)));
+   function Is_Single_Group (Object : Virtual_Aperture) return Boolean
+   is (Object.Single);
+   procedure Close (Object : in out Virtual_Aperture) is
+      D : aliased Fixed_Diagnostic := [others => Interfaces.C.nul];
+      R : aliased C.Size_T := 0;
+   begin
+      Check (C.RF_VA_Close (Object.Handle'Access, D'Address, D'Length, R'Access), D);
+   end Close;
+   overriding
+   procedure Finalize (Object : in out Virtual_Aperture) is
+      Ignored : Interfaces.Integer_32;
+   begin
+      Ignored := C.RF_VA_Close (Object.Handle'Access, System.Null_Address, 0, null);
+   exception
+      when others =>
+         Object.Handle := C.Null_RF_VA;
+   end Finalize;
+
+   function Finite (Value : Long_Float) return Boolean
+   is (Value <= Long_Float'Last and then Value >= Long_Float'First);
+
+   function Create_TX_Element_Group
+     (Label               : String;
+      TX_Power_Level      : Interfaces.Unsigned_32;
+      Desired_Duty_Factor : Long_Float := 1.0) return TX_Element_Group_Config is
+   begin
+      if not Valid_String (Label)
+        or else not Finite (Desired_Duty_Factor)
+        or else Desired_Duty_Factor <= 0.0
+        or else Desired_Duty_Factor > 1.0
+      then
+         raise Constraint_Error with "invalid TX group";
+      end if;
+      return
+        (US.To_Unbounded_String (Label),
+         TX_Power_Level,
+         Desired_Duty_Factor,
+         Frequency_Vectors.Empty_Vector);
+   end Create_TX_Element_Group;
+   procedure Append_Expected_Center_Frequency
+     (Group : in out TX_Element_Group_Config; Min_Hz, Max_Hz : Long_Float) is
+   begin
+      if not Finite (Min_Hz) or else not Finite (Max_Hz) or else Min_Hz > Max_Hz then
+         raise Constraint_Error with "invalid frequency range";
+      end if;
+      Group.Frequencies.Append (Frequency_Range'(Min_Hz, Max_Hz));
+   end Append_Expected_Center_Frequency;
+   function Create_RX_Element_Group
+     (Label               : String;
+      Desired_Duty_Factor : Long_Float := 1.0;
+      Data_Pipe_Label     : String := "default") return RX_Element_Group_Config is
+   begin
+      if not Valid_String (Label)
+        or else not Valid_String (Data_Pipe_Label)
+        or else not Finite (Desired_Duty_Factor)
+        or else Desired_Duty_Factor <= 0.0
+        or else Desired_Duty_Factor > 1.0
+      then
+         raise Constraint_Error with "invalid RX group";
+      end if;
+      return
+        (Label       => US.To_Unbounded_String (Label),
+         Pipe        => US.To_Unbounded_String (Data_Pipe_Label),
+         Duty        => Desired_Duty_Factor,
+         Frequencies => <>,
+         Pipes       => <>,
+         Pointings   => <>);
+   end Create_RX_Element_Group;
+   procedure Append_Expected_Center_Frequency
+     (Group : in out RX_Element_Group_Config; Min_Hz, Max_Hz : Long_Float) is
+   begin
+      if not Finite (Min_Hz) or else not Finite (Max_Hz) or else Min_Hz > Max_Hz then
+         raise Constraint_Error with "invalid frequency range";
+      end if;
+      Group.Frequencies.Append (Frequency_Range'(Min_Hz, Max_Hz));
+   end Append_Expected_Center_Frequency;
+   procedure Append_Endpoint_ID
+     (Group : in out RX_Element_Group_Config; ID : Interfaces.Unsigned_64) is
+   begin
+      Append_Endpoint_ID (Group, US.To_String (Group.Pipe), ID);
+   end Append_Endpoint_ID;
+   procedure Append_Endpoint_ID
+     (Group : in out RX_Element_Group_Config; Data_Pipe_Label : String; ID : Interfaces.Unsigned_64)
+   is
+   begin
+      if not Valid_String (Data_Pipe_Label) then
+         raise Constraint_Error with "invalid pipe label";
+      end if;
+      for I in Group.Pipes.First_Index .. Group.Pipes.Last_Index loop
+         if US.To_String (Group.Pipes (I).Label) = Data_Pipe_Label then
+            for Existing of Group.Pipes (I).Endpoints loop
+               if Existing = ID then
+                  raise Constraint_Error with "duplicate endpoint ID";
+               end if;
+            end loop;
+            Group.Pipes (I).Endpoints.Append (ID);
+            return;
+         end if;
+      end loop;
+      declare
+         Pipe : Pipe_Config := (Label => US.To_Unbounded_String (Data_Pipe_Label), Endpoints => <>);
+      begin
+         Pipe.Endpoints.Append (ID);
+         Group.Pipes.Append (Pipe);
+      end;
+   end Append_Endpoint_ID;
+   function Create_UTC_Time
+     (Seconds, Fractional_Femtoseconds : Interfaces.Integer_64) return UTC_Time is
+   begin
+      if Fractional_Femtoseconds < 0 or else Fractional_Femtoseconds >= 1_000_000_000_000_000 then
+         raise Constraint_Error with "noncanonical UTC fraction";
+      end if;
+      return (Seconds, Fractional_Femtoseconds);
+   end Create_UTC_Time;
+   function Seconds (Value : UTC_Time) return Interfaces.Integer_64
+   is (Value.Seconds);
+   function Fractional_Femtoseconds (Value : UTC_Time) return Interfaces.Integer_64
+   is (Value.Fraction);
+   function Kind (Value : Pointing) return Pointing_Kind
+   is (Value.Kind);
+   procedure Require_Kind (Value : Pointing; Expected : Pointing_Kind) is
+   begin
+      if Value.Kind /= Expected then
+         raise Constraint_Error with "inactive pointing field";
+      end if;
+   end Require_Kind;
+   function ECEF_Position (Value : Pointing) return ECEF_Coordinates is
+      pragma Validity_Checks ("F");
+   begin
+      Require_Kind (Value, ECEF);
+      return (Value.Components (1), Value.Components (2), Value.Components (3));
+   end ECEF_Position;
+   function ECEF_Velocity (Value : Pointing) return ECEF_Coordinates is
+      pragma Validity_Checks ("F");
+   begin
+      Require_Kind (Value, ECEF);
+      return (Value.Components (4), Value.Components (5), Value.Components (6));
+   end ECEF_Velocity;
+   function LLA_Position (Value : Pointing) return LLA_Coordinates is
+      pragma Validity_Checks ("F");
+   begin
+      Require_Kind (Value, LLA);
+      return (Value.Components (1), Value.Components (2), Value.Components (3));
+   end LLA_Position;
+   function LLA_Velocity (Value : Pointing) return NED_Velocity is
+      pragma Validity_Checks ("F");
+   begin
+      Require_Kind (Value, LLA);
+      return (Value.Components (4), Value.Components (5), Value.Components (6));
+   end LLA_Velocity;
+   function Azimuth_Rad (Value : Pointing) return Long_Float is
+      pragma Validity_Checks ("F");
+   begin
+      if Value.Kind not in Platform_Relative | Face_Relative then
+         raise Constraint_Error with "inactive pointing field";
+      end if;
+      return Value.Components (1);
+   end Azimuth_Rad;
+   function Elevation_Rad (Value : Pointing) return Long_Float is
+      pragma Validity_Checks ("F");
+   begin
+      if Value.Kind not in Platform_Relative | Face_Relative then
+         raise Constraint_Error with "inactive pointing field";
+      end if;
+      return Value.Components (2);
+   end Elevation_Rad;
+   function Conic_Rad (Value : Pointing) return Long_Float is
+      pragma Validity_Checks ("F");
+   begin
+      if Value.Kind /= Baseline_Relative then
+         raise Constraint_Error with "inactive pointing field";
+      end if;
+      return Value.Components (1);
+   end Conic_Rad;
+   function Time_Of_Validity (Value : Pointing) return UTC_Time is
+   begin
+      if Value.Kind not in ECEF | LLA then
+         raise Constraint_Error with "relative pointing has no UTC time";
+      end if;
+      return Value.Time;
+   end Time_Of_Validity;
+   function Create_ECEF_Pointing
+     (Location_X_M, Location_Y_M, Location_Z_M       : Long_Float;
+      Velocity_X_MPS, Velocity_Y_MPS, Velocity_Z_MPS : Long_Float;
+      Time_Of_Validity                               : UTC_Time) return Pointing
+   is
+      pragma Validity_Checks ("F");
+   begin
+      return
+        (ECEF,
+         [Location_X_M, Location_Y_M, Location_Z_M, Velocity_X_MPS, Velocity_Y_MPS, Velocity_Z_MPS],
+         Time_Of_Validity);
+   end Create_ECEF_Pointing;
+   function Create_LLA_Pointing
+     (Latitude_Rad, Longitude_Rad, Altitude_M                  : Long_Float;
+      Velocity_North_MPS, Velocity_East_MPS, Velocity_Down_MPS : Long_Float;
+      Time_Of_Validity                                         : UTC_Time) return Pointing
+   is
+      pragma Validity_Checks ("F");
+   begin
+      return
+        (LLA,
+         [Latitude_Rad,
+          Longitude_Rad,
+          Altitude_M,
+          Velocity_North_MPS,
+          Velocity_East_MPS,
+          Velocity_Down_MPS],
+         Time_Of_Validity);
+   end Create_LLA_Pointing;
+   function Create_Platform_Relative_Pointing
+     (Azimuth_Rad, Elevation_Rad : Long_Float) return Pointing
+   is
+      pragma Validity_Checks ("F");
+   begin
+      return (Platform_Relative, [Azimuth_Rad, Elevation_Rad, others => 0.0], (0, 0));
+   end Create_Platform_Relative_Pointing;
+   function Create_Face_Relative_Pointing (Azimuth_Rad, Elevation_Rad : Long_Float) return Pointing
+   is
+      pragma Validity_Checks ("F");
+   begin
+      return (Face_Relative, [Azimuth_Rad, Elevation_Rad, others => 0.0], (0, 0));
+   end Create_Face_Relative_Pointing;
+   function Create_Baseline_Relative_Pointing (Conic_Rad : Long_Float) return Pointing is
+      pragma Validity_Checks ("F");
+   begin
+      return (Baseline_Relative, [Conic_Rad, others => 0.0], (0, 0));
+   end Create_Baseline_Relative_Pointing;
+   procedure Append_Expected_Pointing (Group : in out RX_Element_Group_Config; Value : Pointing) is
+   begin
+      Group.Pointings.Append (Value);
+   end Append_Expected_Pointing;
+   procedure Set_Estimated_Stab_Point (Config : in out Job_Config; Value : Pointing) is
+   begin
+      Config.Estimated_Point := Value;
+      Config.Has_Estimated_Point := True;
+   end Set_Estimated_Stab_Point;
+   procedure Clear_Estimated_Stab_Point (Config : in out Job_Config) is
+   begin
+      Config.Has_Estimated_Point := False;
+   end Clear_Estimated_Stab_Point;
+   function Raw_Pointing (Value : Pointing) return C.RF_Pointing_V1 is
+      pragma Validity_Checks ("F");
+      pragma
+        Compile_Time_Error
+          (Long_Float'Digits < Interfaces.C.double'Digits
+             or else Long_Float'Machine_Mantissa < Interfaces.C.double'Machine_Mantissa
+             or else Long_Float'Machine_Emax < Interfaces.C.double'Machine_Emax
+             or else Long_Float'Machine_Emin > Interfaces.C.double'Machine_Emin
+             or else Long_Float'Machine_Radix /= Interfaces.C.double'Machine_Radix,
+           "Pointing requires Long_Float to represent normal C double values");
+      function To_C (Number : Long_Float) return Interfaces.C.double is
+         pragma Validity_Checks ("F");
+      begin
+         return Interfaces.C.double (Number);
+      end To_C;
+      Numbers : Pointing_Components renames Value.Components;
+      Result  : C.RF_Pointing_V1 :=
+        (Kind                        => Interfaces.Unsigned_32 (Pointing_Kind'Pos (Value.Kind)),
+         ECEF                        => ((0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0, 0)),
+         LLA                         => (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, (0, 0)),
+         Platform_Relative           => (0.0, 0.0),
+         Face_Relative               => (0.0, 0.0),
+         Baseline_Relative_Conic_Rad => 0.0);
+   begin
+      case Value.Kind is
+         when ECEF              =>
+            Result.ECEF :=
+              ((To_C (Numbers (1)), To_C (Numbers (2)), To_C (Numbers (3))),
+               (To_C (Numbers (4)), To_C (Numbers (5)), To_C (Numbers (6))),
+               (Value.Time.Seconds, Value.Time.Fraction));
+
+         when LLA               =>
+            Result.LLA :=
+              (To_C (Numbers (1)),
+               To_C (Numbers (2)),
+               To_C (Numbers (3)),
+               To_C (Numbers (4)),
+               To_C (Numbers (5)),
+               To_C (Numbers (6)),
+               (Value.Time.Seconds, Value.Time.Fraction));
+
+         when Platform_Relative =>
+            Result.Platform_Relative := (To_C (Numbers (1)), To_C (Numbers (2)));
+
+         when Face_Relative     =>
+            Result.Face_Relative := (To_C (Numbers (1)), To_C (Numbers (2)));
+
+         when Baseline_Relative =>
+            Result.Baseline_Relative_Conic_Rad := To_C (Numbers (1));
+      end case;
+      return Result;
+   end Raw_Pointing;
+   procedure Append_RX_Element_Group (Config : in out Job_Config; Group : RX_Element_Group_Config)
+   is
+   begin
+      Config.Groups.Append (Job_Group'(RX, Group));
+   end Append_RX_Element_Group;
+   procedure Append_TX_Element_Group (Config : in out Job_Config; Group : TX_Element_Group_Config)
+   is
+   begin
+      Config.Groups.Append (Job_Group'(TX, Group));
+   end Append_TX_Element_Group;
+   procedure Set_Min_Start_Time (Config : in out Job_Config; Value : UTC_Time) is
+   begin
+      Config.Min_Start := Value;
+   end Set_Min_Start_Time;
+   procedure Set_Max_Complete_Time (Config : in out Job_Config; Value : UTC_Time) is
+   begin
+      Config.Max_Complete := Value;
+   end Set_Max_Complete_Time;
+   procedure Set_Duration_Femtoseconds (Config : in out Job_Config; Value : Interfaces.Integer_64)
+   is
+   begin
+      Config.Duration := Value;
+   end Set_Duration_Femtoseconds;
+   procedure Set_Capability_ID (Config : in out Job_Config; Value : Byte_Array) is
+      Bytes : Byte_Vectors.Vector;
+   begin
+      for Item of Value loop
+         Bytes.Append (Item);
+      end loop;
+      Config.Capability := Bytes;
+   end Set_Capability_ID;
+   procedure Set_Activity_ID (Config : in out Job_Config; Value : Byte_Array) is
+      Bytes : Byte_Vectors.Vector;
+   begin
+      for Item of Value loop
+         Bytes.Append (Item);
+      end loop;
+      Config.Activity := Bytes;
+   end Set_Activity_ID;
+   procedure Set_TX_Power_Mode_IDs (Config : in out Job_Config; Value : Unsigned_32_Array) is
+      IDs : ID_Vectors.Vector;
+   begin
+      for Item of Value loop
+         IDs.Append (Item);
+      end loop;
+      Config.Power_Modes := IDs;
+   end Set_TX_Power_Mode_IDs;
+   procedure Set_Lookahead_Femtoseconds (Config : in out Job_Config; Value : Interfaces.Integer_64)
+   is
+   begin
+      Config.Lookahead := Value;
+   end Set_Lookahead_Femtoseconds;
+   function Create_Job_Config
+     (Request_ID, Priority       : Interfaces.Unsigned_32;
+      Group                      : RX_Element_Group_Config;
+      Precedence_Within_Priority : Interfaces.Unsigned_32 := 0;
+      Interruptable              : Boolean := False) return Job_Config is
+   begin
+      return
+         Result : Job_Config :=
+           (ID            => Request_ID,
+            Priority      => Priority,
+            Precedence    => Precedence_Within_Priority,
+            Interruptable => Interruptable,
+            Groups        => <>,
+            Instances     => <>,
+            others        => <>)
+      do
+         Append_RX_Element_Group (Result, Group);
+         Result.Capability.Append (0);
+         Result.Activity.Append (0);
+         Result.Power_Modes.Append (0);
+      end return;
+   end Create_Job_Config;
+   function Create_Job_Config
+     (Request_ID, Priority       : Interfaces.Unsigned_32;
+      Group                      : TX_Element_Group_Config;
+      Precedence_Within_Priority : Interfaces.Unsigned_32 := 0;
+      Interruptable              : Boolean := False) return Job_Config is
+   begin
+      return
+         Result : Job_Config :=
+           (ID            => Request_ID,
+            Priority      => Priority,
+            Precedence    => Precedence_Within_Priority,
+            Interruptable => Interruptable,
+            others        => <>)
+      do
+         Append_TX_Element_Group (Result, Group);
+         Result.Capability.Append (0);
+         Result.Activity.Append (0);
+         Result.Power_Modes.Append (0);
+      end return;
+   end Create_Job_Config;
+   procedure Append_Instance_Selection (Config : in out Job_Config; ID : Interfaces.Unsigned_32) is
+   begin
+      Config.Instances.Append (ID);
+   end Append_Instance_Selection;
+   function Submit_Job (VA : Virtual_Aperture'Class; Config : Job_Config) return Job_Request is
+      function Pointer_Address is new Ada.Unchecked_Conversion (CS.chars_ptr, System.Address);
+      type Raw_Frequencies is array (Positive range <>) of aliased C.RF_Frequency_Range_V1
+      with Convention => C;
+      type Raw_Endpoints is array (Positive range <>) of aliased Interfaces.Unsigned_64
+      with Convention => C;
+      type Raw_Instances is array (Positive range <>) of aliased Interfaces.Unsigned_32
+      with Convention => C;
+      type Raw_Bytes is array (Positive range <>) of aliased Interfaces.Unsigned_8
+      with Convention => C;
+      type Raw_Groups is array (Positive range <>) of aliased C.RF_Job_Element_Group_Config_V4
+      with Convention => C;
+      type Raw_Pointings is array (Positive range <>) of aliased C.RF_Pointing_V1
+      with Convention => C;
+      type Raw_Pipes is array (Positive range <>) of aliased C.RF_RX_Data_Pipe_Endpoint_Config_V1
+      with Convention => C;
+      type String_Owners is array (Positive range <>) of String_Owner;
+      Frequency_Count, Pipe_Count, Endpoint_Count, Pointing_Count : Natural := 0;
+      Instances                                                   :
+        Raw_Instances (1 .. Natural (Config.Instances.Length));
+      Modes                                                       :
+        Raw_Instances (1 .. Natural (Config.Power_Modes.Length));
+      Capability                                                  :
+        Raw_Bytes (1 .. Natural (Config.Capability.Length));
+      Activity                                                    :
+        Raw_Bytes (1 .. Natural (Config.Activity.Length));
+      D                                                           : aliased Fixed_Diagnostic :=
+        [others => Interfaces.C.nul];
+      R                                                           : aliased C.Size_T := 0;
+   begin
+      if not Is_Open (VA) then
+         raise Provider_Error with "VirtualAperture is closed";
+      end if;
+      for Entry_Value of Config.Groups loop
+         if Entry_Value.Mode = TX then
+            Frequency_Count :=
+              Frequency_Count + Natural (Entry_Value.Transmit_Group.Frequencies.Length);
+         else
+            declare
+               Group : RX_Element_Group_Config renames Entry_Value.Receive_Group;
+            begin
+               Frequency_Count := Frequency_Count + Natural (Group.Frequencies.Length);
+               Pointing_Count := Pointing_Count + Natural (Group.Pointings.Length);
+               for Pipe of Group.Pipes loop
+                  if not Pipe.Endpoints.Is_Empty then
+                     Pipe_Count := Pipe_Count + 1;
+                     Endpoint_Count := Endpoint_Count + Natural (Pipe.Endpoints.Length);
+                  end if;
+               end loop;
+            end;
+         end if;
+      end loop;
+      for I in Instances'Range loop
+         Instances (I) := Config.Instances (I);
+      end loop;
+      for I in Modes'Range loop
+         Modes (I) := Config.Power_Modes (I);
+      end loop;
+      for I in Capability'Range loop
+         Capability (I) := Config.Capability (I);
+      end loop;
+      for I in Activity'Range loop
+         Activity (I) := Config.Activity (I);
+      end loop;
+      declare
+         --  Final-sized backing arrays precede all pointer publication. Controlled
+         --  strings clean up even when serialization or native submission raises.
+         --  Inactive native payloads are never read; initialize the full backing
+         --  deterministically nevertheless, rather than pass uninitialized bytes.
+         Groups        : Raw_Groups (1 .. Natural (Config.Groups.Length)) :=
+           [others =>
+              (Mode => C.RF_Element_Group_Mode_RX,
+               RX   =>
+                 (Group                    =>
+                    ((System.Null_Address, 0),
+                     0.0,
+                     (System.Null_Address, 0),
+                     (System.Null_Address, 0)),
+                  Expected_Pointing_Angles => (System.Null_Address, 0)),
+               TX   => ((System.Null_Address, 0), 0, 0.0, (System.Null_Address, 0)))];
+         Pipes         : Raw_Pipes (1 .. Pipe_Count);
+         Frequencies   : Raw_Frequencies (1 .. Frequency_Count);
+         Endpoints     : Raw_Endpoints (1 .. Endpoint_Count);
+         Pointings     : Raw_Pointings (1 .. Pointing_Count);
+         Labels        : String_Owners (Groups'Range);
+         Pipe_Labels   : String_Owners (Pipes'Range);
+         G, F, P, E, Q : Positive := 1;
+         Raw           : aliased C.RF_Job_Request_Config_V4 :=
+           (Request_ID                 => Config.ID,
+            Priority                   => Config.Priority,
+            Precedence_Within_Priority => Config.Precedence,
+            Is_Interruptable           => (if Config.Interruptable then 1 else 0),
+            Instance_Selection         =>
+              (Data =>
+                 (if Instances'Length = 0
+                  then System.Null_Address
+                  else Instances (Instances'First)'Address),
+               Size => Instances'Length),
+            Element_Groups             => (System.Null_Address, C.Size_T (Groups'Length)),
+            Min_Start_Time             => (Config.Min_Start.Seconds, Config.Min_Start.Fraction),
+            Max_Complete_Time          =>
+              (Config.Max_Complete.Seconds, Config.Max_Complete.Fraction),
+            Duration_Femtoseconds      => Config.Duration,
+            Capability_ID              =>
+              ((if Capability'Length = 0 then System.Null_Address else Capability (1)'Address),
+               C.Size_T (Capability'Length)),
+            Activity_ID                =>
+              ((if Activity'Length = 0 then System.Null_Address else Activity (1)'Address),
+               C.Size_T (Activity'Length)),
+            TX_Power_Mode_IDs          =>
+              ((if Modes'Length = 0 then System.Null_Address else Modes (1)'Address),
+               C.Size_T (Modes'Length)),
+            Lookahead_Femtoseconds     => Config.Lookahead,
+            Has_Estimated_Stab_Point   => (if Config.Has_Estimated_Point then 1 else 0),
+            Estimated_Stab_Point       => Raw_Pointing (Pointing'(others => <>)));
+      begin
+         if Config.Has_Estimated_Point then
+            Raw.Estimated_Stab_Point := Raw_Pointing (Config.Estimated_Point);
+         end if;
+         for Entry_Value of Config.Groups loop
+            if Entry_Value.Mode = TX then
+               declare
+                  Group   : TX_Element_Group_Config renames Entry_Value.Transmit_Group;
+                  First_F : constant Positive := F;
+               begin
+                  Labels (G).Value := CS.New_String (US.To_String (Group.Label));
+                  for Range_Value of Group.Frequencies loop
+                     Frequencies (F) :=
+                       (Interfaces.C.double (Range_Value.Min_Hz),
+                        Interfaces.C.double (Range_Value.Max_Hz));
+                     F := F + 1;
+                  end loop;
+                  Groups (G).Mode := C.RF_Element_Group_Mode_TX;
+                  Groups (G).TX :=
+                    ((Pointer_Address (Labels (G).Value), C.Size_T (US.Length (Group.Label))),
+                     Group.Power,
+                     Interfaces.C.double (Group.Duty),
+                     ((if F = First_F then System.Null_Address else Frequencies (First_F)'Address),
+                      C.Size_T (F - First_F)));
+                  G := G + 1;
+               end;
+            else
+               declare
+                  Group   : RX_Element_Group_Config renames Entry_Value.Receive_Group;
+                  First_F : constant Positive := F;
+                  First_P : constant Positive := P;
+                  First_Q : constant Positive := Q;
+               begin
+                  Labels (G).Value := CS.New_String (US.To_String (Group.Label));
+                  for Range_Value of Group.Frequencies loop
+                     Frequencies (F) :=
+                       (Interfaces.C.double (Range_Value.Min_Hz),
+                        Interfaces.C.double (Range_Value.Max_Hz));
+                     F := F + 1;
+                  end loop;
+                  for Pipe of Group.Pipes loop
+                     if not Pipe.Endpoints.Is_Empty then
+                        declare
+                           First_E : constant Positive := E;
+                        begin
+                           Pipe_Labels (P).Value := CS.New_String (US.To_String (Pipe.Label));
+                           for ID of Pipe.Endpoints loop
+                              Endpoints (E) := ID;
+                              E := E + 1;
+                           end loop;
+                           Pipes (P) :=
+                             ((Pointer_Address (Pipe_Labels (P).Value),
+                               C.Size_T (US.Length (Pipe.Label))),
+                              (Endpoints (First_E)'Address, C.Size_T (E - First_E)));
+                           P := P + 1;
+                        end;
+                     end if;
+                  end loop;
+                  for Point of Group.Pointings loop
+                     Pointings (Q) := Raw_Pointing (Point);
+                     Q := Q + 1;
+                  end loop;
+                  Groups (G).Mode := C.RF_Element_Group_Mode_RX;
+                  Groups (G).RX.Group :=
+                    ((Pointer_Address (Labels (G).Value), C.Size_T (US.Length (Group.Label))),
+                     Interfaces.C.double (Group.Duty),
+                     ((if F = First_F then System.Null_Address else Frequencies (First_F)'Address),
+                      C.Size_T (F - First_F)),
+                     ((if P = First_P then System.Null_Address else Pipes (First_P)'Address),
+                      C.Size_T (P - First_P)));
+                  Groups (G).RX.Expected_Pointing_Angles :=
+                    ((if Q = First_Q then System.Null_Address else Pointings (First_Q)'Address),
+                     C.Size_T (Q - First_Q));
+                  G := G + 1;
+               end;
+            end if;
+         end loop;
+         if Groups'Length > 0 then
+            Raw.Element_Groups.Data := Groups (1)'Address;
+         end if;
+         return Result : Job_Request do
+            Check
+              (C.RF_VA_Submit_Job_V4
+                 (VA.Handle, Raw'Access, Result.Handle'Access, D'Address, D'Length, R'Access),
+               D);
+         end return;
+      end;
+   end Submit_Job;
+
+   function Is_Open (Request : Job_Request) return Boolean
+   is (Request.Handle /= C.Null_RF_Job_Request);
+   procedure Close (Request : in out Job_Request) is
+      D : aliased Fixed_Diagnostic := [others => Interfaces.C.nul];
+      R : aliased C.Size_T := 0;
+   begin
+      Check (C.RF_Job_Request_Close (Request.Handle'Access, D'Address, D'Length, R'Access), D);
+   end Close;
+   overriding
+   procedure Finalize (Request : in out Job_Request) is
+      Ignored : Interfaces.Integer_32;
+   begin
+      Ignored := C.RF_Job_Request_Close (Request.Handle'Access, System.Null_Address, 0, null);
+   exception
+      when others =>
+         Request.Handle := C.Null_RF_Job_Request;
+   end Finalize;
+   function Outcome (Result : Job_Result) return Request_Outcome
+   is (Result.State);
+   function Error_Code (Result : Job_Result) return Request_Error_Code
+   is (Result.Code);
+   function Description (Result : Job_Result) return String
+   is (US.To_String (Result.Text));
+   function Wait (Request : Job_Request; Timeout_Milliseconds : Natural) return Job_Result is
+      D      : aliased Fixed_Diagnostic := [others => Interfaces.C.nul];
+      R      : aliased C.Size_T := 0;
+      Raw    : aliased C.RF_Job_Result_V1 := (Error_Code => 0);
+      Status : Interfaces.Integer_32;
+   begin
+      Status :=
+        C.RF_Job_Request_Wait
+          (Request.Handle,
+           Interfaces.Unsigned_32 (Timeout_Milliseconds),
+           Raw'Access,
+           D'Address,
+           D'Length,
+           R'Access);
+      if Status = C.Timeout then
+         raise Timeout_Error;
+      end if;
+      if Status = C.Success then
+         if Raw.Error_Code /= 0 then
+            raise Provider_Error with "invalid successful Job result";
+         end if;
+         return (State => Created, Code => None, Text => US.Null_Unbounded_String);
+      elsif Status = C.Provider_Failed then
+         if Raw.Error_Code > 8 then
+            raise Provider_Error with Message (D);
+         end if;
+         if R = 0 or else Interfaces.Unsigned_64 (R) > Interfaces.Unsigned_64 (Natural'Last) then
+            raise Provider_Error with "invalid Job diagnostic size";
+         end if;
+         if R > D'Length then
+            declare
+               Full  : aliased Diagnostic (0 .. R - 1) := [others => Interfaces.C.nul];
+               Again : aliased C.RF_Job_Result_V1 := (Error_Code => 0);
+               Need  : aliased C.Size_T := 0;
+               Retry : constant Interfaces.Integer_32 :=
+                 C.RF_Job_Request_Wait
+                   (Request.Handle, 0, Again'Access, Full'Address, Full'Length, Need'Access);
+            begin
+               if Retry /= Status or else Again.Error_Code /= Raw.Error_Code or else Need /= R then
+                  raise Provider_Error with "Job terminal result changed";
+               end if;
+               return
+                 (State => Failed,
+                  Code  => Request_Error_Code'Enum_Val (Raw.Error_Code),
+                  Text  => US.To_Unbounded_String (Message (Full)));
+            end;
+         end if;
+         return
+           (State => Failed,
+            Code  => Request_Error_Code'Enum_Val (Raw.Error_Code),
+            Text  => US.To_Unbounded_String (Message (D)));
+      end if;
+      raise Provider_Error with Message (D);
+   end Wait;
+
+   type Job_Info_Access is access all C.RF_Job_Info_V1;
+   function To_Job_Info is new Ada.Unchecked_Conversion (System.Address, Job_Info_Access);
+   function Claim (Request : Job_Request'Class) return Job is
+      D       : aliased Fixed_Diagnostic := [others => Interfaces.C.nul];
+      R       : aliased C.Size_T := 0;
+      Address : aliased System.Address := System.Null_Address;
+   begin
+      return Result : Job do
+         Check
+           (C.RF_Job_Request_Claim
+              (Request.Handle, Result.Handle'Access, D'Address, D'Length, R'Access),
+            D);
+         Check (C.RF_Job_View (Result.Handle, Address'Access, D'Address, D'Length, R'Access), D);
+         if Address = System.Null_Address then
+            raise Provider_Error with "null Job snapshot";
+         end if;
+         declare
+            Info : constant C.RF_Job_Info_V1 := To_Job_Info (Address).all;
+         begin
+            if (Info.RX_Stream_IDs.Size > 0 and then Info.RX_Stream_IDs.Data = System.Null_Address)
+              or else Interfaces.Unsigned_64 (Info.RX_Stream_IDs.Size)
+                      > Interfaces.Unsigned_64
+                          (Natural'Last
+                           / (Interfaces.Unsigned_32'Object_Size / System.Storage_Unit))
+            then
+               raise Provider_Error with "invalid Job stream span";
+            end if;
+            Result.Start_Seconds := Info.Actual_Start_Seconds;
+            Result.Start_Femtoseconds := Info.Actual_Start_Femtoseconds;
+            Result.Duration_Femtoseconds := Info.Total_Job_Duration_Femtoseconds;
+            Result.Instance_ID := Info.VA_Instance_ID;
+            Result.Definition_ID := Info.VA_Definition_ID;
+            Result.Details_ID := Info.Job_Details_ID;
+            Result.Request_ID := Info.Job_Request_ID;
+            Result.Lookahead := Info.Lookahead_Femtoseconds;
+            for I in 1 .. Natural (Info.RX_Stream_IDs.Size) loop
+               Result.Streams.Append
+                 (To_U32
+                    (Info.RX_Stream_IDs.Data
+                     + Storage_Offset
+                         ((I - 1) * Interfaces.Unsigned_32'Object_Size / System.Storage_Unit)).all);
+            end loop;
+         end;
+      end return;
+   end Claim;
+   function Is_Open (Object : Job) return Boolean
+   is (Object.Handle /= C.Null_RF_Job);
+   function Cancelled (Result : Cancel_Result) return Boolean
+   is (Result.Was_Cancelled);
+   function Error_Code (Result : Cancel_Result) return Cancel_Error
+   is (Result.Code);
+   procedure Finalize_Job (Object : in out Job) is
+      D      : aliased Fixed_Diagnostic := [others => Interfaces.C.nul];
+      R      : aliased C.Size_T := 0;
+      Result : Interfaces.Integer_32;
+   begin
+      Result := C.RF_Job_Finalize (Object.Handle, D'Address, D'Length, R'Access);
+      if Result /= C.Success and then R > D'Length then
+         declare
+            Full : aliased Diagnostic (0 .. R - 1) := [others => Interfaces.C.nul];
+         begin
+            Check (C.RF_Job_Finalize (Object.Handle, Full'Address, Full'Length, null), Full);
+         end;
+      end if;
+      Check (Result, D);
+   end Finalize_Job;
+   function Wait_Job_Status (Object : Job; Timeout_Milliseconds : Natural) return Job_Status is
+      D      : aliased Fixed_Diagnostic := [others => Interfaces.C.nul];
+      R      : aliased C.Size_T := 0;
+      Value  : aliased Interfaces.Unsigned_32 := Interfaces.Unsigned_32'Last;
+      Result : Interfaces.Integer_32;
+   begin
+      if Natural'Size > Interfaces.Unsigned_32'Size
+        and then Timeout_Milliseconds > Natural (Interfaces.Unsigned_32'Last)
+      then
+         raise Constraint_Error with "Job wait timeout exceeds native range";
+      end if;
+      Result :=
+        C.RF_Job_Wait_Status
+          (Object.Handle,
+           Interfaces.Unsigned_32 (Timeout_Milliseconds),
+           Value'Access,
+           D'Address,
+           D'Length,
+           R'Access);
+      if Result = C.Timeout then
+         raise Timeout_Error with "Job status pending";
+      end if;
+      if Result /= C.Success and then R > D'Length then
+         declare
+            Full : aliased Diagnostic (0 .. R - 1) := [others => Interfaces.C.nul];
+         begin
+            Check
+              (C.RF_Job_Wait_Status
+                 (Object.Handle, 0, Value'Access, Full'Address, Full'Length, null),
+               Full);
+         end;
+      end if;
+      Check (Result, D);
+      if Value > C.RF_Job_Status_Failed_Invalid_State then
+         raise Provider_Error with "invalid native Job status";
+      end if;
+      return Job_Status'Val (Integer (Value));
+   end Wait_Job_Status;
+   function Cancel_Job (Object : in out Job) return Cancel_Result is
+      D      : aliased Fixed_Diagnostic := [others => Interfaces.C.nul];
+      R      : aliased C.Size_T := 0;
+      Result : aliased C.RF_Job_Cancel_Result_V1 := (others => 0);
+      Code   : Interfaces.Integer_32;
+   begin
+      Code := C.RF_Job_Cancel (Object.Handle, Result'Access, D'Address, D'Length, R'Access);
+      if Code /= C.Success and then R > D'Length then
+         declare
+            Full : aliased Diagnostic (0 .. R - 1) := [others => Interfaces.C.nul];
+         begin
+            Check
+              (C.RF_Job_Cancel (Object.Handle, Result'Access, Full'Address, Full'Length, null),
+               Full);
+         end;
+      end if;
+      Check (Code, D);
+      if Result.Cancelled > 1 or else Result.Error_Code /= C.RF_Cancel_Error_None then
+         raise Provider_Error with "invalid native Job cancellation result";
+      end if;
+      return (Was_Cancelled => Result.Cancelled = 1, Code => None);
+   end Cancel_Job;
+   procedure Close (Object : in out Job) is
+      D : aliased Fixed_Diagnostic := [others => Interfaces.C.nul];
+      R : aliased C.Size_T := 0;
+   begin
+      Check (C.RF_Job_Close (Object.Handle'Access, D'Address, D'Length, R'Access), D);
+   end Close;
+   overriding
+   procedure Finalize (Object : in out Job) is
+      Ignored : Interfaces.Integer_32;
+   begin
+      Ignored := C.RF_Job_Close (Object.Handle'Access, System.Null_Address, 0, null);
+   exception
+      when others =>
+         Object.Handle := C.Null_RF_Job;
+   end Finalize;
+   function Actual_Start_Seconds (Object : Job) return Interfaces.Integer_64
+   is (Object.Start_Seconds);
+   function Actual_Start_Femtoseconds (Object : Job) return Interfaces.Integer_64
+   is (Object.Start_Femtoseconds);
+   function Total_Job_Duration_Femtoseconds (Object : Job) return Interfaces.Integer_64
+   is (Object.Duration_Femtoseconds);
+   function VA_Instance_ID (Object : Job) return Interfaces.Unsigned_32
+   is (Object.Instance_ID);
+   function VA_Definition_ID (Object : Job) return Interfaces.Unsigned_32
+   is (Object.Definition_ID);
+   function Job_Details_ID (Object : Job) return Interfaces.Unsigned_32
+   is (Object.Details_ID);
+   function Job_Request_ID (Object : Job) return Interfaces.Unsigned_32
+   is (Object.Request_ID);
+   function Lookahead_Femtoseconds (Object : Job) return Interfaces.Integer_64
+   is (Object.Lookahead);
+   function RX_Stream_ID_Count (Object : Job) return Natural
+   is (Natural (Object.Streams.Length));
+   function RX_Stream_ID_At (Object : Job; Index : Positive) return Interfaces.Unsigned_32
+   is (Object.Streams (Index));
+end AMS.MEL.RF.C2;

@@ -138,7 +138,22 @@ def _presentation(config:Config,site:Path,raw:dict,values:dict,counts:dict):
         result['theme_source'] = identity
     if config.external_symbol_bookmarks:
         result['external_symbol_bookmarks'] = config.external_symbol_bookmarks
+    blocks = source_block_identity(config)
+    if blocks is not None:
+        result['authored_source_blocks'] = blocks
     return result
+
+
+def source_block_identity(config):
+    """Record opt-in input identity without changing schema-2 metadata bytes."""
+    if config.guides != 'authored-html':
+        return None
+    from .authored import source, unique
+    data = json.loads(source(config, config.guide_manifest), object_pairs_hook=unique)
+    if data.get('schema_version') != 3:
+        return None
+    return {'manifest': config.guide_manifest, 'sha256': config.guide_sha256,
+            'profile': data['source_blocks']['profile'], 'inputs': data['inputs']}
 
 
 def _generate(config:Config,site:Path):
@@ -157,7 +172,7 @@ def _generate(config:Config,site:Path):
         target.write_bytes(content)
     # Validate complete exact inventory, including every GNATdoc native page.
     return validate_files(site,config,_expected_names(originals,values),
-                          titles=document_titles(config,native)),counts
+                          titles=document_titles(config,native),native=native),counts
 
 
 def enhance(config:Config,site:Path,*,dry_run:bool=False):
@@ -190,16 +205,20 @@ def verify(config:Config,site:Path):
     data=json.loads(path.read_text(encoding='utf-8'))
     require(isinstance(data,dict),'malformed presentation manifest: expected object')
     identity = theme_identity(config)
+    blocks = source_block_identity(config)
     require(set(data)=={'schema_version','enhancer_version','gnatdoc_version','project',
                         'original_api_html','native_css_sha256','source_sha256','output_sha256','counts'} |
                         ({'theme_source'} if identity is not None else set()) |
-                        ({'external_symbol_bookmarks'} if config.external_symbol_bookmarks else set()),
+                        ({'external_symbol_bookmarks'} if config.external_symbol_bookmarks else set()) |
+                        ({'authored_source_blocks'} if blocks is not None else set()),
             'unexpected presentation manifest fields')
     if identity is not None:
         require(data['theme_source'] == identity, 'custom theme source/configuration identity changed')
     if config.external_symbol_bookmarks:
         require(data['external_symbol_bookmarks'] == config.external_symbol_bookmarks,
                 'external bookmark qualification/selection changed')
+    if blocks is not None:
+        require(data['authored_source_blocks'] == blocks, 'authored source block identity changed')
     require(data['schema_version']==1 and data['gnatdoc_version']==config.gnatdoc
             and data['project']==config.project and data['enhancer_version']==__version__,
             'presentation schema/tool/project mismatch')
@@ -230,5 +249,5 @@ def verify(config:Config,site:Path):
             target=site/name
             require(target.is_file() and not target.is_symlink() and target.read_bytes()==content,
                     f"published file differs from reconstructed output: {name}")
-        result=validate_files(site,config,expected,titles=document_titles(config,native))
+        result=validate_files(site,config,expected,titles=document_titles(config,native),native=native)
     return {'mode':'verified',**result,**counts}
