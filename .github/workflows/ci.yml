@@ -138,12 +138,19 @@ jobs:
       - name: Real Core documentation search in Chromium
         run: |
           python scripts/check_search_browser.py --workspace "$RUNNER_TEMP/search-sites" --output "$RUNNER_TEMP/search-evidence"
+      - name: Complete MEL independent inventory, reproducibility and 348 native navigations
+        run: |
+          python scripts/qualify_search_scopes.py --source-root "$GITHUB_WORKSPACE/tests/real-fixtures/search-mel/authority" --native "$GITHUB_WORKSPACE/tests/real-fixtures/search-mel/pristine" --before "$GITHUB_WORKSPACE/tests/real-fixtures/search-mel/before.json" --output "$RUNNER_TEMP/mel-search-evidence" --browser
       - name: Retain real Core query demonstrations and screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: documentation-search-browser
-          path: ${{ runner.temp }}/search-evidence/
+          path: |
+            ${{ runner.temp }}/search-evidence/
+            ${{ runner.temp }}/mel-search-evidence/inventory.json
+            ${{ runner.temp }}/mel-search-evidence/browser.json
+            ${{ runner.temp }}/mel-search-evidence/*.png
           retention-days: 30
   examples-browser:
     runs-on: ubuntu-24.04

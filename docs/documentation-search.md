@@ -32,9 +32,14 @@ An output manifest or updated output checksum cannot authorize a forged index.
 * Types, subtypes, functions, and procedures use `source_destinations`: complete
   signature reconciliation, observed filenames/anchors, and source-order
   overload ordinals. No declaration destination is inferred from a name/hash.
-* A further conservative public-prefix/scope check excludes private-part
-  declarations, `Internal` package components, and unsupported nested scopes.
-  Public partial private views such as `OpenCV.Core.Mat` are public symbols.
+* A source-offset-preserving declaration-boundary walker classifies direct
+  visible declarations. Nested packages, generic formal/template declarations,
+  tasks, protected scopes, bodies and private parts cannot acquire their
+  enclosing package's identity. Package instantiations/renamings do not suppress
+  unrelated public siblings. Public partial private views such as
+  `OpenCV.Core.Mat` are public symbols; completions are not. `Internal` package
+  components remain excluded. Ambiguous/unbalanced unsupported scopes fail
+  closed, without guessing a recovery boundary.
 * Signatures and associated source text are searchable. Guide titles, headings,
   and visible text come only from approved guides actually rendered by the
   existing publishing pipeline; navigation, metadata, scripts and styles are
@@ -100,3 +105,8 @@ overflow at 1280/390 pixels, both themes, no external requests, and native
 JavaScript-disabled access. Playwright is a separately installed test tool, not
 a runtime package dependency. Hosted CI runs this dedicated job as well as all
 predecessor tests and archive checks.
+
+GNATDOC-SEARCH-002 adds a complete pinned MEL source/native fixture, a separately
+constrained flat-source inventory oracle, adversarial nested-scope fixtures, and
+Chromium navigation to every one of the 348 newly admitted MEL declarations.
+See `/home/zboll/git/ada-gnatdoc-enhancer/docs/search-002-qualification.md`.
