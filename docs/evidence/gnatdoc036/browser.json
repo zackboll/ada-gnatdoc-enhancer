@@ -1,0 +1,63 @@
+{
+  "candidate_complete": true,
+  "fallback": false,
+  "contexts": [
+    {
+      "width": 1280,
+      "theme": "light",
+      "javascript": true,
+      "checks": 39,
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "javascript": false,
+      "checks": 38,
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "javascript": true,
+      "checks": 39,
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "javascript": false,
+      "checks": 38,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "javascript": true,
+      "checks": 39,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "javascript": false,
+      "checks": 38,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "javascript": true,
+      "checks": 39,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "javascript": false,
+      "checks": 38,
+      "passed": true
+    }
+  ],
+  "checks": 308
+}

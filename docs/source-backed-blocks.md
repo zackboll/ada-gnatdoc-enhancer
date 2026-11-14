@@ -156,6 +156,13 @@ and the full publication inventory, and checks deterministic generation and
 idempotence. Only `api/presentation.json` may differ, and only the fields above.
 It writes full evidence to the supplied workspace. It is not a deployment path.
 
+Optional Playwright qualification of a freshly enhanced **complete** candidate
+(no production-page fallback) is available as
+`python scripts/check_source_blocks_browser.py --workspace /absolute/new/browser`.
+It exercises all eight HTML pages at 1280/390px, light/dark and JavaScript on/off,
+complete listing text, support disclosures, catalog/native anchors and default
+package navigation. The existing browser CI job runs it and retains its JSON.
+
 The controlled declaration fixture was generated in a separate full Git export:
 derive `obj/docs/public-sources.txt` using the consumer's `specifications`, run
 `gprbuild -p -P docs_api.gpr -u -c -gnatc`, then GNATdoc with
