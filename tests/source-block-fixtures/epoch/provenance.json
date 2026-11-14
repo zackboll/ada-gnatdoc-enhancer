@@ -1,0 +1,19 @@
+{
+  "gnat": "16.1.0",
+  "gnatdoc": "26.0.0",
+  "gprbuild": "26.0.0 (2026-04-15)",
+  "inputs": {
+    "5f9de8789b28ed02de7bf3d4f6aa6447445b50a3c927e5e3bb132a2c8efb1779.html": "4b05ccf410b2cbae20354c03e56aa3e56187d5b26fed8ac1c724b97c8d13aa7e",
+    "ams.ads": "00f824b4716f1557ec0d3fd02ac9dcef0c25d261ed72b2b58511d7f235fd1bc8"
+  },
+  "native": {
+    "AMS: AMS.Source_Epoch_Probe: type: type Source_Epoch_Probe is range 0 .. 10;": {
+      "anchor": "4ebffc798e6795963d8a09f593a1e845274cbbee19905e22f3d15d5a0308db04",
+      "page": "5f9de8789b28ed02de7bf3d4f6aa6447445b50a3c927e5e3bb132a2c8efb1779.html",
+      "signature": "type Source_Epoch_Probe is range 0 .. 10;"
+    }
+  },
+  "original_native_byte_identical": true,
+  "source_change": "public AMS.Source_Epoch_Probe range type; pragma Pure stays before declarations",
+  "source_commit": "039bd4f05be969f0f224747728dfbae5305ee29b"
+}

@@ -1,5 +1,11 @@
 # Configuration
 
+## Bounded source-backed authored HTML
+
+The opt-in schema-3 `executable-ada-catalog-v1` authored manifest adds exactly
+three source-backed expansions without changing schema-2 semantics. See
+[the complete input, token, HTML and provenance contract](source-backed-blocks.md).
+
 ## Opt-in Ada example presentation (GNATDOC-027)
 
 Configuration schema 1 adds three strict Boolean fields under `[guides]`:
