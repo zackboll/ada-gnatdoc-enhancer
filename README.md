@@ -80,6 +80,12 @@ changing the consumer. Qualified enhancement is deterministic and byte-idempoten
 
 ## Capabilities
 
+* Opt-in `navigation.resizable_sidebar = true`: an accessible desktop divider
+  with iframe-safe dragging, keyboard resizing, path-scoped persistence and
+  double-click reset. Disabled output stays byte-identical; theme-owned mobile
+  layouts and all routers remain unchanged. See
+  [resizable navigation](docs/resizable-navigation-sidebar.md).
+
 * Default-router restoration: an exact URL/fragment can select a
   declaration that is outside the iframe viewport. Matching load/hash completion,
   Back/Forward and `pageshow` now reveal only the source/native-approved target,

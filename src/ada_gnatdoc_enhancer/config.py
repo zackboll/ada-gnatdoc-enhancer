@@ -59,6 +59,7 @@ class Config:
     ada_example_api_links: bool = False
     ada_landing_example_highlighting: bool = False
     verified_examples: dict = field(default_factory=dict)
+    resizable_sidebar: bool = False
 
 
 def load(root: Path, path: str) -> Config:
@@ -86,7 +87,9 @@ def load(root: Path, path: str) -> Config:
     style = src.get("comment_style", "leading")
     require(style in ("leading", "trailing"), "comment_style must be leading or trailing")
     nav = raw.get("navigation", {})
-    members(nav, {"mode", "categories", "symbol_bookmarks", "default_package"}, "navigation")
+    members(nav, {"mode", "categories", "symbol_bookmarks", "default_package", "resizable_sidebar"}, "navigation")
+    resizable = nav.get('resizable_sidebar', False)
+    require(type(resizable) is bool, 'navigation.resizable_sidebar must be Boolean')
     mode = nav.get("mode", "packages")
     require(mode in ("packages", "operations", "none"), "invalid navigation mode")
     categories = nav.get("categories")
@@ -117,6 +120,7 @@ def load(root: Path, path: str) -> Config:
                    "theme_css_source", "theme_css_sha256"}, "presentation")
     for k in pres.keys() - {"external_type_target", "theme_css_source", "theme_css_sha256"}:
         require(type(pres[k]) is bool, f"presentation.{k} must be Boolean")
+    require(not resizable or pres.get('theme', True), 'resizable sidebar requires theme = true')
     custom_theme = bool({'theme_css_source', 'theme_css_sha256'} & pres.keys())
     if custom_theme:
         import re
@@ -240,7 +244,7 @@ def load(root: Path, path: str) -> Config:
                   pres.get('theme_css_source'), pres.get('theme_css_sha256'),
                   config_path.relative_to(root).as_posix() if custom_theme else None,
                   digest(config_bytes) if custom_theme else None, bookmarks, bool(search),
-                  *(guide.get(option, False) for option in example_options), verified)
+                  *(guide.get(option, False) for option in example_options), verified, resizable)
     if custom_theme:
         from .theme import theme_asset
         theme_asset(config)

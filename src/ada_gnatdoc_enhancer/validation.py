@@ -92,7 +92,8 @@ def validate_files(site:Path,config:Config,expected:set[str], *, raw=False, titl
         require(relative in expected,f"unapproved output file: {relative}")
         if path.suffix=='.css':css_safe(path.read_bytes())
         elif path.suffix=='.js':
-            require(relative==SCRIPT,'unapproved JavaScript file')
+            require(relative==SCRIPT or (config.resizable_sidebar and relative=='api/gnatdoc-resize.js'),
+                    'unapproved JavaScript file')
             require('eval(' not in path.read_text() and 'new Function(' not in path.read_text(),
                     'prohibited dynamic JavaScript evaluation')
         elif path.suffix=='.html':
@@ -113,7 +114,10 @@ def validate_files(site:Path,config:Config,expected:set[str], *, raw=False, titl
             require(not page.issues and len(page.ids)==len(set(page.ids)),
                     f"unsafe HTML/duplicate IDs in {relative}: {page.issues}")
             if page.scripts:
-                require(relative=='api/index.html' and page.scripts==['gnatdoc-navigation.js'],
+                approved = (['gnatdoc-navigation.js'] if config.navigation!='none' else [])
+                if config.resizable_sidebar:
+                    approved.append('gnatdoc-resize.js')
+                require(relative=='api/index.html' and page.scripts==approved,
                         f"unapproved script in {relative}")
             require(page.iframes == (1 if relative=='api/index.html' else 0),
                     f"unapproved/missing native iframe in {relative}")

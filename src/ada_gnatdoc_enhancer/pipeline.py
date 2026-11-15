@@ -21,6 +21,7 @@ from .metadata import (check_native_input, guide_title, index_title, native_docu
                        package_title)
 from .native_html import NativeSite, snapshot, verified_types
 from .navigation import SCRIPT, enhance_index
+from .resize import HEAD as RESIZE_HEAD, enhance as resize_index
 from .syntax import transform_page
 from .theme import METADATA, NATIVE_LINK, asset, themed, theme_asset, theme_identity
 from .util import digest, require, site_root, sorted_json
@@ -46,7 +47,8 @@ def _head(config:Config,index:bool=False):
     """The approved head content of an enhanced API page, before document metadata."""
     return (NATIVE_LINK+(METADATA if config.theme else '')+
             (SCRIPT if index and config.navigation!='none' else '')+
-            ('<link rel="stylesheet" href="gnatdoc-search.css">' if index and config.search else ''))
+            ('<link rel="stylesheet" href="gnatdoc-search.css">' if index and config.search else '')+
+            (RESIZE_HEAD if index and config.resizable_sidebar else ''))
 
 
 def document_titles(config:Config,native:NativeSite):
@@ -106,6 +108,8 @@ def expected_output(config:Config,site:Path):
         from .search import enhance as search_index
         index, search_values = search_index(config,native,index,guides)
         values.update(search_values)
+    index, resize_values = resize_index(config, index)
+    values.update(resize_values)
     values['api/index.html']=native_document(index,_head(config,True),index_title(config.project),
                                              'api/index.html').encode()
     if config.theme:values['api/gnatdoc-theme.css']=theme_asset(config)

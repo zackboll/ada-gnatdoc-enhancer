@@ -1,5 +1,13 @@
 # Configuration
 
+## Optional resizable navigation
+
+`navigation.resizable_sidebar = true` enables an accessible, persistent desktop
+divider. It defaults to `false`; malformed non-Boolean values are rejected.
+Enabled use requires `presentation.theme = true` and supports bundled and
+source-approved custom themes, package/operation navigation and native-only
+navigation. See [interaction, storage and qualification](resizable-navigation-sidebar.md).
+
 ## Bounded source-backed authored HTML
 
 The opt-in schema-3 `executable-ada-catalog-v1` authored manifest adds exactly
