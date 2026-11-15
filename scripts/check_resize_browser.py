@@ -129,6 +129,15 @@ def run(repository, workspace, baseline_source=None, browser_only=False):
                         initial = width(page)
                         key = page.evaluate('Object.keys(localStorage).find(k => k.startsWith("gnatdoc:sidebar-width:"))')
                         assert key is None
+                        # Move beyond the maximum divider position: the pointer
+                        # is now geometrically over the iframe, not the handle.
+                        start(page); page.mouse.move(1250, 200, steps=12)
+                        assert width(page) == 952
+                        frame_box = page.locator('iframe').bounding_box()
+                        assert frame_box['x'] < 1250 < frame_box['x']+frame_box['width']
+                        assert divider.evaluate('(e) => e.hasPointerCapture(1)')
+                        assert page.locator('iframe').evaluate('(e) => getComputedStyle(e).pointerEvents') == 'none'
+                        page.mouse.up(); clean(page)
                         # A real drag well inside the content iframe then back.
                         drag(page, 700); wide = width(page); assert wide > initial+200
                         assert page.locator('.document-content').bounding_box()['width'] >= 320
