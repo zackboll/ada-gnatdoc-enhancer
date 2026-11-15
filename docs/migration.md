@@ -19,19 +19,21 @@ No consumer migrations, source-policy changes, deployment or publication are
 performed by release preparation. Shared-package release is not consumer approval.
 See [release compatibility](release-compatibility.md).
 
-## Upgrade from 0.1.4 to the 0.1.5 candidate
+## Upgrade from 0.1.5 to the 0.1.6 candidate
 
 Use a fresh isolated environment and the audited non-editable candidate wheel or
 independently rebuilt-sdist wheel. Require project, module, installed distribution,
-CLI and regenerated presentation manifest versions to agree on `0.1.5`. Candidate
+CLI and regenerated presentation manifest versions to agree on `0.1.6`. Candidate
 qualification is not publication authority; after maintainer merge, final public
 assets must be generated and qualified from exact approved merged main.
 
 Regenerate from pristine GNATdoc 26.0.0 native output, retaining the old environment
-and publication for rollback. With verified mappings disabled, compare every
-publication file to official v0.1.4, permitting only the exact version field.
-Existing lexical examples, guides, custom themes, search and navigation must not
-drift. Keep optional `markdown-it-py==3.0.0` and `mdurl==0.1.2` pins unchanged.
+and publication for rollback. Compare every publication file to official
+v0.1.5. Unaffected profiles permit only the exact version field. Affected search
+profiles additionally permit source/native-supported new declarations and the
+necessary index, shell and manifest updates; preserve every existing record.
+Schema-3 source blocks remain opt-in with an independent nine-output portal oracle.
+Existing lexical examples, guides, custom themes and navigation must not drift. Keep optional `markdown-it-py==3.0.0` and `mdurl==0.1.2` pins unchanged.
 
 Compiler-backed mappings are opt-in and source/native/hash bound. Generate them
 from the documented source checkout/private GNAT 16.1.0, GPRbuild 26, Libadalang 26

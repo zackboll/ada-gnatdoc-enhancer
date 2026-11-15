@@ -1,23 +1,21 @@
 # Compatibility and evidence levels
 
-## Current v0.1.5 preparation boundary
+## Current v0.1.6 preparation boundary
 
-GNATDOC-035 prepares merged GNATDOC-031 through GNATDOC-034 for release, without
-authorizing publication or consumer adoption. Python 3.11–3.13, GNATdoc 26 HTML,
-zero mandatory runtime dependencies and the exact optional Markdown pins remain
-unchanged. See [release compatibility](release-compatibility.md) for the explicit
-official v0.1.4 → v0.1.5 comparison and [release evidence](evidence/gnatdoc035/README.md)
-for qualification and the final PR delivery record.
+GNATDOC-037 prepares merged GNATDOC-036 and GNATDOC-SEARCH-002 without authorizing
+publication or consumer adoption. Python 3.11–3.13, GNATdoc 26 HTML, Apache-2.0,
+zero mandatory dependencies and exact optional Markdown pins remain unchanged.
+See [release compatibility](release-compatibility.md) and
+[current qualification](release-0.1.6-qualification.md).
 
-With compiler-verified mappings disabled, all publication bytes except the exact
-version field remain equal to official v0.1.4, including existing highlighting,
-search, navigation, guides and themes. With mappings enabled, only authenticated
-call hyperlinks and necessary presentation metadata change. The original Core
-five guides / 38 Ada fences and mixed fragments remain conservative and unchanged.
-Installed mapping consumption is compiler-free; generation still requires the
-documented source checkout and private build-time GNAT/Libadalang environment.
-No unsupported form is promoted by the release. Regenerate from pristine native
-input; old version-bound manifests are not valid v0.1.5 manifests.
+Against official v0.1.5, unaffected profiles permit only the exact serialized
+release-version metadata field. Affected search profiles permit only newly
+eligible public declarations authenticated by source/native reconstruction and
+the necessary index, shell authority/count/hash and manifest updates. Existing
+records and all unrelated bytes remain unchanged. Schema-3 is a new opt-in,
+qualified against the independent nine-output MEL portal oracle, not v0.1.5.
+Installed compiler-mapping consumption remains compiler-free. Regenerate from
+pristine native input; old manifests are not valid v0.1.6 manifests.
 
 ## Historical v0.1.2 preparation boundary
 

@@ -17,7 +17,7 @@ class ReleaseContracts(unittest.TestCase):
         root = Path(__file__).resolve().parents[1]
         metadata = tomllib.loads((root/'pyproject.toml').read_text())['project']
         self.assertEqual(metadata['version'], __version__)
-        self.assertEqual(__version__, '0.1.5')
+        self.assertEqual(__version__, '0.1.6')
         self.assertEqual(metadata['license'], 'Apache-2.0')
         self.assertEqual(metadata['license-files'], ['LICENSE'])
         self.assertEqual(metadata['requires-python'], '>=3.11')
@@ -30,7 +30,7 @@ class ReleaseContracts(unittest.TestCase):
         enhance(fx.config, fx.site)
         manifest = fx.site/'api/presentation.json'
         data = json.loads(manifest.read_text())
-        self.assertEqual(data['enhancer_version'], '0.1.5')
+        self.assertEqual(data['enhancer_version'], '0.1.6')
         data['enhancer_version'] = '0.1.0'
         manifest.write_text(json.dumps(data))
         before = hashes(fx.site)
@@ -42,7 +42,7 @@ class ReleaseContracts(unittest.TestCase):
         enhance(fx.config, fx.site)
         manifest = fx.site/'api/presentation.json'
         data = json.loads(manifest.read_text())
-        for version in ('0.1.3', '0.1.4'):
+        for version in ('0.1.3', '0.1.4', '0.1.5'):
             with self.subTest(version=version):
                 data['enhancer_version'] = version
                 manifest.write_text(json.dumps(data))

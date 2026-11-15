@@ -1,6 +1,35 @@
 # Auditable release preparation and later publication
 
-## GNATDOC-035: v0.1.5 preparation only (current)
+## GNATDOC-037: v0.1.6 preparation only (current)
+
+Start from refreshed main `a4befbec2ac8b40e7a0234853aa204e90d13a19c`, tree
+`7802f094fe9f2d3e4c5ea4549a4c17881fe8f588`. PRs #31 and #32 are merged.
+Exact-merged-main workflow **43659846712** succeeded in all eight jobs.
+Official v0.1.5 acquisition and current-version audit are retained independently;
+do not replace any official asset, tag, historical comparator or authentic oracle.
+
+Advance active authorities to 0.1.6; consolidate the completed Unreleased entries.
+Qualify official 015/016 compatibility using the fail-closed comparator described
+in [release compatibility](release-compatibility.md). Retain complete source/native
+verification, schema-3 nine-output parity, recovered-declaration browser checks,
+Core navigation/history/themes/guides, compiler controls where inputs exist,
+determinism, idempotence, atomic failure and publication reconstruction.
+
+Require source, non-editable wheel and independently rebuilt-sdist suites on
+Python 3.11/3.12/3.13, outside-checkout installed execution with PYTHONPATH unset,
+strict Twine, safe archive inventories, full RECORD and exact module/asset/input
+identity audits. Build four candidate assets from an immutable qualified source
+commit/tree; provenance must keep `publication_authorized: false`.
+
+Only after applicable local gates pass, open one focused non-draft PR with normal
+checks unchanged. Record exact-HEAD hosted results separately from local source
+and candidate-artifact qualification; pending is not passing. No additional roles
+or CI governance are introduced. Do not merge, auto-merge, tag, publish, deploy,
+upload to PyPI/Alire or edit consumers. Final public assets require a fresh build
+and qualification from approved merged-main source after maintainer authorization.
+See [qualification status](release-0.1.6-qualification.md).
+
+## Historical GNATDOC-035: v0.1.5 preparation (subsequently published)
 
 Fetch main before branching. Starting commit is
 `4be96483ef0d38ac78669e18b4910d0f711c5d86`, tree

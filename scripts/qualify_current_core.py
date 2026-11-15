@@ -22,10 +22,10 @@ from ada_gnatdoc_enhancer.pipeline import enhance, verify
 from ada_gnatdoc_enhancer.qualification import hashes
 from ada_gnatdoc_enhancer.util import sorted_json
 
-from compare_release_014_015 import compare
+from compare_release_015_016 import compare
 
 
-def run(repository, commit, native, workspace, official_python):
+def run(repository, commit, native, workspace, official_python, without_verified_examples=False):
     def git(*words):
         return subprocess.check_output(['git', '-C', str(repository), *words])
 
@@ -48,11 +48,18 @@ def run(repository, commit, native, workspace, official_python):
     authored = json.loads((authority/'docs/enhancer-qualification/gnatdoc-authored.json').read_text())
     assert hashes(native) == authored['native_sha256'], 'unqualified native acquisition'
     # Mirror the pinned consumer's stage_gnatdoc_sources.py public-only boundary.
-    # Its recursive scanner input excludes the separate src/internal project;
-    # keep every public src/*.ads path/byte unchanged for qualification hashes.
-    shutil.rmtree(authority/'src/internal')
+    # Keep original-path compiler evidence separate from scanner inputs. Do not
+    # execute the consumer staging tool or alter its generated configuration.
+    (authority/'public').mkdir()
+    for path in (authority/'src').glob('*.ads'):
+        shutil.copyfile(path, authority/'public'/path.name)
     config_name = 'docs/gnatdoc-enhancer.toml'
     config = load(authority, config_name)
+    if without_verified_examples:
+        # A retained acquisition can have stale generated compiler inputs.
+        # This option does not qualify mappings; the separate production-Core
+        # and mixed-guide controls must still run with mappings enabled.
+        config = replace(config, verified_examples={})
     original = snapshot(config, native)
     destinations = source_destinations(config, original, packages(config))
     expected_destinations = {(package.name+'.'+d.declaration.name, d.href)
@@ -65,12 +72,14 @@ def run(repository, commit, native, workspace, official_python):
     enhance(config, second); assert before == hashes(second)
     baseline = workspace/'baseline'
     subprocess.run([str(official_python), '-c',
-        'from pathlib import Path; import shutil,sys; '
+        'from pathlib import Path; import shutil,sys; from dataclasses import replace; '
         'from ada_gnatdoc_enhancer.config import load; '
         'from ada_gnatdoc_enhancer.pipeline import enhance,verify; '
-        'root,name,raw,site=sys.argv[1:]; shutil.copytree(raw,site); '
-        'c=load(Path(root),name); enhance(c,Path(site)); verify(c,Path(site))',
-        str(authority), config_name, str(native), str(baseline)], cwd=workspace, check=True)
+        'root,name,raw,site,disabled=sys.argv[1:]; shutil.copytree(raw,site); '
+        'c=load(Path(root),name); c=replace(c,verified_examples={}) if disabled=="True" else c; '
+        'enhance(c,Path(site)); verify(c,Path(site))',
+        str(authority), config_name, str(native), str(baseline), str(without_verified_examples)],
+        cwd=workspace, check=True)
     comparison = compare(baseline, site)
     index_path = 'api/gnatdoc-search-index.json'
     index = json.loads((site/index_path).read_text())
@@ -98,8 +107,9 @@ def run(repository, commit, native, workspace, official_python):
         assert not changed, 'already enabled presentation changed'
     assert all(p in ('index.html', 'api/presentation.json') or p.startswith('guides/') for p in changed)
     result = dict(source_commit=commit, source_tree=tree,
+                  verified_examples_qualified=not without_verified_examples,
                   acquisition='existing approved native bytes, not fresh compiler/GNATdoc generation',
-                  source_staging='pinned consumer public src/*.ads; excludes separate src/internal project',
+                  source_staging='pinned consumer src/*.ads copied byte-for-byte into public/; original src retained separately',
                   native_sha256=hashes(native), publication=report, enabled_publication=enabled_report,
                   counts=counts, search_records=1487, source_native_destinations_verified=True,
                   search_index_bytes_preserved=True, comparison=comparison,
@@ -114,5 +124,7 @@ if __name__ == '__main__':
     for key in ('repository', 'native', 'workspace', 'official-python'):
         parser.add_argument('--'+key, type=Path, required=True)
     parser.add_argument('--commit', required=True)
+    parser.add_argument('--without-verified-examples', action='store_true')
     args = parser.parse_args()
-    run(args.repository, args.commit, args.native, args.workspace, args.official_python)
+    run(args.repository, args.commit, args.native, args.workspace, args.official_python,
+        args.without_verified_examples)

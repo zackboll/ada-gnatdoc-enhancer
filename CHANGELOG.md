@@ -1,4 +1,8 @@
-# Unreleased — GNATDOC-036
+# Changelog
+
+## 0.1.6 — release candidate (GNATDOC-037; not published)
+
+### GNATDOC-036 — source-backed authored HTML
 
 * Add opt-in schema-3 `executable-ada-catalog-v1` authored-HTML source blocks:
   complete owned Ada listings, declarative case observations, public symbol
@@ -11,9 +15,7 @@
   independent production reconstruction; retain older consumer fixtures unchanged.
   See `docs/source-backed-blocks.md`. This is not a release or consumer adoption.
 
-# Changelog
-
-## Unreleased — GNATDOC-SEARCH-002
+### GNATDOC-SEARCH-002 — scope-safe complete search
 
 * Classify direct public Ada declarations by source scope instead of rejecting
   whole packages containing package instances, nested packages, generics,
@@ -25,7 +27,18 @@
 * No release artifacts or consumer installations are changed. A separate
   immutable release follows independent review and merge.
 
-## 0.1.5 — release preparation (GNATDOC-035; not published)
+### Release integrity
+
+* Compare against the independently verified official v0.1.5 wheel. Unaffected
+  profiles permit only release-version metadata; search-enabled profiles permit
+  only newly eligible source/native declarations and necessary index, shell and
+  manifest updates. Retain the independent nine-output schema-3 portal oracle.
+* Preserve Python 3.11+, Apache-2.0, zero mandatory runtime dependencies and exact
+  optional guide pins. Candidate provenance keeps `publication_authorized: false`.
+* No tag, publication, deployment or consumer adoption is authorized. Final public
+  assets must be rebuilt and requalified from approved merged-main source.
+
+## 0.1.5 — published 2026-11-01 (GNATDOC-035 preparation history)
 
 - Include merged GNATDOC-031/032 research controls and GNATDOC-033 compiler-backed
   static overload mappings. Authenticate selected declarations against GNAT ALI,

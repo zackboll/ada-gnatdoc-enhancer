@@ -1,6 +1,30 @@
 # Consumer compatibility and adoption boundary
 
-## v0.1.4 → v0.1.5 (GNATDOC-035; preparation, not published)
+## v0.1.5 → v0.1.6 (GNATDOC-037; candidate, not published)
+
+Use the actual official v0.1.5 wheel, independently checked against SHA-256
+`d712d330f213fc1909a66c47bc2c7e5e15d5ec687222bea3c4922f5243db4247`.
+`scripts/qualify_release_015_016.py` reconstructs both releases on identical
+inputs. `scripts/compare_release_015_016.py` rejects every unexplained file,
+byte, ordering or manifest-format change, including resealed output mutations.
+
+Unaffected profiles require complete byte parity except the exact serialized
+`enhancer_version`. Search-enabled affected profiles additionally allow only
+new source/native-supported symbol/operation records, necessary search-shell
+allowlist/count/hash changes, and the two dependent output-manifest hashes.
+Candidate verification reconstructs outputs; output-side hashes do not grant
+source authority. Existing records must remain unchanged and in the same order.
+The pinned MEL reproduction retains all 1,143 old records and exactly the 348
+independently recovered destinations. Counts describe those pinned inputs, not
+a new production declaration-count gate. Current Core's independently qualified
+1,487 records remain separate from the historical Core fixture.
+
+Schema-3 is new and opt-in. v0.1.5 need not understand it: retain the independent
+nine-output MEL portal byte oracle and all source-block/security regressions.
+See [qualification and pending gates](release-0.1.6-qualification.md).
+No consumer adoption, tag or publication is authorized.
+
+## Historical v0.1.4 → v0.1.5 (GNATDOC-035; subsequently published)
 
 Use independently retrieved official v0.1.4 assets, not a predecessor PR build.
 With verified examples disabled, complete file inventories and bytes must match,
