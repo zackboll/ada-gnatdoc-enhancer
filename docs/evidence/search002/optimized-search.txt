@@ -1,0 +1,31 @@
+test_custom_theme_and_native_bytes_preserved (test_search.RealCoreSearch.test_custom_theme_and_native_bytes_preserved) ... ok
+test_fixture_hashes (test_search.RealCoreSearch.test_fixture_hashes) ... ok
+test_independent_native_oracle_and_overloads (test_search.RealCoreSearch.test_independent_native_oracle_and_overloads) ... ok
+test_no_private_internal_or_fabricated_instances (test_search.RealCoreSearch.test_no_private_internal_or_fabricated_instances) ... ok
+test_required_queries (test_search.RealCoreSearch.test_required_queries) ... ok
+test_default_has_accurate_label_and_no_new_files (test_search.Search.test_default_has_accurate_label_and_no_new_files) ... ok
+test_explicit_versioned_configuration (test_search.Search.test_explicit_versioned_configuration) ... ok
+test_modified_missing_duplicated_forged_and_rehashed_index_rejected (test_search.Search.test_modified_missing_duplicated_forged_and_rehashed_index_rejected) ... ok
+test_opt_in_inventory_and_deterministic_reconstruction (test_search.Search.test_opt_in_inventory_and_deterministic_reconstruction) ... ok
+test_private_internal_and_unsupported_scopes_excluded (test_search.Search.test_private_internal_and_unsupported_scopes_excluded) ... ok
+test_rehashed_shell_cannot_expand_destination_authority (test_search.Search.test_rehashed_shell_cannot_expand_destination_authority) ... ok
+test_three_variants_share_search_without_changing_legacy_assets (test_search.Search.test_three_variants_share_search_without_changing_legacy_assets) ... ok
+test_all_fixture_bytes_pinned (test_search_mel.CompleteMEL.test_all_fixture_bytes_pinned) ... ok
+test_complete_eligible_inventory_and_exact_signatures (test_search_mel.CompleteMEL.test_complete_eligible_inventory_and_exact_signatures) ... ok
+test_exact_before_after_without_existing_record_changes (test_search_mel.CompleteMEL.test_exact_before_after_without_existing_record_changes) ... ok
+test_two_independent_complete_outputs (test_search_mel.CompleteMEL.test_two_independent_complete_outputs) ... ok
+test_ambiguous_boundaries_fail_closed (test_search_scopes.ScopeInventory.test_ambiguous_boundaries_fail_closed) ... ok
+test_library_generic_formals_and_body_units (test_search_scopes.ScopeInventory.test_library_generic_formals_and_body_units) ... ok
+test_minimal_sibling_boundaries_and_source_order (test_search_scopes.ScopeInventory.test_minimal_sibling_boundaries_and_source_order) ... ok
+test_nested_body_does_not_promote_local_declarations (test_search_scopes.ScopeInventory.test_nested_body_does_not_promote_local_declarations) ... ok
+test_private_boundaries_are_not_private_type_keywords (test_search_scopes.ScopeInventory.test_private_boundaries_are_not_private_type_keywords) ... ok
+test_quoted_operator_does_not_suppress_identifier_siblings (test_search_scopes.ScopeInventory.test_quoted_operator_does_not_suppress_identifier_siblings) ... ok
+test_complete_public_records_without_private_or_invented_anchors (test_search_scopes.ScopeSearch.test_complete_public_records_without_private_or_invented_anchors) ... ok
+test_missing_or_swapped_native_evidence_cannot_be_invented (test_search_scopes.ScopeSearch.test_missing_or_swapped_native_evidence_cannot_be_invented) ... ok
+test_self_consistent_private_record_digest_shell_and_manifest_rejected (test_search_scopes.ScopeSearch.test_self_consistent_private_record_digest_shell_and_manifest_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 36.670s
+
+OK
+{"status": "passed", "before": 1143, "after": 1491, "added": 348, "added_by_package": {"AMS.MEL.IR.C2": 51, "AMS.MEL.IR.Calibration_Configuration": 19, "AMS.MEL.IR.Channel": 68, "AMS.MEL.IR.Discovery": 1, "AMS.MEL.IR.Health_Status.Metadata": 47, "AMS.MEL.IR.NUC": 5, "AMS.MEL.Status": 157}, "byte_reproducible": true}

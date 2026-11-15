@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class=main>
+<link rel=stylesheet href=gnatdoc.css><body class=content><h1>AMS.MEL.IR.NUC</h1><h2>Entities</h2><h3>Exceptions</h3><ul><li><a href=#fc66a9ab14fa6bd20123f0fcaeef6cd32cf007af1401ff5efe693128e3b3ec68>Not_Supported</a></ul><h3>Simple Types</h3><ul><li><a href=#1616b0f491c5dcc91c89b453a3394d73500d8418cc3e3cc136f0e7fedd19910d>Pixel_Width</a><li><a href=#36acde8f59fa47873a81258eb4c959bf234ed26ddd7795aee66e9075e5f3de73>Temp_Point_Type</a></ul><h3>Record Types</h3><ul><li><a href=#37af49a743c6fdafebea64b872e9cc74b6b76a6b69da096a001d7337786fc4fa>NUC_Temp_Data</a><li><a href=#a4af11bd1f6b02b4d982e8398b5c03e58a9aa35709d32bf430278ed1d254c269>Pixel_Value</a><li><a href=#94fd3cd456c298419e6305734ab6dab6ffe16c398a8019473b8fc36c42802810>Temp_Point</a></ul><h3>Generic Instantiations</h3><ul><li><a href=#be207f439fd416d39bc21db5338a071afc736026b26ffbf4a0693f73524f7352>Temp_Point_Vectors</a></ul><h2>Description</h2><p>Owned values of the pinned upstream @Optional NUC_TempData metadata, received through the opt-in NUC owners of AMS.MEL.IR.Image.Metadata and AMS.MEL.IR.Health_Status.Metadata. Every publicly readable TempPoint field is copied. The pinned TempPoint also stores an optional tempError, but upstream declares no public accessor for it; it is deliberately not represented, inferred or reported here.<h4 id=fc66a9ab14fa6bd20123f0fcaeef6cd32cf007af1401ff5efe693128e3b3ec68>Not_Supported</h4><pre class=ada-code-snippet><code>Not_Supported : exception;
+</code></pre><p>The provider answered NotSupported for the optional NUC_TempData registration. The existing metadata owners of the same channel are unaffected.<h4 id=37af49a743c6fdafebea64b872e9cc74b6b76a6b69da096a001d7337786fc4fa>NUC_Temp_Data</h4><pre class=ada-code-snippet><code>type NUC_Temp_Data is record
+   Points : Temp_Point_Vectors.Vector;
+end record;
+</code></pre><p>Owned complete ordered getTempPoints() collection; empty messages have no points. The value is independent of the owner, channel, Session and provider library.<h5>Record fields</h5><dl><dt>Points<dd><p>Copied points in the order supplied by the provider.</dl><h4 id=a4af11bd1f6b02b4d982e8398b5c03e58a9aa35709d32bf430278ed1d254c269>Pixel_Value</h4><pre class=ada-code-snippet><code>type Pixel_Value (Width : Pixel_Width := Unsigned_8_Pixel) is record
+   case Width is
+      when Unsigned_8_Pixel =>
+         Value_8 : Interfaces.Unsigned_8;
+      when Unsigned_16_Pixel =>
+         Value_16 : Interfaces.Unsigned_16;
+      when Unsigned_32_Pixel =>
+         Value_32 : Interfaces.Unsigned_32;
+   end case;
+end record;
+</code></pre><p>Lossless tagged copy of TempPoint::PixelValue in its original integer width.<h5>Record fields</h5><dl><dt>Width<dd><p>Active upstream alternative; selects the only valid value component.<dt>Value_8<dd><p>Exact uint8_t pixel value.<dt>Value_16<dd><p>Exact uint16_t pixel value.<dt>Value_32<dd><p>Exact uint32_t pixel value.</dl><h4 id=1616b0f491c5dcc91c89b453a3394d73500d8418cc3e3cc136f0e7fedd19910d>Pixel_Width</h4><pre class=ada-code-snippet><code>type Pixel_Width is (Unsigned_8_Pixel, Unsigned_16_Pixel, Unsigned_32_Pixel);
+</code></pre><p>Active alternative of the upstream PixelValue variant; never inferred from magnitude.<h5>Enumeration Literal</h5><dl><dt>Unsigned_8_Pixel<dd><p>The uint8_t alternative.<dt>Unsigned_16_Pixel<dd><p>The uint16_t alternative.<dt>Unsigned_32_Pixel<dd><p>The uint32_t alternative.</dl><h4 id=94fd3cd456c298419e6305734ab6dab6ffe16c398a8019473b8fc36c42802810>Temp_Point</h4><pre class=ada-code-snippet><code>type Temp_Point is record
+   Timestamp_NS  : Long_Long_Integer;
+   Frame_Band    : AMS.MEL.IR.Channel.Band_Info;
+   Pixel         : Pixel_Value;
+   Temperature_K : Long_Float;
+   Point_Type    : Temp_Point_Type;
+end record;
+</code></pre><p>Owned copy of every publicly readable TempPoint field. The inaccessible upstream tempError is not a component: absence here is not a claim that no error exists.<h5>Record fields</h5><dl><dt>Timestamp_NS<dd><p>Signed nanosecond count, unconverted; clock and epoch unspecified.<dt>Frame_Band<dd><p>Band type and vacuum wavelength limits, in meters, of the point.<dt>Pixel<dd><p>Point pixel value with its original integer width.<dt>Temperature_K<dd><p>Temperature of the pixel value in Kelvin, copied without checks.<dt>Point_Type<dd><p>Upstream classification of the point.</dl><h4 id=36acde8f59fa47873a81258eb4c959bf234ed26ddd7795aee66e9075e5f3de73>Temp_Point_Type</h4><pre class=ada-code-snippet><code>type Temp_Point_Type is (NUC_Point, MFA_Estimate, Other);
+</code></pre><p>Exactly the three pinned TempPointType alternatives; unknown values are rejected.<h5>Enumeration Literal</h5><dl><dt>NUC_Point<dd><p>Point measured in the MFA's NUC process, upstream value 0.<dt>MFA_Estimate<dd><p>Point interpolated or extrapolated from supplier data or NUC points.<dt>Other<dd><p>Invalid or unsubstantiated point, upstream value 2.</dl><h4 id=be207f439fd416d39bc21db5338a071afc736026b26ffbf4a0693f73524f7352>Temp_Point_Vectors</h4><pre class=ada-code-snippet><code>package Temp_Point_Vectors is new Ada.Containers.Vectors (Positive, Temp_Point);
+</code></pre><p>Positive-index vector preserving provider point order and duplicates.

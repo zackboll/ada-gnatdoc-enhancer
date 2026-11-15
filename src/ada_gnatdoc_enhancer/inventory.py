@@ -99,6 +99,177 @@ def visible_prefix(raw: str, start: int) -> str:
     return text[:cut.start()] if cut else text
 
 
+def public_declarations(raw: str) -> list[Declaration]:
+    """Inventory direct visible declarations, never descendants of a scope.
+
+    This is a declaration-boundary walker, not an Ada parser/name resolver.
+    Literals/comments are masked with offsets intact. Nested specifications are
+    walked only to establish their closing boundary; generic formals/templates
+    and bodies are never promoted to the enclosing package. Unknown executable
+    structure is rejected, not recovered by searching for a convenient END.
+    Native profile reconciliation remains a separate, mandatory authority.
+    """
+    masked = mask_ada(raw)
+    header = HEADER.search(masked)
+    body_header = re.search(r'(?im)^\s*(?:package\s+body|separate\b)', masked)
+    if body_header and (header is None or body_header.start() < header.start()):
+        return []
+    if header is None or header[3].lower() != 'is':
+        return []
+    if re.match(r'\s*new\b', masked[header.end():], re.I):
+        return []
+    lex = list(re.finditer(r'[A-Za-z][A-Za-z0-9_]*|:=|=>|<>|\S', masked))
+    words = [m[0].lower() for m in lex]
+    size = len(words)
+    result = []
+    historical_starts = {header.end() + m.end(): header.end() + m.start()
+                         for pattern in (TYPE, SUBPROGRAM)
+                         for m in pattern.finditer(masked[header.end():])}
+
+    def need(condition):
+        require(condition, 'unsupported or unbalanced Ada declaration scope')
+
+    def statement(at):
+        """End of one declaration, including record components and aspects."""
+        parens = records = 0
+        for i in range(at, size):
+            word = words[i]
+            if word == '(': parens += 1
+            elif word == ')':
+                parens -= 1; need(parens >= 0)
+            elif not parens:
+                if word == 'record' and (i == 0 or words[i-1] not in ('end', 'null')):
+                    records += 1
+                elif word == 'end' and words[i+1:i+2] == ['record']:
+                    records -= 1; need(records >= 0)
+                elif word == ';' and not records:
+                    return i + 1
+                elif word in ('begin', 'declare'):
+                    need(False)
+        need(False)
+
+    def marker(at, end):
+        depth = 0
+        for i in range(at, end):
+            if words[i] == '(': depth += 1
+            elif words[i] == ')': depth -= 1
+            elif not depth and words[i] in ('is', 'renames', ';'):
+                return i
+        need(False)
+
+    def close(at, name):
+        need(words[at:at+1] == ['end'])
+        at += 1
+        if words[at:at+1] != [';']:
+            parts = name.lower().split('.')
+            expected = [item for part in parts for item in (part, '.')][:-1]
+            need(words[at:at+len(expected)] == expected)
+            at += len(expected)
+        need(words[at:at+1] == [';'])
+        return at + 1
+
+    def executable(at, name):
+        # Only structured statements with unambiguous keyword closers. A bare
+        # block, DECLARE expression, accept body, etc. fails closed for now.
+        stack = []
+        i = at
+        while i < size:
+            word = words[i]
+            if word == 'end':
+                if not stack:
+                    return close(i, name)
+                need(words[i+1:i+2] == [stack.pop()])
+                i += 2
+                continue
+            if word in ('if', 'case', 'loop', 'select'):
+                stack.append(word)
+            elif word in ('begin', 'declare', 'accept'):
+                need(False)
+            i += 1
+        need(False)
+
+    def declaration(at, visible):
+        start = at
+        word = words[at]
+        if word == 'generic':
+            at += 1
+            # WITH subprogram/package clauses belong to the formal part. Only
+            # an unprefixed package/subprogram starts the generic template.
+            while at < size and words[at] not in ('package', 'function', 'procedure'):
+                at = statement(at)
+            need(at < size)
+            return declaration(at, False)
+        if words[at:at+2] == ['not', 'overriding']: at += 2
+        elif word == 'overriding': at += 1
+        word = words[at]
+        if word in ('package', 'task', 'protected', 'function', 'procedure'):
+            kind = word
+            if kind == 'function' and words[at+1:at+2] == ['(']:
+                # Quoted operators are outside the identifier-only contract,
+                # but cannot suppress unrelated direct declarations.
+                return statement(start)
+            at += 1
+            body = words[at:at+1] == ['body']
+            if words[at:at+1] in (['body'], ['type']): at += 1
+            need(at < size)
+            name = words[at]; at += 1
+            while words[at:at+1] == ['.']:
+                need(at+1 < size)
+                name += '.' + words[at+1]; at += 2
+            boundary = marker(at, size)
+            value = words[boundary]
+            if value == 'is' and words[boundary+1:boundary+2] not in (
+                    ['new'], ['('], ['null'], ['abstract'], ['separate']):
+                # A scope's members are never direct enclosing declarations.
+                return region(boundary+1, name, False, body or kind in ('function', 'procedure'))
+            end = statement(start)
+            instance = value == 'is' and words[boundary+1:boundary+2] == ['new']
+            if visible and kind in ('function', 'procedure') and not body and not instance:
+                admit(start, end, kind, name)
+            return end
+        end = statement(start)
+        if visible and word in ('type', 'subtype'):
+            need(at+1 < size)
+            admit(start, end, word, words[at+1])
+        return end
+
+    def admit(start, end, kind, name):
+        begin = lex[start].start(); finish = lex[end-1].end()
+        # Take spelling/signature verbatim from source, not the masked tokens.
+        spelling = re.match(r'(?:not\s+overriding\s+|overriding\s+)?' + kind +
+                            r'\s+(' + IDENT + r')', masked[begin:], re.I)
+        need(spelling is not None)
+        # Retain the historical source inventory's associated leading comments
+        # and blank lines (and therefore existing search text/profile evidence).
+        begin = historical_starts.get(begin + spelling.end(), begin)
+        result.append(Declaration(kind, spelling[1], raw[begin:finish].strip(),
+                                  raw.count('\n', 0, begin) + 1))
+
+    def region(at, name, visible, body=False):
+        while at < size:
+            word = words[at]
+            if word == 'end': return close(at, name)
+            if word == 'private':
+                if visible: return size
+                visible = False; at += 1
+            elif word == 'begin':
+                need(body)
+                return executable(at+1, name)
+            else:
+                at = declaration(at, visible)
+        need(False)
+
+    start = next((i for i, m in enumerate(lex) if m.start() >= header.end()), size)
+    try:
+        end = region(start, header[2], True)
+        need(end == size)
+    except EnhancementError:
+        # No recovery guesses: even declarations collected before an ambiguous
+        # boundary cannot authorize links from this unit.
+        return []
+    return result
+
+
 @dataclass(frozen=True)
 class Declaration:
     kind: str
@@ -122,6 +293,9 @@ def _one(path: Path) -> Package | None:
     source = path.read_text(encoding='utf-8')
     masked = mask_ada(source)
     header = HEADER.search(masked)
+    body_header = re.search(r'(?im)^\s*(?:package\s+body|separate\b)', masked)
+    if body_header and (header is None or body_header.start() < header.start()):
+        return None
     if not header:
         # Ignored only for explicitly private library packages and Ada helper units.
         if re.search(r'(?im)^\s*(?:package\s+body|separate\b)', masked): return None
@@ -137,19 +311,7 @@ def _one(path: Path) -> Package | None:
     uses = set()
     for clause in re.finditer(r"(?im)^\s*use\s+(?!type\b)([^;]+);", current):
         uses.update(v.strip().lower() for v in clause[1].split(','))
-    declarations: list[Declaration] = []
-    for kind, pattern in (("type", TYPE), ("call", SUBPROGRAM)):
-        for match in pattern.finditer(current):
-            # Nested declarations not modeled: if before a top-level keyword we
-            # see nested generic/package/record, the resolver must decline it.
-            begin = match.start()
-            end = last_semicolon(current, match.start())
-            sig = contents[begin:end].strip()
-            ident = match[2]
-            actual_kind = match[1].lower() if kind == "type" else match[1].lower()
-            line = source.count('\n', 0, header.end() + begin) + 1
-            declarations.append(Declaration(actual_kind, ident, sig, line))
-    declarations.sort(key=lambda x: x.line)
+    declarations = public_declarations(source)
     type_symbols: dict[str, Declaration] = {}
     for decl in declarations:
         if decl.kind not in ("type", "subtype"): continue

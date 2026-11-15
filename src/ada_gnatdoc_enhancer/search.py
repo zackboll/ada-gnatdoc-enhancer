@@ -11,7 +11,7 @@ import re
 from html.parser import HTMLParser
 
 from .destinations import source_destinations
-from .inventory import HEADER, mask_ada, packages, visible_prefix
+from .inventory import mask_ada, packages, public_declarations
 from .theme import asset
 from .util import digest, require, sorted_json
 
@@ -46,23 +46,8 @@ class Text(HTMLParser):
 
 
 def flat_public(package):
-    """Decline unsupported scopes, same-line private parts, and generic formals.
-
-    Public private views are admitted; their completions are not. Generic
-    templates' public members are real declarations; instantiated members with
-    no native anchors are deliberately not invented.
-    """
-    header = HEADER.search(mask_ada(package.source))
-    public = mask_ada(visible_prefix(package.source, header.end()))
-    if re.search(r'\bprivate\s+with\b', public, re.I):
-        return ''
-    boundary = re.search(r'\bprivate\b(?!\s*;)', public, re.I)
-    if boundary:
-        public = public[:boundary.start()]
-    if header[3].lower() != 'is' or re.search(
-            r'\b(package|generic|task|protected|begin|declare)\b', public, re.I):
-        return ''
-    return public
+    """Compatibility view of proven direct declarations, not a scope veto."""
+    return '\n'.join(mask_ada(d.signature) for d in public_declarations(package.source))
 
 
 def records(config, native, guides):
@@ -84,15 +69,14 @@ def records(config, native, guides):
         page = native.pages[key]
         result.append(dict(kind='package', name=package.name, label=package.name,
                            href=page.path.name, text=''))
-        public = flat_public(package)
+        public = set(public_declarations(package.source))
         for d in destinations[key]:
             decl = d.declaration
             if decl.kind not in ('type', 'subtype', 'function', 'procedure'):
                 continue
-            # Match the whole signature inside the proven public prefix. This
-            # binds overloads too, rather than checking a same-named declaration.
-            signature = mask_ada(decl.signature).strip()
-            if not signature or signature not in public:
+            # Exact source identity includes location, kind and full signature.
+            # Identical text in a nested/private scope grants no authority.
+            if decl not in public:
                 continue
             name = package.name + '.' + decl.name
             label = name + (f' (overload {d.ordinal}/{d.total})' if d.total > 1 else '')

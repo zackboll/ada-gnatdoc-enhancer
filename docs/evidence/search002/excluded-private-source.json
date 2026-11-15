@@ -1,0 +1,2098 @@
+[
+  {
+    "package": "AMS.MEL.IR.Track.System_Data",
+    "name": "Command_Status",
+    "kind": "type",
+    "line": 361,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-track-system_data.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Track.System_Data",
+    "name": "Response_Result",
+    "kind": "type",
+    "line": 368,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-track-system_data.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Track.System_Data",
+    "name": "Response_Request_Owner",
+    "kind": "type",
+    "line": 375,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-track-system_data.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Track.System_Data",
+    "name": "Response_Request",
+    "kind": "type",
+    "line": 382,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-track-system_data.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Track.System_Data",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 380,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-track-system_data.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Virtual_Aperture_Queries",
+    "name": "Instance_ID_List",
+    "kind": "type",
+    "line": 178,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-virtual_aperture_queries.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Virtual_Aperture_Queries",
+    "name": "Local_Function_Status_Group",
+    "kind": "type",
+    "line": 181,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-virtual_aperture_queries.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Virtual_Aperture_Queries",
+    "name": "Instance_Status_Report",
+    "kind": "type",
+    "line": 186,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-virtual_aperture_queries.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.System_Data",
+    "name": "Command_Status",
+    "kind": "type",
+    "line": 103,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-system_data.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.System_Data",
+    "name": "Response_Result",
+    "kind": "type",
+    "line": 109,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-system_data.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.System_Data",
+    "name": "Response_Request_Owner",
+    "kind": "type",
+    "line": 115,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-system_data.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.System_Data",
+    "name": "Response_Request",
+    "kind": "type",
+    "line": 121,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-system_data.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.System_Data",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 119,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-system_data.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Interval_Status",
+    "name": "Stream",
+    "kind": "type",
+    "line": 412,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-interval_status.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Interval_Status",
+    "name": "Event_Log_Entry",
+    "kind": "type",
+    "line": 418,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-interval_status.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Interval_Status",
+    "name": "Status_Event",
+    "kind": "type",
+    "line": 426,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-interval_status.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Interval_Status",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 416,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-interval_status.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.Product_Rx",
+    "name": "Config",
+    "kind": "type",
+    "line": 862,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-product_rx.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.Product_Rx",
+    "name": "Create_Request",
+    "kind": "type",
+    "line": 867,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-product_rx.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.Product_Rx",
+    "name": "Create_Result",
+    "kind": "type",
+    "line": 873,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-product_rx.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.Product_Rx",
+    "name": "Endpoint",
+    "kind": "type",
+    "line": 878,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-product_rx.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.Product_Rx",
+    "name": "Product_Metadata",
+    "kind": "type",
+    "line": 885,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-product_rx.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.Product_Rx",
+    "name": "Event",
+    "kind": "type",
+    "line": 897,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-product_rx.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.Product_Rx",
+    "name": "Copy_Stabilization",
+    "kind": "procedure",
+    "line": 860,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-product_rx.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.Product_Rx",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 871,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-product_rx.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.Product_Rx",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 883,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-product_rx.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.Product_Rx",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 907,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-product_rx.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Scheduling.Metadata",
+    "name": "Execute_Task_Ack_Stream",
+    "kind": "type",
+    "line": 238,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-scheduling-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Scheduling.Metadata",
+    "name": "Task_Executing_Stream",
+    "kind": "type",
+    "line": 244,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-scheduling-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Scheduling.Metadata",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 242,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-scheduling-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Scheduling.Metadata",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 248,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-scheduling-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Scheduling.Metadata",
+    "name": "To_Report",
+    "kind": "function",
+    "line": 250,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-scheduling-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL",
+    "name": "Provider_Version",
+    "kind": "type",
+    "line": 152,
+    "reason": "private part",
+    "source": "ada/src/ams-mel.ads"
+  },
+  {
+    "package": "AMS.MEL",
+    "name": "Session",
+    "kind": "type",
+    "line": 160,
+    "reason": "private part",
+    "source": "ada/src/ams-mel.ads"
+  },
+  {
+    "package": "AMS.MEL",
+    "name": "Check_Submission",
+    "kind": "procedure",
+    "line": 151,
+    "reason": "private part",
+    "source": "ada/src/ams-mel.ads"
+  },
+  {
+    "package": "AMS.MEL",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 164,
+    "reason": "private part",
+    "source": "ada/src/ams-mel.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "UTC_Time",
+    "kind": "type",
+    "line": 1716,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Pointing_Components",
+    "kind": "type",
+    "line": 1719,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Pointing",
+    "kind": "type",
+    "line": 1720,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Stokes_Components",
+    "kind": "type",
+    "line": 1727,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Pulse_Threshold",
+    "kind": "type",
+    "line": 1731,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Pulse_Detection_Settings",
+    "kind": "type",
+    "line": 1735,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "RX_Receive_Event_Config",
+    "kind": "type",
+    "line": 1742,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Waveform_Profile",
+    "kind": "type",
+    "line": 1769,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Waveform_Profile_Table",
+    "kind": "type",
+    "line": 1785,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Waveform_Step",
+    "kind": "type",
+    "line": 1788,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Event_Waveform_Pattern",
+    "kind": "type",
+    "line": 1793,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Waveform_Pattern_List",
+    "kind": "type",
+    "line": 1798,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Modulation_Config",
+    "kind": "type",
+    "line": 1803,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Modulation_Table",
+    "kind": "type",
+    "line": 1826,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "TX_Transmit_Event_Config",
+    "kind": "type",
+    "line": 1829,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Local_Function_Write",
+    "kind": "type",
+    "line": 1852,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Local_Function_Command",
+    "kind": "type",
+    "line": 1857,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Product_Stream_Endpoint",
+    "kind": "type",
+    "line": 1864,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Product_Stream_Params",
+    "kind": "type",
+    "line": 1869,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Endpoint_Connection",
+    "kind": "type",
+    "line": 1873,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Endpoint_Connections",
+    "kind": "type",
+    "line": 1879,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "RX_Job_Interval_Config",
+    "kind": "type",
+    "line": 1882,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "RX_Job_Interval_List",
+    "kind": "type",
+    "line": 1911,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Cancel_Result",
+    "kind": "type",
+    "line": 1914,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Frequency_Range",
+    "kind": "type",
+    "line": 1928,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Pipe_Config",
+    "kind": "type",
+    "line": 1932,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "RX_Element_Group_Config",
+    "kind": "type",
+    "line": 1937,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "TX_Element_Group_Config",
+    "kind": "type",
+    "line": 1944,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Group_Mode",
+    "kind": "type",
+    "line": 1950,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Job_Group",
+    "kind": "type",
+    "line": 1951,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Job_Config",
+    "kind": "type",
+    "line": 1961,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Job_Result",
+    "kind": "type",
+    "line": 1973,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Job_Request",
+    "kind": "type",
+    "line": 1978,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Job",
+    "kind": "type",
+    "line": 1983,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Virtual_Aperture_Config",
+    "kind": "type",
+    "line": 1993,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Virtual_Aperture_Result",
+    "kind": "type",
+    "line": 1999,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Virtual_Aperture_Request",
+    "kind": "type",
+    "line": 2004,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Virtual_Aperture",
+    "kind": "type",
+    "line": 2009,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "C2_MEL",
+    "kind": "type",
+    "line": 2017,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 1981,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 1991,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 2007,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 2015,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 2020,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Stacked_Image",
+    "name": "Stacked_Config",
+    "kind": "type",
+    "line": 75,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-stacked_image.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Stacked_Image",
+    "name": "Stacked_Channel",
+    "kind": "type",
+    "line": 79,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-stacked_image.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Stacked_Image",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 82,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-stacked_image.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Instrumentation",
+    "name": "Instrumentation_Config",
+    "kind": "type",
+    "line": 214,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-instrumentation.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Instrumentation",
+    "name": "Instrumentation_Channel",
+    "kind": "type",
+    "line": 218,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-instrumentation.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Instrumentation",
+    "name": "Instrumentation_Result",
+    "kind": "type",
+    "line": 223,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-instrumentation.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Instrumentation",
+    "name": "Instrumentation_Request_Owner",
+    "kind": "type",
+    "line": 230,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-instrumentation.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Instrumentation",
+    "name": "Instrumentation_Request",
+    "kind": "type",
+    "line": 236,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-instrumentation.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Instrumentation",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 221,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-instrumentation.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Instrumentation",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 234,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-instrumentation.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "BIT_Type",
+    "kind": "type",
+    "line": 1085,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Active_BIT",
+    "kind": "type",
+    "line": 1093,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Completed_BIT_Item",
+    "kind": "type",
+    "line": 1099,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Completed_BIT",
+    "kind": "type",
+    "line": 1104,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Fault_Data",
+    "kind": "type",
+    "line": 1112,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Fault_Ambiguity_Group",
+    "kind": "type",
+    "line": 1116,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Fault",
+    "kind": "type",
+    "line": 1121,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "BIT_Type_List",
+    "kind": "type",
+    "line": 1132,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Active_BIT_List",
+    "kind": "type",
+    "line": 1135,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Completed_BIT_Item_List",
+    "kind": "type",
+    "line": 1138,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Completed_BIT_List",
+    "kind": "type",
+    "line": 1141,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Fault_Data_List",
+    "kind": "type",
+    "line": 1144,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Fault_Ambiguity_Group_List",
+    "kind": "type",
+    "line": 1147,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Fault_List",
+    "kind": "type",
+    "line": 1150,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "BIT_Status",
+    "kind": "type",
+    "line": 1153,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Foreign_Key",
+    "kind": "type",
+    "line": 1158,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Installation_Details",
+    "kind": "type",
+    "line": 1161,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "MFA_Component",
+    "kind": "type",
+    "line": 1165,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "MFA_Component_List",
+    "kind": "type",
+    "line": 1174,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "About",
+    "kind": "type",
+    "line": 1177,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "MFA_Status",
+    "kind": "type",
+    "line": 1180,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Name_Value_Pair",
+    "kind": "type",
+    "line": 1187,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Name_Value_Pair_List",
+    "kind": "type",
+    "line": 1191,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Security_Artifact",
+    "kind": "type",
+    "line": 1194,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Security_Artifact_List",
+    "kind": "type",
+    "line": 1198,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Security_Event",
+    "kind": "type",
+    "line": 1201,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.Status",
+    "name": "Security_Audit_Record",
+    "kind": "type",
+    "line": 1207,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-status.ads"
+  },
+  {
+    "package": "AMS.MEL.RF",
+    "name": "Physical_Data",
+    "kind": "type",
+    "line": 494,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf.ads"
+  },
+  {
+    "package": "AMS.MEL.RF",
+    "name": "Tx_Power_Mode",
+    "kind": "type",
+    "line": 516,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf.ads"
+  },
+  {
+    "package": "AMS.MEL.RF",
+    "name": "Tx_Power_Mode_List",
+    "kind": "type",
+    "line": 524,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf.ads"
+  },
+  {
+    "package": "AMS.MEL.RF",
+    "name": "Face_Info",
+    "kind": "type",
+    "line": 527,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf.ads"
+  },
+  {
+    "package": "AMS.MEL.RF",
+    "name": "MFA_Info",
+    "kind": "type",
+    "line": 535,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf.ads"
+  },
+  {
+    "package": "AMS.MEL.RF",
+    "name": "Data_MEL",
+    "kind": "type",
+    "line": 543,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf.ads"
+  },
+  {
+    "package": "AMS.MEL.RF",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 546,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Camera",
+    "name": "Camera_Request",
+    "kind": "type",
+    "line": 129,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-camera.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Camera",
+    "name": "Camera_Result",
+    "kind": "type",
+    "line": 132,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-camera.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Virtual_Aperture_Notifications",
+    "name": "Subscription",
+    "kind": "type",
+    "line": 95,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-virtual_aperture_notifications.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Virtual_Aperture_Notifications",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 99,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-virtual_aperture_notifications.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2",
+    "name": "Control_Config",
+    "kind": "type",
+    "line": 500,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2",
+    "name": "Control_Channel",
+    "kind": "type",
+    "line": 505,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2",
+    "name": "Request_Owner",
+    "kind": "type",
+    "line": 510,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2",
+    "name": "Mode_Request",
+    "kind": "type",
+    "line": 515,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2",
+    "name": "Return_Request_Owner",
+    "kind": "type",
+    "line": 518,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2",
+    "name": "Return_Request",
+    "kind": "type",
+    "line": 523,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2",
+    "name": "Mode_Result",
+    "kind": "type",
+    "line": 526,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2",
+    "name": "Return_Result",
+    "kind": "type",
+    "line": 532,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 508,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 513,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 521,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Track.Metadata",
+    "name": "Candidate_Object_Message",
+    "kind": "type",
+    "line": 448,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-track-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Track.Metadata",
+    "name": "Candidate_Object_PreProc_Message",
+    "kind": "type",
+    "line": 460,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-track-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Track.Metadata",
+    "name": "Metadata_Channel",
+    "kind": "type",
+    "line": 471,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-track-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Track.Metadata",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 475,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-track-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Channel",
+    "name": "Return_Owner",
+    "kind": "type",
+    "line": 614,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-channel.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Channel",
+    "name": "Return_Request",
+    "kind": "type",
+    "line": 619,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-channel.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Channel",
+    "name": "Return_Result",
+    "kind": "type",
+    "line": 622,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-channel.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Channel",
+    "name": "Comms_Owner",
+    "kind": "type",
+    "line": 628,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-channel.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Channel",
+    "name": "Comms_Request",
+    "kind": "type",
+    "line": 633,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-channel.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Channel",
+    "name": "Comms_Result",
+    "kind": "type",
+    "line": 636,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-channel.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Channel",
+    "name": "Channel_Capability",
+    "kind": "type",
+    "line": 642,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-channel.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Channel",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 617,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-channel.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Channel",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 631,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-channel.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.Admin",
+    "name": "Admin_MEL",
+    "kind": "type",
+    "line": 57,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-admin.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.Admin",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 60,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-admin.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Data_Pipes",
+    "name": "Data_Pipe_Connection",
+    "kind": "type",
+    "line": 159,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-data_pipes.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Data_Pipes",
+    "name": "Element_Group_Connection",
+    "kind": "type",
+    "line": 164,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-data_pipes.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Data_Pipes",
+    "name": "Connection_Snapshot",
+    "kind": "type",
+    "line": 169,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-data_pipes.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Health_Status.Metadata",
+    "name": "NUC_Stream",
+    "kind": "type",
+    "line": 343,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-health_status-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Health_Status.Metadata",
+    "name": "Subsystem_Dependency",
+    "kind": "type",
+    "line": 351,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-health_status-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Health_Status.Metadata",
+    "name": "Subsystem_CSCI",
+    "kind": "type",
+    "line": 356,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-health_status-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Health_Status.Metadata",
+    "name": "Subsystem_Status",
+    "kind": "type",
+    "line": 366,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-health_status-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Health_Status.Metadata",
+    "name": "Metadata_Event",
+    "kind": "type",
+    "line": 374,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-health_status-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Health_Status.Metadata",
+    "name": "Metadata_Stream",
+    "kind": "type",
+    "line": 395,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-health_status-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Health_Status.Metadata",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 346,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-health_status-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Health_Status.Metadata",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 398,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-health_status-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "UCI_ID",
+    "kind": "type",
+    "line": 324,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "Component_Location",
+    "kind": "type",
+    "line": 328,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "Image_Config",
+    "kind": "type",
+    "line": 333,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "Image_Control_Config",
+    "kind": "type",
+    "line": 341,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "Image_Stream",
+    "kind": "type",
+    "line": 346,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "Channel_View",
+    "kind": "type",
+    "line": 351,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "Camera_Request_Owner",
+    "kind": "type",
+    "line": 360,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "Erase_Request_Owner",
+    "kind": "type",
+    "line": 367,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "Camera_Protection_Request_Owner",
+    "kind": "type",
+    "line": 373,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "Calibration_Configuration_Request_Owner",
+    "kind": "type",
+    "line": 379,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "Calibration_Status_Request_Owner",
+    "kind": "type",
+    "line": 386,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 349,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 358,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 365,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 371,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 377,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 384,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 390,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image",
+    "name": "Full_Frame",
+    "kind": "type",
+    "line": 837,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image",
+    "name": "Lease_Metadata",
+    "kind": "type",
+    "line": 854,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image",
+    "name": "Frame_Lease_Owner",
+    "kind": "type",
+    "line": 874,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image",
+    "name": "Frame_Lease",
+    "kind": "type",
+    "line": 882,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image",
+    "name": "Navigation_Result",
+    "kind": "type",
+    "line": 887,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image",
+    "name": "Navigation_Request_Owner",
+    "kind": "type",
+    "line": 893,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image",
+    "name": "Navigation_Request",
+    "kind": "type",
+    "line": 899,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 880,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 897,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Calibration_Status",
+    "name": "Completed_Item",
+    "kind": "type",
+    "line": 172,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-calibration_status.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Calibration_Status",
+    "name": "Completed_Calibration",
+    "kind": "type",
+    "line": 178,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-calibration_status.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Calibration_Status",
+    "name": "Status_Value",
+    "kind": "type",
+    "line": 187,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-calibration_status.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Calibration_Status",
+    "name": "Status_Request",
+    "kind": "type",
+    "line": 191,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-calibration_status.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Calibration_Status",
+    "name": "Status_Result",
+    "kind": "type",
+    "line": 194,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-calibration_status.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Camera_Protection",
+    "name": "Protection_Request",
+    "kind": "type",
+    "line": 108,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-camera_protection.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Camera_Protection",
+    "name": "Protection_Result",
+    "kind": "type",
+    "line": 111,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-camera_protection.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Metadata",
+    "name": "Command_Status",
+    "kind": "type",
+    "line": 724,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Metadata",
+    "name": "BIT_Type",
+    "kind": "type",
+    "line": 730,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Metadata",
+    "name": "Active_BIT",
+    "kind": "type",
+    "line": 738,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Metadata",
+    "name": "Completed_BIT_Item",
+    "kind": "type",
+    "line": 744,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Metadata",
+    "name": "Completed_BIT",
+    "kind": "type",
+    "line": 749,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Metadata",
+    "name": "Fault_Data",
+    "kind": "type",
+    "line": 757,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Metadata",
+    "name": "Fault_Ambiguity_Group",
+    "kind": "type",
+    "line": 761,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Metadata",
+    "name": "Fault",
+    "kind": "type",
+    "line": 765,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Metadata",
+    "name": "Metadata_Event",
+    "kind": "type",
+    "line": 776,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Metadata",
+    "name": "Metadata_Stream",
+    "kind": "type",
+    "line": 785,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Metadata",
+    "name": "Camera_Protection_Stream",
+    "kind": "type",
+    "line": 790,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Metadata",
+    "name": "Calibration_Configuration_Stream",
+    "kind": "type",
+    "line": 796,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Metadata",
+    "name": "Calibration_Status_Stream",
+    "kind": "type",
+    "line": 802,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Metadata",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 788,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Metadata",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 794,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Metadata",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 800,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Metadata",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 806,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Track",
+    "name": "Track_Config",
+    "kind": "type",
+    "line": 176,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-track.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Track",
+    "name": "Track_Channel",
+    "kind": "type",
+    "line": 180,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-track.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Track",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 183,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-track.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Track.Updates",
+    "name": "Command_Status",
+    "kind": "type",
+    "line": 431,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-track-updates.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Track.Updates",
+    "name": "Update_Result",
+    "kind": "type",
+    "line": 438,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-track-updates.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Track.Updates",
+    "name": "Update_Request_Owner",
+    "kind": "type",
+    "line": 445,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-track-updates.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Track.Updates",
+    "name": "Update_Request",
+    "kind": "type",
+    "line": 452,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-track-updates.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Track.Updates",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 450,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-track-updates.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Optical_Distortion_Map",
+    "name": "Map_Value",
+    "kind": "type",
+    "line": 133,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-optical_distortion_map.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Instrumentation.Metadata",
+    "name": "Metadata_Channel",
+    "kind": "type",
+    "line": 70,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-instrumentation-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Instrumentation.Metadata",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 74,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-instrumentation-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image.Metadata",
+    "name": "Line_Of_Sight_Quaternion_Stream",
+    "kind": "type",
+    "line": 376,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image.Metadata",
+    "name": "Optical_Distortion_Map_Stream",
+    "kind": "type",
+    "line": 382,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image.Metadata",
+    "name": "Camera_Response_Stream",
+    "kind": "type",
+    "line": 390,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image.Metadata",
+    "name": "NUC_Stream",
+    "kind": "type",
+    "line": 398,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image.Metadata",
+    "name": "Bad_Pixel_List",
+    "kind": "type",
+    "line": 406,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image.Metadata",
+    "name": "Metadata_Stream",
+    "kind": "type",
+    "line": 410,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image.Metadata",
+    "name": "Metadata_Event",
+    "kind": "type",
+    "line": 415,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image.Metadata",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 380,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image.Metadata",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 388,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image.Metadata",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 396,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image.Metadata",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 401,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Image.Metadata",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 413,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-image-metadata.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Health_Status",
+    "name": "Health_Config",
+    "kind": "type",
+    "line": 81,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-health_status.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Health_Status",
+    "name": "Health_Channel",
+    "kind": "type",
+    "line": 85,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-health_status.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Health_Status",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 88,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-health_status.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Common",
+    "name": "Comms_Owner",
+    "kind": "type",
+    "line": 94,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-common.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Common",
+    "name": "Comms_Request",
+    "kind": "type",
+    "line": 99,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-common.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Common",
+    "name": "Comms_Result",
+    "kind": "type",
+    "line": 102,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-common.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.C2.Common",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 97,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-c2-common.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Scheduling",
+    "name": "Scheduling_Config",
+    "kind": "type",
+    "line": 84,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-scheduling.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Scheduling",
+    "name": "Scheduling_Channel",
+    "kind": "type",
+    "line": 88,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-scheduling.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Scheduling",
+    "name": "Finalize",
+    "kind": "procedure",
+    "line": 91,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-scheduling.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Element_Groups",
+    "name": "Data_Pipe_Info",
+    "kind": "type",
+    "line": 185,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-element_groups.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Element_Groups",
+    "name": "Numeric_Storage",
+    "kind": "type",
+    "line": 190,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-element_groups.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Element_Groups",
+    "name": "Element_Group_Descriptor",
+    "kind": "type",
+    "line": 193,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-element_groups.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Element_Groups",
+    "name": "Element_Group_List",
+    "kind": "type",
+    "line": 201,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-element_groups.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Local_Functions",
+    "name": "Local_Function_Info",
+    "kind": "type",
+    "line": 94,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-local_functions.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Local_Functions",
+    "name": "Local_Function_List",
+    "kind": "type",
+    "line": 104,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-local_functions.ads"
+  },
+  {
+    "package": "AMS.MEL.RF.C2.Local_Functions",
+    "name": "Status_List",
+    "kind": "type",
+    "line": 107,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-rf-c2-local_functions.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Calibration_Configuration",
+    "name": "Calibration_Collection",
+    "kind": "type",
+    "line": 109,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-calibration_configuration.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Calibration_Configuration",
+    "name": "Configuration_Request",
+    "kind": "type",
+    "line": 112,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-calibration_configuration.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Calibration_Configuration",
+    "name": "Configuration_Result",
+    "kind": "type",
+    "line": 115,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-calibration_configuration.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Erase",
+    "name": "Erase_Command",
+    "kind": "type",
+    "line": 73,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-erase.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Erase",
+    "name": "Erase_Request",
+    "kind": "type",
+    "line": 78,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-erase.ads"
+  },
+  {
+    "package": "AMS.MEL.IR.Erase",
+    "name": "Erase_Result",
+    "kind": "type",
+    "line": 81,
+    "reason": "private part",
+    "source": "ada/src/ams-mel-ir-erase.ads"
+  }
+]

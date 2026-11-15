@@ -13,6 +13,18 @@
 
 # Changelog
 
+## Unreleased — GNATDOC-SEARCH-002
+
+* Classify direct public Ada declarations by source scope instead of rejecting
+  whole packages containing package instances, nested packages, generics,
+  protected objects or tasks. Preserve private boundaries and source/native
+  destination verification; unsupported/ambiguous scopes still fail closed.
+* Add complete pinned MEL inventory/reproducibility qualification and Chromium
+  navigation for all 348 recovered declarations, with adversarial private,
+  nested, generic-formal and forged-output negative controls.
+* No release artifacts or consumer installations are changed. A separate
+  immutable release follows independent review and merge.
+
 ## 0.1.5 — release preparation (GNATDOC-035; not published)
 
 - Include merged GNATDOC-031/032 research controls and GNATDOC-033 compiler-backed
