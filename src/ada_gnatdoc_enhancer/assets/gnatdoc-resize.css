@@ -1,0 +1,34 @@
+/* Loaded only by the explicitly authorized resizable shell. Theme bytes stay intact. */
+#navigation-resize[hidden] { display: none; }
+body.main.navigation-resizable {
+  display: grid;
+  grid-template-columns: var(--navigation-width) 8px minmax(320px, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+}
+#navigation-resize {
+  position: relative;
+  z-index: 101;
+  min-width: 0;
+  cursor: col-resize;
+  touch-action: none;
+  background: var(--border, #8895a7);
+  border-inline: 2px solid var(--nav, Canvas);
+}
+#navigation-resize:hover, #navigation-resize:focus-visible {
+  background: var(--link, Highlight);
+}
+#navigation-resize:focus-visible {
+  outline: 2px solid var(--focus, Highlight);
+  outline-offset: -2px;
+}
+body.navigation-resizing { cursor: col-resize; user-select: none; }
+/* Pointer capture owns the gesture; the shield prevents iframe hit-testing
+   from stealing it in browsers that dispatch across browsing contexts. */
+body.navigation-resizing::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  cursor: col-resize;
+}
+body.navigation-resizing iframe { pointer-events: none; }
