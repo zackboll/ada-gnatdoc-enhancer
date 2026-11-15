@@ -8,6 +8,18 @@ Started from freshly fetched upstream `main`, commit
 from the pre-existing GNATDOC-036 branch. No release/version bump, publication,
 consumer installation, merge, or Imgproc/Geometry consumer edit is included.
 
+During qualification, GNATDOC-036 merged upstream as
+`da3a185812a57af4add730fb36fc6fb7238edc5b`. That current `main` was integrated
+into the feature branch (not merged into upstream). Its exact source-block guide
+byte-parity tests caught a first-declaration source-line compatibility issue.
+The walker now preserves the historical post-header offset for that declaration;
+an explicit cross-feature regression was added. All 19 source-block tests pass
+without changing their reference bytes or weakening their private/nested guards.
+The retained 754-test/1,455-input audit files below document the **pre-integration**
+qualification epoch. Latest integrated qualification results and exact identities
+are in PR #32 comments and its exact-head CI artifacts, not retroactively inferred
+from those older evidence files. The integrated archive audit checks 1,688 inputs.
+
 MEL source commit `1d7cf8a11ee6fc154fee2b577aa7296b5a1fbd0a`, tree
 `2866a78de690e24c38065f513c08dcf37b609793`. All 52 retained Ada specifications
 were independently compared byte-for-byte to that Git revision. The complete
@@ -109,7 +121,8 @@ Existing queries passed with 20, 4, 4 and 1 displayed matches respectively:
 `Navigation Report`, `Navigation_Report`, `Submit Navigation Report`,
 `Submit_Navigation_Report`.
 
-Nine adversarial scope tests cover before/after/multiple nested packages,
+Ten adversarial scope tests cover first-declaration guide identity,
+before/after/multiple nested packages,
 generic formals/templates, protected/task declarations, nested bodies,
 visible/private and partial/completed views, overloads, comments, literals,
 quoted operators, unsupported boundaries, and native evidence loss/swap.
