@@ -130,6 +130,17 @@ class ScopeInventory(unittest.TestCase):
         self.assertEqual([d.name for d in public_declarations('package Example is '
             'function -- "not an operator"\n Real_Name return Integer; end Example;')], ['Real_Name'])
 
+    def test_first_declaration_preserves_existing_offset_based_guide_authority(self):
+        from ada_gnatdoc_enhancer.inventory import _one
+        from ada_gnatdoc_enhancer.source_references import direct_lines
+        import tempfile
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder)/'example.ads'
+            path.write_text('package Example is\n type First is range 0 .. 1;\nend Example;')
+            package = _one(path)
+            self.assertEqual(package.declarations[0].line, 1)
+            self.assertIn(package.declarations[0].line, direct_lines(package))
+
 
 class ScopeSearch(unittest.TestCase):
     def setUp(self):

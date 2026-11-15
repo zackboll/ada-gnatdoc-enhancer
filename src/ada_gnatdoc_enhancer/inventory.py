@@ -122,8 +122,9 @@ def public_declarations(raw: str) -> list[Declaration]:
     words = [m[0].lower() for m in lex]
     size = len(words)
     result = []
-    historical_starts = {m.end(): m.start() for pattern in (TYPE, SUBPROGRAM)
-                         for m in pattern.finditer(masked, header.end())}
+    historical_starts = {header.end() + m.end(): header.end() + m.start()
+                         for pattern in (TYPE, SUBPROGRAM)
+                         for m in pattern.finditer(masked[header.end():])}
 
     def need(condition):
         require(condition, 'unsupported or unbalanced Ada declaration scope')
