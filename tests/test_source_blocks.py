@@ -92,6 +92,9 @@ class SourceBlocks(unittest.TestCase):
         portal = {n: digest(b) for n, b in self.expected.items() if not n.startswith('api/')}
         self.assertEqual({n: v for n, v in actual['output_sha256'].items() if n in portal}, portal)
         actual['output_sha256'] = {n: v for n, v in actual['output_sha256'].items() if n not in portal}
+        self.assertEqual(reference['enhancer_version'], '0.1.5')
+        self.assertEqual(actual['enhancer_version'], '0.1.6')
+        actual['enhancer_version'] = reference['enhancer_version']
         self.assertEqual(actual, reference)
         second = self.root / 'second'
         shutil.copytree(FIXTURE / 'native', second)

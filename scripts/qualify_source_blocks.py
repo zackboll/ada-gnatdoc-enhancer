@@ -118,13 +118,16 @@ print(json.dumps(source_epoch.verify_presentation(site,root,report,references,ba
     require({n: v for n, v in actual['output_sha256'].items() if n in portal_hashes} == portal_hashes,
             'incorrect portal output hashes')
     actual['output_sha256'] = {n: v for n, v in actual['output_sha256'].items() if n not in portal_hashes}
+    require(expected['enhancer_version'] == '0.1.5' and actual['enhancer_version'] == '0.1.6',
+            'unexpected official/candidate release version')
+    actual['enhancer_version'] = expected['enhancer_version']
     require(actual == expected, 'unapproved presentation metadata difference')
     evidence = dict(source_commit=COMMIT, source_tree=subprocess.check_output(
         ['git', '-C', str(consumer), 'rev-parse', COMMIT + '^{tree}'], text=True).strip(),
         portal={n: dict(identical=True, sha256=digest(b)) for n, b in portal.items()},
         pilot_adversarial=negatives, native=report['native'], catalog=catalog,
         independent_audit=audit, output_sha256=first, deterministic=True, idempotent=True,
-        permitted_changed_files=differences, permitted_manifest_fields=['authored_source_blocks', 'output_sha256'])
+        permitted_changed_files=differences, permitted_manifest_fields=['enhancer_version', 'authored_source_blocks', 'output_sha256'])
     (workspace / 'evidence.json').write_text(sorted_json(evidence))
     return evidence
 
