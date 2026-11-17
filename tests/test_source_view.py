@@ -126,9 +126,13 @@ class SourceView(unittest.TestCase):
         mp.write_text(sorted_json(data))
         with self.assertRaises(EnhancementError): verify(self.config, self.fx.site)
         mp.write_bytes(original)
-        page = next(p for p in (self.fx.site/'api').glob('*.html') if 'View source' in p.read_text())
         import re
-        raw = re.sub(rb'\.html#L[0-9]+"', b'.html#L1"', page.read_bytes(), count=1)
+        # Package links legitimately target L1. Directory iteration order must
+        # not decide whether this negative control actually mutates a link.
+        destination = rb'\.html#L(?:[2-9][0-9]*|1[0-9]+)"'
+        page = next(p for p in sorted((self.fx.site/'api').glob('*.html'))
+                    if re.search(destination, p.read_bytes()))
+        raw = re.sub(destination, b'.html#L1"', page.read_bytes(), count=1)
         self.assertNotEqual(page.read_bytes(), raw)
         self.reseal(page, raw)
         with self.assertRaises(EnhancementError): verify(self.config, self.fx.site)
