@@ -1,5 +1,10 @@
 # Ada GNATdoc Enhancer
 
+Optional [offline specification browsing](docs/source-view.md) is default-off
+and source/native-identity verified. Enabling it publishes each selected public
+package's **whole `.ads` file, including any private section**; `.adb` bodies are
+not supported.
+
 ## v0.1.6 release candidate (not published)
 
 Includes merged GNATDOC-036 schema-3 source-backed authored-HTML blocks and

@@ -72,6 +72,12 @@ def validate_files(site:Path,config:Config,expected:set[str], *, raw=False, titl
     external=destinations(config)
     require(site.is_dir() and not site.is_symlink(),'invalid/symlink site root')
     observed=set(); pages={}
+    source_values={}
+    if config.source_view:
+        from .source_view import build
+        from .inventory import packages
+        require(native is not None, 'source-view validation requires verified native input')
+        source_values=build(config,native,packages(config))[0]
     source_blocks = None
     if config.guides == 'authored-html':
         import json
@@ -98,12 +104,17 @@ def validate_files(site:Path,config:Config,expected:set[str], *, raw=False, titl
                     'prohibited dynamic JavaScript evaluation')
         elif path.suffix=='.html':
             text=path.read_text(encoding='utf-8')
-            require(not re.search(r'/(?:home|tmp|Users)/|file:/{2}|[A-Z]:\\',text),
-                    f"machine-local path leak: {relative}")
-            require('{{' not in text and '}}' not in text, f"unresolved template in {relative}")
+            is_source=relative in source_values
+            if is_source:
+                require(path.read_bytes()==source_values[relative],
+                        'source view differs from independently reconstructed input')
+            else:
+                require(not re.search(r'/(?:home|tmp|Users)/|file:/{2}|[A-Z]:\\',text),
+                        f"machine-local path leak: {relative}")
+                require('{{' not in text and '}}' not in text, f"unresolved template in {relative}")
             check_document(text,relative,title=titles.get(relative),
                            generated=relative.startswith('api/') or relative in titles,
-                           viewport=config.theme if relative.startswith('api/') else None)
+                           viewport=True if is_source else config.theme if relative.startswith('api/') else None)
             page=Page(text)
             if config.guides.startswith('authored-') and not relative.startswith('api/'):
                 from .authored import check_html
@@ -125,7 +136,7 @@ def validate_files(site:Path,config:Config,expected:set[str], *, raw=False, titl
     require(expected==observed,f"missing site files: {sorted(expected-observed)}")
     for path,page in pages.items():
         for link in page.links:
-            authored = config.guides.startswith('authored-') and path.parent != site.resolve()/'api'
+            authored = config.guides.startswith('authored-') and not path.is_relative_to(site.resolve()/'api')
             if authored:
                 from urllib.parse import urlsplit
                 from .authored import safe_uri

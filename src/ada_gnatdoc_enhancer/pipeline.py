@@ -28,6 +28,7 @@ from .util import digest, require, site_root, sorted_json
 from .validation import validate_files
 
 MANIFEST = 'api/presentation.json'
+SOURCE_HEAD = '<link rel="stylesheet" href="gnatdoc-source.css">'
 
 
 def canonical_fingerprints(source,config):
@@ -48,7 +49,8 @@ def _head(config:Config,index:bool=False):
     return (NATIVE_LINK+(METADATA if config.theme else '')+
             (SCRIPT if index and config.navigation!='none' else '')+
             ('<link rel="stylesheet" href="gnatdoc-search.css">' if index and config.search else '')+
-            (RESIZE_HEAD if index and config.resizable_sidebar else ''))
+            (RESIZE_HEAD if index and config.resizable_sidebar else '')+
+            (SOURCE_HEAD if not index and config.source_view else ''))
 
 
 def document_titles(config:Config,native:NativeSite):
@@ -58,6 +60,9 @@ def document_titles(config:Config,native:NativeSite):
     if config.guides=='markdown':
         from .guides import manifest
         titles.update({g['path']:guide_title(g['label'],config.project) for g in manifest(config)['guides']})
+    if config.source_view:
+        from .source_view import build
+        titles.update(build(config,native,packages(config))[3])
     return titles
 
 
@@ -75,10 +80,18 @@ def expected_output(config:Config,site:Path):
     from .instance_references import targets as reference_targets, metadata as reference_metadata
     references=reference_targets(config,source,native,instance_sections)
     values={}
+    source_links={}
+    if config.source_view:
+        from .source_view import build
+        source_values,source_links,_,_=build(config,native,source)
+        values.update(source_values)
     totals={'linked_types':0,'declaration_snippets':0,'public_packages':len(native.pages),
             'linked_local_types':0,'linked_external_types':0,
             'unrendered_renderer_exceptions':exceptions}
     totals.update(instance_counts)
+    if config.source_view:
+        totals.update(source_pages=len(source_links),
+                      source_links=sum(len(entries) for entries in source_links.values()))
     for name,page in native.pages.items():
         check_native_input(page.original,'api/'+page.path.name)
         require(source[name].name==page.package,
@@ -94,8 +107,15 @@ def expected_output(config:Config,site:Path):
         summary=instance_sections.get('api/'+page.path.name)
         if summary is not None:
             text=text.replace('<h2>Description</h2>',summary+'<h2>Description</h2>',1)
+        if config.source_view:
+            from .source_view import enhance_page
+            text=enhance_page(text,source[name],source_links[name],
+                              source[name].path.relative_to(config.root).as_posix())
         path=page.path.relative_to(site).as_posix()
-        values[path]=native_document(themed(text,config.theme),_head(config),
+        text=themed(text,config.theme)
+        if config.source_view:
+            text=text.replace(_head(replace(config,source_view={})),_head(config),1)
+        values[path]=native_document(text,_head(config),
                                      package_title(page.package,config.project),path).encode()
     check_native_input(native.index,'api/index.html')
     index=themed(native.index,config.theme)
@@ -145,6 +165,9 @@ def _presentation(config:Config,site:Path,raw:dict,values:dict,counts:dict):
     blocks = source_block_identity(config)
     if blocks is not None:
         result['authored_source_blocks'] = blocks
+    if config.source_view:
+        from .source_view import build
+        result['source_view'] = build(config,snapshot(config,site),source)[2]
     return result
 
 
@@ -214,7 +237,8 @@ def verify(config:Config,site:Path):
                         'original_api_html','native_css_sha256','source_sha256','output_sha256','counts'} |
                         ({'theme_source'} if identity is not None else set()) |
                         ({'external_symbol_bookmarks'} if config.external_symbol_bookmarks else set()) |
-                        ({'authored_source_blocks'} if blocks is not None else set()),
+                        ({'authored_source_blocks'} if blocks is not None else set()) |
+                        ({'source_view'} if config.source_view else set()),
             'unexpected presentation manifest fields')
     if identity is not None:
         require(data['theme_source'] == identity, 'custom theme source/configuration identity changed')
@@ -244,6 +268,10 @@ def verify(config:Config,site:Path):
             p.parent.mkdir(parents=True,exist_ok=True)
             p.write_text(value,encoding='utf-8')
         native,values,counts=expected_output(config,raw)
+        if config.source_view:
+            from .source_view import build
+            require(data['source_view']==build(config,native,packages(config))[2],
+                    'source-view ownership/link inventory mismatch')
         require(counts==data['counts'],'presentation counts mismatch')
         require({n:digest(d) for n,d in sorted(values.items())}==data['output_sha256'],
                 'enhanced output does not match source/manifest')

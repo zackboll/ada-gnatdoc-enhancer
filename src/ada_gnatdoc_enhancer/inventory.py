@@ -235,6 +235,7 @@ def public_declarations(raw: str) -> list[Declaration]:
 
     def admit(start, end, kind, name):
         begin = lex[start].start(); finish = lex[end-1].end()
+        token_line = raw.count('\n', 0, begin) + 1
         # Take spelling/signature verbatim from source, not the masked tokens.
         spelling = re.match(r'(?:not\s+overriding\s+|overriding\s+)?' + kind +
                             r'\s+(' + IDENT + r')', masked[begin:], re.I)
@@ -243,7 +244,7 @@ def public_declarations(raw: str) -> list[Declaration]:
         # and blank lines (and therefore existing search text/profile evidence).
         begin = historical_starts.get(begin + spelling.end(), begin)
         result.append(Declaration(kind, spelling[1], raw[begin:finish].strip(),
-                                  raw.count('\n', 0, begin) + 1))
+                                  raw.count('\n', 0, begin) + 1, token_line))
 
     def region(at, name, visible, body=False):
         while at < size:
@@ -276,6 +277,22 @@ class Declaration:
     name: str
     signature: str
     line: int
+    token_line: int | None = None
+
+    @property
+    def source_line(self) -> int:
+        """Actual declaration token, retaining the legacy documentation start.
+
+        The boundary walker captures this before legacy comment association.
+        Hand-built legacy records can derive an offset within their own source
+        slice; no name lookup or overload guess occurs.
+        """
+        if self.token_line is not None:
+            return self.token_line
+        masked = mask_ada(self.signature)
+        token = re.search(r'\S', masked)
+        require(token is not None, 'declaration lacks a source token')
+        return self.line + self.signature.count('\n', 0, token.start())
 
 
 @dataclass

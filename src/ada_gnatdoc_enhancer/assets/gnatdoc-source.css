@@ -1,0 +1,12 @@
+/* Static source views: line numbers are generated, never source text. */
+.source-view { color-scheme: light dark; margin: 1rem auto; padding: 0 1rem; max-width: 100rem; font: 1rem system-ui, sans-serif; }
+.source-view h1 { font-size: 1.2rem; overflow-wrap: anywhere; }
+.source-view p { overflow-wrap: anywhere; }
+.view-source { display: inline-block; font-size: .8rem; margin: .2rem 0 .5rem; }
+.source-code { overflow: auto; padding: 1rem 1rem 1rem 5rem; border: 1px solid GrayText; line-height: 1.6; tab-size: 8; counter-reset: line; }
+.source-line { position: relative; counter-increment: line; scroll-margin-top: 2rem; }
+.source-line-number { position: absolute; right: calc(100% + 1rem); width: 3rem; text-align: right; user-select: none; color: LinkText; }
+.source-line-number::before { content: counter(line); }
+.source-line:target { background: Mark; color: MarkText; }
+.source-view a:focus-visible, .view-source:focus-visible { outline: 2px solid Highlight; outline-offset: 2px; }
+@media (max-width: 600px) { .source-view { margin: .5rem auto; padding: 0 .5rem; } .source-code { font-size: .8rem; } }
