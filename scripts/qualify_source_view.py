@@ -18,6 +18,7 @@ import shutil
 import subprocess
 import threading
 
+from ada_gnatdoc_enhancer import __version__
 from ada_gnatdoc_enhancer.config import load
 from ada_gnatdoc_enhancer.inventory import packages
 from ada_gnatdoc_enhancer.inventory import mask_ada
@@ -43,7 +44,7 @@ class SourceText(HTMLParser):
         if self.in_code: self.text += data
 
 
-def prepare(repository, workspace, baseline):
+def prepare(repository, workspace, baseline, baseline_python=None):
     inventory = {}
     for name, filename in (('mel', 'docs/gnatdoc-enhance.toml'), ('core', 'default.toml')):
         print('Qualifying '+name, flush=True)
@@ -56,15 +57,24 @@ def prepare(repository, workspace, baseline):
         disabled = workspace/(name+'-disabled'); shutil.copytree(fixture/'pristine', disabled)
         enhance(config, disabled); verify(config, disabled)
         parity = None
-        if baseline:
+        if baseline or baseline_python:
             old = workspace/(name+'-baseline'); shutil.copytree(fixture/'pristine', old)
             code = ('from pathlib import Path; from ada_gnatdoc_enhancer.config import load; '
                     'from ada_gnatdoc_enhancer.pipeline import enhance; '
                     f'enhance(load(Path({str(root)!r}), {filename!r}), Path({str(old)!r}))')
-            subprocess.run([os.sys.executable, '-c', code], cwd=workspace,
-                           env={**os.environ, 'PYTHONPATH': str(baseline/'src')}, check=True)
-            require(hashes(old) == hashes(disabled), 'complete disabled output byte parity failed')
-            parity = hashes(disabled)
+            env = dict(os.environ)
+            env.pop('PYTHONPATH', None)
+            if baseline:
+                env['PYTHONPATH'] = str(baseline/'src')
+            subprocess.run([str(baseline_python or os.sys.executable), '-c', code],
+                           cwd=workspace, env=env, check=True)
+            if baseline_python:
+                from compare_release_016_017 import compare
+                require(__version__ == '0.1.7', 'wrong candidate source-view version')
+                parity = compare(old, disabled)
+            else:
+                require(hashes(old) == hashes(disabled), 'complete disabled output byte parity failed')
+                parity = hashes(disabled)
         evidence = dict(schema_version=1, files={n: d for n, d in hashes(fixture/'pristine').items()
                         if n.endswith('.html') or n == 'api/gnatdoc.css'}, sources={
                         p.path.relative_to(root).as_posix(): digest(p.path.read_bytes())
@@ -293,13 +303,16 @@ if __name__ == '__main__':
     parser.add_argument('--repository', type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument('--workspace', type=Path, required=True)
     parser.add_argument('--baseline-source', type=Path)
+    parser.add_argument('--baseline-python', type=Path,
+                        help='interpreter with the independently verified official v0.1.6 wheel')
     parser.add_argument('--browser', action='store_true')
     parser.add_argument('--browser-only', action='store_true')
     args = parser.parse_args()
+    require(not (args.baseline_source and args.baseline_python), 'choose one baseline authority')
     if args.browser_only:
         inventory = json.loads((args.workspace/'publication.json').read_text())
     else:
         args.workspace.mkdir(parents=True, exist_ok=False)
-        inventory = prepare(args.repository, args.workspace, args.baseline_source)
+        inventory = prepare(args.repository, args.workspace, args.baseline_source, args.baseline_python)
     if args.browser or args.browser_only: browser(args.workspace, inventory)
     print(json.dumps({name: data['counts'] for name, data in inventory.items()}))

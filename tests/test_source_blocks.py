@@ -93,7 +93,7 @@ class SourceBlocks(unittest.TestCase):
         self.assertEqual({n: v for n, v in actual['output_sha256'].items() if n in portal}, portal)
         actual['output_sha256'] = {n: v for n, v in actual['output_sha256'].items() if n not in portal}
         self.assertEqual(reference['enhancer_version'], '0.1.5')
-        self.assertEqual(actual['enhancer_version'], '0.1.6')
+        self.assertEqual(actual['enhancer_version'], '0.1.7')
         actual['enhancer_version'] = reference['enhancer_version']
         self.assertEqual(actual, reference)
         second = self.root / 'second'

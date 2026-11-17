@@ -1,6 +1,39 @@
 # Auditable release preparation and later publication
 
-## GNATDOC-037: v0.1.6 preparation only (current)
+## GNATDOC-REL-017: v0.1.7 preparation only (current)
+
+Start from refreshed main `d17570c33743103018900376f07364a95523ff08`, tree
+`e5f005c7ec66c1dc577dac682dc3e6821b7da74d`, containing merged PR #35 and
+feature commit `f0b5b425bd43382a3f587035ef3372c356928114`. Require all nine jobs
+in exact merged-main run **44020954054** to succeed; pending is `MAIN_CI_PENDING`.
+Preserve the official v0.1.6 release, independently acquiring and verifying its
+wheel, sdist, provenance and SHA256SUMS. Audit active version authorities before
+updating them; preserve historical release comparators, tests and evidence.
+
+Require complete official 016/017 byte parity with source view disabled except
+the serialized release version, and independent enabled-feature reconstruction.
+Qualify authentic MEL/Core source pages, source text, anchors, overloads, ownership,
+hashes, security mutations, determinism, idempotence and atomic failure. Chromium
+must cover MEL lines 663/775, distinct Core Create overloads, history/reload/direct
+links/fresh tabs/keyboard, desktop/mobile, light/dark and JavaScript disabled.
+Retain all existing search, resize and authored-HTML browser gates.
+
+Build from a clean immutable source commit/tree. Require the full source/wheel/
+rebuilt-sdist matrix on Python 3.11/3.12/3.13, non-editable installed execution
+outside checkout with PYTHONPATH unset, strict Twine, safe archive inventories,
+complete RECORD, metadata, CLI and exact source/module/asset/input identities.
+Prepare exactly wheel, sdist, `release-provenance.json` and `SHA256SUMS`; record
+qualification, inventories and tools. Keep `publication_authorized: false`.
+
+One non-draft PR targets refreshed main, with auto-merge disabled and normal push.
+Record exact-HEAD hosted results separately; only all mandatory technical passes
+allow `READY_FOR_MAINTAINER_REVIEW`. No additional review ceremony is required.
+Do not merge, approve, tag, publish, deploy, upload or edit MEL Bridge. After merge,
+final official assets need a fresh approved merged-main build and qualification;
+publication requires separate explicit maintainer authorization.
+See [qualification status](release-0.1.7-qualification.md).
+
+## Historical GNATDOC-037: v0.1.6 preparation (subsequently published)
 
 Start from refreshed main `a4befbec2ac8b40e7a0234853aa204e90d13a19c`, tree
 `7802f094fe9f2d3e4c5ea4549a4c17881fe8f588`. PRs #31 and #32 are merged.

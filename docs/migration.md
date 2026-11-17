@@ -19,7 +19,21 @@ No consumer migrations, source-policy changes, deployment or publication are
 performed by release preparation. Shared-package release is not consumer approval.
 See [release compatibility](release-compatibility.md).
 
-## Upgrade from 0.1.5 to the 0.1.6 candidate
+## Upgrade from 0.1.6 to the 0.1.7 candidate
+
+Require package, module, CLI, installed distribution and regenerated presentation
+manifest versions to agree on `0.1.7`. Regenerate from pristine GNATdoc 26.0.0
+inputs; source-view-disabled output must match official v0.1.6 except the exact
+release field. Retain every search, resize, guide, source-block and link contract.
+
+Source browsing is default-off. Before enabling it, explicitly authorize publication
+of complete selected `.ads` specifications, including private sections. Pin exact
+source/native ownership and hashes and qualify source lines, overloads and browser
+behavior. `.adb` implementation bodies are not supported. MEL Bridge adoption
+requires a subsequent separately qualified consumer change; this preparation
+does not authorize adoption or publication. See [source view](source-view.md).
+
+## Historical upgrade from 0.1.5 to the 0.1.6 candidate
 
 Use a fresh isolated environment and the audited non-editable candidate wheel or
 independently rebuilt-sdist wheel. Require project, module, installed distribution,

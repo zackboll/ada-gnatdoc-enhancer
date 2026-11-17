@@ -1,6 +1,21 @@
 # Consumer compatibility and adoption boundary
 
-## v0.1.5 → v0.1.6 (GNATDOC-037; candidate, not published)
+## v0.1.6 → v0.1.7 (GNATDOC-REL-017; candidate, not published)
+
+Acquire the official v0.1.6 wheel independently; SHA-256 is
+`adfec71188a868e3fb70a6da71a124c937f9e63e26a2f2e31af45364f49ffb27`.
+`scripts/qualify_release_016_017.py` reconstructs identical retained inputs.
+`scripts/compare_release_016_017.py` permits only the exact serialized
+`enhancer_version` change. No file, search record, asset, router, source block,
+guide, formatting or resealed-output exception is allowed with source view off.
+The independent MEL regression retains 1,143 old records and all 348 recovered
+declarations. Source browsing is tested only in v0.1.7 against independent
+source/native reconstruction, never enabled in the unsupported predecessor.
+Full selected `.ads` files, including private sections, become public when enabled;
+`.adb` bodies are excluded. See [qualification](release-0.1.7-qualification.md).
+MEL Bridge adoption is a separate, subsequently qualified consumer change.
+
+## Historical v0.1.5 → v0.1.6 (GNATDOC-037; subsequently published)
 
 Use the actual official v0.1.5 wheel, independently checked against SHA-256
 `d712d330f213fc1909a66c47bc2c7e5e15d5ec687222bea3c4922f5243db4247`.

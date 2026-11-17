@@ -5,6 +5,7 @@ from pathlib import Path
 import shutil
 import tempfile
 import unittest
+from unittest.mock import patch
 
 SCRIPTS = Path(__file__).resolve().parents[1] / 'scripts'
 spec = importlib.util.spec_from_file_location('release_015_016', SCRIPTS / 'compare_release_015_016.py')
@@ -67,6 +68,7 @@ class Release015016Contracts(unittest.TestCase):
         self.assertIn(audit.digest(payload), shell)
         self.assertIn('target="document-content"', shell)
 
+    @patch('ada_gnatdoc_enhancer.pipeline.__version__', '0.1.6')
     def test_source_backed_search_additions_and_forged_records(self):
         from dataclasses import replace
         from ada_gnatdoc_enhancer.errors import EnhancementError
