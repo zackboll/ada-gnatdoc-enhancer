@@ -8,7 +8,7 @@ from pathlib import Path
 from .errors import EnhancementError
 from .util import inside, regular, require
 
-TOP = frozenset({"schema_version", "project", "gnatdoc", "sources", "navigation", "presentation", "guides", "security", "external_types", "external_dependencies", "external_symbol_bookmarks", "renderer_exceptions", "generic_instances", "search"})
+TOP = frozenset({"schema_version", "project", "gnatdoc", "sources", "navigation", "presentation", "guides", "security", "external_types", "external_dependencies", "external_symbol_bookmarks", "renderer_exceptions", "generic_instances", "search", "source_view"})
 
 
 def members(data, allowed, at):
@@ -60,6 +60,7 @@ class Config:
     ada_landing_example_highlighting: bool = False
     verified_examples: dict = field(default_factory=dict)
     resizable_sidebar: bool = False
+    source_view: dict = field(default_factory=dict)
 
 
 def load(root: Path, path: str) -> Config:
@@ -69,6 +70,15 @@ def load(root: Path, path: str) -> Config:
     config_bytes = config_path.read_bytes()
     raw = tomllib.loads(config_bytes.decode('utf-8'))
     members(raw, TOP, "root")
+    source_view = raw.get('source_view', {})
+    if 'source_view' in raw:
+        fields = {'schema_version', 'mode', 'native_manifest', 'native_manifest_sha256'}
+        members(source_view, fields, 'source_view')
+        require(set(source_view) == fields and type(source_view.get('schema_version')) is int and
+                source_view['schema_version'] == 1 and source_view['mode'] == 'public-specifications',
+                'source_view requires schema 1, public-specifications and pinned native evidence')
+        from .source_view import native_evidence
+        native_evidence(root, source_view)
     require(raw.get("schema_version") == 1, "unsupported configuration schema version")
     project = raw.get("project")
     require(isinstance(project, str) and bool(project.strip()), "project must be a nonempty string")
@@ -244,7 +254,8 @@ def load(root: Path, path: str) -> Config:
                   pres.get('theme_css_source'), pres.get('theme_css_sha256'),
                   config_path.relative_to(root).as_posix() if custom_theme else None,
                   digest(config_bytes) if custom_theme else None, bookmarks, bool(search),
-                  *(guide.get(option, False) for option in example_options), verified, resizable)
+                  *(guide.get(option, False) for option in example_options), verified, resizable,
+                  source_view)
     if custom_theme:
         from .theme import theme_asset
         theme_asset(config)

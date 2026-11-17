@@ -158,6 +158,41 @@ jobs:
             ${{ runner.temp }}/mel-search-evidence/browser.json
             ${{ runner.temp }}/mel-search-evidence/*.png
           retention-days: 30
+  source-view-browser:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install enhancer and optional browser qualification tool
+        run: |
+          python -m pip install -e '.[guides]' playwright==1.64.0
+          python -m playwright install --with-deps chromium
+      - name: Record exact HEAD and independent starting baseline
+        run: |
+          git rev-parse HEAD HEAD^{tree}
+          git worktree add --detach "$RUNNER_TEMP/source-baseline" 8661855bfc245c3389e2ef30a423c100776ff525
+      - name: Source-view security and optimized mutation checks
+        run: |
+          python -m unittest discover -s tests -p test_source_view.py -v
+          python -O -m unittest discover -s tests -p test_source_view.py -v
+      - name: Complete retained MEL/Core enabled and disabled byte inventories and Chromium navigation
+        run: |
+          python scripts/qualify_source_view.py --workspace "$RUNNER_TEMP/source-view" --baseline-source "$RUNNER_TEMP/source-baseline" --browser
+      - name: Retain complete publication fingerprints and browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-view-qualification
+          path: |
+            ${{ runner.temp }}/source-view/publication.json
+            ${{ runner.temp }}/source-view/browser.json
+            ${{ runner.temp }}/source-view/*.png
+          retention-days: 30
   examples-browser:
     runs-on: ubuntu-24.04
     steps:

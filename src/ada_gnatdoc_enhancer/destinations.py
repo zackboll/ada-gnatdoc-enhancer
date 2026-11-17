@@ -52,7 +52,9 @@ def source_destinations(config, native, source=None):
             for match in re.finditer(r'(?im)^\s*([A-Za-z][A-Za-z0-9_]*)\s*:\s*constant\b', public_mask):
                 end = last_semicolon(public_mask, match.start())
                 declarations.append(Declaration('constant', match[1], public[match.start():end].strip(),
-                    pkg.source.count('\n', 0, header.end() + match.start()) + 1))
+                    pkg.source.count('\n', 0, header.end() + match.start()) + 1,
+                    pkg.source.count('\n', 0, header.end() + match.start() +
+                                     re.search(r'\S', public_mask[match.start():end]).start()) + 1))
         declarations.sort(key=lambda d: d.line)
         totals = Counter(d.name.lower() for d in declarations)
         counters = Counter()
