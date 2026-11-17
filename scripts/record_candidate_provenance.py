@@ -52,11 +52,16 @@ def record(args):
         archives[label] = dict(content['archives'][label], members={
             n: dict(sha256=hashlib.sha256(data).hexdigest(), bytes=len(data))
             for n, data in sorted(members.items())})
-    return dict(schema_version=1, release_version='0.1.6', publication_authorized=False,
+    return dict(schema_version=1, release_version='0.1.7', publication_authorized=False,
                 expected_source_commit=commit, expected_source_tree=tree,
                 source_files=inventory, archives=archives, distribution_content_audit=content,
                 authorization='Expected source commit/tree supplied independently of archives',
-                compression_byte_identity_required=False)
+                compression_byte_identity_required=False,
+                source_browser_scope=dict(default_enabled=False, specifications='.ads',
+                    complete_selected_files_including_private_sections=True,
+                    implementation_bodies=False, native_version='26.0.0',
+                    consumer_adoption='Separate qualified consumer change required'),
+                publication_boundary='Fresh approved merged-main build and qualification required')
 
 
 if __name__ == '__main__':

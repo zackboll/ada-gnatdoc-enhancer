@@ -81,14 +81,14 @@ class ReleaseArchiveIdentity(unittest.TestCase):
                      'ada_gnatdoc_enhancer-0.1.3/module.py',
                      'ada_gnatdoc_enhancer-0.1.4/module.py',
                      'ada_gnatdoc_enhancer-0.1.5/module.py',
-                     'ada_gnatdoc_enhancer-0.1.6/../escape'):
+                     'ada_gnatdoc_enhancer-0.1.7/../escape'):
             with self.subTest(name=name), self.assertRaisesRegex(ValueError, 'unsafe sdist path'):
                 audit.sdist_files(self.sdist([name]))
-        name = 'ada_gnatdoc_enhancer-0.1.6/module.py'
+        name = 'ada_gnatdoc_enhancer-0.1.7/module.py'
         self.assertEqual(audit.sdist_files(self.sdist([name])), {'module.py': b'content'})
 
     def test_sdist_rejects_nonregular_and_duplicate_members(self):
-        name = 'ada_gnatdoc_enhancer-0.1.6/module.py'
+        name = 'ada_gnatdoc_enhancer-0.1.7/module.py'
         for kind in (tarfile.SYMTYPE, tarfile.LNKTYPE, tarfile.FIFOTYPE,
                      tarfile.CHRTYPE, tarfile.BLKTYPE):
             with self.subTest(kind=kind), self.assertRaisesRegex(ValueError, 'nonregular sdist member'):
@@ -115,12 +115,12 @@ class ReleaseArchiveIdentity(unittest.TestCase):
     def test_previous_release_wheel_metadata_is_rejected_even_when_renamed(self):
         with tempfile.TemporaryDirectory() as temporary:
             source = Path(temporary)
-            (source/'pyproject.toml').write_text('[project]\nversion = "0.1.6"\n')
-            wheel = source/'ada_gnatdoc_enhancer-0.1.6-py3-none-any.whl'
-            sdist = source/'ada_gnatdoc_enhancer-0.1.6.tar.gz'
+            (source/'pyproject.toml').write_text('[project]\nversion = "0.1.7"\n')
+            wheel = source/'ada_gnatdoc_enhancer-0.1.7-py3-none-any.whl'
+            sdist = source/'ada_gnatdoc_enhancer-0.1.7.tar.gz'
             for version in ('0.1.3', '0.1.4', '0.1.5'):
                 with self.subTest(version=version):
-                    content = {'ada_gnatdoc_enhancer-0.1.6.dist-info/METADATA':
+                    content = {'ada_gnatdoc_enhancer-0.1.7.dist-info/METADATA':
                                ('Name: ada-gnatdoc-enhancer\nVersion: '+version+'\n').encode()}
                     with patch.object(audit, 'wheel_files', return_value=content), \
                          patch.object(audit, 'sdist_files', return_value={}):

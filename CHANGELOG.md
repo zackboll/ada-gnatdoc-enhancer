@@ -1,6 +1,26 @@
 # Changelog
 
-## 0.1.6 — release candidate (GNATDOC-037; not published)
+## 0.1.7 — release candidate (GNATDOC-REL-017; not published)
+
+* Include GNATDOC-SOURCE-001 optional Ada source browsing, disabled by default.
+  Public package/type/subtype/function/procedure “View source” links target exact
+  original declaration lines; overloads have distinct verified destinations.
+* Generate complete offline static `.ads` pages with line anchors and copyable
+  original text. Verify exact source/native identities, ownership and hashes.
+  Enabling this option deliberately publishes complete selected specifications,
+  **including private sections**. `.adb` implementation-body browsing is deferred.
+* Preserve v0.1.6 search (including all 348 recovered declarations), navigation,
+  resize, guides, source blocks, highlighting, type/external links and security.
+  Source-view-disabled compatibility permits only release-version metadata.
+* Preserve Python 3.11/3.12/3.13, GNATdoc 26.0.0, optional dependency pins,
+  dependency-free core, `py3-none-any` portability and Apache-2.0.
+* MEL Bridge adoption requires a subsequent separately qualified consumer change.
+  Candidate artifacts are evidence, not permission to publish. Provenance retains
+  `publication_authorized: false`; after merge, final official assets must be
+  freshly built and qualified against approved merged-main source. Publication
+  requires separate explicit maintainer authorization.
+
+## 0.1.6 — published 2026-11-15 (GNATDOC-037 preparation history)
 
 ### GNATDOC-036 — source-backed authored HTML
 

@@ -5,14 +5,15 @@ and source/native-identity verified. Enabling it publishes each selected public
 package's **whole `.ads` file, including any private section**; `.adb` bodies are
 not supported.
 
-## v0.1.6 release candidate (not published)
+## v0.1.7 release candidate (not published)
 
-Includes merged GNATDOC-036 schema-3 source-backed authored-HTML blocks and
-GNATDOC-SEARCH-002 complete, scope-safe public declaration search. Schema-3 is
-opt-in; its independent MEL nine-output oracle remains authoritative. Search
-adds only source/native-supported declarations and dependent search metadata.
-Unaffected profiles retain official v0.1.5 bytes except release-version metadata.
-See [release qualification](docs/release-0.1.6-qualification.md),
+Includes merged GNATDOC-SOURCE-001 optional Ada source browsing: “View source”
+links from public API declarations to exact original specification lines, distinct
+overload destinations, copyable text and offline static pages. Source/native
+ownership and hashes are verified. With `[source_view]` disabled, outputs must
+retain official v0.1.6 bytes except release-version metadata. All v0.1.6 search,
+resize, guides, source blocks, highlighting, links and security contracts remain.
+See [release qualification](docs/release-0.1.7-qualification.md),
 [source blocks](docs/source-backed-blocks.md) and
 [compiler-verified examples](docs/compiler-verified-examples.md).
 
@@ -29,10 +30,12 @@ navigation-link filtering unless explicitly opted in.
 
 **Offline, source-verified enhancement of GNATdoc 26.0.0 HTML sites.**
 
-The published **v0.1.5 baseline** incorporates opt-in consumer-owned custom themes
+The published **v0.1.6 baseline** retains opt-in consumer-owned custom themes
 (GNATDOC-017), opt-in stable external symbol bookmarks (GNATDOC-018), and default
 declaration visibility restoration after browser history traversal (GNATDOC-019),
-GNATDOC-023 opt-in search and compiler-verified static example links.
+GNATDOC-023 opt-in search and compiler-verified static example links, source-backed
+authored HTML and complete scope-safe declaration search. MEL Bridge adoption
+requires a subsequent, separately qualified consumer change.
 Python **3.11, 3.12 and 3.13** are supported on Linux. The core
 has **no runtime dependencies** and needs neither Ada nor GNATdoc at installation.
 
@@ -40,20 +43,20 @@ has **no runtime dependencies** and needs neither Ada nor GNATdoc at installatio
 
 For candidate qualification, build from the exact reviewed source commit with
 `python -m build` and verify its archive audit and SHA-256 inventory. The examples
-below name v0.1.6 candidate artifacts, not a published release. Never
-replace official v0.1.5 assets. See the [publication gates](docs/releasing.md).
+below name v0.1.7 candidate artifacts, not a published release. Never
+replace official v0.1.6 assets. See the [publication gates](docs/releasing.md).
 
 ```sh
 python3 -m venv /tmp/enhancer-env
-/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.6-py3-none-any.whl
+/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.7-py3-none-any.whl
 /tmp/enhancer-env/bin/gnatdoc-enhancer --version
 /tmp/enhancer-env/bin/gnatdoc-enhancer --help
 # Alternative: standalone sdist (requires the build backend).
-/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.6.tar.gz
+/tmp/enhancer-env/bin/python -m pip install /path/to/ada_gnatdoc_enhancer-0.1.7.tar.gz
 ```
 
 Optional Markdown guides require the `guides` extra: install the wheel as
-`'/path/to/ada_gnatdoc_enhancer-0.1.6-py3-none-any.whl[guides]'` or preinstall
+`'/path/to/ada_gnatdoc_enhancer-0.1.7-py3-none-any.whl[guides]'` or preinstall
 `markdown-it-py==3.0.0` and `mdurl==0.1.2`. For offline use, provision those
 wheels and the sdist build requirements in advance, then use `--no-index` and
 `--find-links`. The renderer is optional; it is not bundled into the wheel.
@@ -181,7 +184,8 @@ python scripts/test_installed.py --fixtures tests/fixtures
 Synthetic conformance never substitutes for independently pinned real sites.
 Historical campaigns remain under `docs/evidence/`; current release results and
 source/artifact identities are described in
-[v0.1.6 qualification](docs/release-0.1.6-qualification.md). Historical
+[v0.1.7 qualification](docs/release-0.1.7-qualification.md). Historical
+[v0.1.6 qualification](docs/release-0.1.6-qualification.md),
 [v0.1.5 preparation evidence](docs/evidence/gnatdoc035/README.md),
 [v0.1.4 preparation evidence](docs/evidence/gnatdoc028/README.md),
 [v0.1.3 preparation evidence](docs/evidence/gnatdoc024/README.md),
@@ -190,7 +194,7 @@ source/artifact identities are described in
 [v0.1.0 qualification](docs/release-0.1.0-qualification.md) remains historical.
 
 For upgrades, regenerate from pristine native output: the version-bound
-presentation manifest changes from `0.1.5` to `0.1.6`, so do not carry an
+presentation manifest changes from `0.1.6` to `0.1.7`, so do not carry an
 old manifest into release verification. Recheck source, native, warning,
 coverage, guide and browser baselines in a separate consumer PR. See
 [migration](docs/migration.md), the [consumer matrix](docs/release-compatibility.md),
