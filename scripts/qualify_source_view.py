@@ -268,7 +268,12 @@ def browser(workspace, inventory):
                                     const s = getSelection(); s.removeAllRanges(); s.addRange(r);
                                     const value = s.toString(); s.removeAllRanges(); return value;
                                 }''')
-                                require(selected == page.locator('code').text_content(),
+                                dom_text = page.locator('code').text_content()
+                                # Chromium's visual selection omits a terminal LF
+                                # at the end of PRE. DOM byte fidelity is checked
+                                # above; permit only this observed UI conversion.
+                                require(selected == dom_text or
+                                        (dom_text.endswith('\n') and selected == dom_text[:-1]),
                                         'line numbers contaminated selected/copied source text')
                                 if js:
                                     page.screenshot(path=str(workspace/f'{name}-{width}-{theme}.png'))
