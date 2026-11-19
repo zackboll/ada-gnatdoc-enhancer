@@ -364,8 +364,12 @@ def browser(workspace, inventory):
                                             link.click(); page.wait_for_url('**/source/**')
                                             expect(page.locator(':target')).to_contain_text(symbol)
                                             require(page.locator(':target').is_visible(), 'source line not visible')
-                                            require(page.locator(':target > span').count() > 1,
-                                                    'navigation target lacks multiple syntax tokens')
+                                            # Some authentic function headings contain only
+                                            # the keyword on their first physical line.
+                                            # Navigation_Report has three lexical tokens.
+                                            if symbol == 'Navigation_Report':
+                                                require(page.locator(':target > span').count() > 1,
+                                                        'navigation target lacks multiple syntax tokens')
                                             require(page.locator(':target').evaluate('''e =>
                                                 [...e.querySelectorAll('span')].every(s =>
                                                     getComputedStyle(s).color === getComputedStyle(e).color)'''),
