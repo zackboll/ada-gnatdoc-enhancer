@@ -254,8 +254,10 @@ def check_source_page(page, raw, count):
         const s = getSelection(); s.removeAllRanges(); s.addRange(r);
         return s.toString();
     }''')
-    # Keep the established Chromium terminal-LF exception, never edit DOM text.
-    require(selected == text or (text.endswith('\n') and selected == text[:-1]),
+    # Keep the established Chromium terminal-newline exception, never edit DOM
+    # text. A CRLF input loses the terminal CRLF pair, not just its LF.
+    terminal = '\r\n' if text.endswith('\r\n') else '\n'
+    require(selected == text or (text.endswith(terminal) and selected == text[:-len(terminal)]),
             'line numbers contaminated selected/copied source text')
     page.keyboard.press('Control+c')
     require(page.evaluate('navigator.clipboard.readText()') == selected,
@@ -263,10 +265,11 @@ def check_source_page(page, raw, count):
     page.evaluate('getSelection().removeAllRanges()')
     if count:
         link = page.get_by_role('link', name='Line 1', exact=True)
-        link.focus(); page.keyboard.press('Enter')
-        require(page.locator(':target').get_attribute('id') == 'L1', 'keyboard line navigation failed')
+        page.keyboard.press('Tab'); link.focus()
         require(link.evaluate('(e)=>getComputedStyle(e).outlineStyle') != 'none',
                 'keyboard focus outline missing')
+        page.keyboard.press('Enter')
+        require(page.locator(':target').get_attribute('id') == 'L1', 'keyboard line navigation failed')
         target_colors = page.locator(':target').evaluate('''e => {
             const color = getComputedStyle(e).color;
             return [...e.querySelectorAll('span')].every(s => getComputedStyle(s).color === color);
