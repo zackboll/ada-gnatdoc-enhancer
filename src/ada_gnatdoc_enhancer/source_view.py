@@ -17,10 +17,13 @@ from .destinations import source_destinations
 from .errors import EnhancementError
 from .inventory import HEADER, mask_ada
 from .metadata import guide_title
+from .source_lexer import tokenize
 from .theme import asset
 from .util import digest, inside, regular, require
 
 CSS = 'api/gnatdoc-source.css'
+TOKEN_KINDS = frozenset(('keyword', 'comment', 'string', 'character',
+                         'number', 'attribute', 'operator'))
 
 
 def owned(root: Path, name: str) -> Path:
@@ -75,6 +78,33 @@ def escaped(text):
     return html.escape(text).replace('\r', '&#13;').replace('{', '&#123;').replace('}', '&#125;')
 
 
+def highlighted_lines(text):
+    """One display-only lexical pass; tokens never cross a line wrapper.
+
+    Validate the lexer partition before serialization, not just its joined text.
+    Only fixed lexical classes and escaped source may enter the generated HTML.
+    """
+    lines = [[]]; cursor = 0
+    for token in tokenize(text):
+        require(token.start == cursor and token.end > token.start and
+                token.text == text[token.start:token.end] and
+                token.kind in TOKEN_KINDS | {'space', 'identifier', 'plain'},
+                'invalid source-view token partition')
+        cursor = token.end
+        for i, piece in enumerate(token.text.split('\n')):
+            if i:
+                lines[-1].append('\n'); lines.append([])
+            if piece:
+                value = escaped(piece)
+                if token.kind in TOKEN_KINDS:
+                    value = '<span class="ada-' + token.kind + '">' + value + '</span>'
+                lines[-1].append(value)
+    require(cursor == len(text), 'incomplete source-view token partition')
+    if not text or text.endswith('\n'):
+        lines.pop()
+    return [''.join(line) for line in lines]
+
+
 def render(config, name, raw):
     try:
         text = raw.decode('utf-8')
@@ -87,11 +117,12 @@ def render(config, name, raw):
     lines = text.split('\n') if text else []
     if text:
         lines = [part + '\n' for part in lines[:-1]] + ([lines[-1]] if lines[-1] else [])
+    lines = highlighted_lines(text) if config.highlight else [escaped(line) for line in lines]
     title = guide_title(name, config.project)
     css = posixpath.relpath(CSS, posixpath.dirname('api/source/' + name + '.html'))
     code = ''.join('<span class="source-line" id="L' + str(i) + '">' +
                    '<a class="source-line-number" href="#L' + str(i) +
-                   '" aria-label="Line ' + str(i) + '"></a>' + escaped(line) + '</span>'
+                   '" aria-label="Line ' + str(i) + '"></a>' + line + '</span>'
                    for i, line in enumerate(lines, 1))
     return ('<!DOCTYPE html>\n<html lang="en"><head><meta charset="utf-8">' +
             '<meta name="viewport" content="width=device-width, initial-scale=1">' +
