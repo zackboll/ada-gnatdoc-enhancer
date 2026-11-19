@@ -16,6 +16,7 @@ from ada_gnatdoc_enhancer.pipeline import enhance, verify
 from ada_gnatdoc_enhancer.qualification import hashes
 from ada_gnatdoc_enhancer.source_view import build, owned, render
 from ada_gnatdoc_enhancer.source_lexer import Token, tokenize
+from ada_gnatdoc_enhancer.theme import asset
 from ada_gnatdoc_enhancer.native_html import snapshot
 from ada_gnatdoc_enhancer.util import digest, sorted_json
 from _helper import Fixture
@@ -141,6 +142,15 @@ class SourceView(unittest.TestCase):
                     'ada_gnatdoc_enhancer.source_view.tokenize', return_value=tokens):
                 with self.assertRaises(EnhancementError):
                     render(replace(self.config, highlight=True), 'src/x.ads', b'package')
+
+    def test_palette_does_not_override_native_api_theme(self):
+        # API pages also load source CSS for View source links. Palette variables
+        # and page colors must therefore be scoped to source-view bodies only.
+        css = asset('gnatdoc-source.css').decode()
+        self.assertNotIn(':root', css)
+        self.assertNotRegex(css, r'(?:^|\n)html\s*\{')
+        self.assertIn('.source-view { color: var(--text); background: var(--page); }', css)
+        self.assertIn('.source-code .source-line:target > span { color: inherit; }', css)
 
     def test_large_source_linear_pass_and_traversal_order(self):
         text = ('\t-- λ <>& {{ }}\r\nN := 16#CA_FE#;  \r\n' * 10000).encode()
