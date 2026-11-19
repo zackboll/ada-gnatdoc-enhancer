@@ -163,6 +163,8 @@ class SourceView(unittest.TestCase):
         token = re.search(rb'<span class="ada-keyword">[^<]+</span>', original)[0]
         line = original[original.index(b'<span class="source-line" id="L1">'):
                         original.index(b'<span class="source-line" id="L2">')]
+        second = original[original.index(b'<span class="source-line" id="L2">'):
+                          original.index(b'<span class="source-line" id="L3">')]
         mutations = [
             token.replace(b'</span>', b''),
             b'<span class="ada-comment">' + token + b'</span>',
@@ -178,6 +180,7 @@ class SourceView(unittest.TestCase):
             self.reseal(path, original.replace(token, mutation, 1))
             with self.assertRaises(EnhancementError): verify(self.config, self.fx.site)
         for raw in (original.replace(line, b'', 1), original.replace(line, line+line, 1),
+                    original.replace(line+second, second+line, 1),
                     original.replace(b'</head>', b'<link rel="stylesheet" href="extra.css"></head>'),
                     original.replace(b'</head>', b'<script src="extra.js"></script></head>')):
             self.reseal(path, raw)

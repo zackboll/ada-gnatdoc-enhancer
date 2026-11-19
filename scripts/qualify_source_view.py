@@ -364,6 +364,12 @@ def browser(workspace, inventory):
                                             link.click(); page.wait_for_url('**/source/**')
                                             expect(page.locator(':target')).to_contain_text(symbol)
                                             require(page.locator(':target').is_visible(), 'source line not visible')
+                                            require(page.locator(':target > span').count() > 1,
+                                                    'navigation target lacks multiple syntax tokens')
+                                            require(page.locator(':target').evaluate('''e =>
+                                                [...e.querySelectorAll('span')].every(s =>
+                                                    getComputedStyle(s).color === getComputedStyle(e).color)'''),
+                                                'navigation target token contrast override failed')
                                             direct = page.url
                                             result['navigation'].append(dict(site=name, symbol=symbol,
                                                 api_url=api_url.replace(base, ''), source_url=direct.replace(base, ''),
