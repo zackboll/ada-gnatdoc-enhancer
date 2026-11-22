@@ -75,8 +75,12 @@ def load(root: Path, path: str) -> Config:
         fields = {'schema_version', 'mode', 'native_manifest', 'native_manifest_sha256'}
         members(source_view, fields, 'source_view')
         require(set(source_view) == fields and type(source_view.get('schema_version')) is int and
-                source_view['schema_version'] == 1 and source_view['mode'] == 'public-specifications',
-                'source_view requires schema 1, public-specifications and pinned native evidence')
+                (source_view['schema_version'], source_view['mode']) in (
+                    (1, 'public-specifications'), (2, 'public-specifications-and-bodies')),
+                'unsupported source_view schema/mode or missing pinned native evidence')
+        if source_view['schema_version'] == 2:
+            require(all(not p.is_symlink() for p in (lexical_root, *lexical_root.parents)),
+                    'symlink source-view root')
         from .source_view import native_evidence
         native_evidence(root, source_view)
     require(raw.get("schema_version") == 1, "unsupported configuration schema version")

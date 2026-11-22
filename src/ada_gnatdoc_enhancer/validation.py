@@ -61,7 +61,8 @@ def css_safe(content:bytes):
         'unapproved CSS resource, escaped import or execution expression')
 
 
-def validate_files(site:Path,config:Config,expected:set[str], *, raw=False, titles=None, native=None):
+def validate_files(site:Path,config:Config,expected:set[str], *, raw=False, titles=None, native=None,
+                   source_values=None):
     """Reject unpublished extra content and independently validate local links.
 
     Every HTML page needs its document metadata; ``titles`` gives the exact
@@ -72,12 +73,12 @@ def validate_files(site:Path,config:Config,expected:set[str], *, raw=False, titl
     external=destinations(config)
     require(site.is_dir() and not site.is_symlink(),'invalid/symlink site root')
     observed=set(); pages={}
-    source_values={}
-    if config.source_view:
+    if config.source_view and source_values is None:
         from .source_view import build
         from .inventory import packages
         require(native is not None, 'source-view validation requires verified native input')
         source_values=build(config,native,packages(config))[0]
+    source_values=source_values or {}
     source_blocks = None
     if config.guides == 'authored-html':
         import json

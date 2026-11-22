@@ -1,0 +1,661 @@
+with Ada.Unchecked_Conversion;
+with Interfaces.C;
+with System;
+with System.Storage_Elements;
+with AMS.MEL.IR.NUC_Conversion;
+with AMS.MEL.IR.Camera_Conversion;
+with AMS.MEL.IR.Optical_Distortion_Map_Conversion;
+with AMS.MEL.IR.Line_Of_Sight_Quaternion_Conversion;
+
+package body AMS.MEL.IR.Image.Metadata is
+   package C renames AMS.MEL_C_API;
+   use type Interfaces.C.char;
+   use type Interfaces.C.size_t;
+   use type Interfaces.Integer_32;
+   use type Interfaces.Unsigned_32;
+   use System.Storage_Elements;
+   type Pixel_Access is access all C.IR_Bad_Pixel_V1;
+   type View_Access is access all C.IR_Image_Metadata_Event_V1;
+   function To_Pixel is new Ada.Unchecked_Conversion (System.Address, Pixel_Access);
+   function To_View is new Ada.Unchecked_Conversion (System.Address, View_Access);
+   function Address_At (Base : System.Address; Index, Bytes : Natural) return System.Address
+   is (Base + Storage_Offset (Index * Bytes));
+   type Diagnostic is array (C.Size_T range 0 .. 511) of aliased Interfaces.C.char
+   with Convention => C;
+   function Message (Value : Diagnostic) return String is
+      Last : Natural := 0;
+   begin
+      while Last < Value'Length and then Value (C.Size_T (Last)) /= Interfaces.C.nul loop
+         Last := Last + 1;
+      end loop;
+      declare
+         Result : String (1 .. Last);
+      begin
+         for I in Result'Range loop
+            Result (I) := Character'Val (Interfaces.C.char'Pos (Value (C.Size_T (I - 1))));
+         end loop;
+         return (if Result'Length = 0 then "native Image metadata operation failed" else Result);
+      end;
+   end Message;
+   procedure Check (Code : Interfaces.Integer_32; D : Diagnostic) is
+   begin
+      if Code = C.Timeout then
+         raise Timeout_Error;
+      elsif Code = C.Stream_Stopped then
+         raise Stream_Stopped;
+      elsif Code /= C.Success then
+         raise Provider_Error with Message (D);
+      end if;
+   end Check;
+   procedure Release (Handle : aliased in out C.Image_Metadata_Event_Handle) is
+      Ignored : Interfaces.Integer_32;
+   begin
+      Ignored := C.IR_Image_Metadata_Event_Close (Handle'Access, System.Null_Address, 0, null);
+   end Release;
+   function Euler (Value : C.Euler_V1) return AMS.MEL.Status.Euler
+   is ((Roll  => Long_Float (Value.Roll),
+        Pitch => Long_Float (Value.Pitch),
+        Yaw   => Long_Float (Value.Yaw)));
+   function Open
+     (Stream : AMS.MEL.IR.Image_Stream; Queue_Capacity : Positive) return Metadata_Stream
+   is
+      D : aliased Diagnostic := [others => Interfaces.C.nul];
+      R : aliased C.Size_T := 0;
+   begin
+      return Result : Metadata_Stream do
+         Check
+           (C.IR_Image_Metadata_Open
+              (Stream.Handle,
+               C.Size_T (Queue_Capacity),
+               Result.Handle'Access,
+               D'Address,
+               D'Length,
+               R'Access),
+            D);
+      end return;
+   end Open;
+   function Receive
+     (Stream : Metadata_Stream; Timeout_Milliseconds : Natural := 0) return Metadata_Event
+   is
+      Handle  : aliased C.Image_Metadata_Event_Handle := C.Null_Image_Metadata_Event;
+      Address : aliased System.Address := System.Null_Address;
+      D       : aliased Diagnostic := [others => Interfaces.C.nul];
+      R       : aliased C.Size_T := 0;
+   begin
+      Check
+        (C.IR_Image_Metadata_Receive
+           (Stream.Handle,
+            Interfaces.Unsigned_32 (Timeout_Milliseconds),
+            Handle'Access,
+            D'Address,
+            D'Length,
+            R'Access),
+         D);
+      begin
+         Check
+           (C.IR_Image_Metadata_Event_View (Handle, Address'Access, D'Address, D'Length, R'Access),
+            D);
+         declare
+            Raw : constant View_Access := To_View (Address);
+         begin
+            case Raw.Kind is
+               when 1      =>
+                  declare
+                     Result : Metadata_Event (Bad_Pixel_List_Event);
+                  begin
+                     Result.Bad_Pixel_Value.Size := Raw.Bad_Pixel_List.Reported_Size;
+                     Result.Bad_Pixel_Value.Count := Raw.Bad_Pixel_List.Reported_Count;
+                     if Raw.Bad_Pixel_List.Pixels.Size > 0 then
+                        for I in 0 .. Natural (Raw.Bad_Pixel_List.Pixels.Size) - 1 loop
+                           declare
+                              P : constant Pixel_Access :=
+                                To_Pixel
+                                  (Address_At
+                                     (Raw.Bad_Pixel_List.Pixels.Data,
+                                      I,
+                                      C.IR_Bad_Pixel_V1'SIZE / 8));
+                           begin
+                              if P.Reason /= 0 then
+                                 raise Provider_Error with "invalid BadPixel reason";
+                              end if;
+                              Result.Bad_Pixel_Value.Pixels.Append
+                                (Bad_Pixel'(P.Row, P.Column, Unknown));
+                           end;
+                        end loop;
+                     end if;
+                     Release (Handle);
+                     return Result;
+                  end;
+
+               when 2      =>
+                  declare
+                     Value  : constant C.IR_Line_Of_Sight_Report_V1 := Raw.Line_Of_Sight_Report;
+                     Result : constant Metadata_Event :=
+                       (Kind_Value   => Line_Of_Sight_Report_Event,
+                        Report_Value =>
+                          (System_Time_NS         => Long_Long_Integer (Value.System_Time_NS),
+                           Pointing_Angle         =>
+                             (Long_Float (Value.Pointing_Angle.Azimuth_Rad),
+                              Long_Float (Value.Pointing_Angle.Elevation_Rad)),
+                           Pointing_Angle_Rates   =>
+                             (Long_Float (Value.Pointing_Angle_Rates.Azimuth_Rad),
+                              Long_Float (Value.Pointing_Angle_Rates.Elevation_Rad)),
+                           At_Speed               => Value.At_Speed = 1,
+                           In_Tolerance           => Value.In_Tolerance = 1,
+                           Platform_Attitude      => Euler (Value.Platform_Attitude),
+                           Validity_Flag_Bitfield => Value.Validity_Flag_Bitfield,
+                           Image_Rotation_Rad     => Long_Float (Value.Image_Rotation_Rad)));
+                  begin
+                     if Value.At_Speed > 1 or else Value.In_Tolerance > 1 then
+                        raise Provider_Error with "invalid LineOfSightReport Boolean";
+                     end if;
+                     Release (Handle);
+                     return Result;
+                  end;
+
+               when 3      =>
+                  declare
+                     Value  : constant C.IR_Line_Of_Sight_Euler_V1 := Raw.Line_Of_Sight_Euler;
+                     Result : constant Metadata_Event :=
+                       (Kind_Value  => Line_Of_Sight_Euler_Event,
+                        Euler_Value =>
+                          (System_Time_NS => Long_Long_Integer (Value.System_Time_NS),
+                           Attitude       => Euler (Value.Attitude),
+                           Attitude_Rates => Euler (Value.Attitude_Rates)));
+                  begin
+                     Release (Handle);
+                     return Result;
+                  end;
+
+               when 4      =>
+                  declare
+                     Value  : constant C.IR_Navigation_Response_V1 := Raw.Navigation_Response;
+                     Result : constant Metadata_Event :=
+                       (Kind_Value                => Navigation_Response_Event,
+                        Navigation_Response_Value =>
+                          (System_Time_NS => Long_Long_Integer (Value.System_Time_NS),
+                           Command_ID     => Value.Command_ID,
+                           Request_ID     => Value.Request_ID));
+                  begin
+                     Release (Handle);
+                     return Result;
+                  end;
+
+               when others =>
+                  raise Provider_Error with "invalid Image metadata kind";
+            end case;
+         end;
+      exception
+         when others =>
+            Release (Handle);
+            raise;
+      end;
+   end Receive;
+   function Counters (Stream : Metadata_Stream) return Metadata_Counters is
+      Raw : aliased C.Metadata_Counters_V1;
+      D   : aliased Diagnostic := [others => Interfaces.C.nul];
+      R   : aliased C.Size_T := 0;
+   begin
+      Check
+        (C.IR_Image_Metadata_Get_Counters
+           (Stream.Handle, Raw'Access, D'Address, D'Length, R'Access),
+         D);
+      return
+        (AMS.MEL.IR.Counter (Raw.Events_Received),
+         AMS.MEL.IR.Counter (Raw.Events_Dropped_Queue_Full),
+         AMS.MEL.IR.Counter (Raw.Malformed_Or_Unsupported));
+   end;
+   procedure Close (Stream : in out Metadata_Stream) is
+      D : aliased Diagnostic := [others => Interfaces.C.nul];
+      R : aliased C.Size_T := 0;
+   begin
+      Check (C.IR_Image_Metadata_Close (Stream.Handle'Access, D'Address, D'Length, R'Access), D);
+   end;
+   overriding
+   procedure Finalize (Stream : in out Metadata_Stream) is
+      Ignored : Interfaces.Integer_32;
+   begin
+      Ignored := C.IR_Image_Metadata_Close (Stream.Handle'Access, System.Null_Address, 0, null);
+   exception
+      when others =>
+         Stream.Handle := C.Null_Image_Metadata;
+   end;
+   function Reported_Size (Value : Bad_Pixel_List) return Interfaces.Unsigned_32
+   is (Value.Size);
+   function Reported_Count (Value : Bad_Pixel_List) return Interfaces.Unsigned_32
+   is (Value.Count);
+   function Pixel_Count (Value : Bad_Pixel_List) return Natural
+   is (Natural (Value.Pixels.Length));
+   function Pixel_At (Value : Bad_Pixel_List; Index : Positive) return Bad_Pixel
+   is (Value.Pixels.Element (Index));
+   function Kind (Event : Metadata_Event) return Metadata_Kind
+   is (Event.Kind_Value);
+   function Bad_Pixel_List_Value (Event : Metadata_Event) return Bad_Pixel_List is
+   begin
+      if Event.Kind_Value /= Bad_Pixel_List_Event then
+         raise Provider_Error with "Image metadata event is not BadPixelList";
+      end if;
+      return Event.Bad_Pixel_Value;
+   end;
+   function Line_Of_Sight_Report_Value (Event : Metadata_Event) return Line_Of_Sight_Report is
+   begin
+      if Event.Kind_Value /= Line_Of_Sight_Report_Event then
+         raise Provider_Error with "Image metadata event is not LineOfSightReport";
+      end if;
+      return Event.Report_Value;
+   end;
+   function Line_Of_Sight_Euler_Value (Event : Metadata_Event) return Line_Of_Sight_Euler is
+   begin
+      if Event.Kind_Value /= Line_Of_Sight_Euler_Event then
+         raise Provider_Error with "Image metadata event is not LineOfSightEuler";
+      end if;
+      return Event.Euler_Value;
+   end;
+   function Navigation_Response_Value (Event : Metadata_Event) return Navigation_Response is
+   begin
+      if Event.Kind_Value /= Navigation_Response_Event then
+         raise Provider_Error with "Image metadata event is not NavigationReportResp";
+      end if;
+      return Event.Navigation_Response_Value;
+   end;
+   function Open_NUC (Stream : AMS.MEL.IR.Image_Stream; Queue_Capacity : Positive) return NUC_Stream
+   is
+      D            : aliased Diagnostic := [others => Interfaces.C.nul];
+      R            : aliased C.Size_T := 0;
+      Registration : aliased Interfaces.Unsigned_32 := 16#FFFF_FFFF#;
+   begin
+      return Result : NUC_Stream do
+         declare
+            Code : constant Interfaces.Integer_32 :=
+              C.IR_Image_NUC_Open
+                (Stream.Handle,
+                 C.Size_T (Queue_Capacity),
+                 Result.Handle'Access,
+                 Registration'Access,
+                 D'Address,
+                 D'Length,
+                 R'Access);
+         begin
+            NUC_Conversion.Check_Open (Code, Registration, Message (D));
+         end;
+      end return;
+   end Open_NUC;
+   function Receive_NUC
+     (Stream : NUC_Stream; Timeout_Milliseconds : Natural := 0) return AMS.MEL.IR.NUC.NUC_Temp_Data
+   is (NUC_Conversion.Receive (Stream.Handle, Timeout_Milliseconds));
+   function NUC_Counters (Stream : NUC_Stream) return Metadata_Counters is
+      Raw : constant C.Metadata_Counters_V1 := NUC_Conversion.Counters (Stream.Handle);
+   begin
+      return
+        (AMS.MEL.IR.Counter (Raw.Events_Received),
+         AMS.MEL.IR.Counter (Raw.Events_Dropped_Queue_Full),
+         AMS.MEL.IR.Counter (Raw.Malformed_Or_Unsupported));
+   end NUC_Counters;
+   procedure Close (Stream : in out NUC_Stream) is
+   begin
+      NUC_Conversion.Close (Stream.Handle);
+   end Close;
+   overriding
+   procedure Finalize (Stream : in out NUC_Stream) is
+      Ignored : Interfaces.Integer_32;
+   begin
+      Ignored := C.IR_NUC_Close (Stream.Handle'Access, System.Null_Address, 0, null);
+   exception
+      when others =>
+         Stream.Handle := C.Null_NUC_Metadata;
+   end Finalize;
+   type Camera_View_Access is access all C.IR_Camera_Command_Response_V1;
+   function To_Camera_View is new Ada.Unchecked_Conversion (System.Address, Camera_View_Access);
+   use type C.Camera_Response_Metadata_Handle;
+   Not_Supported_Return : constant Interfaces.Unsigned_32 := 3;
+
+   function Open_Camera_Response
+     (Stream : AMS.MEL.IR.Image_Stream; Queue_Capacity : Positive) return Camera_Response_Stream
+   is
+      D            : aliased Diagnostic := [others => Interfaces.C.nul];
+      R            : aliased C.Size_T := 0;
+      Registration : aliased Interfaces.Unsigned_32 := 16#FFFF_FFFF#;
+   begin
+      return Result : Camera_Response_Stream do
+         declare
+            Code : constant Interfaces.Integer_32 :=
+              C.IR_Image_Camera_Response_Open
+                (Stream.Handle,
+                 C.Size_T (Queue_Capacity),
+                 Result.Handle'Access,
+                 Registration'Access,
+                 D'Address,
+                 D'Length,
+                 R'Access);
+         begin
+            if Code = C.Success then
+               null;
+            elsif Code = C.Provider_Failed and then Registration = Not_Supported_Return then
+               raise AMS.MEL.IR.Camera.Not_Supported with Message (D);
+            else
+               raise Provider_Error with Message (D);
+            end if;
+         end;
+      end return;
+   end Open_Camera_Response;
+
+   function Receive_Camera_Response
+     (Stream : Camera_Response_Stream; Timeout_Milliseconds : Natural := 0)
+      return AMS.MEL.IR.Camera.Camera_Command_Response
+   is
+      Event   : aliased C.Camera_Response_Event_Handle := C.Null_Camera_Response_Event;
+      Address : aliased System.Address := System.Null_Address;
+      D       : aliased Diagnostic := [others => Interfaces.C.nul];
+      R       : aliased C.Size_T := 0;
+      procedure Release is
+         Ignored : Interfaces.Integer_32;
+      begin
+         Ignored := C.IR_Camera_Response_Event_Close (Event'Access, System.Null_Address, 0, null);
+      end Release;
+   begin
+      if Stream.Handle = C.Null_Camera_Response_Metadata then
+         raise Provider_Error with "CameraCommandResp metadata owner is closed";
+      end if;
+      Check
+        (C.IR_Camera_Response_Receive
+           (Stream.Handle,
+            Interfaces.Unsigned_32 (Timeout_Milliseconds),
+            Event'Access,
+            D'Address,
+            D'Length,
+            R'Access),
+         D);
+      begin
+         Check
+           (C.IR_Camera_Response_Event_View (Event, Address'Access, D'Address, D'Length, R'Access),
+            D);
+         declare
+            Result : constant AMS.MEL.IR.Camera.Camera_Command_Response :=
+              Camera_Conversion.To_Response (To_Camera_View (Address).all);
+         begin
+            Release;
+            return Result;
+         end;
+      exception
+         when others =>
+            Release;
+            raise;
+      end;
+   end Receive_Camera_Response;
+
+   function Camera_Response_Counters (Stream : Camera_Response_Stream) return Metadata_Counters is
+      Raw : aliased C.Metadata_Counters_V1 := (others => 0);
+      D   : aliased Diagnostic := [others => Interfaces.C.nul];
+      R   : aliased C.Size_T := 0;
+   begin
+      if Stream.Handle = C.Null_Camera_Response_Metadata then
+         raise Provider_Error with "CameraCommandResp metadata owner is closed";
+      end if;
+      Check
+        (C.IR_Camera_Response_Get_Counters
+           (Stream.Handle, Raw'Access, D'Address, D'Length, R'Access),
+         D);
+      return
+        (AMS.MEL.IR.Counter (Raw.Events_Received),
+         AMS.MEL.IR.Counter (Raw.Events_Dropped_Queue_Full),
+         AMS.MEL.IR.Counter (Raw.Malformed_Or_Unsupported));
+   end Camera_Response_Counters;
+
+   procedure Close (Stream : in out Camera_Response_Stream) is
+      D : aliased Diagnostic := [others => Interfaces.C.nul];
+      R : aliased C.Size_T := 0;
+   begin
+      Check (C.IR_Camera_Response_Close (Stream.Handle'Access, D'Address, D'Length, R'Access), D);
+   end Close;
+
+   overriding
+   procedure Finalize (Stream : in out Camera_Response_Stream) is
+      Ignored : Interfaces.Integer_32;
+   begin
+      Ignored := C.IR_Camera_Response_Close (Stream.Handle'Access, System.Null_Address, 0, null);
+   exception
+      when others =>
+         Stream.Handle := C.Null_Camera_Response_Metadata;
+   end Finalize;
+
+   --  IRMEL-ADA-009 opt-in OpticalDistortionMap owner.
+   type ODM_View_Access is access all C.IR_Optical_Distortion_Map_V1;
+   function To_ODM_View is new Ada.Unchecked_Conversion (System.Address, ODM_View_Access);
+   use type C.Image_ODM_Metadata_Handle;
+
+   function Open_Optical_Distortion_Map
+     (Stream : AMS.MEL.IR.Image_Stream; Queue_Capacity : Positive)
+      return Optical_Distortion_Map_Stream
+   is
+      D            : aliased Diagnostic := [others => Interfaces.C.nul];
+      R            : aliased C.Size_T := 0;
+      Registration : aliased Interfaces.Unsigned_32 := 16#FFFF_FFFF#;
+   begin
+      return Result : Optical_Distortion_Map_Stream do
+         declare
+            Code : constant Interfaces.Integer_32 :=
+              C.IR_Image_ODM_Open
+                (Stream.Handle,
+                 C.Size_T (Queue_Capacity),
+                 Result.Handle'Access,
+                 Registration'Access,
+                 D'Address,
+                 D'Length,
+                 R'Access);
+         begin
+            if Code = C.Success then
+               null;
+            elsif Code = C.Provider_Failed and then Registration = Not_Supported_Return then
+               raise AMS.MEL.IR.Optical_Distortion_Map.Not_Supported with Message (D);
+            else
+               raise Provider_Error with Message (D);
+            end if;
+         end;
+      end return;
+   end Open_Optical_Distortion_Map;
+
+   function Receive_Optical_Distortion_Map
+     (Stream : Optical_Distortion_Map_Stream; Timeout_Milliseconds : Natural := 0)
+      return AMS.MEL.IR.Optical_Distortion_Map.Map_Value
+   is
+      Event   : aliased C.Image_ODM_Event_Handle := C.Null_Image_ODM_Event;
+      Address : aliased System.Address := System.Null_Address;
+      D       : aliased Diagnostic := [others => Interfaces.C.nul];
+      R       : aliased C.Size_T := 0;
+      procedure Release is
+         Ignored : Interfaces.Integer_32;
+      begin
+         Ignored := C.IR_Image_ODM_Event_Close (Event'Access, System.Null_Address, 0, null);
+      end Release;
+   begin
+      if Stream.Handle = C.Null_Image_ODM_Metadata then
+         raise Provider_Error with "OpticalDistortionMap metadata owner is closed";
+      end if;
+      Check
+        (C.IR_Image_ODM_Receive
+           (Stream.Handle,
+            Interfaces.Unsigned_32 (Timeout_Milliseconds),
+            Event'Access,
+            D'Address,
+            D'Length,
+            R'Access),
+         D);
+      begin
+         Check
+           (C.IR_Image_ODM_Event_View (Event, Address'Access, D'Address, D'Length, R'Access), D);
+         declare
+            Result : constant AMS.MEL.IR.Optical_Distortion_Map.Map_Value :=
+              Optical_Distortion_Map_Conversion.To_Value (To_ODM_View (Address).all);
+         begin
+            --  The owned Ada copy is complete before the native event is released.
+            Release;
+            return Result;
+         end;
+      exception
+         when others =>
+            Release;
+            raise;
+      end;
+   end Receive_Optical_Distortion_Map;
+
+   function Optical_Distortion_Map_Counters
+     (Stream : Optical_Distortion_Map_Stream) return Metadata_Counters
+   is
+      Raw : aliased C.Metadata_Counters_V1 := (others => 0);
+      D   : aliased Diagnostic := [others => Interfaces.C.nul];
+      R   : aliased C.Size_T := 0;
+   begin
+      if Stream.Handle = C.Null_Image_ODM_Metadata then
+         raise Provider_Error with "OpticalDistortionMap metadata owner is closed";
+      end if;
+      Check
+        (C.IR_Image_ODM_Get_Counters (Stream.Handle, Raw'Access, D'Address, D'Length, R'Access), D);
+      return
+        (AMS.MEL.IR.Counter (Raw.Events_Received),
+         AMS.MEL.IR.Counter (Raw.Events_Dropped_Queue_Full),
+         AMS.MEL.IR.Counter (Raw.Malformed_Or_Unsupported));
+   end Optical_Distortion_Map_Counters;
+
+   procedure Close (Stream : in out Optical_Distortion_Map_Stream) is
+      D : aliased Diagnostic := [others => Interfaces.C.nul];
+      R : aliased C.Size_T := 0;
+   begin
+      Check (C.IR_Image_ODM_Close (Stream.Handle'Access, D'Address, D'Length, R'Access), D);
+   end Close;
+
+   overriding
+   procedure Finalize (Stream : in out Optical_Distortion_Map_Stream) is
+      Ignored : Interfaces.Integer_32;
+   begin
+      Ignored := C.IR_Image_ODM_Close (Stream.Handle'Access, System.Null_Address, 0, null);
+   exception
+      when others =>
+         Stream.Handle := C.Null_Image_ODM_Metadata;
+   end Finalize;
+
+   --  IRMEL-ADA-010 opt-in LineOfSightQuaternion owner.
+   type LOS_Quaternion_View_Access is access all C.IR_Line_Of_Sight_Quaternion_V1;
+   function To_LOS_Quaternion_View is new
+     Ada.Unchecked_Conversion (System.Address, LOS_Quaternion_View_Access);
+   use type C.Image_LOS_Quaternion_Metadata_Handle;
+
+   function Open_Line_Of_Sight_Quaternion
+     (Stream : AMS.MEL.IR.Image_Stream; Queue_Capacity : Positive)
+      return Line_Of_Sight_Quaternion_Stream
+   is
+      D            : aliased Diagnostic := [others => Interfaces.C.nul];
+      R            : aliased C.Size_T := 0;
+      Registration : aliased Interfaces.Unsigned_32 := 16#FFFF_FFFF#;
+   begin
+      return Result : Line_Of_Sight_Quaternion_Stream do
+         declare
+            Code : constant Interfaces.Integer_32 :=
+              C.IR_Image_LOS_Quaternion_Open
+                (Stream.Handle,
+                 C.Size_T (Queue_Capacity),
+                 Result.Handle'Access,
+                 Registration'Access,
+                 D'Address,
+                 D'Length,
+                 R'Access);
+         begin
+            if Code = C.Success then
+               null;
+            elsif Code = C.Provider_Failed and then Registration = Not_Supported_Return then
+               raise AMS.MEL.IR.Line_Of_Sight_Quaternion.Not_Supported with Message (D);
+            else
+               raise Provider_Error with Message (D);
+            end if;
+         end;
+      end return;
+   end Open_Line_Of_Sight_Quaternion;
+
+   function Receive_Line_Of_Sight_Quaternion
+     (Stream : Line_Of_Sight_Quaternion_Stream; Timeout_Milliseconds : Natural := 0)
+      return AMS.MEL.IR.Line_Of_Sight_Quaternion.Line_Of_Sight_Value
+   is
+      --  The owned value may legitimately hold provider infinities or NaN; only the optional
+      --  floating validity checks are disabled while it is copied out.
+      pragma Validity_Checks ("F");
+      Event   : aliased C.Image_LOS_Quaternion_Event_Handle := C.Null_Image_LOS_Quaternion_Event;
+      Address : aliased System.Address := System.Null_Address;
+      D       : aliased Diagnostic := [others => Interfaces.C.nul];
+      R       : aliased C.Size_T := 0;
+      procedure Release is
+         Ignored : Interfaces.Integer_32;
+      begin
+         Ignored :=
+           C.IR_Image_LOS_Quaternion_Event_Close (Event'Access, System.Null_Address, 0, null);
+      end Release;
+   begin
+      if Stream.Handle = C.Null_Image_LOS_Quaternion_Metadata then
+         raise Provider_Error with "LineOfSightQuaternion metadata owner is closed";
+      end if;
+      Check
+        (C.IR_Image_LOS_Quaternion_Receive
+           (Stream.Handle,
+            Interfaces.Unsigned_32 (Timeout_Milliseconds),
+            Event'Access,
+            D'Address,
+            D'Length,
+            R'Access),
+         D);
+      begin
+         Check
+           (C.IR_Image_LOS_Quaternion_Event_View
+              (Event, Address'Access, D'Address, D'Length, R'Access),
+            D);
+         declare
+            Result : constant AMS.MEL.IR.Line_Of_Sight_Quaternion.Line_Of_Sight_Value :=
+              Line_Of_Sight_Quaternion_Conversion.To_Value (To_LOS_Quaternion_View (Address).all);
+         begin
+            --  The owned Ada copy is complete before the native event is released.
+            Release;
+            return Result;
+         end;
+      exception
+         when others =>
+            Release;
+            raise;
+      end;
+   end Receive_Line_Of_Sight_Quaternion;
+
+   function Line_Of_Sight_Quaternion_Counters
+     (Stream : Line_Of_Sight_Quaternion_Stream) return Metadata_Counters
+   is
+      Raw : aliased C.Metadata_Counters_V1 := (others => 0);
+      D   : aliased Diagnostic := [others => Interfaces.C.nul];
+      R   : aliased C.Size_T := 0;
+   begin
+      if Stream.Handle = C.Null_Image_LOS_Quaternion_Metadata then
+         raise Provider_Error with "LineOfSightQuaternion metadata owner is closed";
+      end if;
+      Check
+        (C.IR_Image_LOS_Quaternion_Get_Counters
+           (Stream.Handle, Raw'Access, D'Address, D'Length, R'Access),
+         D);
+      return
+        (AMS.MEL.IR.Counter (Raw.Events_Received),
+         AMS.MEL.IR.Counter (Raw.Events_Dropped_Queue_Full),
+         AMS.MEL.IR.Counter (Raw.Malformed_Or_Unsupported));
+   end Line_Of_Sight_Quaternion_Counters;
+
+   procedure Close (Stream : in out Line_Of_Sight_Quaternion_Stream) is
+      D : aliased Diagnostic := [others => Interfaces.C.nul];
+      R : aliased C.Size_T := 0;
+   begin
+      Check
+        (C.IR_Image_LOS_Quaternion_Close (Stream.Handle'Access, D'Address, D'Length, R'Access), D);
+   end Close;
+
+   overriding
+   procedure Finalize (Stream : in out Line_Of_Sight_Quaternion_Stream) is
+      Ignored : Interfaces.Integer_32;
+   begin
+      Ignored :=
+        C.IR_Image_LOS_Quaternion_Close (Stream.Handle'Access, System.Null_Address, 0, null);
+   exception
+      when others =>
+         Stream.Handle := C.Null_Image_LOS_Quaternion_Metadata;
+   end Finalize;
+end AMS.MEL.IR.Image.Metadata;

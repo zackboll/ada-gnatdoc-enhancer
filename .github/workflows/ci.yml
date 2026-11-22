@@ -184,11 +184,15 @@ jobs:
           "$RUNNER_TEMP/source-baseline-env/bin/python" -m pip install "$RUNNER_TEMP"/source-baseline/*.whl markdown-it-py==3.0.0 mdurl==0.1.2
       - name: Source-view security and optimized mutation checks
         run: |
-          python -m unittest discover -s tests -p test_source_view.py -v
-          python -O -m unittest discover -s tests -p test_source_view.py -v
+          python -m unittest discover -s tests -p 'test_source_view*.py' -v
+          python -O -m unittest discover -s tests -p 'test_source_view*.py' -v
       - name: Complete retained MEL/Core enabled and disabled byte inventories and Chromium navigation
         run: |
           python scripts/qualify_source_view.py --workspace "$RUNNER_TEMP/source-view" --baseline-python "$RUNNER_TEMP/source-baseline-env/bin/python" --browser
+      - name: Starting-main parity, schema-2 reconstruction and complete body navigation in Chromium
+        run: |
+          git worktree add --detach "$RUNNER_TEMP/source-starting-main" 624c02e3b08198e77d3e126f745431af1b6dc8b0
+          python scripts/qualify_body_navigation.py --workspace "$RUNNER_TEMP/body-navigation" --starting-main "$RUNNER_TEMP/source-starting-main" --browser
       - name: Retain complete publication fingerprints and browser evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -198,6 +202,8 @@ jobs:
             ${{ runner.temp }}/source-view/publication.json
             ${{ runner.temp }}/source-view/browser.json
             ${{ runner.temp }}/source-view/*.png
+            ${{ runner.temp }}/body-navigation/body-publication.json
+            ${{ runner.temp }}/body-navigation/body-browser.json
           retention-days: 30
   examples-browser:
     runs-on: ubuntu-24.04
