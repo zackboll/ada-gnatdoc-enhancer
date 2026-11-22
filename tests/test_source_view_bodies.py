@@ -13,7 +13,7 @@ from ada_gnatdoc_enhancer.config import load
 from ada_gnatdoc_enhancer.errors import EnhancementError
 from ada_gnatdoc_enhancer.inventory import packages
 from ada_gnatdoc_enhancer.pipeline import enhance, verify
-from ada_gnatdoc_enhancer.qualification import hashes
+from ada_gnatdoc_enhancer.qualification import hashes, identities, preserve_native
 from ada_gnatdoc_enhancer.source_view import enhance_page
 from ada_gnatdoc_enhancer.util import digest, sorted_json
 from _helper import Fixture
@@ -175,6 +175,14 @@ class BodyPublication(unittest.TestCase):
         self.assertEqual(enhance_page(linked, pkg, spec['declarations'], spec['source'], schema=2,
                                       restore=True).encode(), native.read_bytes())
         self.assertEqual(hashes(second), pristine)
+        self.assertEqual(preserve_native(identities(second), self.site,
+                                         config=self.config, pristine=second)['status'], 'preserved')
+        enhanced = self.site/'api'/native.name
+        valid = enhanced.read_bytes()
+        enhanced.write_bytes(valid.replace(b'implementation.adb.html#L3', b'implementation.adb.html#L4'))
+        with self.assertRaises(EnhancementError):
+            preserve_native(identities(second), self.site, config=self.config, pristine=second)
+        enhanced.write_bytes(valid)
         enhance(self.config, second)
         self.assertEqual(hashes(self.site), hashes(second))
         verify(self.config, self.site); enhance(self.config, self.site)

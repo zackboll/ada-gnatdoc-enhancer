@@ -19,7 +19,7 @@ import threading
 
 from ada_gnatdoc_enhancer.config import load
 from ada_gnatdoc_enhancer.pipeline import enhance, verify
-from ada_gnatdoc_enhancer.qualification import hashes
+from ada_gnatdoc_enhancer.qualification import hashes, identities, preserve_native
 from ada_gnatdoc_enhancer.util import digest, require, sorted_json
 from pin_source_view import pin
 from qualify_source_view import Quiet, SourceText, check_source_page
@@ -146,11 +146,13 @@ def prepare(repository, start, workspace):
                     parsed.anchors == [f'L{i}' for i in range(1, record['lines']+1)],
                     'body-mode complete source/line fidelity failure')
         journeys = oracle(name, root, data)
+        restored = preserve_native(identities(pristine), site, config=settings, pristine=pristine)
         omissions = Counter(e.get('body_omission') for f in identity['files'] for e in f['declarations']
                             if 'body_omission' in e)
         results[name] = dict(counts=counts, disabled_parity=len(hashes(disabled)), schema1_parity=len(hashes(schema1)),
                              comparison=compare(schema1, site), source_view=identity, journeys=journeys,
-                             omissions=dict(omissions), deterministic=True, idempotent=True)
+                             omissions=dict(omissions), native_preservation=restored,
+                             deterministic=True, idempotent=True)
         print(name, counts, dict(omissions), flush=True)
     (workspace/'body-publication.json').write_text(sorted_json(results))
     return results

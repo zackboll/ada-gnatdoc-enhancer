@@ -83,10 +83,12 @@ class Identities(HTMLParser):
             self.snippets.append(self.code);self.code=None
 
 
-def identities(site, authorized_summaries=None):
+def identities(site, authorized_summaries=None, *, restore_source=None):
     result={}
     for path in sorted((site/'api').glob('*.html')):
         text=path.read_text(encoding='utf-8')
+        if restore_source is not None:
+            text=restore_source(path.relative_to(site).as_posix(),text)
         section=(authorized_summaries or {}).get(path.relative_to(site).as_posix())
         if section is not None:
             require(text.count(section)==1, 'missing/modified/duplicate authorized generic summary')
@@ -126,7 +128,23 @@ def preserve_native(before,site, *, config=None, pristine=None):
         require(pristine is not None, 'generic native preservation requires pristine authority')
         from .generic_instances import summaries
         authorized,_=summaries(config,packages(config),snapshot(config,pristine))
-    after=identities(site,authorized)
+    restore_source=None
+    if config is not None and config.source_view:
+        require(pristine is not None, 'source-link native preservation requires pristine authority')
+        from .source_view import build, enhance_page
+        native=snapshot(config,pristine); source=packages(config)
+        _, entries, identity, _=build(config,native,source)
+        owners={'api/'+page.path.name: key for key,page in native.pages.items()}
+        names={record['package'].lower(): record['source'] for record in identity['files']}
+
+        def restore_source(name,text):
+            key=owners.get(name)
+            if key is None:
+                return text
+            return enhance_page(text,source[key],entries[key],names[key],
+                                schema=identity['schema_version'],restore=True)
+
+    after=identities(site,authorized,restore_source=restore_source)
     require(set(before)==set(after),'native page inventory changed')
     projects=set()
     for name,old in before.items():
