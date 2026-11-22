@@ -118,7 +118,7 @@ print(json.dumps(source_epoch.verify_presentation(site,root,report,references,ba
     require({n: v for n, v in actual['output_sha256'].items() if n in portal_hashes} == portal_hashes,
             'incorrect portal output hashes')
     actual['output_sha256'] = {n: v for n, v in actual['output_sha256'].items() if n not in portal_hashes}
-    require(expected['enhancer_version'] == '0.1.5' and actual['enhancer_version'] == '0.1.7',
+    require(expected['enhancer_version'] == '0.1.5' and actual['enhancer_version'] == '0.1.8',
             'unexpected official/candidate release version')
     actual['enhancer_version'] = expected['enhancer_version']
     require(actual == expected, 'unapproved presentation metadata difference')

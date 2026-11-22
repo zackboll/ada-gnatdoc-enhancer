@@ -72,8 +72,12 @@ def compare_source_outputs(old, candidate, highlighted):
                 baseline_sha256=before, candidate_sha256=after)
 
 
-def prepare(repository, workspace, baseline, baseline_python=None):
+def prepare(repository, workspace, baseline_python):
+    from compare_release_017_018 import compare
+    from qualify_release_017_018 import OFFICIAL_CHECK
+
     inventory = {}
+    require(__version__ == '0.1.8', 'wrong candidate source-view version')
     for name, filename in (('mel', 'docs/gnatdoc-enhance.toml'), ('core', 'default.toml')):
         print('Qualifying '+name, flush=True)
         fixture = repository/'tests/real-fixtures'/('search-' + name)
@@ -85,20 +89,16 @@ def prepare(repository, workspace, baseline, baseline_python=None):
         disabled = workspace/(name+'-disabled'); shutil.copytree(fixture/'pristine', disabled)
         enhance(config, disabled); verify(config, disabled)
         parity = None
-        if baseline or baseline_python:
+        if baseline_python:
             old = workspace/(name+'-baseline'); shutil.copytree(fixture/'pristine', old)
-            code = ('from pathlib import Path; from ada_gnatdoc_enhancer.config import load; '
-                    'from ada_gnatdoc_enhancer.pipeline import enhance; '
-                    f'enhance(load(Path({str(root)!r}), {filename!r}), Path({str(old)!r}))')
+            code = OFFICIAL_CHECK + ('from pathlib import Path; from ada_gnatdoc_enhancer.config import load; '
+                    'from ada_gnatdoc_enhancer.pipeline import enhance, verify; '
+                    f'c=load(Path({str(root)!r}), {filename!r}); p=Path({str(old)!r}); enhance(c,p); verify(c,p)')
             env = dict(os.environ)
             env.pop('PYTHONPATH', None)
-            if baseline:
-                env['PYTHONPATH'] = str(baseline/'src')
-            subprocess.run([str(baseline_python or os.sys.executable), '-c', code],
+            subprocess.run([str(baseline_python), '-c', code],
                            cwd=workspace, env=env, check=True)
-            require(__version__ == '0.1.7', 'wrong candidate source-view version')
-            require(hashes(old) == hashes(disabled), 'complete disabled output byte parity failed')
-            parity = hashes(disabled)
+            parity = compare(old, disabled, authority='official', schema=0)
         evidence = dict(schema_version=1, files={n: d for n, d in hashes(fixture/'pristine').items()
                         if n.endswith('.html') or n == 'api/gnatdoc.css'}, sources={
                         p.path.relative_to(root).as_posix(): digest(p.path.read_bytes())
@@ -110,7 +110,7 @@ def prepare(repository, workspace, baseline, baseline_python=None):
         # qualification uses the same validated contract as the TOML loader.
         config = replace(config, source_view=options, search=True, resizable_sidebar=True)
         compatibility = {}
-        if baseline or baseline_python:
+        if baseline_python:
             for highlight in (False, True):
                 label = 'highlighted' if highlight else 'plain'
                 old = workspace/(name+'-official-'+label)
@@ -122,11 +122,12 @@ def prepare(repository, workspace, baseline, baseline_python=None):
                         f'c=replace(load(Path({str(root)!r}), {filename!r}), '
                         f'source_view={options!r}, search=True, resizable_sidebar=True, highlight={highlight!r}); '
                         f'p=Path({str(old)!r}); enhance(c,p); verify(c,p)')
-                subprocess.run([str(baseline_python or os.sys.executable), '-c', code],
+                subprocess.run([str(baseline_python), '-c', OFFICIAL_CHECK+code],
                                cwd=workspace, env=env, check=True)
                 enhance(replace(config, highlight=highlight), candidate)
                 verify(replace(config, highlight=highlight), candidate)
-                compatibility[label] = compare_source_outputs(old, candidate, highlight)
+                compatibility[label] = compare(old, candidate, authority='official', schema=1,
+                                                highlighted=highlight)
         site = workspace/name; shutil.copytree(fixture/'pristine', site)
         stats = enhance(config, site); verify(config, site)
         original = hashes(site); enhance(config, site)
@@ -454,17 +455,16 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--repository', type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument('--workspace', type=Path, required=True)
-    parser.add_argument('--baseline-source', type=Path)
     parser.add_argument('--baseline-python', type=Path,
                         help='interpreter with the independently verified official v0.1.7 wheel')
     parser.add_argument('--browser', action='store_true')
     parser.add_argument('--browser-only', action='store_true')
     args = parser.parse_args()
-    require(not (args.baseline_source and args.baseline_python), 'choose one baseline authority')
     if args.browser_only:
         inventory = json.loads((args.workspace/'publication.json').read_text())
     else:
         args.workspace.mkdir(parents=True, exist_ok=False)
-        inventory = prepare(args.repository, args.workspace, args.baseline_source, args.baseline_python)
+        require(args.baseline_python is not None, 'official wheel interpreter required')
+        inventory = prepare(args.repository, args.workspace, args.baseline_python)
     if args.browser or args.browser_only: browser(args.workspace, inventory)
     print(json.dumps({name: data['counts'] for name, data in inventory.items()}))

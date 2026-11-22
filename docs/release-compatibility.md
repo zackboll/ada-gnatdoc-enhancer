@@ -1,6 +1,28 @@
 # Consumer compatibility and adoption boundary
 
-## v0.1.6 → v0.1.7 (GNATDOC-REL-017; candidate, not published)
+## v0.1.7 → v0.1.8 (GNATDOC-REL-018; preparation only)
+
+The independently downloaded official v0.1.7 wheel is the authority for
+released behavior. With browsing off, every publication file must match except
+the exact serialized `enhancer_version`. With schema 1, only static token spans,
+the pinned source stylesheet and their corresponding hashes may additionally
+differ. Exact decoded text, line anchors, native declarations and inventory
+ordering are unchanged. Official v0.1.7 is **not** a schema-2 baseline.
+
+The separate frozen feature-complete merged-main baseline is
+`502bcae9c0194642394347ba7347c28c0af4b90a` (tree
+`d950ad3b8413ad3a99975a308eaec06368303d0d`). When comparing against it, require
+version-only differences with browsing off, schema 1 or schema 2. A rehashed
+output manifest cannot authorize modified content or a new body. Reconstruct and
+verify each engine's results from the same retained source/native inputs before
+comparison. See the [qualification record](release-0.1.8-qualification.md).
+
+No consumer adoption is implied. Source browsing stays off unless the consumer
+explicitly enables it and reviews complete selected files, including private
+sections and authorized implementation details. Matching remains conservative
+and lexical, not compiler-semantic resolution.
+
+## Historical v0.1.6 → v0.1.7 (GNATDOC-REL-017; subsequently published)
 
 Acquire the official v0.1.6 wheel independently; SHA-256 is
 `adfec71188a868e3fb70a6da71a124c937f9e63e26a2f2e31af45364f49ffb27`.

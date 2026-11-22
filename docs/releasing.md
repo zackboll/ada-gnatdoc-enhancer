@@ -1,6 +1,34 @@
 # Auditable release preparation and later publication
 
-## GNATDOC-REL-017: v0.1.7 preparation only (current)
+## GNATDOC-REL-018: v0.1.8 preparation only (current)
+
+Start with merged PRs #37 and #38 at `502bcae9c0194642394347ba7347c28c0af4b90a`.
+Require all nine jobs in [exact-main run 45068563086](https://github.com/zackboll/ada-gnatdoc-enhancer/actions/runs/45068563086).
+Acquire and verify all four official v0.1.7 assets independently. Reconstruct
+source-disabled and schema-1 publications using the official wheel. Separately
+reconstruct all three modes using the pinned feature-complete merged main;
+require exact parity except the serialized version field, even for schema 2.
+Retain the authentic source, body, search, resize, authored HTML, examples and
+navigation Chromium campaigns and normal/optimized verification controls.
+
+Build wheel and sdist from a clean Git export of the committed candidate.
+Validate the sdist before extraction, independently rebuild its wheel, and run
+strict Twine plus the complete archive, installed-content and nine-environment
+tests on Python 3.11–3.13. Record source commit/tree separately from archives;
+pass external tool, installed-content and test results to
+`scripts/record_candidate_provenance.py --qualification`.
+Only the wheel, sdist, `release-provenance.json` and `SHA256SUMS` are candidate
+public assets; rebuilt wheel and test evidence stay separate.
+
+One non-draft PR against refreshed main, normal pushes, no auto-merge. Check
+individual conclusions of all nine jobs on the exact PR head. Request independent
+technical review under the existing maintainer-led policy. No tag, merge, release,
+deployment, registry upload or consumer change. Candidate provenance must retain
+`publication_authorized: false`. Fresh assets and full qualification of approved
+merged main, followed by separate maintainer authorization, are required for publication.
+See [qualification record](release-0.1.8-qualification.md).
+
+## Historical GNATDOC-REL-017: v0.1.7 preparation (subsequently published)
 
 Start from refreshed main `d17570c33743103018900376f07364a95523ff08`, tree
 `e5f005c7ec66c1dc577dac682dc3e6821b7da74d`, containing merged PR #35 and

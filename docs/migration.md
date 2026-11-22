@@ -19,7 +19,17 @@ No consumer migrations, source-policy changes, deployment or publication are
 performed by release preparation. Shared-package release is not consumer approval.
 See [release compatibility](release-compatibility.md).
 
-## Upgrade from 0.1.6 to the 0.1.7 candidate
+## Upgrade from 0.1.7 to the 0.1.8 candidate
+
+Regenerate from pristine GNATdoc 26.0.0 output and verify that the distribution,
+module, CLI, and regenerated presentation manifest identities all equal `0.1.8`.
+With browsing off, compare to official v0.1.7 and permit only the version field.
+Schema 1 adds static highlighting but must preserve source text and destinations.
+Do not enable schema 2 by default or reuse schema-1 evidence to authorize bodies:
+publish complete `.adb` files only after an explicit consumer review and a new
+source-owned pin. See [source visibility and migration](source-view.md).
+
+## Historical upgrade from 0.1.6 to 0.1.7
 
 Require package, module, CLI, installed distribution and regenerated presentation
 manifest versions to agree on `0.1.7`. Regenerate from pristine GNATdoc 26.0.0
@@ -29,7 +39,7 @@ release field. Retain every search, resize, guide, source-block and link contrac
 Source browsing is default-off. Before enabling it, explicitly authorize publication
 of complete selected `.ads` specifications, including private sections. Pin exact
 source/native ownership and hashes and qualify source lines, overloads and browser
-behavior. `.adb` implementation bodies are not supported. MEL Bridge adoption
+behavior. Official v0.1.7 does not support `.adb` body browsing. MEL Bridge adoption
 requires a subsequent separately qualified consumer change; this preparation
 does not authorize adoption or publication. See [source view](source-view.md).
 
