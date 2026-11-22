@@ -1,6 +1,14 @@
 # Compatibility and evidence levels
 
-## Current v0.1.6 preparation boundary
+## Current preparation boundary
+
+See [v0.1.8 qualification](release-0.1.8-qualification.md) and the
+[release compatibility matrix](release-compatibility.md). Source browsing stays
+off by default. Schema 1 supports specifications; schema 2 is an explicit opt-in
+to complete, source-authorized implementation bodies. Source/native verification
+is unchanged, and consumer adoption is separate from this preparation.
+
+## Historical v0.1.6 preparation boundary
 
 GNATDOC-037 prepares merged GNATDOC-036 and GNATDOC-SEARCH-002 without authorizing
 publication or consumer adoption. Python 3.11–3.13, GNATdoc 26 HTML, Apache-2.0,

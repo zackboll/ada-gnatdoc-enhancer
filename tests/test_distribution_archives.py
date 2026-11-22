@@ -37,7 +37,7 @@ class WheelArchiveContracts(unittest.TestCase):
                     audit.wheel_files(self.wheel('package.dist-info/link', kind | 0o777))
 
     def test_unsafe_and_duplicate_members_rejected(self):
-        for name in ('/absolute', '../escape', 'package/../../escape'):
+        for name in ('/absolute', '../escape', 'package/../../escape', 'x/./y', 'x//y', 'C:/file', 'x\\y'):
             with self.subTest(name=name):
                 with self.assertRaisesRegex(ValueError, 'unsafe wheel path'):
                     audit.wheel_files(self.wheel(name))
@@ -81,14 +81,17 @@ class ReleaseArchiveIdentity(unittest.TestCase):
                      'ada_gnatdoc_enhancer-0.1.3/module.py',
                      'ada_gnatdoc_enhancer-0.1.4/module.py',
                      'ada_gnatdoc_enhancer-0.1.5/module.py',
-                     'ada_gnatdoc_enhancer-0.1.7/../escape'):
+                     'ada_gnatdoc_enhancer-0.1.6/module.py',
+                     'ada_gnatdoc_enhancer-0.1.7/module.py',
+                     'ada_gnatdoc_enhancer-0.1.8/../escape',
+                     'ada_gnatdoc_enhancer-0.1.8/src//module.py'):
             with self.subTest(name=name), self.assertRaisesRegex(ValueError, 'unsafe sdist path'):
                 audit.sdist_files(self.sdist([name]))
-        name = 'ada_gnatdoc_enhancer-0.1.7/module.py'
+        name = 'ada_gnatdoc_enhancer-0.1.8/module.py'
         self.assertEqual(audit.sdist_files(self.sdist([name])), {'module.py': b'content'})
 
     def test_sdist_rejects_nonregular_and_duplicate_members(self):
-        name = 'ada_gnatdoc_enhancer-0.1.7/module.py'
+        name = 'ada_gnatdoc_enhancer-0.1.8/module.py'
         for kind in (tarfile.SYMTYPE, tarfile.LNKTYPE, tarfile.FIFOTYPE,
                      tarfile.CHRTYPE, tarfile.BLKTYPE):
             with self.subTest(kind=kind), self.assertRaisesRegex(ValueError, 'nonregular sdist member'):
@@ -106,7 +109,7 @@ class ReleaseArchiveIdentity(unittest.TestCase):
     def test_previous_release_source_version_is_rejected(self):
         with tempfile.TemporaryDirectory() as temporary:
             source = Path(temporary)
-            for version in ('0.1.3', '0.1.4', '0.1.5'):
+            for version in ('0.1.3', '0.1.4', '0.1.5', '0.1.6', '0.1.7'):
                 with self.subTest(version=version):
                     (source/'pyproject.toml').write_text('[project]\nversion = "'+version+'"\n')
                     with self.assertRaisesRegex(ValueError, 'wrong source version'):
@@ -115,12 +118,12 @@ class ReleaseArchiveIdentity(unittest.TestCase):
     def test_previous_release_wheel_metadata_is_rejected_even_when_renamed(self):
         with tempfile.TemporaryDirectory() as temporary:
             source = Path(temporary)
-            (source/'pyproject.toml').write_text('[project]\nversion = "0.1.7"\n')
-            wheel = source/'ada_gnatdoc_enhancer-0.1.7-py3-none-any.whl'
-            sdist = source/'ada_gnatdoc_enhancer-0.1.7.tar.gz'
-            for version in ('0.1.3', '0.1.4', '0.1.5'):
+            (source/'pyproject.toml').write_text('[project]\nversion = "0.1.8"\n')
+            wheel = source/'ada_gnatdoc_enhancer-0.1.8-py3-none-any.whl'
+            sdist = source/'ada_gnatdoc_enhancer-0.1.8.tar.gz'
+            for version in ('0.1.3', '0.1.4', '0.1.5', '0.1.6', '0.1.7'):
                 with self.subTest(version=version):
-                    content = {'ada_gnatdoc_enhancer-0.1.7.dist-info/METADATA':
+                    content = {'ada_gnatdoc_enhancer-0.1.8.dist-info/METADATA':
                                ('Name: ada-gnatdoc-enhancer\nVersion: '+version+'\n').encode()}
                     with patch.object(audit, 'wheel_files', return_value=content), \
                          patch.object(audit, 'sdist_files', return_value={}):

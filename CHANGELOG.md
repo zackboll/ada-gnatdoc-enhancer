@@ -1,6 +1,21 @@
 # Changelog
 
-## 0.1.7 — release candidate (GNATDOC-REL-017; not published)
+## 0.1.8 — release preparation (GNATDOC-REL-018; not published)
+
+* Highlight Ada keywords, comments, strings, character literals, numbers,
+  attributes, and operators in static source pages using the existing light and
+  dark GNATdoc palette. Preserve exact decoded text and line anchors without JavaScript.
+* Browse complete selected `.ads` specifications and explicitly authorized
+  complete `.adb` bodies. Follow package links and verified, bidirectional
+  operation links to distinct overloads. Unsupported or ambiguous destinations
+  are omitted; matching is conservative lexical reconciliation, not compiler semantics.
+* Source browsing stays off by default. Schema 1 can expose private sections in
+  `.ads` files. Schema 2 also exposes private helpers and implementation details
+  in authorized `.adb` files. Review the complete files before opting in.
+* Preserve the released source-disabled publication and frozen merged feature
+  behavior; see [release qualification](docs/release-0.1.8-qualification.md).
+
+## 0.1.7 — published 2026-11-18 (GNATDOC-REL-017 preparation history)
 
 * Include GNATDOC-SOURCE-001 optional Ada source browsing, disabled by default.
   Public package/type/subtype/function/procedure “View source” links target exact

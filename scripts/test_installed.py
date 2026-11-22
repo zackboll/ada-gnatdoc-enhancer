@@ -11,7 +11,7 @@ import subprocess
 import sys
 import tempfile
 from importlib.resources import files
-from importlib.metadata import version
+from importlib.metadata import distribution, version
 from pathlib import Path
 
 import ada_gnatdoc_enhancer
@@ -27,10 +27,21 @@ def hashes(root):
             for p in root.rglob('*') if p.is_file()}
 
 
-def run(fixtures:Path):
+def run(fixtures:Path, source:Path|None=None):
     installed=Path(ada_gnatdoc_enhancer.__file__).resolve()
     require(installed.is_relative_to(Path(sys.prefix).resolve()),
             f'expected a wheel installed in this virtual environment, got {installed}')
+    dist=distribution('ada-gnatdoc-enhancer')
+    require(installed == Path(dist.locate_file('ada_gnatdoc_enhancer/__init__.py')).resolve(),
+            'import and installed distribution disagree')
+    origin=json.loads(dist.read_text('direct_url.json') or '{}')
+    require(not origin.get('dir_info',{}).get('editable'), 'expected a non-editable installation')
+    installed_payload = {n:h for n,h in hashes(installed.parent).items() if
+                         '__pycache__/' not in n and not n.endswith(('.pyc','.pyo'))}
+    if source is not None:
+        expected = {n:h for n,h in hashes(source/'src/ada_gnatdoc_enhancer').items() if
+                    Path(n).suffix in ('.py','.css','.js')}
+        require(installed_payload == expected, 'complete installed module/asset inventory differs from source')
     cli=Path(sys.executable).parent/'gnatdoc-enhancer'
     environment=os.environ.copy();environment.pop('PYTHONPATH',None)
     fixtures=fixtures.resolve()
@@ -44,9 +55,9 @@ def run(fixtures:Path):
             return result.stdout
 
         require('enhance' in invoke('--help'),'missing CLI help')
-        require(version('ada-gnatdoc-enhancer') == ada_gnatdoc_enhancer.__version__ == '0.1.7',
+        require(version('ada-gnatdoc-enhancer') == ada_gnatdoc_enhancer.__version__ == '0.1.8',
                 'installed distribution/module version mismatch')
-        require(invoke('--version').strip() == '0.1.7',
+        require(invoke('--version').strip() == '0.1.8',
                 'installed CLI version mismatch')
         conformance=json.loads(invoke('conformance','--fixtures',fixtures))
         require(set(conformance['profiles'])=={'core','imgproc','geometry','mel'},
@@ -66,7 +77,7 @@ def run(fixtures:Path):
         result=json.loads(invoke('enhance',*arguments))
         require(result['public_packages']==29,'wrong installed package inventory')
         output=root/'_site'
-        require(json.loads((output/'api/presentation.json').read_text())['enhancer_version'] == '0.1.7',
+        require(json.loads((output/'api/presentation.json').read_text())['enhancer_version'] == '0.1.8',
                 'installed presentation manifest version mismatch')
         for destination in ('api/gnatdoc-theme.css','api/gnatdoc-navigation.js',
                             'assets/gnatdoc-guides.css'):
@@ -86,6 +97,7 @@ def run(fixtures:Path):
         require(before=={p:h for p,h in hashes(root).items() if not p.startswith('_site/')},
                 'installed enhancement changed files outside the output directory')
     return {'installed_module':str(installed),'version':version('ada-gnatdoc-enhancer'),
+            'installed_origin':origin,'installed_payload_sha256':installed_payload,
             'help':'passed','assets':3,
             'symlink_source_root_rejection':'passed',
             'enhancement':'passed','idempotence':'passed','verification':verified,
@@ -95,4 +107,6 @@ def run(fixtures:Path):
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--fixtures',required=True,type=Path)
-    print(json.dumps(run(parser.parse_args().fixtures),sort_keys=True,indent=2))
+    parser.add_argument('--source',type=Path,help='independent source for complete installed payload audit')
+    args=parser.parse_args()
+    print(json.dumps(run(args.fixtures,args.source),sort_keys=True,indent=2))

@@ -1,15 +1,25 @@
 # Optional offline Ada source browser
 
 Source browsing is **disabled by default**. Existing configurations produce
-exactly the same publication bytes. It requires no JavaScript, runtime Python,
+the same publication bytes apart from the release-version field on upgrade.
+Source pages require no JavaScript, runtime Python,
 network service, GitHub source URL, font download or CDN.
 
 ## Visibility and scope
 
+| Configuration | Publication |
+| --- | --- |
+| No `[source_view]` table | Existing documentation; no source browsing |
+| Schema 1 (available in v0.1.7) | Selected complete `.ads` specifications only |
+| Schema 2 (v0.1.8 candidate) | Specifications and explicitly authorized complete `.adb` bodies |
+
 Enabling this feature deliberately publishes the **entire original `.ads`
 file**, including comments and any **private section inside a public package
 specification**. It does not redact that section or claim the text is public-only.
-Review specifications for confidential material before enabling it.
+**Security warning:** Review specifications for confidential material before
+enabling schema 1. Schema 2 additionally exposes private helpers and other
+implementation details in complete authorized bodies. Generated publication
+metadata cannot authorize a body.
 
 Only public library package specifications independently discovered in the
 configured source directories are eligible. Schema 1 excludes `.adb` files;

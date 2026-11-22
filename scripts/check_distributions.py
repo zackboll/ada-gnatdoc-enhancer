@@ -15,6 +15,9 @@ import tarfile
 import tomllib
 import zipfile
 
+VERSION = '0.1.8'
+STEM = 'ada_gnatdoc_enhancer-' + VERSION
+
 
 def require(condition, message):
     if not condition:
@@ -25,14 +28,20 @@ def sha(data):
     return hashlib.sha256(data).hexdigest()
 
 
+def archive_parts(name, kind):
+    parts = name.removesuffix('/').split('/')
+    require(all(p and p not in ('.', '..') and '\\' not in p and ':' not in p and
+                all(ord(c) >= 32 and ord(c) != 127 for c in p) for p in parts),
+            'unsafe '+kind+' path')
+    return parts
+
+
 def wheel_files(path):
     with zipfile.ZipFile(path) as archive:
         names = archive.namelist()
-        require(len(names) == len(set(names)), 'duplicate wheel members')
+        require(len(names) == len({n.removesuffix('/') for n in names}), 'duplicate wheel members')
         for member in archive.infolist():
-            parts = PurePosixPath(member.filename).parts
-            require(parts and not PurePosixPath(member.filename).is_absolute()
-                    and '..' not in parts, 'unsafe wheel path')
+            archive_parts(member.orig_filename, 'wheel')
             mode = member.external_attr >> 16
             kind = stat.S_IFMT(mode)
             # Some ZIP writers omit Unix file-type bits. When present, accept
@@ -45,16 +54,29 @@ def wheel_files(path):
 def sdist_files(path):
     with tarfile.open(path) as archive:
         members = archive.getmembers()
-        require(len({m.name for m in members}) == len(members), 'duplicate sdist members')
+        require(len({m.name.removesuffix('/') for m in members}) == len(members), 'duplicate sdist members')
+        regular = {m.name for m in members if m.isfile()}
         packaged = {}
         for member in members:
-            parts = PurePosixPath(member.name).parts
-            require(parts and parts[0] == 'ada_gnatdoc_enhancer-0.1.7'
-                    and '..' not in parts, 'unsafe sdist path')
+            parts = archive_parts(member.name, 'sdist')
+            require(parts[0] == STEM and (member.isdir() or len(parts) > 1), 'unsafe sdist path')
+            require(not any('/'.join(parts[:i]) in regular for i in range(1, len(parts))),
+                    'sdist file used as directory')
             require(member.isdir() or member.isfile(), 'nonregular sdist member')
             if member.isfile():
                 packaged['/'.join(parts[1:])] = archive.extractfile(member).read()
         return packaged
+
+
+def extract_sdist(path, destination):
+    # Extract only validated regular files into a new directory. Do not restore
+    # archive ownership, permissions, links or platform-specific metadata.
+    packaged = sdist_files(path)
+    destination.mkdir(parents=True, exist_ok=False)
+    for name, content in packaged.items():
+        target = destination/STEM/name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(content)
 
 
 def verify_record(content, prefix):
@@ -75,10 +97,10 @@ def verify_record(content, prefix):
 def audit(source, wheel, sdist, rebuilt):
     source = source.resolve()
     project = tomllib.loads((source/'pyproject.toml').read_text())['project']
-    require(project['version'] == '0.1.7', 'wrong source version')
-    require(wheel.name == rebuilt.name == 'ada_gnatdoc_enhancer-0.1.7-py3-none-any.whl',
+    require(project['version'] == VERSION, 'wrong source version')
+    require(wheel.name == rebuilt.name == STEM+'-py3-none-any.whl',
             'wrong wheel filename')
-    require(sdist.name == 'ada_gnatdoc_enhancer-0.1.7.tar.gz', 'wrong sdist filename')
+    require(sdist.name == STEM+'.tar.gz', 'wrong sdist filename')
     original = wheel_files(wheel)
     second = wheel_files(rebuilt)
     packaged = sdist_files(sdist)
@@ -92,7 +114,7 @@ def audit(source, wheel, sdist, rebuilt):
         require(len(metadata_names) == 1, 'missing/duplicate metadata')
         metadata = BytesParser().parsebytes(content[metadata_names[0]])
         require(metadata['Name'] == 'ada-gnatdoc-enhancer', 'metadata name mismatch')
-        require(metadata['Version'] == '0.1.7', 'metadata version mismatch')
+        require(metadata.get_all('Version') == [VERSION], 'metadata version mismatch')
         require(metadata['Requires-Python'] == '>=3.11', 'Python support changed')
         require(metadata['License-Expression'] == 'Apache-2.0', 'missing SPDX license')
         require(metadata.get_all('License-File') == ['LICENSE'], 'missing license declaration')
@@ -102,7 +124,7 @@ def audit(source, wheel, sdist, rebuilt):
                 'unexpected dependency: '+repr(dependencies))
         require(metadata.get_all('Provides-Extra') == ['guides'], 'unexpected extras')
         prefix = metadata_names[0].removesuffix('METADATA')
-        require(prefix == 'ada_gnatdoc_enhancer-0.1.7.dist-info/', 'wrong dist-info identity')
+        require(prefix == STEM+'.dist-info/', 'wrong dist-info identity')
         require(set(content) == set(expected) | {prefix+n for n in (
             'METADATA', 'WHEEL', 'RECORD', 'entry_points.txt', 'top_level.txt', 'licenses/LICENSE')},
             'unexpected/missing wheel members')
@@ -151,11 +173,13 @@ def audit(source, wheel, sdist, rebuilt):
         parts = PurePosixPath(name).parts
         require(not {'build', 'dist', '.venv', '.git', '__pycache__'}.intersection(parts)
                 and not name.endswith(('.pyc', '.pyo')), 'generated sdist member: '+name)
-    require(packaged['PKG-INFO'] == original['ada_gnatdoc_enhancer-0.1.7.dist-info/METADATA'],
+    require(packaged['PKG-INFO'] == original[STEM+'.dist-info/METADATA'],
             'sdist/wheel metadata differ')
     require(packaged['src/ada_gnatdoc_enhancer.egg-info/PKG-INFO'] == packaged['PKG-INFO'],
             'sdist egg-info metadata differ')
-    return {'version': '0.1.7', 'module_asset_sha256': {n: sha(d) for n, d in sorted(expected.items())},
+    require(original == second, 'canonical and independently rebuilt wheel contents differ')
+    return {'version': VERSION, 'module_asset_sha256': {n: sha(d) for n, d in sorted(expected.items())},
+             'wheel_and_rebuilt_decompressed_contents_equal': True,
             'wheel_record_hashes_and_sizes_verified': True,
             'source_wheel_sdist_rebuilt_module_assets_equal': True,
             'required_sdist_inputs': len(required), 'sdist_files': len(packaged),
@@ -169,7 +193,13 @@ def audit(source, wheel, sdist, rebuilt):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    for key in ('source', 'wheel', 'sdist', 'rebuilt'):
-        parser.add_argument('--'+key, type=Path, required=True)
+    parser.add_argument('--sdist', type=Path, required=True)
+    for key in ('source', 'wheel', 'rebuilt', 'extract-to'):
+        parser.add_argument('--'+key, type=Path)
     args = parser.parse_args()
-    print(json.dumps(audit(args.source, args.wheel, args.sdist, args.rebuilt), indent=2, sort_keys=True))
+    if args.extract_to:
+        extract_sdist(args.sdist, args.extract_to)
+    elif all((args.source, args.wheel, args.rebuilt)):
+        print(json.dumps(audit(args.source, args.wheel, args.sdist, args.rebuilt), indent=2, sort_keys=True))
+    else:
+        parser.error('supply --extract-to or --source, --wheel and --rebuilt')

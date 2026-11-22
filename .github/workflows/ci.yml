@@ -83,7 +83,9 @@ jobs:
       - name: Build wheel and source distribution
         run: |
           python -m pip install build twine
-          python -m build --wheel --sdist
+          mkdir "$RUNNER_TEMP/release-source"
+          git archive HEAD | tar -xf - -C "$RUNNER_TEMP/release-source"
+          python -m build --wheel --sdist --outdir "$GITHUB_WORKSPACE/dist" "$RUNNER_TEMP/release-source"
           python -m twine check --strict dist/*
       - name: Install wheel in a clean environment
         run: |
@@ -95,34 +97,35 @@ jobs:
         run: |
           unset PYTHONPATH
           "$RUNNER_TEMP/enhancer-wheel-smoke/bin/gnatdoc-enhancer" --help
-          "$RUNNER_TEMP/enhancer-wheel-smoke/bin/python" "$GITHUB_WORKSPACE/scripts/test_installed.py" --fixtures "$GITHUB_WORKSPACE/tests/fixtures"
+          "$RUNNER_TEMP/enhancer-wheel-smoke/bin/python" "$GITHUB_WORKSPACE/scripts/test_installed.py" --fixtures "$GITHUB_WORKSPACE/tests/fixtures" --source "$RUNNER_TEMP/release-source"
           "$RUNNER_TEMP/enhancer-wheel-smoke/bin/python" -m unittest discover -s "$GITHUB_WORKSPACE/tests" -v
       - name: Extract source distribution and independently build its wheel
         run: |
-          mkdir "$RUNNER_TEMP/sdist-source"
-          tar -xzf dist/*.tar.gz -C "$RUNNER_TEMP/sdist-source"
+          python scripts/check_distributions.py --sdist dist/*.tar.gz --extract-to "$RUNNER_TEMP/sdist-source"
           python -m pip wheel --no-deps --wheel-dir "$RUNNER_TEMP/sdist-wheel" "$RUNNER_TEMP"/sdist-source/ada_gnatdoc_enhancer-*
           python -m venv "$RUNNER_TEMP/enhancer-sdist-smoke"
           "$RUNNER_TEMP/enhancer-sdist-smoke/bin/python" -m pip install --no-deps "$RUNNER_TEMP"/sdist-wheel/*.whl
           "$RUNNER_TEMP/enhancer-sdist-smoke/bin/python" -m pip install markdown-it-py==3.0.0 mdurl==0.1.2
       - name: Audit archive metadata, complete test inputs and source/module/asset identities
         run: |
-          python scripts/check_distributions.py --source "$GITHUB_WORKSPACE" --wheel dist/*.whl --sdist dist/*.tar.gz --rebuilt "$RUNNER_TEMP"/sdist-wheel/*.whl > dist/content-audit.json
-          python scripts/record_candidate_provenance.py --repository "$GITHUB_WORKSPACE" --source "$GITHUB_WORKSPACE" --expected-source-commit "$(git rev-parse HEAD)" --expected-source-tree "$(git rev-parse HEAD^{tree})" --wheel dist/*.whl --sdist dist/*.tar.gz --rebuilt "$RUNNER_TEMP"/sdist-wheel/*.whl > dist/release-provenance.json
+          python scripts/check_distributions.py --source "$RUNNER_TEMP/release-source" --wheel dist/*.whl --sdist dist/*.tar.gz --rebuilt "$RUNNER_TEMP"/sdist-wheel/*.whl > "$RUNNER_TEMP/content-audit.json"
+          python scripts/record_candidate_provenance.py --repository "$GITHUB_WORKSPACE" --source "$RUNNER_TEMP/release-source" --expected-source-commit "$(git rev-parse HEAD)" --expected-source-tree "$(git rev-parse HEAD^{tree})" --wheel dist/*.whl --sdist dist/*.tar.gz --rebuilt "$RUNNER_TEMP"/sdist-wheel/*.whl > dist/release-provenance.json
           (cd dist && sha256sum *.whl *.tar.gz release-provenance.json > SHA256SUMS)
       - name: Qualify tests and fixtures shipped in the source distribution
         working-directory: ${{ runner.temp }}
         run: |
-          cd sdist-source/ada_gnatdoc_enhancer-*
           unset PYTHONPATH
-          "$RUNNER_TEMP/enhancer-sdist-smoke/bin/python" -m unittest discover -s tests -v
-          "$RUNNER_TEMP/enhancer-sdist-smoke/bin/python" scripts/test_installed.py --fixtures tests/fixtures
-          "$RUNNER_TEMP/enhancer-sdist-smoke/bin/gnatdoc-enhancer" conformance --fixtures tests/fixtures
+          src=("$RUNNER_TEMP"/sdist-source/ada_gnatdoc_enhancer-*)
+          "$RUNNER_TEMP/enhancer-sdist-smoke/bin/python" -m unittest discover -s "${src[0]}/tests" -v
+          "$RUNNER_TEMP/enhancer-sdist-smoke/bin/python" "${src[0]}/scripts/test_installed.py" --fixtures "${src[0]}/tests/fixtures" --source "$RUNNER_TEMP/release-source"
+          "$RUNNER_TEMP/enhancer-sdist-smoke/bin/gnatdoc-enhancer" conformance --fixtures "${src[0]}/tests/fixtures"
       - name: Retain candidate artifacts and content audit (not a release publication)
         uses: actions/upload-artifact@v4
         with:
           name: release-candidate-python-${{ matrix.python }}
-          path: dist/
+          path: |
+            dist/
+            ${{ runner.temp }}/content-audit.json
           retention-days: 30
   search-browser:
     runs-on: ubuntu-24.04
@@ -186,12 +189,13 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_source_view*.py' -v
           python -O -m unittest discover -s tests -p 'test_source_view*.py' -v
+          python -O -m unittest discover -s tests -p 'test_release_017_018.py' -v
       - name: Complete retained MEL/Core enabled and disabled byte inventories and Chromium navigation
         run: |
           python scripts/qualify_source_view.py --workspace "$RUNNER_TEMP/source-view" --baseline-python "$RUNNER_TEMP/source-baseline-env/bin/python" --browser
-      - name: Starting-main parity, schema-2 reconstruction and complete body navigation in Chromium
+      - name: Frozen merged-main parity in every source mode and complete body navigation in Chromium
         run: |
-          git worktree add --detach "$RUNNER_TEMP/source-starting-main" 624c02e3b08198e77d3e126f745431af1b6dc8b0
+          git worktree add --detach "$RUNNER_TEMP/source-starting-main" 502bcae9c0194642394347ba7347c28c0af4b90a
           python scripts/qualify_body_navigation.py --workspace "$RUNNER_TEMP/body-navigation" --starting-main "$RUNNER_TEMP/source-starting-main" --browser
       - name: Retain complete publication fingerprints and browser evidence
         if: always()
@@ -211,6 +215,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
@@ -222,16 +227,20 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          mkdir "$RUNNER_TEMP/official-016"
-          gh release download v0.1.6 --repo zackboll/ada-gnatdoc-enhancer --pattern '*.whl' --dir "$RUNNER_TEMP/official-016"
-          echo "adfec71188a868e3fb70a6da71a124c937f9e63e26a2f2e31af45364f49ffb27  $RUNNER_TEMP/official-016/ada_gnatdoc_enhancer-0.1.6-py3-none-any.whl" | sha256sum --check
+          mkdir "$RUNNER_TEMP/official-017"
+          gh release download v0.1.7 --repo zackboll/ada-gnatdoc-enhancer --pattern '*.whl' --dir "$RUNNER_TEMP/official-017"
+          echo "957c65797b03b5c6b3779e2a1918730a2e44749670e37535d2c8ff3e109f3ba4  $RUNNER_TEMP/official-017/ada_gnatdoc_enhancer-0.1.7-py3-none-any.whl" | sha256sum --check
           python -m venv "$RUNNER_TEMP/official-env"
-          "$RUNNER_TEMP/official-env/bin/python" -m pip install "$RUNNER_TEMP"/official-016/*.whl markdown-it-py==3.0.0 mdurl==0.1.2
+          "$RUNNER_TEMP/official-env/bin/python" -m pip install "$RUNNER_TEMP/official-017/"*.whl markdown-it-py==3.0.0 mdurl==0.1.2
       - name: Official byte parity and opt-in source/native qualification
         run: |
           cd "$RUNNER_TEMP"
-          "$RUNNER_TEMP/official-env/bin/python" "$GITHUB_WORKSPACE/scripts/qualify_release_016_017.py" --repository "$GITHUB_WORKSPACE" --workspace "$RUNNER_TEMP/example-sites" --variant baseline
-          python "$GITHUB_WORKSPACE/scripts/qualify_release_016_017.py" --repository "$GITHUB_WORKSPACE" --workspace "$RUNNER_TEMP/example-sites" --variant candidate
+          git -C "$GITHUB_WORKSPACE" worktree add --detach "$RUNNER_TEMP/examples-frozen" 502bcae9c0194642394347ba7347c28c0af4b90a
+          script="$GITHUB_WORKSPACE/scripts/qualify_release_017_018.py"
+          args=(--repository "$GITHUB_WORKSPACE" --workspace "$RUNNER_TEMP/example-sites")
+          env -u PYTHONPATH "$RUNNER_TEMP/official-env/bin/python" "$script" "${args[@]}" --variant baseline
+          PYTHONPATH="$RUNNER_TEMP/examples-frozen/src" python "$script" "${args[@]}" --variant frozen --frozen-source "$RUNNER_TEMP/examples-frozen"
+          python "$script" "${args[@]}" --variant candidate
       - name: Chromium static examples, clipboard, focus and legacy presentation
         run: python scripts/check_examples_browser.py --workspace "$RUNNER_TEMP/example-sites" --output "$RUNNER_TEMP/example-evidence"
       - name: Compiler-verified production Core homepage and mixed-guide controls

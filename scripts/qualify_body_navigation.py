@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Starting-main byte parity, authentic body reconstruction and Chromium gates."""
+"""Frozen merged-main parity, authentic body reconstruction and Chromium gates."""
 from __future__ import annotations
 
 import argparse
@@ -17,16 +17,17 @@ import subprocess
 import sys
 import threading
 
+from ada_gnatdoc_enhancer import __version__
 from ada_gnatdoc_enhancer.config import load
 from ada_gnatdoc_enhancer.pipeline import enhance, verify
 from ada_gnatdoc_enhancer.qualification import hashes, identities, preserve_native
 from ada_gnatdoc_enhancer.util import digest, require, sorted_json
 from pin_source_view import pin
 from qualify_source_view import Quiet, SourceText, check_source_page
+from compare_release_017_018 import compare as compare_release
+from qualify_release_017_018 import check_frozen
 
 
-START = '624c02e3b08198e77d3e126f745431af1b6dc8b0'
-TREE = '8a722d7708a4e219354f50bc284cd3202e561bba'
 MANIFEST = 'api/presentation.json'
 ANCHOR = r'<a class="view-source" target="_top" href="source/[A-Za-z0-9_.\-/]+\.{}\.html#L[1-9][0-9]*">{}</a>'
 BASELINE = {'mel': 'docs/gnatdoc-enhance.toml', 'core': 'default.toml'}
@@ -34,7 +35,10 @@ BASELINE = {'mel': 'docs/gnatdoc-enhance.toml', 'core': 'default.toml'}
 
 def baseline(start, root, filename, site, options):
     code = ('from pathlib import Path; from dataclasses import replace; '
-            'from ada_gnatdoc_enhancer.config import load; '
+            'from ada_gnatdoc_enhancer import __version__, __file__; '
+            'from ada_gnatdoc_enhancer.util import require; '
+            f'require(__version__ == "0.1.7" and Path(__file__).resolve().is_relative_to({str(start / "src")!r}), '
+            '"wrong frozen engine"); from ada_gnatdoc_enhancer.config import load; '
             'from ada_gnatdoc_enhancer.pipeline import enhance, verify; '
             f'c=replace(load(Path({str(root)!r}), {filename!r}), source_view={options!r}, '
             'search=True, resizable_sidebar=True); '
@@ -90,9 +94,8 @@ def commands_overlay(fixtures, root, site, provenance):
 
 
 def prepare(repository, start, workspace):
-    for expression, expected in (('HEAD', START), ('HEAD^{tree}', TREE)):
-        require(subprocess.check_output(['git', '-C', str(start), 'rev-parse', expression],
-                                        text=True).strip() == expected, 'wrong starting main')
+    check_frozen(start)
+    require(__version__ == '0.1.8', 'wrong body-navigation candidate version')
     fixtures = repository/'tests/real-fixtures'; body_fixtures = fixtures/'body-navigation'
     provenance = json.loads((body_fixtures/'provenance.json').read_bytes()); results = {}
     for name in ('mel', 'core', 'commands'):
@@ -114,7 +117,7 @@ def prepare(repository, start, workspace):
         disabled = workspace/(name+'-disabled'); shutil.copytree(pristine, disabled)
         old = workspace/(name+'-start-disabled'); shutil.copytree(pristine, old)
         enhance(config, disabled); verify(config, disabled); baseline(start, root, filename, old, {})
-        require(hashes(disabled) == hashes(old), 'disabled publication not byte-identical to starting main')
+        parity = {'disabled': compare_release(old, disabled, authority='frozen', schema=0)}
         options = {}
         for schema in (1, 2):
             filename_pin = f'source-native-{schema}.json'
@@ -127,10 +130,13 @@ def prepare(repository, start, workspace):
         old1 = workspace/(name+'-start-schema1'); shutil.copytree(pristine, old1)
         baseline(start, root, filename, old1, options[1])
         settings = replace(config, source_view=options[1]); enhance(settings, schema1); verify(settings, schema1)
-        require(hashes(schema1) == hashes(old1), 'schema 1 not byte-identical to starting main')
+        parity['schema1'] = compare_release(old1, schema1, authority='frozen', schema=1)
         settings = replace(config, source_view=options[2])
         site = workspace/name; shutil.copytree(pristine, site)
         counts = enhance(settings, site); verify(settings, site)
+        old2 = workspace/(name+'-start-schema2'); shutil.copytree(pristine, old2)
+        baseline(start, root, filename, old2, options[2])
+        parity['schema2'] = compare_release(old2, site, authority='frozen', schema=2)
         initial = hashes(site); enhance(settings, site)
         repeat = workspace/(name+'-repeat'); shutil.copytree(pristine, repeat); enhance(settings, repeat)
         require(hashes(site) == hashes(repeat) == initial, 'schema-2 determinism/idempotence failure')
@@ -149,7 +155,7 @@ def prepare(repository, start, workspace):
         restored = preserve_native(identities(pristine), site, config=settings, pristine=pristine)
         omissions = Counter(e.get('body_omission') for f in identity['files'] for e in f['declarations']
                             if 'body_omission' in e)
-        results[name] = dict(counts=counts, disabled_parity=len(hashes(disabled)), schema1_parity=len(hashes(schema1)),
+        results[name] = dict(counts=counts, frozen_main_parity=parity,
                              comparison=compare(schema1, site), source_view=identity, journeys=journeys,
                              omissions=dict(omissions), native_preservation=restored,
                              deterministic=True, idempotent=True)
@@ -180,6 +186,7 @@ def oracle(name, root, data):
         require(len(found) == 1, 'independent full header oracle not unique: ' + pattern)
         return text.count('\n', 0, found[0].start(1)) + 1, found[0][1]
     out = []
+    pinned_lines = {'mel': [(775, 509)], 'commands': [(74, 46), (123, 162)]}
     for symbol, pattern in profiles:
         spec_line, _ = locate(spec_text, pattern, r'(?:;|with\s+Pre\b)')
         body_line, header = locate(body_text, pattern, r'is\b(?!\s*\()')
@@ -188,6 +195,11 @@ def oracle(name, root, data):
                 found[0].get('body_source') == body['source'], 'wrong oracle implementation destination: '+symbol)
         out.append(dict(api=api, package=owner, symbol=symbol, anchor=found[0]['anchor'], spec=spec['page'],
                         body=body['page'], spec_line=spec_line, body_line=body_line, profile=header))
+    if name in pinned_lines:
+        require([(j['spec_line'], j['body_line']) for j in out] == pinned_lines[name],
+                'independent source headers moved in the pinned fixture')
+    else:
+        require(len({j['body_line'] for j in out}) == len(out), 'overload body lines must be distinct')
     if name in ('commands', 'core'):
         omitted = (r'function Wait \(Request : Stare_Request; Timeout_Milliseconds : Natural\) return Stare_Result'
                    if name == 'commands' else r'function Create \(Dimensions : Size; Element_Type : Mat_Type\) return Mat')
