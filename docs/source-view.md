@@ -76,8 +76,41 @@ are preserved in the code element's DOM text and independently tested. HTML
 character references preserve CR without HTML newline normalization. Browser
 clipboard/OS newline conversion is outside this byte-identity guarantee. Invalid
 UTF-8, NUL, bare CR, unsafe path characters and symlinked input trees fail closed.
-Source is escaped rather than highlighted: preserving original bytes takes
-precedence over introducing another Ada parser or lossy token normalization.
+
+## Static Ada syntax highlighting
+
+Source pages reuse the existing presentation setting (enabled by default):
+
+```toml
+[presentation]
+syntax_highlighting = true
+```
+
+This setting does not enable source browsing: the separately reviewed
+`[source_view]` input evidence above is still required. Set
+`syntax_highlighting = false` to retain the original plain-text source HTML.
+No separate highlighting flag or source/native evidence schema is introduced.
+
+The existing display-only Ada lexer styles reserved words (case-insensitively),
+comments, strings (including doubled quotes), character literals, numeric
+literals (including based literals and underscores), attributes and operators.
+Ordinary identifiers, whitespace and unclassified text remain unstyled. Unicode
+identifiers and all original decoded UTF-8 text are preserved, including trailing
+spaces, blank lines, CRLF and terminal-newline presence or absence. Token text
+reconstruction and the complete code element's `textContent` equal the original
+source; highlighting never normalizes or edits it. Source text is always escaped
+before insertion into fixed token spans; it cannot introduce HTML or links.
+
+The standalone source stylesheet uses the normal GNATdoc light/dark Ada palette
+without requiring the main theme stylesheet. Active fragment targets use paired
+system highlight colors, overriding nested token colors for readable contrast.
+The static HTML/CSS works with JavaScript disabled, offline, without remote
+resources or browser-side highlighting dependencies.
+
+This is lexical display, not compiler-semantic classification or Ada validation.
+Unrecognized/malformed constructs remain literal text; lexical categories may be
+approximate for unsupported Ada syntax. It adds no type-reference hyperlinks,
+compiler/Libadalang dependency, declaration mappings or ownership authority.
 
 ## Verification and compatibility
 
@@ -97,4 +130,4 @@ Chromium job covers both configurations and the mandatory Navigation Report
 journey. Retained fixtures do not represent a new GNATdoc/compiler execution.
 
 Implementation body browsing, spec-to-body mapping and arbitrary repository
-file browsing are explicitly deferred (GNATDOC-SOURCE-002).
+file browsing remain explicitly deferred.

@@ -1,10 +1,13 @@
 """Source views: byte fidelity, independent identity and resealing attacks."""
 from dataclasses import replace
 from html.parser import HTMLParser
+import importlib.util
 import json
+import re
 from pathlib import Path
 import shutil
 import unittest
+from unittest.mock import patch
 
 from ada_gnatdoc_enhancer.config import load
 from ada_gnatdoc_enhancer.errors import EnhancementError
@@ -12,6 +15,8 @@ from ada_gnatdoc_enhancer.inventory import packages
 from ada_gnatdoc_enhancer.pipeline import enhance, verify
 from ada_gnatdoc_enhancer.qualification import hashes
 from ada_gnatdoc_enhancer.source_view import build, owned, render
+from ada_gnatdoc_enhancer.source_lexer import Token, tokenize
+from ada_gnatdoc_enhancer.theme import asset
 from ada_gnatdoc_enhancer.native_html import snapshot
 from ada_gnatdoc_enhancer.util import digest, sorted_json
 from _helper import Fixture
@@ -35,7 +40,8 @@ class Text(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         if tag == 'code': self.code = True
-        if tag == 'span': self.lines.append(dict(attrs)['id'])
+        if tag == 'span' and dict(attrs).get('class') == 'source-line':
+            self.lines.append(dict(attrs)['id'])
 
     def handle_endtag(self, tag):
         if tag == 'code': self.code = False
@@ -92,6 +98,108 @@ class SourceView(unittest.TestCase):
         self.assertEqual(result['source_links'], sum(map(len, links.values())))
         for name, value in values.items(): self.assertEqual((self.fx.site/name).read_bytes(), value)
         with self.assertRaises(EnhancementError): verify(self.fx.config, self.fx.site)
+
+    def test_lexical_categories_and_exact_source_in_both_modes(self):
+        source = ('\tPaCkAgE Café_λ is  \n\n'
+                  '-- <script onload="x"> &amp; {{ }} /tmp/x \' "\n'
+                  'S : String := "<script>"" & </script>";\n'
+                  "C : Character := 'λ'; Q := Character'('A');\n"
+                  "N := 16#CA_FE.F#E+2 + 1_000; A := S'Length;\n"
+                  'end Café_λ;  ')
+        for highlight in (False, True):
+            for ending in ('\n', '\r\n'):
+                for final in ('', ending):
+                    text = source.replace('\n', ending) + final
+                    config = replace(self.config, highlight=highlight)
+                    raw = text.encode()
+                    value, count = render(config, 'src/example.ads', raw)
+                    parsed = Text(value.decode())
+                    self.assertEqual(parsed.text, text)
+                    self.assertEqual(count, 7)
+                    self.assertEqual(parsed.lines, ['L'+str(i) for i in range(1, 8)])
+                    self.assertEqual(''.join(t.text for t in tokenize(text)), text)
+                    classes = set(re.findall(rb'class="ada-([a-z]+)"', value))
+                    self.assertEqual(classes, {b'keyword', b'comment', b'string', b'character',
+                                              b'number', b'attribute', b'operator'} if highlight else set())
+                    self.assertNotIn(b'<script', value)
+                    self.assertNotIn(b'ada-identifier', value)
+                    if highlight:
+                        for kind, token in (('keyword', 'PaCkAgE'), ('character', '&#x27;λ&#x27;'),
+                                            ('attribute', '&#x27;Length'), ('number', '16#CA_FE.F#E+2')):
+                            self.assertIn(f'<span class="ada-{kind}">{token}</span>'.encode(), value)
+        for raw, count in ((b'', 0), (b'\n', 1), (b'\r\n\n', 2),
+                           ('-- Unicode separators \u2028\u2029\v\f\n'.encode(), 1)):
+            value, actual = render(self.config, 'src/empty.ads', raw)
+            self.assertEqual(Text(value.decode()).text.encode(), raw)
+            self.assertEqual(actual, count)
+
+    def test_invalid_lexer_partitions_fail_closed(self):
+        for tokens in ([Token('keyword', 'package', 1, 8)],
+                       [Token('keyword', 'package', 0, 7), Token('plain', 'e', 6, 7)],
+                       [Token('keyword', 'PACKAGE', 0, 7)], [],
+                       [Token('keyword" onclick="x', 'package', 0, 7)]):
+            with self.subTest(tokens=tokens), patch(
+                    'ada_gnatdoc_enhancer.source_view.tokenize', return_value=tokens):
+                with self.assertRaises(EnhancementError):
+                    render(replace(self.config, highlight=True), 'src/x.ads', b'package')
+
+    def test_palette_does_not_override_native_api_theme(self):
+        # API pages also load source CSS for View source links. Palette variables
+        # and page colors must therefore be scoped to source-view bodies only.
+        css = asset('gnatdoc-source.css').decode()
+        self.assertNotIn(':root', css)
+        self.assertNotRegex(css, r'(?:^|\n)html\s*\{')
+        self.assertIn('.source-view { color: var(--text); background: var(--page); }', css)
+        self.assertIn('.source-code .source-line:target > span { color: inherit; }', css)
+
+    def test_large_source_linear_pass_and_traversal_order(self):
+        text = ('\t-- λ <>& {{ }}\r\nN := 16#CA_FE#;  \r\n' * 10000).encode()
+        with patch('ada_gnatdoc_enhancer.source_view.tokenize', wraps=tokenize) as lexer:
+            value, count = render(replace(self.config, highlight=True), 'src/large.ads', text)
+        self.assertEqual(lexer.call_count, 1)
+        self.assertEqual(count, 20000)
+        self.assertEqual(Text(value.decode()).text.encode(), text)
+        native = snapshot(self.config, self.fx.site); source = packages(self.config)
+        before = {p.path: p.path.read_bytes() for p in source.values()}
+        self.assertEqual(build(self.config, native, source), build(
+            self.config, native, dict(reversed(list(source.items())))))
+        self.assertEqual(before, {p: p.read_bytes() for p in before})
+
+    def test_resealed_token_markup_and_resource_attacks(self):
+        enhance(self.config, self.fx.site)
+        path = next(p for p in (self.fx.site/'api/source').rglob('*.html')
+                    if b'class="ada-keyword"' in p.read_bytes())
+        original = path.read_bytes()
+        token = re.search(rb'<span class="ada-keyword">[^<]+</span>', original)[0]
+        line = original[original.index(b'<span class="source-line" id="L1">'):
+                        original.index(b'<span class="source-line" id="L2">')]
+        second = original[original.index(b'<span class="source-line" id="L2">'):
+                          original.index(b'<span class="source-line" id="L3">')]
+        mutations = [
+            token.replace(b'</span>', b''),
+            b'<span class="ada-comment">' + token + b'</span>',
+            token.replace(b'ada-keyword', b'ada-string'),
+            token.replace(b'>', b' onclick="alert(1)">', 1),
+            token.replace(b'>', b' style="display:none">', 1),
+            token.replace(b'</span>', b'X</span>'),
+            b'<a href="https://evil.invalid/">' + token + b'</a>',
+            b'<script>alert(1)</script>' + token,
+            b'<img src="https://evil.invalid/x" onerror="alert(1)">' + token,
+        ]
+        for mutation in mutations:
+            self.reseal(path, original.replace(token, mutation, 1))
+            with self.assertRaises(EnhancementError): verify(self.config, self.fx.site)
+        for raw in (original.replace(line, b'', 1), original.replace(line, line+line, 1),
+                    original.replace(line+second, second+line, 1),
+                    original.replace(b'</head>', b'<link rel="stylesheet" href="extra.css"></head>'),
+                    original.replace(b'</head>', b'<script src="extra.js"></script></head>')):
+            self.reseal(path, raw)
+            with self.assertRaises(EnhancementError): verify(self.config, self.fx.site)
+        path.write_bytes(original)
+        for name in ('extra.css', 'extra.js'):
+            extra = self.fx.site/'api'/name; self.reseal(extra, b'/* unauthorized */')
+            with self.assertRaises(EnhancementError): verify(self.config, self.fx.site)
+            extra.unlink()
 
     def reseal(self, path, raw):
         path.write_bytes(raw)
@@ -250,3 +358,47 @@ class RealSourceLines(unittest.TestCase):
         self.assertEqual(declarations['Navigation_Report'].source_line, 663)
         self.assertEqual(declarations['Submit_Navigation_Report'].source_line, 775)
         self.assertEqual(declarations['Navigation_Report'].line, 622)
+
+
+class SourceCompatibility(unittest.TestCase):
+    def setUp(self):
+        self.fx = Fixture(); self.addCleanup(self.fx.cleanup)
+        spec = importlib.util.spec_from_file_location('source_view_qualification',
+            Path(__file__).resolve().parents[1]/'scripts/qualify_source_view.py')
+        self.audit = importlib.util.module_from_spec(spec); spec.loader.exec_module(self.audit)
+        self.old = self.fx.root/'old'; self.new = self.fx.root/'new'
+        for root in (self.old, self.new):
+            (root/'api/source/src').mkdir(parents=True)
+            (root/'api/gnatdoc-source.css').write_bytes(b'/* source CSS */')
+            (root/'api/gnatdoc-search.js').write_bytes(b'/* unchanged search */')
+            (root/'api/source/src/x.ads.html').write_bytes(b'<code>package X;</code>')
+            (root/'api/presentation.json').write_text(sorted_json(dict(
+                source_view={'schema_version': 1, 'files': []}, output_sha256=hashes(root))))
+
+    def seal(self):
+        path = self.new/'api/presentation.json'; data = json.loads(path.read_text())
+        data['output_sha256'] = {n: sha for n, sha in hashes(self.new).items()
+                                 if n != 'api/presentation.json'}
+        path.write_text(sorted_json(data))
+
+    def test_classified_css_and_token_only_deltas(self):
+        (self.new/'api/gnatdoc-source.css').write_bytes(b'/* new palette */')
+        self.seal(); self.audit.compare_source_outputs(self.old, self.new, False)
+        (self.new/'api/source/src/x.ads.html').write_bytes(
+            b'<code><span class="ada-keyword">package</span> X;</code>')
+        self.seal(); self.audit.compare_source_outputs(self.old, self.new, True)
+        with self.assertRaises(EnhancementError):
+            self.audit.compare_source_outputs(self.old, self.new, False)
+
+    def test_rehashed_unrelated_and_concealed_text_deltas_rejected(self):
+        for name, raw in (
+                ('api/gnatdoc-search.js', b'/* changed search */'),
+                ('api/source/src/x.ads.html', b'<code><span class="ada-keyword">PACKAGE</span> X;</code>'),
+                ('api/source/src/x.ads.html', b'<code><span class="ada-keyword" onclick="x">package</span> X;</code>'),
+                ('api/extra.css', b'/* extra */')):
+            path = self.new/name; before = path.read_bytes() if path.exists() else None
+            path.write_bytes(raw); self.seal()
+            with self.assertRaises(EnhancementError):
+                self.audit.compare_source_outputs(self.old, self.new, True)
+            if before is None: path.unlink()
+            else: path.write_bytes(before)

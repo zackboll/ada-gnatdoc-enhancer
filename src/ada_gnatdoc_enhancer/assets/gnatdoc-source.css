@@ -1,4 +1,24 @@
 /* Static source views: line numbers are generated, never source text. */
+.source-view {
+  color-scheme: light dark;
+  --page: #fff; --text: #243247;
+  --keyword: #7442a7; --string: #14663e; --number: #95520c;
+  --comment: #53657b; --operator: #415572; --attribute: #925100;
+}
+@media (prefers-color-scheme: dark) {
+  .source-view {
+    --page: #141b26; --text: #e3eaf5;
+    --keyword: #cfa8ff; --string: #8ddfb7; --number: #ffc48e;
+    --comment: #b4c2d4; --operator: #c0cfe4; --attribute: #ffd184;
+  }
+}
+.source-view { color: var(--text); background: var(--page); }
+.source-code .ada-keyword { color: var(--keyword); font-weight: 700; }
+.source-code .ada-string, .source-code .ada-character { color: var(--string); }
+.source-code .ada-number { color: var(--number); }
+.source-code .ada-attribute { color: var(--attribute); }
+.source-code .ada-comment { color: var(--comment); font-style: italic; }
+.source-code .ada-operator { color: var(--operator); }
 .source-view { color-scheme: light dark; margin: 1rem auto; padding: 0 1rem; max-width: 100rem; font: 1rem system-ui, sans-serif; }
 .source-view h1 { font-size: 1.2rem; overflow-wrap: anywhere; }
 .source-view p { overflow-wrap: anywhere; }
@@ -8,5 +28,7 @@
 .source-line-number { position: absolute; right: calc(100% + 1rem); width: 3rem; text-align: right; user-select: none; color: LinkText; }
 .source-line-number::before { content: counter(line); }
 .source-line:target { background: Mark; color: MarkText; }
+/* System target colors form a pair: syntax colors must not override MarkText. */
+.source-code .source-line:target > span { color: inherit; }
 .source-view a:focus-visible, .view-source:focus-visible { outline: 2px solid Highlight; outline-offset: 2px; }
 @media (max-width: 600px) { .source-view { margin: .5rem auto; padding: 0 .5rem; } .source-code { font-size: .8rem; } }

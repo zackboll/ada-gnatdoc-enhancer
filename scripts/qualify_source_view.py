@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
 """Complete retained GNATdoc 26 MEL/Core source publications and Chromium gates.
 
-No consumer changes or fresh compiler/GNATdoc acquisition. --baseline-source
-must name an independently checked-out starting implementation for byte parity.
+No consumer changes or fresh compiler/GNATdoc acquisition. --baseline-python
+must use the independently hash-checked official v0.1.7 wheel.
 """
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 from dataclasses import replace
 import functools
 from html.parser import HTMLParser
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 import json
 import os
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -24,6 +26,7 @@ from ada_gnatdoc_enhancer.inventory import packages
 from ada_gnatdoc_enhancer.inventory import mask_ada
 from ada_gnatdoc_enhancer.pipeline import enhance, verify
 from ada_gnatdoc_enhancer.qualification import hashes
+from ada_gnatdoc_enhancer.source_lexer import tokenize
 from ada_gnatdoc_enhancer.util import digest, require, sorted_json
 
 
@@ -35,13 +38,38 @@ class SourceText(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         if tag == 'code': self.in_code = True
-        if tag == 'span': self.anchors.append(dict(attrs)['id'])
+        if tag == 'span' and dict(attrs).get('class') == 'source-line':
+            self.anchors.append(dict(attrs)['id'])
 
     def handle_endtag(self, tag):
         if tag == 'code': self.in_code = False
 
     def handle_data(self, data):
         if self.in_code: self.text += data
+
+
+def compare_source_outputs(old, candidate, highlighted):
+    """Only canonical token insertions, source CSS and their exact hashes differ."""
+    before, after = hashes(old), hashes(candidate)
+    require(set(before) == set(after), 'source compatibility inventory changed')
+    manifest = 'api/presentation.json'; css = 'api/gnatdoc-source.css'
+    allowed = {css}
+    if highlighted:
+        allowed.update(n for n in before if n.startswith('api/source/'))
+    changed = {n for n in before if before[n] != after[n]}
+    require(changed <= allowed | {manifest}, 'unrelated source compatibility delta')
+    for name in allowed - {css}:
+        value = (candidate/name).read_bytes()
+        plain = re.sub(rb'<span class="ada-(?:keyword|comment|string|character|number|attribute|operator)">([^<]*)</span>',
+                       rb'\1', value)
+        require(plain == (old/name).read_bytes(), 'source page changed beyond token spans')
+    old_manifest = json.loads((old/manifest).read_bytes())
+    for name in allowed:
+        old_manifest['output_sha256'][name] = after[name]
+    require(sorted_json(old_manifest).encode() == (candidate/manifest).read_bytes(),
+            'source compatibility manifest changed beyond classified hashes')
+    return dict(changed=sorted(changed), unchanged=len(before)-len(changed),
+                baseline_sha256=before, candidate_sha256=after)
 
 
 def prepare(repository, workspace, baseline, baseline_python=None):
@@ -68,13 +96,9 @@ def prepare(repository, workspace, baseline, baseline_python=None):
                 env['PYTHONPATH'] = str(baseline/'src')
             subprocess.run([str(baseline_python or os.sys.executable), '-c', code],
                            cwd=workspace, env=env, check=True)
-            if baseline_python:
-                from compare_release_016_017 import compare
-                require(__version__ == '0.1.7', 'wrong candidate source-view version')
-                parity = compare(old, disabled)
-            else:
-                require(hashes(old) == hashes(disabled), 'complete disabled output byte parity failed')
-                parity = hashes(disabled)
+            require(__version__ == '0.1.7', 'wrong candidate source-view version')
+            require(hashes(old) == hashes(disabled), 'complete disabled output byte parity failed')
+            parity = hashes(disabled)
         evidence = dict(schema_version=1, files={n: d for n, d in hashes(fixture/'pristine').items()
                         if n.endswith('.html') or n == 'api/gnatdoc.css'}, sources={
                         p.path.relative_to(root).as_posix(): digest(p.path.read_bytes())
@@ -85,6 +109,24 @@ def prepare(repository, workspace, baseline, baseline_python=None):
         # Keep the existing custom-theme config identity unchanged. This
         # qualification uses the same validated contract as the TOML loader.
         config = replace(config, source_view=options, search=True, resizable_sidebar=True)
+        compatibility = {}
+        if baseline or baseline_python:
+            for highlight in (False, True):
+                label = 'highlighted' if highlight else 'plain'
+                old = workspace/(name+'-official-'+label)
+                candidate = workspace/(name+'-candidate-'+label)
+                for output in (old, candidate): shutil.copytree(fixture/'pristine', output)
+                code = ('from pathlib import Path; from dataclasses import replace; '
+                        'from ada_gnatdoc_enhancer.config import load; '
+                        'from ada_gnatdoc_enhancer.pipeline import enhance, verify; '
+                        f'c=replace(load(Path({str(root)!r}), {filename!r}), '
+                        f'source_view={options!r}, search=True, resizable_sidebar=True, highlight={highlight!r}); '
+                        f'p=Path({str(old)!r}); enhance(c,p); verify(c,p)')
+                subprocess.run([str(baseline_python or os.sys.executable), '-c', code],
+                               cwd=workspace, env=env, check=True)
+                enhance(replace(config, highlight=highlight), candidate)
+                verify(replace(config, highlight=highlight), candidate)
+                compatibility[label] = compare_source_outputs(old, candidate, highlight)
         site = workspace/name; shutil.copytree(fixture/'pristine', site)
         stats = enhance(config, site); verify(config, site)
         original = hashes(site); enhance(config, site)
@@ -161,6 +203,10 @@ def prepare(repository, workspace, baseline, baseline_python=None):
         require(set(original)-set(before) == {'api/gnatdoc-source.css'} | {
             f['page'] for f in data['files']}, 'source-page output inventory differs')
         inventory[name] = dict(counts=stats, disabled_upstream_parity=parity,
+            official_017_compatibility=compatibility,
+            token_counts=dict(Counter(t.kind for record in data['files']
+                for t in tokenize((root/record['source']).read_bytes().decode('utf-8'))
+                if t.kind not in {'space', 'identifier', 'plain'})),
             disabled_sha256=hashes(disabled), enabled_sha256=original,
             pristine_sha256=hashes(fixture/'pristine'), source_view=data,
             changed=changed, added=sorted(set(original)-set(before)),
@@ -175,8 +221,86 @@ class Quiet(SimpleHTTPRequestHandler):
     def log_message(self, *args): pass
 
 
+def check_source_page(page, raw, count):
+    """Full-inventory DOM, lexical colors, target contrast and visual copy gate."""
+    text = raw.decode('utf-8')
+    code = page.locator('pre.source-code code')
+    require(code.text_content() == text, 'browser source text identity failed')
+    require(page.locator('.source-line').evaluate_all('(es)=>es.map(e=>e.id)') ==
+            ['L'+str(i) for i in range(1, count+1)], 'browser line ordering failed')
+    expected = [(t.kind, t.text) for t in tokenize(text)
+                if t.kind not in {'space', 'identifier', 'plain'}]
+    observed = code.locator('.source-line > span').evaluate_all('''es => es.map(e =>
+        [e.className.slice(4), e.textContent])''')
+    require(observed == [list(t) for t in expected], 'browser lexical classification failed')
+    colors = code.locator('.source-line > span').evaluate_all('''es => {
+        const expected = {};
+        for (const e of es) {
+            const kind = e.className.slice(4);
+            if (!expected[kind]) {
+                const probe = document.createElement('span');
+                probe.style.color = 'var(--' + (kind === 'character' ? 'string' : kind) + ')';
+                document.body.append(probe); expected[kind] = getComputedStyle(probe).color;
+                probe.remove();
+            }
+        }
+        return es.every(e => getComputedStyle(e).color === expected[e.className.slice(4)]);
+    }''')
+    require(colors, 'source token palette mismatch')
+    require(page.locator('body').evaluate('(e)=>e.scrollWidth <= innerWidth+2'),
+            'source page overflows viewport')
+    selected = code.evaluate('''e => {
+        const r = document.createRange(); r.selectNodeContents(e);
+        const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+        return s.toString();
+    }''')
+    # Keep the established Chromium terminal-newline exception, never edit DOM
+    # text. A CRLF input loses the terminal CRLF pair, not just its LF.
+    terminal = '\r\n' if text.endswith('\r\n') else '\n'
+    require(selected == text or (text.endswith(terminal) and selected == text[:-len(terminal)]),
+            'line numbers contaminated selected/copied source text')
+    page.keyboard.press('Control+c')
+    require(page.evaluate('navigator.clipboard.readText()') == selected,
+            'clipboard differs from source selection')
+    page.evaluate('getSelection().removeAllRanges()')
+    if count:
+        link = page.get_by_role('link', name='Line 1', exact=True)
+        page.keyboard.press('Tab'); link.focus()
+        require(link.evaluate('(e)=>getComputedStyle(e).outlineStyle') != 'none',
+                'keyboard focus outline missing')
+        page.keyboard.press('Enter')
+        require(page.locator(':target').get_attribute('id') == 'L1', 'keyboard line navigation failed')
+        target_colors = page.locator(':target').evaluate('''e => {
+            const color = getComputedStyle(e).color;
+            return [...e.querySelectorAll('span')].every(s => getComputedStyle(s).color === color);
+        }''')
+        require(target_colors, 'active target syntax colors override MarkText')
+    return dict(lines=count, tokens=len(expected), exact_source_text=True,
+                selection=True, clipboard=True, keyboard=True, colors=True,
+                horizontal_scroll=page.locator('pre').evaluate('(e)=>e.scrollWidth > e.clientWidth'))
+
+
 def browser(workspace, inventory):
     from playwright.sync_api import sync_playwright, expect
+    from types import SimpleNamespace
+    from ada_gnatdoc_enhancer.source_view import render
+    from ada_gnatdoc_enhancer.theme import asset
+    # Browser-only adversarial fixtures are not part of either publication.
+    fixtures = workspace/'browser-fixtures'; (fixtures/'api/source').mkdir(parents=True, exist_ok=True)
+    (fixtures/'api/gnatdoc-source.css').write_bytes(asset('gnatdoc-source.css'))
+    hostile = ('PaCkAgE Café_λ is\n\n\t-- <script onload="x"> &amp; {{ }} /tmp/x\n'
+               'S : String := "</script>"" & <img onerror=alert(1)>";  \n'
+               "C : Character := 'λ'; Q := Character'('A');\n"
+               "N := 16#CA_FE.F#E+2 + 1_000; A := S'Length;\n"
+               '-- ' + 'long source line & ' * 150 + '\nend Café_λ;  ')
+    browser_fixtures = []
+    for ending in ('\n', '\r\n'):
+        for final in ('', ending):
+            raw = (hostile.replace('\n', ending) + final).encode()
+            filename = str(len(browser_fixtures))+'.html'
+            value, count = render(SimpleNamespace(project='Browser controls', highlight=True), 'x.ads', raw)
+            (fixtures/'api/source'/filename).write_bytes(value)
+            browser_fixtures.append((filename, raw, count))
     server = ThreadingHTTPServer(('127.0.0.1', 0), functools.partial(Quiet, directory=str(workspace)))
     thread = threading.Thread(target=server.serve_forever, daemon=True); thread.start()
     base = f'http://127.0.0.1:{server.server_port}'
@@ -192,7 +316,8 @@ def browser(workspace, inventory):
                         for theme in ('light', 'dark'):
                             for js in (True, False):
                                 context = b.new_context(viewport=dict(width=width, height=900),
-                                    color_scheme=theme, java_script_enabled=js)
+                                    color_scheme=theme, java_script_enabled=js,
+                                    permissions=['clipboard-read', 'clipboard-write'])
                                 def offline(route):
                                     if not route.request.url.startswith(base+'/'):
                                         result['external_requests'].append(route.request.url); route.abort()
@@ -239,6 +364,16 @@ def browser(workspace, inventory):
                                             link.click(); page.wait_for_url('**/source/**')
                                             expect(page.locator(':target')).to_contain_text(symbol)
                                             require(page.locator(':target').is_visible(), 'source line not visible')
+                                            # Some authentic function headings contain only
+                                            # the keyword on their first physical line.
+                                            # Navigation_Report has three lexical tokens.
+                                            if symbol == 'Navigation_Report':
+                                                require(page.locator(':target > span').count() > 1,
+                                                        'navigation target lacks multiple syntax tokens')
+                                            require(page.locator(':target').evaluate('''e =>
+                                                [...e.querySelectorAll('span')].every(s =>
+                                                    getComputedStyle(s).color === getComputedStyle(e).color)'''),
+                                                'navigation target token contrast override failed')
                                             direct = page.url
                                             result['navigation'].append(dict(site=name, symbol=symbol,
                                                 api_url=api_url.replace(base, ''), source_url=direct.replace(base, ''),
@@ -261,7 +396,24 @@ def browser(workspace, inventory):
                                         page.wait_for_url('**/source/**')
                                         expect(page.locator(':target')).to_contain_text('package '+package)
                                         page.goto(shell)
-                                # A complete source page remains readable without JS and fits the viewport.
+                                # Every published source file, in every viewport/theme/JS combination.
+                                for source_record in inventory[name]['source_view']['files']:
+                                    page.goto(base+'/'+name+'/'+source_record['page'])
+                                    checks = check_source_page(page,
+                                        (workspace/(name+'-authority')/source_record['source']).read_bytes(),
+                                        source_record['lines'])
+                                    result['checks'].append(dict(site=name, page=source_record['page'],
+                                        width=width, theme=theme, javascript=js, status='passed', **checks))
+                                if name == 'mel':
+                                    for filename, raw, count in browser_fixtures:
+                                        page.goto(base+'/browser-fixtures/api/source/'+filename)
+                                        checks = check_source_page(page, raw, count)
+                                        require(checks['horizontal_scroll'], 'long source line did not scroll')
+                                        require(page.locator('script, img, [onclick], [onerror]').count() == 0,
+                                                'hostile source became active markup')
+                                        result['checks'].append(dict(site='hostile-control', page=filename,
+                                            width=width, theme=theme, javascript=js, status='passed', **checks))
+                                # Retain representative screenshots and the original selection check.
                                 record = next(f for f in inventory[name]['source_view']['files']
                                               if f['package'] == ('AMS.MEL.IR.Image' if name == 'mel' else 'OpenCV.Core'))
                                 page.goto(base+'/'+name+'/'+record['page']+'#L1')
@@ -304,7 +456,7 @@ if __name__ == '__main__':
     parser.add_argument('--workspace', type=Path, required=True)
     parser.add_argument('--baseline-source', type=Path)
     parser.add_argument('--baseline-python', type=Path,
-                        help='interpreter with the independently verified official v0.1.6 wheel')
+                        help='interpreter with the independently verified official v0.1.7 wheel')
     parser.add_argument('--browser', action='store_true')
     parser.add_argument('--browser-only', action='store_true')
     args = parser.parse_args()
