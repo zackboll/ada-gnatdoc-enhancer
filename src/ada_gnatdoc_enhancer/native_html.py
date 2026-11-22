@@ -47,11 +47,17 @@ def snapshot(config: Config, site: Path) -> NativeSite:
     api = site / 'api'
     regular(api / 'index.html'); regular(api / 'gnatdoc.css')
     source = packages(config)
+    exact = config.source_view.get('schema_version') == 2
+
+    def read(path):
+        return (regular(path).read_bytes().decode('utf-8') if exact else
+                regular(path).read_text(encoding='utf-8'))
+
     records = {}
     for path in sorted(api.glob('*.html')):
         if path.name == 'index.html': continue
         require(PAGE_NAME.fullmatch(path.name) is not None, f"unknown native HTML filename: {path.name}")
-        original = regular(path).read_text(encoding='utf-8')
+        original = read(path)
         heading = HEADING.findall(original)
         require(len(heading) == 1, f"invalid native package h1: {path.name}")
         name = html.unescape(heading[0])
@@ -62,7 +68,7 @@ def snapshot(config: Config, site: Path) -> NativeSite:
         require(len({x.anchor for x in sections}) == len(sections), f"duplicate native declaration anchors: {name}")
         records[key] = NativePage(path, name, sections, original)
     require(set(records) == set(source), f"source/native package mismatch: {sorted(set(records) ^ set(source))}")
-    index = regular(api / 'index.html').read_text(encoding='utf-8')
+    index = read(api / 'index.html')
     # Parse native links; tagged-type entries may share the same page and carry
     # fragments, hence only compare the compilation-units list.
     nav_body = index.split('<h2 id=tagged-types>', 1)[0]

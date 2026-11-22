@@ -36,10 +36,11 @@ def canonical_fingerprints(source,config):
             for p in source.values()}
 
 
-def _raw(site:Path):
+def _raw(site:Path, *, exact=False):
     api=site/'api';files={}
     for path in sorted(api.glob('*.html')):
-        files[path.relative_to(site).as_posix()]=path.read_text(encoding='utf-8')
+        files[path.relative_to(site).as_posix()]=(path.read_bytes().decode('utf-8') if exact else
+                                                 path.read_text(encoding='utf-8'))
     require('api/index.html' in files,'missing native API index')
     return files
 
@@ -53,7 +54,7 @@ def _head(config:Config,index:bool=False):
             (SOURCE_HEAD if not index and config.source_view else ''))
 
 
-def document_titles(config:Config,native:NativeSite):
+def document_titles(config:Config,native:NativeSite,source_artifacts=None):
     """Exact titles of generated pages, from verified package and guide identities."""
     titles={'api/'+p.path.name:package_title(p.package,config.project) for p in native.pages.values()}
     titles['api/index.html']=index_title(config.project)
@@ -62,11 +63,12 @@ def document_titles(config:Config,native:NativeSite):
         titles.update({g['path']:guide_title(g['label'],config.project) for g in manifest(config)['guides']})
     if config.source_view:
         from .source_view import build
-        titles.update(build(config,native,packages(config))[3])
+        titles.update(source_artifacts['titles'] if source_artifacts is not None else
+                      build(config,native,packages(config))[3])
     return titles
 
 
-def expected_output(config:Config,site:Path):
+def expected_output(config:Config,site:Path, *, source_artifacts=None):
     """Produce expected published bytes without modifying the input site."""
     from .external_types import destinations
     config=replace(config,externals=destinations(config))
@@ -83,7 +85,9 @@ def expected_output(config:Config,site:Path):
     source_links={}
     if config.source_view:
         from .source_view import build
-        source_values,source_links,_,_=build(config,native,source)
+        source_values,source_links,identity,titles=build(config,native,source)
+        if source_artifacts is not None:
+            source_artifacts.update(values=source_values, identity=identity, titles=titles)
         values.update(source_values)
     totals={'linked_types':0,'declaration_snippets':0,'public_packages':len(native.pages),
             'linked_local_types':0,'linked_external_types':0,
@@ -92,6 +96,12 @@ def expected_output(config:Config,site:Path):
     if config.source_view:
         totals.update(source_pages=len(source_links),
                       source_links=sum(len(entries) for entries in source_links.values()))
+        if identity['schema_version'] == 2:
+            totals.update(body_pages=len(identity['bodies']),
+                          body_operation_links=sum('body_line' in e and e['anchor'] is not None
+                                                   for entries in source_links.values() for e in entries),
+                          body_operation_omissions=sum('body_omission' in e
+                                                       for entries in source_links.values() for e in entries))
     for name,page in native.pages.items():
         check_native_input(page.original,'api/'+page.path.name)
         require(source[name].name==page.package,
@@ -110,7 +120,8 @@ def expected_output(config:Config,site:Path):
         if config.source_view:
             from .source_view import enhance_page
             text=enhance_page(text,source[name],source_links[name],
-                              source[name].path.relative_to(config.root).as_posix())
+                              source[name].path.relative_to(config.root).as_posix(),
+                              schema=config.source_view['schema_version'])
         path=page.path.relative_to(site).as_posix()
         text=themed(text,config.theme)
         if config.source_view:
@@ -148,7 +159,7 @@ def _expected_names(originals:dict,values:dict):
     return set(originals) | set(values) | {'api/gnatdoc.css', MANIFEST}
 
 
-def _presentation(config:Config,site:Path,raw:dict,values:dict,counts:dict):
+def _presentation(config:Config,site:Path,raw:dict,values:dict,counts:dict,source_artifacts):
     source=packages(config)
     result = {'schema_version':1,'enhancer_version':__version__,
             'gnatdoc_version':config.gnatdoc,'project':config.project,
@@ -166,8 +177,7 @@ def _presentation(config:Config,site:Path,raw:dict,values:dict,counts:dict):
     if blocks is not None:
         result['authored_source_blocks'] = blocks
     if config.source_view:
-        from .source_view import build
-        result['source_view'] = build(config,snapshot(config,site),source)[2]
+        result['source_view'] = source_artifacts['identity']
     return result
 
 
@@ -184,22 +194,26 @@ def source_block_identity(config):
 
 
 def _generate(config:Config,site:Path):
-    originals=_raw(site)
-    native,values,counts=expected_output(config,site)
-    manifest=_presentation(config,site,originals,values,counts)
+    exact=config.source_view.get('schema_version') == 2
+    originals=_raw(site,exact=exact)
+    source_artifacts={}
+    native,values,counts=expected_output(config,site,source_artifacts=source_artifacts)
+    manifest=_presentation(config,site,originals,values,counts,source_artifacts)
     values[MANIFEST]=sorted_json(manifest).encode()
     for name,content in values.items():
         target=site/name
         require(not target.is_symlink(), f"symlink enhancement destination: {name}")
         if target.exists():
             require(name in originals and target.is_file() and
-                    target.read_text(encoding='utf-8') == originals[name],
+                    (target.read_bytes().decode('utf-8') if exact else
+                     target.read_text(encoding='utf-8')) == originals[name],
                     f"unexpected existing enhancement destination: {name}")
         target.parent.mkdir(parents=True,exist_ok=True)
         target.write_bytes(content)
     # Validate complete exact inventory, including every GNATdoc native page.
     return validate_files(site,config,_expected_names(originals,values),
-                          titles=document_titles(config,native),native=native),counts
+                          titles=document_titles(config,native,source_artifacts),native=native,
+                          source_values=source_artifacts.get('values')),counts
 
 
 def enhance(config:Config,site:Path,*,dry_run:bool=False):
@@ -229,7 +243,11 @@ def verify(config:Config,site:Path):
     site=site_root(site)
     path=site/MANIFEST
     require(path.is_file() and not path.is_symlink(),'missing or symlink presentation manifest')
-    data=json.loads(path.read_text(encoding='utf-8'))
+    if config.source_view.get('schema_version') == 2:
+        from .source_view import unique
+        data=json.loads(path.read_text(encoding='utf-8'),object_pairs_hook=unique)
+    else:
+        data=json.loads(path.read_text(encoding='utf-8'))
     require(isinstance(data,dict),'malformed presentation manifest: expected object')
     identity = theme_identity(config)
     blocks = source_block_identity(config)
@@ -256,6 +274,11 @@ def verify(config:Config,site:Path):
             'native GNATdoc stylesheet has changed')
     originals=data['original_api_html']
     require(isinstance(originals,dict),'malformed original HTML manifest')
+    if config.source_view.get('schema_version') == 2:
+        from .source_view import native_evidence
+        pinned=native_evidence(config.root,config.source_view)['files']
+        require(set(originals) == set(pinned) - {'api/gnatdoc.css'},
+                'original HTML inventory differs from independently pinned native pages')
     with tempfile.TemporaryDirectory(prefix='gnatdoc-verify-') as temp:
         raw=Path(temp)/'site';(raw/'api').mkdir(parents=True)
         (raw/'api/gnatdoc.css').write_bytes((site/'api/gnatdoc.css').read_bytes())
@@ -266,11 +289,11 @@ def verify(config:Config,site:Path):
             p=inside(raw,name)
             require(not p.exists(),"duplicate native source path")
             p.parent.mkdir(parents=True,exist_ok=True)
-            p.write_text(value,encoding='utf-8')
-        native,values,counts=expected_output(config,raw)
+            p.write_bytes(value.encode('utf-8'))
+        source_artifacts={}
+        native,values,counts=expected_output(config,raw,source_artifacts=source_artifacts)
         if config.source_view:
-            from .source_view import build
-            require(data['source_view']==build(config,native,packages(config))[2],
+            require(data['source_view']==source_artifacts['identity'],
                     'source-view ownership/link inventory mismatch')
         require(counts==data['counts'],'presentation counts mismatch')
         require({n:digest(d) for n,d in sorted(values.items())}==data['output_sha256'],
@@ -281,5 +304,6 @@ def verify(config:Config,site:Path):
             target=site/name
             require(target.is_file() and not target.is_symlink() and target.read_bytes()==content,
                     f"published file differs from reconstructed output: {name}")
-        result=validate_files(site,config,expected,titles=document_titles(config,native),native=native)
+        result=validate_files(site,config,expected,titles=document_titles(config,native,source_artifacts),
+                              native=native,source_values=source_artifacts.get('values'))
     return {'mode':'verified',**result,**counts}

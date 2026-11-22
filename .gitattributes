@@ -8,3 +8,8 @@ docs/evidence/gnatdoc005/dependency-commands.txt -whitespace
 *.js text eol=lf
 *.yml text eol=lf
 *.json text eol=lf
+# Retained upstream source/native evidence is compared to original blob bytes.
+tests/real-fixtures/body-navigation/** -text
+tests/real-fixtures/body-navigation/**/*.adb -whitespace
+tests/real-fixtures/body-navigation/**/*.ads -whitespace
+tests/real-fixtures/body-navigation/**/*.html -whitespace

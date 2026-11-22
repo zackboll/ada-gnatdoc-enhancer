@@ -1,11 +1,11 @@
 # Ada GNATdoc Enhancer
 
-Optional [offline specification browsing](docs/source-view.md) is default-off
+Optional [offline Ada source browsing](docs/source-view.md) is default-off
 and source/native-identity verified. Enabling it publishes each selected public
-package's **whole `.ads` file, including any private section**; `.adb` bodies are
-not supported.
+package's **whole `.ads` file, including any private section**. The separate
+schema-2 opt-in also exposes eligible **whole `.adb` implementation bodies**.
 
-## v0.1.7 release candidate (not published)
+## Official release: v0.1.7
 
 Includes merged GNATDOC-SOURCE-001 optional Ada source browsing: “View source”
 links from public API declarations to exact original specification lines, distinct
